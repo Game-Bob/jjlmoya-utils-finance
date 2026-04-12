@@ -1,0 +1,66 @@
+---
+import type { ToolLocaleContent } from '../../types';
+import type { PercentageCalculatorUI } from './ui';
+
+interface Props {
+  content: ToolLocaleContent<PercentageCalculatorUI>;
+}
+
+const { content } = Astro.props;
+---
+
+<div class="pc-bibliography">
+  <h3 class="pc-bibliography-title">{content.bibliographyTitle}</h3>
+  <ul class="pc-bibliography-list">
+    {
+      content.bibliography?.map((item) => (
+        <li class="pc-bibliography-item">
+          <a href={item.url} target="_blank" rel="noopener noreferrer" class="pc-bibliography-link">
+            {item.name}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</div>
+
+<style>
+.pc-bibliography {
+  max-width: 1200px;
+  margin: 3rem auto;
+  padding: 0 2rem;
+}
+
+.pc-bibliography-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--pc-primary-light);
+  margin-bottom: 1.5rem;
+}
+
+.pc-bibliography-list {
+  list-style: none;
+  padding: 0;
+}
+
+.pc-bibliography-item {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--pc-border-light);
+}
+
+.pc-bibliography-item:last-child {
+  border-bottom: none;
+}
+
+.pc-bibliography-link {
+  color: var(--pc-primary-light);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.2s;
+}
+
+.pc-bibliography-link:hover {
+  color: var(--pc-primary-dark);
+  text-decoration: underline;
+}
+</style>

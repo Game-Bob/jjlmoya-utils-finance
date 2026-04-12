@@ -1,0 +1,11 @@
+---
+import { SEORenderer } from '@jjlmoya/utils-shared';
+
+interface Props {
+  seoContent: typeof SEORenderer extends { astro: (props: infer P) => any } ? P['seoContent'] : any;
+}
+
+const { seoContent } = Astro.props;
+---
+
+<SEORenderer client:load seoContent={seoContent} />

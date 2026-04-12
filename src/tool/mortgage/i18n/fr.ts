@@ -1,0 +1,204 @@
+import type { WithContext, FAQPage, HowToThing, SoftwareApplication } from 'schema-dts';
+import type { ToolLocaleContent } from '../../../types';
+import type { MortgageUI } from '../ui';
+
+const slug = 'calculatrice-hypotheque';
+const title = 'Calculatrice Hypothécaire: Tableau d\'Amortissement Complet';
+const description =
+  'Calculez votre paiement hypothécaire mensuel, découvrez le coût total des intérêts et visualisez votre tableau d\'amortissement complet instantanément.';
+
+const faqData = [
+  {
+    question: 'Qu\'est-ce que le système d\'amortissement français?',
+    answer:
+      'C\'est le système le plus utilisé en Europe. Votre paiement mensuel reste identique, mais au début vous payez presque entièrement les intérêts avec très peu de capital. À la fin, c\'est l\'inverse. C\'est pourquoi le remboursement anticipé est plus rentable dans les premières années.',
+  },
+  {
+    question: 'Taux fixe ou variable en 2026?',
+    answer:
+      'Taux fixe: vous payez un peu plus maintenant mais dormez tranquille 30 ans. Taux variable: peut être moins cher au début, mais si les taux montent à 4-5%, votre paiement pourrait exploser. Cela dépend de votre tolérance au risque.',
+  },
+  {
+    question: 'Combien j\'économise si je rembourse 10 000€ à l\'avance?',
+    answer:
+      'Cela dépend du moment. Si vous remboursez à l\'année 1 d\'une hypothèque de 200 000€ à 3%, vous pouvez économiser plus de 15 000€ en intérêts. Si vous le faites à l\'année 20, vous en économisez à peine 2 000€. Le timing est crucial.',
+  },
+  {
+    question: 'Quel pourcentage de mon revenu devrais-je consacrer à l\'hypothèque?',
+    answer:
+      'Les conseillers financiers recommandent de ne pas dépasser 28-31% du revenu brut mensuel (ratio d\'habitation). Certains permettent jusqu\'à 43% de ratio d\'endettement incluant toutes les obligations. Dépasser ces seuils augmente le risque de défaut en cas d\'urgence.',
+  },
+];
+
+const howToData = [
+  {
+    name: 'Entrez le montant du prêt',
+    text: 'Tapez le montant total que vous devez emprunter au prêteur (moins votre acompte).',
+  },
+  {
+    name: 'Ajustez le taux d\'intérêt',
+    text: 'Entrez le TAEG (Taux Annuel Effectif Global) offert par le prêteur. Vous pouvez comparer les options à taux fixe ou variable.',
+  },
+  {
+    name: 'Choisissez votre période de remboursement',
+    text: 'Définissez en combien d\'années vous souhaitez rembourser le prêt. Plus d\'années signifie un paiement mensuel plus faible mais des intérêts totaux plus élevés.',
+  },
+  {
+    name: 'Examinez le tableau d\'amortissement',
+    text: 'Examinez mois après mois comment votre dette diminue et quelle partie de chaque paiement va aux intérêts par rapport au capital.',
+  },
+];
+
+const faqSchema: WithContext<FAQPage> = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqData.map((item) => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: { '@type': 'Answer', text: item.answer },
+  })),
+};
+
+const howToSchema: WithContext<HowToThing> = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: title,
+  description,
+  step: howToData.map((step, i) => ({
+    '@type': 'HowToStep',
+    position: i + 1,
+    name: step.name,
+    text: step.text,
+  })),
+};
+
+const appSchema: WithContext<SoftwareApplication> = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: title,
+  description,
+  applicationCategory: 'FinanceApplication',
+  operatingSystem: 'All',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
+  inLanguage: 'fr',
+};
+
+export const content: ToolLocaleContent<MortgageUI> = {
+  slug,
+  title,
+  description,
+  faqTitle: 'Questions Fréquemment Posées',
+  faq: faqData,
+  bibliographyTitle: 'Sources et Références',
+  bibliography: [
+    {
+      name: 'Banque de France: Comprendre les crédits immobiliers',
+      url: 'https://www.banque-france.fr/',
+    },
+    {
+      name: 'Institut National de la Consommation: Guides de l\'emprunteur',
+      url: 'https://www.inc-conso.fr/',
+    },
+    {
+      name: 'Conseil Supérieur du Notariat: Ressources hypothécaires',
+      url: 'https://www.notaires.fr/',
+    },
+    {
+      name: 'Investopedia FR: Calcul des amortissements hypothécaires',
+      url: 'https://www.investopedia.com/terms/m/mortgage.asp',
+    },
+  ],
+  howTo: howToData,
+  schemas: [faqSchema, howToSchema, appSchema],
+  seo: [
+    {
+      type: 'title',
+      text: 'Le "Piège" des Intérêts Prépondérants',
+      level: 2,
+    },
+    {
+      type: 'paragraph',
+      html: 'La plupart des hypothèques utilisent un <strong>système d\'amortissement français</strong> (ou amortissement standard). La caractéristique clé est que votre paiement mensuel reste constant, mais la composition change dramatiquement au fil du temps.',
+    },
+    {
+      type: 'tip',
+      title: 'Composition du Paiement au Fil du Temps',
+      html: '<p><strong>Premières années:</strong> Presque tout votre paiement va aux INTÉRÊTS, avec une réduction minimale du capital.</p><p><strong>Années suivantes:</strong> Presque tout va au CAPITAL, avec peu d\'intérêts.</p>',
+    },
+    {
+      type: 'paragraph',
+      html: 'C\'est pourquoi faire des paiements supplémentaires sur le capital dans les premières années de votre hypothèque est bien plus efficace que de le faire plus tard.',
+    },
+    {
+      type: 'title',
+      text: 'Environnement des Taux d\'Intérêt 2026',
+      level: 2,
+    },
+    {
+      type: 'paragraph',
+      html: 'Avec des taux d\'intérêt fluctuants, choisir entre <strong>Taux Fixe</strong> ou <strong>Taux Variable</strong> est critique.',
+    },
+    {
+      type: 'comparative',
+      columns: 2,
+      items: [
+        {
+          title: 'Taux Fixe',
+          description: 'Vous payez un peu plus au départ, mais votre taux ne change jamais pendant 30 ans.',
+          points: [
+            'Paiement prévisible pour toute la durée du prêt',
+            'Protection contre les augmentations de taux',
+            'Tranquillité d\'esprit sur les marchés volatiles',
+            'Idéal pour la certitude budgétaire',
+          ],
+        },
+        {
+          title: 'Taux Variable',
+          description: 'Taux initial plus bas, mais vous expose aux augmentations futures.',
+          highlight: true,
+          points: [
+            'Paiement mensuel initial plus faible',
+            'Risque d\'augmentations futures des taux',
+            'Choc de paiement possible après la période d\'ajustement',
+            'Seulement pour tolérance au risque élevée',
+          ],
+        },
+      ],
+    },
+  ],
+  ui: {
+    labelTitle: 'Calculatrice Hypothécaire',
+    labelLoanAmount: 'Montant du Prêt',
+    labelInterestRate: 'Taux d\'Intérêt (TAEG)',
+    labelYears: 'Durée du Prêt (Années)',
+    labelMonthlyExtra: 'Ajouter un Paiement Mensuel Supplémentaire',
+    labelMonthlyPayment: 'Paiement Mensuel',
+    labelMonthCount: 'mois',
+    labelSavingsCard: 'Votre Potentiel d\'Économies',
+    labelSavingsInterest: 'Intérêts',
+    labelSavingsTime: 'Temps',
+    labelTimelineComparison: 'Comparaison Temporelle',
+    labelTimelineOriginal: 'Durée Originale',
+    labelTimelineOptimized: 'Durée avec Paiements Supplémentaires',
+    labelCostBreakdown: 'Répartition des Coûts Totaux',
+    labelBorrowed: 'Emprunté',
+    labelTotalBorrowed: 'Total Emprunté',
+    labelTotalInterest: 'Total des Intérêts',
+    labelAmortizationTable: 'Tableau d\'Amortissement',
+    labelTableHeader: 'Afficher le tableau complet',
+    labelViewAll: 'Afficher tout',
+    labelPaid: 'Hypothèque Remboursée',
+    labelTableMonth: 'Mois',
+    labelTableInterest: 'Intérêt',
+    labelTablePrincipal: 'Principal',
+    labelTableExtra: 'Extra',
+    labelTableBalance: 'Solde',
+    labelMoreMonths: 'plus de mois',
+    labelMonth: 'Mois',
+    currencySymbol: '€',
+    currencyCode: 'EUR',
+    currencyLocale: 'fr-FR',
+    monthPlural: 'mois',
+    yearPlural: 'années',
+  },
+};

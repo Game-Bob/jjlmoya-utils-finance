@@ -1,0 +1,35 @@
+export interface MortgageUI {
+  labelTitle: string;
+  labelLoanAmount: string;
+  labelInterestRate: string;
+  labelYears: string;
+  labelMonthlyExtra: string;
+  labelMonthlyPayment: string;
+  labelMonthCount: string;
+  labelSavingsCard: string;
+  labelSavingsInterest: string;
+  labelSavingsTime: string;
+  labelTimelineComparison: string;
+  labelTimelineOriginal: string;
+  labelTimelineOptimized: string;
+  labelCostBreakdown: string;
+  labelBorrowed: string;
+  labelTotalBorrowed: string;
+  labelTotalInterest: string;
+  labelAmortizationTable: string;
+  labelTableHeader: string;
+  labelViewAll: string;
+  labelPaid: string;
+  labelTableMonth: string;
+  labelTableInterest: string;
+  labelTablePrincipal: string;
+  labelTableExtra: string;
+  labelTableBalance: string;
+  labelMoreMonths: string;
+  labelMonth: string;
+  currencySymbol: string;
+  currencyCode: string;
+  currencyLocale: string;
+  monthPlural: string;
+  yearPlural: string;
+}

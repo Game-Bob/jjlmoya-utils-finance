@@ -1,0 +1,30 @@
+export interface PercentageCalculatorUI {
+  labelTitle: string;
+  labelCase1Title: string;
+  labelCase1Question: string;
+  labelCase1Placeholder1: string;
+  labelCase1Placeholder2: string;
+  labelCase1Formula: string;
+  labelCase2Title: string;
+  labelCase2Question: string;
+  labelCase2Placeholder1: string;
+  labelCase2Placeholder2: string;
+  labelCase2Formula: string;
+  labelCase3Title: string;
+  labelCase3Question: string;
+  labelCase3Placeholder1: string;
+  labelCase3Placeholder2: string;
+  labelCase3Formula: string;
+  labelCase4Title: string;
+  labelCase4Question: string;
+  labelCase4Placeholder1: string;
+  labelCase4Placeholder2: string;
+  labelCase4Formula: string;
+  labelCase4AddLabel: string;
+  labelCase4SubtractLabel: string;
+  labelResult: string;
+  labelDifference: string;
+  labelCopyTooltip: string;
+  labelFormula: string;
+  percentSymbol: string;
+}

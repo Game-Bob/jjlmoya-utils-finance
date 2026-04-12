@@ -1,0 +1,1030 @@
+---
+import type { MortgageUI } from './ui';
+import { MortgageCalculator } from './logic';
+
+interface Props {
+  ui: MortgageUI;
+}
+
+const { ui } = Astro.props;
+
+const defaultInput = {
+  amount: 200000,
+  annualInterestRate: 3.5,
+  years: 30,
+  monthlyExtraPayment: 0,
+};
+
+MortgageCalculator.calculate(defaultInput);
+---
+
+<div class="mortgage-container" data-currency-locale={ui.currencyLocale} data-currency-code={ui.currencyCode} data-currency-symbol={ui.currencySymbol} data-year-plural={ui.yearPlural}>
+  <div class="mortgage-header">
+    <div class="mortgage-header-title-group">
+      <div class="mortgage-header-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+      </div>
+      <h2 class="mortgage-header-title">{ui.labelTitle}</h2>
+    </div>
+  </div>
+
+  <div class="mortgage-grid">
+    <div class="mortgage-left">
+      <div class="mortgage-input-group">
+        <label class="mortgage-label">{ui.labelLoanAmount}</label>
+        <div class="mortgage-input-wrapper">
+          <span class="mortgage-input-prefix">{ui.currencySymbol}</span>
+          <input
+            type="number"
+            id="mortgage-amount"
+            value={defaultInput.amount}
+            class="mortgage-input mortgage-input-prefixed"
+          />
+        </div>
+      </div>
+
+      <div class="mortgage-input-row">
+        <div class="mortgage-input-group">
+          <label class="mortgage-label">{ui.labelInterestRate}</label>
+          <div class="mortgage-input-wrapper">
+            <input
+              type="number"
+              id="mortgage-rate"
+              value={defaultInput.annualInterestRate}
+              step="0.01"
+              class="mortgage-input mortgage-input-suffixed"
+            />
+            <span class="mortgage-input-suffix">%</span>
+          </div>
+        </div>
+        <div class="mortgage-input-group">
+          <label class="mortgage-label">{ui.labelYears}</label>
+          <input
+            type="number"
+            id="mortgage-years"
+            value={defaultInput.years}
+            class="mortgage-input"
+          />
+        </div>
+      </div>
+
+      <div class="mortgage-divider"></div>
+
+      <div class="mortgage-input-group">
+        <label class="mortgage-label mortgage-label-extra">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"></path><path d="m17 5-5-5-5 5"></path><path d="m5 19 5 5 5-5"></path></svg>
+          {ui.labelMonthlyExtra}
+        </label>
+        <div class="mortgage-input-wrapper">
+          <span class="mortgage-input-prefix">{ui.currencySymbol}</span>
+          <input
+            type="number"
+            id="mortgage-extra"
+            value="0"
+            placeholder="0"
+            class="mortgage-input mortgage-input-prefixed mortgage-input-extra"
+          />
+        </div>
+        <p class="mortgage-input-hint">Enter an amount to see how much time and interest you save.</p>
+      </div>
+
+      <div class="mortgage-payment-card">
+        <span class="mortgage-payment-label">{ui.labelMonthlyPayment}</span>
+        <span id="mortgage-monthly" class="mortgage-payment-value">0</span>
+        <span class="mortgage-payment-duration">
+          During <span id="mortgage-months-count">0</span> {ui.monthPlural}
+        </span>
+      </div>
+
+      <div id="mortgage-savings-card" class="mortgage-savings-card mortgage-savings-inactive">
+        <h4 class="mortgage-savings-title">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"></path><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+          {ui.labelSavingsCard}
+        </h4>
+        <div class="mortgage-savings-grid">
+          <div class="mortgage-savings-item">
+            <span class="mortgage-savings-label">{ui.labelSavingsInterest}</span>
+            <span id="mortgage-saved-interest" class="mortgage-savings-value">0</span>
+          </div>
+          <div class="mortgage-savings-item">
+            <span class="mortgage-savings-label">{ui.labelSavingsTime}</span>
+            <span id="mortgage-saved-time" class="mortgage-savings-value">0 {ui.yearPlural}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mortgage-right">
+      <div class="mortgage-section">
+        <h3 class="mortgage-section-title">{ui.labelTimelineComparison}</h3>
+        <div class="mortgage-timeline">
+          <div class="mortgage-timeline-item">
+            <div class="mortgage-timeline-header">
+              <span class="mortgage-timeline-label">{ui.labelTimelineOriginal}</span>
+              <span id="mortgage-timeline-original-text">30 {ui.yearPlural}</span>
+            </div>
+            <div class="mortgage-timeline-bar">
+              <div class="mortgage-timeline-fill"></div>
+            </div>
+          </div>
+
+          <div class="mortgage-timeline-item">
+            <div class="mortgage-timeline-header">
+              <span class="mortgage-timeline-label mortgage-timeline-label-optimized">{ui.labelTimelineOptimized}</span>
+              <span id="mortgage-timeline-optimized-text">30 {ui.yearPlural}</span>
+            </div>
+            <div class="mortgage-timeline-bar">
+              <div id="mortgage-timeline-optimized-bar" class="mortgage-timeline-fill mortgage-timeline-fill-optimized"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mortgage-section-divider"></div>
+
+      <div class="mortgage-section">
+        <h3 class="mortgage-section-title">{ui.labelCostBreakdown}</h3>
+
+        <div class="mortgage-breakdown-bar">
+          <div
+            id="mortgage-bar-principal"
+            class="mortgage-breakdown-principal"
+            style="width: 70%"
+          >
+            <span class="mortgage-breakdown-label">{ui.labelBorrowed}</span>
+            <span id="mortgage-bar-principal-val" class="mortgage-breakdown-value"></span>
+          </div>
+          <div
+            id="mortgage-bar-interest"
+            class="mortgage-breakdown-interest"
+            style="width: 30%"
+          >
+            <span class="mortgage-breakdown-label">{ui.labelTableInterest}</span>
+            <span id="mortgage-bar-interest-val" class="mortgage-breakdown-value"></span>
+          </div>
+        </div>
+
+        <div class="mortgage-breakdown-summary">
+          <div class="mortgage-breakdown-item">
+            {ui.labelTotalBorrowed}: <span id="mortgage-total-amount" class="mortgage-breakdown-emphasis">0</span>
+          </div>
+          <div class="mortgage-breakdown-item">
+            {ui.labelTotalInterest}: <span id="mortgage-total-interest" class="mortgage-breakdown-emphasis mortgage-breakdown-interest-emphasis">0</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="mortgage-section-divider"></div>
+
+      <div class="mortgage-table-container">
+        <div class="mortgage-table-header">
+          <h3 class="mortgage-table-title">{ui.labelAmortizationTable}</h3>
+          <button id="mortgage-toggle-table-btn" class="mortgage-toggle-btn">
+            {ui.labelTableHeader}
+          </button>
+        </div>
+
+        <div class="mortgage-table-scroll">
+          <table class="mortgage-table">
+            <thead>
+              <tr>
+                <th class="mortgage-table-cell">{ui.labelTableMonth}</th>
+                <th class="mortgage-table-cell mortgage-table-interest">{ui.labelTableInterest}</th>
+                <th class="mortgage-table-cell mortgage-table-principal">{ui.labelTablePrincipal}</th>
+                <th class="mortgage-table-cell mortgage-table-extra">{ui.labelTableExtra}</th>
+                <th class="mortgage-table-cell mortgage-table-balance">{ui.labelTableBalance}</th>
+              </tr>
+            </thead>
+            <tbody id="mortgage-table-body">
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  import { MortgageCalculator } from './logic';
+  import type { MortgageResult } from './logic';
+
+  const container = document.querySelector('.mortgage-container') as HTMLElement;
+  const currencyLocale = container.dataset.currencyLocale || 'en-US';
+  const currencyCode = container.dataset.currencyCode || 'USD';
+  const yearPlural = container.dataset.yearPlural || 'years';
+
+  const amountEl = document.getElementById('mortgage-amount') as HTMLInputElement;
+  const rateEl = document.getElementById('mortgage-rate') as HTMLInputElement;
+  const yearsEl = document.getElementById('mortgage-years') as HTMLInputElement;
+  const extraEl = document.getElementById('mortgage-extra') as HTMLInputElement;
+
+  const monthlyEl = document.getElementById('mortgage-monthly');
+  const totalAmountEl = document.getElementById('mortgage-total-amount');
+  const totalInterestEl = document.getElementById('mortgage-total-interest');
+  const monthsCountEl = document.getElementById('mortgage-months-count');
+  const tableBody = document.getElementById('mortgage-table-body');
+
+  const savingsCard = document.getElementById('mortgage-savings-card');
+  const savedInterestEl = document.getElementById('mortgage-saved-interest');
+  const savedTimeEl = document.getElementById('mortgage-saved-time');
+
+  const timelineOriginalText = document.getElementById('mortgage-timeline-original-text');
+  const timelineOptimizedText = document.getElementById('mortgage-timeline-optimized-text');
+  const timelineOptimizedBar = document.getElementById('mortgage-timeline-optimized-bar');
+
+  const barPrincipal = document.getElementById('mortgage-bar-principal');
+  const barPrincipalVal = document.getElementById('mortgage-bar-principal-val');
+  const barInterest = document.getElementById('mortgage-bar-interest');
+  const barInterestVal = document.getElementById('mortgage-bar-interest-val');
+
+  const toggleTableBtn = document.getElementById('mortgage-toggle-table-btn');
+  let isTableExpanded = false;
+  let currentResult: MortgageResult | null = null;
+
+  const formatMoney = (val: number) =>
+    new Intl.NumberFormat(currencyLocale, {
+      style: 'currency',
+      currency: currencyCode,
+      maximumFractionDigits: 0,
+    })
+      .format(val)
+      .replace(/\u00A0/g, ' ');
+
+  function renderTable(result: MortgageResult): void {
+    if (!tableBody) return;
+
+    const limit = 24;
+    const rows = isTableExpanded
+      ? result.amortizationTable
+      : result.amortizationTable.slice(0, limit);
+
+    const html = rows
+      .map(
+        (row) => `
+        <tr class="mortgage-table-row">
+          <td class="mortgage-table-cell">Month ${row.month}</td>
+          <td class="mortgage-table-cell mortgage-table-interest">${formatMoney(row.interest)}</td>
+          <td class="mortgage-table-cell mortgage-table-principal">${formatMoney(row.principal)}</td>
+          <td class="mortgage-table-cell mortgage-table-extra">${row.extraPayment > 0 ? formatMoney(row.extraPayment) : '<span class="mortgage-table-dash">-</span>'}</td>
+          <td class="mortgage-table-cell mortgage-table-balance">${formatMoney(row.remainingBalance)}</td>
+        </tr>
+      `
+      )
+      .join('');
+
+    let footer = '';
+    if (!isTableExpanded && result.amortizationTable.length > limit) {
+      const remaining = result.amortizationTable.length - limit;
+      footer = `<tr><td colspan="5" class="mortgage-table-footer">... and ${remaining} more ${remaining === 1 ? 'month' : 'months'}. <button class="mortgage-table-footer-btn" onclick="document.getElementById('mortgage-toggle-table-btn').click()">View all</button></td></tr>`;
+    } else if (isTableExpanded) {
+      footer = `<tr><td colspan="5" class="mortgage-table-footer mortgage-table-paid">Mortgage Paid Off</td></tr>`;
+    }
+
+    tableBody.innerHTML = html + footer;
+  }
+
+  interface MortgageInput {
+    amount: number;
+    annualInterestRate: number;
+    years: number;
+    monthlyExtraPayment: number;
+  }
+
+  function updateSummary(result: MortgageResult, input: MortgageInput): void {
+    if (monthlyEl) monthlyEl.innerText = formatMoney(result.monthlyPayment);
+    if (monthsCountEl) monthsCountEl.innerText = result.actualDurationMonths + '';
+
+    if (savingsCard) {
+      if (input.monthlyExtraPayment > 0) {
+        savingsCard.classList.remove('mortgage-savings-inactive');
+        savingsCard.classList.add('mortgage-savings-active');
+      } else {
+        savingsCard.classList.add('mortgage-savings-inactive');
+        savingsCard.classList.remove('mortgage-savings-active');
+      }
+      if (savedInterestEl) savedInterestEl.innerText = formatMoney(result.interestSaved);
+      if (savedTimeEl) savedTimeEl.innerText = result.yearsSaved + ' ' + yearPlural;
+    }
+  }
+
+  function updateTimeline(result: MortgageResult, input: MortgageInput): void {
+    if (timelineOriginalText)
+      timelineOriginalText.innerText = input.years + ' ' + yearPlural + ' (' + input.years * 12 + ' months)';
+    if (timelineOptimizedText)
+      timelineOptimizedText.innerText =
+        result.yearsSaved > 0
+          ? (result.actualDurationMonths / 12).toFixed(1) +
+            ' ' + yearPlural + ' (' +
+            result.actualDurationMonths +
+            ' months)'
+          : '-';
+
+    if (timelineOptimizedBar) {
+      const percent = (result.actualDurationMonths / (input.years * 12)) * 100;
+      timelineOptimizedBar.style.width = `${Math.min(percent, 100)}%`;
+      updateTimelineBar(result.yearsSaved > 0);
+    }
+  }
+
+  function updateTimelineBar(hasSavings: boolean): void {
+    if (timelineOptimizedBar) {
+      if (hasSavings) {
+        timelineOptimizedBar.classList.add('mortgage-timeline-active');
+      } else {
+        timelineOptimizedBar.classList.remove('mortgage-timeline-active');
+      }
+    }
+  }
+
+  function updateBreakdown(result: MortgageResult, input: MortgageInput): void {
+    if (totalAmountEl) totalAmountEl.innerText = formatMoney(input.amount);
+    if (totalInterestEl) totalInterestEl.innerText = formatMoney(result.totalInterest);
+
+    const grandTotal = input.amount + result.totalInterest;
+    const pPercent = grandTotal > 0 ? (input.amount / grandTotal) * 100 : 0;
+    const iPercent = grandTotal > 0 ? (result.totalInterest / grandTotal) * 100 : 0;
+
+    updateBarWidths(pPercent, iPercent, input.amount, result.totalInterest);
+  }
+
+  function updateBarWidths(pPercent: number, iPercent: number, amount: number, totalInterest: number): void {
+    if (barPrincipal) {
+      barPrincipal.style.width = `${pPercent}%`;
+      if (barPrincipalVal) barPrincipalVal.innerText = formatMoney(amount);
+    }
+    if (barInterest) {
+      barInterest.style.width = `${iPercent}%`;
+      if (barInterestVal) barInterestVal.innerText = formatMoney(totalInterest);
+    }
+  }
+
+  function updateMortgage(): void {
+    const input: MortgageInput = {
+      amount: Number(amountEl.value) || 0,
+      annualInterestRate: Number(rateEl.value) || 0,
+      years: Number(yearsEl.value) || 0,
+      monthlyExtraPayment: Number(extraEl?.value) || 0,
+    };
+
+    const result = MortgageCalculator.calculate(input);
+    currentResult = result;
+
+    updateSummary(result, input);
+    updateTimeline(result, input);
+    updateBreakdown(result, input);
+    renderTable(result);
+  }
+
+  toggleTableBtn?.addEventListener('click', () => {
+    isTableExpanded = !isTableExpanded;
+    if (toggleTableBtn)
+      toggleTableBtn.innerText = isTableExpanded ? 'Collapse table' : 'View full table';
+    if (currentResult) renderTable(currentResult);
+  });
+
+  [amountEl, rateEl, yearsEl, extraEl].forEach((el) => el?.addEventListener('input', updateMortgage));
+
+  updateMortgage();
+</script>
+
+<style is:global>
+  :root {
+    --mortgage-color-primary: #3b82f6;
+    --mortgage-color-primary-dark: #1e40af;
+    --mortgage-color-primary-light: #dbeafe;
+    --mortgage-color-primary-extra-light: #f0f9ff;
+    --mortgage-color-success: #10b981;
+    --mortgage-color-success-dark: #047857;
+    --mortgage-color-success-light: #d1fae5;
+    --mortgage-color-danger: #ef4444;
+    --mortgage-color-danger-light: #fee2e2;
+    --mortgage-color-text-primary: #1f2937;
+    --mortgage-color-text-secondary: #6b7280;
+    --mortgage-color-text-light: #9ca3af;
+    --mortgage-color-bg-primary: #fff;
+    --mortgage-color-bg-secondary: #f9fafb;
+    --mortgage-color-bg-tertiary: #f3f4f6;
+    --mortgage-color-border: #e5e7eb;
+    --mortgage-color-border-light: #f3f4f6;
+  }
+
+  .theme-dark,
+  [data-theme='dark'] {
+    --mortgage-color-primary: #60a5fa;
+    --mortgage-color-primary-dark: #3b82f6;
+    --mortgage-color-primary-light: #1e3a8a;
+    --mortgage-color-primary-extra-light: #0c1844;
+    --mortgage-color-success: #34d399;
+    --mortgage-color-success-dark: #10b981;
+    --mortgage-color-success-light: #064e3b;
+    --mortgage-color-danger: #f87171;
+    --mortgage-color-danger-light: #7f1d1d;
+    --mortgage-color-text-primary: #f3f4f6;
+    --mortgage-color-text-secondary: #d1d5db;
+    --mortgage-color-text-light: #9ca3af;
+    --mortgage-color-bg-primary: #1f2937;
+    --mortgage-color-bg-secondary: #111827;
+    --mortgage-color-bg-tertiary: #0f172a;
+    --mortgage-color-border: #374151;
+    --mortgage-color-border-light: #1f2937;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --mortgage-color-primary: #60a5fa;
+      --mortgage-color-primary-dark: #3b82f6;
+      --mortgage-color-primary-light: #1e3a8a;
+      --mortgage-color-primary-extra-light: #0c1844;
+      --mortgage-color-success: #34d399;
+      --mortgage-color-success-dark: #10b981;
+      --mortgage-color-success-light: #064e3b;
+      --mortgage-color-danger: #f87171;
+      --mortgage-color-danger-light: #7f1d1d;
+      --mortgage-color-text-primary: #f3f4f6;
+      --mortgage-color-text-secondary: #d1d5db;
+      --mortgage-color-text-light: #9ca3af;
+      --mortgage-color-bg-primary: #1f2937;
+      --mortgage-color-bg-secondary: #111827;
+      --mortgage-color-bg-tertiary: #0f172a;
+      --mortgage-color-border: #374151;
+      --mortgage-color-border-light: #1f2937;
+    }
+  }
+
+  .mortgage-container {
+    background-color: var(--mortgage-color-bg-primary);
+    border-radius: 1.5rem;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--mortgage-color-border);
+    overflow: hidden;
+  }
+
+  .mortgage-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--mortgage-color-border);
+    background-color: rgba(59, 130, 246, 0.05);
+  }
+
+  .mortgage-header-title-group {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .mortgage-header-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: 0.625rem;
+    background-color: rgba(59, 130, 246, 0.1);
+    border-radius: 0.75rem;
+    color: var(--mortgage-color-primary);
+    flex-shrink: 0;
+  }
+
+  .mortgage-header-icon svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .mortgage-header-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--mortgage-color-text-primary);
+    margin: 0;
+  }
+
+  .mortgage-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding: 0;
+  }
+
+  @media (min-width: 1024px) {
+    .mortgage-grid {
+      grid-template-columns: minmax(300px, 1fr) 2fr;
+      gap: 0;
+      padding: 0;
+    }
+  }
+
+  .mortgage-left {
+    padding: 1.5rem;
+    background-color: rgba(59, 130, 246, 0.02);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    border-right: 1px solid var(--mortgage-color-border);
+  }
+
+  @media (max-width: 1023px) {
+    .mortgage-left {
+      border-right: none;
+      border-bottom: 1px solid var(--mortgage-color-border);
+    }
+  }
+
+  .mortgage-right {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .mortgage-input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .mortgage-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--mortgage-color-text-light);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .mortgage-label-extra {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--mortgage-color-success-dark);
+  }
+
+  .mortgage-label-extra svg {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .mortgage-input-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .mortgage-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  .mortgage-input-prefix {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--mortgage-color-text-light);
+    font-weight: 700;
+    pointer-events: none;
+  }
+
+  .mortgage-input-suffix {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--mortgage-color-text-light);
+    font-weight: 700;
+    pointer-events: none;
+  }
+
+  .mortgage-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background-color: var(--mortgage-color-bg-primary);
+    border: 2px solid var(--mortgage-color-border);
+    border-radius: 0.75rem;
+    font-weight: 700;
+    font-size: 1.125rem;
+    color: var(--mortgage-color-text-primary);
+    transition: all 0.2s ease;
+  }
+
+  .mortgage-input:focus {
+    border-color: var(--mortgage-color-primary);
+    outline: none;
+  }
+
+  .mortgage-input-prefixed {
+    padding-left: 3.5rem;
+  }
+
+  .mortgage-input-suffixed {
+    padding-right: 3.5rem;
+  }
+
+  .mortgage-input-extra {
+    background-color: rgba(16, 185, 129, 0.05);
+    border-color: rgba(16, 185, 129, 0.2);
+  }
+
+  .mortgage-input-extra:focus {
+    border-color: var(--mortgage-color-success);
+  }
+
+  .mortgage-input-hint {
+    font-size: 0.625rem;
+    color: var(--mortgage-color-text-light);
+    margin-top: 0.5rem;
+    line-height: 1.5;
+  }
+
+  .mortgage-divider {
+    height: 1px;
+    background-color: var(--mortgage-color-border);
+    margin: 1rem 0;
+  }
+
+  .mortgage-payment-card {
+    background: linear-gradient(135deg, var(--mortgage-color-primary) 0%, var(--mortgage-color-primary-dark) 100%);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    color: white;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+  }
+
+  .mortgage-payment-label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    opacity: 0.9;
+    margin-bottom: 0.5rem;
+  }
+
+  .mortgage-payment-value {
+    display: block;
+    font-size: 3rem;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.5rem;
+  }
+
+  .mortgage-payment-duration {
+    display: block;
+    font-size: 0.75rem;
+    opacity: 0.8;
+  }
+
+  .mortgage-savings-card {
+    background-color: var(--mortgage-color-bg-secondary);
+    border: 2px dashed var(--mortgage-color-border);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+  }
+
+  .mortgage-savings-inactive {
+    opacity: 0.6;
+    filter: grayscale(1);
+  }
+
+  .mortgage-savings-active {
+    border-color: var(--mortgage-color-success);
+    background-color: rgba(16, 185, 129, 0.05);
+    box-shadow: 0 0 16px rgba(16, 185, 129, 0.1);
+  }
+
+  .mortgage-savings-title {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--mortgage-color-success-dark);
+    margin: 0 0 1rem;
+  }
+
+  .mortgage-savings-title svg {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .mortgage-savings-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .mortgage-savings-item {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mortgage-savings-label {
+    font-size: 0.75rem;
+    color: var(--mortgage-color-text-light);
+    margin-bottom: 0.25rem;
+  }
+
+  .mortgage-savings-value {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--mortgage-color-text-primary);
+  }
+
+  .mortgage-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .mortgage-section-title {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--mortgage-color-text-primary);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .mortgage-section-divider {
+    height: 1px;
+    background-color: var(--mortgage-color-border);
+  }
+
+  .mortgage-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .mortgage-timeline-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .mortgage-timeline-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--mortgage-color-text-light);
+  }
+
+  .mortgage-timeline-label-optimized {
+    color: var(--mortgage-color-success-dark);
+  }
+
+  .mortgage-timeline-bar {
+    height: 1rem;
+    width: 100%;
+    background-color: var(--mortgage-color-bg-secondary);
+    border-radius: 9999px;
+    overflow: hidden;
+  }
+
+  .mortgage-timeline-fill {
+    height: 100%;
+    background-color: var(--mortgage-color-text-light);
+    border-radius: 9999px;
+    transition: width 1s ease;
+  }
+
+  .mortgage-timeline-fill-optimized {
+    background-color: var(--mortgage-color-success);
+    width: 100%;
+  }
+
+  .mortgage-timeline-fill.mortgage-timeline-active {
+    background-color: var(--mortgage-color-success);
+    box-shadow: 0 0 16px rgba(16, 185, 129, 0.5);
+  }
+
+  .mortgage-breakdown-bar {
+    display: flex;
+    height: 3.5rem;
+    width: 100%;
+    background-color: var(--mortgage-color-bg-secondary);
+    border-radius: 0.75rem;
+    overflow: hidden;
+    gap: 0;
+    margin-bottom: 1rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: white;
+  }
+
+  .mortgage-breakdown-principal {
+    background-color: var(--mortgage-color-text-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0.25rem;
+    transition: width 0.7s ease;
+  }
+
+  .mortgage-breakdown-interest {
+    background-color: var(--mortgage-color-danger);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0.25rem;
+    transition: width 0.7s ease;
+  }
+
+  .mortgage-breakdown-label {
+    display: block;
+  }
+
+  .mortgage-breakdown-value {
+    display: none;
+  }
+
+  @media (min-width: 768px) {
+    .mortgage-breakdown-value {
+      display: block;
+      font-weight: 300;
+      opacity: 0.8;
+    }
+  }
+
+  .mortgage-breakdown-summary {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    font-size: 0.875rem;
+    color: var(--mortgage-color-text-secondary);
+  }
+
+  .mortgage-breakdown-item {
+    flex: 1;
+  }
+
+  .mortgage-breakdown-emphasis {
+    font-weight: 700;
+    color: var(--mortgage-color-text-primary);
+  }
+
+  .mortgage-breakdown-interest-emphasis {
+    color: var(--mortgage-color-danger);
+  }
+
+  .mortgage-table-container {
+    background-color: var(--mortgage-color-bg-secondary);
+    border: 1px solid var(--mortgage-color-border);
+    border-radius: 1rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mortgage-table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid var(--mortgage-color-border);
+    background-color: rgba(59, 130, 246, 0.05);
+  }
+
+  .mortgage-table-title {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--mortgage-color-text-light);
+    margin: 0;
+  }
+
+  .mortgage-toggle-btn {
+    font-size: 0.625rem;
+    background-color: var(--mortgage-color-bg-primary);
+    border: 1px solid var(--mortgage-color-border);
+    padding: 0.375rem 0.75rem;
+    border-radius: 0.5rem;
+    color: var(--mortgage-color-text-secondary);
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  }
+
+  .mortgage-toggle-btn:hover {
+    background-color: var(--mortgage-color-bg-secondary);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+
+  .mortgage-toggle-btn:active {
+    transform: scale(0.95);
+  }
+
+  .mortgage-table-scroll {
+    overflow-x: auto;
+    max-height: 500px;
+    overflow-y: auto;
+  }
+
+  .mortgage-table {
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+    font-size: 0.75rem;
+  }
+
+  .mortgage-table thead {
+    position: sticky;
+    top: 0;
+    background-color: var(--mortgage-color-bg-secondary);
+    z-index: 10;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  }
+
+  .mortgage-table-cell {
+    padding: 0.75rem 0.5rem;
+    color: var(--mortgage-color-text-secondary);
+    font-weight: 500;
+  }
+
+  .mortgage-table thead .mortgage-table-cell {
+    color: var(--mortgage-color-text-light);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .mortgage-table-interest {
+    text-align: right;
+    color: var(--mortgage-color-danger);
+  }
+
+  .mortgage-table thead .mortgage-table-interest {
+    color: var(--mortgage-color-danger);
+  }
+
+  .mortgage-table-principal {
+    text-align: right;
+    color: var(--mortgage-color-success);
+  }
+
+  .mortgage-table thead .mortgage-table-principal {
+    color: var(--mortgage-color-success);
+  }
+
+  .mortgage-table-extra {
+    text-align: right;
+    color: var(--mortgage-color-primary);
+  }
+
+  .mortgage-table thead .mortgage-table-extra {
+    color: var(--mortgage-color-primary);
+  }
+
+  .mortgage-table-balance {
+    text-align: right;
+    color: var(--mortgage-color-text-light);
+    padding-right: 0.5rem;
+  }
+
+  .mortgage-table tbody .mortgage-table-row {
+    border-bottom: 1px solid var(--mortgage-color-border);
+    transition: background-color 0.2s ease;
+  }
+
+  .mortgage-table tbody .mortgage-table-row:hover {
+    background-color: rgba(59, 130, 246, 0.05);
+  }
+
+  .mortgage-table-dash {
+    opacity: 0.2;
+  }
+
+  .mortgage-table-footer {
+    padding: 1.5rem 0.5rem;
+    text-align: center;
+    font-size: 0.625rem;
+    color: var(--mortgage-color-text-light);
+    font-style: italic;
+    background-color: rgba(59, 130, 246, 0.02);
+  }
+
+  .mortgage-table-footer-btn {
+    margin-left: 0.25rem;
+    text-decoration: underline;
+    font-weight: 700;
+    color: var(--mortgage-color-primary);
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+  }
+
+  .mortgage-table-paid {
+    font-style: normal;
+    font-weight: 700;
+    color: var(--mortgage-color-success);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+</style>

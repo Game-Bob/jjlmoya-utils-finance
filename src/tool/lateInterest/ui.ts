@@ -1,0 +1,22 @@
+export interface LateInterestUI {
+  labelTitle: string;
+  labelSimpleTitle: string;
+  labelCompoundTitle: string;
+  labelMonthlyTitle: string;
+  labelSimpleQuestion: string;
+  labelCompoundQuestion: string;
+  labelMonthlyQuestion: string;
+  labelPrincipal: string;
+  labelAnnualRate: string;
+  labelDays: string;
+  labelMonths: string;
+  labelMonthlyRate: string;
+  labelDailyInterest: string;
+  labelTotalInterest: string;
+  labelTotalAmount: string;
+  labelEffectiveRate: string;
+  labelCopyTooltip: string;
+  currencySymbol: string;
+  percentSymbol: string;
+  labelFormula: string;
+}

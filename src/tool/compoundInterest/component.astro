@@ -1,0 +1,697 @@
+---
+import type { KnownLocale } from '../../types';
+import type { CompoundInterestUI } from './ui';
+
+interface Props {
+  locale?: KnownLocale;
+  ui?: Record<string, unknown>;
+}
+
+const { ui } = Astro.props;
+const t = (ui ?? {}) as CompoundInterestUI;
+---
+
+
+<div
+  class="cic-root"
+  data-currency-code={t.currencyCode}
+  data-currency-locale={t.currencyLocale}
+  data-currency-symbol={t.currencySymbol}
+  data-label-year={t.labelYear}
+  data-label-principal={t.labelPrincipal}
+  data-label-interest={t.labelInterest}
+  data-insight-prefix={t.insightPrefix}
+  data-insight-suffix={t.insightSuffix}
+>
+  <div class="cic-header">
+    <div class="cic-header-left">
+      <div class="cic-icon-wrap">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="cic-icon"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M12 20V10"></path>
+          <path d="M18 20V4"></path>
+          <path d="M6 20v-4"></path>
+        </svg>
+      </div>
+      <span class="cic-title">{t.labelTitle}</span>
+    </div>
+    <div class="cic-realtime">
+      <span class="cic-dot"></span>
+      {t.labelRealtime}
+    </div>
+  </div>
+
+  <div class="cic-grid">
+    <div class="cic-panel-left">
+      <div class="cic-fields">
+        <div class="cic-field">
+          <label class="cic-label">{t.labelInitial}</label>
+          <div class="cic-input-wrap">
+            <span class="cic-currency">{t.currencySymbol}</span>
+            <input
+              type="number"
+              id="cic-initial"
+              value="3000"
+              class="cic-input cic-input-prefixed"
+            />
+          </div>
+        </div>
+
+        <div class="cic-field">
+          <label class="cic-label">{t.labelMonthly}</label>
+          <div class="cic-input-wrap">
+            <span class="cic-currency">{t.currencySymbol}</span>
+            <input
+              type="number"
+              id="cic-monthly"
+              value="300"
+              class="cic-input cic-input-prefixed"
+            />
+          </div>
+        </div>
+
+        <div class="cic-grid-2">
+          <div class="cic-field">
+            <label class="cic-label">{t.labelRate}</label>
+            <div class="cic-input-wrap">
+              <input
+                type="number"
+                id="cic-rate"
+                value="8"
+                step="0.1"
+                class="cic-input cic-input-suffixed"
+              />
+              <span class="cic-currency cic-currency-right">%</span>
+            </div>
+          </div>
+          <div class="cic-field">
+            <label class="cic-label">{t.labelYears}</label>
+            <div class="cic-input-wrap">
+              <input
+                type="number"
+                id="cic-years"
+                value="20"
+                class="cic-input"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cic-summary">
+        <div class="cic-summary-row">
+          <div class="cic-summary-label">
+            <span class="cic-dot-neutral"></span>
+            <span class="cic-text-muted">{t.labelMyMoney}</span>
+          </div>
+          <span id="cic-total-invested" class="cic-summary-value">0</span>
+        </div>
+        <div class="cic-summary-row">
+          <div class="cic-summary-label">
+            <span class="cic-dot-accent"></span>
+            <span class="cic-text-accent">{t.labelProfit}</span>
+          </div>
+          <span id="cic-total-interest" class="cic-summary-value cic-summary-value-accent">+0</span>
+        </div>
+        <div class="cic-summary-total">
+          <span class="cic-total-label">{t.labelTotal}</span>
+          <span id="cic-final-amount" class="cic-total-value">0</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="cic-panel-right">
+      <div class="cic-canvas-wrap">
+        <canvas id="cic-chart"></canvas>
+      </div>
+      <div id="cic-insight" class="cic-insight"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  import { CompoundInterestCalculator } from './logic';
+  import Chart from 'chart.js/auto';
+
+  let chart: Chart | null = null;
+
+  const root = document.querySelector('.cic-root') as HTMLElement;
+  const ctx = document.getElementById('cic-chart') as HTMLCanvasElement;
+
+  const initialEl = document.getElementById('cic-initial') as HTMLInputElement;
+  const monthlyEl = document.getElementById('cic-monthly') as HTMLInputElement;
+  const rateEl = document.getElementById('cic-rate') as HTMLInputElement;
+  const yearsEl = document.getElementById('cic-years') as HTMLInputElement;
+
+  const investedOut = document.getElementById('cic-total-invested');
+  const interestOut = document.getElementById('cic-total-interest');
+  const finalOut = document.getElementById('cic-final-amount');
+  const insightBox = document.getElementById('cic-insight');
+
+  const currencyCode = root?.dataset.currencyCode ?? 'EUR';
+  const currencyLocale = root?.dataset.currencyLocale ?? 'es-ES';
+  const labelYear = root?.dataset.labelYear ?? 'Año';
+  const labelPrincipal = root?.dataset.labelPrincipal ?? 'Principal';
+  const labelInterest = root?.dataset.labelInterest ?? 'Intereses';
+  const insightPrefix = root?.dataset.insightPrefix ?? '';
+  const insightSuffix = root?.dataset.insightSuffix ?? '';
+
+  const formatMoney = (val: number): string =>
+    new Intl.NumberFormat(currencyLocale, {
+      style: 'currency',
+      currency: currencyCode,
+      maximumFractionDigits: 0,
+    })
+      .format(val)
+      .replace(/\u00A0/g, ' ');
+
+  const updateSummary = (last: { invested: number; interest: number; total: number }): void => {
+    if (investedOut) investedOut.innerText = formatMoney(last.invested);
+    if (interestOut) interestOut.innerText = formatMoney(last.interest);
+    if (finalOut) finalOut.innerText = formatMoney(last.total);
+  };
+
+  const formatTooltipLabel = (context: unknown): string => {
+    const ctx = context as { dataset: { label: string }; parsed: { y: number | null } };
+    let label = ctx.dataset.label ?? '';
+    if (label) label += ': ';
+    if (ctx.parsed.y !== null) {
+      label += new Intl.NumberFormat(currencyLocale, {
+        style: 'currency',
+        currency: currencyCode,
+        maximumFractionDigits: 0,
+      })
+        .format(ctx.parsed.y)
+        .replace(/\u00A0/g, ' ');
+    }
+    return label;
+  };
+
+  const formatAxisTick = (value: unknown): string => {
+    return (
+      new Intl.NumberFormat(currencyLocale, {
+        notation: 'compact',
+        compactDisplay: 'short',
+      }).format(Number(value)) +
+      ' ' +
+      (root?.dataset.currencySymbol ?? '€')
+    );
+  };
+
+  const getChartOptions = () => ({
+    responsive: true,
+    maintainAspectRatio: false,
+    interaction: { mode: 'index' as const, intersect: false },
+    plugins: {
+      legend: { position: 'bottom' as const },
+      tooltip: {
+        callbacks: {
+          label: formatTooltipLabel,
+        },
+      },
+    },
+    scales: {
+      y: {
+        stacked: true,
+        beginAtZero: true,
+        grid: { color: 'rgba(0, 0, 0, 0.05)' },
+        ticks: {
+          callback: formatAxisTick,
+        },
+      },
+      x: { grid: { display: false } },
+    },
+  });
+
+  const getChartDatasets = (investedData: number[], interestData: number[]) => [
+    {
+      label: labelPrincipal,
+      data: investedData,
+      borderColor: '#94a3b8',
+      backgroundColor: 'rgba(148, 163, 184, 0.2)',
+      fill: true,
+      tension: 0.4,
+      pointRadius: 0,
+      pointHoverRadius: 6,
+    },
+    {
+      label: labelInterest,
+      data: interestData,
+      borderColor: '#10b981',
+      backgroundColor: 'rgba(16, 185, 129, 0.2)',
+      fill: true,
+      tension: 0.4,
+      pointRadius: 0,
+      pointHoverRadius: 6,
+    },
+  ];
+
+  const createChart = (labels: string[], investedData: number[], interestData: number[]): void => {
+    chart = new Chart(ctx, {
+      type: 'line',
+      data: { labels, datasets: getChartDatasets(investedData, interestData) },
+      options: getChartOptions() as Parameters<typeof Chart>[1]['options'],
+    });
+  };
+
+  const findCrossoverYear = (data: Array<{ year: number; interest: number }>, annualContrib: number): number => {
+    for (let i = 1; i < data.length; i++) {
+      const interestYearly = data[i].interest - data[i - 1].interest;
+      if (interestYearly > annualContrib) {
+        return data[i].year;
+      }
+    }
+    return -1;
+  };
+
+  const updateInsight = (crossYear: number): void => {
+    if (crossYear > 0 && insightBox) {
+      insightBox.innerHTML = `${insightPrefix}<span class="cic-insight-year">${crossYear}</span>${insightSuffix}`;
+      insightBox.classList.add('cic-insight-visible');
+    } else if (insightBox) {
+      insightBox.classList.remove('cic-insight-visible');
+    }
+  };
+
+  const update = (): void => {
+    const input = {
+      initialPrincipal: Number(initialEl.value) || 0,
+      monthlyContribution: Number(monthlyEl.value) || 0,
+      annualInterestRate: Number(rateEl.value) || 0,
+      years: Number(yearsEl.value) || 0,
+    };
+
+    const data = CompoundInterestCalculator.calculate(input);
+    if (data.length === 0) return;
+
+    const last = data[data.length - 1];
+    updateSummary(last);
+
+    const labels = data.map((d) => `${labelYear} ${d.year}`);
+    const investedData = data.map((d) => d.invested);
+    const interestData = data.map((d) => d.interest);
+
+    if (chart) {
+      chart.data.labels = labels;
+      chart.data.datasets[0].data = investedData;
+      chart.data.datasets[1].data = interestData;
+      chart.update();
+    } else {
+      createChart(labels, investedData, interestData);
+    }
+
+    const annualContrib = input.monthlyContribution * 12;
+    const crossYear = findCrossoverYear(data, annualContrib);
+    updateInsight(crossYear);
+  };
+
+  [initialEl, monthlyEl, rateEl, yearsEl].forEach((el) => el?.addEventListener('input', update));
+
+  update();
+</script>
+
+<style>
+  .cic-root {
+    --cic-accent: #10b981;
+    --cic-accent-text: #059669;
+    --cic-accent-icon-bg: #d1fae5;
+    --cic-bg: #fff;
+    --cic-bg-panel: rgba(248, 250, 252, 0.3);
+    --cic-bg-card: #fff;
+    --cic-bg-header: rgba(248, 250, 252, 0.5);
+    --cic-border: #e2e8f0;
+    --cic-border-subtle: #f1f5f9;
+    --cic-text: #0f172a;
+    --cic-text-muted: #64748b;
+    --cic-text-subtle: #94a3b8;
+    --cic-input-bg: #fff;
+    --cic-input-border: #e2e8f0;
+    --cic-summary-bg: #fff;
+    --cic-insight-bg: #ecfdf5;
+    --cic-insight-text: #065f46;
+
+    background: var(--cic-bg);
+    border-radius: 1.5rem;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--cic-border-subtle);
+    overflow: hidden;
+  }
+
+  .cic-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--cic-border-subtle);
+    background: var(--cic-bg-header);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .cic-header-left {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .cic-icon-wrap {
+    padding: 0.625rem;
+    background: var(--cic-accent-icon-bg);
+    border-radius: 0.75rem;
+    color: var(--cic-accent-text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cic-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .cic-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--cic-text);
+  }
+
+  .cic-realtime {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    color: var(--cic-text-muted);
+  }
+
+  .cic-dot {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background: var(--cic-accent);
+    animation: cic-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  @keyframes cic-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  .cic-grid {
+    display: grid;
+  }
+
+  .cic-panel-left {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    background: var(--cic-bg-panel);
+    border-bottom: 1px solid var(--cic-border-subtle);
+  }
+
+  .cic-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .cic-grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .cic-label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--cic-text-subtle);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
+  }
+
+  .cic-input-wrap {
+    position: relative;
+  }
+
+  .cic-currency {
+    position: absolute;
+    left: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--cic-text-subtle);
+    font-weight: 700;
+    pointer-events: none;
+    font-size: 0.75rem;
+  }
+
+  .cic-currency-right {
+    left: auto;
+    right: 0.5rem;
+  }
+
+  .cic-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background: var(--cic-input-bg);
+    border: 2px solid var(--cic-input-border);
+    border-radius: 0.75rem;
+    outline: none;
+    transition: border-color 0.2s;
+    color: var(--cic-text);
+    font-weight: 700;
+    font-size: 1.125rem;
+    box-sizing: border-box;
+  }
+
+  .cic-input-prefixed {
+    padding-left: 3.5rem;
+  }
+
+  .cic-input-suffixed {
+    padding-right: 5rem;
+  }
+
+  .cic-input:focus {
+    border-color: var(--cic-accent);
+  }
+
+  .cic-summary {
+    background: var(--cic-summary-bg);
+    border-radius: 1rem;
+    padding: 1rem;
+    border: 1px solid var(--cic-border);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .cic-summary-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.875rem;
+  }
+
+  .cic-summary-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .cic-dot-neutral {
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 50%;
+    background: var(--cic-text-subtle);
+    flex-shrink: 0;
+  }
+
+  .cic-dot-accent {
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 50%;
+    background: var(--cic-accent);
+    flex-shrink: 0;
+  }
+
+  .cic-text-muted {
+    color: var(--cic-text-muted);
+  }
+
+  .cic-text-accent {
+    color: var(--cic-accent-text);
+    font-weight: 500;
+  }
+
+  .cic-summary-value {
+    font-weight: 700;
+    color: var(--cic-text);
+  }
+
+  .cic-summary-value-accent {
+    color: var(--cic-accent-text);
+  }
+
+  .cic-summary-total {
+    padding-top: 0.75rem;
+    margin-top: 0.25rem;
+    border-top: 1px solid var(--cic-border-subtle);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .cic-total-label {
+    color: var(--cic-text-subtle);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .cic-total-value {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--cic-text);
+  }
+
+  .cic-panel-right {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    min-height: 500px;
+  }
+
+  .cic-canvas-wrap {
+    position: relative;
+    width: 100%;
+    flex: 1;
+  }
+
+  .cic-insight {
+    display: none;
+    margin-top: 1rem;
+    padding: 1rem;
+    background: var(--cic-insight-bg);
+    border-radius: 0.75rem;
+    font-size: 0.875rem;
+    color: var(--cic-insight-text);
+    opacity: 0;
+    transition: opacity 0.5s;
+  }
+
+  @media (min-width: 768px) {
+    .cic-insight {
+      display: block;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .cic-grid {
+      grid-template-columns: 4fr 8fr;
+    }
+
+    .cic-panel-left {
+      border-bottom: none;
+      border-right: 1px solid var(--cic-border-subtle);
+    }
+
+    .cic-panel-right {
+      padding: 2rem;
+      min-height: auto;
+    }
+  }
+</style>
+
+<style is:global>
+  .cic-insight.cic-insight-visible {
+    opacity: 1;
+  }
+
+  .cic-insight-year {
+    font-weight: 700;
+    color: #10b981;
+  }
+
+  .theme-dark .cic-root {
+    --cic-accent-text: #34d399;
+    --cic-accent-icon-bg: rgba(16, 185, 129, 0.2);
+    --cic-bg: #1e293b;
+    --cic-bg-panel: rgba(15, 23, 42, 0.1);
+    --cic-bg-card: #1e293b;
+    --cic-bg-header: rgba(30, 41, 59, 0.5);
+    --cic-border: #334155;
+    --cic-border-subtle: #334155;
+    --cic-text: #fff;
+    --cic-text-muted: #94a3b8;
+    --cic-text-subtle: #64748b;
+    --cic-input-bg: #0f172a;
+    --cic-input-border: #334155;
+    --cic-summary-bg: #1e293b;
+    --cic-insight-bg: rgba(16, 185, 129, 0.1);
+    --cic-insight-text: #6ee7b7;
+  }
+
+  .theme-dark .cic-insight-year {
+    color: #fff;
+  }
+
+  [data-theme='dark'] .cic-root {
+    --cic-accent-text: #34d399;
+    --cic-accent-icon-bg: rgba(16, 185, 129, 0.2);
+    --cic-bg: #1e293b;
+    --cic-bg-panel: rgba(15, 23, 42, 0.1);
+    --cic-bg-card: #1e293b;
+    --cic-bg-header: rgba(30, 41, 59, 0.5);
+    --cic-border: #334155;
+    --cic-border-subtle: #334155;
+    --cic-text: #fff;
+    --cic-text-muted: #94a3b8;
+    --cic-text-subtle: #64748b;
+    --cic-input-bg: #0f172a;
+    --cic-input-border: #334155;
+    --cic-summary-bg: #1e293b;
+    --cic-insight-bg: rgba(16, 185, 129, 0.1);
+    --cic-insight-text: #6ee7b7;
+  }
+
+  [data-theme='dark'] .cic-insight-year {
+    color: #fff;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .cic-root {
+      --cic-accent-text: #34d399;
+      --cic-accent-icon-bg: rgba(16, 185, 129, 0.2);
+      --cic-bg: #1e293b;
+      --cic-bg-panel: rgba(15, 23, 42, 0.1);
+      --cic-bg-card: #1e293b;
+      --cic-bg-header: rgba(30, 41, 59, 0.5);
+      --cic-border: #334155;
+      --cic-border-subtle: #334155;
+      --cic-text: #fff;
+      --cic-text-muted: #94a3b8;
+      --cic-text-subtle: #64748b;
+      --cic-input-bg: #0f172a;
+      --cic-input-border: #334155;
+      --cic-summary-bg: #1e293b;
+      --cic-insight-bg: rgba(16, 185, 129, 0.1);
+      --cic-insight-text: #6ee7b7;
+    }
+
+    .cic-insight-year {
+      color: #fff;
+    }
+  }
+</style>

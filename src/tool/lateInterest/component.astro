@@ -1,0 +1,662 @@
+---
+import type { KnownLocale } from '../../types';
+
+interface Props {
+  locale?: KnownLocale;
+  ui?: Record<string, unknown>;
+}
+
+const { ui } = Astro.props;
+---
+
+<div class="li-wrapper">
+  <div class="li-card">
+    <div class="li-tabs">
+      <button class="li-tab li-tab-active" data-type="1">{ui.labelSimpleTitle}</button>
+      <button class="li-tab" data-type="2">{ui.labelCompoundTitle}</button>
+      <button class="li-tab" data-type="3">{ui.labelMonthlyTitle}</button>
+    </div>
+
+    <div class="li-content">
+      <div class="li-type li-type-active" data-type="1">
+        <h3 class="li-type-title">{ui.labelSimpleQuestion}</h3>
+        <div class="li-inputs">
+          <div class="li-input-field">
+            <label for="type1-principal">{ui.labelPrincipal}</label>
+            <div class="li-input-container">
+              <span class="li-unit">{ui.currencySymbol}</span>
+              <input
+                type="number"
+                id="type1-principal"
+                class="li-input li-input-prefixed"
+                data-type="1"
+                data-field="principal"
+              />
+            </div>
+          </div>
+          <div class="li-input-field">
+            <label for="type1-rate">{ui.labelAnnualRate}</label>
+            <div class="li-input-container">
+              <input
+                type="number"
+                id="type1-rate"
+                class="li-input"
+                data-type="1"
+                data-field="rate"
+                step="0.01"
+              />
+              <span class="li-unit">{ui.percentSymbol}</span>
+            </div>
+          </div>
+          <div class="li-input-field">
+            <label for="type1-days">{ui.labelDays}</label>
+            <div class="li-input-container">
+              <input
+                type="number"
+                id="type1-days"
+                class="li-input"
+                data-type="1"
+                data-field="days"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="li-results">
+          <div class="li-result-box">
+            <div class="li-result-label">{ui.labelDailyInterest}</div>
+            <div class="li-result-value" data-type="1" data-result="daily">0</div>
+            <button class="li-copy-btn" data-type="1" data-result="daily" title={ui.labelCopyTooltip}>
+              Copy
+            </button>
+          </div>
+          <div class="li-result-box">
+            <div class="li-result-label">{ui.labelTotalInterest}</div>
+            <div class="li-result-value" data-type="1" data-result="total">0</div>
+            <button class="li-copy-btn" data-type="1" data-result="total" title={ui.labelCopyTooltip}>
+              Copy
+            </button>
+          </div>
+          <div class="li-result-box li-result-main">
+            <div class="li-result-label">{ui.labelTotalAmount}</div>
+            <div class="li-result-value" data-type="1" data-result="amount">0</div>
+            <button class="li-copy-btn" data-type="1" data-result="amount" title={ui.labelCopyTooltip}>
+              Copy
+            </button>
+          </div>
+          <div class="li-result-box">
+            <div class="li-result-label">{ui.labelEffectiveRate}</div>
+            <div class="li-result-value" data-type="1" data-result="rate">0</div>
+            <button class="li-copy-btn" data-type="1" data-result="rate" title={ui.labelCopyTooltip}>
+              Copy
+            </button>
+          </div>
+        </div>
+        <div class="li-formula">{ui.labelFormula}: Capital × (Tasa ÷ 365) × Días</div>
+      </div>
+
+      <div class="li-type" data-type="2">
+        <h3 class="li-type-title">{ui.labelCompoundQuestion}</h3>
+        <div class="li-inputs">
+          <div class="li-input-field">
+            <label for="type2-principal">{ui.labelPrincipal}</label>
+            <div class="li-input-container">
+              <span class="li-unit">{ui.currencySymbol}</span>
+              <input
+                type="number"
+                id="type2-principal"
+                class="li-input li-input-prefixed"
+                data-type="2"
+                data-field="principal"
+              />
+            </div>
+          </div>
+          <div class="li-input-field">
+            <label for="type2-rate">{ui.labelAnnualRate}</label>
+            <div class="li-input-container">
+              <input
+                type="number"
+                id="type2-rate"
+                class="li-input"
+                data-type="2"
+                data-field="rate"
+                step="0.01"
+              />
+              <span class="li-unit">{ui.percentSymbol}</span>
+            </div>
+          </div>
+          <div class="li-input-field">
+            <label for="type2-days">{ui.labelDays}</label>
+            <div class="li-input-container">
+              <input
+                type="number"
+                id="type2-days"
+                class="li-input"
+                data-type="2"
+                data-field="days"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="li-results">
+          <div class="li-result-box">
+            <div class="li-result-label">{ui.labelDailyInterest}</div>
+            <div class="li-result-value" data-type="2" data-result="daily">0</div>
+            <button class="li-copy-btn" data-type="2" data-result="daily" title={ui.labelCopyTooltip}>
+              Copy
+            </button>
+          </div>
+          <div class="li-result-box">
+            <div class="li-result-label">{ui.labelTotalInterest}</div>
+            <div class="li-result-value" data-type="2" data-result="total">0</div>
+            <button class="li-copy-btn" data-type="2" data-result="total" title={ui.labelCopyTooltip}>
+              Copy
+            </button>
+          </div>
+          <div class="li-result-box li-result-main">
+            <div class="li-result-label">{ui.labelTotalAmount}</div>
+            <div class="li-result-value" data-type="2" data-result="amount">0</div>
+            <button class="li-copy-btn" data-type="2" data-result="amount" title={ui.labelCopyTooltip}>
+              Copy
+            </button>
+          </div>
+          <div class="li-result-box">
+            <div class="li-result-label">{ui.labelEffectiveRate}</div>
+            <div class="li-result-value" data-type="2" data-result="rate">0</div>
+            <button class="li-copy-btn" data-type="2" data-result="rate" title={ui.labelCopyTooltip}>
+              Copy
+            </button>
+          </div>
+        </div>
+        <div class="li-formula">{ui.labelFormula}: Capital × (1 + Tasa ÷ 365)^Días</div>
+      </div>
+
+      <div class="li-type" data-type="3">
+        <h3 class="li-type-title">{ui.labelMonthlyQuestion}</h3>
+        <div class="li-inputs">
+          <div class="li-input-field">
+            <label for="type3-principal">{ui.labelPrincipal}</label>
+            <div class="li-input-container">
+              <span class="li-unit">{ui.currencySymbol}</span>
+              <input
+                type="number"
+                id="type3-principal"
+                class="li-input li-input-prefixed"
+                data-type="3"
+                data-field="principal"
+              />
+            </div>
+          </div>
+          <div class="li-input-field">
+            <label for="type3-rate">{ui.labelMonthlyRate}</label>
+            <div class="li-input-container">
+              <input
+                type="number"
+                id="type3-rate"
+                class="li-input"
+                data-type="3"
+                data-field="rate"
+                step="0.01"
+              />
+              <span class="li-unit">{ui.percentSymbol}</span>
+            </div>
+          </div>
+          <div class="li-input-field">
+            <label for="type3-months">{ui.labelMonths}</label>
+            <div class="li-input-container">
+              <input
+                type="number"
+                id="type3-months"
+                class="li-input"
+                data-type="3"
+                data-field="months"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="li-results">
+          <div class="li-result-box">
+            <div class="li-result-label">{ui.labelDailyInterest}</div>
+            <div class="li-result-value" data-type="3" data-result="daily">0</div>
+            <button class="li-copy-btn" data-type="3" data-result="daily" title={ui.labelCopyTooltip}>
+              Copy
+            </button>
+          </div>
+          <div class="li-result-box">
+            <div class="li-result-label">{ui.labelTotalInterest}</div>
+            <div class="li-result-value" data-type="3" data-result="total">0</div>
+            <button class="li-copy-btn" data-type="3" data-result="total" title={ui.labelCopyTooltip}>
+              Copy
+            </button>
+          </div>
+          <div class="li-result-box li-result-main">
+            <div class="li-result-label">{ui.labelTotalAmount}</div>
+            <div class="li-result-value" data-type="3" data-result="amount">0</div>
+            <button class="li-copy-btn" data-type="3" data-result="amount" title={ui.labelCopyTooltip}>
+              Copy
+            </button>
+          </div>
+          <div class="li-result-box">
+            <div class="li-result-label">{ui.labelEffectiveRate}</div>
+            <div class="li-result-value" data-type="3" data-result="rate">0</div>
+            <button class="li-copy-btn" data-type="3" data-result="rate" title={ui.labelCopyTooltip}>
+              Copy
+            </button>
+          </div>
+        </div>
+        <div class="li-formula">{ui.labelFormula}: Capital × (1 + Tasa)^Meses</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style is:global>
+:root {
+  --li-primary: #4b5563;
+  --li-primary-light: #f1f3f5;
+  --li-accent: #7c3a3c;
+  --li-text: #1a202c;
+  --li-text-light: #4a5568;
+  --li-border: #d2d6dc;
+  --li-bg: #fff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --li-primary: #cbd5e1;
+    --li-primary-light: #334155;
+    --li-accent: #d07070;
+    --li-text: #f1f5f9;
+    --li-text-light: #cbd5e1;
+    --li-border: #475569;
+    --li-bg: #1e293b;
+  }
+}
+
+.theme-dark {
+  --li-primary: #cbd5e1;
+  --li-primary-light: #334155;
+  --li-accent: #d07070;
+  --li-text: #f1f5f9;
+  --li-text-light: #cbd5e1;
+  --li-border: #475569;
+  --li-bg: #1e293b;
+}
+
+[data-theme='dark'] {
+  --li-primary: #cbd5e1;
+  --li-primary-light: #334155;
+  --li-accent: #d07070;
+  --li-text: #f1f5f9;
+  --li-text-light: #cbd5e1;
+  --li-border: #475569;
+  --li-bg: #1e293b;
+}
+</style>
+
+<style>
+.li-wrapper {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+.li-card {
+  background: var(--li-bg);
+  border: 1px solid var(--li-border);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.li-tabs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.35rem;
+  margin-bottom: 1.5rem;
+  background: var(--li-primary-light);
+  padding: 0.35rem;
+  border-radius: 8px;
+}
+
+.li-tab {
+  padding: 0.6rem 0.75rem;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--li-text-light);
+  font-weight: 600;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.li-tab:hover {
+  background: var(--li-accent);
+  color: white;
+}
+
+.li-tab-active {
+  background: var(--li-accent);
+  color: white;
+}
+
+.li-content {
+  position: relative;
+}
+
+.li-type {
+  display: none;
+  animation: li-fade-in 0.25s ease-out;
+}
+
+.li-type-active {
+  display: block;
+}
+
+@keyframes li-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.li-type-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--li-text);
+  margin-bottom: 1.2rem;
+}
+
+.li-inputs {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+}
+
+.li-input-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.li-input-field label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--li-text);
+  margin-bottom: 0.3rem;
+}
+
+.li-input-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.li-input {
+  width: 100%;
+  padding: 0.65rem 0.8rem;
+  border: 1px solid var(--li-border);
+  border-radius: 6px;
+  font-size: 0.95rem;
+  background: var(--li-bg);
+  color: var(--li-text);
+  transition: all 0.2s;
+}
+
+.li-input-prefixed {
+  padding-left: 1.8rem;
+}
+
+.li-input:focus {
+  outline: none;
+  border-color: var(--li-accent);
+  box-shadow: 0 0 0 2px var(--li-primary-light);
+}
+
+.li-unit {
+  position: absolute;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--li-accent);
+  pointer-events: none;
+}
+
+.li-input-container .li-unit:first-child {
+  left: 0.8rem;
+}
+
+.li-input-container .li-unit:last-child {
+  right: 0.8rem;
+}
+
+.li-results {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.li-result-box {
+  background: var(--li-primary-light);
+  border: 1px solid var(--li-border);
+  border-radius: 8px;
+  padding: 0.75rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.li-result-main {
+  grid-column: span 2;
+}
+
+.li-result-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--li-text-light);
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.li-result-value {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--li-accent);
+}
+
+.li-result-main .li-result-value {
+  font-size: 1.8rem;
+}
+
+.li-copy-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  padding: 0.35rem 0.6rem;
+  border: none;
+  border-radius: 4px;
+  background: var(--li-accent);
+  color: white;
+  font-weight: 600;
+  font-size: 0.7rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.li-copy-btn:hover {
+  opacity: 0.8;
+}
+
+.li-copy-btn:active {
+  transform: scale(0.95);
+}
+
+.li-formula {
+  background: var(--li-bg);
+  border: 1px solid var(--li-border);
+  padding: 0.75rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  color: var(--li-text-light);
+  border-left: 3px solid var(--li-accent);
+  font-weight: 500;
+}
+
+.li-toast {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  background: var(--li-accent);
+  color: white;
+  padding: 0.85rem 1.2rem;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  z-index: 1000;
+  animation: li-slide-in 0.3s ease-out;
+}
+
+@keyframes li-slide-in {
+  from {
+    transform: translateX(400px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 640px) {
+  .li-wrapper {
+    padding: 1rem;
+  }
+
+  .li-card {
+    padding: 1rem;
+  }
+
+  .li-inputs {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+
+  .li-results {
+    grid-template-columns: 1fr;
+  }
+
+  .li-result-main {
+    grid-column: span 1;
+  }
+}
+</style>
+
+<script>
+  import { LateInterestCalculator } from './logic';
+
+  function showToast(message: string) {
+    const existing = document.querySelector('.li-toast');
+    if (existing) existing.remove();
+
+    const toast = document.createElement('div');
+    toast.className = 'li-toast';
+    toast.textContent = message;
+    document.body.appendChild(toast);
+
+    setTimeout(() => toast.remove(), 2000);
+  }
+
+  function switchType(type: string) {
+    document.querySelectorAll('.li-type').forEach((t) => t.classList.remove('li-type-active'));
+    document.querySelectorAll('.li-tab').forEach((t) => t.classList.remove('li-tab-active'));
+
+    const activeType = document.querySelector(`[data-type="${type}"].li-type`);
+    const activeTab = document.querySelector(`.li-tab[data-type="${type}"]`);
+
+    if (activeType) activeType.classList.add('li-type-active');
+    if (activeTab) activeTab.classList.add('li-tab-active');
+  }
+
+  function formatNumber(value: number): string {
+    return LateInterestCalculator.formatNumber(value);
+  }
+
+  function updateType1() {
+    const principal = parseFloat((document.getElementById('type1-principal') as HTMLInputElement)?.value || '0');
+    const rate = parseFloat((document.getElementById('type1-rate') as HTMLInputElement)?.value || '0');
+    const days = parseFloat((document.getElementById('type1-days') as HTMLInputElement)?.value || '0');
+
+    const result = LateInterestCalculator.calculateSimpleInterest(principal, rate, days);
+    updateResults('1', result);
+  }
+
+  function updateType2() {
+    const principal = parseFloat((document.getElementById('type2-principal') as HTMLInputElement)?.value || '0');
+    const rate = parseFloat((document.getElementById('type2-rate') as HTMLInputElement)?.value || '0');
+    const days = parseFloat((document.getElementById('type2-days') as HTMLInputElement)?.value || '0');
+
+    const result = LateInterestCalculator.calculateCompoundInterest(principal, rate, days);
+    updateResults('2', result);
+  }
+
+  function updateType3() {
+    const principal = parseFloat((document.getElementById('type3-principal') as HTMLInputElement)?.value || '0');
+    const rate = parseFloat((document.getElementById('type3-rate') as HTMLInputElement)?.value || '0');
+    const months = parseFloat((document.getElementById('type3-months') as HTMLInputElement)?.value || '0');
+
+    const result = LateInterestCalculator.calculateMonthlyCompoundInterest(principal, rate, months);
+    updateResults('3', result);
+  }
+
+  function updateResults(type: string, result: any) {
+    const daily = document.querySelector(`[data-type="${type}"][data-result="daily"]`);
+    const total = document.querySelector(`[data-type="${type}"][data-result="total"]`);
+    const amount = document.querySelector(`[data-type="${type}"][data-result="amount"]`);
+    const rate = document.querySelector(`[data-type="${type}"][data-result="rate"]`);
+
+    if (daily) daily.textContent = formatNumber(result.dailyInterest);
+    if (total) total.textContent = formatNumber(result.totalInterest);
+    if (amount) amount.textContent = formatNumber(result.totalAmount);
+    if (rate) rate.textContent = formatNumber(result.effectiveRate);
+  }
+
+  document.querySelectorAll('[data-type="1"].li-input').forEach((input) => {
+    input.addEventListener('input', updateType1);
+  });
+
+  document.querySelectorAll('[data-type="2"].li-input').forEach((input) => {
+    input.addEventListener('input', updateType2);
+  });
+
+  document.querySelectorAll('[data-type="3"].li-input').forEach((input) => {
+    input.addEventListener('input', updateType3);
+  });
+
+  document.querySelectorAll('.li-tab').forEach((tab) => {
+    tab.addEventListener('click', () => {
+      const type = tab.getAttribute('data-type');
+      if (type) switchType(type);
+    });
+  });
+
+  document.querySelectorAll('.li-copy-btn').forEach((btn) => {
+    btn.addEventListener('click', async (e) => {
+      e.preventDefault();
+      const button = btn as HTMLElement;
+      const resultElement = document.querySelector(
+        `[data-type="${button.dataset.type}"][data-result="${button.dataset.result}"]`
+      );
+      if (resultElement) {
+        const text = resultElement.textContent || '';
+        try {
+          await navigator.clipboard.writeText(text);
+          showToast('Copied!');
+        } catch {
+          showToast('Failed to copy');
+        }
+      }
+    });
+  });
+</script>

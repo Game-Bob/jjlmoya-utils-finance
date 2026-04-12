@@ -1,0 +1,640 @@
+---
+import type { KnownLocale } from '../../types';
+
+interface Props {
+  locale?: KnownLocale;
+  ui?: Record<string, unknown>;
+}
+
+const { ui } = Astro.props;
+---
+
+<div class="pc-wrapper">
+  <div class="pc-card">
+    <div class="pc-tabs">
+      <button class="pc-tab pc-tab-active" data-case="1">{ui.labelCase1Title}</button>
+      <button class="pc-tab" data-case="2">{ui.labelCase2Title}</button>
+      <button class="pc-tab" data-case="3">{ui.labelCase3Title}</button>
+      <button class="pc-tab" data-case="4">{ui.labelCase4Title}</button>
+    </div>
+
+    <div class="pc-content">
+      <div class="pc-case pc-case-active" data-case="1">
+        <h3 class="pc-case-title">{ui.labelCase1Question}</h3>
+        <div class="pc-inputs">
+          <div class="pc-input-field">
+            <label for="case1-x">{ui.labelCase1Placeholder1}</label>
+            <div class="pc-input-container">
+              <input
+                type="number"
+                id="case1-x"
+                class="pc-input"
+                data-case="1"
+                data-field="x"
+              />
+              <span class="pc-unit">{ui.percentSymbol}</span>
+            </div>
+          </div>
+          <div class="pc-input-field">
+            <label for="case1-y">{ui.labelCase1Placeholder2}</label>
+            <div class="pc-input-container">
+              <input
+                type="number"
+                id="case1-y"
+                class="pc-input"
+                data-case="1"
+                data-field="y"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="pc-result-display">
+          <div class="pc-result-label">{ui.labelResult}</div>
+          <div class="pc-result-value" data-case="1" data-result="percent-of-number">0</div>
+          <button class="pc-copy-btn" data-case="1" data-result="percent-of-number" title={ui.labelCopyTooltip}>
+            Copy
+          </button>
+        </div>
+        <div class="pc-formula">{ui.labelCase1Formula}</div>
+      </div>
+
+      <div class="pc-case" data-case="2">
+        <h3 class="pc-case-title">{ui.labelCase2Question}</h3>
+        <div class="pc-inputs">
+          <div class="pc-input-field">
+            <label for="case2-x">{ui.labelCase2Placeholder1}</label>
+            <div class="pc-input-container">
+              <input
+                type="number"
+                id="case2-x"
+                class="pc-input"
+                data-case="2"
+                data-field="x"
+              />
+            </div>
+          </div>
+          <div class="pc-input-field">
+            <label for="case2-y">{ui.labelCase2Placeholder2}</label>
+            <div class="pc-input-container">
+              <input
+                type="number"
+                id="case2-y"
+                class="pc-input"
+                data-case="2"
+                data-field="y"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="pc-result-display">
+          <div class="pc-result-label">{ui.labelResult}</div>
+          <div class="pc-result-value" data-case="2" data-result="percentage-of">
+            0<span class="pc-result-unit">{ui.percentSymbol}</span>
+          </div>
+          <button class="pc-copy-btn" data-case="2" data-result="percentage-of" title={ui.labelCopyTooltip}>
+            Copy
+          </button>
+        </div>
+        <div class="pc-formula">{ui.labelCase2Formula}</div>
+      </div>
+
+      <div class="pc-case" data-case="3">
+        <h3 class="pc-case-title">{ui.labelCase3Question}</h3>
+        <div class="pc-inputs">
+          <div class="pc-input-field">
+            <label for="case3-v1">{ui.labelCase3Placeholder1}</label>
+            <div class="pc-input-container">
+              <input
+                type="number"
+                id="case3-v1"
+                class="pc-input"
+                data-case="3"
+                data-field="v1"
+              />
+            </div>
+          </div>
+          <div class="pc-input-field">
+            <label for="case3-v2">{ui.labelCase3Placeholder2}</label>
+            <div class="pc-input-container">
+              <input
+                type="number"
+                id="case3-v2"
+                class="pc-input"
+                data-case="3"
+                data-field="v2"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="pc-result-display">
+          <div class="pc-result-label">{ui.labelDifference}</div>
+          <div class="pc-result-value" data-case="3" data-result="percentage-difference">
+            0<span class="pc-result-unit">{ui.percentSymbol}</span>
+          </div>
+          <button class="pc-copy-btn" data-case="3" data-result="percentage-difference" title={ui.labelCopyTooltip}>
+            Copy
+          </button>
+        </div>
+        <div class="pc-formula">{ui.labelCase3Formula}</div>
+      </div>
+
+      <div class="pc-case" data-case="4">
+        <h3 class="pc-case-title">{ui.labelCase4Question}</h3>
+        <div class="pc-inputs">
+          <div class="pc-input-field">
+            <label for="case4-value">{ui.labelCase4Placeholder1}</label>
+            <div class="pc-input-container">
+              <input
+                type="number"
+                id="case4-value"
+                class="pc-input"
+                data-case="4"
+                data-field="value"
+              />
+            </div>
+          </div>
+          <div class="pc-input-field">
+            <label for="case4-percent">{ui.labelCase4Placeholder2}</label>
+            <div class="pc-input-container">
+              <input
+                type="number"
+                id="case4-percent"
+                class="pc-input"
+                data-case="4"
+                data-field="percent"
+              />
+              <span class="pc-unit">{ui.percentSymbol}</span>
+            </div>
+          </div>
+        </div>
+        <div class="pc-operation-buttons">
+          <button class="pc-op-btn pc-op-add" data-case="4" data-operation="add">
+            {ui.labelCase4AddLabel}
+          </button>
+          <button class="pc-op-btn pc-op-subtract" data-case="4" data-operation="subtract">
+            {ui.labelCase4SubtractLabel}
+          </button>
+        </div>
+        <div class="pc-result-display">
+          <div class="pc-result-label">{ui.labelResult}</div>
+          <div class="pc-result-value" data-case="4" data-result="add-percentage">0</div>
+          <button class="pc-copy-btn" data-case="4" data-result="add-percentage" title={ui.labelCopyTooltip}>
+            Copy
+          </button>
+        </div>
+        <div class="pc-formula">{ui.labelCase4Formula}</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style is:global>
+:root {
+  --pc-primary: #4b5563;
+  --pc-primary-light: #f1f3f5;
+  --pc-accent: #2c7a7b;
+  --pc-success: #2d6a4f;
+  --pc-danger: #9d4456;
+  --pc-text: #1a202c;
+  --pc-text-light: #4a5568;
+  --pc-border: #d2d6dc;
+  --pc-bg: #fff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --pc-primary: #cbd5e1;
+    --pc-primary-light: #334155;
+    --pc-accent: #7dd3c0;
+    --pc-text: #f1f5f9;
+    --pc-text-light: #cbd5e1;
+    --pc-border: #475569;
+    --pc-bg: #1e293b;
+  }
+}
+
+.theme-dark {
+  --pc-primary: #cbd5e1;
+  --pc-primary-light: #334155;
+  --pc-accent: #7dd3c0;
+  --pc-text: #f1f5f9;
+  --pc-text-light: #cbd5e1;
+  --pc-border: #475569;
+  --pc-bg: #1e293b;
+}
+
+[data-theme='dark'] {
+  --pc-primary: #cbd5e1;
+  --pc-primary-light: #334155;
+  --pc-accent: #7dd3c0;
+  --pc-text: #f1f5f9;
+  --pc-text-light: #cbd5e1;
+  --pc-border: #475569;
+  --pc-bg: #1e293b;
+}
+</style>
+
+<style>
+.pc-wrapper {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+.pc-card {
+  background: var(--pc-bg);
+  border: 1px solid var(--pc-border);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.pc-tabs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.35rem;
+  margin-bottom: 1.5rem;
+  background: var(--pc-primary-light);
+  padding: 0.35rem;
+  border-radius: 8px;
+}
+
+.pc-tab {
+  padding: 0.6rem 0.75rem;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--pc-text-light);
+  font-weight: 600;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.pc-tab:hover {
+  background: var(--pc-accent);
+  color: white;
+}
+
+.pc-tab-active {
+  background: var(--pc-accent);
+  color: white;
+}
+
+.pc-content {
+  position: relative;
+}
+
+.pc-case {
+  display: none;
+  animation: pc-fade-in 0.25s ease-out;
+}
+
+.pc-case-active {
+  display: block;
+}
+
+@keyframes pc-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.pc-case-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--pc-text);
+  margin-bottom: 1.2rem;
+}
+
+.pc-inputs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+}
+
+.pc-input-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.pc-input-field label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--pc-text);
+  margin-bottom: 0.3rem;
+}
+
+.pc-input-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.pc-input {
+  width: 100%;
+  padding: 0.65rem 0.8rem;
+  border: 1px solid var(--pc-border);
+  border-radius: 6px;
+  font-size: 0.95rem;
+  background: var(--pc-bg);
+  color: var(--pc-text);
+  transition: all 0.2s;
+}
+
+.pc-input:focus {
+  outline: none;
+  border-color: var(--pc-accent);
+  box-shadow: 0 0 0 2px var(--pc-primary-light);
+}
+
+.pc-unit {
+  position: absolute;
+  right: 0.8rem;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--pc-accent);
+  pointer-events: none;
+}
+
+.pc-operation-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem;
+  margin-bottom: 1.2rem;
+}
+
+.pc-op-btn {
+  padding: 0.75rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  color: white;
+}
+
+.pc-op-add {
+  background: var(--pc-success);
+}
+
+.pc-op-add:hover {
+  background: #1b4332;
+}
+
+.pc-op-subtract {
+  background: var(--pc-danger);
+}
+
+.pc-op-subtract:hover {
+  background: #6d3a43;
+}
+
+.pc-result-display {
+  background: var(--pc-primary-light);
+  border: 1px solid var(--pc-border);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  position: relative;
+}
+
+.pc-result-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--pc-text-light);
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.pc-result-value {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--pc-accent);
+  display: flex;
+  align-items: baseline;
+  gap: 0.3rem;
+}
+
+.pc-result-unit {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--pc-accent);
+}
+
+.pc-copy-btn {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  padding: 0.5rem 0.8rem;
+  border: none;
+  border-radius: 5px;
+  background: var(--pc-accent);
+  color: white;
+  font-weight: 600;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.pc-copy-btn:hover {
+  background: #1f6f6f;
+  transform: scale(1.05);
+}
+
+.pc-copy-btn:active {
+  transform: scale(0.95);
+}
+
+.pc-formula {
+  background: var(--pc-bg);
+  border: 1px solid var(--pc-border);
+  padding: 0.75rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  color: var(--pc-text-light);
+  border-left: 3px solid var(--pc-accent);
+  font-weight: 500;
+}
+
+.pc-toast {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  background: var(--pc-accent);
+  color: white;
+  padding: 0.85rem 1.2rem;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  z-index: 1000;
+  animation: pc-slide-in 0.3s ease-out;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+@keyframes pc-slide-in {
+  from {
+    transform: translateX(400px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 640px) {
+  .pc-wrapper {
+    padding: 1rem;
+  }
+
+  .pc-card {
+    padding: 1rem;
+  }
+
+  .pc-tabs {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.25rem;
+    padding: 0.25rem;
+  }
+
+  .pc-tab {
+    font-size: 0.7rem;
+    padding: 0.5rem;
+  }
+
+  .pc-result-value {
+    font-size: 1.8rem;
+  }
+
+  .pc-result-unit {
+    font-size: 0.9rem;
+  }
+
+  .pc-inputs {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+}
+</style>
+
+<script>
+  import { PercentageCalculator } from './logic';
+
+  function showToast(message: string) {
+    const existing = document.querySelector('.pc-toast');
+    if (existing) existing.remove();
+
+    const toast = document.createElement('div');
+    toast.className = 'pc-toast';
+    toast.textContent = message;
+    document.body.appendChild(toast);
+
+    setTimeout(() => toast.remove(), 2000);
+  }
+
+  function switchTab(caseNum: string) {
+    document.querySelectorAll('.pc-case').forEach((c) => c.classList.remove('pc-case-active'));
+    document.querySelectorAll('.pc-tab').forEach((t) => t.classList.remove('pc-tab-active'));
+
+    const activeCase = document.querySelector(`[data-case="${caseNum}"].pc-case`);
+    const activeTab = document.querySelector(`.pc-tab[data-case="${caseNum}"]`);
+
+    if (activeCase) activeCase.classList.add('pc-case-active');
+    if (activeTab) activeTab.classList.add('pc-tab-active');
+  }
+
+  function formatNumber(value: number): string {
+    return PercentageCalculator.formatNumber(value);
+  }
+
+  function updateCase1() {
+    const x = parseFloat((document.getElementById('case1-x') as HTMLInputElement)?.value || '0');
+    const y = parseFloat((document.getElementById('case1-y') as HTMLInputElement)?.value || '0');
+    const result = document.querySelector('[data-case="1"][data-result="percent-of-number"]');
+    if (result) {
+      const value = PercentageCalculator.calculatePercentOfNumber(x, y);
+      result.textContent = formatNumber(value);
+    }
+  }
+
+  function updateCase2() {
+    const x = parseFloat((document.getElementById('case2-x') as HTMLInputElement)?.value || '0');
+    const y = parseFloat((document.getElementById('case2-y') as HTMLInputElement)?.value || '0');
+    const result = document.querySelector('[data-case="2"][data-result="percentage-of"]');
+    if (result) {
+      const value = PercentageCalculator.calculateWhatPercentageIs(x, y);
+      const displayValue = result as HTMLElement;
+      displayValue.textContent = formatNumber(value);
+      displayValue.innerHTML = `${formatNumber(value)}<span class="pc-result-unit">%</span>`;
+    }
+  }
+
+  function updateCase3() {
+    const v1 = parseFloat((document.getElementById('case3-v1') as HTMLInputElement)?.value || '0');
+    const v2 = parseFloat((document.getElementById('case3-v2') as HTMLInputElement)?.value || '0');
+    const result = document.querySelector('[data-case="3"][data-result="percentage-difference"]');
+    if (result) {
+      const value = PercentageCalculator.calculatePercentageDifference(v1, v2);
+      const displayValue = result as HTMLElement;
+      displayValue.innerHTML = `${formatNumber(value)}<span class="pc-result-unit">%</span>`;
+    }
+  }
+
+  function updateCase4() {
+    const value = parseFloat((document.getElementById('case4-value') as HTMLInputElement)?.value || '0');
+    const percent = parseFloat((document.getElementById('case4-percent') as HTMLInputElement)?.value || '0');
+    const result = document.querySelector('[data-case="4"][data-result="add-percentage"]');
+    if (result) {
+      const addValue = PercentageCalculator.calculateAddPercentage(value, percent);
+      result.textContent = formatNumber(addValue);
+    }
+  }
+
+  function updateAllResults() {
+    updateCase1();
+    updateCase2();
+    updateCase3();
+    updateCase4();
+  }
+
+  document.querySelectorAll('.pc-input').forEach((input) => {
+    input.addEventListener('input', updateAllResults);
+  });
+
+  document.querySelectorAll('.pc-tab').forEach((tab) => {
+    tab.addEventListener('click', () => {
+      const caseNum = tab.getAttribute('data-case');
+      if (caseNum) switchTab(caseNum);
+    });
+  });
+
+  document.querySelectorAll('.pc-copy-btn-big').forEach((btn) => {
+    btn.addEventListener('click', async (e) => {
+      e.preventDefault();
+      const button = btn as HTMLElement;
+      const resultElement = document.querySelector(
+        `[data-case="${button.dataset.case}"][data-result="${button.dataset.result}"]`
+      );
+      if (resultElement) {
+        const text = resultElement.textContent?.replace('%', '') || '';
+        try {
+          await navigator.clipboard.writeText(text);
+          showToast('Copied!');
+        } catch {
+          showToast('Failed to copy');
+        }
+      }
+    });
+  });
+
+  updateAllResults();
+</script>
