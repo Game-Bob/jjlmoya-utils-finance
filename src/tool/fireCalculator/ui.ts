@@ -13,6 +13,7 @@ export interface FIRECalculatorUI {
   labelMagicNumber: string;
   labelMagicNumberDesc: string;
   labelTimeRemaining: string;
+  labelTimeRemainingFormat: string;
   labelAlreadyFI: string;
   labelUnachievable: string;
   labelHiddenCostsChecklist: string;

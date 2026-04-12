@@ -1,0 +1,13 @@
+---
+import { SEORenderer } from '@jjlmoya/utils-shared/components';
+import type { KnownLocale } from '../../types';
+
+interface Props {
+  locale?: KnownLocale;
+  seo?: Array<any>;
+}
+
+const { seo } = Astro.props;
+---
+
+{seo && <SEORenderer content={seo} />}

@@ -10,7 +10,7 @@ interface Props {
 const { ui } = Astro.props;
 ---
 
-<div class="fire-container" id="fire-calculator-main" data-currency-symbol={ui.currencySymbol} data-currency-code={ui.currencyCode} data-currency-locale={ui.currencyLocale}>
+<div class="fire-container" id="fire-calculator-main" data-currency-symbol={ui.currencySymbol} data-currency-code={ui.currencyCode} data-currency-locale={ui.currencyLocale} data-time-format={ui.labelTimeRemainingFormat} data-already-fi={ui.labelAlreadyFI} data-unachievable={ui.labelUnachievable}>
     <div class="fire-grid">
         <div class="fire-panel">
             <div class="fire-input-group">
@@ -544,7 +544,9 @@ const { ui } = Astro.props;
 
     const container = document.querySelector('.fire-container') as HTMLElement;
     const currencyLocale = container?.getAttribute('data-currency-locale') || 'es-ES';
-    const currencySymbol = container?.getAttribute('data-currency-symbol') || '€';
+    const timeFormatTemplate = container?.getAttribute('data-time-format') || 'You have {years} years and {months} months left';
+    const labelAlreadyFI = container?.getAttribute('data-already-fi') || 'You have already achieved financial freedom!';
+    const labelUnachievable = container?.getAttribute('data-unachievable') || 'Goal unachievable with this savings rate';
 
     function formatCurrency(val: number): string {
       return new Intl.NumberFormat(currencyLocale, {
@@ -552,6 +554,59 @@ const { ui } = Astro.props;
         currency: container?.getAttribute('data-currency-code') || 'EUR',
         maximumFractionDigits: 0,
       }).format(val);
+    }
+
+    function updateDisplay(result: ReturnType<typeof FIRELogic.calculateFIRE>, extraCosts: number) {
+      if (fireNumber) fireNumber.textContent = formatCurrency(result.magicNumber);
+      if (valExpenses) {
+        valExpenses.textContent = formatCurrency(result.monthlyExpenses);
+        valExpenses.style.color = extraCosts > 0 ? 'var(--fire-accent)' : 'var(--fire-primary)';
+      }
+      if (valSwr) valSwr.textContent = result.swr.toFixed(1) + ' %';
+      if (valWorth) valWorth.textContent = formatCurrency(result.currentWorth);
+      if (valSavings) valSavings.textContent = formatCurrency(result.monthlySavings);
+      if (valReturn) valReturn.textContent = result.annualReturn.toFixed(1) + ' %';
+    }
+
+    function updateMilestones(result: ReturnType<typeof FIRELogic.calculateFIRE>) {
+      const update = (current: number, target: number, bar: HTMLElement | null, label: HTMLElement | null) => {
+        const pct = Math.min(100, (current / target) * 100);
+        if (bar) bar.style.width = pct + '%';
+        if (label) label.textContent = pct.toFixed(0) + '%';
+      };
+      update(result.currentWorth, result.leanTarget, barLean, labelLean);
+      update(result.currentWorth, result.baristaTarget, barBarista, labelBarista);
+      update(result.currentWorth, result.fatTarget, barFat, labelFat);
+    }
+
+    function updateChart(result: ReturnType<typeof FIRELogic.calculateFIRE>) {
+      if (!chartLine || !chartArea) return;
+      const { wealthHistory } = result;
+      const pointsCount = wealthHistory.length;
+      const maxVal = Math.max(result.magicNumber * 1.1, ...wealthHistory);
+      let d = '';
+      wealthHistory.forEach((v, i) => {
+        const x = (i / (pointsCount - 1)) * 100;
+        const y = 100 - (v / maxVal) * 100;
+        d += (i === 0 ? 'M ' : ' L ') + x + ' ' + y;
+      });
+      chartLine.setAttribute('d', d);
+      chartArea.setAttribute('d', d + ' L 100 100 L 0 100 Z');
+      document.getElementById('svg-chart')?.setAttribute('viewBox', '0 0 100 100');
+    }
+
+    function updateTime(result: ReturnType<typeof FIRELogic.calculateFIRE>) {
+      if (!fireTime) return;
+      if (result.isAlreadyFI) {
+        fireTime.textContent = labelAlreadyFI;
+      } else if (!result.isAchievable) {
+        fireTime.textContent = labelUnachievable;
+      } else {
+        const formatted = timeFormatTemplate
+          .split('{years}').join(String(result.yearsToFI))
+          .split('{months}').join(String(result.monthsToFI));
+        fireTime.textContent = formatted;
+      }
     }
 
     function calculateFIRE() {
@@ -563,71 +618,19 @@ const { ui } = Astro.props;
             extraCosts += parseFloat(check.getAttribute('data-cost') || '0');
         });
 
-        const result = FIRELogic.calculateFIRE(
-          parseFloat(expensesIn.value),
-          parseFloat(swrIn.value),
-          parseFloat(worthIn.value),
-          parseFloat(savingsIn.value),
-          parseFloat(returnIn.value),
-          extraCosts
-        );
+        const result = FIRELogic.calculateFIRE({
+          monthlyExpenses: parseFloat(expensesIn.value),
+          swr: parseFloat(swrIn.value),
+          currentWorth: parseFloat(worthIn.value),
+          monthlySavings: parseFloat(savingsIn.value),
+          annualReturn: parseFloat(returnIn.value),
+          extraCosts,
+        });
 
-        if (fireNumber) fireNumber.textContent = formatCurrency(result.magicNumber);
-        if (valExpenses) {
-            valExpenses.textContent = formatCurrency(result.monthlyExpenses);
-            if (extraCosts > 0) {
-                valExpenses.style.color = 'var(--fire-accent)';
-            } else {
-                valExpenses.style.color = 'var(--fire-primary)';
-            }
-        }
-        if (valSwr) valSwr.textContent = result.swr.toFixed(1) + ' %';
-        if (valWorth) valWorth.textContent = formatCurrency(result.currentWorth);
-        if (valSavings) valSavings.textContent = formatCurrency(result.monthlySavings);
-        if (valReturn) valReturn.textContent = result.annualReturn.toFixed(1) + ' %';
-
-        const updateMilestone = (current: number, target: number, bar: HTMLElement | null, label: HTMLElement | null) => {
-            const pct = Math.min(100, (current / target) * 100);
-            if (bar) bar.style.width = pct + '%';
-            if (label) label.textContent = pct.toFixed(0) + '%';
-        };
-
-        updateMilestone(result.currentWorth, result.leanTarget, barLean, labelLean);
-        updateMilestone(result.currentWorth, result.baristaTarget, barBarista, labelBarista);
-        updateMilestone(result.currentWorth, result.fatTarget, barFat, labelFat);
-
-        if (fireTime) {
-            if (result.isAlreadyFI) {
-                fireTime.textContent = '¡Ya has alcanzado la libertad financiera!';
-            } else if (!result.isAchievable) {
-                fireTime.textContent = 'Meta inalcanzable con este ahorro';
-            } else {
-                const years = result.yearsToFI;
-                const months = result.monthsToFI;
-                fireTime.textContent = `Te faltan ${years} años y ${months} meses`;
-            }
-        }
-
-        if (chartLine && chartArea) {
-            const { wealthHistory } = result;
-            const pointsCount = wealthHistory.length;
-            const maxVal = Math.max(result.magicNumber * 1.1, ...wealthHistory);
-
-            let d = '';
-            wealthHistory.forEach((v, i) => {
-                const x = (i / (pointsCount - 1)) * 100;
-                const y = 100 - (v / maxVal) * 100;
-                d += (i === 0 ? 'M ' : ' L ') + x + ' ' + y;
-            });
-
-            chartLine.setAttribute('d', d);
-
-            const areaD = d + ' L 100 100 L 0 100 Z';
-            chartArea.setAttribute('d', areaD);
-
-            const svg = document.getElementById('svg-chart');
-            if (svg) svg.setAttribute('viewBox', '0 0 100 100');
-        }
+        updateDisplay(result, extraCosts);
+        updateMilestones(result);
+        updateTime(result);
+        updateChart(result);
     }
 
     [expensesIn, swrIn, worthIn, savingsIn, returnIn].forEach((el) => {
@@ -646,51 +649,40 @@ const { ui } = Astro.props;
         calculateFIRE();
     });
 
+    async function exportPDF() {
+      const { default: jsPDF } = await import('jspdf');
+      const { default: html2canvas } = await import('html2canvas');
+      const element = document.getElementById('fire-calculator-main');
+      if (!element) return;
+      const canvas = await html2canvas(element, {
+        scale: 2,
+        useCORS: true,
+        backgroundColor: '#ffffff',
+        onclone: (clonedDoc) => {
+          const clonedEl = clonedDoc.getElementById('fire-calculator-main');
+          if (!clonedEl) return;
+          clonedEl.style.padding = '40px';
+          clonedEl.style.background = '#ffffff';
+          clonedEl.style.color = '#000000';
+          clonedEl.style.width = '1000px';
+          const results = clonedEl.querySelector('.fire-result-panel') as HTMLElement;
+          if (results) {
+            results.style.background = '#f9fafb';
+            results.style.color = '#000000';
+          }
+          const magic = clonedEl.querySelector('.fire-magic-number') as HTMLElement;
+          if (magic) magic.style.color = '#10b981';
+        },
+      });
+      const imgData = canvas.toDataURL('image/png');
+      const pdf = new jsPDF('p', 'pt', 'a4');
+      pdf.addImage(imgData, 'PNG', 0, 0, 595.28, (canvas.height * 595.28) / canvas.width);
+      pdf.save('mi-plan-fire.pdf');
+    }
+
     const btnExport = document.getElementById('btn-export');
-    btnExport?.addEventListener('click', async () => {
-        const { default: jsPDF } = await import('jspdf');
-        const { default: html2canvas } = await import('html2canvas');
-
-        const element = document.getElementById('fire-calculator-main');
-        if (!element) return;
-
-        try {
-            const canvas = await html2canvas(element, {
-                scale: 2,
-                useCORS: true,
-                backgroundColor: '#ffffff',
-                onclone: (clonedDoc) => {
-                    const clonedEl = clonedDoc.getElementById('fire-calculator-main');
-                    if (clonedEl) {
-                        clonedEl.style.padding = '40px';
-                        clonedEl.style.borderRadius = '0';
-                        clonedEl.style.background = '#ffffff';
-                        clonedEl.style.color = '#000000';
-                        clonedEl.style.width = '1000px';
-
-                        const results = clonedEl.querySelector('.fire-result-panel') as HTMLElement;
-                        if (results) {
-                            results.style.background = '#f9fafb';
-                            results.style.borderColor = '#e5e7eb';
-                            results.style.color = '#000000';
-                        }
-
-                        const magicNumber = clonedEl.querySelector('.fire-magic-number') as HTMLElement;
-                        if (magicNumber) magicNumber.style.color = '#10b981';
-                    }
-                },
-            });
-
-            const imgData = canvas.toDataURL('image/png');
-            const imgWidth = 595.28;
-            const imgHeight = (canvas.height * imgWidth) / canvas.width;
-
-            const pdf = new jsPDF('p', 'pt', 'a4');
-            pdf.addImage(imgData, 'PNG', 0, 0, imgWidth, imgHeight);
-            pdf.save('mi-plan-fire.pdf');
-        } catch (error) {
-            console.error('Error generando PDF:', error);
-        }
+    btnExport?.addEventListener('click', () => {
+      exportPDF().catch((error) => console.error('PDF error:', error));
     });
 
     calculateFIRE();
