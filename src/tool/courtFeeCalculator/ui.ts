@@ -17,6 +17,14 @@ export interface CourtFeeCalculatorUI {
   labelCivilOrder: string;
   labelAdministrativeOrder: string;
   labelSocialOrder: string;
+  labelModel696: string;
+  labelOrdinary: string;
+  labelVerbal: string;
+  labelExecutive: string;
+  labelAppeal: string;
+  labelCassation: string;
+  labelAbbreviated: string;
+  labelSupplication: string;
   currencySymbol: string;
   currencyCode: string;
   currencyLocale: string;

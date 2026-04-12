@@ -1,0 +1,427 @@
+---
+import { Icon } from 'astro-icon/components';
+import type { KnownLocale } from '../../types';
+
+interface Props {
+  locale?: KnownLocale;
+  ui?: Record<string, unknown>;
+}
+
+const { ui } = Astro.props;
+---
+
+<div class="ctf-container" data-currency-symbol={ui.currencySymbol} data-currency-code={ui.currencyCode} data-currency-locale={ui.currencyLocale}>
+  <div class="ctf-wrapper">
+    <aside class="ctf-sidebar">
+      <div class="ctf-section-title">
+        <Icon name="mdi:cog" size={16} />
+        {ui.labelLegalParameters}
+      </div>
+
+      <div class="ctf-input-stack">
+        <div class="ctf-input-field">
+          <label for="entity-type">{ui.labelEntityType}</label>
+          <select id="entity-type" class="ctf-input-control">
+            <option value="juridica">{ui.labelEntityJuridica}</option>
+            <option value="fisica">{ui.labelEntityFisica}</option>
+          </select>
+        </div>
+
+        <div class="ctf-input-field">
+          <label for="jurisdiction">{ui.labelJurisdiction}</label>
+          <select id="jurisdiction" class="ctf-input-control">
+            <option value="civil">{ui.labelCivilOrder}</option>
+            <option value="contencioso">{ui.labelAdministrativeOrder}</option>
+            <option value="social">{ui.labelSocialOrder}</option>
+          </select>
+        </div>
+
+        <div class="ctf-input-field">
+          <label for="procedure">{ui.labelProcedure}</label>
+          <select id="procedure" class="ctf-input-control">
+            <option value="ordinario" class="opt-civil">{ui.labelOrdinary} (300€)</option>
+            <option value="monitorio" class="opt-civil">{ui.labelVerbal} (100€)</option>
+            <option value="ejecutivo" class="opt-civil">{ui.labelExecutive} (200€)</option>
+            <option value="apelacion" class="opt-civil">{ui.labelAppeal} (800€)</option>
+            <option value="casacion" class="opt-civil">{ui.labelCassation} (1.200€)</option>
+            <option value="abreviado" class="opt-contencioso" style="display:none">{ui.labelAbbreviated} (200€)</option>
+            <option value="cont-ordinario" class="opt-contencioso" style="display:none">{ui.labelOrdinary} (350€)</option>
+            <option value="cont-apelacion" class="opt-contencioso" style="display:none">{ui.labelAppeal} (800€)</option>
+            <option value="cont-casacion" class="opt-contencioso" style="display:none">{ui.labelCassation} (1.200€)</option>
+            <option value="suplicacion" class="opt-social" style="display:none">{ui.labelSupplication} (500€)</option>
+            <option value="soc-casacion" class="opt-social" style="display:none">{ui.labelCassation} (600€)</option>
+          </select>
+        </div>
+
+        <div class="ctf-input-field" id="amount-container">
+          <label for="claim-amount">{ui.labelClaimAmount}</label>
+          <div style="position: relative;">
+            <input type="number" id="claim-amount" class="ctf-input-control" value="30000" step="1000" />
+            <span style="position: absolute; right: 1rem; top: 50%; transform: translateY(-50%); font-weight: 700; color: var(--ctf-accent);">{ui.currencySymbol}</span>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <main class="ctf-main">
+      <div class="ctf-result-header">
+        <span class="ctf-total-label">{ui.labelEstimatedSettlement}</span>
+        <div id="exento-tag" class="ctf-badge-exento" style="display:none">{ui.labelExemptSubject}</div>
+      </div>
+
+      <div class="ctf-total-display">
+        <Icon name="mdi:gavel" class="ctf-legal-seal" size={120} />
+        <span class="ctf-total-amount" id="val-total">0,00 €</span>
+        <span class="ctf-total-label">{ui.labelModel696}</span>
+      </div>
+
+      <div class="ctf-breakdown-list">
+        <div class="ctf-breakdown-item">
+          <span class="ctf-item-label">{ui.labelFixedQuote}</span>
+          <span class="ctf-item-value" id="val-fixed">0,00 €</span>
+        </div>
+        <div class="ctf-breakdown-item">
+          <span class="ctf-item-label">{ui.labelVariableQuote}</span>
+          <span class="ctf-item-value" id="val-variable">0,00 €</span>
+        </div>
+        <div class="ctf-breakdown-item">
+          <span class="ctf-item-label">{ui.labelTaxableBase}</span>
+          <span class="ctf-item-value" id="val-base">30.000 €</span>
+        </div>
+      </div>
+
+      <footer class="ctf-actions-area">
+        <button class="ctf-btn-copy" id="btn-copy">
+          <Icon name="mdi:content-copy" size={20} />
+          {ui.labelCopySettlement}
+        </button>
+      </footer>
+    </main>
+  </div>
+</div>
+
+<style>
+:root {
+  --ctf-bg-card: #fff;
+  --ctf-border-card: #e2e8f0;
+  --ctf-text-primary: #1e293b;
+  --ctf-text-secondary: #64748b;
+  --ctf-bg-input: #f8fafc;
+  --ctf-border-input: #e2e8f0;
+  --ctf-accent: #3b82f6;
+  --ctf-accent-hover: #2563eb;
+  --ctf-bg-exempt: #dcfce7;
+  --ctf-border-exempt: #bbf7d0;
+}
+
+:global(.theme-dark) {
+  --ctf-bg-card: #1e293b;
+  --ctf-border-card: #334155;
+  --ctf-text-primary: #f1f5f9;
+  --ctf-text-secondary: #cbd5e1;
+  --ctf-bg-input: #0f172a;
+  --ctf-border-input: #334155;
+  --ctf-accent: #60a5fa;
+  --ctf-accent-hover: #3b82f6;
+  --ctf-bg-exempt: rgba(34, 197, 94, 0.1);
+  --ctf-border-exempt: rgba(34, 197, 94, 0.3);
+}
+
+:global([data-theme='dark']) {
+  --ctf-bg-card: #1e293b;
+  --ctf-border-card: #334155;
+  --ctf-text-primary: #f1f5f9;
+  --ctf-text-secondary: #cbd5e1;
+  --ctf-bg-input: #0f172a;
+  --ctf-border-input: #334155;
+  --ctf-accent: #60a5fa;
+  --ctf-accent-hover: #3b82f6;
+  --ctf-bg-exempt: rgba(34, 197, 94, 0.1);
+  --ctf-border-exempt: rgba(34, 197, 94, 0.3);
+}
+
+.ctf-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.ctf-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 2rem;
+  background: var(--ctf-bg-card);
+  border: 1px solid var(--ctf-border-card);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.ctf-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.ctf-section-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--ctf-text-secondary);
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.ctf-section-title :global(svg) {
+  color: var(--ctf-accent);
+}
+
+.ctf-input-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.ctf-input-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.ctf-input-field label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--ctf-text-primary);
+}
+
+.ctf-input-control {
+  padding: 0.75rem;
+  padding-right: 2.5rem;
+  border: 1px solid var(--ctf-border-input);
+  border-radius: 0.5rem;
+  background: var(--ctf-bg-input);
+  color: var(--ctf-text-primary);
+  font-size: 0.875rem;
+  transition: all 0.2s;
+}
+
+.ctf-input-control:focus {
+  outline: none;
+  border-color: var(--ctf-accent);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.ctf-main {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.ctf-result-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.ctf-badge-exento {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: var(--ctf-bg-exempt);
+  border: 1px solid var(--ctf-border-exempt);
+  border-radius: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #16a34a;
+}
+
+.ctf-total-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.05), rgba(99, 102, 241, 0.05));
+  border-radius: 1rem;
+  text-align: center;
+}
+
+.ctf-legal-seal {
+  color: var(--ctf-accent);
+  opacity: 0.3;
+}
+
+.ctf-total-amount {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: var(--ctf-accent);
+}
+
+.ctf-total-label {
+  font-size: 0.875rem;
+  color: var(--ctf-text-secondary);
+}
+
+.ctf-breakdown-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1.5rem;
+  background: var(--ctf-bg-input);
+  border-radius: 1rem;
+}
+
+.ctf-breakdown-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0;
+}
+
+.ctf-item-label {
+  font-size: 0.875rem;
+  color: var(--ctf-text-secondary);
+  font-weight: 500;
+}
+
+.ctf-item-value {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--ctf-text-primary);
+}
+
+.ctf-actions-area {
+  display: flex;
+  gap: 1rem;
+}
+
+.ctf-btn-copy {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0.875rem 1.5rem;
+  background: var(--ctf-accent);
+  color: white;
+  border: none;
+  border-radius: 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.ctf-btn-copy:hover {
+  background: var(--ctf-accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.ctf-btn-copy:active {
+  transform: translateY(0);
+}
+
+.ctf-btn-copy :global(svg) {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+@media (max-width: 768px) {
+  .ctf-wrapper {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
+}
+</style>
+
+<script>
+  import { CourtFeeLogic, type JurisdictionType, type ProcedureType, type EntityType } from './logic';
+
+  const entity = document.getElementById('entity-type') as HTMLSelectElement | null;
+  const juris = document.getElementById('jurisdiction') as HTMLSelectElement | null;
+  const procedure = document.getElementById('procedure') as HTMLSelectElement | null;
+  const amount = document.getElementById('claim-amount') as HTMLInputElement | null;
+  const amountContainer = document.getElementById('amount-container');
+
+  const totalDisp = document.getElementById('val-total');
+  const fixedDisp = document.getElementById('val-fixed');
+  const variableDisp = document.getElementById('val-variable');
+  const baseDisp = document.getElementById('val-base');
+  const exentoTag = document.getElementById('exento-tag');
+  const copyBtn = document.getElementById('btn-copy');
+
+  const container = document.querySelector('.ctf-container') as HTMLElement;
+  const currencyLocale = container?.getAttribute('data-currency-locale') || 'es-ES';
+  const currencyCode = container?.getAttribute('data-currency-code') || 'EUR';
+
+  function formatCurrency(val: number): string {
+    return new Intl.NumberFormat(currencyLocale, {
+      style: 'currency',
+      currency: currencyCode,
+    }).format(val);
+  }
+
+  function filterProcedureOptions(jurisdictionValue: string): string {
+    if (!procedure) return '';
+    const opts = procedure.options;
+    let first = '';
+    for (let i = 0; i < opts.length; i++) {
+      const isMatch = opts[i].classList.contains(`opt-${jurisdictionValue}`);
+      opts[i].style.display = isMatch ? 'block' : 'none';
+      if (isMatch && !first) first = opts[i].value;
+    }
+    return first;
+  }
+
+  function updateAmountContainer(jurisdictionValue: string) {
+    if (amountContainer) {
+      const isSocial = jurisdictionValue === 'social';
+      amountContainer.style.opacity = isSocial ? '0.3' : '1';
+      amountContainer.style.pointerEvents = isSocial ? 'none' : 'auto';
+    }
+  }
+
+  function syncProcedureOptions() {
+    if (!juris || !procedure) return;
+    const first = filterProcedureOptions(juris.value);
+    if (first) procedure.value = first;
+    updateAmountContainer(juris.value);
+    calculate();
+  }
+
+  function displayResults(result: ReturnType<typeof CourtFeeLogic.calculateFee>) {
+    if (exentoTag) exentoTag.style.display = result.isExempt ? 'inline-block' : 'none';
+    if (totalDisp) totalDisp.textContent = formatCurrency(result.totalFee);
+    if (fixedDisp) fixedDisp.textContent = formatCurrency(result.fixedFee);
+    if (variableDisp) variableDisp.textContent = formatCurrency(result.variableFee);
+    if (baseDisp) baseDisp.textContent = result.isExempt ? 'Exento' : formatCurrency(result.taxableBase);
+  }
+
+  function calculate() {
+    if (!entity || !juris || !procedure || !amount) return;
+    const result = CourtFeeLogic.calculateFee(
+      entity.value as EntityType,
+      juris.value as JurisdictionType,
+      procedure.value as ProcedureType,
+      parseFloat(amount.value) || 0
+    );
+    displayResults(result);
+  }
+
+  entity?.addEventListener('change', () => calculate());
+  juris?.addEventListener('change', syncProcedureOptions);
+  procedure?.addEventListener('change', calculate);
+  amount?.addEventListener('input', calculate);
+
+  copyBtn?.addEventListener('click', () => {
+    const text = `Total: ${totalDisp?.textContent || '0,00 €'}\nCuota Fija: ${fixedDisp?.textContent || '0,00 €'}\nCuota Variable: ${variableDisp?.textContent || '0,00 €'}`;
+    navigator.clipboard.writeText(text);
+  });
+
+  syncProcedureOptions();
+  calculate();
+</script>

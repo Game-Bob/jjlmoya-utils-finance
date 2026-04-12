@@ -1,0 +1,32 @@
+export interface FIRECalculatorUI {
+  labelTitle: string;
+  labelDescription: string;
+  labelMonthlyExpenses: string;
+  labelSWR: string;
+  labelCurrentWorth: string;
+  labelMonthlySavings: string;
+  labelAnnualReturn: string;
+  labelFreedomMilestones: string;
+  labelLeanFIRE: string;
+  labelBaristaFIRE: string;
+  labelFatFIRE: string;
+  labelMagicNumber: string;
+  labelMagicNumberDesc: string;
+  labelTimeRemaining: string;
+  labelAlreadyFI: string;
+  labelUnachievable: string;
+  labelHiddenCostsChecklist: string;
+  labelHealth: string;
+  labelTaxes: string;
+  labelHome: string;
+  labelTravel: string;
+  labelEmergency: string;
+  labelSubscriptions: string;
+  labelAdded: string;
+  labelSavePlan: string;
+  labelSWRTooltip: string;
+  labelReturnTooltip: string;
+  currencySymbol: string;
+  currencyCode: string;
+  currencyLocale: string;
+}

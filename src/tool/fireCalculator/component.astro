@@ -1,0 +1,697 @@
+---
+import { Icon } from 'astro-icon/components';
+import type { KnownLocale } from '../../types';
+
+interface Props {
+  locale?: KnownLocale;
+  ui?: Record<string, unknown>;
+}
+
+const { ui } = Astro.props;
+---
+
+<div class="fire-container" id="fire-calculator-main" data-currency-symbol={ui.currencySymbol} data-currency-code={ui.currencyCode} data-currency-locale={ui.currencyLocale}>
+    <div class="fire-grid">
+        <div class="fire-panel">
+            <div class="fire-input-group">
+                <div class="fire-label-row">
+                    <label class="fire-label">{ui.labelMonthlyExpenses}</label>
+                    <span class="fire-value-display" id="val-expenses">2.500 €</span>
+                </div>
+                <input
+                    type="range"
+                    id="fire-expenses"
+                    class="fire-range"
+                    min="500"
+                    max="10000"
+                    step="50"
+                    value="2500"
+                />
+            </div>
+
+            <div class="fire-input-group">
+                <div class="fire-label-row">
+                    <label class="fire-label">
+                        {ui.labelSWR}
+                        <div class="fire-help">
+                            <Icon name="mdi:information-outline" size={16} />
+                            <span class="fire-tooltip">{ui.labelSWRTooltip}</span>
+                        </div>
+                    </label>
+                    <span class="fire-value-display" id="val-swr">4.0 %</span>
+                </div>
+                <input
+                    type="range"
+                    id="fire-swr"
+                    class="fire-range"
+                    min="2.5"
+                    max="6.0"
+                    step="0.1"
+                    value="4.0"
+                />
+            </div>
+
+            <div class="fire-input-group">
+                <div class="fire-label-row">
+                    <label class="fire-label">{ui.labelCurrentWorth}</label>
+                    <span class="fire-value-display" id="val-worth-display">50.000 €</span>
+                </div>
+                <input
+                    type="range"
+                    id="fire-worth"
+                    class="fire-range"
+                    min="0"
+                    max="1000000"
+                    step="1000"
+                    value="50000"
+                />
+            </div>
+
+            <div class="fire-input-group">
+                <div class="fire-label-row">
+                    <label class="fire-label">{ui.labelMonthlySavings}</label>
+                    <span class="fire-value-display" id="val-savings">1.000 €</span>
+                </div>
+                <input
+                    type="range"
+                    id="fire-savings"
+                    class="fire-range"
+                    min="0"
+                    max="5000"
+                    step="50"
+                    value="1000"
+                />
+            </div>
+
+            <div class="fire-input-group">
+                <div class="fire-label-row">
+                    <label class="fire-label">
+                        {ui.labelAnnualReturn}
+                        <div class="fire-help">
+                            <Icon name="mdi:information-outline" size={16} />
+                            <span class="fire-tooltip">{ui.labelReturnTooltip}</span>
+                        </div>
+                    </label>
+                    <span class="fire-value-display" id="val-return">7.0 %</span>
+                </div>
+                <input
+                    type="range"
+                    id="fire-return"
+                    class="fire-range"
+                    min="1"
+                    max="12"
+                    step="0.5"
+                    value="7"
+                />
+            </div>
+
+            <div class="fire-checklist">
+                <h3>{ui.labelFreedomMilestones}</h3>
+                <div class="fire-milestones">
+                    <div class="milestone-item lean">
+                        <div class="milestone-header">
+                            <span>{ui.labelLeanFIRE}</span>
+                            <span id="label-lean">0%</span>
+                        </div>
+                        <div class="milestone-bar-bg">
+                            <div class="milestone-bar-fill" id="bar-lean" style="width: 0%"></div>
+                        </div>
+                    </div>
+                    <div class="milestone-item barista">
+                        <div class="milestone-header">
+                            <span>{ui.labelBaristaFIRE}</span>
+                            <span id="label-barista">0%</span>
+                        </div>
+                        <div class="milestone-bar-bg">
+                            <div class="milestone-bar-fill" id="bar-barista" style="width: 0%"></div>
+                        </div>
+                    </div>
+                    <div class="milestone-item fat">
+                        <div class="milestone-header">
+                            <span>{ui.labelFatFIRE}</span>
+                            <span id="label-fat">0%</span>
+                        </div>
+                        <div class="milestone-bar-bg">
+                            <div class="milestone-bar-fill" id="bar-fat" style="width: 0%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="fire-result-panel">
+            <div class="fire-main-result">
+                <span class="fire-magic-number-label">{ui.labelMagicNumber}</span>
+                <div class="fire-magic-number" id="fire-number">750.000 €</div>
+                <div class="fire-countdown" id="fire-time">{ui.labelTimeRemaining}</div>
+            </div>
+
+            <div class="fire-chart-container" id="fire-chart">
+                <svg class="fire-line-svg" preserveAspectRatio="none" id="svg-chart">
+                    <path class="fire-path-savings" id="chart-area" d="" />
+                    <path class="fire-path" id="chart-line" d="" />
+                </svg>
+            </div>
+
+            <div class="fire-checklist">
+                <h3>{ui.labelHiddenCostsChecklist}</h3>
+                <div class="checklist-grid" id="fire-checklist-grid">
+                    <label class="checklist-item"><input type="checkbox" data-cost="200" /> {ui.labelHealth}</label>
+                    <label class="checklist-item"><input type="checkbox" data-cost="150" /> {ui.labelTaxes}</label>
+                    <label class="checklist-item"><input type="checkbox" data-cost="100" /> {ui.labelHome}</label>
+                    <label class="checklist-item"><input type="checkbox" data-cost="300" /> {ui.labelTravel}</label>
+                    <label class="checklist-item"><input type="checkbox" data-cost="100" /> {ui.labelEmergency}</label>
+                    <label class="checklist-item"><input type="checkbox" data-cost="50" /> {ui.labelSubscriptions}</label>
+                </div>
+                <div id="checklist-feedback" class="checklist-feedback"></div>
+            </div>
+
+            <div class="fire-actions">
+                <button class="fire-btn fire-btn-primary" id="btn-export">
+                    <Icon name="mdi:file-pdf-box" size={20} />
+                    {ui.labelSavePlan}
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+:root {
+    --fire-primary: #10b981;
+    --fire-primary-hover: #059669;
+    --fire-secondary: #3b82f6;
+    --fire-accent: #f59e0b;
+    --fire-bg: rgba(255, 255, 255, 0.7);
+    --fire-card-bg: rgba(255, 255, 255, 0.8);
+    --fire-text: #1f2937;
+    --fire-text-muted: #6b7280;
+    --fire-border: rgba(16, 185, 129, 0.2);
+    --fire-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+}
+
+:global(.theme-dark) {
+    --fire-bg: rgba(17, 24, 39, 0.7);
+    --fire-card-bg: rgba(31, 41, 55, 0.8);
+    --fire-text: #f3f4f6;
+    --fire-text-muted: #9ca3af;
+    --fire-border: rgba(16, 185, 129, 0.3);
+}
+
+:global([data-theme='dark']) {
+    --fire-bg: rgba(17, 24, 39, 0.7);
+    --fire-card-bg: rgba(31, 41, 55, 0.8);
+    --fire-text: #f3f4f6;
+    --fire-text-muted: #9ca3af;
+    --fire-border: rgba(16, 185, 129, 0.3);
+}
+
+.fire-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 24px;
+    background: var(--fire-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--fire-border);
+    box-shadow: var(--fire-shadow);
+    color: var(--fire-text);
+}
+
+.fire-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.fire-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.fire-input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.fire-label-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.fire-label {
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.fire-value-display {
+    font-weight: 700;
+    color: var(--fire-primary);
+    background: var(--fire-card-bg);
+    padding: 2px 8px;
+    border-radius: 6px;
+    font-size: 1.1rem;
+}
+
+.fire-range {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 6px;
+    background: var(--fire-border);
+    border-radius: 5px;
+    outline: none;
+}
+
+.fire-range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: var(--fire-primary);
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: 0 2px 6px rgba(16, 185, 129, 0.4);
+}
+
+.fire-range::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: var(--fire-primary);
+    cursor: pointer;
+    border-radius: 50%;
+    border: none;
+    box-shadow: 0 2px 6px rgba(16, 185, 129, 0.4);
+}
+
+.fire-help {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    cursor: help;
+    color: var(--fire-secondary);
+    position: relative;
+}
+
+.fire-tooltip {
+    display: none;
+    position: absolute;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--fire-card-bg);
+    border: 1px solid var(--fire-border);
+    color: var(--fire-text-muted);
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    white-space: nowrap;
+    z-index: 10;
+    box-shadow: var(--fire-shadow);
+}
+
+.fire-help:hover .fire-tooltip {
+    display: block;
+}
+
+.fire-checklist {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.fire-checklist h3 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.fire-milestones {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.milestone-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.milestone-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.milestone-item.lean .milestone-bar-fill {
+    background: linear-gradient(90deg, #ef4444, #f97316);
+}
+
+.milestone-item.barista .milestone-bar-fill {
+    background: linear-gradient(90deg, #f59e0b, #f59e0b);
+}
+
+.milestone-item.fat .milestone-bar-fill {
+    background: linear-gradient(90deg, #10b981, #14b8a6);
+}
+
+.milestone-bar-bg {
+    width: 100%;
+    height: 10px;
+    background: var(--fire-border);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.milestone-bar-fill {
+    height: 100%;
+    transition: width 0.3s ease;
+    border-radius: 5px;
+}
+
+.fire-result-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.fire-main-result {
+    text-align: center;
+    padding: 1.5rem;
+    background: var(--fire-card-bg);
+    border-radius: 12px;
+    border: 1px solid var(--fire-border);
+}
+
+.fire-magic-number-label {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--fire-text-muted);
+    margin-bottom: 0.5rem;
+}
+
+.fire-magic-number {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--fire-primary);
+    margin-bottom: 0.5rem;
+}
+
+.fire-countdown {
+    font-size: 0.95rem;
+    color: var(--fire-text-muted);
+}
+
+.fire-chart-container {
+    width: 100%;
+    height: 200px;
+    background: var(--fire-card-bg);
+    border-radius: 12px;
+    border: 1px solid var(--fire-border);
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.fire-line-svg {
+    width: 100%;
+    height: 100%;
+}
+
+.fire-path {
+    fill: none;
+    stroke: var(--fire-primary);
+    stroke-width: 2;
+}
+
+.fire-path-savings {
+    fill: rgba(16, 185, 129, 0.1);
+}
+
+.checklist-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.checklist-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.checklist-item input[type="checkbox"] {
+    cursor: pointer;
+    accent-color: var(--fire-primary);
+}
+
+.checklist-feedback {
+    display: none;
+    padding: 0.75rem;
+    background: rgba(16, 185, 129, 0.1);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    border-radius: 8px;
+    color: var(--fire-primary);
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.checklist-feedback.visible {
+    display: block;
+}
+
+.fire-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.fire-btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.fire-btn-primary {
+    background: var(--fire-primary);
+    color: white;
+}
+
+.fire-btn-primary:hover {
+    background: var(--fire-primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+@media (max-width: 768px) {
+    .fire-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .fire-container {
+        padding: 1rem;
+    }
+
+    .checklist-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+
+<script>
+    import { FIRELogic } from './logic';
+
+    const expensesIn = document.getElementById('fire-expenses') as HTMLInputElement | null;
+    const swrIn = document.getElementById('fire-swr') as HTMLInputElement | null;
+    const worthIn = document.getElementById('fire-worth') as HTMLInputElement | null;
+    const savingsIn = document.getElementById('fire-savings') as HTMLInputElement | null;
+    const returnIn = document.getElementById('fire-return') as HTMLInputElement | null;
+
+    const valExpenses = document.getElementById('val-expenses');
+    const valSwr = document.getElementById('val-swr');
+    const valWorth = document.getElementById('val-worth-display');
+    const valSavings = document.getElementById('val-savings');
+    const valReturn = document.getElementById('val-return');
+
+    const fireNumber = document.getElementById('fire-number');
+    const fireTime = document.getElementById('fire-time');
+
+    const barLean = document.getElementById('bar-lean');
+    const barBarista = document.getElementById('bar-barista');
+    const barFat = document.getElementById('bar-fat');
+    const labelLean = document.getElementById('label-lean');
+    const labelBarista = document.getElementById('label-barista');
+    const labelFat = document.getElementById('label-fat');
+
+    const checklistGrid = document.getElementById('fire-checklist-grid');
+    const checklistFeedback = document.getElementById('checklist-feedback');
+
+    const chartLine = document.getElementById('chart-line') as SVGPathElement | null;
+    const chartArea = document.getElementById('chart-area') as SVGPathElement | null;
+
+    const container = document.querySelector('.fire-container') as HTMLElement;
+    const currencyLocale = container?.getAttribute('data-currency-locale') || 'es-ES';
+    const currencySymbol = container?.getAttribute('data-currency-symbol') || '€';
+
+    function formatCurrency(val: number): string {
+      return new Intl.NumberFormat(currencyLocale, {
+        style: 'currency',
+        currency: container?.getAttribute('data-currency-code') || 'EUR',
+        maximumFractionDigits: 0,
+      }).format(val);
+    }
+
+    function calculateFIRE() {
+        if (!expensesIn || !swrIn || !worthIn || !savingsIn || !returnIn) return;
+
+        let extraCosts = 0;
+        const checks = checklistGrid?.querySelectorAll('input[type="checkbox"]:checked') as NodeListOf<HTMLInputElement>;
+        checks.forEach((check) => {
+            extraCosts += parseFloat(check.getAttribute('data-cost') || '0');
+        });
+
+        const result = FIRELogic.calculateFIRE(
+          parseFloat(expensesIn.value),
+          parseFloat(swrIn.value),
+          parseFloat(worthIn.value),
+          parseFloat(savingsIn.value),
+          parseFloat(returnIn.value),
+          extraCosts
+        );
+
+        if (fireNumber) fireNumber.textContent = formatCurrency(result.magicNumber);
+        if (valExpenses) {
+            valExpenses.textContent = formatCurrency(result.monthlyExpenses);
+            if (extraCosts > 0) {
+                valExpenses.style.color = 'var(--fire-accent)';
+            } else {
+                valExpenses.style.color = 'var(--fire-primary)';
+            }
+        }
+        if (valSwr) valSwr.textContent = result.swr.toFixed(1) + ' %';
+        if (valWorth) valWorth.textContent = formatCurrency(result.currentWorth);
+        if (valSavings) valSavings.textContent = formatCurrency(result.monthlySavings);
+        if (valReturn) valReturn.textContent = result.annualReturn.toFixed(1) + ' %';
+
+        const updateMilestone = (current: number, target: number, bar: HTMLElement | null, label: HTMLElement | null) => {
+            const pct = Math.min(100, (current / target) * 100);
+            if (bar) bar.style.width = pct + '%';
+            if (label) label.textContent = pct.toFixed(0) + '%';
+        };
+
+        updateMilestone(result.currentWorth, result.leanTarget, barLean, labelLean);
+        updateMilestone(result.currentWorth, result.baristaTarget, barBarista, labelBarista);
+        updateMilestone(result.currentWorth, result.fatTarget, barFat, labelFat);
+
+        if (fireTime) {
+            if (result.isAlreadyFI) {
+                fireTime.textContent = '¡Ya has alcanzado la libertad financiera!';
+            } else if (!result.isAchievable) {
+                fireTime.textContent = 'Meta inalcanzable con este ahorro';
+            } else {
+                const years = result.yearsToFI;
+                const months = result.monthsToFI;
+                fireTime.textContent = `Te faltan ${years} años y ${months} meses`;
+            }
+        }
+
+        if (chartLine && chartArea) {
+            const { wealthHistory } = result;
+            const pointsCount = wealthHistory.length;
+            const maxVal = Math.max(result.magicNumber * 1.1, ...wealthHistory);
+
+            let d = '';
+            wealthHistory.forEach((v, i) => {
+                const x = (i / (pointsCount - 1)) * 100;
+                const y = 100 - (v / maxVal) * 100;
+                d += (i === 0 ? 'M ' : ' L ') + x + ' ' + y;
+            });
+
+            chartLine.setAttribute('d', d);
+
+            const areaD = d + ' L 100 100 L 0 100 Z';
+            chartArea.setAttribute('d', areaD);
+
+            const svg = document.getElementById('svg-chart');
+            if (svg) svg.setAttribute('viewBox', '0 0 100 100');
+        }
+    }
+
+    [expensesIn, swrIn, worthIn, savingsIn, returnIn].forEach((el) => {
+        el?.addEventListener('input', calculateFIRE);
+    });
+
+    checklistGrid?.addEventListener('change', (e) => {
+        const target = e.target as HTMLInputElement;
+        if (target && checklistFeedback) {
+            if (target.checked) {
+                checklistFeedback.textContent = `Añadido: ${target.parentElement?.textContent?.trim()}`;
+                checklistFeedback.classList.add('visible');
+                setTimeout(() => checklistFeedback.classList.remove('visible'), 2000);
+            }
+        }
+        calculateFIRE();
+    });
+
+    const btnExport = document.getElementById('btn-export');
+    btnExport?.addEventListener('click', async () => {
+        const { default: jsPDF } = await import('jspdf');
+        const { default: html2canvas } = await import('html2canvas');
+
+        const element = document.getElementById('fire-calculator-main');
+        if (!element) return;
+
+        try {
+            const canvas = await html2canvas(element, {
+                scale: 2,
+                useCORS: true,
+                backgroundColor: '#ffffff',
+                onclone: (clonedDoc) => {
+                    const clonedEl = clonedDoc.getElementById('fire-calculator-main');
+                    if (clonedEl) {
+                        clonedEl.style.padding = '40px';
+                        clonedEl.style.borderRadius = '0';
+                        clonedEl.style.background = '#ffffff';
+                        clonedEl.style.color = '#000000';
+                        clonedEl.style.width = '1000px';
+
+                        const results = clonedEl.querySelector('.fire-result-panel') as HTMLElement;
+                        if (results) {
+                            results.style.background = '#f9fafb';
+                            results.style.borderColor = '#e5e7eb';
+                            results.style.color = '#000000';
+                        }
+
+                        const magicNumber = clonedEl.querySelector('.fire-magic-number') as HTMLElement;
+                        if (magicNumber) magicNumber.style.color = '#10b981';
+                    }
+                },
+            });
+
+            const imgData = canvas.toDataURL('image/png');
+            const imgWidth = 595.28;
+            const imgHeight = (canvas.height * imgWidth) / canvas.width;
+
+            const pdf = new jsPDF('p', 'pt', 'a4');
+            pdf.addImage(imgData, 'PNG', 0, 0, imgWidth, imgHeight);
+            pdf.save('mi-plan-fire.pdf');
+        } catch (error) {
+            console.error('Error generando PDF:', error);
+        }
+    });
+
+    calculateFIRE();
+</script>
