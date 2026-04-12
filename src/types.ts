@@ -23,7 +23,7 @@ export interface HowToStep {
   text: string;
 }
 
-export interface ToolLocaleContent<TUI extends Record<string, string> = Record<string, string>> {
+export interface ToolLocaleContent<TUI extends Record<string, unknown> = Record<string, unknown>> {
   slug: string;
   title: string;
   description: string;
@@ -35,6 +35,7 @@ export interface ToolLocaleContent<TUI extends Record<string, string> = Record<s
   bibliography: BibliographyEntry[];
   howTo: HowToStep[];
   schemas: WithContext<Thing>[];
+  gameTranslations?: Record<string, { name: string; description: string }>;
 }
 
 export interface CategoryLocaleContent {

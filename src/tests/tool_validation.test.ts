@@ -4,8 +4,8 @@ import { financeCategory } from '../data';
 
 describe('Tool Validation Suite', () => {
   describe('Library Registration', () => {
-    it('should have 5 tools in ALL_TOOLS (compoundInterest, mortgage, inflation, percentageCalculator, lateInterest)', () => {
-      expect(ALL_TOOLS.length).toBe(5);
+    it('should have 8 tools in ALL_TOOLS (compoundInterest, mortgage, inflation, percentageCalculator, lateInterest, ibanBicSwift, rentIncrease, lotteryOptimizer)', () => {
+      expect(ALL_TOOLS.length).toBe(8);
     });
 
     it('financeCategory should be defined', () => {

@@ -1,0 +1,33 @@
+export interface LotteryOptimizerUI {
+  gameTranslations?: Record<string, { name: string; description: string }>;
+  labelTitle: string;
+  labelDescription: string;
+  labelSelectGame: string;
+  labelConfigurePlay: string;
+  labelAdjustQuantity: string;
+  labelTotalInvestment: string;
+  labelTickets: string;
+  labelUnits: string;
+  labelExposureAnalysis: string;
+  labelSelectLottery: string;
+  labelOptimalCutoff: string;
+  labelProbabilitySuccess: string;
+  labelExpectedValue: string;
+  labelReturnTheoretical: string;
+  labelSocialReturnIndex: string;
+  labelLow: string;
+  labelMedium: string;
+  labelHigh: string;
+  labelComparison: string;
+  labelLottery: string;
+  labelCost: string;
+  labelTypicalPrize: string;
+  labelDifficulty: string;
+  labelAccessible: string;
+  labelDifficult: string;
+  labelExtreme: string;
+  labelNote: string;
+  currencySymbol: string;
+  currencyCode: string;
+  currencyLocale: string;
+}

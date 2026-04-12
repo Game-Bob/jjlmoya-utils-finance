@@ -1,0 +1,863 @@
+---
+import { Icon } from 'astro-icon/components';
+import type { KnownLocale } from '../../types';
+
+interface Props {
+  locale?: KnownLocale;
+  ui?: Record<string, unknown>;
+}
+
+const { ui } = Astro.props;
+---
+
+<div class="lo-container" data-currency-symbol={ui.currencySymbol} data-currency-code={ui.currencyCode} data-currency-locale={ui.currencyLocale} data-label-units={ui.labelUnits} data-label-low={ui.labelLow} data-label-medium={ui.labelMedium} data-label-high={ui.labelHigh} data-label-accessible={ui.labelAccessible} data-label-difficult={ui.labelDifficult} data-label-extreme={ui.labelExtreme} data-label-optimal={ui.labelOptimalCutoff} data-game-translations={JSON.stringify(ui.gameTranslations)}>
+    <div class="lo-games-grid">
+        {['gordo', 'nino', 'euromillones', 'primitiva', 'bonoloto'].map((gameId) => (
+            <button class="lo-game-btn" data-game-btn data-id={gameId}>
+                <div class="lo-game-icon">
+                    {gameId === 'gordo' || gameId === 'nino' ? (
+                        <Icon name="mdi:gift" />
+                    ) : (
+                        <Icon name="mdi:dice-multiple" />
+                    )}
+                </div>
+                <h4 class="lo-game-name">-</h4>
+                <p class="lo-game-description">-</p>
+                <div class="lo-game-footer">
+                    <span class="lo-game-odds">-</span>
+                    <Icon name="mdi:arrow-right" class="lo-arrow-icon" />
+                </div>
+            </button>
+        ))}
+    </div>
+
+    <div id="calculator-panel" class="lo-panel lo-hidden">
+        <div class="lo-panel-card">
+            <div class="lo-panel-header">
+                <div>
+                    <h3 class="lo-panel-title">{ui.labelConfigurePlay}</h3>
+                    <p class="lo-panel-subtitle">{ui.labelAdjustQuantity}</p>
+                </div>
+                <div class="lo-investment-badge">
+                    <div>
+                        <p class="lo-badge-label">{ui.labelTotalInvestment}</p>
+                        <p class="lo-badge-value" id="display-total-cost">0,00€</p>
+                    </div>
+                    <div class="lo-badge-icon">
+                        <Icon name="mdi:credit-card" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="lo-panel-content">
+                <div class="lo-input-section">
+                    <div class="lo-slider-group">
+                        <div class="lo-slider-header">
+                            <label>{ui.labelTickets}</label>
+                            <span class="lo-slider-value" id="ticket-count-display">1</span>
+                        </div>
+                        <input type="range" id="ticket-slider" min="1" max="100" value="1" class="lo-slider" />
+                        <div class="lo-slider-labels">
+                            <span>1 {ui.labelUnits}</span>
+                            <span>100 {ui.labelUnits}</span>
+                        </div>
+                    </div>
+
+                    <div class="lo-recommendation-box">
+                        <div class="lo-recommendation-header">
+                            <Icon name="mdi:alert-circle" class="lo-alert-icon" />
+                            <h4>{ui.labelExposureAnalysis}</h4>
+                        </div>
+                        <p class="lo-recommendation-text" id="recommendation-text">{ui.labelSelectLottery}</p>
+                        <div id="optimal-tag" class="lo-optimal-tag lo-hidden">
+                            <span>{ui.labelOptimalCutoff}: <span id="optimal-count">0</span> {ui.labelUnits}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lo-stats-grid">
+                    <div class="lo-stat-card">
+                        <p class="lo-stat-label">{ui.labelProbabilitySuccess}</p>
+                        <p class="lo-stat-value" id="stat-probability">0.00%</p>
+                        <div class="lo-stat-bar">
+                            <div class="lo-stat-bar-fill" id="prob-bar"></div>
+                        </div>
+                    </div>
+
+                    <div class="lo-stat-card">
+                        <p class="lo-stat-label">{ui.labelExpectedValue}</p>
+                        <p class="lo-stat-value" id="stat-ev">-0.00€</p>
+                        <p class="lo-stat-hint">{ui.labelReturnTheoretical}</p>
+                    </div>
+
+                    <div class="lo-stat-card lo-stat-card-full">
+                        <div class="lo-stat-header">
+                            <p class="lo-stat-label">{ui.labelSocialReturnIndex}</p>
+                            <span class="lo-efficiency-label" id="efficiency-label">{ui.labelLow}</span>
+                        </div>
+                        <div class="lo-efficiency-value">
+                            <p class="lo-stat-value" id="stat-efficiency">0.0</p>
+                            <p class="lo-efficiency-max">/ 100</p>
+                        </div>
+                        <div class="lo-efficiency-segments" id="efficiency-segments">
+                            {[...Array(10)].map((_, i) => (
+                                <div class="lo-efficiency-segment" data-index={i}></div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="lo-comparison-section">
+        <div class="lo-comparison-header">
+            <div class="lo-comparison-icon">
+                <Icon name="mdi:chart-bar" />
+            </div>
+            <div>
+                <h3>{ui.labelComparison}</h3>
+                <p>{ui.labelCost} vs {ui.labelTypicalPrize}</p>
+            </div>
+        </div>
+
+        <div class="lo-table-wrapper">
+            <table class="lo-table">
+                <thead>
+                    <tr>
+                        <th>{ui.labelLottery}</th>
+                        <th class="lo-table-right">{ui.labelCost}</th>
+                        <th class="lo-table-right">{ui.labelTypicalPrize}</th>
+                        <th class="lo-table-right">{ui.labelDifficulty}</th>
+                    </tr>
+                </thead>
+                <tbody id="comparison-tbody">
+                </tbody>
+            </table>
+        </div>
+
+        <p class="lo-table-note">{ui.labelNote}</p>
+    </div>
+</div>
+
+<style>
+:root {
+    --lo-bg-card: #fff;
+    --lo-border-card: #eef2f6;
+    --lo-shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 20px 40px -8px rgba(0, 0, 0, 0.05);
+    --lo-text-title: #0f172a;
+    --lo-text-secondary: #64748b;
+    --lo-text-primary: #1e293b;
+    --lo-bg-input: #f8fafc;
+    --lo-border-input: #f1f5f9;
+    --lo-focus-border: #10b981;
+    --lo-focus-ring: rgba(16, 185, 129, 0.15);
+    --lo-icon-color: #10b981;
+    --lo-bg-button: #0f172a;
+    --lo-text-button: #fff;
+    --lo-bg-hover: #1e293b;
+    --lo-bg-stat: #fff;
+    --lo-border-stat: #eef2f6;
+    --lo-bar-bg: #f1f5f9;
+    --lo-bar-fill: #10b981;
+    --lo-recommendation-bg: #eef5ff;
+    --lo-recommendation-border: #d0e4ff;
+    --lo-recommendation-icon: #3b82f6;
+}
+
+:global(.theme-dark) {
+    --lo-bg-card: #0f172a;
+    --lo-border-card: rgba(255, 255, 255, 0.05);
+    --lo-text-title: #f8fafc;
+    --lo-text-secondary: #94a3b8;
+    --lo-text-primary: #f8fafc;
+    --lo-bg-input: #1e293b;
+    --lo-border-input: #334155;
+    --lo-focus-border: #10b981;
+    --lo-focus-ring: rgba(16, 185, 129, 0.15);
+    --lo-icon-color: #34d399;
+    --lo-bg-button: #10b981;
+    --lo-text-button: #fff;
+    --lo-bg-hover: #059669;
+    --lo-bg-stat: #1e293b;
+    --lo-border-stat: rgba(255, 255, 255, 0.05);
+    --lo-bar-bg: #1e293b;
+    --lo-bar-fill: #10b981;
+    --lo-recommendation-bg: rgba(59, 130, 246, 0.1);
+    --lo-recommendation-border: rgba(59, 130, 246, 0.2);
+    --lo-recommendation-icon: #60a5fa;
+}
+
+:global([data-theme='dark']) {
+    --lo-bg-card: #0f172a;
+    --lo-border-card: rgba(255, 255, 255, 0.05);
+    --lo-text-title: #f8fafc;
+    --lo-text-secondary: #94a3b8;
+    --lo-text-primary: #f8fafc;
+    --lo-bg-input: #1e293b;
+    --lo-border-input: #334155;
+    --lo-focus-border: #10b981;
+    --lo-focus-ring: rgba(16, 185, 129, 0.15);
+    --lo-icon-color: #34d399;
+    --lo-bg-button: #10b981;
+    --lo-text-button: #fff;
+    --lo-bg-hover: #059669;
+    --lo-bg-stat: #1e293b;
+    --lo-border-stat: rgba(255, 255, 255, 0.05);
+    --lo-bar-bg: #1e293b;
+    --lo-bar-fill: #10b981;
+    --lo-recommendation-bg: rgba(59, 130, 246, 0.1);
+    --lo-recommendation-border: rgba(59, 130, 246, 0.2);
+    --lo-recommendation-icon: #60a5fa;
+}
+
+.lo-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+:global(.lo-games-grid) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+:global(.lo-game-btn) {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    background: var(--lo-bg-card);
+    border: 2px solid var(--lo-border-card);
+    border-radius: 1.5rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-align: left;
+    color: inherit;
+    outline: none;
+}
+
+:global(.lo-game-btn:hover) {
+    border-color: var(--lo-focus-border);
+    box-shadow: var(--lo-shadow-card);
+}
+
+:global(.lo-game-icon) {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 1rem;
+    background: var(--lo-bg-input);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--lo-icon-color);
+}
+
+:global(.lo-game-icon svg) {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+:global(.lo-game-name) {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--lo-text-title);
+    margin-bottom: 0.5rem;
+}
+
+:global(.lo-game-description) {
+    font-size: 0.875rem;
+    color: var(--lo-text-secondary);
+    margin-bottom: 1rem;
+    flex-grow: 1;
+}
+
+:global(.lo-game-footer) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    border-top: 1px solid var(--lo-border-card);
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--lo-text-secondary);
+}
+
+:global(.lo-arrow-icon) {
+    width: 1rem;
+    height: 1rem;
+}
+
+.lo-hidden {
+    display: none;
+}
+
+.lo-panel {
+    animation: slide-up 0.5s ease-out;
+}
+
+@keyframes slide-up {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.lo-panel-card {
+    background: var(--lo-bg-card);
+    border: 1px solid var(--lo-border-card);
+    border-radius: 2rem;
+    padding: 2rem;
+    box-shadow: var(--lo-shadow-card);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.lo-panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.lo-panel-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--lo-text-title);
+    margin-bottom: 0.25rem;
+}
+
+.lo-panel-subtitle {
+    font-size: 0.875rem;
+    color: var(--lo-text-secondary);
+}
+
+.lo-investment-badge {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    background: var(--lo-bg-input);
+    border-radius: 1.5rem;
+    min-width: 200px;
+}
+
+.lo-investment-badge > div:first-child {
+    flex: 1;
+}
+
+.lo-badge-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--lo-text-secondary);
+    text-transform: uppercase;
+    margin-bottom: 0.25rem;
+}
+
+.lo-badge-value {
+    font-size: 1.25rem;
+    font-weight: 900;
+    color: var(--lo-text-title);
+}
+
+.lo-badge-icon {
+    display: flex;
+    align-items: center;
+    color: var(--lo-icon-color);
+}
+
+.lo-badge-icon :global(svg) {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.lo-panel-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.lo-input-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.lo-slider-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.lo-slider-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.lo-slider-header label {
+    font-weight: 700;
+    color: var(--lo-text-title);
+}
+
+.lo-slider-value {
+    font-weight: 700;
+    color: var(--lo-focus-border);
+}
+
+.lo-slider {
+    width: 100%;
+    height: 0.5rem;
+    border-radius: 0.25rem;
+    background: var(--lo-bar-bg);
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.lo-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 1.25rem;
+    height: 1.25rem;
+    background: var(--lo-focus-border);
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 10px var(--lo-focus-ring);
+}
+
+.lo-slider::-moz-range-thumb {
+    width: 1.25rem;
+    height: 1.25rem;
+    background: var(--lo-focus-border);
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 0 10px var(--lo-focus-ring);
+}
+
+.lo-slider-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--lo-text-secondary);
+}
+
+.lo-recommendation-box {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: var(--lo-recommendation-bg);
+    border: 1px solid var(--lo-recommendation-border);
+    border-radius: 1rem;
+}
+
+.lo-recommendation-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.lo-alert-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    color: var(--lo-recommendation-icon);
+    flex-shrink: 0;
+}
+
+.lo-recommendation-header h4 {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--lo-text-title);
+}
+
+.lo-recommendation-text {
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: var(--lo-text-primary);
+}
+
+.lo-optimal-tag {
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.75rem;
+    background: var(--lo-bg-input);
+    border-radius: 0.5rem;
+    color: var(--lo-text-secondary);
+}
+
+.lo-stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.lo-stat-card {
+    padding: 1.5rem;
+    background: var(--lo-bg-stat);
+    border: 1px solid var(--lo-border-stat);
+    border-radius: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.lo-stat-card-full {
+    grid-column: span 2;
+}
+
+.lo-stat-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--lo-text-secondary);
+    text-transform: uppercase;
+}
+
+.lo-stat-value {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--lo-text-title);
+}
+
+.lo-stat-bar {
+    width: 100%;
+    height: 0.25rem;
+    background: var(--lo-bar-bg);
+    border-radius: 0.25rem;
+    overflow: hidden;
+}
+
+.lo-stat-bar-fill {
+    height: 100%;
+    background: var(--lo-bar-fill);
+    transition: width 0.3s ease;
+}
+
+.lo-stat-hint {
+    font-size: 0.75rem;
+    color: var(--lo-text-secondary);
+    font-style: italic;
+}
+
+.lo-stat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.lo-efficiency-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.25rem 0.75rem;
+    border-radius: 0.5rem;
+    background: var(--lo-bar-bg);
+    color: var(--lo-text-secondary);
+}
+
+.lo-efficiency-value {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+}
+
+.lo-efficiency-max {
+    font-size: 0.875rem;
+    color: var(--lo-text-secondary);
+}
+
+.lo-efficiency-segments {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 0.5rem;
+}
+
+.lo-efficiency-segment {
+    height: 0.5rem;
+    background: var(--lo-bar-bg);
+    border-radius: 0.25rem;
+}
+
+.lo-comparison-section {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+    background: var(--lo-bg-card);
+    border: 1px solid var(--lo-border-card);
+    border-radius: 2rem;
+    box-shadow: var(--lo-shadow-card);
+}
+
+.lo-comparison-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+}
+
+.lo-comparison-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    background: var(--lo-bg-input);
+    border-radius: 1rem;
+    color: var(--lo-icon-color);
+    flex-shrink: 0;
+}
+
+.lo-comparison-icon :global(svg) {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.lo-comparison-header > div:last-child h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--lo-text-title);
+    margin-bottom: 0.25rem;
+}
+
+.lo-comparison-header > div:last-child p {
+    font-size: 0.875rem;
+    color: var(--lo-text-secondary);
+}
+
+:global(.lo-table-wrapper) {
+    overflow-x: auto;
+}
+
+:global(.lo-table) {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+:global(.lo-table thead) {
+    background: var(--lo-bg-input);
+}
+
+:global(.lo-table th) {
+    padding: 1rem;
+    text-align: left;
+    font-weight: 700;
+    font-size: 0.875rem;
+    color: var(--lo-text-secondary);
+    text-transform: uppercase;
+    border-bottom: 2px solid var(--lo-border-card);
+}
+
+:global(.lo-table-right) {
+    text-align: right;
+}
+
+:global(.lo-table tbody tr) {
+    border-bottom: 1px solid var(--lo-border-card);
+}
+
+:global(.lo-table td) {
+    padding: 1rem;
+    font-size: 0.875rem;
+    color: var(--lo-text-primary);
+}
+
+:global(.lo-table tbody tr:hover) {
+    background: var(--lo-bg-input);
+}
+
+:global(.lo-table-note) {
+    font-size: 0.75rem;
+    color: var(--lo-text-secondary);
+    font-style: italic;
+    text-align: center;
+}
+</style>
+
+<script>
+    import { LOTTERY_DATA, LotteryLogic, type LotteryId } from './logic';
+
+    const btns = document.querySelectorAll('[data-game-btn]');
+    const panel = document.getElementById('calculator-panel');
+    const slider = document.getElementById('ticket-slider') as HTMLInputElement;
+    const ticketCountDisplay = document.getElementById('ticket-count-display');
+    const totalCostDisplay = document.getElementById('display-total-cost');
+    const probDisplay = document.getElementById('stat-probability');
+    const probBar = document.getElementById('prob-bar');
+    const evDisplay = document.getElementById('stat-ev');
+    const efficiencyDisplay = document.getElementById('stat-efficiency');
+    const efficiencyLabel = document.getElementById('efficiency-label');
+    const recommendationText = document.getElementById('recommendation-text');
+    const optimalCount = document.getElementById('optimal-count');
+    const comparisonTbody = document.getElementById('comparison-tbody');
+    const segments = document.querySelectorAll('.lo-efficiency-segment');
+    const container = document.querySelector('.lo-container') as HTMLElement;
+
+    const currencySymbol = container?.getAttribute('data-currency-symbol') || '€';
+    const currencyCode = container?.getAttribute('data-currency-code') || 'EUR';
+    const currencyLocale = container?.getAttribute('data-currency-locale') || 'es-ES';
+    const labelLow = container?.getAttribute('data-label-low') || 'Baja';
+    const labelMedium = container?.getAttribute('data-label-medium') || 'Media';
+    const labelHigh = container?.getAttribute('data-label-high') || 'Alta';
+    const labelAccessible = container?.getAttribute('data-label-accessible') || 'Accesible';
+    const labelDifficult = container?.getAttribute('data-label-difficult') || 'Difícil';
+    const labelExtreme = container?.getAttribute('data-label-extreme') || 'Extrema';
+
+    let gameTranslations: Record<string, { name: string; description: string }> = {};
+    try {
+        const translationsJson = container?.getAttribute('data-game-translations');
+        if (translationsJson) gameTranslations = JSON.parse(translationsJson);
+    } catch {
+        void 0;
+    }
+
+    function formatCurrency(val: number): string {
+        return new Intl.NumberFormat(currencyLocale, {
+            style: 'currency',
+            currency: currencyCode,
+        }).format(val);
+    }
+
+    function getDifficulty(odds: number): string {
+        if (odds < 200000) return labelAccessible;
+        if (odds < 20000000) return labelDifficult;
+        return labelExtreme;
+    }
+
+    function formatPrize(jackpot: number): string {
+        if (jackpot > 1000000) {
+            return `${(jackpot / 1000000).toFixed(1)}M${currencySymbol}`;
+        }
+        return `${(jackpot / 1000).toFixed(0)}k${currencySymbol}`;
+    }
+
+    function getGameColor(gameId: LotteryId): string {
+        return gameId === 'gordo' || gameId === 'nino' ? '#fbbf24' : '#10b981';
+    }
+
+    function initializeGames() {
+        Object.entries(LOTTERY_DATA).forEach(([id, game]) => {
+            const btn = document.querySelector(`[data-game-btn][data-id="${id}"]`) as HTMLElement;
+            if (btn) {
+                const name = btn.querySelector('.lo-game-name') as HTMLElement;
+                const desc = btn.querySelector('.lo-game-description') as HTMLElement;
+                const odds = btn.querySelector('.lo-game-odds') as HTMLElement;
+                const translation = gameTranslations[id] || { name: game.name, description: game.description };
+                if (name) name.textContent = translation.name;
+                if (desc) desc.textContent = translation.description;
+                if (odds) odds.textContent = `1/${game.odds.toLocaleString()}`;
+            }
+        });
+
+        Object.values(LOTTERY_DATA).forEach((game) => {
+            const row = document.createElement('tr');
+            const difficulty = getDifficulty(game.odds);
+            const prize = formatPrize(game.jackpot);
+            const color = getGameColor(game.id as LotteryId);
+            row.innerHTML = `
+                <td><span style="display:inline-block;width:0.5rem;height:0.5rem;border-radius:50%;background:${color};margin-right:0.75rem"></span>${game.name}</td>
+                <td class="lo-table-right">${game.cost}${currencySymbol}</td>
+                <td class="lo-table-right">${prize}</td>
+                <td class="lo-table-right">${difficulty}</td>
+            `;
+            comparisonTbody?.appendChild(row);
+        });
+    }
+
+    function getEfficiencyLabel(eff: number): string {
+        if (eff > 65) return labelHigh;
+        if (eff > 50) return labelMedium;
+        return labelLow;
+    }
+
+    function updateEfficiencySegments(eff: number) {
+        segments.forEach((seg, i) => {
+            if (eff >= (i + 1) * 10) {
+                seg.classList.add('lo-active');
+            } else {
+                seg.classList.remove('lo-active');
+            }
+        });
+    }
+
+    function updateExpectedValue(expectedValue: number) {
+        if (!evDisplay) return;
+        evDisplay.textContent = formatCurrency(expectedValue);
+        const className = expectedValue < 0 ? 'lo-negative' : 'lo-positive';
+        evDisplay.className = `lo-stat-value ${className}`;
+    }
+
+    function updateProbability(winProbability: number) {
+        if (probDisplay) probDisplay.textContent = `${winProbability.toFixed(5)}%`;
+        if (probBar) probBar.style.width = `${Math.min(winProbability * 10, 100)}%`;
+    }
+
+    function updateStats(tickets: number, stats: ReturnType<typeof LotteryLogic.calculateStats>) {
+        if (ticketCountDisplay) ticketCountDisplay.textContent = tickets.toString();
+        if (totalCostDisplay) totalCostDisplay.textContent = formatCurrency(stats.totalCost);
+        updateProbability(stats.winProbability);
+        updateExpectedValue(stats.expectedValue);
+        if (recommendationText) recommendationText.textContent = stats.recommendation;
+        if (optimalCount) optimalCount.textContent = stats.optimalTickets.toString();
+    }
+
+    function updateEfficiency(selectedId: LotteryId) {
+        const eff = Math.min(LOTTERY_DATA[selectedId].payoutRate, 100);
+        if (efficiencyDisplay) efficiencyDisplay.textContent = eff.toFixed(1);
+        if (efficiencyLabel) efficiencyLabel.textContent = getEfficiencyLabel(eff);
+        updateEfficiencySegments(eff);
+    }
+
+    function update() {
+        const selectedBtn = document.querySelector('.lo-selected') as HTMLElement;
+        if (!selectedBtn) return;
+
+        const selectedId = selectedBtn.getAttribute('data-id') as LotteryId;
+        const tickets = parseInt(slider.value);
+        const stats = LotteryLogic.calculateStats(selectedId, tickets);
+
+        updateStats(tickets, stats);
+        updateEfficiency(selectedId);
+    }
+
+    btns.forEach((btn) => {
+        btn.addEventListener('click', () => {
+            btns.forEach((b) => b.classList.remove('lo-selected'));
+            btn.classList.add('lo-selected');
+            if (panel) panel.classList.remove('lo-hidden');
+            update();
+        });
+    });
+
+    slider?.addEventListener('input', update);
+    initializeGames();
+</script>
+
+<style is:global>
+.lo-game-btn.lo-selected {
+    border-color: var(--lo-focus-border);
+    background: rgba(16, 185, 129, 0.05);
+    box-shadow: 0 0 0 4px var(--lo-focus-ring);
+}
+
+.lo-stat-value.lo-negative {
+    color: #ef4444;
+}
+
+.lo-stat-value.lo-positive {
+    color: #10b981;
+}
+
+.lo-efficiency-segment.lo-active {
+    background: var(--lo-bar-fill);
+}
+</style>

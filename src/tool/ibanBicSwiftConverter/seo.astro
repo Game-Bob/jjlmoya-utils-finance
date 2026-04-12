@@ -1,0 +1,154 @@
+---
+import type { SEOSection } from '@jjlmoya/utils-shared';
+
+interface Props {
+  sections: SEOSection[];
+}
+
+const { sections } = Astro.props;
+---
+
+<div class="ibs-seo-content">
+  {sections.map((section) => (
+    <>
+      {section.type === 'title' && (
+        <h2 set:html={section.text} />
+      )}
+      {section.type === 'paragraph' && (
+        <p set:html={section.html} />
+      )}
+      {section.type === 'comparative' && (
+        <div class="ibs-comparative">
+          {section.items?.map((item) => (
+            <div class={`ibs-comparative-item ${item.highlight ? 'ibs-comparative-highlight' : ''}`}>
+              <h3>{item.title}</h3>
+              <p>{item.description}</p>
+              <ul>
+                {item.points?.map((point) => (
+                  <li>{point}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      )}
+    </>
+  ))}
+</div>
+
+<style>
+.ibs-seo-content {
+  margin-top: 3rem;
+  line-height: 1.8;
+}
+
+.ibs-seo-content h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  color: #0f172a;
+}
+
+:global(.theme-dark) .ibs-seo-content h2,
+:global([data-theme='dark']) .ibs-seo-content h2 {
+  color: #f8fafc;
+}
+
+.ibs-seo-content p {
+  margin-bottom: 1.5rem;
+  color: #475569;
+  font-size: 1.05rem;
+}
+
+:global(.theme-dark) .ibs-seo-content p,
+:global([data-theme='dark']) .ibs-seo-content p {
+  color: #cbd5e1;
+}
+
+.ibs-comparative {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.ibs-comparative-item {
+  padding: 2rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  background: #f8fafc;
+  transition: all 0.3s ease;
+}
+
+.ibs-comparative-item:hover {
+  border-color: #6366f1;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.1);
+}
+
+.ibs-comparative-highlight {
+  border-color: #6366f1;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.05), rgba(168, 85, 247, 0.05));
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.1);
+}
+
+:global(.theme-dark) .ibs-comparative-item,
+:global([data-theme='dark']) .ibs-comparative-item {
+  background: #1e293b;
+  border-color: #334155;
+}
+
+:global(.theme-dark) .ibs-comparative-highlight,
+:global([data-theme='dark']) .ibs-comparative-highlight {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(168, 85, 247, 0.1));
+  border-color: #6366f1;
+}
+
+.ibs-comparative-item h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #0f172a;
+}
+
+:global(.theme-dark) .ibs-comparative-item h3,
+:global([data-theme='dark']) .ibs-comparative-item h3 {
+  color: #f8fafc;
+}
+
+.ibs-comparative-item p {
+  font-size: 0.95rem;
+  color: #64748b;
+  margin-bottom: 1rem;
+}
+
+:global(.theme-dark) .ibs-comparative-item p,
+:global([data-theme='dark']) .ibs-comparative-item p {
+  color: #94a3b8;
+}
+
+.ibs-comparative-item ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ibs-comparative-item li {
+  padding: 0.5rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+  color: #475569;
+}
+
+:global(.theme-dark) .ibs-comparative-item li,
+:global([data-theme='dark']) .ibs-comparative-item li {
+  color: #cbd5e1;
+}
+
+.ibs-comparative-item li::before {
+  content: '\2713';
+  position: absolute;
+  left: 0;
+  color: #6366f1;
+  font-weight: bold;
+}
+</style>

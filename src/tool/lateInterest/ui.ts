@@ -19,4 +19,15 @@ export interface LateInterestUI {
   currencySymbol: string;
   percentSymbol: string;
   labelFormula: string;
+  reportTitle: string;
+  reportLabelPrincipal: string;
+  reportLabelType: string;
+  reportLabelPeriod: string;
+  reportLabelDays: string;
+  reportLabelInterest: string;
+  reportLabelTotal: string;
+  reportDaysSuffix: string;
+  formulaDescription: string;
+  currencyCode: string;
+  currencyLocale: string;
 }

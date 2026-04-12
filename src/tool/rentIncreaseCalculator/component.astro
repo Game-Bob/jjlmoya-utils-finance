@@ -1,0 +1,587 @@
+---
+import type { KnownLocale } from '../../types';
+
+interface Props {
+  locale?: KnownLocale;
+  ui?: Record<string, unknown>;
+}
+
+const { ui } = Astro.props;
+---
+
+<div class="ric-container" data-icon-legal="mdi:shield-check" data-icon-copy="mdi:content-copy">
+    <div class="ric-card">
+        <header class="ric-header">
+            <h3>{ui.labelTitle}</h3>
+            <p>{ui.labelDescription}</p>
+        </header>
+
+        <div class="ric-layout">
+            <div class="ric-inputs-section">
+                <div class="ric-input-group">
+                    <label for="current-rent">
+                        {ui.labelCurrentRent}
+                    </label>
+                    <div class="ric-input-wrapper">
+                        <input
+                            type="number"
+                            id="current-rent"
+                            placeholder={ui.labelCurrentRentPlaceholder}
+                            min="0"
+                            step="0.01"
+                            value="800"
+                        />
+                        <span class="ric-input-unit">{ui.currencySymbol}/mes</span>
+                    </div>
+                </div>
+
+                <div class="ric-input-group">
+                    <label for="increment-type">
+                        {ui.labelIncrementType}
+                    </label>
+                    <div class="ric-input-wrapper">
+                        <select id="increment-type">
+                            <option value="legal" selected>{ui.labelLegalLimit}</option>
+                            <option value="manual">{ui.labelManualIncrement}</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div id="manual-input-container" class="ric-input-group ric-hidden">
+                    <label for="manual-percentage">
+                        {ui.labelManualIncrement}
+                    </label>
+                    <div class="ric-input-wrapper">
+                        <input
+                            type="number"
+                            id="manual-percentage"
+                            placeholder={ui.labelManualPercentagePlaceholder}
+                            step="0.1"
+                            value="3"
+                        />
+                        <span class="ric-input-unit">%</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ric-results-section ric-hidden" id="results-area">
+                <div class="ric-result-header">
+                    <span class="ric-result-label">{ui.labelNewRentEstimate}</span>
+                    <div class="ric-result-main-value" id="val-new-rent">0,00 {ui.currencySymbol}</div>
+                </div>
+
+                <div class="ric-comparison-bar">
+                    <div class="ric-bar-base">
+                        <div class="ric-bar-fill" id="increase-bar-fill"></div>
+                    </div>
+                    <div class="ric-bar-labels">
+                        <span id="label-old-rent">0,00 {ui.currencySymbol}</span>
+                        <span id="label-new-rent">0,00 {ui.currencySymbol}</span>
+                    </div>
+                </div>
+
+                <div class="ric-summary-details">
+                    <div class="ric-detail-item">
+                        <span class="ric-detail-label">{ui.labelMonthlyIncrease}</span>
+                        <span class="ric-detail-value" id="val-monthly-increase">+0,00 {ui.currencySymbol}</span>
+                    </div>
+                    <div class="ric-detail-item">
+                        <span class="ric-detail-label">{ui.labelYearlyExtra}</span>
+                        <span class="ric-detail-value ric-highlight" id="val-yearly-increase">+0,00 {ui.currencySymbol}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ric-info-footer">
+            <div class="ric-legal-badge" data-icon="legal">
+                <span>{ui.labelLegalBadge}</span>
+            </div>
+
+            <button class="ric-action-btn" id="copy-summary">
+                <span data-icon="copy"></span>
+                <span>{ui.labelCopyButton}</span>
+            </button>
+        </div>
+    </div>
+</div>
+
+<style>
+:root {
+    --ric-bg-card: #fff;
+    --ric-border-card: #eef2f6;
+    --ric-shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 20px 40px -8px rgba(0, 0, 0, 0.05);
+    --ric-header-bg: linear-gradient(90deg, #10b981, #14b8a6);
+    --ric-text-title: #0f172a;
+    --ric-text-secondary: #64748b;
+    --ric-text-primary: #1e293b;
+    --ric-bg-input-section: #f8fafc;
+    --ric-border-input-section: #f1f5f9;
+    --ric-bg-input: #fff;
+    --ric-text-input: #1e293b;
+    --ric-border-input: transparent;
+    --ric-focus-border: #10b981;
+    --ric-focus-ring: rgba(16, 185, 129, 0.15);
+    --ric-icon-color: #10b981;
+    --ric-bg-result: #fff;
+    --ric-border-result: #eef2f6;
+    --ric-text-result-value: #0f172a;
+    --ric-text-result-label: #94a3b8;
+    --ric-bg-bar: #f1f5f9;
+    --ric-bg-bar-fill: #10b981;
+    --ric-text-bar: #64748b;
+    --ric-bg-badge: #d1fae5;
+    --ric-text-badge: #059669;
+    --ric-bg-button: #0f172a;
+    --ric-text-button: #fff;
+    --ric-bg-button-hover: #1e293b;
+    --ric-highlight-color: #10b981;
+}
+
+:global(.theme-dark) {
+    --ric-bg-card: #0f172a;
+    --ric-border-card: rgba(255, 255, 255, 0.05);
+    --ric-text-title: #f8fafc;
+    --ric-text-secondary: #94a3b8;
+    --ric-text-primary: #f8fafc;
+    --ric-bg-input-section: rgba(30, 41, 59, 0.5);
+    --ric-border-input-section: rgba(255, 255, 255, 0.05);
+    --ric-bg-input: #1e293b;
+    --ric-text-input: #f8fafc;
+    --ric-border-input: #334155;
+    --ric-focus-border: #10b981;
+    --ric-focus-ring: rgba(16, 185, 129, 0.15);
+    --ric-icon-color: #34d399;
+    --ric-bg-result: #1e293b;
+    --ric-border-result: rgba(255, 255, 255, 0.05);
+    --ric-text-result-value: #f8fafc;
+    --ric-text-result-label: #94a3b8;
+    --ric-bg-bar: #1e293b;
+    --ric-bg-bar-fill: #10b981;
+    --ric-text-bar: #cbd5e1;
+    --ric-bg-badge: rgba(16, 185, 129, 0.1);
+    --ric-text-badge: #6ee7b7;
+    --ric-bg-button: #10b981;
+    --ric-text-button: #fff;
+    --ric-bg-button-hover: #059669;
+    --ric-highlight-color: #34d399;
+}
+
+:global([data-theme='dark']) {
+    --ric-bg-card: #0f172a;
+    --ric-border-card: rgba(255, 255, 255, 0.05);
+    --ric-text-title: #f8fafc;
+    --ric-text-secondary: #94a3b8;
+    --ric-text-primary: #f8fafc;
+    --ric-bg-input-section: rgba(30, 41, 59, 0.5);
+    --ric-border-input-section: rgba(255, 255, 255, 0.05);
+    --ric-bg-input: #1e293b;
+    --ric-text-input: #f8fafc;
+    --ric-border-input: #334155;
+    --ric-focus-border: #10b981;
+    --ric-focus-ring: rgba(16, 185, 129, 0.15);
+    --ric-icon-color: #34d399;
+    --ric-bg-result: #1e293b;
+    --ric-border-result: rgba(255, 255, 255, 0.05);
+    --ric-text-result-value: #f8fafc;
+    --ric-text-result-label: #94a3b8;
+    --ric-bg-bar: #1e293b;
+    --ric-bg-bar-fill: #10b981;
+    --ric-text-bar: #cbd5e1;
+    --ric-bg-badge: rgba(16, 185, 129, 0.1);
+    --ric-text-badge: #6ee7b7;
+    --ric-bg-button: #10b981;
+    --ric-text-button: #fff;
+    --ric-bg-button-hover: #059669;
+    --ric-highlight-color: #34d399;
+}
+
+.ric-container {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    perspective: 1000px;
+    padding: 2rem 1rem;
+}
+
+.ric-card {
+    background: var(--ric-bg-card);
+    border: 1px solid var(--ric-border-card);
+    border-radius: 32px;
+    padding: 3rem;
+    box-shadow: var(--ric-shadow-card);
+    position: relative;
+    overflow: hidden;
+    color-scheme: light;
+}
+
+:global(.theme-dark) .ric-card,
+:global([data-theme='dark']) .ric-card {
+    color-scheme: dark;
+}
+
+.ric-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: var(--ric-header-bg);
+}
+
+.ric-header {
+    text-align: left;
+    margin-bottom: 3rem;
+}
+
+.ric-header h3 {
+    font-size: 2.25rem;
+    font-weight: 950;
+    color: var(--ric-text-title);
+    letter-spacing: -0.04em;
+    margin-bottom: 0.75rem;
+    line-height: 1;
+}
+
+.ric-header p {
+    color: var(--ric-text-secondary);
+    font-size: 1.1rem;
+    max-width: 500px;
+}
+
+.ric-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.ric-inputs-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.ric-input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.ric-input-group label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--ric-text-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.ric-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.ric-input-wrapper input,
+.ric-input-wrapper select {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    padding-left: 1rem;
+    border: 1px solid var(--ric-border-input);
+    border-radius: 12px;
+    background: var(--ric-bg-input);
+    color: var(--ric-text-input);
+    font-size: 1rem;
+    transition: all 0.2s;
+}
+
+.ric-input-wrapper input:focus,
+.ric-input-wrapper select:focus {
+    outline: none;
+    border-color: var(--ric-focus-border);
+    box-shadow: 0 0 0 3px var(--ric-focus-ring);
+}
+
+.ric-input-unit {
+    position: absolute;
+    right: 1rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--ric-text-secondary);
+    pointer-events: none;
+}
+
+.ric-results-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.ric-result-header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.ric-result-label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--ric-text-result-label);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.ric-result-main-value {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--ric-text-result-value);
+    letter-spacing: -0.02em;
+    overflow-wrap: break-word;
+}
+
+.ric-comparison-bar {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.ric-bar-base {
+    width: 100%;
+    height: 24px;
+    background: var(--ric-bg-bar);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.ric-bar-fill {
+    height: 100%;
+    background: var(--ric-bg-bar-fill);
+    transition: width 0.3s ease;
+}
+
+.ric-bar-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--ric-text-bar);
+}
+
+.ric-summary-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.ric-detail-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
+    background: var(--ric-bg-result);
+    border: 1px solid var(--ric-border-result);
+    border-radius: 12px;
+}
+
+.ric-detail-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--ric-text-result-label);
+    text-transform: uppercase;
+}
+
+.ric-detail-value {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--ric-text-result-value);
+}
+
+.ric-highlight {
+    color: var(--ric-highlight-color);
+}
+
+.ric-info-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 2rem;
+    border-top: 1px solid var(--ric-border-card);
+    gap: 1rem;
+}
+
+.ric-legal-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.875rem 1.25rem;
+    background: var(--ric-bg-badge);
+    color: var(--ric-text-badge);
+    border-radius: 12px;
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.ric-action-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.875rem 1.5rem;
+    background: var(--ric-bg-button);
+    color: var(--ric-text-button);
+    border: none;
+    border-radius: 12px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.ric-action-btn:hover {
+    background: var(--ric-bg-button-hover);
+    transform: translateY(-2px);
+}
+
+:global(.ric-results-section.ric-hidden) {
+    display: none;
+}
+
+:global(.ric-input-group.ric-hidden) {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .ric-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .ric-header h3 {
+        font-size: 1.75rem;
+    }
+
+    .ric-result-main-value {
+        font-size: 2rem;
+    }
+
+    .ric-info-footer {
+        flex-direction: column;
+    }
+
+    .ric-action-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .ric-legal-badge {
+        width: 100%;
+        justify-content: center;
+    }
+}
+</style>
+
+<script>
+    import { RentIncreaseCalculator } from './logic';
+
+    const rentInput = document.getElementById('current-rent') as HTMLInputElement | null;
+    const typeSelect = document.getElementById('increment-type') as HTMLSelectElement | null;
+    const manualContainer = document.getElementById('manual-input-container') as HTMLDivElement | null;
+    const manualInput = document.getElementById('manual-percentage') as HTMLInputElement | null;
+    const resultsArea = document.getElementById('results-area') as HTMLDivElement | null;
+
+    const newRentDisplay = document.getElementById('val-new-rent');
+    const labelOldRent = document.getElementById('label-old-rent');
+    const labelNewRent = document.getElementById('label-new-rent');
+    const monthlyDisplay = document.getElementById('val-monthly-increase');
+    const yearlyDisplay = document.getElementById('val-yearly-increase');
+    const barFill = document.getElementById('increase-bar-fill');
+    const copyBtn = document.getElementById('copy-summary');
+
+    const currencyCodeAttr = document.querySelector('.ric-container')?.getAttribute('data-currency-code') || 'EUR';
+    const currencyLocaleAttr = document.querySelector('.ric-container')?.getAttribute('data-currency-locale') || 'es-ES';
+
+    function formatCurrency(val: number): string {
+        return new Intl.NumberFormat(currencyLocaleAttr, {
+            style: 'currency',
+            currency: currencyCodeAttr,
+        }).format(val);
+    }
+
+    function getPercentage(): number {
+        if (!typeSelect || !manualInput) return 3;
+        if (typeSelect.value === 'legal') {
+            manualContainer?.classList.add('ric-hidden');
+            return 3;
+        }
+        manualContainer?.classList.remove('ric-hidden');
+        return parseFloat(manualInput.value) || 0;
+    }
+
+    function updateResultsDisplay(calc: ReturnType<typeof RentIncreaseCalculator.calculate>) {
+        if (newRentDisplay) newRentDisplay.textContent = formatCurrency(calc.newRent);
+        if (labelOldRent) labelOldRent.textContent = formatCurrency(calc.currentRent);
+        if (labelNewRent) labelNewRent.textContent = formatCurrency(calc.newRent);
+        if (monthlyDisplay) monthlyDisplay.textContent = `+${formatCurrency(calc.monthlyIncrease)}`;
+        if (yearlyDisplay) yearlyDisplay.textContent = `+${formatCurrency(calc.yearlyIncrease)}`;
+        if (barFill) barFill.style.width = `${calc.barRatio}%`;
+    }
+
+    function showPulseAnimation() {
+        newRentDisplay?.classList.add('ric-pulse');
+        setTimeout(() => newRentDisplay?.classList.remove('ric-pulse'), 500);
+    }
+
+    function calculate() {
+        if (!rentInput || !typeSelect || !manualInput) return;
+
+        const currentRent = parseFloat(rentInput.value) || 0;
+        const percentage = getPercentage();
+
+        if (!RentIncreaseCalculator.validateInputs(currentRent, percentage)) {
+            resultsArea?.classList.add('ric-hidden');
+            return;
+        }
+
+        const calc = RentIncreaseCalculator.calculate(currentRent, percentage);
+        resultsArea?.classList.remove('ric-hidden');
+        updateResultsDisplay(calc);
+        showPulseAnimation();
+    }
+
+    [rentInput, typeSelect, manualInput].forEach((el) => {
+        el?.addEventListener('input', calculate);
+        el?.addEventListener('change', calculate);
+    });
+
+    function getCopyPercentage(): { percentage: number; isLegal: boolean } {
+        const percentage = typeSelect?.value === 'legal' ? 3 : parseFloat(manualInput?.value || '0');
+        return { percentage, isLegal: typeSelect?.value === 'legal' };
+    }
+
+    function updateButtonFeedback(originalText: string | undefined) {
+        const btnSpan = copyBtn?.querySelector('span:last-child');
+        if (!btnSpan || !copyBtn) return;
+        btnSpan.textContent = document.querySelector('.ric-container')?.getAttribute('data-copy-success') || 'Copied!';
+        copyBtn.classList.add('ric-copied');
+        setTimeout(() => {
+            if (btnSpan) btnSpan.textContent = originalText;
+            copyBtn?.classList.remove('ric-copied');
+        }, 2000);
+    }
+
+    function handleCopyClick() {
+        if (!rentInput || !typeSelect) return;
+
+        const currentRent = parseFloat(rentInput.value) || 0;
+        const { percentage, isLegal } = getCopyPercentage();
+
+        const report = RentIncreaseCalculator.generateReport(currentRent, percentage, isLegal, formatCurrency);
+        navigator.clipboard.writeText(report);
+
+        const btnSpan = copyBtn?.querySelector('span:last-child');
+        updateButtonFeedback(btnSpan?.textContent);
+    }
+
+    copyBtn?.addEventListener('click', handleCopyClick);
+
+    calculate();
+</script>
