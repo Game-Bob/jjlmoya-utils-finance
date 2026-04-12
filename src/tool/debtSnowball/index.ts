@@ -1,34 +1,36 @@
-import { content as contentES } from './i18n/es';
-import { content as contentEN } from './i18n/en';
-import { content as contentFR } from './i18n/fr';
+import type { FinanceToolEntry, ToolLocaleContent, ToolDefinition } from '../../types';
 import DebtSnowballComponent from './component.astro';
+import DebtSnowballSEO from './seo.astro';
+import type { DebtSnowballUI } from './ui';
 import { DebtSnowballLogic, type Debt, type SimulationResult, type ProjectionMonth } from './logic';
 
+export type DebtSnowballLocaleContent = ToolLocaleContent<DebtSnowballUI>;
 export type { Debt, SimulationResult, ProjectionMonth };
 
-export const DEBT_SNOWBALL_TOOL = {
-  id: 'debtSnowball',
-  entry: {
-    id: 'debtSnowball',
-    component: DebtSnowballComponent,
-    i18n: {
-      es: () => Promise.resolve(contentES),
-      en: () => Promise.resolve(contentEN),
-      fr: () => Promise.resolve(contentFR),
-    },
+import { content as es } from './i18n/es';
+import { content as en } from './i18n/en';
+import { content as fr } from './i18n/fr';
+
+export const debtSnowball: FinanceToolEntry<DebtSnowballUI> = {
+  id: 'bola-nieve-deuda',
+  icons: {
+    bg: 'mdi:chart-line',
+    fg: 'mdi:trending-up',
   },
-  logic: DebtSnowballLogic,
+  i18n: {
+    es: async () => es,
+    en: async () => en,
+    fr: async () => fr,
+  },
 };
 
-export const debtSnowball = {
-  id: 'debtSnowball',
-  entry: {
-    id: 'debtSnowball',
-    component: DebtSnowballComponent,
-    i18n: {
-      es: () => Promise.resolve(contentES),
-      en: () => Promise.resolve(contentEN),
-      fr: () => Promise.resolve(contentFR),
-    },
-  },
+export { DebtSnowballComponent, DebtSnowballSEO };
+
+export const DEBT_SNOWBALL_TOOL: ToolDefinition = {
+  entry: debtSnowball,
+  Component: DebtSnowballComponent,
+  SEOComponent: DebtSnowballSEO,
+  BibliographyComponent: null,
 };
+
+export const DebtSnowballLogicExport = DebtSnowballLogic;

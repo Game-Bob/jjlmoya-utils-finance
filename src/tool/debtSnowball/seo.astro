@@ -1,13 +1,11 @@
 ---
-import { SEORenderer } from '@jjlmoya/utils-shared/components';
-import type { KnownLocale } from '../../types';
+import { SEORenderer } from '@jjlmoya/utils-shared';
 
 interface Props {
-  locale?: KnownLocale;
-  seo?: Array<any>;
+  seoContent: typeof SEORenderer extends { astro: (props: infer P) => any } ? P['seoContent'] : any;
 }
 
-const { seo } = Astro.props;
+const { seoContent } = Astro.props;
 ---
 
-{seo && <SEORenderer content={seo} />}
+<SEORenderer client:load seoContent={seoContent} />
