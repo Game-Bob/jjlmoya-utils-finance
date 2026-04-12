@@ -1,4 +1,4 @@
-import type { WithContext, FAQPage, HowToThing, SoftwareApplication } from 'schema-dts';
+import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { InflationUI } from '../ui';
 
@@ -11,55 +11,46 @@ const faqData = [
   {
     question: '¿Qué es el IPC y cómo se calcula?',
     answer:
-      'El Índice de Precios de Consumo (IPC) mide la evolución de los precios de una cesta de bienes y servicios representativa del consumo español. Se calcula comparando el coste de esta cesta en diferentes períodos de tiempo para determinar el porcentaje de variación.',
+      'El Índice de Precios de Consumo (IPC) mide la evolución de los precios de una cesta de bienes y servicios representativa del consumo español. Se calcula comparando el coste de esta cesta en diferentes períodos de tiempo.',
   },
   {
     question: '¿Cuánto ha perdido valor el dinero desde 1980?',
     answer:
-      '1.000 pesetas de 1980 equivalen aproximadamente a 60 euros hoy en poder adquisitivo. Debido a la inflación acumulada, el dinero ha perdido más del 90% de su valor real en las últimas cuatro décadas.',
+      '1.000 pesetas de 1980 equivalen aproximadamente a 60€ de hoy en poder adquisitivo. El dinero ha perdido más del 90% de su valor en estos 40+ años debido a la inflación acumulada.',
   },
   {
     question: '¿Por qué mis ahorros pierden valor si no los muevo?',
     answer:
-      'Si la inflación es positiva y tu capital no genera intereses, su valor real decrece. Para mantener la capacidad de compra, tus ahorros deben generar una rentabilidad neta al menos igual a la tasa de inflación anual.',
+      'Si la inflación es del 3% anual y tu cuenta da 0% de interés, pierdes un 3% de poder adquisitivo cada año. Para mantener el valor real, tus ahorros deben generar al menos la tasa de inflación.',
   },
   {
     question: '¿Cuál fue el período de mayor inflación en España?',
     answer:
-      'Los años 80 destacaron por tener inflaciones de doble dígito, llegando al 15.6% en 1980. Fue una época de gran inestabilidad de precios antes de la convergencia europea y la llegada del euro.',
+      'Los años 80 fueron los más inflacionarios, con tasas de doble dígito (hasta 15%). Los precios cambiaban drásticamente mes a mes. Desde el euro (2002), la inflación ha sido más controlada, excepto en 2021-2023.',
   },
   {
-    question: '¿Qué es la inflación subyacente?',
+    question: '¿Cómo afecta la inflación a mis ahorros?',
     answer:
-      'Es un indicador que excluye del cálculo los alimentos no elaborados y los productos energéticos. Se utiliza para conocer la tendencia de los precios a largo plazo sin el ruido de los elementos más volátiles.',
-  },
-  {
-    question: '¿Cómo afecta el Banco Central Europeo a la inflación?',
-    answer:
-      'El BCE tiene como mandato principal mantener la estabilidad de precios, fijando un objetivo de inflación del 2% a medio plazo para toda la eurozona a través de la política monetaria y los tipos de interés.',
+      'La inflación actúa como un \'impuesto silencioso\'. Si la inflación es del 5% y tu dinero está en el colchón, al final del año podrás comprar un 5% menos de productos. Es fundamental invertir para contrarrestar este efecto.',
   },
 ];
 
 const howToData = [
   {
-    name: 'Seleccionar el año base',
-    text: 'Ajusta el selector de fecha para indicar desde cuándo quieres analizar la evolución de los precios.',
+    name: 'Seleccionar el año de origen',
+    text: 'Elige desde qué fecha quieres calcular el valor del dinero (disponible desde 1980 hasta 2026).',
   },
   {
-    name: 'Introducir el importe original',
-    text: 'Escribe la cantidad de dinero en pesetas o euros que tenías en esa fecha específica.',
+    name: 'Introducir la cantidad',
+    text: 'Escribe el importe en pesetas (para fechas antiguas) o en euros que quieres comparar.',
   },
   {
-    name: 'Definir el año de comparación',
-    text: 'Elige el año final para ver cómo ha cambiado el valor del dinero hasta ese momento.',
+    name: 'Elegir el año final',
+    text: 'Define hasta qué momento quieres ver la evolución del poder adquisitivo.',
   },
   {
-    name: 'Analizar equivalencias y porcentajes',
-    text: 'Consulta el resultado final detallado, incluyendo la inflación acumulada y la equivalencia de poder adquisitivo real.',
-  },
-  {
-    name: 'Revisar datos históricos',
-    text: 'Compara el resultado con los hitos históricos proporcionados en la sección de contexto para entender mejor el entorno económico.',
+    name: 'Analizar el resultado real',
+    text: 'Observa la equivalencia de poder adquisitivo y el porcentaje de inflación acumulada en dicho periodo.',
   },
 ];
 
@@ -73,7 +64,7 @@ const faqSchema: WithContext<FAQPage> = {
   })),
 };
 
-const howToSchema: WithContext<HowToThing> = {
+const howToSchema: WithContext<HowTo> = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
   name: title,
@@ -127,8 +118,17 @@ export const content: ToolLocaleContent<InflationUI> = {
   seo: [
     {
       type: 'title',
-      text: 'La Inflación: El Impuesto Silencioso sobre tu Patrimonio',
+      text: 'Calculadora de Inflación Histórica: Entiende el Valor Real de tu Dinero',
       level: 2,
+    },
+    {
+      type: 'paragraph',
+      html: 'La inflación es el "impuesto silencioso" que devora tus ahorros año tras año. ¿Sabes cuánto ha perdido valor tu dinero desde 1980? ¿Cuánto cuesta realmente ese café que pagabas a 300 pesetas hace 20 años?',
+    },
+    {
+      type: 'title',
+      text: 'La Inflación: El Impuesto Silencioso sobre tu Patrimonio',
+      level: 3,
     },
     {
       type: 'paragraph',
@@ -247,8 +247,12 @@ export const content: ToolLocaleContent<InflationUI> = {
       ],
     },
     {
+      type: 'title',
+      text: 'Hábitos Financieros Saludables',
+      level: 3,
+    },
+    {
       type: 'list',
-      title: 'Hábitos Financieros Saludables',
       items: [
         'Revisar periódicamente tus gastos para detectar subidas ocultas.',
         'Diversificar ahorros en diferentes tipos de activos.',

@@ -1,4 +1,4 @@
-import type { WithContext, FAQPage, HowToThing, SoftwareApplication } from 'schema-dts';
+import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { CompoundInterestUI } from '../ui';
 
@@ -37,7 +37,7 @@ const howToData = [
   },
   {
     name: 'Definir aportaciones periódicas',
-    text: 'Indica cuánto dinero ahorrarás e invertirás cada mes adicionalmente.',
+    text: 'Indica cuánto dinero ahorrarás e invertirás cada mes o cada año adicionalmente.',
   },
   {
     name: 'Estimar rentabilidad anual',
@@ -59,7 +59,7 @@ const faqSchema: WithContext<FAQPage> = {
   })),
 };
 
-const howToSchema: WithContext<HowToThing> = {
+const howToSchema: WithContext<HowTo> = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
   name: title,
@@ -113,8 +113,17 @@ export const content: ToolLocaleContent<CompoundInterestUI> = {
   seo: [
     {
       type: 'title',
-      text: 'Interés Simple vs. Compuesto: La Metáfora de la Bola de Nieve',
+      text: 'La Magia del Interés Compuesto: Construye tu Riqueza Exponencialmente',
       level: 2,
+    },
+    {
+      type: 'paragraph',
+      html: 'Albert Einstein la llamó la "octava maravilla del mundo". El <strong>interés compuesto</strong> es el mecanismo más poderoso para generar riqueza a largo plazo. No necesitas ser un experto en finanzas para aprovecharlo: solo necesitas tiempo, paciencia y dinero invertido.',
+    },
+    {
+      type: 'title',
+      text: 'Interés Simple vs Compuesto: La Metáfora de la Bola de Nieve',
+      level: 3,
     },
     {
       type: 'paragraph',
@@ -152,14 +161,32 @@ export const content: ToolLocaleContent<CompoundInterestUI> = {
       html: 'Matemáticamente, tus beneficios generan nuevos beneficios. En los primeros años parece lento, pero pasado el "punto de inflexión", la curva se dispara verticalmente. Aquí es donde se crean las verdaderas fortunas.',
     },
     {
+      type: 'title',
+      text: '¿Por qué el tiempo es tu mayor aliado?',
+      level: 3,
+    },
+    {
+      type: 'paragraph',
+      html: 'El factor más determinante no es la cantidad de dinero que inviertas, sino <strong>cuántos años dejes que crezca</strong>. Empezar 10 años antes puede resultar en una riqueza final 2 o 3 veces mayor, incluso si inviertes menos dinero total. Este efecto exponencial es la razón por la que los inversores jóvenes tienen una ventaja incomparable.',
+    },
+    {
       type: 'tip',
       title: 'La Regla del 72',
-      html: '<p>Divide 72 entre tu rentabilidad anual para saber cuántos años tardarás en <strong>duplicar tu dinero</strong>.</p><p><em>Ejemplo: Al 8%, duplicas cada 9 años (72 ÷ 8 = 9).</em></p>',
+      html: '<p>Divide 72 entre tu rentabilidad anual para saber cuántos años tardarás en <strong>duplicar tu dinero</strong>.</p><p><em>Ejemplo: Al 8%, duplicas cada 9 años (72/8 = 9).</em></p><p>Esta fórmula mágica funciona para cualquier tasa de rendimiento y te ayuda a estimar rápidamente el crecimiento de tus inversiones.</p>',
     },
     {
       type: 'tip',
       title: 'Consejo 2026',
-      html: '<p>La inflación sigue siendo un factor. Asegúrate de que tu rentabilidad neta supere al menos el 2-3% anual para no perder poder adquisitivo.</p>',
+      html: '<p>La inflación sigue siendo un factor. Asegúrate de que tu rentabilidad neta supere al menos el 2-3% anual para no perder poder adquisitivo. Invierte en activos que crezcan más rápido que la inflación.</p>',
+    },
+    {
+      type: 'title',
+      text: 'Frecuencia de Capitalización: ¿Importa?',
+      level: 3,
+    },
+    {
+      type: 'paragraph',
+      html: 'El interés puede capitalizarse anualmente, semestralmente, trimestralmente, mensualmente o incluso diariamente. Cuanto <strong>más frecuente sea la capitalización</strong>, mayor será el efecto compuesto. Un mismo capital con la misma tasa crecerá más si el interés se compone mensualmente que si se compone anualmente.',
     },
   ],
   ui: {

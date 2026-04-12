@@ -1,11 +1,14 @@
 ---
 import { SEORenderer } from '@jjlmoya/utils-shared';
+import { fireCalculator } from './index';
+import type { KnownLocale } from '../../types';
 
 interface Props {
-  seoContent: typeof SEORenderer extends { astro: (props: infer P) => any } ? P['seoContent'] : any;
+  locale?: KnownLocale;
 }
 
-const { seoContent } = Astro.props;
+const { locale = 'es' } = Astro.props;
+const content = await fireCalculator.i18n[locale]?.();
+if (!content) return null;
 ---
-
-<SEORenderer client:load seoContent={seoContent} />
+<SEORenderer content={{ locale: locale as string, sections: content.seo }} />

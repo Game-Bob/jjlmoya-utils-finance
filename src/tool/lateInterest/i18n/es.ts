@@ -1,11 +1,11 @@
-import type { WithContext, FAQPage, HowToThing, SoftwareApplication } from 'schema-dts';
+import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { LateInterestUI } from '../ui';
 
 const slug = 'intereses-demora';
-const title = 'Calculadora de Intereses por Demora: Calcula Moratorios';
+const title = 'Calculadora de Intereses de Demora y Legales España 2026';
 const description =
-  'Calcula los intereses por demora en pagos. Herramienta para calcular moratorios con interés simple, compuesto o mensual. Útil para facturas vencidas y deudas.';
+  'Calcula intereses de demora tributarios (Hacienda) y legales por impagos. Simulador actualizado para 2025 y 2026 basado en la Ley de Presupuestos.';
 
 const faqData = [
   {
@@ -60,7 +60,7 @@ const faqSchema: WithContext<FAQPage> = {
   })),
 };
 
-const howToSchema: WithContext<HowToThing> = {
+const howToSchema: WithContext<HowTo> = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
   name: title,
@@ -110,43 +110,82 @@ export const content: ToolLocaleContent<LateInterestUI> = {
   seo: [
     {
       type: 'title',
-      text: 'Cómo Calcular Intereses de Demora',
+      text: 'Calculadora de Intereses de Demora y Legales: Guía Completa',
       level: 2,
     },
     {
       type: 'paragraph',
-      html: 'Los <strong>intereses por demora</strong> o <strong>moratorios</strong> son las penalizaciones financieras que se aplican cuando un pago no se realiza en el plazo acordado. Su cálculo es fundamental en relaciones comerciales y legales.',
+      html: 'En el complejo entramado legal y fiscal de España, el transcurso del tiempo ante una deuda no es gratuito. El <strong>interés de demora</strong> y el <strong>interés legal del dinero</strong> son los mecanismos que la ley utiliza para compensar el perjuicio causado por el retraso en el cumplimiento de una obligación dineraria. Ya sea una deuda con <strong>Hacienda</strong>, un impago entre empresas o una reclamación judicial, entender cómo se devengan estos intereses es fundamental.',
     },
     {
-      type: 'comparative',
-      columns: 2,
-      items: [
-        {
-          title: 'Interés Simple',
-          description: 'Se calcula solo sobre el capital original cada período.',
-          points: [
-            'Crecimiento lineal y predecible',
-            'Menos perjudicial que compuesto',
-            'Común en contratos simples',
-            'Fórmula: Capital × Tasa × Período',
-          ],
-        },
-        {
-          title: 'Interés Compuesto',
-          description: 'Se recalcula sobre el capital más intereses acumulados.',
-          highlight: true,
-          points: [
-            'Crecimiento exponencial',
-            'Más costoso para el deudor',
-            'Usado en finanzas complejas',
-            'Los intereses generan más intereses',
-          ],
-        },
-      ],
+      type: 'title',
+      text: '¿Qué es el Interés Legal del Dinero?',
+      level: 3,
     },
     {
       type: 'paragraph',
-      html: 'El cálculo exacto de moratorios depende de la legislación local. En España, la Ley 3/2004 sobre morosidad establece límites máximos. Siempre verifica los términos contractuales y consulta con un experto legal.',
+      html: 'El interés legal del dinero es el recargo que se aplica a una deuda cuando las partes no han pactado un interés específico o cuando la ley así lo determina. Para los años <strong>2024, 2025 y 2026</strong>, este tipo se ha mantenido estable en el <strong>3,25%</strong>. Este porcentaje sirve como base para multitud de cálculos legales.',
+    },
+    {
+      type: 'title',
+      text: 'El Interés de Demora Tributario (Hacienda)',
+      level: 3,
+    },
+    {
+      type: 'paragraph',
+      html: 'Cuando la deuda es con la Administración Pública, el <strong>interés de demora tributario</strong> es superior al interés legal para desincentivar el retraso en el pago de impuestos. Para el periodo <strong>2024-2026</strong>, se ha fijado en el <strong>4,0625%</strong>. Este es el recargo que Hacienda te cobrará si presentas una autoliquidación fuera de plazo.',
+    },
+    {
+      type: 'tip',
+      title: 'Carácter Indemnizatorio, no Punitivo',
+      html: '<p><strong>Dato clave:</strong> A diferencia de las sanciones, los intereses de demora tienen carácter indemnizatorio, no punitivo. Hacienda no te "castiga" con ellos, sino que te cobra por el tiempo que has dispuesto de un dinero que debería estar en las arcas públicas.</p>',
+    },
+    {
+      type: 'title',
+      text: 'Cómo Calcular los Intereses Paso a Paso',
+      level: 3,
+    },
+    {
+      type: 'paragraph',
+      html: 'El cálculo de estos intereses sigue una fórmula de interés simple, donde el tiempo se cuenta por días naturales: <strong>Intereses = (Principal × Días × Tipo de Interés) / 36.500</strong>',
+    },
+    {
+      type: 'list',
+      items: [
+        '<strong>Principal:</strong> La cantidad total de la deuda original.',
+        '<strong>Días:</strong> El número de días transcurridos desde el día siguiente al vencimiento hasta el día del pago efectivo.',
+        '<strong>Tipo de Interés:</strong> El porcentaje anual aplicable (Ej: 3,25 o 4,0625).',
+        '<strong>36.500:</strong> El factor divisor para convertir el porcentaje anual en diario (365 días x 100).',
+      ],
+    },
+    {
+      type: 'card',
+      icon: 'mdi:calculator',
+      title: 'Ejemplo Práctico: Deuda con Hacienda',
+      html: '<p>Imagina que debes 5.000 € de una declaración de IRPF que venció hace 180 días:</p><ul><li>Interés aplicable (Demora): 4,0625%</li><li>Cálculo: (5.000 × 180 × 4,0625) / 36.500</li><li><strong>Intereses resultantes:</strong> 100,17 €</li><li>Total a pagar: 5.100,17 €</li></ul>',
+    },
+    {
+      type: 'title',
+      text: 'Diferencias Según el Tipo de Deuda',
+      level: 3,
+    },
+    {
+      type: 'list',
+      items: [
+        '<strong>Deudas Civiles:</strong> Entre particulares, se aplica el 3,25% (legal).',
+        '<strong>Deudas Mercantiles:</strong> Se rigen por la Ley de Lucha contra la Morosidad, alcanzando el 10,15% - 11,15% en 2025-2026.',
+        '<strong>Deudas con la Seguridad Social:</strong> Aplican el 4,0625% más recargos del 10% al 20%.',
+        '<strong>Intereses Procesales:</strong> Cuando hay sentencia judicial, el 5,25% desde la fecha de sentencia.',
+      ],
+    },
+    {
+      type: 'title',
+      text: 'Intereses en Operaciones Comerciales: ¡Cuidado con los 60 Días!',
+      level: 3,
+    },
+    {
+      type: 'paragraph',
+      html: 'Si eres autónomo o empresa, la Ley 3/2004 establece un plazo máximo de pago de 60 días. Si tu cliente se pasa de esa fecha, puedes exigir el interés de demora comercial de forma automática, sin necesidad de recordatorio, y además cobrar una cantidad fija de 40 € por costes de cobro.',
     },
   ],
   ui: {

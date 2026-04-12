@@ -1,6 +1,7 @@
 import type { FinanceToolEntry, ToolLocaleContent, ToolDefinition } from '../../types';
 import DebtSnowballComponent from './component.astro';
 import DebtSnowballSEO from './seo.astro';
+import DebtSnowballBibliography from './bibliography.astro';
 import type { DebtSnowballUI } from './ui';
 import { DebtSnowballLogic, type Debt, type SimulationResult, type ProjectionMonth } from './logic';
 
@@ -24,13 +25,13 @@ export const debtSnowball: FinanceToolEntry<DebtSnowballUI> = {
   },
 };
 
-export { DebtSnowballComponent, DebtSnowballSEO };
+export { DebtSnowballComponent, DebtSnowballSEO, DebtSnowballBibliography };
 
 export const DEBT_SNOWBALL_TOOL: ToolDefinition = {
   entry: debtSnowball,
   Component: DebtSnowballComponent,
   SEOComponent: DebtSnowballSEO,
-  BibliographyComponent: null,
+  BibliographyComponent: DebtSnowballBibliography,
 };
 
 export const DebtSnowballLogicExport = DebtSnowballLogic;

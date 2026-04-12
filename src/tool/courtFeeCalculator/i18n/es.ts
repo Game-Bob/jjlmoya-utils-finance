@@ -1,4 +1,4 @@
-import type { WithContext, FAQPage, HowToThing, SoftwareApplication } from 'schema-dts';
+import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { CourtFeeCalculatorUI } from '../ui';
 
@@ -70,19 +70,120 @@ const bibliographyData = [
 const seoData = [
   {
     type: 'title',
-    text: 'Cálculo de Tasas Judiciales Españolas - Modelo 696',
+    text: 'Calculadora de Tasas Judiciales en España: Guía Completa',
+    level: 2,
   },
   {
     type: 'paragraph',
-    html: 'Las <strong>tasas judiciales</strong> en España se rigen por la <strong>Ley 10/2012</strong> y afectan a empresas y profesionales. El cálculo se realiza automáticamente considerando la cuota fija según el tipo de procedimiento y la cuota variable del 0,5% de la cuantía del litigio.',
+    html: 'La <strong>Calculadora de Tasas Judiciales</strong> es una herramienta técnica diseñada para determinar con precisión el coste fiscal de la potestad jurisdiccional en España. Desde la reforma de la Ley 10/2012, el cálculo de estas tasas se ha vuelto una tarea crítica para la planificación procesal de empresas y profesionales del derecho.',
+  },
+  {
+    type: 'card',
+    title: 'Aspectos Clave de la Tasa Judicial',
+    html: '<ul><li>Obligatoria solo para <strong>personas jurídicas</strong> (empresas).</li><li>Sujeta al <strong>Modelo 696</strong> de la Agencia Tributaria.</li><li>Compuesta por una <strong>cuota fija</strong> y una <strong>cuota variable</strong>.</li><li>Límite máximo de la cuota variable fijado en <strong>10.000 €</strong>.</li></ul>',
+  },
+  {
+    type: 'card',
+    html: '<p>Esta utilidad simula la autoliquidación del tributo, desglosando los importes según el orden (Civil, Contencioso o Social) y la cuantía reclamada, permitiendo prever el impacto financiero antes de iniciar el litigio.</p>',
   },
   {
     type: 'title',
-    text: 'Exenciones y Casos Especiales',
+    text: '¿Quién debe pagar Tasas Judiciales en 2026?',
+    level: 2,
   },
   {
     type: 'paragraph',
-    html: 'Las <strong>personas físicas están totalmente exentas</strong> de tasas judiciales desde 2016. En el orden penal tampoco existen tasas. El orden social tiene especificidades en su cálculo de cuotas.',
+    html: 'La normativa actual, tras la histórica <strong>Sentencia del Tribunal Constitucional 140/2016</strong>, establece un marco claro de exenciones que protegen el acceso a la justicia de los ciudadanos individuales.',
+  },
+  {
+    type: 'list',
+    items: [
+      '<strong>Personas Físicas:</strong> Disfrutan de una exención absoluta en todos los órdenes.',
+      '<strong>Personas Jurídicas:</strong> Son los sujetos pasivos principales del tributo.',
+      '<strong>Sujetos Especiales:</strong> Entidades de utilidad pública y administraciones están exentas.',
+    ],
+  },
+  {
+    type: 'title',
+    text: 'Estructura Técnica de la Tasa',
+    level: 3,
+  },
+  {
+    type: 'paragraph',
+    html: 'El cálculo matemático que realiza nuestra herramienta se divide en dos componentes obligatorios que se suman para obtener el total del Modelo 696.',
+  },
+  {
+    type: 'title',
+    text: '1. Cuota Fija por Procedimiento',
+    level: 4,
+  },
+  {
+    type: 'paragraph',
+    html: 'Se determina por el tipo de acción judicial interpuesta. Un juicio ordinario civil conlleva una tasa de 300 €, mientras que un recurso de casación ante el Tribunal Supremo asciende a 1.200 €.',
+  },
+  {
+    type: 'title',
+    text: '2. Cuota Variable por Cuantía',
+    level: 4,
+  },
+  {
+    type: 'paragraph',
+    html: 'Se aplica sobre la base imponible del pleito. Para las sociedades, los tipos de gravamen se aplican de forma escalonada.',
+  },
+  {
+    type: 'table',
+    headers: ['Tramo de Cuantía', 'Tipo Aplicable'],
+    rows: [
+      ['Hasta 1.000.000 €', '<strong>0,50%</strong>'],
+      ['Exceso de 1.000.000 €', '<strong>0,25%</strong>'],
+      ['Límite Máximo Variable', '<strong>10.000 €</strong>'],
+    ],
+  },
+  {
+    type: 'title',
+    text: 'Tasas en Órdenes Jurisdiccionales Específicos',
+    level: 2,
+  },
+  {
+    type: 'title',
+    text: 'Jurisdicción Civil',
+    level: 3,
+  },
+  {
+    type: 'paragraph',
+    html: 'Es el ámbito con mayor volumen de liquidaciones. Abarca procesos monitorios, verbales, ordinarios y ejecuciones. Nuestra calculadora ajusta automáticamente la tasa fija según la complejidad del proceso elegido.',
+  },
+  {
+    type: 'title',
+    text: 'Orden Contencioso-Administrativo',
+    level: 3,
+  },
+  {
+    type: 'paragraph',
+    html: 'Aplica en litigios contra la Administración. Los importes varían si se trata de un procedimiento abreviado (200 €) o un ordinario (350 €), además de los tramos variables correspondientes.',
+  },
+  {
+    type: 'tip',
+    title: 'Referencia Legal',
+    html: '<p>Consulte siempre la Ley 10/2012 para casos especiales de exención parcial o bonificaciones por uso de medios telemáticos.</p>',
+  },
+  {
+    type: 'title',
+    text: 'Consecuencias de la Omisión del Pago',
+    level: 2,
+  },
+  {
+    type: 'paragraph',
+    html: 'La presentación de una demanda por un sujeto obligado sin el correspondiente justificante de pago conlleva un requerimiento de subsanación. El incumplimiento de este plazo de 10 días resulta en el archivo definitivo de las actuaciones.',
+  },
+  {
+    type: 'card',
+    title: 'Ventajas de la Simulación Previa',
+    html: '<ul><li>Precisión total en la cuantificación de gastos procesales.</li><li>Evita retrasos por errores en la autoliquidación del Modelo 696.</li><li>Optimiza la toma de decisiones financieras en la estrategia legal.</li></ul>',
+  },
+  {
+    type: 'paragraph',
+    html: 'Nuestra <strong>Calculadora de Tasas Judiciales</strong> garantiza que profesionales y empresas operen con datos actualizados a 2026, cumpliendo con el rigor técnico que exige la práctica jurídica moderna.',
   },
 ];
 
@@ -96,7 +197,7 @@ const faqSchema: WithContext<FAQPage> = {
   })),
 };
 
-const howToSchema: WithContext<HowToThing> = {
+const howToSchema: WithContext<HowTo> = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
   name: title,

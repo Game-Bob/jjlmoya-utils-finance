@@ -1,4 +1,4 @@
-import type { WithContext, FAQPage, HowToThing, SoftwareApplication } from 'schema-dts';
+import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { IBANBICSwiftUI } from '../ui';
 
@@ -69,7 +69,7 @@ const faqSchema: WithContext<FAQPage> = {
   })),
 };
 
-const howToSchema: WithContext<HowToThing> = {
+const howToSchema: WithContext<HowTo> = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
   name: title,
@@ -108,43 +108,92 @@ export const content: ToolLocaleContent<IBANBICSwiftUI> = {
   seo: [
     {
       type: 'title',
-      text: 'Conversor de IBAN a BIC/SWIFT: Búsqueda Instantánea',
+      text: 'Conversor de IBAN a BIC/SWIFT: Todo lo que necesitas saber sobre tus códigos bancarios',
       level: 2,
     },
     {
       type: 'paragraph',
-      html: 'El <strong>código BIC/SWIFT</strong> es el identificador internacional de tu banco, esencial para transferencias internacionales fuera de la zona SEPA. Nuestro conversor te extrae automáticamente el código correcto desde tu IBAN español en segundos.',
-    },
-    {
-      type: 'comparative',
-      columns: 2,
-      items: [
-        {
-          title: 'IBAN (Número de Cuenta)',
-          description: 'Identificador único de tu cuenta bancaria a nivel internacional.',
-          points: [
-            'Formato estándar internacional (ISO 13616)',
-            '24 caracteres en España',
-            'Incluye país, control y datos de la cuenta',
-            'Validable mediante algoritmo Módulo 97',
-          ],
-        },
-        {
-          title: 'BIC/SWIFT (Código de Banco)',
-          description: 'Identificador único de tu entidad bancaria a nivel internacional.',
-          highlight: true,
-          points: [
-            'Código de 8 a 11 caracteres',
-            'Necesario para transferencias internacionales',
-            'Se obtiene del IBAN en bancos españoles',
-            'Registrado en la red SWIFT internacional',
-          ],
-        },
-      ],
+      html: 'En el complejo mundo de las finanzas internacionales, dos acrónimos dominan cualquier operación de transferencia: <strong>IBAN</strong> y <strong>BIC</strong> (también conocido como SWIFT). Aunque en la zona SEPA cada vez es menos frecuente que los bancos nos lo pidan para operaciones nacionales, sigue siendo una pieza fundamental para identificar de forma unívoca a la entidad receptora de los fondos.',
     },
     {
       type: 'paragraph',
-      html: 'El IBAN en España sigue el formato <strong>ES</strong> (código país) + <strong>2 dígitos de control</strong> + <strong>4 dígitos de entidad</strong> + <strong>4 dígitos de sucursal</strong> + <strong>2 dígitos de control</strong> + <strong>10 dígitos del número de cuenta</strong>. Totalizando 24 caracteres que contienen toda la información de tu cuenta.',
+      html: 'Entender cómo funcionan estos códigos no solo es una cuestión de curiosidad técnica, sino una medida de seguridad financiera esencial. Errar en un solo dígito de tu cuenta bancaria o proporcionar un BIC incorrecto puede derivar en transferencias retenidas, devoluciones con comisiones elevadas o, en el peor de los casos, el envío de capital a una cuenta equivocada en el extranjero.',
+    },
+    {
+      type: 'title',
+      text: '¿Qué es el código IBAN y cómo se estructura?',
+      level: 3,
+    },
+    {
+      type: 'paragraph',
+      html: 'El IBAN (International Bank Account Number) es una norma internacional establecida por la ISO para identificar cuentas bancarias. Su objetivo es facilitar la automatización de los procesos de pago y reducir los errores en las transacciones transfronterizas. En España, el IBAN tiene una longitud fija de 24 caracteres.',
+    },
+    {
+      type: 'list',
+      items: [
+        '<strong>Código de país (2 letras):</strong> Identifica el país donde reside la cuenta (ES para España).',
+        '<strong>Dígitos de control (2 números):</strong> Un código de seguridad calculado para asegurar que el resto del IBAN ha sido introducido correctamente.',
+        '<strong>Entidad (4 números):</strong> El código asignado por el Banco de España a la institución financiera específica.',
+        '<strong>Sucursal (4 números):</strong> Indica la oficina bancaria donde se realizó la apertura de la cuenta.',
+        '<strong>Dígitos de control (2 números):</strong> Validación interna de la cuenta clásica española.',
+        '<strong>Número de cuenta (10 números):</strong> El identificador único personal de tu cuenta.',
+      ],
+    },
+    {
+      type: 'tip',
+      title: 'El Algoritmo del Módulo 97',
+      html: '<p>El algoritmo del IBAN utiliza una operación matemática conocida como Módulo 97. Este sistema es tan robusto que la probabilidad de que un error tipográfico pase desapercibido es prácticamente nula. Si al validar tu IBAN el resto de la división no es 1, el código es incorrecto.</p>',
+    },
+    {
+      type: 'title',
+      text: 'La Importancia del Sistema SWIFT y el Código BIC',
+      level: 3,
+    },
+    {
+      type: 'paragraph',
+      html: 'A diferencia del IBAN, que señala la "dirección exacta" de tu dinero, el <strong>BIC</strong> (Bank Identifier Code) señala el "edificio": el banco en sí. SWIFT es la red de comunicación global segura que conecta a miles de bancos en todo el mundo. Proporcionar el BIC correcto asegura que el banco emisor sepa exactamente a qué ventanilla internacional debe llamar para entregar los fondos.',
+    },
+    {
+      type: 'title',
+      text: 'Seguridad: ¿Qué Riesgos Tiene Compartir el IBAN?',
+      level: 3,
+    },
+    {
+      type: 'paragraph',
+      html: 'Una duda muy recurrente es si proporcionar el IBAN a terceros para recibir cobros es seguro. La respuesta corta es sí. El IBAN por sí solo no permite a nadie entrar en tu cuenta o sacar dinero por la fuerza. Para que una empresa pueda retirar fondos, necesita una autorización firmada (Mandato SEPA) que puedes revocar en cualquier momento desde tu banca online.',
+    },
+    {
+      type: 'title',
+      text: 'Transferencias SEPA vs. Internacionales',
+      level: 3,
+    },
+    {
+      type: 'list',
+      items: [
+        '<strong>SEPA:</strong> Comisiones nulas o reducidas, tiempo 24h, solo necesitas IBAN, mismo coste que nacional.',
+        '<strong>Resto Mundo:</strong> Comisiones altas, tiempo 2-5 días, requiere IBAN + BIC, posibles cambios de divisa.',
+      ],
+    },
+    {
+      type: 'title',
+      text: 'Principales Entidades Bancarias y sus BICs',
+      level: 3,
+    },
+    {
+      type: 'list',
+      items: [
+        '<strong>Banco Santander:</strong> BSCH ES MM XXX',
+        '<strong>BBVA:</strong> BBVA ES MM XXX',
+        '<strong>CaixaBank:</strong> CAIX ES BB XXX',
+        '<strong>Banco Sabadell:</strong> BSAB ES BB XXX',
+        '<strong>Bankinter:</strong> BKNM ES MM XXX',
+        '<strong>Openbank:</strong> OPNB ES MM XXX',
+      ],
+    },
+    {
+      type: 'tip',
+      title: 'Atención a los Gastos de Transferencia',
+      html: '<p>Cuando realices una transferencia internacional, te preguntarán quién paga las comisiones: <strong>SHA</strong> (compartidos), <strong>OUR</strong> (tú pagas todos) o <strong>BEN</strong> (el beneficiario paga). Asegúrate de acordarlo previamente.</p>',
     },
   ],
   ui: {

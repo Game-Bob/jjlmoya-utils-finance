@@ -1,5 +1,7 @@
 import type { FinanceToolEntry, ToolLocaleContent, ToolDefinition } from '../../types';
 import IBANBICSwiftComponent from './component.astro';
+import IBANBICSwiftSEO from './seo.astro';
+import IBANBICSwiftBibliography from './bibliography.astro';
 import type { IBANBICSwiftUI } from './ui';
 
 export type IBANBICSwiftLocaleContent = ToolLocaleContent<IBANBICSwiftUI>;
@@ -21,11 +23,11 @@ export const ibanBicSwift: FinanceToolEntry<IBANBICSwiftUI> = {
   },
 };
 
-export { IBANBICSwiftComponent };
+export { IBANBICSwiftComponent, IBANBICSwiftSEO, IBANBICSwiftBibliography };
 
 export const IBAN_BIC_SWIFT_TOOL: ToolDefinition = {
   entry: ibanBicSwift,
   Component: IBANBICSwiftComponent,
-  SEOComponent: null,
-  BibliographyComponent: null,
+  SEOComponent: IBANBICSwiftSEO,
+  BibliographyComponent: IBANBICSwiftBibliography,
 };

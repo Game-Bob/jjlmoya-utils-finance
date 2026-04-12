@@ -1,5 +1,7 @@
 import type { FinanceToolEntry, ToolLocaleContent, ToolDefinition } from '../../types';
 import LegalInterestRateComponent from './component.astro';
+import LegalInterestRateSEO from './seo.astro';
+import LegalInterestRateBibliography from './bibliography.astro';
 import type { LegalInterestRateUI } from './ui';
 
 export type LegalInterestRateLocaleContent = ToolLocaleContent<LegalInterestRateUI>;
@@ -21,11 +23,11 @@ export const legalInterestRate: FinanceToolEntry<LegalInterestRateUI> = {
   },
 };
 
-export { LegalInterestRateComponent };
+export { LegalInterestRateComponent, LegalInterestRateSEO, LegalInterestRateBibliography };
 
 export const LEGAL_INTEREST_RATE_TOOL: ToolDefinition = {
   entry: legalInterestRate,
   Component: LegalInterestRateComponent,
-  SEOComponent: null,
-  BibliographyComponent: null,
+  SEOComponent: LegalInterestRateSEO,
+  BibliographyComponent: LegalInterestRateBibliography,
 };

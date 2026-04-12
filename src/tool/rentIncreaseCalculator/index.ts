@@ -1,5 +1,7 @@
 import type { FinanceToolEntry, ToolLocaleContent, ToolDefinition } from '../../types';
 import RentIncreaseComponent from './component.astro';
+import RentIncreaseSEO from './seo.astro';
+import RentIncreaseBibliography from './bibliography.astro';
 import type { RentIncreaseUI } from './ui';
 
 export type RentIncreaseLocaleContent = ToolLocaleContent<RentIncreaseUI>;
@@ -21,11 +23,11 @@ export const rentIncrease: FinanceToolEntry<RentIncreaseUI> = {
   },
 };
 
-export { RentIncreaseComponent };
+export { RentIncreaseComponent, RentIncreaseSEO, RentIncreaseBibliography };
 
 export const RENT_INCREASE_TOOL: ToolDefinition = {
   entry: rentIncrease,
   Component: RentIncreaseComponent,
-  SEOComponent: null,
-  BibliographyComponent: null,
+  SEOComponent: RentIncreaseSEO,
+  BibliographyComponent: RentIncreaseBibliography,
 };

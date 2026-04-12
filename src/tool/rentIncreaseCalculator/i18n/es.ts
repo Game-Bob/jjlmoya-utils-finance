@@ -1,4 +1,4 @@
-import type { WithContext, FAQPage, HowToThing, SoftwareApplication } from 'schema-dts';
+import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { RentIncreaseUI } from '../ui';
 
@@ -66,27 +66,88 @@ const bibliographyData = [
 const seoData = [
   {
     type: 'title',
-    text: 'Límite Legal del 3% en Alquileres de Vivienda Habitual',
+    text: 'Calculadora de Subida de Alquiler con IPC: Guía Completa y Límite del 3%',
+    level: 2,
   },
   {
     type: 'paragraph',
-    html: 'La Ley 12/2023 por el Derecho a la Vivienda establece un <strong>límite máximo del 3% de incremento anual</strong> para los alquileres de viviendas habituales en 2024 y 2025. Esta medida de protección al inquilino prevalece sobre el Índice de Precios al Consumidor (IPC) cuando este es superior.',
+    html: 'La actualización de la renta es uno de los momentos más críticos en la relación entre arrendador y arrendatario. En España, el <strong>Índice de Precios de Consumo (IPC)</strong> ha sido tradicionalmente el termómetro utilizado para ajustar el precio del alquiler. Sin embargo, con la <strong>Ley 12/2023 por el Derecho a la Vivienda</strong>, se han introducido límites que todo inquilino y propietario debe conocer.',
   },
   {
     type: 'title',
-    text: 'Diferencia entre IPC Manual y Tope Legal',
+    text: '¿Qué es el IPC y cómo afecta al alquiler?',
+    level: 3,
   },
   {
     type: 'paragraph',
-    html: 'Puedes usar esta calculadora de dos formas: aplicando el <strong>tope legal del 3%</strong> (opción recomendada para viviendas habituales) o introduciendo un <strong>porcentaje manual</strong> si necesitas calcular aumentos de otros tipos de inmuebles o periodos anteriores a 2024.',
+    html: 'El IPC es un indicador que mide la variación de los precios de una cesta de bienes y servicios representativa del consumo de los hogares. Cuando un contrato de alquiler incluye una cláusula de actualización, el precio suele revisarse anualmente tomando como referencia la variación porcentual de este índice.',
+  },
+  {
+    type: 'paragraph',
+    html: '<strong>Es importante destacar que la subida no es automática</strong>. Para que la renta suba, el contrato debe especificar explícitamente que se actualizará conforme al IPC. Si no incluye esta cláusula, el precio debe permanecer invariable durante toda la vigencia del mismo.',
+  },
+  {
+    type: 'title',
+    text: 'El Límite del 3% en 2024 y 2025',
+    level: 3,
+  },
+  {
+    type: 'paragraph',
+    html: 'Debido a los altos niveles de inflación, el Gobierno introdujo medidas extraordinarias. Para los años <strong>2024 y 2025</strong>, el límite máximo permitido se ha fijado en el <strong>3%</strong>. Este límite legal prevalece sobre lo que diga el contrato.',
+  },
+  {
+    type: 'list',
+    items: [
+      '<strong>Grandes Tenedores:</strong> No pueden subir más del 3% bajo ninguna circunstancia.',
+      '<strong>Pequeños Tenedores:</strong> El incremento debe ser pactado. Si no hay acuerdo, no podrá superar el 3%.',
+      '<strong>Locales u Oficinas:</strong> No suelen estar sujetos a este límite, rigiéndose por lo pactado libremente.',
+    ],
+  },
+  {
+    type: 'title',
+    text: 'Cómo Calcular la Subida Paso a Paso',
+    level: 3,
+  },
+  {
+    type: 'paragraph',
+    html: '<strong>Nueva Renta = Mensualidad × (1 + Porcentaje / 100)</strong><br/><strong>Incremento = Mensualidad × (Porcentaje / 100)</strong>',
+  },
+  {
+    type: 'card',
+    icon: 'mdi:calculator',
+    title: 'Ejemplo Práctico',
+    html: '<p>Alquiler de 950€ actualizado al 3%:</p><ul><li>Cálculo: 950 × 0,03 = 28,50€</li><li>Nueva Renta: 978,50€</li><li>Coste Anual: 342€</li></ul>',
   },
   {
     type: 'title',
     text: 'Requisitos para una Subida Válida',
+    level: 3,
   },
   {
-    type: 'paragraph',
-    html: '<strong>Para que la subida de alquiler sea legal:</strong> El contrato debe incluir una cláusula de actualización anual. El arrendador debe avisar por escrito al menos 30 días antes. El incremento no puede superar el 3% en viviendas habituales (2024-2025). El inquilino puede reclamar si se incumple cualquiera de estos requisitos.',
+    type: 'list',
+    items: [
+      '<strong>Anualidad Cumplida:</strong> Solo cuando se cumpla cada año. No a mitad de año.',
+      '<strong>Notificación Escrita:</strong> Con al menos 30 días de antelación (burofax o email certificado).',
+      '<strong>Certificación INE:</strong> Adjuntar datos oficiales del IPC.',
+    ],
+  },
+  {
+    type: 'tip',
+    title: 'Si el IPC es Negativo',
+    html: '<p>Si el IPC es negativo (deflación), el inquilino tiene derecho a una <strong>bajada de la renta</strong>, siempre que el contrato no lo prohíba explícitamente.</p>',
+  },
+  {
+    type: 'title',
+    text: 'Vivienda Habitual vs. Local Comercial',
+    level: 3,
+  },
+  {
+    type: 'list',
+    items: [
+      '<strong>Vivienda Habitual:</strong> Sujeta al límite del 3%.',
+      '<strong>Temporal/Habitaciones:</strong> Regulación más ambigua, por lo pactado.',
+      '<strong>Locales/Naves:</strong> Libertad de pactos. Sin límites legales.',
+    ],
   },
 ];
 
@@ -100,7 +161,7 @@ const faqSchema: WithContext<FAQPage> = {
   })),
 };
 
-const howToSchema: WithContext<HowToThing> = {
+const howToSchema: WithContext<HowTo> = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
   name: title,

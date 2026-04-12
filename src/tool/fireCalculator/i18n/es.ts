@@ -1,4 +1,4 @@
-import type { WithContext, FAQPage, HowToThing, SoftwareApplication } from 'schema-dts';
+import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { FIRECalculatorUI } from '../ui';
 
@@ -77,7 +77,7 @@ const faqSchema: WithContext<FAQPage> = {
   })),
 };
 
-const howToSchema: WithContext<HowToThing> = {
+const howToSchema: WithContext<HowTo> = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
   name: title,
@@ -197,6 +197,7 @@ export const content: ToolLocaleContent<FIRECalculatorUI> = {
       items: [
         {
           title: 'Ventajas',
+          description: 'Por qué funciona la regla del 4%',
           points: [
             'Simplicidad matemática para planificación rápida.',
             'Basada en datos históricos de casi un siglo.',
@@ -205,6 +206,7 @@ export const content: ToolLocaleContent<FIRECalculatorUI> = {
         },
         {
           title: 'Limitaciones',
+          description: 'Qué no cubre la regla del 4%',
           points: [
             'No contempla el riesgo de secuencia de retornos.',
             'Basada principalmente en el mercado estadounidense.',

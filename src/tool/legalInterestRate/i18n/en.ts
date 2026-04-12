@@ -1,4 +1,4 @@
-import type { WithContext, FAQPage, HowToThing, SoftwareApplication } from 'schema-dts';
+import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { LegalInterestRateUI } from '../ui';
 
@@ -96,7 +96,7 @@ const faqSchema: WithContext<FAQPage> = {
   })),
 };
 
-const howToSchema: WithContext<HowToThing> = {
+const howToSchema: WithContext<HowTo> = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
   name: title,
@@ -146,6 +146,7 @@ export const content: ToolLocaleContent<LegalInterestRateUI> = {
     labelTotalToPay: 'Total to Pay',
     labelFormula: 'This calculator applies the standard simple interest formula:',
     labelBase: 'A base of 365 days is used for official calculations according to current Spanish regulations in 2026.',
+    labelOfficialRegulation: 'Official Regulation',
     currencySymbol: '€',
     currencyCode: 'EUR',
     currencyLocale: 'en-US',

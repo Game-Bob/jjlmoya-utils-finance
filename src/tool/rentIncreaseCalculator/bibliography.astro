@@ -1,6 +1,6 @@
 ---
 import { Bibliography as SharedBibliography } from '@jjlmoya/utils-shared';
-import { ibanBicSwift } from './index';
+import { rentIncrease } from './index';
 import type { KnownLocale } from '../../types';
 
 interface Props {
@@ -8,7 +8,7 @@ interface Props {
 }
 
 const { locale = 'es' } = Astro.props;
-const content = await ibanBicSwift.i18n[locale]?.();
+const content = await rentIncrease.i18n[locale]?.();
 ---
 
 {content && <SharedBibliography links={content.bibliography} />}

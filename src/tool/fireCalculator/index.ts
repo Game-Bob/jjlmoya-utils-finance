@@ -1,6 +1,7 @@
 import type { FinanceToolEntry, ToolLocaleContent, ToolDefinition } from '../../types';
 import FIRECalculatorComponent from './component.astro';
 import FIRECalculatorSEO from './seo.astro';
+import FIRECalculatorBibliography from './bibliography.astro';
 import type { FIRECalculatorUI } from './ui';
 
 export type FIRECalculatorLocaleContent = ToolLocaleContent<FIRECalculatorUI>;
@@ -22,11 +23,11 @@ export const fireCalculator: FinanceToolEntry<FIRECalculatorUI> = {
   },
 };
 
-export { FIRECalculatorComponent, FIRECalculatorSEO };
+export { FIRECalculatorComponent, FIRECalculatorSEO, FIRECalculatorBibliography };
 
 export const FIRE_CALCULATOR_TOOL: ToolDefinition = {
   entry: fireCalculator,
   Component: FIRECalculatorComponent,
   SEOComponent: FIRECalculatorSEO,
-  BibliographyComponent: null,
+  BibliographyComponent: FIRECalculatorBibliography,
 };

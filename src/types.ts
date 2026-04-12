@@ -23,7 +23,7 @@ export interface HowToStep {
   text: string;
 }
 
-export interface ToolLocaleContent<TUI extends Record<string, unknown> = Record<string, unknown>> {
+export interface ToolLocaleContent<TUI = Record<string, unknown>> {
   slug: string;
   title: string;
   description: string;
@@ -49,7 +49,7 @@ export type LocaleLoader<T> = () => Promise<T>;
 
 export type LocaleMap<T> = Partial<Record<KnownLocale, LocaleLoader<T>>>;
 
-export interface FinanceToolEntry<TUI extends Record<string, string> = Record<string, string>> {
+export interface FinanceToolEntry<TUI extends Record<string, unknown> = Record<string, unknown>> {
   id: string;
   icons: {
     bg: string;
@@ -60,7 +60,8 @@ export interface FinanceToolEntry<TUI extends Record<string, string> = Record<st
 
 export interface FinanceCategoryEntry {
   icon: string;
-  tools: FinanceToolEntry[];
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  tools: Array<FinanceToolEntry<any>>;
   i18n: LocaleMap<CategoryLocaleContent>;
 }
 

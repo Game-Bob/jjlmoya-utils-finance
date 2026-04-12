@@ -1,4 +1,4 @@
-import type { WithContext, FAQPage, HowToThing, SoftwareApplication } from 'schema-dts';
+import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { MortgageUI } from '../ui';
 
@@ -21,7 +21,7 @@ const faqData = [
   {
     question: '¿Cuánto me ahorro si amortizo 10.000€ anticipadamente?',
     answer:
-      'Depende del momento. Si amortizas en el año 1 de una hipoteca de 200.000€ al 3%, puedes ahorrarte más de 15.000€ en intereses. Si lo haces en el año 20, apenas ahorras 2.000€. El timing es crucial.',
+      'Depende del momento. Si amortizan en el año 1 de una hipoteca de 200.000€ al 3%, puedes ahorrarte más de 15.000€ en intereses. Si lo haces en el año 20, apenas ahorras 2.000€. El timing es crucial.',
   },
   {
     question: '¿Qué porcentaje de mi sueldo debería destinar a la hipoteca?',
@@ -59,7 +59,7 @@ const faqSchema: WithContext<FAQPage> = {
   })),
 };
 
-const howToSchema: WithContext<HowToThing> = {
+const howToSchema: WithContext<HowTo> = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
   name: title,
@@ -113,30 +113,48 @@ export const content: ToolLocaleContent<MortgageUI> = {
   seo: [
     {
       type: 'title',
-      text: 'El "Trampa" del Sistema Francés',
+      text: 'Guía Completa de Hipotecas: Sistema Francés y Amortización',
       level: 2,
     },
     {
       type: 'paragraph',
-      html: 'En España, la mayoría de hipotecas usan el <strong>Sistema de Amortización Francés</strong>. Su característica principal es que la cuota mensual siempre es la misma (si el interés es fijo), pero la composición cambia.',
-    },
-    {
-      type: 'tip',
-      title: 'Composición de la Cuota',
-      html: '<p><strong>Al principio:</strong> Pagas casi todo INTERESES y devuelves muy poco dinero prestado.</p><p><strong>Al final:</strong> Pagas casi todo CAPITAL y muy pocos intereses.</p>',
-    },
-    {
-      type: 'paragraph',
-      html: 'Por eso, si vas a amortizar hipoteca (adelantar dinero), es muchísimo más rentable hacerlo en los primeros años del préstamo.',
+      html: 'La hipoteca es probablemente la deuda más grande que contraerás en tu vida. Entender cómo funciona el sistema de amortización español (francés) es crucial para tomar decisiones inteligentes que pueden ahorrarte decenas de miles de euros.',
     },
     {
       type: 'title',
-      text: 'Contexto 2026: Tipos de Interés',
-      level: 2,
+      text: 'El "Trampa" del Sistema Francés: Entendiendo la Composición de tu Cuota',
+      level: 3,
     },
     {
       type: 'paragraph',
-      html: 'Con un Euribor fluctuante, elegir entre <strong>Tipo Fijo</strong> o <strong>Tipo Variable</strong> es clave.',
+      html: 'En España, la mayoría de hipotecas usan el <strong>Sistema de Amortización Francés</strong>. Su característica principal es que la cuota mensual siempre es la misma (si el interés es fijo), pero la composición cambia radicalmente a lo largo del tiempo.',
+    },
+    {
+      type: 'tip',
+      title: 'Cómo Evoluciona tu Cuota',
+      html: '<p><strong>Al principio (Años 1-10):</strong> Pagas casi todo INTERESES y devuelves muy poco dinero prestado. En una hipoteca de 250.000€ al 3%, tu primer pago puede ser 80% intereses.</p><p><strong>En el medio (Años 11-25):</strong> La proporción se equilibra gradualmente.</p><p><strong>Al final (Años 26-30):</strong> Pagas casi todo CAPITAL y muy pocos intereses.</p>',
+    },
+    {
+      type: 'paragraph',
+      html: 'Por eso, si vas a <strong>amortizar hipoteca</strong> (adelantar dinero), es muchísimo más rentable hacerlo en los primeros años del préstamo. Amortizar 10.000€ en el año 1 puede ahorrarte más de 15.000€ en intereses. El mismo adelanto en el año 20 apenas te ahorra 2.000€.',
+    },
+    {
+      type: 'title',
+      text: '¿Cuánto Dinero Debo Destinar a la Hipoteca?',
+      level: 3,
+    },
+    {
+      type: 'paragraph',
+      html: 'El Banco de España recomienda que tu hipoteca <strong>no supere el 30-35% de tus ingresos netos mensuales</strong>. Si superas este umbral, aumentas significativamente el riesgo de impago ante imprevistos (pérdida de trabajo, enfermedad, etc.).',
+    },
+    {
+      type: 'title',
+      text: 'Contexto 2026: Tipo Fijo vs Variable',
+      level: 3,
+    },
+    {
+      type: 'paragraph',
+      html: 'Con un Euribor fluctuante, elegir entre <strong>Tipo Fijo</strong> o <strong>Tipo Variable</strong> es una decisión estratégica que puede costar miles de euros anuales.',
     },
     {
       type: 'comparative',
@@ -149,7 +167,7 @@ export const content: ToolLocaleContent<MortgageUI> = {
             'Cuota predecible durante 30 años',
             'Protección contra subidas de interés',
             'Paz mental en economía incierta',
-            'Ideal para presupuestos limitados',
+            'Ideal para presupuestos ajustados',
           ],
         },
         {
@@ -158,12 +176,17 @@ export const content: ToolLocaleContent<MortgageUI> = {
           highlight: true,
           points: [
             'Cuota inicial más baja',
-            'Riesgo de subidas del Euribor',
-            'Impacto potencial en presupuesto',
-            'Solo para tolerancia al riesgo alta',
+            'Riesgo de subidas del Euribor (4-5% es posible)',
+            'Impacto potencial grave en presupuesto',
+            'Solo para quien tolera riesgo alto',
           ],
         },
       ],
+    },
+    {
+      type: 'tip',
+      title: 'La Decisión Fijo vs Variable Depende de Tu Perfil',
+      html: '<p><strong>Elige Tipo Fijo si:</strong> Tu presupuesto es ajustado, buscas certeza, no toleras sorpresas mensuales desagradables.</p><p><strong>Elige Tipo Variable si:</strong> Tienes colchón financiero, crees que el Euribor bajará, tu hipoteca es pequeña o corto plazo.</p>',
     },
   ],
   ui: {

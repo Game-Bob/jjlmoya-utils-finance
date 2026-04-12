@@ -1,5 +1,7 @@
 import type { FinanceToolEntry, ToolLocaleContent, ToolDefinition } from '../../types';
 import CourtFeeCalculatorComponent from './component.astro';
+import CourtFeeCalculatorSEO from './seo.astro';
+import CourtFeeCalculatorBibliography from './bibliography.astro';
 import type { CourtFeeCalculatorUI } from './ui';
 
 export type CourtFeeCalculatorLocaleContent = ToolLocaleContent<CourtFeeCalculatorUI>;
@@ -21,11 +23,11 @@ export const courtFeeCalculator: FinanceToolEntry<CourtFeeCalculatorUI> = {
   },
 };
 
-export { CourtFeeCalculatorComponent };
+export { CourtFeeCalculatorComponent, CourtFeeCalculatorSEO, CourtFeeCalculatorBibliography };
 
 export const COURT_FEE_CALCULATOR_TOOL: ToolDefinition = {
   entry: courtFeeCalculator,
   Component: CourtFeeCalculatorComponent,
-  SEOComponent: null,
-  BibliographyComponent: null,
+  SEOComponent: CourtFeeCalculatorSEO,
+  BibliographyComponent: CourtFeeCalculatorBibliography,
 };

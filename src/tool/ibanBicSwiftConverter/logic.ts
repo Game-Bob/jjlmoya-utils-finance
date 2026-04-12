@@ -6,7 +6,7 @@ export interface BankData {
 export interface IBANValidationResult {
   isValid: boolean;
   countryCode: string;
-  bankData?: BankData;
+  bankData?: BankData | null;
 }
 
 const SPANISH_BANKS: Record<string, BankData> = {
@@ -85,7 +85,7 @@ export class IBANConverter {
     return {
       isValid,
       countryCode,
-      bankData: isValid ? this.getBICFromIBAN(iban) : undefined,
+      bankData: isValid ? this.getBICFromIBAN(iban) : null,
     };
   }
 
