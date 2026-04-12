@@ -110,43 +110,82 @@ export const content: ToolLocaleContent<LateInterestUI> = {
   seo: [
     {
       type: 'title',
-      text: 'Comment Calculer les Intérêts de Retard',
+      text: 'Calculatrice des Intérêts de Retard et Légaux: Guide Complet',
       level: 2,
     },
     {
       type: 'paragraph',
-      html: 'L\'<strong>intérêt de retard</strong> ou <strong>pénalité de retard</strong> est la pénalité financière appliquée lorsqu\'un paiement n\'est pas effectué dans le délai convenu. Son calcul est essentiel dans les contextes commerciaux et juridiques.',
+      html: 'Dans le cadre juridique et fiscal complexe de l\'Espagne, l\'écoulement du temps sur une dette n\'est pas gratuit. L\'<strong>intérêt de retard</strong> et l\'<strong>intérêt légal de l\'argent</strong> sont les mécanismes que la loi utilise pour dédommager le préjudice causé par le non-respect d\'une obligation dineraire dans les délais. Qu\'il s\'agisse d\'une dette envers l\'administration fiscale, d\'un non-paiement entre entreprises ou d\'une réclamation judiciaire, comprendre comment ces intérêts s\'accumulent est essentiel.',
     },
     {
-      type: 'comparative',
-      columns: 2,
-      items: [
-        {
-          title: 'Intérêt Simple',
-          description: 'Calculé uniquement sur le principal original chaque période.',
-          points: [
-            'Croissance linéaire et prévisible',
-            'Moins nuisible que composé',
-            'Commun dans les contrats simples',
-            'Formule: Capital × Taux × Période',
-          ],
-        },
-        {
-          title: 'Intérêt Composé',
-          description: 'Recalculé sur le capital plus les intérêts accumulés.',
-          highlight: true,
-          points: [
-            'Croissance exponentielle',
-            'Plus coûteux pour le débiteur',
-            'Utilisé en finance complexe',
-            'Les intérêts génèrent plus d\'intérêts',
-          ],
-        },
-      ],
+      type: 'title',
+      text: 'Qu\'est-ce que l\'Intérêt Légal de l\'Argent?',
+      level: 3,
     },
     {
       type: 'paragraph',
-      html: 'Le calcul exact des intérêts de retard dépend de la législation locale. En France, le Code du Commerce établit les taux maximums. Vérifiez toujours les conditions contractuelles et consultez un expert juridique.',
+      html: 'L\'intérêt légal de l\'argent est le surcoût appliqué à une dette lorsque les parties n\'ont pas convenu d\'un intérêt spécifique ou lorsque la loi le détermine. Pour les années <strong>2024, 2025 et 2026</strong>, ce taux est resté stable à <strong>3,25%</strong>. Ce pourcentage sert de base à de nombreux calculs juridiques.',
+    },
+    {
+      type: 'title',
+      text: 'Intérêt de Retard Fiscal (Autorité Fiscale)',
+      level: 3,
+    },
+    {
+      type: 'paragraph',
+      html: 'Lorsque la dette est envers l\'Administration, l\'<strong>intérêt de retard fiscal</strong> est supérieur à l\'intérêt légal pour décourager les retards de paiement d\'impôts. Pour la période <strong>2024-2026</strong>, il a été fixé à <strong>4,0625%</strong>. C\'est le surcoût que l\'administration fiscale vous facturera si vous produisez une auto-déclaration hors délai.',
+    },
+    {
+      type: 'tip',
+      title: 'Nature Compensatoire, Non Punitive',
+      html: '<p><strong>Point clé:</strong> Contrairement aux amendes, les intérêts de retard ont une nature compensatoire, non punitive. L\'administration ne vous "punit" pas avec eux, mais vous facture le temps que vous avez eu de l\'argent qui aurait dû être dans les caisses publiques.</p>',
+    },
+    {
+      type: 'title',
+      text: 'Comment Calculer les Intérêts Étape par Étape',
+      level: 3,
+    },
+    {
+      type: 'paragraph',
+      html: 'Le calcul de ces intérêts suit une formule d\'intérêt simple, où le temps est compté en jours civils: <strong>Intérêts = (Principal × Jours × Taux d\'Intérêt) / 36 500</strong>',
+    },
+    {
+      type: 'list',
+      items: [
+        '<strong>Principal:</strong> Le montant total de la dette originale.',
+        '<strong>Jours:</strong> Le nombre de jours écoulés depuis le jour suivant la date d\'échéance jusqu\'au jour du paiement effectif.',
+        '<strong>Taux d\'Intérêt:</strong> Le pourcentage annuel applicable (p. ex. 3,25 ou 4,0625).',
+        '<strong>36 500:</strong> Le facteur diviseur pour convertir le pourcentage annuel en quotidien (365 jours x 100).',
+      ],
+    },
+    {
+      type: 'card',
+      icon: 'mdi:calculator',
+      title: 'Exemple Pratique: Dette Fiscale',
+      html: '<p>Imaginez que vous devez 5 000 € suite à une déclaration d\'impôt qui était due il y a 180 jours:</p><ul><li>Intérêt applicable (Retard): 4,0625%</li><li>Calcul: (5 000 × 180 × 4,0625) / 36 500</li><li><strong>Intérêts résultants:</strong> 100,17 €</li><li>Total à payer: 5 100,17 €</li></ul>',
+    },
+    {
+      type: 'title',
+      text: 'Différences Selon le Type de Dette',
+      level: 3,
+    },
+    {
+      type: 'list',
+      items: [
+        '<strong>Dettes Civiles:</strong> Entre particuliers, 3,25% (légal) s\'applique.',
+        '<strong>Dettes Commerciales:</strong> Régies par la Loi de Lutte contre le Retard de Paiement, atteignant 10,15% - 11,15% en 2025-2026.',
+        '<strong>Dettes à la Sécurité Sociale:</strong> Appliquent 4,0625% plus des surcharges de 10% à 20%.',
+        '<strong>Intérêts Judiciaires:</strong> Lorsqu\'il y a une décision judiciaire, 5,25% à partir de la date du jugement.',
+      ],
+    },
+    {
+      type: 'title',
+      text: 'Intérêts dans les Opérations Commerciales: Attention au Délai de 60 Jours!',
+      level: 3,
+    },
+    {
+      type: 'paragraph',
+      html: 'Si vous êtes travailleur indépendant ou entreprise, la Loi de Lutte contre le Retard de Paiement établit un délai maximum de paiement de 60 jours. Si votre client dépasse cette date, vous pouvez exiger automatiquement des intérêts de retard commerciaux, sans avoir besoin d\'un rappel, et vous pouvez également percevoir un montant forfaitaire de 40 € pour frais de recouvrement.',
     },
   ],
   ui: {

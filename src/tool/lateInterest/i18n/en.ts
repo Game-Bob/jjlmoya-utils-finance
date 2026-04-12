@@ -80,7 +80,7 @@ const appSchema: WithContext<SoftwareApplication> = {
   description,
   applicationCategory: 'FinanceApplication',
   operatingSystem: 'All',
-  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
   inLanguage: 'en',
 };
 
@@ -110,12 +110,82 @@ export const content: ToolLocaleContent<LateInterestUI> = {
   seo: [
     {
       type: 'title',
-      text: 'How to Calculate Late Payment Interest',
+      text: 'Late Interest and Legal Interest Calculator: Complete Guide',
       level: 2,
     },
     {
       type: 'paragraph',
-      html: '<strong>Late payment interest</strong> or <strong>penalty interest</strong> is the financial penalty applied when a payment is not made within the agreed timeframe. Calculating this accurately is essential in commercial and legal contexts.',
+      html: 'In Spain\'s complex legal and fiscal framework, time does not pass freely on a debt. <strong>Late interest</strong> and <strong>legal interest on money</strong> are the mechanisms the law uses to compensate for damage caused by failure to meet a financial obligation within the deadline. Whether it is a debt with the tax authority, non-payment between businesses, or a legal claim, understanding how these interests accrue is essential.',
+    },
+    {
+      type: 'title',
+      text: 'What is Legal Interest on Money?',
+      level: 3,
+    },
+    {
+      type: 'paragraph',
+      html: 'Legal interest on money is the surcharge applied to a debt when the parties have not agreed on a specific interest rate or when the law determines it. For the years <strong>2024, 2025, and 2026</strong>, this rate has remained stable at <strong>3.25%</strong>. This percentage serves as the basis for numerous legal calculations.',
+    },
+    {
+      type: 'title',
+      text: 'Tax Late Interest (Revenue Authority)',
+      level: 3,
+    },
+    {
+      type: 'paragraph',
+      html: 'When the debt is with the Government, <strong>tax late interest</strong> is higher than legal interest to discourage delays in tax payments. For the period <strong>2024-2026</strong>, it has been set at <strong>4.0625%</strong>. This is the surcharge that the tax authority will charge you if you file a self-assessment outside the deadline.',
+    },
+    {
+      type: 'tip',
+      title: 'Compensatory Nature, Not Punitive',
+      html: '<p><strong>Key point:</strong> Unlike fines, late interest has a compensatory nature, not punitive. The tax authority does not "punish" you with them, but charges you for the time you have had money that should have been in public coffers.</p>',
+    },
+    {
+      type: 'title',
+      text: 'How to Calculate Interest Step by Step',
+      level: 3,
+    },
+    {
+      type: 'paragraph',
+      html: 'The calculation of these interests follows a simple interest formula, where time is counted in calendar days: <strong>Interest = (Principal × Days × Interest Rate) / 36,500</strong>',
+    },
+    {
+      type: 'list',
+      items: [
+        '<strong>Principal:</strong> The total amount of the original debt.',
+        '<strong>Days:</strong> The number of days elapsed from the day after the due date until the day of actual payment.',
+        '<strong>Interest Rate:</strong> The applicable annual percentage (e.g., 3.25 or 4.0625).',
+        '<strong>36,500:</strong> The divisor factor to convert the annual percentage to daily (365 days x 100).',
+      ],
+    },
+    {
+      type: 'card',
+      icon: 'mdi:calculator',
+      title: 'Practical Example: Tax Authority Debt',
+      html: '<p>Imagine you owe €5,000 from an income tax return that was due 180 days ago:</p><ul><li>Interest applicable (Late): 4.0625%</li><li>Calculation: (5,000 × 180 × 4.0625) / 36,500</li><li><strong>Resulting interest:</strong> €100.17</li><li>Total to pay: €5,100.17</li></ul>',
+    },
+    {
+      type: 'title',
+      text: 'Differences According to Debt Type',
+      level: 3,
+    },
+    {
+      type: 'list',
+      items: [
+        '<strong>Civil Debts:</strong> Between individuals, 3.25% (legal) applies.',
+        '<strong>Commercial Debts:</strong> Governed by the Late Payment Law, reaching 10.15% - 11.15% in 2025-2026.',
+        '<strong>Social Security Debts:</strong> Apply 4.0625% plus surcharges of 10% to 20%.',
+        '<strong>Court Interest:</strong> When there is a court judgment, 5.25% from the judgment date.',
+      ],
+    },
+    {
+      type: 'title',
+      text: 'Interest in Commercial Operations: Beware the 60-Day Deadline!',
+      level: 3,
+    },
+    {
+      type: 'paragraph',
+      html: 'If you are self-employed or a company, the Late Payment Law establishes a maximum payment period of 60 days. If your customer exceeds that date, you can demand commercial late interest automatically, without needing a reminder, and also collect a fixed amount of €40 for collection costs.',
     },
     {
       type: 'comparative',

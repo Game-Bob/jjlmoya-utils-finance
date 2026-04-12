@@ -70,19 +70,120 @@ const bibliographyData = [
 const seoData = [
   {
     type: 'title',
-    text: 'Calculatrice de Frais Judiciaires Espagnols - Formulaire 696',
+    text: 'Calculatrice de Frais Judiciaires en Espagne: Guide Complet',
+    level: 2,
   },
   {
     type: 'paragraph',
-    html: 'Les <strong>frais judiciaires</strong> en Espagne sont régis par la <strong>Loi 10/2012</strong> et affectent les entreprises et les professionnels. Le calcul est effectué automatiquement en considérant la part fixe basée sur le type de procédure et la part variable de 0,5% du montant du litige.',
+    html: 'La <strong>Calculatrice de Frais Judiciaires</strong> est un outil technique conçu pour déterminer avec précision le coût fiscal du pouvoir juridictionnel en Espagne. Depuis la réforme de la Loi 10/2012, le calcul de ces frais est devenu une tâche critique pour la planification procédurale des entreprises et des professionnels du droit.',
+  },
+  {
+    type: 'card',
+    title: 'Aspects Clés des Frais Judiciaires',
+    html: '<ul><li>Obligatoires uniquement pour les <strong>personnes morales</strong> (entreprises).</li><li>Assujettis au <strong>Formulaire 696</strong> de l\'Administration fiscale.</li><li>Composés d\'une <strong>part fixe</strong> et d\'une <strong>part variable</strong>.</li><li>Plafond de la part variable fixé à <strong>10 000 €</strong>.</li></ul>',
+  },
+  {
+    type: 'card',
+    html: '<p>Cet outil simule l\'auto-liquidation du tribut, en détaillant les montants selon l\'ordre juridictionnel (Civil, Administratif ou Social) et le montant du litige, permettant de prévoir l\'impact financier avant l\'engagement du procès.</p>',
   },
   {
     type: 'title',
-    text: 'Exonérations et Cas Particuliers',
+    text: 'Qui Doit Payer les Frais Judiciaires en 2026?',
+    level: 2,
   },
   {
     type: 'paragraph',
-    html: 'Les <strong>particuliers sont complètement exonérés</strong> des frais judiciaires depuis 2016. Dans les procédures pénales, il n\'y a également pas de frais. L\'ordre social a des règles spécifiques pour le calcul des frais.',
+    html: 'La loi actuelle, suite à la décision historique de la <strong>Cour Constitutionnelle 140/2016</strong>, établit un cadre d\'exonération clair qui protège l\'accès à la justice des citoyens individus.',
+  },
+  {
+    type: 'list',
+    items: [
+      '<strong>Personnes Physiques:</strong> Jouissent d\'une exonération absolue dans tous les ordres juridictionnels.',
+      '<strong>Personnes Morales:</strong> Sont les principaux sujets passifs du tribut.',
+      '<strong>Sujets Spéciaux:</strong> Les entités d\'utilité publique et les administrations sont exonérées.',
+    ],
+  },
+  {
+    type: 'title',
+    text: 'Structure Technique de la Redevance',
+    level: 3,
+  },
+  {
+    type: 'paragraph',
+    html: 'Le calcul mathématique effectué par notre outil se divise en deux composantes obligatoires qui s\'ajoutent pour obtenir le total du Formulaire 696.',
+  },
+  {
+    type: 'title',
+    text: '1. Part Fixe par Procédure',
+    level: 4,
+  },
+  {
+    type: 'paragraph',
+    html: 'Déterminée par le type d\'action juridique intentée. Un jugement civil ordinaire entraîne une redevance de 300 €, tandis qu\'un pourvoi en cassation devant la Cour Suprême s\'élève à 1 200 €.',
+  },
+  {
+    type: 'title',
+    text: '2. Part Variable par Montant du Litige',
+    level: 4,
+  },
+  {
+    type: 'paragraph',
+    html: 'S\'applique à la base imposable du procès. Pour les entreprises, les taux de taxation s\'appliquent de manière échelonnée.',
+  },
+  {
+    type: 'table',
+    headers: ['Tranche de Montant', 'Taux Applicable'],
+    rows: [
+      ['Jusqu\'à 1 000 000 €', '<strong>0,50%</strong>'],
+      ['Dépassement de 1 000 000 €', '<strong>0,25%</strong>'],
+      ['Limite Maximale Variable', '<strong>10 000 €</strong>'],
+    ],
+  },
+  {
+    type: 'title',
+    text: 'Frais dans des Ordres Juridictionnels Spécifiques',
+    level: 2,
+  },
+  {
+    type: 'title',
+    text: 'Juridiction Civile',
+    level: 3,
+  },
+  {
+    type: 'paragraph',
+    html: 'C\'est le domaine avec le plus grand volume de liquidations. Couvre les procédures monitoires, verbales, ordinaires et les exécutions. Notre calculatrice ajuste automatiquement la redevance fixe selon la complexité de la procédure choisie.',
+  },
+  {
+    type: 'title',
+    text: 'Ordre Contentieux-Administratif',
+    level: 3,
+  },
+  {
+    type: 'paragraph',
+    html: 'S\'applique dans les litiges contre l\'Administration. Les montants varient selon qu\'il s\'agit d\'une procédure abrégée (200 €) ou ordinaire (350 €), plus les tranches variables correspondantes.',
+  },
+  {
+    type: 'tip',
+    title: 'Référence Légale',
+    html: '<p>Consultez toujours la Loi 10/2012 pour les cas particuliers d\'exonération partielle ou les remises pour utilisation de moyens télématiques.</p>',
+  },
+  {
+    type: 'title',
+    text: 'Conséquences de l\'Omission du Paiement',
+    level: 2,
+  },
+  {
+    type: 'paragraph',
+    html: 'L\'introduction d\'une action en justice par une partie obligée sans le justificatif de paiement correspondant entraîne une demande de régularisation. Le non-respect de ce délai de 10 jours entraîne le classement définitif des procédures.',
+  },
+  {
+    type: 'card',
+    title: 'Avantages de la Simulation Préalable',
+    html: '<ul><li>Précision absolue dans la quantification des frais de procédure.</li><li>Évite les retards dus aux erreurs d\'auto-liquidation du Formulaire 696.</li><li>Optimise la prise de décision financière dans la stratégie juridique.</li></ul>',
+  },
+  {
+    type: 'paragraph',
+    html: 'Notre <strong>Calculatrice de Frais Judiciaires</strong> garantit que les professionnels et les entreprises opèrent avec des données mises à jour jusqu\'en 2026, respectant la rigueur technique qu\'exige la pratique juridique moderne.',
   },
 ];
 

@@ -113,30 +113,48 @@ export const content: ToolLocaleContent<MortgageUI> = {
   seo: [
     {
       type: 'title',
-      text: 'The "Trap" of Front-Loaded Interest',
+      text: 'Complete Mortgage Guide: How the Amortization System Works',
       level: 2,
     },
     {
       type: 'paragraph',
-      html: 'Most mortgages use a <strong>French amortization system</strong> (also called a standard amortization). The key feature is that your monthly payment stays constant, but the composition changes dramatically over time.',
-    },
-    {
-      type: 'tip',
-      title: 'Payment Composition Over Time',
-      html: '<p><strong>Early years:</strong> Nearly all your payment goes to INTEREST, with minimal principal reduction.</p><p><strong>Later years:</strong> Almost all goes to PRINCIPAL, with little interest.</p>',
-    },
-    {
-      type: 'paragraph',
-      html: 'This is why making extra principal payments in the first years of your mortgage is far more effective than doing so later.',
+      html: 'A mortgage is likely the largest debt you will ever take. Understanding how the amortization system works is crucial for making smart financial decisions that could save you tens of thousands of dollars.',
     },
     {
       type: 'title',
-      text: '2026 Interest Rate Environment',
-      level: 2,
+      text: 'The "Trap" of Front-Loaded Interest: Understanding Your Payment Breakdown',
+      level: 3,
     },
     {
       type: 'paragraph',
-      html: 'With interest rates fluctuating, choosing between <strong>Fixed Rate</strong> or <strong>Adjustable Rate</strong> is critical.',
+      html: 'In most countries, mortgages use the <strong>standard amortization system</strong>. Its characteristic is that your monthly payment remains the same (if fixed rate), but the composition changes dramatically over time.',
+    },
+    {
+      type: 'tip',
+      title: 'How Your Payment Evolves',
+      html: '<p><strong>Early Years (Years 1-10):</strong> You pay almost entirely INTEREST and very little principal. On a $250,000 mortgage at 3%, your first payment could be 80% interest.</p><p><strong>Middle Years (Years 11-25):</strong> The proportion gradually balances.</p><p><strong>Final Years (Years 26-30):</strong> You pay almost entirely PRINCIPAL with very little interest.</p>',
+    },
+    {
+      type: 'paragraph',
+      html: 'This is why <strong>making extra mortgage payments</strong> (paying down principal early) is far more profitable in the first years. Paying an extra $10,000 in year 1 can save you over $15,000 in interest. The same extra payment in year 20 saves you barely $2,000.',
+    },
+    {
+      type: 'title',
+      text: 'How Much Should You Spend on Your Mortgage?',
+      level: 3,
+    },
+    {
+      type: 'paragraph',
+      html: 'Financial experts recommend your mortgage <strong>should not exceed 28-35% of your gross monthly income</strong>. If you exceed this threshold, you significantly increase the risk of default when unexpected expenses arise (job loss, medical emergency, etc.).',
+    },
+    {
+      type: 'title',
+      text: '2026 Context: Fixed vs. Variable Rate',
+      level: 3,
+    },
+    {
+      type: 'paragraph',
+      html: 'With fluctuating interest rates, choosing between <strong>Fixed Rate</strong> or <strong>Variable Rate</strong> is a strategic decision that can cost thousands annually.',
     },
     {
       type: 'comparative',
@@ -144,26 +162,31 @@ export const content: ToolLocaleContent<MortgageUI> = {
       items: [
         {
           title: 'Fixed Rate',
-          description: 'You pay slightly more upfront, but your rate never changes for 30 years.',
+          description: 'You pay slightly more now, but sleep soundly knowing your payment will never change.',
           points: [
-            'Predictable payment for entire loan term',
-            'Protection from rate hikes',
-            'Peace of mind in volatile markets',
-            'Ideal for budget certainty',
+            'Predictable payment for 30 years',
+            'Protection against rate increases',
+            'Peace of mind in uncertain economy',
+            'Ideal for tight budgets',
           ],
         },
         {
-          title: 'Adjustable Rate',
-          description: 'Lower initial rate, but exposes you to future rate increases.',
+          title: 'Variable Rate',
+          description: 'It may be cheaper today, but exposes your finances to volatility.',
           highlight: true,
           points: [
-            'Lower initial monthly payment',
-            'Risk of future rate increases',
-            'Payment shock possible after adjustment period',
-            'Only for high risk tolerance',
+            'Lower initial payment',
+            'Risk of rate increases (4-5% possible)',
+            'Potentially severe budget impact',
+            'Only for those who tolerate high risk',
           ],
         },
       ],
+    },
+    {
+      type: 'tip',
+      title: 'Fixed vs. Variable: It Depends on Your Profile',
+      html: '<p><strong>Choose Fixed Rate if:</strong> Your budget is tight, you seek certainty, you cannot tolerate payment surprises.</p><p><strong>Choose Variable Rate if:</strong> You have a financial cushion, believe rates will fall, your mortgage is small or short-term.</p>',
     },
   ],
   ui: {

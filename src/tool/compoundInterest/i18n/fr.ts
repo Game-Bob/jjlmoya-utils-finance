@@ -113,12 +113,21 @@ export const content: ToolLocaleContent<CompoundInterestUI> = {
   seo: [
     {
       type: 'title',
-      text: 'Intérêt Simple vs. Composé : La Métaphore de la Boule de Neige',
+      text: 'La Magie de l\'Intérêt Composé : Construisez Votre Richesse Exponentiellement',
       level: 2,
     },
     {
       type: 'paragraph',
-      html: "Imaginez que vous avez une boule de neige au sommet d'une colline. L'<strong>intérêt simple</strong>, c'est comme faire descendre cette boule et devoir lui ajouter de la neige manuellement tous les mètres pour qu'elle grandisse. L'<strong>intérêt composé</strong>, c'est comme laisser la boule rouler d'elle-même : elle ramasse de la neige seule, et plus elle grossit, plus elle a de surface pour en ramasser <em>encore plus</em> à chaque tour.",
+      html: 'Albert Einstein l\'a appelée la "huitième merveille du monde". L\'<strong>intérêt composé</strong> est le mécanisme le plus puissant pour construire une richesse à long terme. Vous n\'avez pas besoin d\'être un expert en finance pour l\'utiliser : vous avez juste besoin de temps, de patience et d\'argent investi.',
+    },
+    {
+      type: 'title',
+      text: 'Intérêt Simple vs Composé : La Métaphore de la Boule de Neige',
+      level: 3,
+    },
+    {
+      type: 'paragraph',
+      html: 'Imaginez une boule de neige au sommet d\'une colline. L\'<strong>intérêt simple</strong> est comme la faire rouler vers le bas et devoir ajouter manuellement de la neige tous les mètres pour qu\'elle grandisse. L\'<strong>intérêt composé</strong> est comme la laisser rouler seule : elle ramasse naturellement de la neige, et plus elle devient grosse, plus elle a de surface pour ramasser <em>encore plus</em> de neige à chaque rotation.',
     },
     {
       type: 'comparative',
@@ -126,7 +135,7 @@ export const content: ToolLocaleContent<CompoundInterestUI> = {
       items: [
         {
           title: 'Intérêt Simple',
-          description: 'Les intérêts sont toujours calculés sur le capital initial.',
+          description: 'Les intérêts sont toujours calculés sur le capital original.',
           points: [
             'Formule : Capital × Taux × Temps',
             'Croissance linéaire et prévisible',
@@ -141,7 +150,7 @@ export const content: ToolLocaleContent<CompoundInterestUI> = {
           points: [
             'Formule : Capital × (1 + Taux)^Temps',
             'Croissance exponentielle accélérée',
-            'Base de tout investissement à long terme',
+            'Fondation de l\'investissement à long terme',
             'Vos bénéfices génèrent plus de bénéfices',
           ],
         },
@@ -149,17 +158,35 @@ export const content: ToolLocaleContent<CompoundInterestUI> = {
     },
     {
       type: 'paragraph',
-      html: 'Mathématiquement, vos bénéfices génèrent de nouveaux bénéfices. Les premières années semblent lentes, mais une fois passé le "point d\'inflexion", la courbe monte verticalement. C\'est là que se créent les vraies fortunes.',
+      html: 'Mathématiquement, vos revenus génèrent de nouveaux revenus. Au cours des premières années, cela semble lent, mais après le "point d\'inflexion", la courbe augmente verticalement. C\'est là que se créent les vraies richesses.',
+    },
+    {
+      type: 'title',
+      text: 'Pourquoi le Temps est Votre Plus Grand Allié',
+      level: 3,
+    },
+    {
+      type: 'paragraph',
+      html: 'Le facteur le plus déterminant n\'est pas le montant que vous investissez, mais <strong>combien de temps vous le laissez croître</strong>. Commencer 10 ans plus tôt peut entraîner une richesse finale 2 ou 3 fois plus importante, même si vous investissez moins au total. Cet effet exponentiel est la raison pour laquelle les jeunes investisseurs ont un avantage incomparable.',
     },
     {
       type: 'tip',
       title: 'La Règle des 72',
-      html: '<p>Divisez 72 par votre taux de rendement annuel pour savoir en combien d\'années vous allez <strong>doubler votre argent</strong>.</p><p><em>Exemple : À 8%, vous doublez tous les 9 ans (72 ÷ 8 = 9).</em></p>',
+      html: '<p>Divisez 72 par votre rendement annuel pour découvrir en combien d\'années vous allez <strong>doubler votre argent</strong>.</p><p><em>Exemple : À 8%, vous doublez tous les 9 ans (72/8 = 9).</em></p><p>Cette formule magique fonctionne pour n\'importe quel taux de rendement et vous aide à estimer rapidement la croissance de vos investissements.</p>',
     },
     {
       type: 'tip',
       title: 'Conseil 2026',
-      html: '<p>L\'inflation reste un facteur important. Assurez-vous que votre rendement net dépasse au moins 2-3% par an pour ne pas perdre de pouvoir d\'achat.</p>',
+      html: '<p>L\'inflation reste un facteur. Assurez-vous que vos rendements nets dépassent au moins 2-3% annuellement pour ne pas perdre votre pouvoir d\'achat. Investissez dans des actifs qui croissent plus vite que l\'inflation.</p>',
+    },
+    {
+      type: 'title',
+      text: 'Fréquence de Capitalisation : Est-ce Important?',
+      level: 3,
+    },
+    {
+      type: 'paragraph',
+      html: 'Les intérêts peuvent être composés annuellement, semestriellement, trimestriellement, mensuellement ou même quotidiennement. Plus <strong>la capitalisation est fréquente</strong>, plus l\'effet composé est important. Le même capital au même taux croîtra davantage si les intérêts sont composés mensuellement plutôt qu\'annuellement.',
     },
   ],
   ui: {

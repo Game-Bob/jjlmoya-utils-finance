@@ -84,7 +84,7 @@ const appSchema: WithContext<SoftwareApplication> = {
   description,
   applicationCategory: 'FinanceApplication',
   operatingSystem: 'All',
-  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
   inLanguage: 'en',
 };
 
@@ -118,21 +118,72 @@ export const content: ToolLocaleContent<InflationUI> = {
   seo: [
     {
       type: 'title',
-      text: 'The Invisible Money: How Inflation Erodes Your Savings',
+      text: 'Historical Inflation Calculator: Understand the Real Value of Your Money',
       level: 2,
     },
     {
       type: 'paragraph',
-      html: '<strong>Inflation</strong> is the sustained increase in the general price level in an economy. Although it seems gradual, its cumulative effect is devastating: the 1,000€ you saved 10 years ago probably buys 30% fewer goods and services today.',
-    },
-    {
-      type: 'tip',
-      title: 'The Compounding Effect',
-      html: '<p>Inflation works in a <strong>compounded</strong> manner, like interest on your savings but in reverse. Year after year, the percentage applies to what has already been lost.</p>',
+      html: 'Inflation is the "silent tax" that devours your savings year after year. Do you know how much your money has lost in value since 1980? How much does that coffee really cost today that you paid 300 pesetas for 20 years ago?',
     },
     {
       type: 'title',
-      text: 'Economic Milestones in Spain',
+      text: 'Inflation: The Silent Tax on Your Wealth',
+      level: 3,
+    },
+    {
+      type: 'paragraph',
+      html: '<strong>Inflation</strong> is the sustained and general increase in prices. Although it seems like a technical phenomenon, its impact on the real economy is direct: it reduces the amount of goods you can buy with the same money, eroding a lifetime of savings if protective measures are not taken.',
+    },
+    {
+      type: 'stats',
+      columns: 3,
+      items: [
+        {
+          value: '15.6%',
+          label: 'Historical Record 1980',
+          icon: 'mdi:trending-up',
+        },
+        {
+          value: '8.4%',
+          label: 'Price Peak 2022',
+          icon: 'mdi:alert',
+        },
+        {
+          value: '2.0%',
+          label: 'Stability Target',
+          icon: 'mdi:target',
+        },
+      ],
+    },
+    {
+      type: 'title',
+      text: 'Essential Financial Terms',
+      level: 3,
+    },
+    {
+      type: 'glossary',
+      items: [
+        {
+          term: 'CPI',
+          definition: 'An indicator that summarizes the variation in prices of a basic consumption basket.',
+        },
+        {
+          term: 'Purchasing Power',
+          definition: 'The real buying capacity of money at a given time.',
+        },
+        {
+          term: 'Deflation',
+          definition: 'General decline in prices that can paralyze investment.',
+        },
+        {
+          term: 'Stagflation',
+          definition: 'Scenario of high inflation combined with economic stagnation.',
+        },
+      ],
+    },
+    {
+      type: 'title',
+      text: 'Economic Milestones and Comparison',
       level: 2,
     },
     {
@@ -140,31 +191,94 @@ export const content: ToolLocaleContent<InflationUI> = {
       columns: 2,
       items: [
         {
-          title: '1980s: The Inflationary Decade',
-          description: 'Double-digit inflation (up to 15%). Prices changed drastically month-to-month.',
+          title: '1980s Crisis',
+          description: 'Period marked by double-digit inflation and major labor instability.',
           points: [
-            'Maximum CPI: 15.6% in 1980',
-            'Global economic crisis',
-            'Massive unemployment',
-            'Austerity policies',
+            'Extremely high interest rates',
+            'Rapid loss of peseta value',
+            'Wages devoured by rising prices',
           ],
         },
         {
           title: 'Pandemic Inflation: 2021 to 2023',
-          description: 'Sharp inflation surge from energy and food, exceeding 6%.',
+          description: 'Sharp price increase due to energy costs and supply chain issues.',
           highlight: true,
           points: [
-            'Maximum inflation: 6.5% in 2021',
-            'European energy crisis',
-            'Supply chain disruptions',
-            'Gradual recovery in 2024',
+            'Direct impact on cost of living',
+            'ECB rate hikes to slow consumption',
+            'Slow recovery of purchasing power',
           ],
         },
       ],
     },
     {
-      type: 'paragraph',
-      html: 'Use our calculator to understand the true impact of inflation on your wealth and why investing (rather than saving without returns) is critical to preserving your purchasing power.',
+      type: 'table',
+      headers: ['Item or Indicator', 'Value in 1980 (Estimated)', 'Value in 2026 (Projected)', 'Variation'],
+      rows: [
+        ['Loaf of Bread', '0.15€ (25 pts)', '1.40€', '833%'],
+        ['Coffee at Café', '0.30€ (50 pts)', '1.65€', '450%'],
+        ['Movie Ticket', '1.20€ (200 pts)', '9.80€', '716%'],
+        ['Monthly Minimum Wage', '154€ (25,615 pts)', '1,140€', '640%'],
+      ],
+    },
+    {
+      type: 'card',
+      icon: 'mdi:piggy-bank',
+      title: 'The Danger of Cash',
+      html: 'Keeping money under the mattress or in non-yielding savings accounts is a guaranteed loss of capital. Average inflation of 3% cuts the value of your savings in half in less than 25 years.',
+    },
+    {
+      type: 'title',
+      text: 'Tips to Protect Your Savings',
+      level: 2,
+    },
+    {
+      type: 'proscons',
+      title: 'Investment Strategies',
+      items: [
+        {
+          pro: 'Real Assets: Real estate usually appreciates with inflation.',
+          con: 'Low liquidity and high entry costs.',
+        },
+        {
+          pro: 'Stock Market & Funds: Returns that usually exceed CPI over the long term.',
+          con: 'Volatility and short-term market risk.',
+        },
+      ],
+    },
+    {
+      type: 'title',
+      text: 'Healthy Financial Habits',
+      level: 3,
+    },
+    {
+      type: 'list',
+      items: [
+        'Periodically review your expenses to detect hidden increases.',
+        'Diversify savings across different types of assets.',
+        'Consider inflation-linked government bonds.',
+        'Use calculation tools to contextualize offers and salaries.',
+      ],
+    },
+    {
+      type: 'diagnostic',
+      variant: 'warning',
+      title: 'Warning: Negative Compound Interest',
+      html: 'Inflation acts as reverse compound interest. Each year, the percentage loss applies to an already diminished value, accelerating wealth loss if you don\'t intervene.',
+    },
+    {
+      type: 'summary',
+      title: 'Key Takeaways',
+      items: [
+        'CPI is just an average; your personal inflation depends on your habits.',
+        'Investing is not optional if you want to preserve the real value of your work.',
+        'Inflation calculators are vital to understanding long-term contracts.',
+      ],
+    },
+    {
+      type: 'message',
+      title: 'Take Control of Your Economy',
+      html: 'Our calculator uses official INE data to give you the most accurate view of Spain\'s past and present economic landscape.',
     },
   ],
   ui: {
@@ -175,9 +289,9 @@ export const content: ToolLocaleContent<InflationUI> = {
     labelFinalYear: 'Year 2026',
     labelInflationRate: 'Accumulated Inflation',
     labelCalculatedOn: 'Calculation made using official INE data through 2025 and estimated projections for the end of 2026.',
-    currencySymbol: '$',
-    currencyCode: 'USD',
-    currencyLocale: 'en-US',
+    currencySymbol: '€',
+    currencyCode: 'EUR',
+    currencyLocale: 'es-ES',
     labelYearSelect: 'In the year',
     labelIn: 'In',
     labelEquivalentToday: 'is equivalent today to',

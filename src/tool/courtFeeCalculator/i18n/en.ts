@@ -70,19 +70,120 @@ const bibliographyData = [
 const seoData = [
   {
     type: 'title',
-    text: 'Spanish Judicial Fees Calculator - Form 696',
+    text: 'Spanish Court Fees Calculator: Complete Guide',
+    level: 2,
   },
   {
     type: 'paragraph',
-    html: 'Spanish <strong>judicial fees</strong> are governed by <strong>Law 10/2012</strong> and affect companies and professionals. The calculation is done automatically considering the fixed fee based on the procedure type and the variable fee of 0.5% of the claim amount.',
+    html: 'The <strong>Spanish Court Fees Calculator</strong> is a technical tool designed to precisely determine the fiscal cost of jurisdictional authority in Spain. Since the reform of Law 10/2012, calculating these fees has become a critical task for the procedural planning of companies and legal professionals.',
+  },
+  {
+    type: 'card',
+    title: 'Key Aspects of Court Fees',
+    html: '<ul><li>Mandatory only for <strong>legal entities</strong> (companies).</li><li>Subject to <strong>Form 696</strong> from the Tax Authority.</li><li>Composed of a <strong>fixed fee</strong> and a <strong>variable fee</strong>.</li><li>Variable fee cap set at <strong>€10,000</strong>.</li></ul>',
+  },
+  {
+    type: 'card',
+    html: '<p>This utility simulates tax self-assessment, breaking down amounts according to the jurisdictional order (Civil, Administrative, or Social) and the claim amount, allowing you to predict the financial impact before initiating litigation.</p>',
   },
   {
     type: 'title',
-    text: 'Exemptions and Special Cases',
+    text: 'Who Must Pay Court Fees in 2026?',
+    level: 2,
   },
   {
     type: 'paragraph',
-    html: '<strong>Individuals are completely exempt</strong> from judicial fees since 2016. In criminal proceedings, there are also no fees. The social order has specific rules for fee calculations.',
+    html: 'Current law, following the historic <strong>Constitutional Court Ruling 140/2016</strong>, establishes a clear exemption framework that protects individual citizens\' access to justice.',
+  },
+  {
+    type: 'list',
+    items: [
+      '<strong>Individuals:</strong> Enjoy absolute exemption in all jurisdictional orders.',
+      '<strong>Legal Entities:</strong> Are the primary taxpayers liable for the fee.',
+      '<strong>Special Entities:</strong> Public benefit organizations and government agencies are exempt.',
+    ],
+  },
+  {
+    type: 'title',
+    text: 'Technical Fee Structure',
+    level: 3,
+  },
+  {
+    type: 'paragraph',
+    html: 'The mathematical calculation our tool performs divides into two mandatory components that are added to obtain the total for Form 696.',
+  },
+  {
+    type: 'title',
+    text: '1. Fixed Fee by Procedure',
+    level: 4,
+  },
+  {
+    type: 'paragraph',
+    html: 'Determined by the type of legal action filed. An ordinary civil judgment carries a fee of €300, while a cassation appeal to the Supreme Court reaches €1,200.',
+  },
+  {
+    type: 'title',
+    text: '2. Variable Fee by Claim Amount',
+    level: 4,
+  },
+  {
+    type: 'paragraph',
+    html: 'Applied to the taxable base of the lawsuit. For companies, tax rates are applied in scaled brackets.',
+  },
+  {
+    type: 'table',
+    headers: ['Claim Amount Range', 'Applicable Rate'],
+    rows: [
+      ['Up to €1,000,000', '<strong>0.50%</strong>'],
+      ['Exceeding €1,000,000', '<strong>0.25%</strong>'],
+      ['Variable Maximum Limit', '<strong>€10,000</strong>'],
+    ],
+  },
+  {
+    type: 'title',
+    text: 'Fees in Specific Jurisdictional Orders',
+    level: 2,
+  },
+  {
+    type: 'title',
+    text: 'Civil Jurisdiction',
+    level: 3,
+  },
+  {
+    type: 'paragraph',
+    html: 'The area with the highest volume of assessments. Covers monitoring, verbal, ordinary proceedings and executions. Our calculator automatically adjusts the fixed fee based on the complexity of the selected procedure.',
+  },
+  {
+    type: 'title',
+    text: 'Administrative Litigation Order',
+    level: 3,
+  },
+  {
+    type: 'paragraph',
+    html: 'Applies in disputes against the Administration. Amounts vary depending on whether it is an abbreviated procedure (€200) or an ordinary one (€350), plus the corresponding variable brackets.',
+  },
+  {
+    type: 'tip',
+    title: 'Legal Reference',
+    html: '<p>Always consult Law 10/2012 for special cases of partial exemption or discounts for use of electronic means.</p>',
+  },
+  {
+    type: 'title',
+    text: 'Consequences of Non-Payment',
+    level: 2,
+  },
+  {
+    type: 'paragraph',
+    html: 'Filing a lawsuit by an obligated party without the corresponding payment receipt results in a correction request. Failure to meet this 10-day deadline results in definitive dismissal of the proceedings.',
+  },
+  {
+    type: 'card',
+    title: 'Advantages of Prior Simulation',
+    html: '<ul><li>Absolute precision in quantifying procedural expenses.</li><li>Avoids delays from errors in Form 696 self-assessment.</li><li>Optimizes financial decision-making in legal strategy.</li></ul>',
+  },
+  {
+    type: 'paragraph',
+    html: 'Our <strong>Spanish Court Fees Calculator</strong> ensures that professionals and companies operate with data updated to 2026, meeting the technical rigor required by modern legal practice.',
   },
 ];
 

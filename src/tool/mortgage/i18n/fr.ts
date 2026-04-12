@@ -113,30 +113,48 @@ export const content: ToolLocaleContent<MortgageUI> = {
   seo: [
     {
       type: 'title',
-      text: 'Le "Piège" des Intérêts Prépondérants',
+      text: 'Guide Complet du Crédit Immobilier : Comprendre l\'Amortissement',
       level: 2,
     },
     {
       type: 'paragraph',
-      html: 'La plupart des hypothèques utilisent un <strong>système d\'amortissement français</strong> (ou amortissement standard). La caractéristique clé est que votre paiement mensuel reste constant, mais la composition change dramatiquement au fil du temps.',
-    },
-    {
-      type: 'tip',
-      title: 'Composition du Paiement au Fil du Temps',
-      html: '<p><strong>Premières années:</strong> Presque tout votre paiement va aux INTÉRÊTS, avec une réduction minimale du capital.</p><p><strong>Années suivantes:</strong> Presque tout va au CAPITAL, avec peu d\'intérêts.</p>',
-    },
-    {
-      type: 'paragraph',
-      html: 'C\'est pourquoi faire des paiements supplémentaires sur le capital dans les premières années de votre hypothèque est bien plus efficace que de le faire plus tard.',
+      html: 'Un crédit immobilier est probablement la plus grande dette que vous contracterez jamais. Comprendre comment fonctionne le système d\'amortissement est crucial pour prendre des décisions intelligentes qui pourraient vous économiser des dizaines de milliers d\'euros.',
     },
     {
       type: 'title',
-      text: 'Environnement des Taux d\'Intérêt 2026',
-      level: 2,
+      text: 'Le "Piège" des Intérêts Prépondérants : Comprendre Votre Ventilation de Paiement',
+      level: 3,
     },
     {
       type: 'paragraph',
-      html: 'Avec des taux d\'intérêt fluctuants, choisir entre <strong>Taux Fixe</strong> ou <strong>Taux Variable</strong> est critique.',
+      html: 'La plupart des crédits immobiliers utilisent le <strong>système d\'amortissement standard</strong>. Sa caractéristique est que votre paiement mensuel reste constant (à taux fixe), mais la composition change dramatiquement au fil du temps.',
+    },
+    {
+      type: 'tip',
+      title: 'Comment Votre Paiement Évolue',
+      html: '<p><strong>Premières Années (1-10 ans) :</strong> Vous payez presque uniquement les INTÉRÊTS et très peu du capital emprunté. Sur un crédit de 250 000€ à 3%, votre premier paiement pourrait être 80% intérêts.</p><p><strong>Années Intermédiaires (11-25 ans) :</strong> La proportion s\'équilibre graduellement.</p><p><strong>Dernières Années (26-30 ans) :</strong> Vous payez presque uniquement le CAPITAL avec très peu d\'intérêts.</p>',
+    },
+    {
+      type: 'paragraph',
+      html: 'C\'est pourquoi <strong>faire des remboursements anticipés</strong> (rembourser le capital tôt) est bien plus rentable dans les premières années. Rembourser 10 000€ en année 1 peut vous économiser plus de 15 000€ en intérêts. Le même remboursement en année 20 vous économise à peine 2 000€.',
+    },
+    {
+      type: 'title',
+      text: 'Combien Devriez-Vous Consacrer à Votre Crédit?',
+      level: 3,
+    },
+    {
+      type: 'paragraph',
+      html: 'Les experts financiers recommandent que votre crédit <strong>ne dépasse pas 30-35% de vos revenus bruts mensuels</strong>. Si vous dépassez ce seuil, vous augmentez considérablement le risque de défaillance face aux imprévus (perte d\'emploi, urgence médicale, etc.).',
+    },
+    {
+      type: 'title',
+      text: 'Contexte 2026 : Taux Fixe vs Variable',
+      level: 3,
+    },
+    {
+      type: 'paragraph',
+      html: 'Avec des taux d\'intérêt fluctuants, choisir entre <strong>Taux Fixe</strong> ou <strong>Taux Variable</strong> est une décision stratégique qui peut coûter des milliers d\'euros par an.',
     },
     {
       type: 'comparative',
@@ -144,26 +162,31 @@ export const content: ToolLocaleContent<MortgageUI> = {
       items: [
         {
           title: 'Taux Fixe',
-          description: 'Vous payez un peu plus au départ, mais votre taux ne change jamais pendant 30 ans.',
+          description: 'Vous payez un peu plus maintenant, mais dormez tranquille sachant que votre paiement ne changerait jamais.',
           points: [
-            'Paiement prévisible pour toute la durée du prêt',
+            'Paiement prévisible pour 30 ans',
             'Protection contre les augmentations de taux',
-            'Tranquillité d\'esprit sur les marchés volatiles',
-            'Idéal pour la certitude budgétaire',
+            'Tranquillité d\'esprit en économie incertaine',
+            'Idéal pour les budgets serrés',
           ],
         },
         {
           title: 'Taux Variable',
-          description: 'Taux initial plus bas, mais vous expose aux augmentations futures.',
+          description: 'Il peut être moins cher aujourd\'hui, mais expose vos finances à la volatilité.',
           highlight: true,
           points: [
-            'Paiement mensuel initial plus faible',
-            'Risque d\'augmentations futures des taux',
-            'Choc de paiement possible après la période d\'ajustement',
-            'Seulement pour tolérance au risque élevée',
+            'Paiement initial plus bas',
+            'Risque d\'augmentations de taux (4-5% possibles)',
+            'Impact potentiellement grave sur le budget',
+            'Seulement pour ceux qui tolèrent le risque élevé',
           ],
         },
       ],
+    },
+    {
+      type: 'tip',
+      title: 'Taux Fixe vs Variable : Cela Dépend de Votre Profil',
+      html: '<p><strong>Choisissez Taux Fixe si :</strong> Votre budget est serré, vous recherchez la certitude, vous ne tolérez pas les surprises de paiement.</p><p><strong>Choisissez Taux Variable si :</strong> Vous avez un coussin financier, vous croyez que les taux baisseront, votre crédit est petit ou à court terme.</p>',
     },
   ],
   ui: {

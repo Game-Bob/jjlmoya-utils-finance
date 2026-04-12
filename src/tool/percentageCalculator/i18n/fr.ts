@@ -105,43 +105,99 @@ export const content: ToolLocaleContent<PercentageCalculatorUI> = {
   seo: [
     {
       type: 'title',
-      text: 'Les 4 Formules Essentielles de Pourcentages',
+      text: 'Calculatrice de Pourcentages 4-en-1 : Maîtrisez les Calculs Rapides',
       level: 2,
     },
     {
-      type: 'paragraph',
-      html: 'Les pourcentages apparaissent dans presque tout: achats avec réduction, impôts, changements de prix et analyse de données. Apprenez les 4 formules essentielles dont vous avez besoin.',
+      type: 'title',
+      text: 'Pourquoi Vous Avez Besoin d\'une Calculatrice de Pourcentages Polyvalente',
+      level: 3,
     },
     {
-      type: 'comparative',
-      columns: 2,
+      type: 'paragraph',
+      html: 'Calculer des pourcentages est l\'une des opérations mathématiques les plus courantes de notre vie quotidienne. Qu\'il s\'agisse de calculer la réduction lors des soldes, de déterminer le pourboire approprié au restaurant, de déterminer les marges bénéficiaires en affaires ou de comprendre les intérêts des prêts. Malgré le fait que ce sont des opérations de tous les jours, ce n\'est pas toujours facile de les faire mentalement ou de mémoriser la formule exacte.',
+    },
+    {
+      type: 'paragraph',
+      html: 'Notre calculatrice de pourcentages 4-en-1 regroupe les scénarios les plus courants que vous rencontrerez. Plus besoin de chercher sur Google "comment calculer 20 pour cent" ou "formule de pourcentage". Vous avez les quatre opérations essentielles au même endroit, interactif et avec des résultats instantanés.',
+    },
+    {
+      type: 'title',
+      text: 'Exploration des 4 Cas d\'Utilisation Les Plus Courants',
+      level: 3,
+    },
+    {
+      type: 'paragraph',
+      html: 'Pour vous faciliter la vie, nous avons séparé l\'outil en quatre blocs visuels clairs qui résolvent les problèmes du monde réel que vous rencontrez quotidiennement:',
+    },
+    {
+      type: 'card',
+      icon: 'mdi:percent',
+      title: '1. Combien Font X% de Y?',
+      html: '<p><strong>Le cas classique.</strong> Parfait pour calculer les réductions ou les pourboires. Si vous voulez savoir ce que représente 15% de 100€, c\'est l\'outil qu\'il vous faut. La formule sous-jacente divise simplement le pourcentage par 100 et le multiplie par la valeur totale.</p>',
+    },
+    {
+      type: 'card',
+      icon: 'mdi:division',
+      title: '2. Quel Pourcentage Représente X de Y?',
+      html: '<p><strong>Idéal pour les proportions.</strong> Si vous avez obtenu 45 points sur 60 à un examen, quel est votre pourcentage? Cette fonction divise la partie par le total et multiplie par 100, vous donnant le poids relatif exact.</p>',
+    },
+    {
+      type: 'card',
+      icon: 'mdi:chart-line-variant',
+      title: '3. Augmentation ou Diminution Percentuelle',
+      html: '<p><strong>Parfait pour la finance et l\'analytique.</strong> De combien votre loyer a-t-il augmenté depuis l\'année dernière? Si vous payiez 800€ avant et 840€ maintenant, cette fonction vous indique une augmentation de 5%. Elle mesure la croissance ou le déclin entre deux chiffres.</p>',
+    },
+    {
+      type: 'card',
+      icon: 'mdi:calculator',
+      title: '4. Ajouter ou Soustraire un Pourcentage d\'une Valeur',
+      html: '<p><strong>Très utile pour la TVA.</strong> Si vous avez un prix de base (par ex. 100€) et devez ajouter 20% de TVA, cette calculatrice vous donne directement les 120€ finaux sans étapes intermédiaires. De la même manière, cela fonctionne pour appliquer des réductions directement (par ex. soustraire 20%).</p>',
+    },
+    {
+      type: 'title',
+      text: 'Mythes Courants sur les Calculs de Pourcentages',
+      level: 3,
+    },
+    {
+      type: 'paragraph',
+      html: 'Nous nous bloquons souvent en voyant de grands pourcentages ou des décimales, mais il y a des "astuces" mathématiques qui peuvent vous faciliter la vie. La plus célèbre est la <strong>réversibilité des pourcentages</strong>.',
+    },
+    {
+      type: 'tip',
+      title: 'L\'Astuce de Réversibilité',
+      html: '<p>Saviez-vous que X% de Y est exactement égal à Y% de X? Par exemple, si on vous demande de calculer 18% de 50 de tête, cela semble compliqué. Mais inversez-le—50% de 18 est facile: c\'est 9! Cela fonctionne pour absolument tous les nombres et c\'est une astuce incroyable au quotidien.</p>',
+    },
+    {
+      type: 'title',
+      text: 'Pourquoi Nous Échouons aux Calculs de Croissance',
+      level: 3,
+    },
+    {
+      type: 'paragraph',
+      html: 'L\'une des erreurs les plus courantes se produit au Cas 3: augmentation ou diminution percentuelle. Imaginez qu\'une action coûte 100€, baisse de 50%, puis augmente de 50% le lendemain. Votre intuition dit qu\'elle revient à 100€, mais c\'est faux.',
+    },
+    {
+      type: 'paragraph',
+      html: 'Si elle baisse de 50% depuis 100€, la nouvelle valeur est 50€. Si elle augmente alors de 50% à partir de ces 50€, le gain est la moitié de 50€ (ce qui est 25€). Donc le prix final est 75€. Cet exemple classique montre pourquoi les augmentations et diminutions de pourcentage ne sont pas symétriques, et pourquoi les calculatrices dynamiques comme celle-ci préviennent les erreurs financières graves.',
+    },
+    {
+      type: 'title',
+      text: 'Utilisation Professionnelle et Académique',
+      level: 3,
+    },
+    {
+      type: 'paragraph',
+      html: 'Notre interface est sans distraction et conçue pour <strong>travailler rapidement</strong>. Épinglez-la en tant qu\'onglet de navigateur, basculez rapidement entre les champs, et utilisez le bouton de copie à côté des résultats pour transférer les chiffres exacts vers Excel ou Google Sheets sans risque d\'erreur de frappe.',
+    },
+    {
+      type: 'list',
       items: [
-        {
-          title: 'Cas 1 et 2: Relations de Base',
-          description: 'Trouver une partie du tout, ou savoir quelle proportion est une quantité.',
-          points: [
-            'X% de Y: appliquer un pourcentage à une quantité',
-            'X est quel % de Y: trouver le pourcentage relatif',
-            'Utilisés dans: réductions, pourboires, analyse',
-            'Formules simples de règle de trois',
-          ],
-        },
-        {
-          title: 'Cas 3 et 4: Changements et Ajustements',
-          description: 'Mesurer les changements entre les valeurs ou ajuster une valeur par un pourcentage.',
-          highlight: true,
-          points: [
-            'Différence en pourcentage: comparer la valeur initiale et finale',
-            'Ajouter/soustraire %: appliquer la TVA, réductions, impôts',
-            'Utilisés dans: rapports financiers, budgets',
-            'Essentiel pour la comptabilité et les statistiques',
-          ],
-        },
+        'Commerce électronique et magasins de détail: Calcul rapide des prix de vente au détail en appliquant les marges bénéficiaires et la TVA.',
+        'Ressources humaines: Détermination des écarts salariaux, retenues fiscales et augmentations de salaire indexées sur l\'inflation.',
+        'Enseignement supérieur: Enseignants courbes de notation ou étudiants STIM analysant la déviation expérimentale.',
+        'Marketing numérique: Mesure du CTR (Taux de Clic), ROAS (Retour sur Dépenses Publicitaires), ou taux de conversion d\'e-commerce.',
       ],
-    },
-    {
-      type: 'paragraph',
-      html: 'Maîtrisez ces formules et vous résoudrez 95% des problèmes de pourcentage dans votre vie quotidienne: du contrôle si une réduction est bonne, au calcul de votre salaire net avec impôts.',
     },
   ],
   ui: {
