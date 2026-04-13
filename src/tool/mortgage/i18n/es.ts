@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { MortgageUI } from '../ui';
 
-const slug = 'simulador-hipoteca';
+const slug = 'hipoteca';
 const title = 'Simulador de Hipoteca y Tabla de Amortización Francesa';
 const description =
   'Calcula tu cuota hipotecaria mensual, descubre cuánto pagarás en intereses y visualiza tu cuadro de amortización completo al instante.';

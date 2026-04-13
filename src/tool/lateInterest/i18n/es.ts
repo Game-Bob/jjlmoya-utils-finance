@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { LateInterestUI } from '../ui';
 
-const slug = 'intereses-demora';
+const slug = 'calculadora-intereses-demora';
 const title = 'Calculadora de Intereses de Demora y Legales España 2026';
 const description =
   'Calcula intereses de demora tributarios (Hacienda) y legales por impagos. Simulador actualizado para 2025 y 2026 basado en la Ley de Presupuestos.';
