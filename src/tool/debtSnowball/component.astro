@@ -1,16 +1,36 @@
 ---
-import { Icon } from 'astro-icon/components';
-import type { KnownLocale } from '../../types';
+import { Icon } from "astro-icon/components";
 
 interface Props {
-  locale?: KnownLocale;
-  ui?: Record<string, unknown>;
+    ui?: Record<string, unknown>;
 }
 
 const { ui } = Astro.props;
 ---
 
-<div class="snow-container" id="debt-calc-container" data-currency-symbol={ui.currencySymbol} data-currency-code={ui.currencyCode} data-currency-locale={ui.currencyLocale} data-clear-confirm={ui.labelClearDataConfirm}>
+<div
+    class="snow-container"
+    id="debt-calc-container"
+    data-currency-symbol={ui.currencySymbol}
+    data-currency-code={ui.currencyCode}
+    data-currency-locale={ui.currencyLocale}
+    data-clear-confirm={ui.labelClearDataConfirm}
+    data-label-debt-infinite={ui.labelDebtInfinite}
+    data-label-priority={ui.labelPriority}
+    data-label-step={ui.labelStep}
+    data-label-monthly-payment={ui.labelMonthlyPayment}
+    data-label-free={ui.labelFree}
+    data-label-active-method={ui.labelActiveMethod}
+    data-label-date={ui.labelDate}
+    data-label-starting-balance={ui.labelStartingBalance}
+    data-label-interest={ui.labelInterest}
+    data-label-amortization={ui.labelAmortization}
+    data-label-total-month={ui.labelTotalMonth}
+    data-label-remaining={ui.labelRemaining}
+    data-label-delete-debt={ui.labelDeleteDebt}
+    data-label-snowball-method={ui.labelSnowballMethod}
+    data-label-avalanche-method={ui.labelAvalancheMethod}
+>
     <div class="snow-main-card">
         <aside class="snow-sidebar">
             <h2 class="snow-title">
@@ -19,46 +39,94 @@ const { ui } = Astro.props;
             </h2>
 
             <div class="snow-input-group">
-                <label class="snow-label" for="extra-budget">{ui.labelExtraBudget}</label>
+                <label class="snow-label" for="extra-budget"
+                    >{ui.labelExtraBudget}</label
+                >
                 <div class="snow-input-wrapper">
-                    <input type="number" id="extra-budget" class="snow-input" value="100" min="0" step="50" />
+                    <input
+                        type="number"
+                        id="extra-budget"
+                        class="snow-input"
+                        value="100"
+                        min="0"
+                        step="50"
+                    />
                     <span class="snow-input-unit">{ui.currencySymbol}</span>
                 </div>
                 <p class="snow-help-text">{ui.labelExtraBudgetHelp}</p>
             </div>
 
             <div class="snow-method-tabs" id="method-switcher">
-                <button class="snow-tab active" data-method="snowball">{ui.labelSnowballMethod}</button>
-                <button class="snow-tab" data-method="avalanche">{ui.labelAvalancheMethod}</button>
+                <button class="snow-tab active" data-method="snowball"
+                    >{ui.labelSnowballMethod}</button
+                >
+                <button class="snow-tab" data-method="avalanche"
+                    >{ui.labelAvalancheMethod}</button
+                >
             </div>
 
             <div class="snow-adder-card">
                 <span class="snow-section-label">{ui.labelAddNewDebt}</span>
                 <div class="snow-adder-content">
                     <div class="snow-input-group">
-                        <input type="text" id="debt-name" class="snow-input" placeholder={ui.labelDebtNamePlaceholder} />
+                        <input
+                            type="text"
+                            id="debt-name"
+                            class="snow-input"
+                            placeholder={ui.labelDebtNamePlaceholder}
+                        />
                     </div>
                     <div class="snow-grid-2">
                         <div class="snow-input-group">
-                            <label class="snow-label" for="debt-balance">{ui.labelDebtBalance}</label>
+                            <label class="snow-label" for="debt-balance"
+                                >{ui.labelDebtBalance}</label
+                            >
                             <div class="snow-input-wrapper">
-                                <input type="number" id="debt-balance" class="snow-input" placeholder="0" min="0" />
-                                <span class="snow-input-unit">{ui.currencySymbol}</span>
+                                <input
+                                    type="number"
+                                    id="debt-balance"
+                                    class="snow-input"
+                                    placeholder="0"
+                                    min="0"
+                                />
+                                <span class="snow-input-unit"
+                                    >{ui.currencySymbol}</span
+                                >
                             </div>
                         </div>
                         <div class="snow-input-group">
-                            <label class="snow-label" for="debt-min-payment">{ui.labelMinPayment}</label>
+                            <label class="snow-label" for="debt-min-payment"
+                                >{ui.labelMinPayment}</label
+                            >
                             <div class="snow-input-wrapper">
-                                <input type="number" id="debt-min-payment" class="snow-input" placeholder="0" min="0" />
-                                <span class="snow-input-unit">{ui.currencySymbol}/mes</span>
+                                <input
+                                    type="number"
+                                    id="debt-min-payment"
+                                    class="snow-input"
+                                    placeholder="0"
+                                    min="0"
+                                />
+                                <span class="snow-input-unit"
+                                    >{ui.currencySymbol}/mes</span
+                                >
                             </div>
                         </div>
                     </div>
                     <div class="snow-input-group">
-                        <label class="snow-label" for="debt-rate">{ui.labelInterestRate}</label>
+                        <label class="snow-label" for="debt-rate"
+                            >{ui.labelInterestRate}</label
+                        >
                         <div class="snow-input-wrapper">
-                            <input type="number" id="debt-rate" class="snow-input" value="15" step="0.1" />
-                            <span class="snow-input-unit">% {ui.labelInterestHelp}</span>
+                            <input
+                                type="number"
+                                id="debt-rate"
+                                class="snow-input"
+                                value="15"
+                                step="0.1"
+                            />
+                            <span class="snow-input-unit"
+                                >% {ui.labelInterestHelp}</span
+                            >
                         </div>
                     </div>
                     <p class="snow-input-help">{ui.labelAddNewDebt}</p>
@@ -81,12 +149,16 @@ const { ui } = Astro.props;
                     <Icon name="mdi:bank-off-outline" size={48} />
                 </div>
                 <h3 class="snow-empty-title">{ui.labelEmptyStateTitle}</h3>
-                <p class="snow-empty-description">{ui.labelEmptyStateDescription}</p>
+                <p class="snow-empty-description">
+                    {ui.labelEmptyStateDescription}
+                </p>
             </div>
 
             <div id="results-content" class="snow-hidden">
                 <div class="snow-inventory-area">
-                    <span class="snow-section-label">{ui.labelDebtInventory}</span>
+                    <span class="snow-section-label"
+                        >{ui.labelDebtInventory}</span
+                    >
                     <div class="snow-mini-table">
                         <div class="snow-table-row snow-table-header">
                             <span>{ui.labelDebtName}</span>
@@ -101,46 +173,70 @@ const { ui } = Astro.props;
 
                 <div class="snow-results-hero">
                     <div class="snow-hero-main">
-                        <span class="snow-hero-label">{ui.labelFreedomDate}</span>
-                        <div class="snow-hero-value" id="summary-date">ENERO 2026</div>
+                        <span class="snow-hero-label"
+                            >{ui.labelFreedomDate}</span
+                        >
+                        <div class="snow-hero-value" id="summary-date">
+                            ENERO 2026
+                        </div>
                     </div>
                     <div class="snow-hero-badge">
                         <Icon name="mdi:check-decagram" size={20} />
-                        <span id="active-method-label">{ui.labelSnowballMethod}</span>
+                        <span id="active-method-label"
+                            >{ui.labelSnowballMethod}</span
+                        >
                     </div>
                 </div>
 
                 <div class="snow-grid-stats">
                     <div class="snow-stat-box">
                         <div class="snow-stat-value" id="stat-months">--</div>
-                        <div class="snow-stat-label">{ui.labelMonthsRemaining}</div>
+                        <div class="snow-stat-label">
+                            {ui.labelMonthsRemaining}
+                        </div>
                     </div>
                     <div class="snow-stat-box">
                         <div class="snow-stat-value" id="stat-interest">--</div>
-                        <div class="snow-stat-label">{ui.labelTotalInterest}</div>
+                        <div class="snow-stat-label">
+                            {ui.labelTotalInterest}
+                        </div>
                     </div>
                     <div class="snow-stat-box">
-                        <div class="snow-stat-value" id="stat-total-paid">--</div>
+                        <div class="snow-stat-value" id="stat-total-paid">
+                            --
+                        </div>
                         <div class="snow-stat-label">{ui.labelTotalPaid}</div>
                     </div>
                     <div class="snow-stat-box snow-stat-highlight">
-                        <div class="snow-stat-value" id="stat-extra-saved">--</div>
-                        <div class="snow-stat-label">{ui.labelInterestSaved}</div>
+                        <div class="snow-stat-value" id="stat-extra-saved">
+                            --
+                        </div>
+                        <div class="snow-stat-label">
+                            {ui.labelInterestSaved}
+                        </div>
                     </div>
                 </div>
 
                 <div class="snow-action-plan">
                     <div class="snow-action-header">
-                        <h4 class="snow-action-title">{ui.labelYourStrategy}</h4>
-                        <div class="snow-action-help">{ui.labelStrategyHelp}</div>
+                        <h4 class="snow-action-title">
+                            {ui.labelYourStrategy}
+                        </h4>
+                        <div class="snow-action-help">
+                            {ui.labelStrategyHelp}
+                        </div>
                     </div>
                     <div id="action-plan-list" class="snow-action-list"></div>
                 </div>
 
                 <div class="snow-table-container">
                     <div class="snow-table-header-action">
-                        <h4 class="snow-table-title">{ui.labelDetailedAmortization}</h4>
-                        <button id="export-csv" class="snow-btn-export">{ui.labelExportCSV}</button>
+                        <h4 class="snow-table-title">
+                            {ui.labelDetailedAmortization}
+                        </h4>
+                        <button id="export-csv" class="snow-btn-export"
+                            >{ui.labelExportCSV}</button
+                        >
                     </div>
                     <div class="snow-table-overlay">
                         <div class="snow-table-scroll">
@@ -180,7 +276,7 @@ const { ui } = Astro.props;
     }
 
     :global(.theme-dark),
-    :global([data-theme='dark']) {
+    :global([data-theme="dark"]) {
         --snow-bg-card: rgba(15, 23, 42, 0.9);
         --snow-border: rgba(30, 41, 59, 1);
         --snow-text-main: #f8fafc;
@@ -323,7 +419,7 @@ const { ui } = Astro.props;
     }
 
     :global(.theme-dark) .snow-tab.active,
-    :global([data-theme='dark']) .snow-tab.active {
+    :global([data-theme="dark"]) .snow-tab.active {
         background: rgba(255, 255, 255, 0.1);
         color: white;
     }
@@ -365,7 +461,11 @@ const { ui } = Astro.props;
     }
 
     .snow-btn-add {
-        background: linear-gradient(135deg, var(--snow-emerald), var(--snow-blue));
+        background: linear-gradient(
+            135deg,
+            var(--snow-emerald),
+            var(--snow-blue)
+        );
         color: white;
     }
 
@@ -467,7 +567,7 @@ const { ui } = Astro.props;
         overflow-y: auto;
     }
 
-    .snow-debt-item {
+    :global(.snow-debt-item) {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr 60px;
         padding: 1rem;
@@ -476,7 +576,7 @@ const { ui } = Astro.props;
         gap: 1rem;
     }
 
-    .snow-debt-remove {
+    :global(.snow-debt-remove) {
         background: none;
         border: none;
         color: var(--snow-rose);
@@ -487,12 +587,16 @@ const { ui } = Astro.props;
         transition: opacity 0.3s ease;
     }
 
-    .snow-debt-remove:hover {
+    :global(.snow-debt-remove:hover) {
         opacity: 1;
     }
 
     .snow-results-hero {
-        background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(59, 130, 246, 0.1));
+        background: linear-gradient(
+            135deg,
+            rgba(16, 185, 129, 0.1),
+            rgba(59, 130, 246, 0.1)
+        );
         border: 1.5px solid var(--snow-border);
         border-radius: 1.75rem;
         padding: 3rem;
@@ -609,7 +713,7 @@ const { ui } = Astro.props;
         gap: 1rem;
     }
 
-    .snow-plan-item {
+    :global(.snow-plan-item) {
         display: grid;
         grid-template-columns: 50px 1fr 1fr;
         gap: 1.5rem;
@@ -620,12 +724,12 @@ const { ui } = Astro.props;
         border-radius: 1rem;
     }
 
-    .snow-plan-item.active-step {
+    :global(.snow-plan-item.active-step) {
         background: rgba(16, 185, 129, 0.05);
         border-color: rgba(16, 185, 129, 0.3);
     }
 
-    .snow-step-marker {
+    :global(.snow-step-marker) {
         width: 50px;
         height: 50px;
         background: var(--snow-emerald);
@@ -638,13 +742,13 @@ const { ui } = Astro.props;
         font-size: 1.25rem;
     }
 
-    .snow-step-body {
+    :global(.snow-step-body) {
         display: flex;
         flex-direction: column;
         gap: 0.25rem;
     }
 
-    .snow-step-label {
+    :global(.snow-step-label) {
         font-size: 0.65rem;
         font-weight: 900;
         text-transform: uppercase;
@@ -652,13 +756,13 @@ const { ui } = Astro.props;
         opacity: 0.6;
     }
 
-    .snow-step-name {
+    :global(.snow-step-name) {
         font-size: 1rem;
         font-weight: 900;
         color: var(--snow-text-main);
     }
 
-    .snow-step-amount {
+    :global(.snow-step-amount) {
         display: flex;
         flex-direction: column;
         align-items: flex-end;
@@ -666,13 +770,13 @@ const { ui } = Astro.props;
         text-align: right;
     }
 
-    .snow-step-amount span {
+    :global(.snow-step-amount span) {
         font-size: 0.65rem;
         opacity: 0.6;
         text-transform: uppercase;
     }
 
-    .snow-step-amount strong {
+    :global(.snow-step-amount strong) {
         font-size: 1.25rem;
         font-weight: 900;
         color: var(--snow-emerald);
@@ -746,21 +850,21 @@ const { ui } = Astro.props;
         border-bottom: 1px solid var(--snow-border);
     }
 
-    table td {
+    :global(table td) {
         padding: 1rem;
         border-bottom: 1px solid var(--snow-border);
     }
 
-    table tr:last-child td {
+    :global(table tr:last-child td) {
         border-bottom: none;
     }
 
-    .snow-table-free {
+    :global(.snow-table-free) {
         color: var(--snow-emerald);
         font-weight: 900;
     }
 
-    .snow-table-muted {
+    :global(.snow-table-muted) {
         opacity: 0.6;
     }
 
@@ -785,7 +889,7 @@ const { ui } = Astro.props;
         .snow-table-header {
             display: none;
         }
-        .snow-debt-item {
+        :global(.snow-debt-item) {
             grid-template-columns: 1fr;
             padding: 1rem 0;
             border-left: 4px solid var(--snow-emerald);
@@ -795,18 +899,56 @@ const { ui } = Astro.props;
 </style>
 
 <script>
-    import { DebtSnowballLogic, type Debt, type SimulationResult } from './logic';
-    import { format, addMonths } from 'date-fns';
-    import { es } from 'date-fns/locale';
+    import {
+        DebtSnowballLogic,
+        type Debt,
+        type SimulationResult,
+    } from "./logic";
+    import { format, addMonths } from "date-fns";
+    import { es, enUS, fr, type Locale } from "date-fns/locale";
 
-    const container = document.getElementById('debt-calc-container');
-    const currencyLocale = container?.getAttribute('data-currency-locale') || 'es-ES';
-    const currencyCode = container?.getAttribute('data-currency-code') || 'EUR';
-    const clearConfirm = container?.getAttribute('data-clear-confirm') || '¿Vaciar plan?';
+    const container = document.getElementById("debt-calc-container");
+    const currencyLocale =
+        container?.getAttribute("data-currency-locale") || "es-ES";
+    const currencyCode = container?.getAttribute("data-currency-code") || "EUR";
+    const clearConfirm =
+        container?.getAttribute("data-clear-confirm") || "¿Vaciar plan?";
+    const labelDebtInfinite =
+        container?.getAttribute("data-label-debt-infinite") || "DEUDA INFINITA";
+    const labelPriority =
+        container?.getAttribute("data-label-priority") || "PRIORIDAD MÁXIMA";
+    const labelStep = container?.getAttribute("data-label-step") || "PASO";
+    const labelMonthlyPayment =
+        container?.getAttribute("data-label-monthly-payment") || "Pago mensual";
+    const labelFree = container?.getAttribute("data-label-free") || "LIBRE";
+    const labelActiveMethod =
+        container?.getAttribute("data-label-active-method") || "MÉTODO";
+    const labelDate = container?.getAttribute("data-label-date") || "Fecha";
+    const labelStartingBalance =
+        container?.getAttribute("data-label-starting-balance") ||
+        "Saldo Inicial";
+    const labelInterestCsv =
+        container?.getAttribute("data-label-interest") || "Interes";
+    const labelAmortization =
+        container?.getAttribute("data-label-amortization") || "Amortizacion";
+    const labelTotalMonth =
+        container?.getAttribute("data-label-total-month") || "Pago Total";
+    const labelRemaining =
+        container?.getAttribute("data-label-remaining") || "Saldo Final";
+    const labelDeleteDebt =
+        container?.getAttribute("data-label-delete-debt") || "Eliminar";
+    const labelSnowballMethod =
+        container?.getAttribute("data-label-snowball-method") || "SNOWBALL";
+    const labelAvalancheMethod =
+        container?.getAttribute("data-label-avalanche-method") || "AVALANCHE";
+
+    const localeKey = document.documentElement.lang || "es";
+    const dateLocales: Record<string, Locale> = { es, en: enUS, fr };
+    const dateLocale = dateLocales[localeKey] ?? es;
 
     function formatCurrency(val: number): string {
         return new Intl.NumberFormat(currencyLocale, {
-            style: 'currency',
+            style: "currency",
             currency: currencyCode,
             maximumFractionDigits: 0,
         }).format(val);
@@ -815,7 +957,7 @@ const { ui } = Astro.props;
     class SnowballEngine {
         private debts: Debt[] = [];
         private extra: number = 100;
-        private method: 'snowball' | 'avalanche' = 'snowball';
+        private method: "snowball" | "avalanche" = "snowball";
 
         constructor() {
             this.load();
@@ -826,42 +968,49 @@ const { ui } = Astro.props;
         private bind() {
             const get = (id: string) => document.getElementById(id);
 
-            get('add-debt-btn')?.addEventListener('click', () => this.add());
+            get("add-debt-btn")?.addEventListener("click", () => this.add());
 
-            const extraInput = get('extra-budget') as HTMLInputElement;
-            extraInput?.addEventListener('input', (e) => {
+            const extraInput = get("extra-budget") as HTMLInputElement;
+            extraInput?.addEventListener("input", (e) => {
                 const val = parseFloat((e.target as HTMLInputElement).value);
                 this.extra = isNaN(val) ? 0 : val;
                 this.save();
             });
 
-            document.querySelectorAll('.snow-tab').forEach((tab) => {
-                tab.addEventListener('click', () => {
-                    document.querySelectorAll('.snow-tab').forEach((t) => t.classList.remove('active'));
-                    tab.classList.add('active');
-                    this.method = (tab as HTMLElement).dataset.method as 'snowball' | 'avalanche' || 'snowball';
+            document.querySelectorAll(".snow-tab").forEach((tab) => {
+                tab.addEventListener("click", () => {
+                    document
+                        .querySelectorAll(".snow-tab")
+                        .forEach((t) => t.classList.remove("active"));
+                    tab.classList.add("active");
+                    this.method =
+                        ((tab as HTMLElement).dataset.method as
+                            | "snowball"
+                            | "avalanche") || "snowball";
                     this.render();
                 });
             });
 
-            get('clear-data')?.addEventListener('click', () => {
+            get("clear-data")?.addEventListener("click", () => {
                 if (confirm(clearConfirm)) {
                     this.debts = [];
                     this.save();
                 }
             });
 
-            get('export-csv')?.addEventListener('click', () => this.export());
+            get("export-csv")?.addEventListener("click", () => this.export());
         }
 
         private load() {
             try {
-                const d = localStorage.getItem('snow_debts_v2');
+                const d = localStorage.getItem("snow_debts_v2");
                 if (d) this.debts = JSON.parse(d);
-                const e = localStorage.getItem('snow_extra_v2');
+                const e = localStorage.getItem("snow_extra_v2");
                 if (e) {
                     this.extra = parseFloat(e);
-                    const input = document.getElementById('extra-budget') as HTMLInputElement;
+                    const input = document.getElementById(
+                        "extra-budget",
+                    ) as HTMLInputElement;
                     if (input) input.value = e;
                 }
             } catch {
@@ -870,29 +1019,52 @@ const { ui } = Astro.props;
         }
 
         private save() {
-            localStorage.setItem('snow_debts_v2', JSON.stringify(this.debts));
-            localStorage.setItem('snow_extra_v2', this.extra.toString());
+            localStorage.setItem("snow_debts_v2", JSON.stringify(this.debts));
+            localStorage.setItem("snow_extra_v2", this.extra.toString());
             this.render();
         }
 
         private getDebtInputs() {
             return {
-                nameEl: document.getElementById('debt-name') as HTMLInputElement,
-                balEl: document.getElementById('debt-balance') as HTMLInputElement,
-                minEl: document.getElementById('debt-min-payment') as HTMLInputElement,
-                rateEl: document.getElementById('debt-rate') as HTMLInputElement,
+                nameEl: document.getElementById(
+                    "debt-name",
+                ) as HTMLInputElement,
+                balEl: document.getElementById(
+                    "debt-balance",
+                ) as HTMLInputElement,
+                minEl: document.getElementById(
+                    "debt-min-payment",
+                ) as HTMLInputElement,
+                rateEl: document.getElementById(
+                    "debt-rate",
+                ) as HTMLInputElement,
             };
         }
 
-        private clearDebtInputs(nameEl: HTMLInputElement, balEl: HTMLInputElement, minEl: HTMLInputElement) {
-            balEl.value = '';
-            minEl.value = '';
-            nameEl.value = '';
+        private clearDebtInputs(
+            nameEl: HTMLInputElement,
+            balEl: HTMLInputElement,
+            minEl: HTMLInputElement,
+        ) {
+            balEl.value = "";
+            minEl.value = "";
+            nameEl.value = "";
         }
 
-        private validateAndCreateDebt(b: number, m: number, name: string, rate: number): boolean {
+        private validateAndCreateDebt(
+            b: number,
+            m: number,
+            name: string,
+            rate: number,
+        ): boolean {
             if (b > 0 && m > 0) {
-                this.debts.push({ id: Math.random().toString(36).substring(2, 11), name, balance: b, minPayment: m, rate });
+                this.debts.push({
+                    id: Math.random().toString(36).substring(2, 11),
+                    name,
+                    balance: b,
+                    minPayment: m,
+                    rate,
+                });
                 return true;
             }
             return false;
@@ -904,7 +1076,7 @@ const { ui } = Astro.props;
 
             const b = parseFloat(balEl.value);
             const m = parseFloat(minEl.value);
-            const name = nameEl?.value || `Deuda ${this.debts.length + 1}`;
+            const name = nameEl?.value || `D${this.debts.length + 1}`;
             const rate = parseFloat(rateEl?.value) || 0;
 
             if (this.validateAndCreateDebt(b, m, name, rate)) {
@@ -914,24 +1086,36 @@ const { ui } = Astro.props;
         }
 
         private render() {
-            const snow = DebtSnowballLogic.simulate(this.debts, this.extra, 'snowball');
-            const aval = DebtSnowballLogic.simulate(this.debts, this.extra, 'avalanche');
-            const res = this.method === 'snowball' ? snow : aval;
+            const snow = DebtSnowballLogic.simulate(
+                this.debts,
+                this.extra,
+                "snowball",
+            );
+            const aval = DebtSnowballLogic.simulate(
+                this.debts,
+                this.extra,
+                "avalanche",
+            );
+            const res = this.method === "snowball" ? snow : aval;
             this.renderView(res, snow, aval);
         }
 
-        private renderView(res: SimulationResult | null, snow: SimulationResult | null, aval: SimulationResult | null) {
-            const noMsg = document.getElementById('no-debts-msg');
-            const results = document.getElementById('results-content');
+        private renderView(
+            res: SimulationResult | null,
+            snow: SimulationResult | null,
+            aval: SimulationResult | null,
+        ) {
+            const noMsg = document.getElementById("no-debts-msg");
+            const results = document.getElementById("results-content");
 
             if (!res || !snow || !aval) {
-                noMsg?.classList.remove('snow-hidden');
-                results?.classList.add('snow-hidden');
+                noMsg?.classList.remove("snow-hidden");
+                results?.classList.add("snow-hidden");
                 return;
             }
 
-            noMsg?.classList.add('snow-hidden');
-            results?.classList.remove('snow-hidden');
+            noMsg?.classList.add("snow-hidden");
+            results?.classList.remove("snow-hidden");
             this.updateDisplay(res);
             this.updateDebtList();
             this.updateActionPlan();
@@ -939,109 +1123,134 @@ const { ui } = Astro.props;
         }
 
         private updateDisplay(res: SimulationResult) {
-            const dateEl = document.getElementById('summary-date');
+            const dateEl = document.getElementById("summary-date");
             if (dateEl) {
                 if (res.isGrowing) {
-                    dateEl.textContent = 'DEUDA INFINITA';
-                    dateEl.style.color = 'var(--snow-rose)';
+                    dateEl.textContent = labelDebtInfinite;
+                    dateEl.style.color = "var(--snow-rose)";
                 } else {
-                    dateEl.textContent = format(addMonths(new Date(), res.mo), 'MMMM yyyy', { locale: es }).toUpperCase();
-                    dateEl.style.color = 'var(--snow-emerald)';
+                    dateEl.textContent = format(
+                        addMonths(new Date(), res.mo),
+                        "MMMM yyyy",
+                        { locale: dateLocale },
+                    ).toUpperCase();
+                    dateEl.style.color = "var(--snow-emerald)";
                 }
             }
 
-            const methEl = document.getElementById('active-method-label');
-            if (methEl) methEl.textContent = `MÉTODO ${this.method.toUpperCase()}`;
+            const methEl = document.getElementById("active-method-label");
+            if (methEl) {
+                const methodLabel = this.method === 'snowball' ? labelSnowballMethod : labelAvalancheMethod;
+                methEl.textContent = `${labelActiveMethod} ${methodLabel}`;
+            }
 
-            document.getElementById('stat-months')!.textContent = res.mo.toString();
-            document.getElementById('stat-interest')!.textContent = formatCurrency(res.totalI);
-            document.getElementById('stat-total-paid')!.textContent = formatCurrency(res.totalP);
+            document.getElementById("stat-months")!.textContent =
+                res.mo.toString();
+            document.getElementById("stat-interest")!.textContent =
+                formatCurrency(res.totalI);
+            document.getElementById("stat-total-paid")!.textContent =
+                formatCurrency(res.totalP);
 
             const baseSim = DebtSnowballLogic.simulateNoExtra(this.debts);
             const saved = baseSim ? baseSim.totalI - res.totalI : 0;
-            document.getElementById('stat-extra-saved')!.textContent = formatCurrency(Math.max(0, saved));
+            document.getElementById("stat-extra-saved")!.textContent =
+                formatCurrency(Math.max(0, saved));
         }
 
         private updateDebtList() {
-            const list = document.getElementById('debt-items-list');
+            const list = document.getElementById("debt-items-list");
             if (!list) return;
-            list.innerHTML = '';
+            list.innerHTML = "";
             this.debts.forEach((d) => {
-                const row = document.createElement('div');
-                row.className = 'snow-debt-item';
+                const row = document.createElement("div");
+                row.className = "snow-debt-item";
                 row.innerHTML = `
                     <span>${d.name}</span>
                     <span>${formatCurrency(d.balance)}</span>
                     <span>${formatCurrency(d.minPayment)}</span>
                     <span>${d.rate}%</span>
-                    <button class="snow-debt-remove" title={ui.labelDeleteDebt}>&times;</button>
+                    <button class="snow-debt-remove" title="${labelDeleteDebt}">&times;</button>
                 `;
-                row.querySelector('.snow-debt-remove')?.addEventListener('click', () => {
-                    this.debts = this.debts.filter((item) => item.id !== d.id);
-                    this.save();
-                });
+                row.querySelector(".snow-debt-remove")?.addEventListener(
+                    "click",
+                    () => {
+                        this.debts = this.debts.filter(
+                            (item) => item.id !== d.id,
+                        );
+                        this.save();
+                    },
+                );
                 list.appendChild(row);
             });
         }
 
         private updateActionPlan() {
-            const planList = document.getElementById('action-plan-list');
+            const planList = document.getElementById("action-plan-list");
             if (!planList) return;
             const ordered = [...this.debts].sort((a, b) =>
-                this.method === 'snowball' ? a.balance - b.balance : b.rate - a.rate
+                this.method === "snowball"
+                    ? a.balance - b.balance
+                    : b.rate - a.rate,
             );
             let cumulativeExtra = this.extra;
             planList.innerHTML = ordered
                 .map((d, index) => {
                     const totalForThis = d.minPayment + cumulativeExtra;
                     cumulativeExtra += d.minPayment;
-                    const stepLabel = index === 0 ? 'PRIORIDAD MÁXIMA' : `PASO ${index + 1}`;
+                    const stepLabel =
+                        index === 0
+                            ? labelPriority
+                            : `${labelStep} ${index + 1}`;
                     return `
-                        <div class="snow-plan-item ${index === 0 ? 'active-step' : ''}">
+                        <div class="snow-plan-item ${index === 0 ? "active-step" : ""}">
                             <div class="snow-step-marker">${index + 1}</div>
                             <div class="snow-step-body">
                                 <span class="snow-step-label">${stepLabel}</span>
                                 <div class="snow-step-name">${d.name}</div>
                             </div>
                             <div class="snow-step-amount">
-                                <span>Pago mensual</span>
+                                <span>${labelMonthlyPayment}</span>
                                 <strong>${formatCurrency(totalForThis)}</strong>
                             </div>
                         </div>
                     `;
                 })
-                .join('');
+                .join("");
         }
 
         private updateProjectionTable(res: SimulationResult) {
-            const tbody = document.querySelector('#projection-table tbody');
+            const tbody = document.querySelector("#projection-table tbody");
             if (!tbody) return;
             tbody.innerHTML = res.proj
                 .map(
                     (p) => `
                     <tr>
-                        <td>${format(addMonths(new Date(), p.mo), 'MMM yy', { locale: es }).toUpperCase()}</td>
+                        <td>${format(addMonths(new Date(), p.mo), "MMM yy", { locale: dateLocale }).toUpperCase()}</td>
                         <td>${formatCurrency(p.iniB)}</td>
                         <td>${formatCurrency(p.int)}</td>
                         <td>${formatCurrency(p.princ)}</td>
                         <td>${formatCurrency(p.total)}</td>
-                        <td class="${p.finB < 1 ? 'snow-table-free' : 'snow-table-muted'}">${p.finB < 1 ? 'LIBRE' : formatCurrency(p.finB)}</td>
+                        <td class="${p.finB < 1 ? "snow-table-free" : "snow-table-muted"}">${p.finB < 1 ? labelFree : formatCurrency(p.finB)}</td>
                     </tr>
-                `
+                `,
                 )
-                .join('');
+                .join("");
         }
 
         private export() {
-            const res = DebtSnowballLogic.simulate(this.debts, this.extra, this.method);
+            const res = DebtSnowballLogic.simulate(
+                this.debts,
+                this.extra,
+                this.method,
+            );
             if (!res) return;
-            let csv = '\uFEFFFecha,Saldo Inicial,Interes,Amortizacion,Pago Total,Saldo Final\n';
+            let csv = `\uFEFF${labelDate},${labelStartingBalance},${labelInterestCsv},${labelAmortization},${labelTotalMonth},${labelRemaining}\n`;
             res.proj.forEach((p) => {
-                const d = format(addMonths(new Date(), p.mo), 'MM/yyyy');
+                const d = format(addMonths(new Date(), p.mo), "MM/yyyy");
                 csv += `${d},${p.iniB.toFixed(2)},${p.int.toFixed(2)},${p.princ.toFixed(2)},${p.total.toFixed(2)},${p.finB.toFixed(2)}\n`;
             });
-            const blob = new Blob([csv], { type: 'text/csv;charset=utf-8' });
-            const link = document.createElement('a');
+            const blob = new Blob([csv], { type: "text/csv;charset=utf-8" });
+            const link = document.createElement("a");
             link.href = URL.createObjectURL(blob);
             link.download = `plan_deuda_${this.method}.csv`;
             link.click();

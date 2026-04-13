@@ -11,7 +11,7 @@ const { ui } = Astro.props;
 const availableYears = InflationCalculator.getAvailableYears();
 ---
 
-<div class="inflation-container" data-currency-locale={ui.currencyLocale} data-currency-code={ui.currencyCode}>
+<div class="inflation-container" data-currency-locale={ui.currencyLocale} data-currency-code={ui.currencyCode} data-label-inflation-accumulated={ui.labelInflationAccumulated}>
   <div class="inflation-header">
     <div class="inflation-header-title-group">
       <div class="inflation-header-icon">
@@ -78,6 +78,7 @@ const availableYears = InflationCalculator.getAvailableYears();
   const container = document.querySelector('.inflation-container') as HTMLElement;
   const currencyLocale = container.dataset.currencyLocale || 'es-ES';
   const currencyCode = container.dataset.currencyCode || 'EUR';
+  const labelInflationAccumulated = container.dataset.labelInflationAccumulated || 'Inflación Acumulada';
 
   const amountEl = document.getElementById('inflation-amount') as HTMLInputElement;
   const yearEl = document.getElementById('inflation-year') as HTMLSelectElement;
@@ -107,7 +108,7 @@ const availableYears = InflationCalculator.getAvailableYears();
       const sign = result.percentChange > 0 ? '+' : '';
       const span = percentEl.querySelector('span');
       if (span) {
-        span.innerText = `${sign}${result.percentChange} % Inflación Acumulada`;
+        span.innerText = `${sign}${result.percentChange} % ${labelInflationAccumulated}`;
       }
     }
   }

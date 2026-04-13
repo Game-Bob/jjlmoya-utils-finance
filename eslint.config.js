@@ -197,5 +197,13 @@ export default [
             "complexity": "off",
         },
     },
+    {
+        files: ["**/tool/debtSnowball/component.astro", "**/tool/debtSnowball/component.astro/*.ts"],
+        rules: {
+            "max-lines": "off",
+            "max-lines-per-function": "off",
+            "complexity": "off",
+        },
+    },
 ];
 
