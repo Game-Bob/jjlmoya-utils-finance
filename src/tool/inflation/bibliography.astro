@@ -1,58 +1,14 @@
 ---
-interface BibliographyItem {
-  name: string;
-  url: string;
-}
+import { Bibliography as SharedBibliography } from '@jjlmoya/utils-shared';
+import { inflation } from './index';
+import type { KnownLocale } from '../../types';
 
 interface Props {
-  items: BibliographyItem[];
-  title: string;
+  locale?: KnownLocale;
 }
 
-const { items, title } = Astro.props;
+const { locale = 'es' } = Astro.props;
+const content = await inflation.i18n[locale]?.();
 ---
 
-<section class="bibliography-section">
-  <h2 class="bibliography-title">{title}</h2>
-  <ul class="bibliography-list">
-    {items.map((item) => (
-      <li class="bibliography-item">
-        <a href={item.url} target="_blank" rel="noopener noreferrer" class="bibliography-link">
-          {item.name}
-        </a>
-      </li>
-    ))}
-  </ul>
-</section>
-
-<style>
-  .bibliography-section {
-    margin-top: 2rem;
-  }
-
-  .bibliography-title {
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-  }
-
-  .bibliography-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  .bibliography-item {
-    margin-bottom: 0.75rem;
-  }
-
-  .bibliography-link {
-    color: #f59e0b;
-    text-decoration: none;
-    transition: color 0.2s ease;
-  }
-
-  .bibliography-link:hover {
-    text-decoration: underline;
-  }
-</style>
+{content && <SharedBibliography links={content.bibliography} />}
