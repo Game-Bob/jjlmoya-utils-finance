@@ -3,8 +3,8 @@ import type { ToolLocaleContent } from '../../../types';
 import type { FIRECalculatorUI } from '../ui';
 
 const slug = 'calculatrice-regle-4-pour-cent-fire';
-const title = 'Calculatrice FIRE Espagne: Règle des 4%';
-const description = 'Calculez votre chiffre magique pour l\'indépendance financière en Espagne. Planifiez votre retraite anticipée et visualisez votre chemin vers la liberté économique.';
+const title = 'Calculatrice FIRE: Règle des 4%';
+const description = 'Calculez votre chiffre magique pour l\'indépendance financière. Planifiez votre retraite anticipée et visualisez votre chemin vers la liberté économique.';
 
 const faqData = [
   {
@@ -36,7 +36,7 @@ const howToData = [
   },
   {
     name: 'Choisissez votre taux de retrait sûr',
-    text: 'La Règle des 4% est standard, mais ajustez entre 2,5% (conservateur) et 6% (agressif) selon votre tolérance au risque.',
+    text: 'La Règle des 4% est standard, mas ajustez entre 2,5% (conservateur) et 6% (agressif) selon votre tolérance au risque.',
   },
   {
     name: 'Entrez votre patrimoine actuel',
@@ -62,8 +62,8 @@ const bibliographyData = [
     url: 'https://www.multpl.com/shiller-pe',
   },
   {
-    name: 'Banque de France - Orientations Financières',
-    url: 'https://www.banque-france.fr/',
+    name: 'Investopedia - FIRE Guide',
+    url: 'https://www.investopedia.com/terms/f/financial-independence-retire-early-fire.asp',
   },
 ];
 

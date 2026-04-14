@@ -62,8 +62,8 @@ const bibliographyData = [
     url: 'https://www.multpl.com/shiller-pe',
   },
   {
-    name: 'Spanish Financial Regulator - CNMV',
-    url: 'https://www.cnmv.es/',
+    name: 'Bogleheads - Guía de Inversión',
+    url: 'https://bogleheads.es/',
   },
 ];
 

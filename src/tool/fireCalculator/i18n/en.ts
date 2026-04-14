@@ -2,9 +2,9 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { FIRECalculatorUI } from '../ui';
 
-const slug = 'four-percent-rule-fire-calculator-spain';
-const title = 'FIRE Calculator Spain: 4% Rule';
-const description = 'Calculate your financial independence number in Spain using the 4% rule. Plan your early retirement and visualize your path to financial freedom.';
+const slug = 'four-percent-rule-fire-calculator';
+const title = 'FIRE Calculator: 4% Rule';
+const description = 'Calculate your financial independence number using the 4% rule. Plan your early retirement and visualize your path to financial freedom.';
 
 const faqData = [
   {
@@ -62,8 +62,8 @@ const bibliographyData = [
     url: 'https://www.multpl.com/shiller-pe',
   },
   {
-    name: 'Bank of Spain - Financial Guidance',
-    url: 'https://www.bde.es/bde/en/',
+    name: 'Investopedia - FIRE Guide',
+    url: 'https://www.investopedia.com/terms/f/financial-independence-retire-early-fire.asp',
   },
 ];
 

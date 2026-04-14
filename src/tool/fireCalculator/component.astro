@@ -10,7 +10,15 @@ interface Props {
 const { ui } = Astro.props;
 ---
 
-<div class="fire-container" id="fire-calculator-main" data-currency-symbol={ui.currencySymbol} data-currency-code={ui.currencyCode} data-currency-locale={ui.currencyLocale} data-time-format={ui.labelTimeRemainingFormat} data-already-fi={ui.labelAlreadyFI} data-unachievable={ui.labelUnachievable}>
+<div class="fire-container" id="fire-calculator-main" 
+    data-currency-symbol={ui.currencySymbol} 
+    data-currency-code={ui.currencyCode} 
+    data-currency-locale={ui.currencyLocale} 
+    data-time-format={ui.labelTimeRemainingFormat} 
+    data-already-fi={ui.labelAlreadyFI} 
+    data-unachievable={ui.labelUnachievable}
+    data-label-added={ui.labelAdded}
+>
     <div class="fire-grid">
         <div class="fire-panel">
             <div class="fire-input-group">
@@ -547,6 +555,7 @@ const { ui } = Astro.props;
     const timeFormatTemplate = container?.getAttribute('data-time-format') || 'You have {years} years and {months} months left';
     const labelAlreadyFI = container?.getAttribute('data-already-fi') || 'You have already achieved financial freedom!';
     const labelUnachievable = container?.getAttribute('data-unachievable') || 'Goal unachievable with this savings rate';
+    const labelAdded = container?.getAttribute('data-label-added') || 'Added:';
 
     function formatCurrency(val: number): string {
       return new Intl.NumberFormat(currencyLocale, {
@@ -641,7 +650,7 @@ const { ui } = Astro.props;
         const target = e.target as HTMLInputElement;
         if (target && checklistFeedback) {
             if (target.checked) {
-                checklistFeedback.textContent = `Añadido: ${target.parentElement?.textContent?.trim()}`;
+                checklistFeedback.textContent = `${labelAdded} ${target.parentElement?.textContent?.trim()}`;
                 checklistFeedback.classList.add('visible');
                 setTimeout(() => checklistFeedback.classList.remove('visible'), 2000);
             }
@@ -677,7 +686,7 @@ const { ui } = Astro.props;
       const imgData = canvas.toDataURL('image/png');
       const pdf = new jsPDF('p', 'pt', 'a4');
       pdf.addImage(imgData, 'PNG', 0, 0, 595.28, (canvas.height * 595.28) / canvas.width);
-      pdf.save('mi-plan-fire.pdf');
+      pdf.save('fire-plan.pdf');
     }
 
     const btnExport = document.getElementById('btn-export');
