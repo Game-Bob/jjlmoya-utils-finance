@@ -155,7 +155,7 @@ const seoData = [
   },
   {
     type: 'title',
-    text: 'Ordre Contentieux-Administratif',
+    text: 'Ordre Contentieux Administratif',
     level: 3,
   },
   {
