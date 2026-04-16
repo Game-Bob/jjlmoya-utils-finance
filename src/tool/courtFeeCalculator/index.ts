@@ -10,7 +10,7 @@ export const courtFeeCalculator: FinanceToolEntry<CourtFeeCalculatorUI> = {
   id: 'calculadora-tasas-judiciales',
   icons: {
     bg: 'mdi:gavel',
-    fg: 'mdi:balance-scale',
+    fg: 'mdi:scale-balance',
   },
   i18n: {
     de: () => import('./i18n/de').then((m) => m.content),
