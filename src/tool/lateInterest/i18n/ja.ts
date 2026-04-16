@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { LateInterestUI } from '../ui';
 
-const slug = 'supein-chien-risoku-keisanki';
+const slug = 'late-interest-calculator';
 const title = 'スペイン遅延利息・法定利息計算機 2026年版';
 const description =
   'スペインにおける税金（税務署）の延滞金や、支払遅延に伴う法定利息を計算できます。2025年・2026年の予算案に基づいた最新のシミュレーターです。';

@@ -3,7 +3,7 @@ import type { ToolLocaleContent } from '../../../types';
 import type { FIRECalculatorUI } from '../ui';
 
 const slug = 'fire-kalkylator-4-procents-regeln';
-const title = 'FIRE-kalkylator: 4%-regeln för din finansiella frihet';
+const title = 'FIRE kalkylator: 4% regeln för din finansiella frihet';
 const description = 'Beräkna ditt magiska tal för finansiellt oberoende med hjälp av 4%-regeln. Planera din tidiga pension och visualisera din väg mot ekonomisk frihet.';
 
 const faqData = [
@@ -226,7 +226,7 @@ export const content: ToolLocaleContent<FIRECalculatorUI> = {
     },
   ],
   ui: {
-    labelTitle: 'FIRE-kalkylator: 4%-regeln',
+    labelTitle: 'FIRE kalkylator: 4% regeln',
     labelDescription: 'Beräkna ditt magiska tal för finansiell självständighet med 4%-regeln och visualisera dina milstolpar mot frihet.',
     labelMonthlyExpenses: 'Månadsutgifter',
     labelSWR: 'Uttagsränta (SWR)',

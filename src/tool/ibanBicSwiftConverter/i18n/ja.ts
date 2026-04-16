@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { IBANBICSwiftUI } from '../ui';
 
-const slug = 'iban-bikku-suuifuto-henkanki';
+const slug = 'iban-to-bic-swift-converter';
 const title = 'IBANからBIC/SWIFTへの変換および銀行検索';
 const description = 'スペインのIBANからBIC/SWIFTコードを即座に取得。公式アルゴリズムに基づいた海外送金用銀行口座バリデーター。';
 

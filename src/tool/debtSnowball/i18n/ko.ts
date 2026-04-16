@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { DebtSnowballUI } from '../ui';
 
-const slug = 'debt-su-no-bol-gye-san-gi';
+const slug = 'debt-snowball-calculator';
 const title = '채무 스노볼 계산기: 단계별 부채 상환 계획 2026';
 const description = '데이브 램지의 스노볼 공식을 통해 경제적 자유를 얻는 날짜를 계산해 보세요. 부채를 정리하고 월별 상세 상환 계획을 확인할 수 있습니다.';
 

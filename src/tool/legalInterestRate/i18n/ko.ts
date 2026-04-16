@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { LegalInterestRateUI } from '../ui';
 
-const slug = 'supein-beob-jeong-i-ja-yul-2026';
+const slug = 'legal-interest-on-money-spain';
 const title = '법정 이자';
 const description = '2026년 스페인에서 적용되는 법정 이자를 계산해 보세요. 예산법에 따른 이율 3.25% 시뮬레이터입니다.';
 

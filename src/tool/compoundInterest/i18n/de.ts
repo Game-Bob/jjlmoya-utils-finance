@@ -167,7 +167,7 @@ export const content: ToolLocaleContent<CompoundInterestUI> = {
     },
     {
       type: 'tip',
-      title: 'Die 72er-Regel',
+      title: 'Die 72er Regel',
       html: '<p>Teilen Sie 72 durch Ihre jährliche Rendite, um zu wissen, wie viele Jahre es dauert, bis sich <strong>Ihr Geld verdoppelt</strong>.</p><p><em>Beispiel: Bei 8% verdoppeln Sie alle 9 Jahre (72/8 = 9).</em></p><p>Diese magische Formel funktioniert für jede Rendite und hilft Ihnen, das Wachstum Ihrer Investitionen schnell abzuschätzen.</p>',
     },
     {

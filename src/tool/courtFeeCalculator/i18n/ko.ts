@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { CourtFeeCalculatorUI } from '../ui';
 
-const slug = 'supein-beob-weon-su-su-ryo-gye-san-gi';
+const slug = 'spanish-court-fees-calculator';
 const title = '스페인 법원 수수료 계산기';
 const description = '스페인 법률 10/2012에 따른 기업용 법원 수수료를 정확하게 계산합니다. 면제 규정을 반영한 모델 696 시뮬레이터.';
 

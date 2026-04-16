@@ -187,7 +187,7 @@ export const content: ToolLocaleContent<InflationUI> = {
       columns: 2,
       items: [
         {
-          title: 'Krisis Tahun 80-an',
+          title: 'Krisis Tahun 80 an',
           description: 'Periode yang ditandai oleh inflasi dua digit dan ketidakstabilan tenaga kerja yang besar.',
           points: [
             'Suku bunga yang sangat tinggi',

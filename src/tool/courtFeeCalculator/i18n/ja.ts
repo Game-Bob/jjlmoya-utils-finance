@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { CourtFeeCalculatorUI } from '../ui';
 
-const slug = 'supein-saiban-tesuryo-keisanki';
+const slug = 'spanish-court-fees-calculator';
 const title = 'スペイン裁判手数料計算機';
 const description = 'スペインの法律10/2012に基づく、企業向けの正確な裁判手数料を計算します。免除規定に対応したモデル696シミュレーター。';
 

@@ -1,0 +1,30 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cd d:\\\\\\\\code\\\\\\\\jjlmoya-utils-finance)",
+      "Bash(sed -i \"s/FIRE Calculator: De 4%-regel/FIRE Calculator: De 4% regel/g\" tool/fireCalculator/i18n/nl.ts)",
+      "Bash(sed -i \"s/FIRE-kalkylator: 4%-regeln/FIRE kalkylator: 4% regeln/g\" tool/fireCalculator/i18n/sv.ts)",
+      "Bash(sed -i \"s/Krisis Tahun 80-an/Krisis Tahun 80 an/g\" tool/inflation/i18n/id.ts)",
+      "Bash(sed -i \"s/Inflazione della Pandemia: 2021-2023/Inflazione della Pandemia: 2021 2023/g\" tool/inflation/i18n/it.ts)",
+      "Bash(sed -i \"s/Кризис 80-х годов/Кризис 80 х годов/g\" tool/inflation/i18n/ru.ts)",
+      "Bash(find src/tool/debtSnowball -name \"*.ts\" -exec grep -l \"slug:\" {} \\\\;)",
+      "Bash(sed -i \"s/const slug = 'fukuri-keisanki'/const slug = 'compound-interest-calculator'/g\" src/tool/compoundInterest/i18n/ja.ts)",
+      "Bash(sed -i \"s/const slug = 'jutaku-ron-shimyureshon'/const slug = 'mortgage-calculator'/g\" src/tool/mortgage/i18n/ja.ts)",
+      "Bash(sed -i \"s/const slug = 'supein-infure-keisanki'/const slug = 'inflation-calculator-spain'/g\" src/tool/inflation/i18n/ja.ts)",
+      "Bash(sed -i \"s/const slug = 'pasento-keisanki'/const slug = 'percentage-calculator'/g\" src/tool/percentageCalculator/i18n/ja.ts)",
+      "Bash(sed -i \"s/const slug = 'supein-chien-risoku-keisanki'/const slug = 'late-interest-calculator'/g\" src/tool/lateInterest/i18n/ja.ts)",
+      "Bash(sed -i \"s/const slug = 'bog-ri-gye-san-gi'/const slug = 'compound-interest-calculator'/g\" src/tool/compoundInterest/i18n/ko.ts)",
+      "Bash(sed -i \"s/const slug = 'ju-taeg-dam-bo-dae-cul-gye-san-gi'/const slug = 'mortgage-calculator'/g\" src/tool/mortgage/i18n/ko.ts)",
+      "Bash(sed -i \"s/const slug = 'supein-kaesu-gye-san-gi'/const slug = 'inflation-calculator-spain'/g\" src/tool/inflation/i18n/ko.ts)",
+      "Bash(sed -i \"s/const slug = 'per-se-ntu-gye-san-gi'/const slug = 'percentage-calculator'/g\" src/tool/percentageCalculator/i18n/ko.ts)",
+      "Bash(sed -i \"s/const slug = 'supein-ji-yeon-i-ja-gye-san-gi'/const slug = 'late-interest-calculator'/g\" src/tool/lateInterest/i18n/ko.ts)",
+      "Bash(awk -F'\\(' '{print $2}')",
+      "Bash(sed -i \"s/const slug = 'fu-li-jisuanqi-cai-fu-zeng-zhang'/const slug = 'compound-interest-calculator'/g\" src/tool/compoundInterest/i18n/zh.ts)",
+      "Bash(sed -i \"s/const slug = 'fang-dai-jisuanqi'/const slug = 'mortgage-calculator'/g\" src/tool/mortgage/i18n/zh.ts)",
+      "Bash(sed -i \"s/const slug = 'xibanya-tonghuopengzhang'/const slug = 'inflation-calculator-spain'/g\" src/tool/inflation/i18n/zh.ts)",
+      "Bash(sed -i \"s/const slug = 'baifenbi-jisuanqi'/const slug = 'percentage-calculator'/g\" src/tool/percentageCalculator/i18n/zh.ts)",
+      "Bash(sed -i \"s/const slug = 'xibanya-zhi-na-jin-ji-suan-qi'/const slug = 'late-interest-calculator'/g\" src/tool/lateInterest/i18n/zh.ts)",
+      "Bash(ls -1 src/tool/compoundInterest/i18n/*.ts)"
+    ]
+  }
+}

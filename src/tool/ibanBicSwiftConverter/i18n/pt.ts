@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { IBANBICSwiftUI } from '../ui';
 
-const slug = 'conversor-iban-bic-swift';
+const slug = 'conversor-iban-para-bic-swift';
 const title = 'Conversor de IBAN para BIC SWIFT e Localizador de Bancos';
 const description = 'Obtenha o código BIC/SWIFT de qualquer IBAN espanhol instantaneamente. Validador de contas bancárias com algoritmo oficial para transferências.';
 

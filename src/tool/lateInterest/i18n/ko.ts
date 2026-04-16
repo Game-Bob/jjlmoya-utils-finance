@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { LateInterestUI } from '../ui';
 
-const slug = 'supein-ji-yeon-i-ja-gye-san-gi';
+const slug = 'late-interest-calculator';
 const title = '스페인 지연 이자 및 법정 이자 계산기 2026';
 const description =
   '스페인 내 세금(Hacienda) 체납에 따른 지연 이자 및 미납에 대한 법정 이자를 계산해 보세요. 2025년 및 2026년 예산안 기준 업데이트 완료.';

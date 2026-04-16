@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { LegalInterestRateUI } from '../ui';
 
-const slug = 'xibanya-fading-li-lü-2026';
+const slug = 'legal-interest-on-money-spain';
 const title = '法定利息';
 const description = '计算 2026 年西班牙适用的法定利息。根据预算法案，利率为 3.25% 的模拟器。';
 

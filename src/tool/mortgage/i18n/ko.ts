@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { MortgageUI } from '../ui';
 
-const slug = 'ju-taeg-dam-bo-dae-cul-gye-san-gi';
+const slug = 'mortgage-calculator';
 const title = '주택담보대출 계산기 및 원리금 균등 상환표';
 const description =
   '매월 납부할 대출 상환액을 계산하고, 총 이자 비용을 확인해 보세요. 전체 상환 일정을 즉시 시각화하여 보여드립니다.';

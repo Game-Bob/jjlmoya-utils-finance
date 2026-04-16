@@ -3,7 +3,7 @@ import type { ToolLocaleContent } from '../../../types';
 import type { PercentageCalculatorUI } from '../ui';
 
 const slug = 'kalkulator-persentase';
-const title = 'Kalkulator Persentase 4-in-1: Diskon, Kenaikan, dan Penurunan';
+const title = 'Kalkulator Persentase 4 in 1: Diskon, Kenaikan, dan Penurunan';
 const description =
   'Hitung persentase dengan mudah secara online gratis. 4 alat dalam 1 untuk mencari X% dari Y, selisih persentase, tambah atau kurang PPN, diskon, dan tip otomatis.';
 

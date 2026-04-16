@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { PercentageCalculatorUI } from '../ui';
 
-const slug = 'baifenbi-jisuanqi';
+const slug = 'percentage-calculator';
 const title = '四合一百分比计算器：折扣、涨幅与降幅';
 const description =
   '在线轻松免费计算百分比。四合一工具，包含计算 Y 的 X%、百分比差异、增减增值税、打折和自动小费计算。';

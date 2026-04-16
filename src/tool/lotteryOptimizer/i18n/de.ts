@@ -3,7 +3,7 @@ import type { ToolLocaleContent } from '../../../types';
 import type { LotteryOptimizerUI } from '../ui';
 
 const slug = 'lotto-optimierer-wahrscheinlichkeitsrechner';
-const title = 'Lotto-Optimierer und Wahrscheinlichkeitsrechner';
+const title = 'Lotto Optimierer und Wahrscheinlichkeitsrechner';
 const description = 'Analysieren Sie Ihre Chancen bei Weihnachtslotterie, EuroMillions und mehr. Berechnen Sie die optimale Anzahl an Losen und den Erwartungswert.';
 
 const faqData = [
@@ -138,7 +138,7 @@ export const content: ToolLocaleContent<LotteryOptimizerUI> = {
   bibliographyTitle: 'Quellen und Referenzen',
   ui: {
     gameTranslations,
-    labelTitle: 'Lotto-Optimierer',
+    labelTitle: 'Lotto Optimierer',
     labelDescription: 'Vergleichen Sie Ziehungen, berechnen Sie den Erwartungswert und spielen Sie mit Köpfchen.',
     labelSelectGame: 'Lotterie auswählen',
     labelConfigurePlay: 'Spiel konfigurieren',

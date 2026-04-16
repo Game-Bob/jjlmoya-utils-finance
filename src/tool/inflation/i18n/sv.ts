@@ -187,7 +187,7 @@ export const content: ToolLocaleContent<InflationUI> = {
       columns: 2,
       items: [
         {
-          title: 'Krisen under 80-talet',
+          title: 'Krisen under 80 talet',
           description: 'Period präglad av tvåsiffrig inflation och stor instabilitet på arbetsmarknaden.',
           points: [
             'Extremt höga räntesatser',
@@ -259,7 +259,7 @@ export const content: ToolLocaleContent<InflationUI> = {
     {
       type: 'diagnostic',
       variant: 'warning',
-      title: 'Varning för negativ ränta-på-ränta',
+      title: 'Varning för negativ ränta på ränta',
       html: 'Inflation fungerar som en omvänd ränta-på-ränta-effekt. Varje år tillämpas förlustprocenten på ett värde som redan minskat, vilket påskyndar värdeförlusten om man inte agerar.',
     },
     {

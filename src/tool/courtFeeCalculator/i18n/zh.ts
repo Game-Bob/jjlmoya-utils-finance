@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { CourtFeeCalculatorUI } from '../ui';
 
-const slug = 'xibanya-fa-yuan-shui-ji-suan-qi';
+const slug = 'spanish-court-fees-calculator';
 const title = '西班牙法院税计算器';
 const description = '根据第 10/2012 号法律，计算西班牙企业的准确法院税金额。适用于 Model 696 的模拟器，包含豁免和自动计算功能。';
 

@@ -3,7 +3,7 @@ import type { ToolLocaleContent } from '../../../types';
 import type { PercentageCalculatorUI } from '../ui';
 
 const slug = 'procentraknare';
-const title = '4-i-1 Procenträknare: Rabatter, Höjningar och Sänkningar';
+const title = '4 i 1 Procenträknare: Rabatter, Höjningar och Sänkningar';
 const description =
   'Beräkna enkelt procent online gratis. 4 verktyg i 1 för att få ut X % av Y, procentuell skillnad, lägga till eller dra ifrån moms, reor och dricks automatiskt.';
 
@@ -101,7 +101,7 @@ export const content: ToolLocaleContent<PercentageCalculatorUI> = {
   seo: [
     {
       type: 'title',
-      text: '4-i-1 Procenträknare: Bemästra snabba beräkningar',
+      text: '4 i 1 Procenträknare: Bemästra snabba beräkningar',
       level: 2,
     },
     {

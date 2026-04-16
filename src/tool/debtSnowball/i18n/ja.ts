@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { DebtSnowballUI } from '../ui';
 
-const slug = 'debto-sunoboru-metodo-keisanki';
+const slug = 'debt-snowball-calculator';
 const title = '債務スノーボール計算機：返済計画 2026';
 const description = 'デイブ・ラムジーのスノーボール・メソッドで完済日を計算。負債を整理し、月次の返済スケジュールを可視化します。';
 

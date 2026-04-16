@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { LateInterestUI } from '../ui';
 
-const slug = 'xibanya-zhi-na-jin-ji-suan-qi';
+const slug = 'late-interest-calculator';
 const title = '西班牙滞纳金及法定利息计算器 2026';
 const description =
   '计算西班牙税务（Hacienda）滞纳金及欠款法定利息。根据预算法案更新至 2025 年和 2026 年的模拟器。';

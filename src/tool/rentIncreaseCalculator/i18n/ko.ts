@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { RentIncreaseUI } from '../ui';
 
-const slug = 'supein-im-dae-ryo-in-sang-gye-san-gi-ipc';
+const slug = 'rent-increase-calculator';
 const title = '스페인 월세 인상 계산기 IPC 3% 한도';
 const description = '스페인 주택법에 따라 소비자물가지수(IPC) 또는 3%의 법적 상한선을 기준으로 임대료 업데이트 금액을 계산해 보세요.';
 

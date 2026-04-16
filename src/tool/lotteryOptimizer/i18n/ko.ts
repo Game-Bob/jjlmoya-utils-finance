@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { LotteryOptimizerUI } from '../ui';
 
-const slug = 'bo-gwon-choe-jeok-hwa-hwag-ryul-gye-san-gi';
+const slug = 'spain-lottery-optimizer';
 const title = '복권 최적화 및 확률 계산기';
 const description = '스페인 크리스마스 복권, 유로밀리언즈, 보놀로토의 당첨 확률을 분석합니다. 최적의 구매 수량과 베팅의 기대 가치를 계산해 보세요.';
 

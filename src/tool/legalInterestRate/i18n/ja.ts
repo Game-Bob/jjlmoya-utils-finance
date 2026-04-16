@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { LegalInterestRateUI } from '../ui';
 
-const slug = 'supein-hotei-risoku-2026';
+const slug = 'legal-interest-on-money-spain';
 const title = '法定利息';
 const description = '2026年にスペインで適用される法定利息を計算します。予算案に基づいた利率3.25%のシミュレーターです。';
 

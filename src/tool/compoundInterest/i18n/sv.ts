@@ -3,7 +3,7 @@ import type { ToolLocaleContent } from '../../../types';
 import type { CompoundInterestUI } from '../ui';
 
 const slug = 'ranta-pa-ranta-kalkylator';
-const title = 'Ränta på ränta-kalkylator: Visualisera din framtida rikedom';
+const title = 'Ränta på ränta Kalkylator: Visualisera din framtida rikedom';
 const description =
   'Upptäck hur små investeringar förvandlas till stora förmögenheter. Det ultimata verktyget för att planera din finansiella frihet och pension.';
 
@@ -167,7 +167,7 @@ export const content: ToolLocaleContent<CompoundInterestUI> = {
     },
     {
       type: 'tip',
-      title: '72-regeln',
+      title: '72 regeln',
       html: '<p>Dela 72 med din årliga avkastning för att veta hur många år det tar att <strong>fördubbla dina pengar</strong>.</p><p><em>Exempel: Vid 8 % fördubblar du vart nionde år (72/8 = 9).</em></p><p>Denna magiska formel fungerar för alla avkastningsnivåer och hjälper dig att snabbt uppskatta tillväxten i dina investeringar.',
     },
     {

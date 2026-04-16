@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { FIRECalculatorUI } from '../ui';
 
-const slug = 'fire-gyesangi-4-pasentu-rule';
+const slug = 'four-percent-rule-fire-calculator';
 const title = 'FIRE 계산기: 경제적 자유를 위한 4% 법칙';
 const description = '4% 법칙을 사용하여 경제적 자립을 위한 매직 넘버를 계산해 보세요. 조기 은퇴를 계획하고 경제적 자유를 향한 여정을 시각화합니다.';
 

@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { InflationUI } from '../ui';
 
-const slug = 'supein-infure-keisanki';
+const slug = 'inflation-calculator-spain';
 const title = 'スペイン・インフレ計算機：貨幣価値の歴史';
 const description =
   '1980年以降のペセタが今日いくらになるか、また生活費がどれほど上昇したかを確認できます。2026年までのスペインの歴史的消費者物価指数（CPI）データに基づいています。';

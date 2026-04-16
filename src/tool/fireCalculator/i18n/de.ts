@@ -3,7 +3,7 @@ import type { ToolLocaleContent } from '../../../types';
 import type { FIRECalculatorUI } from '../ui';
 
 const slug = 'fire-rechner-4-prozent-regel';
-const title = 'FIRE-Rechner: Die 4%-Regel für Ihre finanzielle Freiheit';
+const title = 'FIRE Rechner: Die 4% Regel für Ihre finanzielle Freiheit';
 const description = 'Berechnen Sie Ihre magische Zahl für die finanzielle Unabhängigkeit mit der 4%-Regel. Planen Sie Ihren vorzeitigen Ruhestand und visualisieren Sie Ihren Weg zur wirtschaftlichen Freiheit.';
 
 const faqData = [

@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { FIRECalculatorUI } from '../ui';
 
-const slug = 'fire-keisanki-4-pasento-ru-ru';
+const slug = 'four-percent-rule-fire-calculator';
 const title = 'FIRE計算機：財務的自由への4%ルール';
 const description = '4%ルールを使用して、財務的自立のために必要な「マジックナンバー」を算出しましょう。早期リタイアを計画し、経済的自由への道のりを可視化します。';
 

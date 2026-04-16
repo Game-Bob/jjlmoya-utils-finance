@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { LotteryOptimizerUI } from '../ui';
 
-const slug = 'cai-piao-you-hua-qi-gai-lv-ji-suan-qi';
+const slug = 'spain-lottery-optimizer';
 const title = '彩票优化器及概率计算器';
 const description = '分析您在西班牙圣诞彩票、欧洲百万彩 (Euromillions) 和 Bonoloto 中的中奖概率。计算最佳购买张数及投注的预期价值。';
 

@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { CompoundInterestUI } from '../ui';
 
-const slug = 'fukuri-keisanki';
+const slug = 'compound-interest-calculator';
 const title = '複利計算機：将来の資産を可視化する';
 const description =
   '小さな投資がどのように大きな資産に変わるかを発見しましょう。財務的自由と引退計画を立てるための究極のツールです。';

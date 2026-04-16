@@ -196,7 +196,7 @@ export const content: ToolLocaleContent<InflationUI> = {
           ],
         },
         {
-          title: 'Inflazione della Pandemia: 2021-2023',
+          title: 'Inflazione della Pandemia: 2021 2023',
           description: 'Salita brusca per costi energetici e problemi nella catena di fornitura.',
           highlight: true,
           points: [

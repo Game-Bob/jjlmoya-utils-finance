@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { DebtSnowballUI } from '../ui';
 
-const slug = 'zhai-wu-xue-qiu-fa-ji-suan-qi';
+const slug = 'debt-snowball-calculator';
 const title = '债务雪球法计算器：2026 年还款计划';
 const description = '使用 Dave Ramsey 的雪球法计算您的财务自由日期。整理您的债务并查看详细的每月还款计划。';
 

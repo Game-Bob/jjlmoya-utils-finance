@@ -187,7 +187,7 @@ export const content: ToolLocaleContent<InflationUI> = {
       columns: 2,
       items: [
         {
-          title: 'Кризис 80-х годов',
+          title: 'Кризис 80 х годов',
           description: 'Период, отмеченный двузначной инфляцией и большой нестабильностью на рынке труда.',
           points: [
             'Чрезвычайно высокие процентные ставки',

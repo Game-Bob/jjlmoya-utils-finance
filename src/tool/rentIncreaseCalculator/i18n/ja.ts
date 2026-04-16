@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { RentIncreaseUI } from '../ui';
 
-const slug = 'supein-yachin-neage-keisanki-ipc';
+const slug = 'rent-increase-calculator';
 const title = 'スペイン家賃値上げ計算機 IPC 3%上限';
 const description = 'スペインの住宅法に基づき、消費者物価指数（IPC）または3%の法定上限による家賃の更新額を計算します。';
 

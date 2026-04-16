@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { FIRECalculatorUI } from '../ui';
 
-const slug = 'fire-jisuanqi-si-baifenzhi-rule';
+const slug = 'four-percent-rule-fire-calculator';
 const title = 'FIRE 计算器：实现财务自由的 4% 法则';
 const description = '使用 4% 法则计算实现财务独立所需积累的“魔法数字”。规划您的提前退休生活，并可视化通往经济自由的道路。';
 

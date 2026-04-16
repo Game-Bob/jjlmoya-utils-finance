@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { InflationUI } from '../ui';
 
-const slug = 'xibanya-tonghuopengzhang';
+const slug = 'inflation-calculator-spain';
 const title = '西班牙通货膨胀计算器：货币历史价值';
 const description =
   '发现您当年的比塞塔在今天价值几何，或者自 1980 年以来生活成本上升了多少。基于更新至 2026 年的西班牙历史 IPC（消费者物价指数）数据。';

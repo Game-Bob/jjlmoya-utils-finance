@@ -3,7 +3,7 @@ import type { ToolLocaleContent } from '../../../types';
 import type { PercentageCalculatorUI } from '../ui';
 
 const slug = 'procent-calculator';
-const title = '4-in-1 Procent Calculator: Kortingen, Stijgingen en Verlagingen';
+const title = '4 in 1 Procent Calculator: Kortingen, Stijgingen en Verlagingen';
 const description =
   'Bereken eenvoudig percentages online gratis. 4 tools in 1 om X% van Y te berekenen, procentueel verschil, BTW optellen of aftrekken, kortingen en automatische fooien.';
 
@@ -101,7 +101,7 @@ export const content: ToolLocaleContent<PercentageCalculatorUI> = {
   seo: [
     {
       type: 'title',
-      text: '4-in-1 Procent Calculator: Beheers Snelle Berekeningen',
+      text: '4 in 1 Procent Calculator: Beheers Snelle Berekeningen',
       level: 2,
     },
     {

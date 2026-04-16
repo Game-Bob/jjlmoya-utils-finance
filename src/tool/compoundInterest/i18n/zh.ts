@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { CompoundInterestUI } from '../ui';
 
-const slug = 'fu-li-jisuanqi-cai-fu-zeng-zhang';
+const slug = 'compound-interest-calculator';
 const title = '复利计算器：可视化您的未来财富';
 const description =
   '发现小额投资如何演变成巨额财富。规划财务自由和退休生活的终极工具。';

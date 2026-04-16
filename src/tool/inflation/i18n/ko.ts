@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { InflationUI } from '../ui';
 
-const slug = 'supein-kaesu-gye-san-gi';
+const slug = 'inflation-calculator-spain';
 const title = '스페인 인플레이션 계산기: 화폐 가치 히스토리';
 const description =
   '1980년 이후의 페세타가 오늘날 얼마의 가치가 있는지, 또는 생활비가 얼마나 올랐는지 확인해 보세요. 2026년까지 업데이트된 스페인 소비자 물가 지수(CPI) 데이터를 기반으로 합니다.';

@@ -2,8 +2,8 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { PercentageCalculatorUI } from '../ui';
 
-const slug = 'per-se-ntu-gye-san-gi';
-const title = '4-in-1 퍼센트 계산기: 할인, 인상 및 인하';
+const slug = 'percentage-calculator';
+const title = '4 in 1 퍼센트 계산기: 할인, 인상 및 인하';
 const description =
   '무료 온라인 퍼센트 계산기로 쉽게 계산해 보세요. Y의 X% 구하기, 퍼센트 차이, 부가세 가산/감산, 바겐세일 및 팁 자동 계산 등 4가지 기능을 하나로 제공합니다.';
 
@@ -101,7 +101,7 @@ export const content: ToolLocaleContent<PercentageCalculatorUI> = {
   seo: [
     {
       type: 'title',
-      text: '4-in-1 퍼센트 계산기: 빠른 계산 마스터하기',
+      text: '4 in 1 퍼센트 계산기: 빠른 계산 마스터하기',
       level: 2,
     },
     {
@@ -115,7 +115,7 @@ export const content: ToolLocaleContent<PercentageCalculatorUI> = {
     },
     {
       type: 'paragraph',
-      html: '당사의 4-in-1 퍼센트 계산기는 가장 수요가 많은 시나리오를 그룹화했습니다. 이제 구글에서 "20퍼센트 구하는 법"이나 "퍼센트 계산 공식"을 검색할 필요가 없습니다. 네 가지 필수 연산이 한곳에 모여 있으며, 인터랙티브하고 즉각적인 결과를 제공합니다.',
+      html: '당사의 4 in 1 퍼센트 계산기는 가장 수요가 많은 시나리오를 그룹화했습니다. 이제 구글에서 "20퍼센트 구하는 법"이나 "퍼센트 계산 공식"을 검색할 필요가 없습니다. 네 가지 필수 연산이 한곳에 모여 있으며, 인터랙티브하고 즉각적인 결과를 제공합니다.',
     },
     {
       type: 'title',

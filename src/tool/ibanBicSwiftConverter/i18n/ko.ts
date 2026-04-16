@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { IBANBICSwiftUI } from '../ui';
 
-const slug = 'iban-bic-swift-byeon-hwan-gi';
+const slug = 'iban-to-bic-swift-converter';
 const title = 'IBAN을 BIC SWIFT로 변환 및 은행 검색';
 const description = '스페인 IBAN의 BIC/SWIFT 코드를 즉시 확인하세요. 해외 송금을 위한 공식 알고리즘 기반 은행 계좌 유효성 검사 도구입니다.';
 

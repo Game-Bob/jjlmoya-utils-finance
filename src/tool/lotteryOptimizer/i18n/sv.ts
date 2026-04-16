@@ -3,7 +3,7 @@ import type { ToolLocaleContent } from '../../../types';
 import type { LotteryOptimizerUI } from '../ui';
 
 const slug = 'lotteri-optimerare-sannolikhetskalkylator';
-const title = 'Lotteri-optimerare och sannolikhetskalkylator';
+const title = 'Lotteri optimerare och sannolikhetskalkylator';
 const description = 'Analysera dina chanser i spanska jullotteriet, Euromillions och Bonoloto. Beräkna optimalt antal lotter och det förväntade värdet på din insats.';
 
 const faqData = [
@@ -138,7 +138,7 @@ export const content: ToolLocaleContent<LotteryOptimizerUI> = {
   bibliographyTitle: 'Källor och referenser',
   ui: {
     gameTranslations,
-    labelTitle: 'Lotteri-optimerare',
+    labelTitle: 'Lotteri optimerare',
     labelDescription: 'Jämför dragningar, beräkna ditt väntevärde och spela med förnuft.',
     labelSelectGame: 'Välj ett lotteri',
     labelConfigurePlay: 'Konfigurera ditt spel',

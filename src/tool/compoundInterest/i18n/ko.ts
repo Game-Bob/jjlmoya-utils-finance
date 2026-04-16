@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { CompoundInterestUI } from '../ui';
 
-const slug = 'bog-ri-gye-san-gi';
+const slug = 'compound-interest-calculator';
 const title = '복리 계산기: 미래의 자산을 시각화하세요';
 const description =
   '작은 투자가 어떻게 거대한 자산으로 변하는지 확인해 보세요. 재무적 자유와 은퇴 계획을 위한 궁극의 도구입니다.';

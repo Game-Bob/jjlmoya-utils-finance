@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { MortgageUI } from '../ui';
 
-const slug = 'fang-dai-jisuanqi';
+const slug = 'mortgage-calculator';
 const title = '房贷计算器与等额本息还款表';
 const description =
   '计算您的每月房贷还款额，了解您将支付多少利息，并立即可视化查看完整的还款计划。';

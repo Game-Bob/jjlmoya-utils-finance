@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { IBANBICSwiftUI } from '../ui';
 
-const slug = 'iban-zhuan-bic-swift-zhuan-huan-qi';
+const slug = 'iban-to-bic-swift-converter';
 const title = 'IBAN 转 BIC SWIFT 转换器与银行查询';
 const description = '立即获取任何西班牙 IBAN 的 BIC/SWIFT 代码。使用官方算法的银行账户验证器，适用于转账业务。';
 

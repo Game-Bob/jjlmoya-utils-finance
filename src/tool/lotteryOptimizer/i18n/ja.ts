@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { LotteryOptimizerUI } from '../ui';
 
-const slug = 'takarakuji-saiteika-kakuritsu-keisanki';
+const slug = 'spain-lottery-optimizer';
 const title = '宝くじ最適化・確率計算機';
 const description = 'スペインのクリスマス宝くじ、ユーロミリオンズ、ボノロトなどの当選確率を分析します。最適な購入枚数や期待値を計算しましょう。';
 

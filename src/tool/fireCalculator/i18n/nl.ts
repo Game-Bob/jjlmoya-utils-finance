@@ -3,7 +3,7 @@ import type { ToolLocaleContent } from '../../../types';
 import type { FIRECalculatorUI } from '../ui';
 
 const slug = 'fire-calculator-4-procent-regel';
-const title = 'FIRE Calculator: De 4%-regel voor jouw financiële vrijheid';
+const title = 'FIRE Calculator: De 4% regel voor jouw financiële vrijheid';
 const description = 'Bereken je magische getal voor financiële onafhankelijkheid met de 4%-regel. Plan je vervroegde pensioen en visualiseer je weg naar economische vrijheid.';
 
 const faqData = [

@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { RentIncreaseUI } from '../ui';
 
-const slug = 'xibanya-zu-jin-shang-zhang-ji-suan-qi-ipc';
+const slug = 'rent-increase-calculator';
 const title = '西班牙租金上涨计算器 IPC 3% 上限';
 const description = '根据西班牙《住房法》，使用消费者物价指数 (IPC) 或 3% 的法定上限计算您的租金更新。';
 

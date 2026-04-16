@@ -3,7 +3,7 @@ import type { ToolLocaleContent } from '../../../types';
 import type { LateInterestUI } from '../ui';
 
 const slug = 'rechner-verzugszinsen-spanien';
-const title = 'Verzugszinsen- und gesetzlicher Zinsrechner Spanien 2026';
+const title = 'Verzugszinsen und gesetzlicher Zinsrechner Spanien 2026';
 const description =
   'Berechnen Sie steuerliche Verzugszinsen (Finanzamt) und gesetzliche Zinsen für Zahlungsverzug in Spanien. Aktualisierter Simulator für 2025 und 2026.';
 

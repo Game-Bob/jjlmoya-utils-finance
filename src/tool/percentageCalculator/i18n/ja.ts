@@ -2,8 +2,8 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { PercentageCalculatorUI } from '../ui';
 
-const slug = 'pasento-keisanki';
-const title = '4-in-1 パーセント計算機：割引・値上げ・値下げ';
+const slug = 'percentage-calculator';
+const title = '4 in 1 パーセント計算機：割引・値上げ・値下げ';
 const description =
   'オンラインで簡単にパーセント計算を無料で行えます。XのY%、パーセントの差、消費税の加算・減算、バーゲンセール、チップ計算など、4つのツールが1つに。';
 
@@ -101,7 +101,7 @@ export const content: ToolLocaleContent<PercentageCalculatorUI> = {
   seo: [
     {
       type: 'title',
-      text: '4-in-1 パーセント計算機：素早い計算をマスターする',
+      text: '4 in 1 パーセント計算機：素早い計算をマスターする',
       level: 2,
     },
     {

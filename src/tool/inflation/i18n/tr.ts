@@ -196,7 +196,7 @@ export const content: ToolLocaleContent<InflationUI> = {
           ],
         },
         {
-          title: 'Pandemi Enflasyonu: 2021-2023',
+          title: 'Pandemi Enflasyonu: 2021 2023',
           description: 'Enerji maliyetleri ve tedarik zinciri sorunları nedeniyle ani yükseliş.',
           highlight: true,
           points: [

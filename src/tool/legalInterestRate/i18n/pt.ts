@@ -9,7 +9,7 @@ const description = 'Calcule o juro legal aplicável em Espanha para 2026. Simul
 const faqData = [
   {
     question: 'Qual é o juro legal do dinheiro em 2026?',
-    answer: 'O juro legal do dinheiro mantém-se nos 3,25% para o exercício de 2026, fixado pela Lei de Orçamento Geral do Estado espanhol.',
+    answer: 'O juro legal do dinheiro mantém se nos 3,25% para o exercício de 2026, fixado pela Lei de Orçamento Geral do Estado espanhol.',
   },
   {
     question: 'Como se calcula o juro de mora?',
@@ -116,7 +116,7 @@ export const content: ToolLocaleContent<LegalInterestRateUI> = {
     labelTitle: 'Taxa de Juro Legal',
     labelDescription: 'Calcule o montante dos juros legais conforme a Lei de Orçamento 2026. Simulador a 3,25% para Espanha.',
     labelBadge: 'Boletim Oficial do Estado 2026',
-    labelSubtitle: 'O juro legal do dinheiro mantém-se em 3,25% para 2026.',
+    labelSubtitle: 'O juro legal do dinheiro mantém se em 3,25% para 2026.',
     labelLegalInterest: 'Juro Legal',
     labelDelayInterest: 'Juro de Mora',
     labelCommercialOperations: 'Operações Comerciais',

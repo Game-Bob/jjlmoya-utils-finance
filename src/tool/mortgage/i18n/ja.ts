@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { MortgageUI } from '../ui';
 
-const slug = 'jutaku-ron-shimyureshon';
+const slug = 'mortgage-calculator';
 const title = '住宅ローンシミュレーションと元利均等返済表';
 const description =
   '毎月の住宅ローン返済額を計算し、支払う利息の総額を確認できます。完全な返済スケジュールを即座に表示します。';

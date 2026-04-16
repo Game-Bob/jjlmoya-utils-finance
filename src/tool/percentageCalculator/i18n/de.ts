@@ -3,7 +3,7 @@ import type { ToolLocaleContent } from '../../../types';
 import type { PercentageCalculatorUI } from '../ui';
 
 const slug = 'prozentrechner';
-const title = '4-in-1 Prozentrechner: Rabatte, Erhöhungen und Nachlässe';
+const title = '4 in 1 Prozentrechner: Rabatte, Erhöhungen und Nachlässe';
 const description =
   'Berechnen Sie Prozentsätze ganz einfach online und kostenlos. 4 Werkzeuge in 1, um X % von Y zu ermitteln, prozentuale Differenzen, MwSt. addieren oder subtrahieren, Rabatte und automatisches Trinkgeld.';
 
@@ -101,7 +101,7 @@ export const content: ToolLocaleContent<PercentageCalculatorUI> = {
   seo: [
     {
       type: 'title',
-      text: '4-in-1 Prozentrechner: Schnelle Berechnungen meistern',
+      text: '4 in 1 Prozentrechner: Schnelle Berechnungen meistern',
       level: 2,
     },
     {
@@ -115,7 +115,7 @@ export const content: ToolLocaleContent<PercentageCalculatorUI> = {
     },
     {
       type: 'paragraph',
-      html: 'Unser 4-in-1 Prozentrechner gruppiert die am häufigsten nachgefragten Szenarien. Sie müssen nicht mehr bei Google nach „wie berechnet man 20 Prozent“ oder „Formel zur Prozentrechnung“ suchen. Sie haben die vier wesentlichen Operationen an einem Ort, interaktiv und mit sofortigen Ergebnissen.',
+      html: 'Unser 4 in 1 Prozentrechner gruppiert die am häufigsten nachgefragten Szenarien. Sie müssen nicht mehr bei Google nach „wie berechnet man 20 Prozent“ oder „Formel zur Prozentrechnung“ suchen. Sie haben die vier wesentlichen Operationen an einem Ort, interaktiv und mit sofortigen Ergebnissen.',
     },
     {
       type: 'title',
