@@ -15,7 +15,7 @@ export type {
   ToolDefinition,
 } from './types';
 
-export { ALL_TOOLS } from './tools';
+export { ALL_ENTRIES, ALL_TOOLS } from './tools';
 
 export { COMPOUND_INTEREST_TOOL } from './tool/compoundInterest';
 export { MORTGAGE_TOOL } from './tool/mortgage';
