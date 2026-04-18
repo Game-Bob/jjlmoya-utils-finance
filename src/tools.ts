@@ -1,3 +1,4 @@
+export { ALL_ENTRIES } from './entries';
 import type { ToolDefinition } from './types';
 import { COMPOUND_INTEREST_TOOL } from './tool/compoundInterest';
 import { MORTGAGE_TOOL } from './tool/mortgage';
@@ -15,4 +16,3 @@ import { DEBT_SNOWBALL_TOOL } from './tool/debtSnowball';
 export const ALL_TOOLS: ToolDefinition[] = [COMPOUND_INTEREST_TOOL, MORTGAGE_TOOL, INFLATION_TOOL, PERCENTAGE_CALCULATOR_TOOL, LATE_INTEREST_TOOL, IBAN_BIC_SWIFT_TOOL, RENT_INCREASE_TOOL, LOTTERY_OPTIMIZER_TOOL, COURT_FEE_CALCULATOR_TOOL, LEGAL_INTEREST_RATE_TOOL, FIRE_CALCULATOR_TOOL, DEBT_SNOWBALL_TOOL];
 
 
-export const ALL_ENTRIES = ALL_TOOLS.map(t => t.entry);

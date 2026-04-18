@@ -1,16 +1,16 @@
 import type { FinanceCategoryEntry } from '../types';
-import { compoundInterest } from '../tool/compoundInterest';
-import { mortgage } from '../tool/mortgage';
-import { inflation } from '../tool/inflation';
-import { percentageCalculator } from '../tool/percentageCalculator';
-import { lateInterest } from '../tool/lateInterest';
-import { ibanBicSwift } from '../tool/ibanBicSwiftConverter';
-import { rentIncrease } from '../tool/rentIncreaseCalculator';
-import { lotteryOptimizer } from '../tool/lotteryOptimizer';
-import { courtFeeCalculator } from '../tool/courtFeeCalculator';
-import { legalInterestRate } from '../tool/legalInterestRate';
-import { fireCalculator } from '../tool/fireCalculator';
-import { debtSnowball } from '../tool/debtSnowball';
+import { compoundInterest } from '../tool/compoundInterest/entry';
+import { mortgage } from '../tool/mortgage/entry';
+import { inflation } from '../tool/inflation/entry';
+import { percentageCalculator } from '../tool/percentageCalculator/entry';
+import { lateInterest } from '../tool/lateInterest/entry';
+import { ibanBicSwift } from '../tool/ibanBicSwiftConverter/entry';
+import { rentIncrease } from '../tool/rentIncreaseCalculator/entry';
+import { lotteryOptimizer } from '../tool/lotteryOptimizer/entry';
+import { courtFeeCalculator } from '../tool/courtFeeCalculator/entry';
+import { legalInterestRate } from '../tool/legalInterestRate/entry';
+import { fireCalculator } from '../tool/fireCalculator/entry';
+import { debtSnowball } from '../tool/debtSnowball/entry';
 
 export const financeCategory: FinanceCategoryEntry = {
   icon: 'mdi:finance',
