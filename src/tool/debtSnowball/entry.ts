@@ -1,6 +1,6 @@
 import type { FinanceToolEntry, ToolLocaleContent } from '../../types';
 import type { DebtSnowballUI } from './ui';
-import { DebtSnowballLogic, type Debt, type SimulationResult, type ProjectionMonth } from './logic';
+import type { Debt, SimulationResult, ProjectionMonth } from './logic';
 
 export type DebtSnowballLocaleContent = ToolLocaleContent<DebtSnowballUI>;
 export type { Debt, SimulationResult, ProjectionMonth };
