@@ -1,7 +1,4 @@
 import type { FinanceToolEntry, ToolLocaleContent, ToolDefinition } from '../../types';
-import CompoundInterestComponent from './component.astro';
-import CompoundInterestSEO from './seo.astro';
-import CompoundInterestBibliography from './bibliography.astro';
 
 import type { CompoundInterestUI } from './ui';
 
@@ -32,11 +29,10 @@ export const compoundInterest: FinanceToolEntry<CompoundInterestUI> = {
   },
 };
 
-export { CompoundInterestComponent, CompoundInterestSEO, CompoundInterestBibliography };
 
 export const COMPOUND_INTEREST_TOOL: ToolDefinition = {
   entry: compoundInterest,
-  Component: CompoundInterestComponent,
-  SEOComponent: CompoundInterestSEO,
-  BibliographyComponent: CompoundInterestBibliography,
+  Component: () => import('./component.astro'),
+  SEOComponent: () => import('./seo.astro'),
+  BibliographyComponent: () => import('./bibliography.astro'),
 };

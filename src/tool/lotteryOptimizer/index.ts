@@ -1,7 +1,4 @@
 import type { FinanceToolEntry, ToolLocaleContent, ToolDefinition } from '../../types';
-import LotteryOptimizerComponent from './component.astro';
-import LotteryOptimizerSEO from './seo.astro';
-import LotteryOptimizerBibliography from './bibliography.astro';
 import type { LotteryOptimizerUI } from './ui';
 
 export type LotteryOptimizerLocaleContent = ToolLocaleContent<LotteryOptimizerUI>;
@@ -31,11 +28,10 @@ export const lotteryOptimizer: FinanceToolEntry<LotteryOptimizerUI> = {
   },
 };
 
-export { LotteryOptimizerComponent, LotteryOptimizerSEO, LotteryOptimizerBibliography };
 
 export const LOTTERY_OPTIMIZER_TOOL: ToolDefinition = {
   entry: lotteryOptimizer,
-  Component: LotteryOptimizerComponent,
-  SEOComponent: LotteryOptimizerSEO,
-  BibliographyComponent: LotteryOptimizerBibliography,
+  Component: () => import('./component.astro'),
+  SEOComponent: () => import('./seo.astro'),
+  BibliographyComponent: () => import('./bibliography.astro'),
 };

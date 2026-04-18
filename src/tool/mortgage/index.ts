@@ -1,7 +1,4 @@
 import type { FinanceToolEntry, ToolLocaleContent, ToolDefinition } from '../../types';
-import MortgageComponent from './component.astro';
-import MortgageSEO from './seo.astro';
-import MortgageBibliography from './bibliography.astro';
 
 import type { MortgageUI } from './ui';
 
@@ -32,11 +29,10 @@ export const mortgage: FinanceToolEntry<MortgageUI> = {
   },
 };
 
-export { MortgageComponent, MortgageSEO, MortgageBibliography };
 
 export const MORTGAGE_TOOL: ToolDefinition = {
   entry: mortgage,
-  Component: MortgageComponent,
-  SEOComponent: MortgageSEO,
-  BibliographyComponent: MortgageBibliography,
+  Component: () => import('./component.astro'),
+  SEOComponent: () => import('./seo.astro'),
+  BibliographyComponent: () => import('./bibliography.astro'),
 };

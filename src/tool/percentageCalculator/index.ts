@@ -1,7 +1,4 @@
 import type { FinanceToolEntry, ToolLocaleContent, ToolDefinition } from '../../types';
-import PercentageCalculatorComponent from './component.astro';
-import PercentageCalculatorSEO from './seo.astro';
-import PercentageCalculatorBibliography from './bibliography.astro';
 
 import type { PercentageCalculatorUI } from './ui';
 
@@ -32,11 +29,10 @@ export const percentageCalculator: FinanceToolEntry<PercentageCalculatorUI> = {
   },
 };
 
-export { PercentageCalculatorComponent, PercentageCalculatorSEO, PercentageCalculatorBibliography };
 
 export const PERCENTAGE_CALCULATOR_TOOL: ToolDefinition = {
   entry: percentageCalculator,
-  Component: PercentageCalculatorComponent,
-  SEOComponent: PercentageCalculatorSEO,
-  BibliographyComponent: PercentageCalculatorBibliography,
+  Component: () => import('./component.astro'),
+  SEOComponent: () => import('./seo.astro'),
+  BibliographyComponent: () => import('./bibliography.astro'),
 };

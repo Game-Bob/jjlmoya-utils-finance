@@ -1,7 +1,4 @@
 import type { FinanceToolEntry, ToolLocaleContent, ToolDefinition } from '../../types';
-import LateInterestComponent from './component.astro';
-import LateInterestSEO from './seo.astro';
-import LateInterestBibliography from './bibliography.astro';
 
 import type { LateInterestUI } from './ui';
 
@@ -32,11 +29,10 @@ export const lateInterest: FinanceToolEntry<LateInterestUI> = {
   },
 };
 
-export { LateInterestComponent, LateInterestSEO, LateInterestBibliography };
 
 export const LATE_INTEREST_TOOL: ToolDefinition = {
   entry: lateInterest,
-  Component: LateInterestComponent,
-  SEOComponent: LateInterestSEO,
-  BibliographyComponent: LateInterestBibliography,
+  Component: () => import('./component.astro'),
+  SEOComponent: () => import('./seo.astro'),
+  BibliographyComponent: () => import('./bibliography.astro'),
 };

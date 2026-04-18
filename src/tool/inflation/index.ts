@@ -1,7 +1,4 @@
 import type { FinanceToolEntry, ToolLocaleContent, ToolDefinition } from '../../types';
-import InflationComponent from './component.astro';
-import InflationSEO from './seo.astro';
-import InflationBibliography from './bibliography.astro';
 
 import type { InflationUI } from './ui';
 
@@ -32,11 +29,10 @@ export const inflation: FinanceToolEntry<InflationUI> = {
   },
 };
 
-export { InflationComponent, InflationSEO, InflationBibliography };
 
 export const INFLATION_TOOL: ToolDefinition = {
   entry: inflation,
-  Component: InflationComponent,
-  SEOComponent: InflationSEO,
-  BibliographyComponent: InflationBibliography,
+  Component: () => import('./component.astro'),
+  SEOComponent: () => import('./seo.astro'),
+  BibliographyComponent: () => import('./bibliography.astro'),
 };
