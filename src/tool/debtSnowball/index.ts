@@ -1,3 +1,5 @@
+import { debtSnowball } from './entry';
+import { DebtSnowballLogic } from './logic';
 export * from './entry';
 export const DEBT_SNOWBALL_TOOL: ToolDefinition = {
   entry: debtSnowball,

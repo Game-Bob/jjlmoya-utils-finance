@@ -1,3 +1,4 @@
+import { legalInterestRate } from './entry';
 export * from './entry';
 export const LEGAL_INTEREST_RATE_TOOL: ToolDefinition = {
   entry: legalInterestRate,

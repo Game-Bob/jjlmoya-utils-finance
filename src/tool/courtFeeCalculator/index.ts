@@ -1,3 +1,4 @@
+import { courtFeeCalculator } from './entry';
 export * from './entry';
 export const COURT_FEE_CALCULATOR_TOOL: ToolDefinition = {
   entry: courtFeeCalculator,

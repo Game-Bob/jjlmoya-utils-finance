@@ -1,3 +1,4 @@
+import { mortgage } from './entry';
 export * from './entry';
 export const MORTGAGE_TOOL: ToolDefinition = {
   entry: mortgage,

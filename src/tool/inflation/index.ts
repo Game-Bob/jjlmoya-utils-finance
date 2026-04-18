@@ -1,3 +1,4 @@
+import { inflation } from './entry';
 export * from './entry';
 export const INFLATION_TOOL: ToolDefinition = {
   entry: inflation,

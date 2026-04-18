@@ -1,3 +1,4 @@
+import { lateInterest } from './entry';
 export * from './entry';
 export const LATE_INTEREST_TOOL: ToolDefinition = {
   entry: lateInterest,

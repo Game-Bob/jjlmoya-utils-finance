@@ -1,3 +1,4 @@
+import { fireCalculator } from './entry';
 export * from './entry';
 export const FIRE_CALCULATOR_TOOL: ToolDefinition = {
   entry: fireCalculator,
