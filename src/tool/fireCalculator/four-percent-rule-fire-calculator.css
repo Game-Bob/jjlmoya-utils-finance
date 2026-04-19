@@ -11,7 +11,7 @@
     --fire-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
 }
 
-:global(.theme-dark) {
+.theme-dark {
     --fire-bg: rgba(17, 24, 39, 0.7);
     --fire-card-bg: rgba(31, 41, 55, 0.8);
     --fire-text: #f3f4f6;
@@ -19,7 +19,7 @@
     --fire-border: rgba(16, 185, 129, 0.3);
 }
 
-:global([data-theme='dark']) {
+[data-theme='dark'] {
     --fire-bg: rgba(17, 24, 39, 0.7);
     --fire-card-bg: rgba(31, 41, 55, 0.8);
     --fire-text: #f3f4f6;

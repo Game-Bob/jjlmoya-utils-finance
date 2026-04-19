@@ -11,8 +11,8 @@
         --snow-bg-tab: rgba(0, 0, 0, 0.05);
     }
 
-    :global(.theme-dark),
-    :global([data-theme="dark"]) {
+    .theme-dark,
+    [data-theme="dark"] {
         --snow-bg-card: rgba(15, 23, 42, 0.9);
         --snow-border: rgba(30, 41, 59, 1);
         --snow-text-main: #f8fafc;
@@ -154,8 +154,8 @@
         box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.1);
     }
 
-    :global(.theme-dark) .snow-tab.active,
-    :global([data-theme="dark"]) .snow-tab.active {
+    .theme-dark .snow-tab.active,
+    [data-theme="dark"] .snow-tab.active {
         background: rgba(255, 255, 255, 0.1);
         color: white;
     }
@@ -303,7 +303,7 @@
         overflow-y: auto;
     }
 
-    :global(.snow-debt-item) {
+    .snow-debt-item {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr 60px;
         padding: 1rem;
@@ -312,7 +312,7 @@
         gap: 1rem;
     }
 
-    :global(.snow-debt-remove) {
+    .snow-debt-remove {
         background: none;
         border: none;
         color: var(--snow-rose);
@@ -323,7 +323,7 @@
         transition: opacity 0.3s ease;
     }
 
-    :global(.snow-debt-remove:hover) {
+    .snow-debt-remove:hover {
         opacity: 1;
     }
 
@@ -449,7 +449,7 @@
         gap: 1rem;
     }
 
-    :global(.snow-plan-item) {
+    .snow-plan-item {
         display: grid;
         grid-template-columns: 50px 1fr 1fr;
         gap: 1.5rem;
@@ -460,12 +460,12 @@
         border-radius: 1rem;
     }
 
-    :global(.snow-plan-item.active-step) {
+    .snow-plan-item.active-step {
         background: rgba(16, 185, 129, 0.05);
         border-color: rgba(16, 185, 129, 0.3);
     }
 
-    :global(.snow-step-marker) {
+    .snow-step-marker {
         width: 50px;
         height: 50px;
         background: var(--snow-emerald);
@@ -478,13 +478,13 @@
         font-size: 1.25rem;
     }
 
-    :global(.snow-step-body) {
+    .snow-step-body {
         display: flex;
         flex-direction: column;
         gap: 0.25rem;
     }
 
-    :global(.snow-step-label) {
+    .snow-step-label {
         font-size: 0.65rem;
         font-weight: 900;
         text-transform: uppercase;
@@ -492,13 +492,13 @@
         opacity: 0.6;
     }
 
-    :global(.snow-step-name) {
+    .snow-step-name {
         font-size: 1rem;
         font-weight: 900;
         color: var(--snow-text-main);
     }
 
-    :global(.snow-step-amount) {
+    .snow-step-amount {
         display: flex;
         flex-direction: column;
         align-items: flex-end;
@@ -506,13 +506,13 @@
         text-align: right;
     }
 
-    :global(.snow-step-amount span) {
+    .snow-step-amount span {
         font-size: 0.65rem;
         opacity: 0.6;
         text-transform: uppercase;
     }
 
-    :global(.snow-step-amount strong) {
+    .snow-step-amount strong {
         font-size: 1.25rem;
         font-weight: 900;
         color: var(--snow-emerald);
@@ -586,21 +586,21 @@
         border-bottom: 1px solid var(--snow-border);
     }
 
-    :global(table td) {
+    table td {
         padding: 1rem;
         border-bottom: 1px solid var(--snow-border);
     }
 
-    :global(table tr:last-child td) {
+    table tr:last-child td {
         border-bottom: none;
     }
 
-    :global(.snow-table-free) {
+    .snow-table-free {
         color: var(--snow-emerald);
         font-weight: 900;
     }
 
-    :global(.snow-table-muted) {
+    .snow-table-muted {
         opacity: 0.6;
     }
 
@@ -625,7 +625,7 @@
         .snow-table-header {
             display: none;
         }
-        :global(.snow-debt-item) {
+        .snow-debt-item {
             grid-template-columns: 1fr;
             padding: 1rem 0;
             border-left: 4px solid var(--snow-emerald);

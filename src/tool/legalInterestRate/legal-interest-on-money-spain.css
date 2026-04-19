@@ -9,7 +9,7 @@
   --lir-glow: rgba(184, 134, 11, 0.1);
 }
 
-:global(.theme-dark) {
+.theme-dark {
   --lir-bg-glass: rgba(15, 23, 42, 0.9);
   --lir-border-glass: rgba(184, 134, 11, 0.3);
   --lir-text-main: #f8fafc;
@@ -17,7 +17,7 @@
   --lir-glow: rgba(184, 134, 11, 0.15);
 }
 
-:global([data-theme='dark']) {
+[data-theme='dark'] {
   --lir-bg-glass: rgba(15, 23, 42, 0.9);
   --lir-border-glass: rgba(184, 134, 11, 0.3);
   --lir-text-main: #f8fafc;
@@ -98,8 +98,8 @@
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.02);
 }
 
-:global(.theme-dark) .rate-card,
-:global([data-theme='dark']) .rate-card {
+.theme-dark .rate-card,
+[data-theme='dark'] .rate-card {
   background: rgba(255, 255, 255, 0.03);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
@@ -139,8 +139,8 @@
   padding: 2rem;
 }
 
-:global(.theme-dark) .lir-calculator-section,
-:global([data-theme='dark']) .lir-calculator-section {
+.theme-dark .lir-calculator-section,
+[data-theme='dark'] .lir-calculator-section {
   background: rgba(255, 255, 255, 0.02);
 }
 
@@ -154,7 +154,7 @@
   gap: 0.75rem;
 }
 
-.calculator-title :global(svg) {
+.calculator-title svg {
   color: var(--lir-primary);
 }
 
@@ -192,8 +192,8 @@
   transition: all 0.3s;
 }
 
-:global(.theme-dark) .lir-input,
-:global([data-theme='dark']) .lir-input {
+.theme-dark .lir-input,
+[data-theme='dark'] .lir-input {
   background: rgba(15, 23, 42, 0.6);
   border-color: rgba(255, 255, 255, 0.1);
   color: white;
@@ -227,8 +227,8 @@
   align-items: center;
 }
 
-:global(.theme-dark) .lir-results-card,
-:global([data-theme='dark']) .lir-results-card {
+.theme-dark .lir-results-card,
+[data-theme='dark'] .lir-results-card {
   background: linear-gradient(135deg, rgba(184, 134, 11, 0.1) 0%, rgba(15, 23, 42, 0.6) 100%);
 }
 
@@ -276,8 +276,8 @@
   align-items: flex-start;
 }
 
-:global(.theme-dark) .lir-info-msg,
-:global([data-theme='dark']) .lir-info-msg {
+.theme-dark .lir-info-msg,
+[data-theme='dark'] .lir-info-msg {
   background: rgba(184, 134, 11, 0.08);
 }
 
@@ -322,8 +322,8 @@
   margin: 0.25rem 0;
 }
 
-:global(.theme-dark) .info-formula,
-:global([data-theme='dark']) .info-formula {
+.theme-dark .info-formula,
+[data-theme='dark'] .info-formula {
   background: rgba(0, 0, 0, 0.2);
   color: var(--lir-secondary);
 }
