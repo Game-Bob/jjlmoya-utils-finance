@@ -188,51 +188,6 @@ const { ui } = Astro.props;
   </div>
 </div>
 
-<style is:global>
-:root {
-  --pc-primary: #4b5563;
-  --pc-primary-light: #f1f3f5;
-  --pc-accent: #2c7a7b;
-  --pc-success: #2d6a4f;
-  --pc-danger: #9d4456;
-  --pc-text: #1a202c;
-  --pc-text-light: #4a5568;
-  --pc-border: #d2d6dc;
-  --pc-bg: #fff;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --pc-primary: #cbd5e1;
-    --pc-primary-light: #334155;
-    --pc-accent: #7dd3c0;
-    --pc-text: #f1f5f9;
-    --pc-text-light: #cbd5e1;
-    --pc-border: #475569;
-    --pc-bg: #1e293b;
-  }
-}
-
-.theme-dark {
-  --pc-primary: #cbd5e1;
-  --pc-primary-light: #334155;
-  --pc-accent: #7dd3c0;
-  --pc-text: #f1f5f9;
-  --pc-text-light: #cbd5e1;
-  --pc-border: #475569;
-  --pc-bg: #1e293b;
-}
-
-[data-theme='dark'] {
-  --pc-primary: #cbd5e1;
-  --pc-primary-light: #334155;
-  --pc-accent: #7dd3c0;
-  --pc-text: #f1f5f9;
-  --pc-text-light: #cbd5e1;
-  --pc-border: #475569;
-  --pc-bg: #1e293b;
-}
-</style>
 
 <style>
 .pc-wrapper {
