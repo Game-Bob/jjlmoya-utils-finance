@@ -300,22 +300,3 @@ const { ui } = Astro.props;
     initializeGames();
 </script>
 
-<style is:global>
-.lo-game-btn.lo-selected {
-    border-color: var(--lo-focus-border);
-    background: rgba(16, 185, 129, 0.05);
-    box-shadow: 0 0 0 4px var(--lo-focus-ring);
-}
-
-.lo-stat-value.lo-negative {
-    color: #ef4444;
-}
-
-.lo-stat-value.lo-positive {
-    color: #10b981;
-}
-
-.lo-efficiency-segment.lo-active {
-    background: var(--lo-bar-fill);
-}
-</style>
