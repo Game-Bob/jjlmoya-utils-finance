@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { LegalInterestRateUI } from '../ui';
@@ -48,21 +49,6 @@ const howToData = [
   },
 ];
 
-const bibliographyData = [
-  {
-    name: 'Spansk budgetlag 2026',
-    url: 'https://www.boe.es/',
-  },
-  {
-    name: 'Spanska civillagen - Art. 1108 ff.',
-    url: 'https://www.boe.es/',
-  },
-  {
-    name: 'Lag 3/2004 mot sena betalningar',
-    url: 'https://www.boe.es/',
-  },
-];
-
 const seoData = [
   {
     type: 'title',
@@ -110,8 +96,7 @@ export const content: ToolLocaleContent<LegalInterestRateUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Vanliga frågor',
-  bibliographyTitle: 'Juridiska källor',
+  faqTitle: 'Vanliga frågor': 'Juridiska källor',
   ui: {
     labelTitle: 'Lagstadgad räntesats',
     labelDescription: 'Beräkna lagstadgad ränta enligt budgetlagen 2026. Simulator med 3,25 % för Spanien.',

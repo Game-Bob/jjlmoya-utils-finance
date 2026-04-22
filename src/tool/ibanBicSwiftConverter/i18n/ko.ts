@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { IBANBICSwiftUI } from '../ui';
@@ -44,17 +45,6 @@ const howToData = [
   },
 ];
 
-const bibliographyData = [
-  {
-    name: 'ISO 13616: IBAN 국제 표준',
-    url: 'https://www.iso.org/',
-  },
-  {
-    name: 'SWIFT: 글로벌 BIC 레지스트리',
-    url: 'https://www.theswiftcodes.com/',
-  },
-];
-
 const faqSchema: WithContext<FAQPage> = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
@@ -92,8 +82,7 @@ export const content: ToolLocaleContent<IBANBICSwiftUI> = {
   title,
   description,
   faqTitle: '자주 묻는 질문',
-  faq: faqData,
-  bibliographyTitle: '참고 자료 및 출처',
+  faq: faqData: '참고 자료 및 출처',
   bibliography: bibliographyData,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],

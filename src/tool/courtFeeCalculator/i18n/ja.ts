@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { CourtFeeCalculatorUI } from '../ui';
@@ -45,21 +46,6 @@ const howToData = [
   {
     name: '内訳を確認する',
     text: 'モデル696に必要な固定手数料、変動手数料、および合計額が自動計算されます。',
-  },
-];
-
-const bibliographyData = [
-  {
-    name: 'スペイン裁判手数料法 10/2012',
-    url: 'https://www.boe.es/',
-  },
-  {
-    name: '裁判手数料に関する憲法裁判所判決 140/2016',
-    url: 'https://www.boe.es/',
-  },
-  {
-    name: 'スペイン税務局 - モデル 696',
-    url: 'https://sede.agenciatributaria.gob.es/',
   },
 ];
 
@@ -111,8 +97,7 @@ export const content: ToolLocaleContent<CourtFeeCalculatorUI> = {
   slug,
   title,
   description,
-  faqTitle: 'よくある質問',
-  bibliographyTitle: '情報源とリファレンス',
+  faqTitle: 'よくある質問': '情報源とリファレンス',
   ui: {
     labelTitle: '裁判手数料計算機',
     labelDescription: '管轄、手続き、訴額に基づいてモデル696の正確な金額を計算します。スペインの企業および専門家向け。',

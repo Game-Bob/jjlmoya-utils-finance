@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { RentIncreaseUI } from '../ui';
@@ -41,21 +42,6 @@ const howToData = [
   {
     name: '复制摘要',
     text: '生成一份快速报告，发送给房东或保存在您的笔记中。',
-  },
-];
-
-const bibliographyData = [
-  {
-    name: '第 12/2023 号西班牙住房权法 (BOE.es)',
-    url: 'https://www.boe.es/',
-  },
-  {
-    name: '国家统计局 (INE) IPC 计算器',
-    url: 'https://www.ine.es/',
-  },
-  {
-    name: '城市租赁法 (LAU)',
-    url: 'https://www.boe.es/',
   },
 ];
 
@@ -107,8 +93,7 @@ export const content: ToolLocaleContent<RentIncreaseUI> = {
   slug,
   title,
   description,
-  faqTitle: '常见问题',
-  bibliographyTitle: '来源与参考资料',
+  faqTitle: '常见问题': '来源与参考资料',
   ui: {
     labelTitle: '租金上涨计算器',
     labelDescription: '根据 IPC 调整您的租金，或安全地应用 3% 的法定上限。',

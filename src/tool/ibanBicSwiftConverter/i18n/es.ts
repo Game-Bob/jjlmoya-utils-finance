@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { IBANBICSwiftUI } from '../ui';
@@ -44,21 +45,6 @@ const howToData = [
   },
 ];
 
-const bibliographyData = [
-  {
-    name: 'ISO 13616: Estándar Internacional del IBAN',
-    url: 'https://www.iso.org/es/contents/data/standard/08/10/81090.html',
-  },
-  {
-    name: 'SWIFT: Registro Global de BIC',
-    url: 'https://www.theswiftcodes.com/es',
-  },
-  {
-    name: 'Banco de España: Registro de Entidades',
-    url: 'https://www.bde.es/webbe/es/estadisticas/otras-clasificaciones/clasificacion-entidades/listas-instituciones-financieras/listas-instituciones-financieras-monetarias-pais/lista-mfi-es.html',
-  },
-];
-
 const faqSchema: WithContext<FAQPage> = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
@@ -100,8 +86,7 @@ export const content: ToolLocaleContent<IBANBICSwiftUI> = {
   title,
   description,
   faqTitle: 'Preguntas Frecuentes',
-  faq: faqData,
-  bibliographyTitle: 'Fuentes y Referencias',
+  faq: faqData: 'Fuentes y Referencias',
   bibliography: bibliographyData,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],

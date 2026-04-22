@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { RentIncreaseUI } from '../ui';
@@ -45,21 +46,6 @@ const howToData = [
   {
     name: 'Copia el resumen',
     text: 'Genera un informe rápido para enviárselo al propietario o guardarlo en tus notas.',
-  },
-];
-
-const bibliographyData = [
-  {
-    name: 'Ley 12/2023 por el Derecho a la Vivienda (BOE.es)',
-    url: 'https://www.boe.es/buscar/act.php?id=BOE-A-2023-12203',
-  },
-  {
-    name: 'Calculadora de IPC del Instituto Nacional de Estadística (INE)',
-    url: 'https://www.ine.es/varipc/index.do',
-  },
-  {
-    name: 'Ley de Arrendamientos Urbanos - Texto Consolidado',
-    url: 'https://www.boe.es/buscar/act.php?id=BOE-A-1994-26017',
   },
 ];
 
@@ -191,8 +177,7 @@ export const content: ToolLocaleContent<RentIncreaseUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Preguntas Frecuentes',
-  bibliographyTitle: 'Fuentes y Referencias',
+  faqTitle: 'Preguntas Frecuentes': 'Fuentes y Referencias',
   ui: {
     labelTitle: 'Calculadora de Subida de Alquiler',
     labelDescription: 'Ajusta tu renta conforme al IPC o aplica el límite legal del 3% de forma segura.',

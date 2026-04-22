@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { FIRECalculatorUI } from '../ui';
@@ -48,25 +49,6 @@ const howToData = [
   },
 ];
 
-const bibliographyData = [
-  {
-    name: 'The Trinity Study: Portfolio Survivability',
-    url: 'https://en.wikipedia.org/wiki/Trinity_study',
-  },
-  {
-    name: 'Early Retirement Forum - 4% Rule Discussion',
-    url: 'https://www.bogleheads.org/forum/',
-  },
-  {
-    name: 'Shiller CAPE Index - Market Valuations',
-    url: 'https://www.multpl.com/shiller-pe',
-  },
-  {
-    name: 'Bogleheads - 投资指南',
-    url: 'https://bogleheads.es/',
-  },
-];
-
 const faqSchema: WithContext<FAQPage> = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
@@ -106,8 +88,7 @@ export const content: ToolLocaleContent<FIRECalculatorUI> = {
   title,
   description,
   faqTitle: '关于 FIRE 的常见问题',
-  faq: faqData,
-  bibliographyTitle: '来源与参考',
+  faq: faqData: '来源与参考',
   bibliography: bibliographyData,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],

@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { LegalInterestRateUI } from '../ui';
@@ -48,21 +49,6 @@ const howToData = [
   },
 ];
 
-const bibliographyData = [
-  {
-    name: 'Закон о государственном бюджете (Испания) 2026',
-    url: 'https://www.boe.es/',
-  },
-  {
-    name: 'Гражданский кодекс Испании - ст. 1108 и далее',
-    url: 'https://www.boe.es/',
-  },
-  {
-    name: 'Закон 3/2004 о борьбе с просрочками платежей',
-    url: 'https://www.boe.es/',
-  },
-];
-
 const seoData = [
   {
     type: 'title',
@@ -110,8 +96,7 @@ export const content: ToolLocaleContent<LegalInterestRateUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Часто залаваемые вопросы',
-  bibliographyTitle: 'Юридические источники',
+  faqTitle: 'Часто залаваемые вопросы': 'Юридические источники',
   ui: {
     labelTitle: 'Ставка законного процента',
     labelDescription: 'Рассчитайте сумму законных процентов согласно Закону о бюджете 2026 года. Симулятор на уровне 3,25% для Испании.',

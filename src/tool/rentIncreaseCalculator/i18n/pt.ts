@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { RentIncreaseUI } from '../ui';
@@ -41,21 +42,6 @@ const howToData = [
   {
     name: 'Copie o resumo',
     text: 'Gere um relatório rápido para enviar ao proprietário ou guardar nas suas notas.',
-  },
-];
-
-const bibliographyData = [
-  {
-    name: 'Lei 12/2023 pelo Direito à Habitação (Espanha)',
-    url: 'https://www.boe.es/',
-  },
-  {
-    name: 'Calculadora de IPC do Instituto Nacional de Estatística (INE)',
-    url: 'https://www.ine.es/',
-  },
-  {
-    name: 'Lei de Arrendamentos Urbanos (LAU)',
-    url: 'https://www.boe.es/',
   },
 ];
 
@@ -107,8 +93,7 @@ export const content: ToolLocaleContent<RentIncreaseUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Perguntas Frequentes',
-  bibliographyTitle: 'Fontes e Referências',
+  faqTitle: 'Perguntas Frequentes': 'Fontes e Referências',
   ui: {
     labelTitle: 'Calculadora de Aumento de Aluguer',
     labelDescription: 'Atualize a sua renda conforme o IPC ou aplique o limite legal de 3% de forma segura.',

@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { CourtFeeCalculatorUI } from '../ui';
@@ -45,21 +46,6 @@ const howToData = [
   {
     name: '查看明细',
     text: '自动获取 Model 696 的固定费用、可变费用和总额计算结果。',
-  },
-];
-
-const bibliographyData = [
-  {
-    name: '第 10/2012 号法院税法 (BOE)',
-    url: 'https://www.boe.es/',
-  },
-  {
-    name: '关于法院税的 TC 140/2016 判决',
-    url: 'https://www.boe.es/',
-  },
-  {
-    name: '税务局 - Model 696',
-    url: 'https://sede.agenciatributaria.gob.es/',
   },
 ];
 
@@ -111,8 +97,7 @@ export const content: ToolLocaleContent<CourtFeeCalculatorUI> = {
   slug,
   title,
   description,
-  faqTitle: '常见问题',
-  bibliographyTitle: '来源与参考资料',
+  faqTitle: '常见问题': '来源与参考资料',
   ui: {
     labelTitle: '法院税计算器',
     labelDescription: '根据管辖、程序和金额计算 Model 696 的准确金额。适用于西班牙公司和专业人士。',

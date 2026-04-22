@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { LegalInterestRateUI } from '../ui';
@@ -45,25 +46,6 @@ const howToData = [
   {
     name: 'Check other rates',
     text: 'Observe other reference rates: tax delay interest (4.06%) and commercial operations (10.15%) for additional context.',
-  },
-];
-
-const bibliographyData = [
-  {
-    name: 'State Budget Law 2026',
-    url: 'https://www.boe.es/buscar/act.php',
-  },
-  {
-    name: 'Spanish Civil Code - Articles 1108 and following',
-    url: 'https://www.boe.es/buscar/act.php?id=BOE-A-1889-4763',
-  },
-  {
-    name: 'Law 3/1991 on Unfair Competition',
-    url: 'https://www.boe.es/buscar/act.php?id=BOE-A-1991-8915',
-  },
-  {
-    name: 'Law 3/2004 on Late Payment Combat',
-    url: 'https://www.boe.es/buscar/act.php?id=BOE-A-2004-20236',
   },
 ];
 
@@ -126,8 +108,7 @@ export const content: ToolLocaleContent<LegalInterestRateUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Frequently Asked Questions',
-  bibliographyTitle: 'Legal Sources',
+  faqTitle: 'Frequently Asked Questions': 'Legal Sources',
   ui: {
     labelTitle: 'Legal Interest Rate on Money',
     labelDescription: 'Calculate the exact amount of legal interest according to Spain\'s Budget Law 2026. Automatic calculator with 3.25% rate.',

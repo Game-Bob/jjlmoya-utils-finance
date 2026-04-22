@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { CourtFeeCalculatorUI } from '../ui';
@@ -45,25 +46,6 @@ const howToData = [
   {
     name: 'View the breakdown',
     text: 'Get automatic calculation with fixed fee, variable fee and total for Form 696.',
-  },
-];
-
-const bibliographyData = [
-  {
-    name: 'Law 10/2012 on Judicial Fees (Spanish Official Gazette)',
-    url: 'https://www.boe.es/buscar/act.php?id=BOE-A-2012-14301',
-  },
-  {
-    name: 'Constitutional Court Ruling 140/2016 on Judicial Fees',
-    url: 'https://www.boe.es/buscar/doc.php?id=BOE-A-2016-7905',
-  },
-  {
-    name: 'Spanish Tax Authority - Form 696',
-    url: 'https://sede.agenciatributaria.gob.es/Sede/procedimientoini/GC07.shtml',
-  },
-  {
-    name: 'General Council of the Judiciary - Fee Information',
-    url: 'https://www.cgpj.es/es/Inicio',
   },
 ];
 
@@ -227,8 +209,7 @@ export const content: ToolLocaleContent<CourtFeeCalculatorUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Frequently Asked Questions',
-  bibliographyTitle: 'Sources and References',
+  faqTitle: 'Frequently Asked Questions': 'Sources and References',
   ui: {
     labelTitle: 'Spanish Court Fees Calculator',
     labelDescription: 'Calculate the exact Form 696 amount based on jurisdiction, procedure and claim amount. For Spanish companies and professionals.',

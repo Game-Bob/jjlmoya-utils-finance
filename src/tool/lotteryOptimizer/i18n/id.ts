@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { LotteryOptimizerUI } from '../ui';
@@ -45,21 +46,6 @@ const howToData = [
   {
     name: 'Evaluasi risiko/manfaat',
     text: 'Tinjau ekspektasi matematika untuk memahami berapa banyak uang yang secara statistik Anda "berikan" untuk setiap euro yang diinvestasikan.',
-  },
-];
-
-const bibliographyData = [
-  {
-    name: 'Loterías y Apuestas del Estado (SELAE) - Portal Transparansi',
-    url: 'https://www.selae.es/',
-  },
-  {
-    name: 'Matematika Lotre Natal - RSME',
-    url: 'https://rsme.es/',
-  },
-  {
-    name: 'Kriteria Kelly dan Manajemen Risiko',
-    url: 'https://www.investopedia.com/',
   },
 ];
 
@@ -134,8 +120,7 @@ export const content: ToolLocaleContent<LotteryOptimizerUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Pertanyaan Umum',
-  bibliographyTitle: 'Sumber dan Referensi',
+  faqTitle: 'Pertanyaan Umum': 'Sumber dan Referensi',
   ui: {
     gameTranslations,
     labelTitle: 'Pengoptimal Lotre',

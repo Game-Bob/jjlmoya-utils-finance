@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { RentIncreaseUI } from '../ui';
@@ -41,21 +42,6 @@ const howToData = [
   {
     name: 'Zusammenfassung kopieren',
     text: 'Erstellen Sie einen schnellen Bericht für den Vermieter oder für Ihre Unterlagen.',
-  },
-];
-
-const bibliographyData = [
-  {
-    name: 'Gesetz 12/2023 über das Recht auf Wohnraum (Spanien)',
-    url: 'https://www.boe.es/',
-  },
-  {
-    name: 'IPC-Rechner des Nationalen Statistikinstituts (INE)',
-    url: 'https://www.ine.es/',
-  },
-  {
-    name: 'Spanisches Mietgesetz (LAU)',
-    url: 'https://www.boe.es/',
   },
 ];
 
@@ -107,8 +93,7 @@ export const content: ToolLocaleContent<RentIncreaseUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Häufig gestellte Fragen',
-  bibliographyTitle: 'Quellen und Referenzen',
+  faqTitle: 'Häufig gestellte Fragen': 'Quellen und Referenzen',
   ui: {
     labelTitle: 'Mietenerhöhungsrechner',
     labelDescription: 'Passen Sie Ihre Miete sicher an den IPC oder das gesetzliche 3 % Limit an.',

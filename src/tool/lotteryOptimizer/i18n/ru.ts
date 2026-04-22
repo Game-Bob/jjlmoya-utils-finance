@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { LotteryOptimizerUI } from '../ui';
@@ -45,21 +46,6 @@ const howToData = [
   {
     name: 'Оцените риск/выгоду',
     text: 'Проверьте математическое ожидание, чтобы понять, сколько денег вы статистически "дарите" за каждый вложенный евро.',
-  },
-];
-
-const bibliographyData = [
-  {
-    name: 'Loterías y Apuestas del Estado (SELAE) - Портал прозрачности',
-    url: 'https://www.selae.es/',
-  },
-  {
-    name: 'Математика рождественской лотереи - RSME',
-    url: 'https://rsme.es/',
-  },
-  {
-    name: 'Критерий Келли и управление рисками',
-    url: 'https://www.investopedia.com/',
   },
 ];
 
@@ -134,8 +120,7 @@ export const content: ToolLocaleContent<LotteryOptimizerUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Часто задаваемые вопросы',
-  bibliographyTitle: 'Источники и ссылки',
+  faqTitle: 'Часто задаваемые вопросы': 'Источники и ссылки',
   ui: {
     gameTranslations,
     labelTitle: 'Оптимизатор лотерей',

@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { RentIncreaseUI } from '../ui';
@@ -41,21 +42,6 @@ const howToData = [
   {
     name: 'Copia il riepilogo',
     text: 'Genera un report rapido da inviare al proprietario o da conservare tra i tuoi appunti.',
-  },
-];
-
-const bibliographyData = [
-  {
-    name: 'Legge 12/2023 per il Diritto alla Casa (Spagna)',
-    url: 'https://www.boe.es/',
-  },
-  {
-    name: 'Calcolatore IPC dell’Istituto Nazionale di Statistica (INE)',
-    url: 'https://www.ine.es/',
-  },
-  {
-    name: 'Legge sulle Locazioni Urbane (LAU)',
-    url: 'https://www.boe.es/',
   },
 ];
 
@@ -107,8 +93,7 @@ export const content: ToolLocaleContent<RentIncreaseUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Domande Frequenti',
-  bibliographyTitle: 'Fonti e Riferimenti',
+  faqTitle: 'Domande Frequenti': 'Fonti e Riferimenti',
   ui: {
     labelTitle: 'Calcolatore Aumento Affitto',
     labelDescription: 'Aggiorna il tuo canone in base all’IPC o applica il limite legale del 3% in modo sicuro.',

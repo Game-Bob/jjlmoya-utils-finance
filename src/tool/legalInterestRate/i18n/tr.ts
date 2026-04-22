@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { LegalInterestRateUI } from '../ui';
@@ -48,21 +49,6 @@ const howToData = [
   },
 ];
 
-const bibliographyData = [
-  {
-    name: 'İspanya Devlet Genel Bütçe Kanunu 2026',
-    url: 'https://www.boe.es/',
-  },
-  {
-    name: 'İspanya Medeni Kanunu - 1108. Madde ve devamı',
-    url: 'https://www.boe.es/',
-  },
-  {
-    name: 'Geç Ödemelerle Mücadele Hakkında 3/2004 Sayılı Kanun',
-    url: 'https://www.boe.es/',
-  },
-];
-
 const seoData = [
   {
     type: 'title',
@@ -110,8 +96,7 @@ export const content: ToolLocaleContent<LegalInterestRateUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Sıkça Sorulan Sorular',
-  bibliographyTitle: 'Yasal Kaynaklar',
+  faqTitle: 'Sıkça Sorulan Sorular': 'Yasal Kaynaklar',
   ui: {
     labelTitle: 'Yasal Faiz Oranı',
     labelDescription: '2026 Bütçe Kanunu’na göre yasal faiz miktarını hesaplayın. İspanya için %3,25 oranında simülatör.',

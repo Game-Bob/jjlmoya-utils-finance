@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { CourtFeeCalculatorUI } from '../ui';
@@ -45,21 +46,6 @@ const howToData = [
   {
     name: 'Visualizza il dettaglio',
     text: 'Ottieni il calcolo automatico con quota fissa, variabile e totale per il Modello 696.',
-  },
-];
-
-const bibliographyData = [
-  {
-    name: 'Legge 10/2012 sulle Tasse Giudiziarie (Spagna)',
-    url: 'https://www.boe.es/',
-  },
-  {
-    name: 'Sentenza TC 140/2016 sulle Tasse Giudiziarie',
-    url: 'https://www.boe.es/',
-  },
-  {
-    name: 'Agenzia delle Entrate - Modello 696',
-    url: 'https://sede.agenciatributaria.gob.es/',
   },
 ];
 
@@ -111,8 +97,7 @@ export const content: ToolLocaleContent<CourtFeeCalculatorUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Domande Frequenti',
-  bibliographyTitle: 'Fonti e Riferimenti',
+  faqTitle: 'Domande Frequenti': 'Fonti e Riferimenti',
   ui: {
     labelTitle: 'Calcolatore di Tasse Giudiziarie',
     labelDescription: 'Calcola l’importo esatto del Modello 696 per giurisdizione e procedimento. Per imprese e professionisti.',

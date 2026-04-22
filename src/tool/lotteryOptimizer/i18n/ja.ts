@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { LotteryOptimizerUI } from '../ui';
@@ -45,21 +46,6 @@ const howToData = [
   {
     name: 'リスクとリターンの評価',
     text: '期待値を確認し、投資した1ユーロにつき統計的にいくら「失っている」のかを理解します。',
-  },
-];
-
-const bibliographyData = [
-  {
-    name: 'スペイン国立宝くじ・賭博公社 (SELAE) - 透明性ポータル',
-    url: 'https://www.selae.es/',
-  },
-  {
-    name: 'クリスマス宝くじの数学 - スペイン王立数学会 (RSME)',
-    url: 'https://rsme.es/',
-  },
-  {
-    name: 'ケリー基準とリスク管理 - Investopedia',
-    url: 'https://www.investopedia.com/',
   },
 ];
 
@@ -134,8 +120,7 @@ export const content: ToolLocaleContent<LotteryOptimizerUI> = {
   slug,
   title,
   description,
-  faqTitle: 'よくある質問',
-  bibliographyTitle: '情報源とリファレンス',
+  faqTitle: 'よくある質問': '情報源とリファレンス',
   ui: {
     gameTranslations,
     labelTitle: '宝くじ最適化ツール',

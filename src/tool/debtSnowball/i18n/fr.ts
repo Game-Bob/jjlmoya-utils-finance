@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { DebtSnowballUI } from '../ui';
@@ -54,17 +55,6 @@ const howToData = [
   },
 ];
 
-const bibliographyData = [
-  {
-    name: 'Investopedia — Debt Snowball vs. Debt Avalanche',
-    url: 'https://www.investopedia.com/articles/personal-finance/080716/debt-avalanche-vs-debt-snowball-which-best-you.asp',
-  },
-  {
-    name: 'Harvard Business Review — Research on Debt Payoff Strategies',
-    url: 'https://hbr.org/2016/12/research-the-best-strategy-for-paying-off-credit-card-debt',
-  },
-];
-
 const faqSchema: WithContext<FAQPage> = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
@@ -104,8 +94,7 @@ export const content: ToolLocaleContent<DebtSnowballUI> = {
   title,
   description,
   faqTitle: 'Questions Fréquemment Posées',
-  faq: faqData,
-  bibliographyTitle: 'Sources et Références',
+  faq: faqData: 'Sources et Références',
   bibliography: bibliographyData,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],

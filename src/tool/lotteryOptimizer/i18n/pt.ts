@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { LotteryOptimizerUI } from '../ui';
@@ -45,21 +46,6 @@ const howToData = [
   {
     name: 'Avaliar o risco/benefício',
     text: 'Reveja a esperança matemática para entender quanto dinheiro está estatisticamente a "dar" por cada euro investido.',
-  },
-];
-
-const bibliographyData = [
-  {
-    name: 'Loterías y Apuestas del Estado (SELAE) - Portal da Transparência',
-    url: 'https://www.selae.es/',
-  },
-  {
-    name: 'Matemática da Lotaria de Natal - RSME',
-    url: 'https://rsme.es/',
-  },
-  {
-    name: 'O Critério de Kelly e a Gestão de Riscos',
-    url: 'https://www.investopedia.com/',
   },
 ];
 
@@ -134,8 +120,7 @@ export const content: ToolLocaleContent<LotteryOptimizerUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Perguntas Frequentes',
-  bibliographyTitle: 'Fontes e Referências',
+  faqTitle: 'Perguntas Frequentes': 'Fontes e Referências',
   ui: {
     gameTranslations,
     labelTitle: 'Otimizador de Loterias',

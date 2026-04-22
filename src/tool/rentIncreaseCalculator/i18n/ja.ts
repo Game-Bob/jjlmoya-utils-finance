@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { RentIncreaseUI } from '../ui';
@@ -41,21 +42,6 @@ const howToData = [
   {
     name: '概要をコピーする',
     text: '家主に送信したり、メモとして保存したりするためのクイックレポートを生成します。',
-  },
-];
-
-const bibliographyData = [
-  {
-    name: '住宅（スペイン）に関する権利のための法律 12/2023',
-    url: 'https://www.boe.es/',
-  },
-  {
-    name: 'スペイン国立統計局 (INE) IPC計算機',
-    url: 'https://www.ine.es/',
-  },
-  {
-    name: '都市賃貸借法 (LAU)',
-    url: 'https://www.boe.es/',
   },
 ];
 
@@ -107,8 +93,7 @@ export const content: ToolLocaleContent<RentIncreaseUI> = {
   slug,
   title,
   description,
-  faqTitle: 'よくある質問',
-  bibliographyTitle: '情報源とリファレンス',
+  faqTitle: 'よくある質問': '情報源とリファレンス',
   ui: {
     labelTitle: '家賃値上げ計算機',
     labelDescription: 'IPCに合わせて家賃を調整するか、3%の法定上限を安全に適用します。',

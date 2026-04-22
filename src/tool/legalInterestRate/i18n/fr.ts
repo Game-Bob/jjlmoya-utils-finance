@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { LegalInterestRateUI } from '../ui';
@@ -45,25 +46,6 @@ const howToData = [
   {
     name: 'Consultez les autres taux',
     text: 'Observez les autres taux de référence: intérêt de retard fiscal (4,06%) et opérations commerciales (10,15%) pour un contexte supplémentaire.',
-  },
-];
-
-const bibliographyData = [
-  {
-    name: 'Loi de Budgets Généraux de l\'État 2026',
-    url: 'https://www.boe.es/buscar/act.php',
-  },
-  {
-    name: 'Code civil espagnol - Articles 1108 et suivants',
-    url: 'https://www.boe.es/buscar/act.php?id=BOE-A-1889-4763',
-  },
-  {
-    name: 'Loi 3/1991 sur la concurrence déloyale',
-    url: 'https://www.boe.es/buscar/act.php?id=BOE-A-1991-8915',
-  },
-  {
-    name: 'Loi 3/2004 contre les retards de paiement',
-    url: 'https://www.boe.es/buscar/act.php?id=BOE-A-2004-20236',
   },
 ];
 
@@ -126,8 +108,7 @@ export const content: ToolLocaleContent<LegalInterestRateUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Questions Fréquemment Posées',
-  bibliographyTitle: 'Sources Légales',
+  faqTitle: 'Questions Fréquemment Posées': 'Sources Légales',
   ui: {
     labelTitle: 'Taux d\'Intérêt Légal de l\'Argent',
     labelDescription: 'Calculez le montant exact des intérêts légaux selon la Loi budgétaire 2026 de l\'Espagne. Calculatrice automatique avec taux de 3,25%.',

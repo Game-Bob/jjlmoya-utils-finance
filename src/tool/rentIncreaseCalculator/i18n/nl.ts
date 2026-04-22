@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { RentIncreaseUI } from '../ui';
@@ -41,21 +42,6 @@ const howToData = [
   {
     name: 'Kopieer de samenvatting',
     text: 'Genereer een beknopt rapport om naar de verhuurder te sturen of voor uw eigen administratie.',
-  },
-];
-
-const bibliographyData = [
-  {
-    name: 'Wet 12/2023 over het recht op huisvesting (Spanje)',
-    url: 'https://www.boe.es/',
-  },
-  {
-    name: 'IPC-calculator van het Nationaal Instituut voor de Statistiek (INE)',
-    url: 'https://www.ine.es/',
-  },
-  {
-    name: 'Wet op de Stedelijke Huurovereenkomsten (LAU)',
-    url: 'https://www.boe.es/',
   },
 ];
 
@@ -107,8 +93,7 @@ export const content: ToolLocaleContent<RentIncreaseUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Veelgestelde Vragen',
-  bibliographyTitle: 'Bronnen en Referenties',
+  faqTitle: 'Veelgestelde Vragen': 'Bronnen en Referenties',
   ui: {
     labelTitle: 'Huurverhoging Calculator',
     labelDescription: 'Pas uw huur veilig aan de IPC aan of pas de wettelijke limiet van 3% toe.',

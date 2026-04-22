@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { LegalInterestRateUI } from '../ui';
@@ -48,21 +49,6 @@ const howToData = [
   },
 ];
 
-const bibliographyData = [
-  {
-    name: '2026 年西班牙国家一般预算法',
-    url: 'https://www.boe.es/',
-  },
-  {
-    name: '西班牙民法典 - 第 1108 条及后续条款',
-    url: 'https://www.boe.es/',
-  },
-  {
-    name: '第 3/2004 号打击逾期付款法',
-    url: 'https://www.boe.es/',
-  },
-];
-
 const seoData = [
   {
     type: 'title',
@@ -110,8 +96,7 @@ export const content: ToolLocaleContent<LegalInterestRateUI> = {
   slug,
   title,
   description,
-  faqTitle: '常见问题',
-  bibliographyTitle: '法律来源',
+  faqTitle: '常见问题': '法律来源',
   ui: {
     labelTitle: '法定利息率',
     labelDescription: '根据 2026 年预算法计算法定利息金额。西班牙 3.25% 利率模拟器。',

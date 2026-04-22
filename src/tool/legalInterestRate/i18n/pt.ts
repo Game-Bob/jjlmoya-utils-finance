@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { LegalInterestRateUI } from '../ui';
@@ -48,21 +49,6 @@ const howToData = [
   },
 ];
 
-const bibliographyData = [
-  {
-    name: 'Lei de Orçamento Geral do Estado (Espanha) 2026',
-    url: 'https://www.boe.es/',
-  },
-  {
-    name: 'Código Civil Espanhol - Art. 1108 e seguintes',
-    url: 'https://www.boe.es/',
-  },
-  {
-    name: 'Lei 3/2004 de Luta contra a Morosidade',
-    url: 'https://www.boe.es/',
-  },
-];
-
 const seoData = [
   {
     type: 'title',
@@ -110,8 +96,7 @@ export const content: ToolLocaleContent<LegalInterestRateUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Perguntas Frequentes',
-  bibliographyTitle: 'Fontes Legais',
+  faqTitle: 'Perguntas Frequentes': 'Fontes Legais',
   ui: {
     labelTitle: 'Taxa de Juro Legal',
     labelDescription: 'Calcule o montante dos juros legais conforme a Lei de Orçamento 2026. Simulador a 3,25% para Espanha.',

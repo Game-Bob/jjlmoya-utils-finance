@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { RentIncreaseUI } from '../ui';
@@ -41,21 +42,6 @@ const howToData = [
   {
     name: 'Özeti kopyalayın',
     text: 'Ev sahibine göndermek veya notlarınıza kaydetmek için hızlı bir rapor oluşturun.',
-  },
-];
-
-const bibliographyData = [
-  {
-    name: 'Konut Hakkı Yasası 12/2023 (İspanya)',
-    url: 'https://www.boe.es/',
-  },
-  {
-    name: 'Ulusal İstatistik Enstitüsü (INE) IPC Hesaplayıcı',
-    url: 'https://www.ine.es/',
-  },
-  {
-    name: 'Kentsel Kira Yasası (LAU)',
-    url: 'https://www.boe.es/',
   },
 ];
 
@@ -107,8 +93,7 @@ export const content: ToolLocaleContent<RentIncreaseUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Sıkça Sorulan Sorular',
-  bibliographyTitle: 'Kaynaklar ve Referanslar',
+  faqTitle: 'Sıkça Sorulan Sorular': 'Kaynaklar ve Referanslar',
   ui: {
     labelTitle: 'Kira Artışı Hesaplayıcı',
     labelDescription: 'Kiranızı IPC’ye göre ayarlayın veya %3’lük yasal sınırı güvenle uygulayın.',

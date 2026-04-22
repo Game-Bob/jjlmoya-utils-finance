@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { RentIncreaseUI } from '../ui';
@@ -41,21 +42,6 @@ const howToData = [
   {
     name: 'Скопируйте отчет',
     text: 'Создайте краткий отчет для отправки владельцу или для сохранения в своих заметках.',
-  },
-];
-
-const bibliographyData = [
-  {
-    name: 'Закон Испании 12/2023 о праве на жилье',
-    url: 'https://www.boe.es/',
-  },
-  {
-    name: 'Калькулятор IPC Национального института статистики (INE)',
-    url: 'https://www.ine.es/',
-  },
-  {
-    name: 'Закон о городской аренде (LAU)',
-    url: 'https://www.boe.es/',
   },
 ];
 
@@ -107,8 +93,7 @@ export const content: ToolLocaleContent<RentIncreaseUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Часто задаваемые вопросы',
-  bibliographyTitle: 'Источники и ссылки',
+  faqTitle: 'Часто задаваемые вопросы': 'Источники и ссылки',
   ui: {
     labelTitle: 'Калькулятор повышения аренды',
     labelDescription: 'Безопасно корректируйте аренду в соответствии с IPC или применяйте законный лимит 3%.',

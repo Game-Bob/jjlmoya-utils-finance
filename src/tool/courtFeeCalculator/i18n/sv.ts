@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { CourtFeeCalculatorUI } from '../ui';
@@ -45,21 +46,6 @@ const howToData = [
   {
     name: 'Visa sammanställning',
     text: 'Få den automatiska beräkningen med fast, variabel och total avgift för modell 696.',
-  },
-];
-
-const bibliographyData = [
-  {
-    name: 'Lag 10/2012 om domstolsavgifter (Spanien)',
-    url: 'https://www.boe.es/',
-  },
-  {
-    name: 'Dom TC 140/2016 om domstolsavgifter',
-    url: 'https://www.boe.es/',
-  },
-  {
-    name: 'Skattemyndigheten - Modell 696',
-    url: 'https://sede.agenciatributaria.gob.es/',
   },
 ];
 
@@ -111,8 +97,7 @@ export const content: ToolLocaleContent<CourtFeeCalculatorUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Vanliga frågor',
-  bibliographyTitle: 'Källor och referenser',
+  faqTitle: 'Vanliga frågor': 'Källor och referenser',
   ui: {
     labelTitle: 'Kalkylator för domstolsavgifter',
     labelDescription: 'Beräkna det exakta beloppet för modell 696 baserat på jurisdiktion och förfarande. För företag och yrkesverksamma.',

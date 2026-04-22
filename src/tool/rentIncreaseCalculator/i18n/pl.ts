@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { RentIncreaseUI } from '../ui';
@@ -41,21 +42,6 @@ const howToData = [
   {
     name: 'Skopiuj podsumowanie',
     text: 'Wygeneruj szybki raport, aby wysłać go właścicielowi lub zachować w notatkach.',
-  },
-];
-
-const bibliographyData = [
-  {
-    name: 'Ustawa 12/2023 o prawie do mieszkania (Hiszpania)',
-    url: 'https://www.boe.es/',
-  },
-  {
-    name: 'Kalkulator IPC Narodowego Instytutu Statystycznego (INE)',
-    url: 'https://www.ine.es/',
-  },
-  {
-    name: 'Ustawa o najmie lokali miejskich (LAU)',
-    url: 'https://www.boe.es/',
   },
 ];
 
@@ -107,8 +93,7 @@ export const content: ToolLocaleContent<RentIncreaseUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Często zadawane pytania',
-  bibliographyTitle: 'Źródła i odniesienia',
+  faqTitle: 'Często zadawane pytania': 'Źródła i odniesienia',
   ui: {
     labelTitle: 'Kalkulator Podwyżki Czynszu',
     labelDescription: 'Zaktualizuj swój czynsz zgodnie z IPC lub bezpiecznie zastosuj ustawowy limit 3%.',

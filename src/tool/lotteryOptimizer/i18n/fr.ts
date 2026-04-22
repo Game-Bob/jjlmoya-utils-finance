@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { LotteryOptimizerUI } from '../ui';
@@ -45,21 +46,6 @@ const howToData = [
   {
     name: 'Évaluez le risque/récompense',
     text: 'Consultez la valeur attendue pour comprendre combien d\'argent vous "donnez" statistiquement par euro investi.',
-  },
-];
-
-const bibliographyData = [
-  {
-    name: 'Loteries et Jeux de l\'État espagnol (SELAE) - Portail de Transparence',
-    url: 'https://www.selae.es/es/web-corporativa/responsabilidad-social/portal-de-transparencia/portal-de-transparencia',
-  },
-  {
-    name: 'Mathématiques de la Loterie de Noël - Société Royale Mathématique Espagnole',
-    url: 'https://rsme.es/solucion-al-desafio-matematico-de-la-loteria-de-navidad-en-el-pais/',
-  },
-  {
-    name: 'Critère de Kelly et Gestion des Risques - Investopedia',
-    url: 'https://www.investopedia.com/terms/k/kellycriterion.asp',
   },
 ];
 
@@ -145,8 +131,7 @@ export const content: ToolLocaleContent<LotteryOptimizerUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Questions Fréquemment Posées',
-  bibliographyTitle: 'Sources et Références',
+  faqTitle: 'Questions Fréquemment Posées': 'Sources et Références',
   ui: {
     gameTranslations,
     labelTitle: 'Optimiseur de Loteries',

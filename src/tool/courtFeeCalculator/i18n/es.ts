@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { CourtFeeCalculatorUI } from '../ui';
@@ -45,25 +46,6 @@ const howToData = [
   {
     name: 'Visualiza el desglose',
     text: 'Obtén el cálculo automático con cuota fija, variable y total para el Modelo 696.',
-  },
-];
-
-const bibliographyData = [
-  {
-    name: 'Ley 10/2012 de Tasas Judiciales (BOE)',
-    url: 'https://www.boe.es/buscar/act.php?id=BOE-A-2012-14301',
-  },
-  {
-    name: 'Sentencia TC 140/2016 sobre Tasas Judiciales',
-    url: 'https://www.boe.es/buscar/doc.php?id=BOE-A-2016-7905',
-  },
-  {
-    name: 'Agencia Tributaria - Modelo 696',
-    url: 'https://sede.agenciatributaria.gob.es/Sede/procedimientoini/GC07.shtml',
-  },
-  {
-    name: 'Consejo General del Poder Judicial - Información de Tasas',
-    url: 'https://www.cgpj.es/es/Inicio',
   },
 ];
 
@@ -227,8 +209,7 @@ export const content: ToolLocaleContent<CourtFeeCalculatorUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Preguntas Frecuentes',
-  bibliographyTitle: 'Fuentes y Referencias',
+  faqTitle: 'Preguntas Frecuentes': 'Fuentes y Referencias',
   ui: {
     labelTitle: 'Calculadora de Tasas Judiciales',
     labelDescription: 'Calcula el importe exacto del Modelo 696 según jurisdicción, procedimiento y cuantía. Para empresas y profesionales españoles.',

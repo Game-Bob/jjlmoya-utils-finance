@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { CourtFeeCalculatorUI } from '../ui';
@@ -45,21 +46,6 @@ const howToData = [
   {
     name: '상세 내역 확인',
     text: '모델 696을 위한 고정, 가변 및 총 수수료 자동 계산 결과를 확인합니다.',
-  },
-];
-
-const bibliographyData = [
-  {
-    name: '스페인 법원 수수료법 10/2012',
-    url: 'https://www.boe.es/',
-  },
-  {
-    name: '법원 수수료에 관한 헌법재판소 판결 140/2016',
-    url: 'https://www.boe.es/',
-  },
-  {
-    name: '스페인 세무국 - 모델 696',
-    url: 'https://sede.agenciatributaria.gob.es/',
   },
 ];
 
@@ -111,8 +97,7 @@ export const content: ToolLocaleContent<CourtFeeCalculatorUI> = {
   slug,
   title,
   description,
-  faqTitle: '자주 묻는 질문',
-  bibliographyTitle: '출처 및 참고 자료',
+  faqTitle: '자주 묻는 질문': '출처 및 참고 자료',
   ui: {
     labelTitle: '법원 수수료 계산기',
     labelDescription: '관할, 절차 및 가액에 따른 모델 696의 정확한 금액을 계산합니다. 스페인 기업 및 전문가용.',

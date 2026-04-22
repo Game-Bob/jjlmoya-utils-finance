@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { LotteryOptimizerUI } from '../ui';
@@ -45,21 +46,6 @@ const howToData = [
   {
     name: '위험/수익 평가',
     text: '수학적 기대치를 검토하여 투자한 1유로당 통계적으로 얼마를 「기부」하고 있는지 이해합니다.',
-  },
-];
-
-const bibliographyData = [
-  {
-    name: '스페인 국립 복권 위원회 (SELAE) - 투명성 포털',
-    url: 'https://www.selae.es/',
-  },
-  {
-    name: '크리스마스 복권의 수학 - 스페인 왕립 수학회 (RSME)',
-    url: 'https://rsme.es/',
-  },
-  {
-    name: '켈리 기준과 리스크 관리 - Investopedia',
-    url: 'https://www.investopedia.com/',
   },
 ];
 
@@ -134,8 +120,7 @@ export const content: ToolLocaleContent<LotteryOptimizerUI> = {
   slug,
   title,
   description,
-  faqTitle: '자주 묻는 질문',
-  bibliographyTitle: '출처 및 참고 자료',
+  faqTitle: '자주 묻는 질문': '출처 및 참고 자료',
   ui: {
     gameTranslations,
     labelTitle: '복권 최적화 도구',

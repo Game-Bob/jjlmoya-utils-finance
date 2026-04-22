@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { CourtFeeCalculatorUI } from '../ui';
@@ -45,21 +46,6 @@ const howToData = [
   {
     name: 'Zobacz rozliczenie',
     text: 'Uzyskaj automatyczne wyliczenie opłaty stałej, zmiennej i całkowitej dla Modelu 696.',
-  },
-];
-
-const bibliographyData = [
-  {
-    name: 'Ustawa 10/2012 o Opłatach Sądowych (Hiszpania)',
-    url: 'https://www.boe.es/',
-  },
-  {
-    name: 'Wyrok TC 140/2016 w sprawie Opłat Sądowych',
-    url: 'https://www.boe.es/',
-  },
-  {
-    name: 'Urząd Skarbowy - Model 696',
-    url: 'https://sede.agenciatributaria.gob.es/',
   },
 ];
 
@@ -111,8 +97,7 @@ export const content: ToolLocaleContent<CourtFeeCalculatorUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Często zadawane pytania',
-  bibliographyTitle: 'Źródła i odniesienia',
+  faqTitle: 'Często zadawane pytania': 'Źródła i odniesienia',
   ui: {
     labelTitle: 'Kalkulator Opłat Sądowych',
     labelDescription: 'Oblicz dokładną kwotę Modelu 696 według jurysdykcji i postępowania. Dla firm i profesjonalistów.',

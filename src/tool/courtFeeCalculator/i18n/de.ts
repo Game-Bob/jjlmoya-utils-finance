@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { CourtFeeCalculatorUI } from '../ui';
@@ -45,21 +46,6 @@ const howToData = [
   {
     name: 'Aufschlüsselung anzeigen',
     text: 'Erhalten Sie die automatische Berechnung mit fester, variabler und gesamter Gebühr für das Modell 696.',
-  },
-];
-
-const bibliographyData = [
-  {
-    name: 'Gesetz 10/2012 über Gerichtsgebühren (Spanien)',
-    url: 'https://www.boe.es/',
-  },
-  {
-    name: 'Urteil TC 140/2016 über Gerichtsgebühren',
-    url: 'https://www.boe.es/',
-  },
-  {
-    name: 'Steuerbehörde - Modell 696',
-    url: 'https://sede.agenciatributaria.gob.es/',
   },
 ];
 
@@ -111,8 +97,7 @@ export const content: ToolLocaleContent<CourtFeeCalculatorUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Häufig gestellte Fragen',
-  bibliographyTitle: 'Quellen und Referenzen',
+  faqTitle: 'Häufig gestellte Fragen': 'Quellen und Referenzen',
   ui: {
     labelTitle: 'Gerichtskostenrechner',
     labelDescription: 'Berechnen Sie den exakten Betrag für Modell 696 nach Gerichtsbarkeit und Verfahren. Für spanische Unternehmen.',

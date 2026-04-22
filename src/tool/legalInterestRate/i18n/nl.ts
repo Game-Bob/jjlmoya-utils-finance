@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { LegalInterestRateUI } from '../ui';
@@ -48,21 +49,6 @@ const howToData = [
   },
 ];
 
-const bibliographyData = [
-  {
-    name: 'Algemene Begrotingswet Spanje 2026',
-    url: 'https://www.boe.es/',
-  },
-  {
-    name: 'Spaans Burgerlijk Wetboek - Art. 1108 e.v.',
-    url: 'https://www.boe.es/',
-  },
-  {
-    name: 'Wet 3/2004 tegen Betalingsachterstanden',
-    url: 'https://www.boe.es/',
-  },
-];
-
 const seoData = [
   {
     type: 'title',
@@ -110,8 +96,7 @@ export const content: ToolLocaleContent<LegalInterestRateUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Veelgestelde Vragen',
-  bibliographyTitle: 'Wettelijke Bronnen',
+  faqTitle: 'Veelgestelde Vragen': 'Wettelijke Bronnen',
   ui: {
     labelTitle: 'Wettelijk Rentetarief',
     labelDescription: 'Bereken de rente volgens de Begrotingswet 2026. Simulator met 3,25% voor Spanje.',

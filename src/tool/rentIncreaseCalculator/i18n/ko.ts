@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { RentIncreaseUI } from '../ui';
@@ -41,21 +42,6 @@ const howToData = [
   {
     name: '요약 복사',
     text: '집주인에게 보내거나 메모로 보관할 수 있는 빠른 보고서를 생성합니다.',
-  },
-];
-
-const bibliographyData = [
-  {
-    name: '스페인 주택 권리를 위한 법률 12/2023',
-    url: 'https://www.boe.es/',
-  },
-  {
-    name: '스페인 국립 통계청 (INE) IPC 계산기',
-    url: 'https://www.ine.es/',
-  },
-  {
-    name: '도시 임대차법 (LAU)',
-    url: 'https://www.boe.es/',
   },
 ];
 
@@ -107,8 +93,7 @@ export const content: ToolLocaleContent<RentIncreaseUI> = {
   slug,
   title,
   description,
-  faqTitle: '자주 묻는 질문',
-  bibliographyTitle: '출처 및 참고 자료',
+  faqTitle: '자주 묻는 질문': '출처 및 참고 자료',
   ui: {
     labelTitle: '임대료 인상 계산기',
     labelDescription: 'IPC에 맞춰 임대료를 조정하거나 3% 법적 상한선을 안전하게 적용해 보세요.',

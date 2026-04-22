@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { CourtFeeCalculatorUI } from '../ui';
@@ -45,21 +46,6 @@ const howToData = [
   {
     name: 'Посмотрите расчет',
     text: 'Получите автоматический расчет фиксированной, переменной и общей суммы для формы 696.',
-  },
-];
-
-const bibliographyData = [
-  {
-    name: 'Закон 10/2012 о судебных пошлинах (Испания)',
-    url: 'https://www.boe.es/',
-  },
-  {
-    name: 'Решение Конституционного суда 140/2016 о судебных пошлинах',
-    url: 'https://www.boe.es/',
-  },
-  {
-    name: 'Налоговое агентство - форма 696',
-    url: 'https://sede.agenciatributaria.gob.es/',
   },
 ];
 
@@ -111,8 +97,7 @@ export const content: ToolLocaleContent<CourtFeeCalculatorUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Часто задаваемые вопросы',
-  bibliographyTitle: 'Источники и ссылки',
+  faqTitle: 'Часто задаваемые вопросы': 'Источники и ссылки',
   ui: {
     labelTitle: 'Калькулятор судебных пошлин',
     labelDescription: 'Рассчитайте точную сумму формы 696 по юрисдикции и процедуре. Для компаний и профессионалов.',

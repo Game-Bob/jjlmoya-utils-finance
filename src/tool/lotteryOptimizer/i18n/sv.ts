@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { LotteryOptimizerUI } from '../ui';
@@ -45,21 +46,6 @@ const howToData = [
   {
     name: 'Utvärdera risk/nytta',
     text: 'Kontrollera väntevärdet för att förstå hur mycket pengar du statistiskt sett "ger bort" per investerad euro.',
-  },
-];
-
-const bibliographyData = [
-  {
-    name: 'Loterías y Apuestas del Estado (SELAE) - Transparensportal',
-    url: 'https://www.selae.es/',
-  },
-  {
-    name: 'Jullotteriets matematik - RSME',
-    url: 'https://rsme.es/',
-  },
-  {
-    name: 'Kellys kriterium och riskhantering',
-    url: 'https://www.investopedia.com/',
   },
 ];
 
@@ -134,8 +120,7 @@ export const content: ToolLocaleContent<LotteryOptimizerUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Vanliga frågor',
-  bibliographyTitle: 'Källor och referenser',
+  faqTitle: 'Vanliga frågor': 'Källor och referenser',
   ui: {
     gameTranslations,
     labelTitle: 'Lotteri optimerare',

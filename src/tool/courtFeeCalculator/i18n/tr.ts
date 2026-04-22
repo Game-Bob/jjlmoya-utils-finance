@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { CourtFeeCalculatorUI } from '../ui';
@@ -45,21 +46,6 @@ const howToData = [
   {
     name: 'Dökümü görüntüleyin',
     text: 'Model 696 için sabit, değişken ve toplam harç tutarının otomatik hesaplamasını alın.',
-  },
-];
-
-const bibliographyData = [
-  {
-    name: '10/2012 Sayılı Mahkeme Harçları Kanunu (İspanya)',
-    url: 'https://www.boe.es/',
-  },
-  {
-    name: 'Mahkeme Harçları Hakkında TC 140/2016 Sayılı Karar',
-    url: 'https://www.boe.es/',
-  },
-  {
-    name: 'Vergi Dairesi - Model 696',
-    url: 'https://sede.agenciatributaria.gob.es/',
   },
 ];
 
@@ -111,8 +97,7 @@ export const content: ToolLocaleContent<CourtFeeCalculatorUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Sıkça Sorulan Sorular',
-  bibliographyTitle: 'Kaynaklar ve Referanslar',
+  faqTitle: 'Sıkça Sorulan Sorular': 'Kaynaklar ve Referanslar',
   ui: {
     labelTitle: 'Mahkeme Harçları Hesaplayıcı',
     labelDescription: 'Yargı koluna ve prosedüre göre Model 696’nın tam tutarını hesaplayın. Şirketler ve profesyoneller için.',

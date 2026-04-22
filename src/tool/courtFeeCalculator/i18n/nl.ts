@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { CourtFeeCalculatorUI } from '../ui';
@@ -45,21 +46,6 @@ const howToData = [
   {
     name: 'Bekijk de uitsplitsing',
     text: 'Ontvang de automatische berekening met vaste, variabele en totale bijdrage voor Model 696.',
-  },
-];
-
-const bibliographyData = [
-  {
-    name: 'Wet 10/2012 op Gerechtskosten (Spanje)',
-    url: 'https://www.boe.es/',
-  },
-  {
-    name: 'Uitspraak TC 140/2016 over gerechtskosten',
-    url: 'https://www.boe.es/',
-  },
-  {
-    name: 'Belastingdienst - Model 696',
-    url: 'https://sede.agenciatributaria.gob.es/',
   },
 ];
 
@@ -111,8 +97,7 @@ export const content: ToolLocaleContent<CourtFeeCalculatorUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Veelgestelde Vragen',
-  bibliographyTitle: 'Bronnen en Referenties',
+  faqTitle: 'Veelgestelde Vragen': 'Bronnen en Referenties',
   ui: {
     labelTitle: 'Gerechtskosten Calculator',
     labelDescription: 'Bereken het exacte bedrag voor Model 696 per jurisdictie en procedure. Voor bedrijven en professionals.',

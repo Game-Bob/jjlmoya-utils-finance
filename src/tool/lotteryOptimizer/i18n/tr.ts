@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { LotteryOptimizerUI } from '../ui';
@@ -45,21 +46,6 @@ const howToData = [
   {
     name: 'Risk/getiri değerlendirmesi yapın',
     text: 'Yatırılan her euro başına istatistiksel olarak ne kadar para "hediye ettiğinizi" anlamak için matematiksel beklentiyi gözden geçirin.',
-  },
-];
-
-const bibliographyData = [
-  {
-    name: 'Loterías y Apuestas del Estado (SELAE) - Şeffaflık Portalı',
-    url: 'https://www.selae.es/',
-  },
-  {
-    name: 'Noel Piyangosu Matematiği - RSME',
-    url: 'https://rsme.es/',
-  },
-  {
-    name: 'Kelly Kriteri ve Risk Yönetimi',
-    url: 'https://www.investopedia.com/',
   },
 ];
 
@@ -134,8 +120,7 @@ export const content: ToolLocaleContent<LotteryOptimizerUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Sıkça Sorulan Sorular',
-  bibliographyTitle: 'Kaynaklar ve Referanslar',
+  faqTitle: 'Sıkça Sorulan Sorular': 'Kaynaklar ve Referanslar',
   ui: {
     gameTranslations,
     labelTitle: 'Piyango Optimize Edici',

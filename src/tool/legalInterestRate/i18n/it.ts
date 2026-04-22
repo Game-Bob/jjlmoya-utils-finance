@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { LegalInterestRateUI } from '../ui';
@@ -48,21 +49,6 @@ const howToData = [
   },
 ];
 
-const bibliographyData = [
-  {
-    name: 'Legge di Bilancio dello Stato (Spagna) 2026',
-    url: 'https://www.boe.es/',
-  },
-  {
-    name: 'Codice Civile Spagnolo - Art. 1108 e segg.',
-    url: 'https://www.boe.es/',
-  },
-  {
-    name: 'Legge 3/2004 contro la Morosità',
-    url: 'https://www.boe.es/',
-  },
-];
-
 const seoData = [
   {
     type: 'title',
@@ -110,8 +96,7 @@ export const content: ToolLocaleContent<LegalInterestRateUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Domande Frequenti',
-  bibliographyTitle: 'Fonti Legali',
+  faqTitle: 'Domande Frequenti': 'Fonti Legali',
   ui: {
     labelTitle: 'Tasso di Interesse Legale',
     labelDescription: 'Calcola l’importo degli interessi legali secondo la Legge di Bilancio 2026. Simulatore al 3,25% per la Spagna.',

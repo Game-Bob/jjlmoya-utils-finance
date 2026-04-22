@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { CourtFeeCalculatorUI } from '../ui';
@@ -45,25 +46,6 @@ const howToData = [
   {
     name: 'Consultez le détail',
     text: 'Obtenez le calcul automatique avec part fixe, part variable et total pour le formulaire 696.',
-  },
-];
-
-const bibliographyData = [
-  {
-    name: 'Loi 10/2012 sur les Frais Judiciaires (Bulletin Officiel)',
-    url: 'https://www.boe.es/buscar/act.php?id=BOE-A-2012-14301',
-  },
-  {
-    name: 'Décision de la Cour Constitutionnelle 140/2016 sur les Frais Judiciaires',
-    url: 'https://www.boe.es/buscar/doc.php?id=BOE-A-2016-7905',
-  },
-  {
-    name: 'Administration Fiscale Espagnole - Formulaire 696',
-    url: 'https://sede.agenciatributaria.gob.es/Sede/procedimientoini/GC07.shtml',
-  },
-  {
-    name: 'Conseil Général du Pouvoir Judiciaire - Information sur les Frais',
-    url: 'https://www.cgpj.es/es/Inicio',
   },
 ];
 
@@ -227,8 +209,7 @@ export const content: ToolLocaleContent<CourtFeeCalculatorUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Questions Fréquemment Posées',
-  bibliographyTitle: 'Sources et Références',
+  faqTitle: 'Questions Fréquemment Posées': 'Sources et Références',
   ui: {
     labelTitle: 'Calculatrice de Frais Judiciaires',
     labelDescription: 'Calculez le montant exact du formulaire 696 selon la juridiction, la procédure et le montant du litige. Pour les entreprises et professionnels espagnols.',

@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { RentIncreaseUI } from '../ui';
@@ -41,21 +42,6 @@ const howToData = [
   {
     name: 'Kopiera sammanfattningen',
     text: 'Generera en snabb rapport att skicka till hyresvärden eller spara i dina anteckningar.',
-  },
-];
-
-const bibliographyData = [
-  {
-    name: 'Lag 12/2023 om rätten till bostad (Spanien)',
-    url: 'https://www.boe.es/',
-  },
-  {
-    name: 'IPC-kalkylator från nationella statistikinstitutet (INE)',
-    url: 'https://www.ine.es/',
-  },
-  {
-    name: 'Lag om uthyrning av bostäder (LAU)',
-    url: 'https://www.boe.es/',
   },
 ];
 
@@ -107,8 +93,7 @@ export const content: ToolLocaleContent<RentIncreaseUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Vanliga frågor',
-  bibliographyTitle: 'Källor och referenser',
+  faqTitle: 'Vanliga frågor': 'Källor och referenser',
   ui: {
     labelTitle: 'Kalkylator för hyreshöjning',
     labelDescription: 'Justera din hyra säkert enligt IPC eller tillämpa den lagstadgade gränsen på 3 %.',

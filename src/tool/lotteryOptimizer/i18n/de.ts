@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { LotteryOptimizerUI } from '../ui';
@@ -45,21 +46,6 @@ const howToData = [
   {
     name: 'Risiko/Nutzen bewerten',
     text: 'Prüfen Sie den Erwartungswert, um zu verstehen, wie viel Geld Sie statistisch gesehen pro investiertem Euro "verschenken".',
-  },
-];
-
-const bibliographyData = [
-  {
-    name: 'Loterías y Apuestas del Estado (SELAE) - Transparenzportal',
-    url: 'https://www.selae.es/',
-  },
-  {
-    name: 'Mathematik der Weihnachtslotterie - RSME',
-    url: 'https://rsme.es/',
-  },
-  {
-    name: 'Kelly-Kriterium und Risikomanagement',
-    url: 'https://www.investopedia.com/',
   },
 ];
 
@@ -134,8 +120,7 @@ export const content: ToolLocaleContent<LotteryOptimizerUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Häufig gestellte Fragen',
-  bibliographyTitle: 'Quellen und Referenzen',
+  faqTitle: 'Häufig gestellte Fragen': 'Quellen und Referenzen',
   ui: {
     gameTranslations,
     labelTitle: 'Lotto Optimierer',

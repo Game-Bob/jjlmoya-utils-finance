@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { LegalInterestRateUI } from '../ui';
@@ -45,25 +46,6 @@ const howToData = [
   {
     name: 'Consulta otras tasas',
     text: 'Observa las otras tasas de referencia: demora tributaria (4,06%) y operaciones comerciales (10,15%) para contexto adicional.',
-  },
-];
-
-const bibliographyData = [
-  {
-    name: 'Ley de Presupuestos Generales del Estado 2026',
-    url: 'https://www.boe.es/buscar/act.php',
-  },
-  {
-    name: 'Código Civil Español - Artículos 1108 y siguientes',
-    url: 'https://www.boe.es/buscar/act.php?id=BOE-A-1889-4763',
-  },
-  {
-    name: 'Ley 3/1991 de Competencia Desleal',
-    url: 'https://www.boe.es/buscar/act.php?id=BOE-A-1991-8915',
-  },
-  {
-    name: 'Ley 3/2004 de Lucha contra la Morosidad',
-    url: 'https://www.boe.es/buscar/act.php?id=BOE-A-2004-20236',
   },
 ];
 
@@ -126,8 +108,7 @@ export const content: ToolLocaleContent<LegalInterestRateUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Preguntas Frecuentes',
-  bibliographyTitle: 'Fuentes Legales',
+  faqTitle: 'Preguntas Frecuentes': 'Fuentes Legales',
   ui: {
     labelTitle: 'Tipo de Interés Legal del Dinero',
     labelDescription: 'Calcula el importe exacto de intereses legales según la Ley de Presupuestos 2026. Simulador con tasa al 3,25% para España.',

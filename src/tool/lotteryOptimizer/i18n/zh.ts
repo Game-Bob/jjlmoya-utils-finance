@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { LotteryOptimizerUI } from '../ui';
@@ -45,21 +46,6 @@ const howToData = [
   {
     name: '评估风险/收益',
     text: '查看数学期望，以了解统计学上您每投入一欧元相当于“捐献”了多少钱。',
-  },
-];
-
-const bibliographyData = [
-  {
-    name: '西班牙国家彩票与赌博管理机构 (SELAE) - 透明度门户',
-    url: 'https://www.selae.es/',
-  },
-  {
-    name: '圣诞彩票数学 - 西班牙皇家数学学会 (RSME)',
-    url: 'https://rsme.es/',
-  },
-  {
-    name: '凯利公式与风险管理 - Investopedia',
-    url: 'https://www.investopedia.com/',
   },
 ];
 
@@ -134,8 +120,7 @@ export const content: ToolLocaleContent<LotteryOptimizerUI> = {
   slug,
   title,
   description,
-  faqTitle: '常见问题',
-  bibliographyTitle: '来源与参考资料',
+  faqTitle: '常见问题': '来源与参考资料',
   ui: {
     gameTranslations,
     labelTitle: '彩票优化器',

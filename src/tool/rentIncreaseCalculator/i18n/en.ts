@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { RentIncreaseUI } from '../ui';
@@ -45,21 +46,6 @@ const howToData = [
   {
     name: 'Copy the summary',
     text: 'Generate a quick report to send to your landlord or save for your records.',
-  },
-];
-
-const bibliographyData = [
-  {
-    name: 'Law 12/2023 on the Right to Housing (BOE.es)',
-    url: 'https://www.boe.es/buscar/act.php?id=BOE-A-2023-12203',
-  },
-  {
-    name: 'IPC Calculator by Spain\'s National Statistics Institute (INE)',
-    url: 'https://www.ine.es/varipc/index.do',
-  },
-  {
-    name: 'Urban Rental Law - Consolidated Text',
-    url: 'https://www.boe.es/buscar/act.php?id=BOE-A-1994-26017',
   },
 ];
 
@@ -130,8 +116,7 @@ export const content: ToolLocaleContent<RentIncreaseUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Frequently Asked Questions',
-  bibliographyTitle: 'Sources and References',
+  faqTitle: 'Frequently Asked Questions': 'Sources and References',
   ui: {
     labelTitle: 'Rent Increase Calculator',
     labelDescription: 'Adjust your rent based on IPC or apply the legal 3% cap safely and quickly.',

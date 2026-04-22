@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { LegalInterestRateUI } from '../ui';
@@ -48,21 +49,6 @@ const howToData = [
   },
 ];
 
-const bibliographyData = [
-  {
-    name: 'Staatliches Haushaltsgesetz Spanien 2026',
-    url: 'https://www.boe.es/',
-  },
-  {
-    name: 'Spanisches Zivilgesetzbuch - Art. 1108 ff.',
-    url: 'https://www.boe.es/',
-  },
-  {
-    name: 'Gesetz 3/2004 gegen Zahlungsverzug',
-    url: 'https://www.boe.es/',
-  },
-];
-
 const seoData = [
   {
     type: 'title',
@@ -110,8 +96,7 @@ export const content: ToolLocaleContent<LegalInterestRateUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Häufig gestellte Fragen',
-  bibliographyTitle: 'Rechtliche Quellen',
+  faqTitle: 'Häufig gestellte Fragen': 'Rechtliche Quellen',
   ui: {
     labelTitle: 'Gesetzlicher Zinssatz',
     labelDescription: 'Berechnen Sie die Zinsen gemäß dem Haushaltsgesetz 2026. Simulator mit 3,25 % für Spanien.',

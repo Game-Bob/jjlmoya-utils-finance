@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { LegalInterestRateUI } from '../ui';
@@ -48,21 +49,6 @@ const howToData = [
   },
 ];
 
-const bibliographyData = [
-  {
-    name: 'Undang-Undang Anggaran Umum Negara (Spanyol) 2026',
-    url: 'https://www.boe.es/',
-  },
-  {
-    name: 'Kitab Undang-Undang Hukum Perdata Spanyol - Pasal 1108 dst.',
-    url: 'https://www.boe.es/',
-  },
-  {
-    name: 'Undang-Undang 3/2004 tentang Keterlambatan Pembayaran',
-    url: 'https://www.boe.es/',
-  },
-];
-
 const seoData = [
   {
     type: 'title',
@@ -110,8 +96,7 @@ export const content: ToolLocaleContent<LegalInterestRateUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Pertanyaan Umum',
-  bibliographyTitle: 'Sumber Hukum',
+  faqTitle: 'Pertanyaan Umum': 'Sumber Hukum',
   ui: {
     labelTitle: 'Tingkat Suku Bunga Hukum',
     labelDescription: 'Hitung jumlah bunga hukum menurut Undang-Undang Anggaran 2026. Simulator pada tingkat 3,25% untuk Spanyol.',

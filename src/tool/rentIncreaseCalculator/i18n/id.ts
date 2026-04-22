@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { RentIncreaseUI } from '../ui';
@@ -41,21 +42,6 @@ const howToData = [
   {
     name: 'Salin ringkasan',
     text: 'Buat laporan singkat untuk dikirim ke pemilik atau simpan dalam catatan Anda.',
-  },
-];
-
-const bibliographyData = [
-  {
-    name: 'Undang-Undang Spanyol 12/2023 tentang Hak atas Perumahan',
-    url: 'https://www.boe.es/',
-  },
-  {
-    name: 'Kalkulator IPC dari Institut Statistik Nasional (INE)',
-    url: 'https://www.ine.es/',
-  },
-  {
-    name: 'Undang-Undang Sewa Perkotaan (LAU)',
-    url: 'https://www.boe.es/',
   },
 ];
 
@@ -107,8 +93,7 @@ export const content: ToolLocaleContent<RentIncreaseUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Pertanyaan Umum',
-  bibliographyTitle: 'Sumber dan Referensi',
+  faqTitle: 'Pertanyaan Umum': 'Sumber dan Referensi',
   ui: {
     labelTitle: 'Kalkulator Kenaikan Sewa',
     labelDescription: 'Sesuaikan biaya sewa Anda sesuai dengan IPC atau terapkan batas hukum 3% dengan aman.',

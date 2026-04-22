@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { LegalInterestRateUI } from '../ui';
@@ -48,21 +49,6 @@ const howToData = [
   },
 ];
 
-const bibliographyData = [
-  {
-    name: '2026年スペイン国家一般予算案',
-    url: 'https://www.boe.es/',
-  },
-  {
-    name: 'スペイン民法 - 第1108条以降',
-    url: 'https://www.boe.es/',
-  },
-  {
-    name: '支払遅延防止法 (Ley 3/2004)',
-    url: 'https://www.boe.es/',
-  },
-];
-
 const seoData = [
   {
     type: 'title',
@@ -110,8 +96,7 @@ export const content: ToolLocaleContent<LegalInterestRateUI> = {
   slug,
   title,
   description,
-  faqTitle: 'よくある質問',
-  bibliographyTitle: '法的情報源',
+  faqTitle: 'よくある質問': '法的情報源',
   ui: {
     labelTitle: '法定利息率',
     labelDescription: '2026年予算案に基づく法定利息額を計算します。スペイン向けの3.25%シミュレーターです。',

@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { CourtFeeCalculatorUI } from '../ui';
@@ -45,21 +46,6 @@ const howToData = [
   {
     name: 'Lihat rincian',
     text: 'Dapatkan perhitungan otomatis biaya tetap, variabel, dan total untuk Formulir 696.',
-  },
-];
-
-const bibliographyData = [
-  {
-    name: 'Undang-Undang 10/2012 tentang Biaya Pengadilan (Spanyol)',
-    url: 'https://www.boe.es/',
-  },
-  {
-    name: 'Putusan Mahkamah Konstitusi 140/2016 tentang Biaya Pengadilan',
-    url: 'https://www.boe.es/',
-  },
-  {
-    name: 'Otoritas Pajak - Formulir 696',
-    url: 'https://sede.agenciatributaria.gob.es/',
   },
 ];
 
@@ -111,8 +97,7 @@ export const content: ToolLocaleContent<CourtFeeCalculatorUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Pertanyaan Umum',
-  bibliographyTitle: 'Sumber dan Referensi',
+  faqTitle: 'Pertanyaan Umum': 'Sumber dan Referensi',
   ui: {
     labelTitle: 'Kalkulator Biaya Pengadilan',
     labelDescription: 'Hitung jumlah persis Formulir 696 berdasarkan yurisdiksi dan prosedur. Untuk perusahaan dan profesional.',

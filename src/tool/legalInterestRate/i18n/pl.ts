@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { LegalInterestRateUI } from '../ui';
@@ -48,21 +49,6 @@ const howToData = [
   },
 ];
 
-const bibliographyData = [
-  {
-    name: 'Ustawa o budżecie państwa (Hiszpania) 2026',
-    url: 'https://www.boe.es/',
-  },
-  {
-    name: 'Hiszpański Kodeks Cywilny - Art. 1108 i nast.',
-    url: 'https://www.boe.es/',
-  },
-  {
-    name: 'Ustawa 3/2004 o zwalczaniu opóźnień w płatnościach',
-    url: 'https://www.boe.es/',
-  },
-];
-
 const seoData = [
   {
     type: 'title',
@@ -110,8 +96,7 @@ export const content: ToolLocaleContent<LegalInterestRateUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Często Zadawane Pytania',
-  bibliographyTitle: 'Źródła Prawne',
+  faqTitle: 'Często Zadawane Pytania': 'Źródła Prawne',
   ui: {
     labelTitle: 'Stopa Odsetek Ustawowych',
     labelDescription: 'Oblicz kwotę odsetek ustawowych zgodnie z ustawą budżetową 2026. Symulator ze stawką 3,25% dla Hiszpanii.',

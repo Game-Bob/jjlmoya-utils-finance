@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { LegalInterestRateUI } from '../ui';
@@ -48,21 +49,6 @@ const howToData = [
   },
 ];
 
-const bibliographyData = [
-  {
-    name: '2026년 스페인 국가 일반 예산법',
-    url: 'https://www.boe.es/',
-  },
-  {
-    name: '스페인 민법 - 제1108조 이하',
-    url: 'https://www.boe.es/',
-  },
-  {
-    name: '지불 지연 방지법 (Ley 3/2004)',
-    url: 'https://www.boe.es/',
-  },
-];
-
 const seoData = [
   {
     type: 'title',
@@ -110,8 +96,7 @@ export const content: ToolLocaleContent<LegalInterestRateUI> = {
   slug,
   title,
   description,
-  faqTitle: '자주 묻는 질문',
-  bibliographyTitle: '법적 출처',
+  faqTitle: '자주 묻는 질문': '법적 출처',
   ui: {
     labelTitle: '법정 이자율',
     labelDescription: '2026년 예산법에 따른 법정 이자액을 계산합니다. 스페인용 3.25% 시뮬레이터입니다.',

@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { RentIncreaseUI } from '../ui';
@@ -45,21 +46,6 @@ const howToData = [
   {
     name: 'Copiez le résumé',
     text: 'Générez un rapport rapide à envoyer à votre propriétaire ou à conserver pour vos dossiers.',
-  },
-];
-
-const bibliographyData = [
-  {
-    name: 'Loi 12/2023 sur le Droit au Logement (BOE.es)',
-    url: 'https://www.boe.es/buscar/act.php?id=BOE-A-2023-12203',
-  },
-  {
-    name: 'Calculatrice d\'IPC de l\'Institut National de la Statistique espagnol (INE)',
-    url: 'https://www.ine.es/varipc/index.do',
-  },
-  {
-    name: 'Loi sur les Baux Urbains - Texte Consolidé',
-    url: 'https://www.boe.es/buscar/act.php?id=BOE-A-1994-26017',
   },
 ];
 
@@ -130,8 +116,7 @@ export const content: ToolLocaleContent<RentIncreaseUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Questions Fréquemment Posées',
-  bibliographyTitle: 'Sources et Références',
+  faqTitle: 'Questions Fréquemment Posées': 'Sources et Références',
   ui: {
     labelTitle: 'Calculatrice d\'Augmentation de Loyer',
     labelDescription: 'Ajustez votre loyer selon l\'IPC ou appliquez le plafond légal de 3% de manière sûre.',
