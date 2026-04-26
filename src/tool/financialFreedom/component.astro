@@ -147,29 +147,24 @@ const t = (ui ?? {}) as FinancialFreedomUI;
      return `${res.days}${labelDaysShort}`;
   };
 
+  const setText = (el: HTMLElement | null, text: string) => {
+    if (el) el.innerText = text;
+  };
+
   const updateDisplay = (result: FinancialFreedomResult, currencyCode: string) => {
     const locale = root.dataset.locale || 'en';
-    const formatter = new Intl.NumberFormat(locale, {
-      style: 'currency',
-      currency: currencyCode,
-      maximumFractionDigits: 0
-    });
-    const formatterDaily = new Intl.NumberFormat(locale, {
-      style: 'currency',
-      currency: currencyCode,
-      maximumFractionDigits: 2
+    const fmt = (max: number) => new Intl.NumberFormat(locale, {
+      style: 'currency', currency: currencyCode, maximumFractionDigits: max
     });
 
-    if (yearsOut) yearsOut.innerText = result.humanTime.years.toString();
-    if (monthsOut) monthsOut.innerText = result.humanTime.months.toString();
-    if (daysOut) daysOut.innerText = result.humanTime.days.toString();
+    const { years, months, days } = result.humanTime;
+    setText(yearsOut, years.toString());
+    setText(monthsOut, months.toString());
+    setText(daysOut, days.toString());
     
-    if (timeHeroOut) {
-       timeHeroOut.innerText = formatHumanTimeShort(result.humanTime);
-    }
-    
-    if (burnDailyOut) burnDailyOut.innerText = formatterDaily.format(result.dailyBurn);
-    if (burnMonthlyOut) burnMonthlyOut.innerText = formatter.format(result.monthlyBurn);
+    setText(timeHeroOut, formatHumanTimeShort(result.humanTime));
+    setText(burnDailyOut, fmt(2).format(result.dailyBurn));
+    setText(burnMonthlyOut, fmt(0).format(result.monthlyBurn));
     
     if (gainTimeOut) {
       const g = result.gainWithSavings;
