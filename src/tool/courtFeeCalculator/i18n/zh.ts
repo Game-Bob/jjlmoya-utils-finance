@@ -97,7 +97,6 @@ export const content: ToolLocaleContent<CourtFeeCalculatorUI> = {
   slug,
   title,
   description,
-  faqTitle: '常见问题': '来源与参考资料',
   ui: {
     labelTitle: '法院税计算器',
     labelDescription: '根据管辖、程序和金额计算 Model 696 的准确金额。适用于西班牙公司和专业人士。',
@@ -131,7 +130,7 @@ export const content: ToolLocaleContent<CourtFeeCalculatorUI> = {
   },
   faq: faqData,
   howTo: howToData,
-  bibliography: bibliographyData,
+  bibliography,
   seo: seoData,
   schemas: [faqSchema, howToSchema, appSchema],
 };

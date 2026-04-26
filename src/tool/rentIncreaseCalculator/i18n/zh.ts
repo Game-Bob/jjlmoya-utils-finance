@@ -93,7 +93,6 @@ export const content: ToolLocaleContent<RentIncreaseUI> = {
   slug,
   title,
   description,
-  faqTitle: '常见问题': '来源与参考资料',
   ui: {
     labelTitle: '租金上涨计算器',
     labelDescription: '根据 IPC 调整您的租金，或安全地应用 3% 的法定上限。',
@@ -115,7 +114,7 @@ export const content: ToolLocaleContent<RentIncreaseUI> = {
   },
   faq: faqData,
   howTo: howToData,
-  bibliography: bibliographyData,
+  bibliography,
   seo: seoData,
   schemas: [faqSchema, howToSchema, appSchema],
 };

@@ -1,3 +1,4 @@
+﻿import { bibliography } from '../bibliography'
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { LateInterestUI } from '../ui';
@@ -88,23 +89,9 @@ export const content: ToolLocaleContent<LateInterestUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Veelgestelde Vragen',
   faq: faqData,
-  bibliographyTitle: 'Bronnen en Referenties',
-  bibliography: [
-    {
-      name: 'Spaanse Wet 3/2004 tegen Betalingsachterstanden',
-      url: 'https://www.boe.es/',
-    },
-    {
-      name: 'Banco de España: Rentetarieven',
-      url: 'https://www.bde.es/',
-    },
-    {
-      name: 'Berekening van Samengestelde Rente',
-      url: 'https://www.investopedia.com/terms/c/compoundinterest.asp',
-    },
-  ],
+  bibliography,
+  
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

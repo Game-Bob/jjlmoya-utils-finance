@@ -1,3 +1,4 @@
+﻿import { bibliography } from '../bibliography'
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { MortgageUI } from '../ui';
@@ -87,27 +88,9 @@ export const content: ToolLocaleContent<MortgageUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Questions Fréquemment Posées',
   faq: faqData,
-  bibliographyTitle: 'Sources et Références',
-  bibliography: [
-    {
-      name: 'Banque de France: Comprendre les crédits immobiliers',
-      url: 'https://www.banque-france.fr/',
-    },
-    {
-      name: 'Institut National de la Consommation: Guides de l\'emprunteur',
-      url: 'https://www.inc-conso.fr/',
-    },
-    {
-      name: 'Conseil Supérieur du Notariat: Ressources hypothécaires',
-      url: 'https://www.notaires.fr/',
-    },
-    {
-      name: 'Investopedia FR: Calcul des amortissements hypothécaires',
-      url: 'https://www.investopedia.com/terms/m/mortgage.asp',
-    },
-  ],
+  bibliography,
+  
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

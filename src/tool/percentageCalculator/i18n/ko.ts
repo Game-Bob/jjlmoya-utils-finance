@@ -1,3 +1,4 @@
+﻿import { bibliography } from '../bibliography'
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { PercentageCalculatorUI } from '../ui';
@@ -83,19 +84,9 @@ export const content: ToolLocaleContent<PercentageCalculatorUI> = {
   slug,
   title,
   description,
-  faqTitle: '자주 묻는 질문',
   faq: faqData,
-  bibliographyTitle: '출처 및 참고 자료',
-  bibliography: [
-    {
-      name: '백분율 계산 - 위키백과',
-      url: 'https://ko.wikipedia.org/wiki/백분율',
-    },
-    {
-      name: '기초 수학 개념 - 칸 아카데미',
-      url: 'https://ko.khanacademy.org/math/pre-algebra/pre-algebra-ratios-rates/pre-algebra-percents/v/describing-the-meaning-of-percent',
-    },
-  ],
+  bibliography,
+  
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

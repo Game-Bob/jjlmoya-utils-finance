@@ -1,3 +1,4 @@
+﻿import { bibliography } from '../bibliography'
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { MortgageUI } from '../ui';
@@ -87,19 +88,9 @@ export const content: ToolLocaleContent<MortgageUI> = {
   slug,
   title,
   description,
-  faqTitle: 'よくある質問',
   faq: faqData,
-  bibliographyTitle: '情報源とリファレンス',
-  bibliography: [
-    {
-      name: '金融庁：住宅ローンについて',
-      url: 'https://www.fsa.go.jp/',
-    },
-    {
-      name: '住宅金融支援機構（フラット35）',
-      url: 'https://www.jhf.go.jp/',
-    },
-  ],
+  bibliography,
+  
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

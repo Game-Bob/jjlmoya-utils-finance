@@ -93,7 +93,6 @@ export const content: ToolLocaleContent<RentIncreaseUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Perguntas Frequentes': 'Fontes e Referências',
   ui: {
     labelTitle: 'Calculadora de Aumento de Aluguer',
     labelDescription: 'Atualize a sua renda conforme o IPC ou aplique o limite legal de 3% de forma segura.',
@@ -115,7 +114,7 @@ export const content: ToolLocaleContent<RentIncreaseUI> = {
   },
   faq: faqData,
   howTo: howToData,
-  bibliography: bibliographyData,
+  bibliography,
   seo: seoData,
   schemas: [faqSchema, howToSchema, appSchema],
 };

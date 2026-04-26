@@ -81,9 +81,8 @@ export const content: ToolLocaleContent<IBANBICSwiftUI> = {
   slug,
   title,
   description,
-  faqTitle: 'よくある質問',
-  faq: faqData: '情報源とリファレンス',
-  bibliography: bibliographyData,
+  faq: faqData,
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

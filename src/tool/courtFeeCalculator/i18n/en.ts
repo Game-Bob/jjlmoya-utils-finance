@@ -209,7 +209,6 @@ export const content: ToolLocaleContent<CourtFeeCalculatorUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Frequently Asked Questions': 'Sources and References',
   ui: {
     labelTitle: 'Spanish Court Fees Calculator',
     labelDescription: 'Calculate the exact Form 696 amount based on jurisdiction, procedure and claim amount. For Spanish companies and professionals.',
@@ -243,7 +242,7 @@ export const content: ToolLocaleContent<CourtFeeCalculatorUI> = {
   },
   faq: faqData,
   howTo: howToData,
-  bibliography: bibliographyData,
+  bibliography,
   seo: seoData,
   schemas: [faqSchema, howToSchema, appSchema],
 };

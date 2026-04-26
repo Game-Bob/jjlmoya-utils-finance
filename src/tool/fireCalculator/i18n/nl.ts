@@ -87,9 +87,8 @@ export const content: ToolLocaleContent<FIRECalculatorUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Veelgestelde vragen over FIRE',
-  faq: faqData: 'Bronnen en referenties',
-  bibliography: bibliographyData,
+  faq: faqData,
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

@@ -1,3 +1,4 @@
+﻿import { bibliography } from '../bibliography'
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { PercentageCalculatorUI } from '../ui';
@@ -83,19 +84,9 @@ export const content: ToolLocaleContent<PercentageCalculatorUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Pertanyaan Umum',
   faq: faqData,
-  bibliographyTitle: 'Sumber dan Referensi',
-  bibliography: [
-    {
-      name: 'Penghitungan Persentase - Wikipedia',
-      url: 'https://id.wikipedia.org/wiki/Persentase',
-    },
-    {
-      name: 'Konsep Matematika Dasar - Khan Academy',
-      url: 'https://id.khanacademy.org/math/pre-algebra/pre-algebra-ratios-rates/pre-algebra-percents/v/describing-the-meaning-of-percent',
-    },
-  ],
+  bibliography,
+  
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

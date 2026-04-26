@@ -1,3 +1,4 @@
+﻿import { bibliography } from '../bibliography'
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { MortgageUI } from '../ui';
@@ -87,19 +88,9 @@ export const content: ToolLocaleContent<MortgageUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Veelgestelde Vragen',
   faq: faqData,
-  bibliographyTitle: 'Bronnen en Referenties',
-  bibliography: [
-    {
-      name: 'De Nederlandsche Bank: Informatie over hypotheken',
-      url: 'https://www.dnb.nl/',
-    },
-    {
-      name: 'Vereniging Eigen Huis: Hypotheek aflossen',
-      url: 'https://www.eigenhuis.nl/hypotheken/aflossen',
-    },
-  ],
+  bibliography,
+  
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

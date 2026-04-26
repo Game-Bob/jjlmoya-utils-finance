@@ -1,3 +1,4 @@
+﻿import { bibliography } from '../bibliography'
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { MortgageUI } from '../ui';
@@ -87,23 +88,9 @@ export const content: ToolLocaleContent<MortgageUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Häufig gestellte Fragen',
   faq: faqData,
-  bibliographyTitle: 'Quellen und Referenzen',
-  bibliography: [
-    {
-      name: 'Deutsche Bundesbank: Baufinanzierung',
-      url: 'https://www.bundesbank.de/de/aufgaben/unser-geld/baufinanzierung',
-    },
-    {
-      name: 'Verbraucherzentrale: Baufinanzierung planen',
-      url: 'https://www.verbraucherzentrale.de/wissen/geld-versicherungen/bau-und-immobilienfinanzierung',
-    },
-    {
-      name: 'Stiftung Warentest: Immobilienkredit',
-      url: 'https://www.test.de/Immobilienfinanzierung-rechner-4412214-0/',
-    },
-  ],
+  bibliography,
+  
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

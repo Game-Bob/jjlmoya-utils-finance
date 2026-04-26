@@ -93,7 +93,6 @@ export const content: ToolLocaleContent<RentIncreaseUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Sıkça Sorulan Sorular': 'Kaynaklar ve Referanslar',
   ui: {
     labelTitle: 'Kira Artışı Hesaplayıcı',
     labelDescription: 'Kiranızı IPC’ye göre ayarlayın veya %3’lük yasal sınırı güvenle uygulayın.',
@@ -115,7 +114,7 @@ export const content: ToolLocaleContent<RentIncreaseUI> = {
   },
   faq: faqData,
   howTo: howToData,
-  bibliography: bibliographyData,
+  bibliography,
   seo: seoData,
   schemas: [faqSchema, howToSchema, appSchema],
 };

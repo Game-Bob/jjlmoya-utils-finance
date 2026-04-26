@@ -209,7 +209,6 @@ export const content: ToolLocaleContent<CourtFeeCalculatorUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Preguntas Frecuentes': 'Fuentes y Referencias',
   ui: {
     labelTitle: 'Calculadora de Tasas Judiciales',
     labelDescription: 'Calcula el importe exacto del Modelo 696 según jurisdicción, procedimiento y cuantía. Para empresas y profesionales españoles.',
@@ -243,7 +242,7 @@ export const content: ToolLocaleContent<CourtFeeCalculatorUI> = {
   },
   faq: faqData,
   howTo: howToData,
-  bibliography: bibliographyData,
+  bibliography,
   seo: seoData,
   schemas: [faqSchema, howToSchema, appSchema],
 };

@@ -96,7 +96,6 @@ export const content: ToolLocaleContent<LegalInterestRateUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Pertanyaan Umum': 'Sumber Hukum',
   ui: {
     labelTitle: 'Tingkat Suku Bunga Hukum',
     labelDescription: 'Hitung jumlah bunga hukum menurut Undang-Undang Anggaran 2026. Simulator pada tingkat 3,25% untuk Spanyol.',
@@ -122,7 +121,7 @@ export const content: ToolLocaleContent<LegalInterestRateUI> = {
   },
   faq: faqData,
   howTo: howToData,
-  bibliography: bibliographyData,
+  bibliography,
   seo: seoData,
   schemas: [faqSchema, howToSchema, appSchema],
 };

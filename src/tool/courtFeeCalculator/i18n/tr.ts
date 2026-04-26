@@ -97,7 +97,6 @@ export const content: ToolLocaleContent<CourtFeeCalculatorUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Sıkça Sorulan Sorular': 'Kaynaklar ve Referanslar',
   ui: {
     labelTitle: 'Mahkeme Harçları Hesaplayıcı',
     labelDescription: 'Yargı koluna ve prosedüre göre Model 696’nın tam tutarını hesaplayın. Şirketler ve profesyoneller için.',
@@ -131,7 +130,7 @@ export const content: ToolLocaleContent<CourtFeeCalculatorUI> = {
   },
   faq: faqData,
   howTo: howToData,
-  bibliography: bibliographyData,
+  bibliography,
   seo: seoData,
   schemas: [faqSchema, howToSchema, appSchema],
 };

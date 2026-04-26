@@ -1,3 +1,4 @@
+﻿import { bibliography } from '../bibliography'
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { MortgageUI } from '../ui';
@@ -87,19 +88,9 @@ export const content: ToolLocaleContent<MortgageUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Sıkça Sorulan Sorular',
   faq: faqData,
-  bibliographyTitle: 'Kaynaklar ve Referanslar',
-  bibliography: [
-    {
-      name: 'Türkiye Cumhuriyet Merkez Bankası: Krediler hakkında bilgi',
-      url: 'https://www.tcmb.gov.tr/',
-    },
-    {
-      name: 'Bankacılık Düzenleme ve Denetleme Kurumu (BDDK)',
-      url: 'https://www.bddk.org.tr/',
-    },
-  ],
+  bibliography,
+  
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

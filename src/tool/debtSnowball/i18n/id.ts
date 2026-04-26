@@ -81,9 +81,8 @@ export const content: ToolLocaleContent<DebtSnowballUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Pertanyaan Umum',
-  faq: faqData: 'Referensi dan Sumber',
-  bibliography: bibliographyData,
+  faq: faqData,
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

@@ -93,7 +93,6 @@ export const content: ToolLocaleContent<RentIncreaseUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Häufig gestellte Fragen': 'Quellen und Referenzen',
   ui: {
     labelTitle: 'Mietenerhöhungsrechner',
     labelDescription: 'Passen Sie Ihre Miete sicher an den IPC oder das gesetzliche 3 % Limit an.',
@@ -115,7 +114,7 @@ export const content: ToolLocaleContent<RentIncreaseUI> = {
   },
   faq: faqData,
   howTo: howToData,
-  bibliography: bibliographyData,
+  bibliography,
   seo: seoData,
   schemas: [faqSchema, howToSchema, appSchema],
 };

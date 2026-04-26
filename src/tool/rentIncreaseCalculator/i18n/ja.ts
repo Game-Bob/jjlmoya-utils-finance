@@ -93,7 +93,6 @@ export const content: ToolLocaleContent<RentIncreaseUI> = {
   slug,
   title,
   description,
-  faqTitle: 'よくある質問': '情報源とリファレンス',
   ui: {
     labelTitle: '家賃値上げ計算機',
     labelDescription: 'IPCに合わせて家賃を調整するか、3%の法定上限を安全に適用します。',
@@ -115,7 +114,7 @@ export const content: ToolLocaleContent<RentIncreaseUI> = {
   },
   faq: faqData,
   howTo: howToData,
-  bibliography: bibliographyData,
+  bibliography,
   seo: seoData,
   schemas: [faqSchema, howToSchema, appSchema],
 };

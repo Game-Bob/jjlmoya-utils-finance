@@ -96,7 +96,6 @@ export const content: ToolLocaleContent<LegalInterestRateUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Часто залаваемые вопросы': 'Юридические источники',
   ui: {
     labelTitle: 'Ставка законного процента',
     labelDescription: 'Рассчитайте сумму законных процентов согласно Закону о бюджете 2026 года. Симулятор на уровне 3,25% для Испании.',
@@ -122,7 +121,7 @@ export const content: ToolLocaleContent<LegalInterestRateUI> = {
   },
   faq: faqData,
   howTo: howToData,
-  bibliography: bibliographyData,
+  bibliography,
   seo: seoData,
   schemas: [faqSchema, howToSchema, appSchema],
 };

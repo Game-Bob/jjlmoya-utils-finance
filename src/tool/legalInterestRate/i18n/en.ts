@@ -108,7 +108,6 @@ export const content: ToolLocaleContent<LegalInterestRateUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Frequently Asked Questions': 'Legal Sources',
   ui: {
     labelTitle: 'Legal Interest Rate on Money',
     labelDescription: 'Calculate the exact amount of legal interest according to Spain\'s Budget Law 2026. Automatic calculator with 3.25% rate.',
@@ -134,7 +133,7 @@ export const content: ToolLocaleContent<LegalInterestRateUI> = {
   },
   faq: faqData,
   howTo: howToData,
-  bibliography: bibliographyData,
+  bibliography,
   seo: seoData,
   schemas: [faqSchema, howToSchema, appSchema],
 };

@@ -97,7 +97,6 @@ export const content: ToolLocaleContent<CourtFeeCalculatorUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Veelgestelde Vragen': 'Bronnen en Referenties',
   ui: {
     labelTitle: 'Gerechtskosten Calculator',
     labelDescription: 'Bereken het exacte bedrag voor Model 696 per jurisdictie en procedure. Voor bedrijven en professionals.',
@@ -131,7 +130,7 @@ export const content: ToolLocaleContent<CourtFeeCalculatorUI> = {
   },
   faq: faqData,
   howTo: howToData,
-  bibliography: bibliographyData,
+  bibliography,
   seo: seoData,
   schemas: [faqSchema, howToSchema, appSchema],
 };

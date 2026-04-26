@@ -96,7 +96,6 @@ export const content: ToolLocaleContent<LegalInterestRateUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Często Zadawane Pytania': 'Źródła Prawne',
   ui: {
     labelTitle: 'Stopa Odsetek Ustawowych',
     labelDescription: 'Oblicz kwotę odsetek ustawowych zgodnie z ustawą budżetową 2026. Symulator ze stawką 3,25% dla Hiszpanii.',
@@ -122,7 +121,7 @@ export const content: ToolLocaleContent<LegalInterestRateUI> = {
   },
   faq: faqData,
   howTo: howToData,
-  bibliography: bibliographyData,
+  bibliography,
   seo: seoData,
   schemas: [faqSchema, howToSchema, appSchema],
 };

@@ -1,3 +1,4 @@
+﻿import { bibliography } from '../bibliography'
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { MortgageUI } from '../ui';
@@ -87,27 +88,9 @@ export const content: ToolLocaleContent<MortgageUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Frequently Asked Questions',
   faq: faqData,
-  bibliographyTitle: 'Sources & References',
-  bibliography: [
-    {
-      name: 'Federal Reserve: Mortgage Basics and Types',
-      url: 'https://www.federalreserve.gov/pubs/Mortgage_Basics/',
-    },
-    {
-      name: 'HUD: Understanding Mortgages and Financing',
-      url: 'https://www.hud.gov/',
-    },
-    {
-      name: 'Consumer Financial Protection Bureau: Buying a Home Guide',
-      url: 'https://www.consumerfinance.gov/',
-    },
-    {
-      name: 'Investopedia: Mortgage Definition and Amortization Schedules',
-      url: 'https://www.investopedia.com/terms/m/mortgage.asp',
-    },
-  ],
+  bibliography,
+  
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

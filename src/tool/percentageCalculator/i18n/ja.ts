@@ -1,3 +1,4 @@
+﻿import { bibliography } from '../bibliography'
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { PercentageCalculatorUI } from '../ui';
@@ -83,19 +84,9 @@ export const content: ToolLocaleContent<PercentageCalculatorUI> = {
   slug,
   title,
   description,
-  faqTitle: 'よくある質問',
   faq: faqData,
-  bibliographyTitle: '情報源とリファレンス',
-  bibliography: [
-    {
-      name: 'パーセントの計算 - Wikipedia',
-      url: 'https://ja.wikipedia.org/wiki/パーセント',
-    },
-    {
-      name: '基本的な数学の概念 - Khan Academy',
-      url: 'https://ja.khanacademy.org/math/pre-algebra/pre-algebra-ratios-rates/pre-algebra-percents/v/describing-the-meaning-of-percent',
-    },
-  ],
+  bibliography,
+  
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

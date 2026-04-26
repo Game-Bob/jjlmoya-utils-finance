@@ -96,7 +96,6 @@ export const content: ToolLocaleContent<LegalInterestRateUI> = {
   slug,
   title,
   description,
-  faqTitle: '자주 묻는 질문': '법적 출처',
   ui: {
     labelTitle: '법정 이자율',
     labelDescription: '2026년 예산법에 따른 법정 이자액을 계산합니다. 스페인용 3.25% 시뮬레이터입니다.',
@@ -122,7 +121,7 @@ export const content: ToolLocaleContent<LegalInterestRateUI> = {
   },
   faq: faqData,
   howTo: howToData,
-  bibliography: bibliographyData,
+  bibliography,
   seo: seoData,
   schemas: [faqSchema, howToSchema, appSchema],
 };

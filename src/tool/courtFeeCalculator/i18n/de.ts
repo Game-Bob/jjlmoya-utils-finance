@@ -97,7 +97,6 @@ export const content: ToolLocaleContent<CourtFeeCalculatorUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Häufig gestellte Fragen': 'Quellen und Referenzen',
   ui: {
     labelTitle: 'Gerichtskostenrechner',
     labelDescription: 'Berechnen Sie den exakten Betrag für Modell 696 nach Gerichtsbarkeit und Verfahren. Für spanische Unternehmen.',
@@ -131,7 +130,7 @@ export const content: ToolLocaleContent<CourtFeeCalculatorUI> = {
   },
   faq: faqData,
   howTo: howToData,
-  bibliography: bibliographyData,
+  bibliography,
   seo: seoData,
   schemas: [faqSchema, howToSchema, appSchema],
 };

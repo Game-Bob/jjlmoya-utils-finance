@@ -85,9 +85,8 @@ export const content: ToolLocaleContent<IBANBICSwiftUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Frequently Asked Questions',
-  faq: faqData: 'References and Sources',
-  bibliography: bibliographyData,
+  faq: faqData,
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

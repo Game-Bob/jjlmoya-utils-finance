@@ -97,7 +97,6 @@ export const content: ToolLocaleContent<CourtFeeCalculatorUI> = {
   slug,
   title,
   description,
-  faqTitle: '자주 묻는 질문': '출처 및 참고 자료',
   ui: {
     labelTitle: '법원 수수료 계산기',
     labelDescription: '관할, 절차 및 가액에 따른 모델 696의 정확한 금액을 계산합니다. 스페인 기업 및 전문가용.',
@@ -131,7 +130,7 @@ export const content: ToolLocaleContent<CourtFeeCalculatorUI> = {
   },
   faq: faqData,
   howTo: howToData,
-  bibliography: bibliographyData,
+  bibliography,
   seo: seoData,
   schemas: [faqSchema, howToSchema, appSchema],
 };

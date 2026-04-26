@@ -97,7 +97,6 @@ export const content: ToolLocaleContent<CourtFeeCalculatorUI> = {
   slug,
   title,
   description,
-  faqTitle: 'よくある質問': '情報源とリファレンス',
   ui: {
     labelTitle: '裁判手数料計算機',
     labelDescription: '管轄、手続き、訴額に基づいてモデル696の正確な金額を計算します。スペインの企業および専門家向け。',
@@ -131,7 +130,7 @@ export const content: ToolLocaleContent<CourtFeeCalculatorUI> = {
   },
   faq: faqData,
   howTo: howToData,
-  bibliography: bibliographyData,
+  bibliography,
   seo: seoData,
   schemas: [faqSchema, howToSchema, appSchema],
 };

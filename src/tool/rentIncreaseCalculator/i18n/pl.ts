@@ -93,7 +93,6 @@ export const content: ToolLocaleContent<RentIncreaseUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Często zadawane pytania': 'Źródła i odniesienia',
   ui: {
     labelTitle: 'Kalkulator Podwyżki Czynszu',
     labelDescription: 'Zaktualizuj swój czynsz zgodnie z IPC lub bezpiecznie zastosuj ustawowy limit 3%.',
@@ -115,7 +114,7 @@ export const content: ToolLocaleContent<RentIncreaseUI> = {
   },
   faq: faqData,
   howTo: howToData,
-  bibliography: bibliographyData,
+  bibliography,
   seo: seoData,
   schemas: [faqSchema, howToSchema, appSchema],
 };

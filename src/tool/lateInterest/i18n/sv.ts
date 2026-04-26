@@ -1,3 +1,4 @@
+﻿import { bibliography } from '../bibliography'
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { LateInterestUI } from '../ui';
@@ -88,23 +89,9 @@ export const content: ToolLocaleContent<LateInterestUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Vanliga frågor',
   faq: faqData,
-  bibliographyTitle: 'Källor och referenser',
-  bibliography: [
-    {
-      name: 'Spansk lag 3/2004 mot sena betalningar',
-      url: 'https://www.boe.es/',
-    },
-    {
-      name: 'Banco de España: Räntesatser',
-      url: 'https://www.bde.es/',
-    },
-    {
-      name: 'Beräkning av sammansatt ränta',
-      url: 'https://www.investopedia.com/terms/c/compoundinterest.asp',
-    },
-  ],
+  bibliography,
+  
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

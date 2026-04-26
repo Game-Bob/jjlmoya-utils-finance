@@ -116,7 +116,6 @@ export const content: ToolLocaleContent<RentIncreaseUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Frequently Asked Questions': 'Sources and References',
   ui: {
     labelTitle: 'Rent Increase Calculator',
     labelDescription: 'Adjust your rent based on IPC or apply the legal 3% cap safely and quickly.',
@@ -138,7 +137,7 @@ export const content: ToolLocaleContent<RentIncreaseUI> = {
   },
   faq: faqData,
   howTo: howToData,
-  bibliography: bibliographyData,
+  bibliography,
   seo: seoData,
   schemas: [faqSchema, howToSchema, appSchema],
 };

@@ -120,7 +120,6 @@ export const content: ToolLocaleContent<LotteryOptimizerUI> = {
   slug,
   title,
   description,
-  faqTitle: '常见问题': '来源与参考资料',
   ui: {
     gameTranslations,
     labelTitle: '彩票优化器',
@@ -156,7 +155,7 @@ export const content: ToolLocaleContent<LotteryOptimizerUI> = {
   },
   faq: faqData,
   howTo: howToData,
-  bibliography: bibliographyData,
+  bibliography,
   seo: seoData,
   schemas: [faqSchema, howToSchema, appSchema],
 };

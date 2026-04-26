@@ -96,7 +96,6 @@ export const content: ToolLocaleContent<LegalInterestRateUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Veelgestelde Vragen': 'Wettelijke Bronnen',
   ui: {
     labelTitle: 'Wettelijk Rentetarief',
     labelDescription: 'Bereken de rente volgens de Begrotingswet 2026. Simulator met 3,25% voor Spanje.',
@@ -122,7 +121,7 @@ export const content: ToolLocaleContent<LegalInterestRateUI> = {
   },
   faq: faqData,
   howTo: howToData,
-  bibliography: bibliographyData,
+  bibliography,
   seo: seoData,
   schemas: [faqSchema, howToSchema, appSchema],
 };

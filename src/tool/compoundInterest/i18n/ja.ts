@@ -1,3 +1,4 @@
+﻿import { bibliography } from '../bibliography'
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { CompoundInterestUI } from '../ui';
@@ -87,23 +88,9 @@ export const content: ToolLocaleContent<CompoundInterestUI> = {
   slug,
   title,
   description,
-  faqTitle: 'よくある質問',
   faq: faqData,
-  bibliographyTitle: '情報源とリファレンス',
-  bibliography: [
-    {
-      name: 'Investopedia: Compound Interest Definition',
-      url: 'https://www.investopedia.com/terms/c/compoundinterest.asp',
-    },
-    {
-      name: 'Investopedia: Rule of 72',
-      url: 'https://www.investopedia.com/terms/r/ruleof72.asp',
-    },
-    {
-      name: '複利の計算 - Wikipedia',
-      url: 'https://ja.wikipedia.org/wiki/複利',
-    },
-  ],
+  bibliography,
+  
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

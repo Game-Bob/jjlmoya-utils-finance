@@ -209,7 +209,6 @@ export const content: ToolLocaleContent<CourtFeeCalculatorUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Questions Fréquemment Posées': 'Sources et Références',
   ui: {
     labelTitle: 'Calculatrice de Frais Judiciaires',
     labelDescription: 'Calculez le montant exact du formulaire 696 selon la juridiction, la procédure et le montant du litige. Pour les entreprises et professionnels espagnols.',
@@ -243,7 +242,7 @@ export const content: ToolLocaleContent<CourtFeeCalculatorUI> = {
   },
   faq: faqData,
   howTo: howToData,
-  bibliography: bibliographyData,
+  bibliography,
   seo: seoData,
   schemas: [faqSchema, howToSchema, appSchema],
 };

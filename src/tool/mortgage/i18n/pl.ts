@@ -1,3 +1,4 @@
+﻿import { bibliography } from '../bibliography'
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { MortgageUI } from '../ui';
@@ -87,19 +88,9 @@ export const content: ToolLocaleContent<MortgageUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Często Zadawane Pytania',
   faq: faqData,
-  bibliographyTitle: 'Źródła i Odniesienia',
-  bibliography: [
-    {
-      name: 'Komisja Nadzoru Finansowego (KNF): Kredyty hipoteczne',
-      url: 'https://www.knf.gov.pl/',
-    },
-    {
-      name: 'Narodowy Bank Polski: Informacje o stopach procentowych',
-      url: 'https://www.nbp.pl/',
-    },
-  ],
+  bibliography,
+  
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

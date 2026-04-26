@@ -93,7 +93,6 @@ export const content: ToolLocaleContent<RentIncreaseUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Vanliga frågor': 'Källor och referenser',
   ui: {
     labelTitle: 'Kalkylator för hyreshöjning',
     labelDescription: 'Justera din hyra säkert enligt IPC eller tillämpa den lagstadgade gränsen på 3 %.',
@@ -115,7 +114,7 @@ export const content: ToolLocaleContent<RentIncreaseUI> = {
   },
   faq: faqData,
   howTo: howToData,
-  bibliography: bibliographyData,
+  bibliography,
   seo: seoData,
   schemas: [faqSchema, howToSchema, appSchema],
 };

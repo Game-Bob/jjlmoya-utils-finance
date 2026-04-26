@@ -96,7 +96,6 @@ export const content: ToolLocaleContent<LegalInterestRateUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Vanliga frågor': 'Juridiska källor',
   ui: {
     labelTitle: 'Lagstadgad räntesats',
     labelDescription: 'Beräkna lagstadgad ränta enligt budgetlagen 2026. Simulator med 3,25 % för Spanien.',
@@ -122,7 +121,7 @@ export const content: ToolLocaleContent<LegalInterestRateUI> = {
   },
   faq: faqData,
   howTo: howToData,
-  bibliography: bibliographyData,
+  bibliography,
   seo: seoData,
   schemas: [faqSchema, howToSchema, appSchema],
 };

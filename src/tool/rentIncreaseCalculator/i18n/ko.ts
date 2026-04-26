@@ -93,7 +93,6 @@ export const content: ToolLocaleContent<RentIncreaseUI> = {
   slug,
   title,
   description,
-  faqTitle: '자주 묻는 질문': '출처 및 참고 자료',
   ui: {
     labelTitle: '임대료 인상 계산기',
     labelDescription: 'IPC에 맞춰 임대료를 조정하거나 3% 법적 상한선을 안전하게 적용해 보세요.',
@@ -115,7 +114,7 @@ export const content: ToolLocaleContent<RentIncreaseUI> = {
   },
   faq: faqData,
   howTo: howToData,
-  bibliography: bibliographyData,
+  bibliography,
   seo: seoData,
   schemas: [faqSchema, howToSchema, appSchema],
 };

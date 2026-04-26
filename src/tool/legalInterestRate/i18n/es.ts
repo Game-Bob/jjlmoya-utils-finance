@@ -108,7 +108,6 @@ export const content: ToolLocaleContent<LegalInterestRateUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Preguntas Frecuentes': 'Fuentes Legales',
   ui: {
     labelTitle: 'Tipo de Interés Legal del Dinero',
     labelDescription: 'Calcula el importe exacto de intereses legales según la Ley de Presupuestos 2026. Simulador con tasa al 3,25% para España.',
@@ -134,7 +133,7 @@ export const content: ToolLocaleContent<LegalInterestRateUI> = {
   },
   faq: faqData,
   howTo: howToData,
-  bibliography: bibliographyData,
+  bibliography,
   seo: seoData,
   schemas: [faqSchema, howToSchema, appSchema],
 };

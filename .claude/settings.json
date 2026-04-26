@@ -24,7 +24,11 @@
       "Bash(sed -i \"s/const slug = 'xibanya-tonghuopengzhang'/const slug = 'inflation-calculator-spain'/g\" src/tool/inflation/i18n/zh.ts)",
       "Bash(sed -i \"s/const slug = 'baifenbi-jisuanqi'/const slug = 'percentage-calculator'/g\" src/tool/percentageCalculator/i18n/zh.ts)",
       "Bash(sed -i \"s/const slug = 'xibanya-zhi-na-jin-ji-suan-qi'/const slug = 'late-interest-calculator'/g\" src/tool/lateInterest/i18n/zh.ts)",
-      "Bash(ls -1 src/tool/compoundInterest/i18n/*.ts)"
+      "Bash(ls -1 src/tool/compoundInterest/i18n/*.ts)",
+      "Read(//d/code/jjlmoya-utils-finance/src/tool/compoundInterest/i18n/**)",
+      "Read(//d/code/jjlmoya-utils-finance/src/tool/**)",
+      "Read(//d/code/jjlmoya-utils-finance/src/tool/courtFeeCalculator/i18n/**)",
+      "Read(//d/code/jjlmoya-utils-finance/src/tests//**)"
     ]
   }
 }

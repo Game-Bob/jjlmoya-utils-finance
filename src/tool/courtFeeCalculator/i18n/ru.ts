@@ -97,7 +97,6 @@ export const content: ToolLocaleContent<CourtFeeCalculatorUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Часто задаваемые вопросы': 'Источники и ссылки',
   ui: {
     labelTitle: 'Калькулятор судебных пошлин',
     labelDescription: 'Рассчитайте точную сумму формы 696 по юрисдикции и процедуре. Для компаний и профессионалов.',
@@ -131,7 +130,7 @@ export const content: ToolLocaleContent<CourtFeeCalculatorUI> = {
   },
   faq: faqData,
   howTo: howToData,
-  bibliography: bibliographyData,
+  bibliography,
   seo: seoData,
   schemas: [faqSchema, howToSchema, appSchema],
 };

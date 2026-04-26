@@ -1,3 +1,4 @@
+﻿import { bibliography } from '../bibliography'
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { CompoundInterestUI } from '../ui';
@@ -87,27 +88,9 @@ export const content: ToolLocaleContent<CompoundInterestUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Questions Fréquentes',
   faq: faqData,
-  bibliographyTitle: 'Sources et Références',
-  bibliography: [
-    {
-      name: 'Investopedia: Compound Interest Definition',
-      url: 'https://www.investopedia.com/terms/c/compoundinterest.asp',
-    },
-    {
-      name: 'Investopedia: Rule of 72',
-      url: 'https://www.investopedia.com/terms/r/ruleof72.asp',
-    },
-    {
-      name: 'Khan Academy: Interest and Debt',
-      url: 'https://www.khanacademy.org/economics-finance-domain/core-finance/interest-tutorial',
-    },
-    {
-      name: 'Banque de France : Éducation financière',
-      url: 'https://www.banque-france.fr/fr/la-banque-de-france/notre-mission/education-economique-financiere-et-statistique',
-    },
-  ],
+  bibliography,
+  
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

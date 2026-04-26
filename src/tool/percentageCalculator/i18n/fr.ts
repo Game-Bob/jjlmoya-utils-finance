@@ -1,3 +1,4 @@
+﻿import { bibliography } from '../bibliography'
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { PercentageCalculatorUI } from '../ui';
@@ -83,23 +84,9 @@ export const content: ToolLocaleContent<PercentageCalculatorUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Questions Fréquemment Posées',
   faq: faqData,
-  bibliographyTitle: 'Sources et Références',
-  bibliography: [
-    {
-      name: 'Calcul des Pourcentages: Wikipédia',
-      url: 'https://fr.wikipedia.org/wiki/Pourcentage',
-    },
-    {
-      name: 'Concepts Mathématiques de Base: Khan Academy',
-      url: 'https://fr.khanacademy.org/math/pre-algebra',
-    },
-    {
-      name: 'Direction Générale des Finances Publiques: Guides de TVA',
-      url: 'https://www.impots.gouv.fr/',
-    },
-  ],
+  bibliography,
+  
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

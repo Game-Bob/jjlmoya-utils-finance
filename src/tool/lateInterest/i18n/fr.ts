@@ -1,3 +1,4 @@
+﻿import { bibliography } from '../bibliography'
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { LateInterestUI } from '../ui';
@@ -88,23 +89,9 @@ export const content: ToolLocaleContent<LateInterestUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Questions Fréquemment Posées',
   faq: faqData,
-  bibliographyTitle: 'Sources et Références',
-  bibliography: [
-    {
-      name: 'Légifrance: Code du Commerce',
-      url: 'https://www.legifrance.gouv.fr/',
-    },
-    {
-      name: 'Banque de France: Taux Directeurs',
-      url: 'https://www.banque-france.fr/',
-    },
-    {
-      name: 'Calcul des Intérêts Composés',
-      url: 'https://www.investopedia.com/terms/c/compoundinterest.asp',
-    },
-  ],
+  bibliography,
+  
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

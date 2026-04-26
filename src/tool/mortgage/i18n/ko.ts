@@ -1,3 +1,4 @@
+﻿import { bibliography } from '../bibliography'
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { MortgageUI } from '../ui';
@@ -87,19 +88,9 @@ export const content: ToolLocaleContent<MortgageUI> = {
   slug,
   title,
   description,
-  faqTitle: '자주 묻는 질문',
   faq: faqData,
-  bibliographyTitle: '출처 및 참고 자료',
-  bibliography: [
-    {
-      name: '금융감독원: 주택담보대출 안내',
-      url: 'https://www.fss.or.kr/',
-    },
-    {
-      name: '한국주택금융공사: 대출 상품 정보',
-      url: 'https://www.hf.go.kr/',
-    },
-  ],
+  bibliography,
+  
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

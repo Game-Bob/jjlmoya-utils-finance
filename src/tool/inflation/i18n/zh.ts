@@ -1,3 +1,4 @@
+﻿import { bibliography } from '../bibliography'
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { InflationUI } from '../ui';
@@ -92,23 +93,9 @@ export const content: ToolLocaleContent<InflationUI> = {
   slug,
   title,
   description,
-  faqTitle: '关于通货膨胀的常见问题',
   faq: faqData,
-  bibliographyTitle: '官方来源与参考资料',
-  bibliography: [
-    {
-      name: 'INE：消费者物价指数（西班牙）',
-      url: 'https://www.ine.es/dyngs/INEsite/es/catalom.htm?cid=1254736116996',
-    },
-    {
-      name: '西班牙银行 (Banco de España)：通货膨胀分析',
-      url: 'https://www.bde.es/',
-    },
-    {
-      name: '欧洲央行 (ECB)：货币政策与价格',
-      url: 'https://www.ecb.europa.eu/',
-    },
-  ],
+  bibliography,
+  
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

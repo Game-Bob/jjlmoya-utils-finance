@@ -97,7 +97,6 @@ export const content: ToolLocaleContent<CourtFeeCalculatorUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Pertanyaan Umum': 'Sumber dan Referensi',
   ui: {
     labelTitle: 'Kalkulator Biaya Pengadilan',
     labelDescription: 'Hitung jumlah persis Formulir 696 berdasarkan yurisdiksi dan prosedur. Untuk perusahaan dan profesional.',
@@ -131,7 +130,7 @@ export const content: ToolLocaleContent<CourtFeeCalculatorUI> = {
   },
   faq: faqData,
   howTo: howToData,
-  bibliography: bibliographyData,
+  bibliography,
   seo: seoData,
   schemas: [faqSchema, howToSchema, appSchema],
 };

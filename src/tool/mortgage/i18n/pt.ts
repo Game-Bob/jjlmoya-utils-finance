@@ -1,3 +1,4 @@
+﻿import { bibliography } from '../bibliography'
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { MortgageUI } from '../ui';
@@ -87,19 +88,9 @@ export const content: ToolLocaleContent<MortgageUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Perguntas Frequentes',
   faq: faqData,
-  bibliographyTitle: 'Fontes e Referências',
-  bibliography: [
-    {
-      name: 'Banco de Portugal: Portal do Cliente Bancário',
-      url: 'https://clientebancario.bportugal.pt/',
-    },
-    {
-      name: 'DECO: Simulador de crédito habitação',
-      url: 'https://www.deco.proteste.pt/dinheiro/credito-habitacao',
-    },
-  ],
+  bibliography,
+  
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

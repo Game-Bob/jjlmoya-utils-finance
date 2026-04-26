@@ -1,3 +1,4 @@
+﻿import { bibliography } from '../bibliography'
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { LateInterestUI } from '../ui';
@@ -88,23 +89,9 @@ export const content: ToolLocaleContent<LateInterestUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Domande Frequenti',
   faq: faqData,
-  bibliographyTitle: 'Fonti e Riferimenti',
-  bibliography: [
-    {
-      name: 'Legge 3/2004 contro la Morosità (Spagna)',
-      url: 'https://www.boe.es/',
-    },
-    {
-      name: 'Banco de España: Tassi di interesse',
-      url: 'https://www.bde.es/',
-    },
-    {
-      name: 'Calcolo dell’Interesse Composto',
-      url: 'https://www.investopedia.com/terms/c/compoundinterest.asp',
-    },
-  ],
+  bibliography,
+  
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

@@ -93,7 +93,6 @@ export const content: ToolLocaleContent<RentIncreaseUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Veelgestelde Vragen': 'Bronnen en Referenties',
   ui: {
     labelTitle: 'Huurverhoging Calculator',
     labelDescription: 'Pas uw huur veilig aan de IPC aan of pas de wettelijke limiet van 3% toe.',
@@ -115,7 +114,7 @@ export const content: ToolLocaleContent<RentIncreaseUI> = {
   },
   faq: faqData,
   howTo: howToData,
-  bibliography: bibliographyData,
+  bibliography,
   seo: seoData,
   schemas: [faqSchema, howToSchema, appSchema],
 };

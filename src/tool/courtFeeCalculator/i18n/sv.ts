@@ -97,7 +97,6 @@ export const content: ToolLocaleContent<CourtFeeCalculatorUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Vanliga frågor': 'Källor och referenser',
   ui: {
     labelTitle: 'Kalkylator för domstolsavgifter',
     labelDescription: 'Beräkna det exakta beloppet för modell 696 baserat på jurisdiktion och förfarande. För företag och yrkesverksamma.',
@@ -131,7 +130,7 @@ export const content: ToolLocaleContent<CourtFeeCalculatorUI> = {
   },
   faq: faqData,
   howTo: howToData,
-  bibliography: bibliographyData,
+  bibliography,
   seo: seoData,
   schemas: [faqSchema, howToSchema, appSchema],
 };

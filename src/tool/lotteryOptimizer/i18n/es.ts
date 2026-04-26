@@ -224,7 +224,6 @@ export const content: ToolLocaleContent<LotteryOptimizerUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Preguntas Frecuentes': 'Fuentes y Referencias',
   ui: {
     gameTranslations,
     labelTitle: 'Optimizador de Loterías',
@@ -260,7 +259,7 @@ export const content: ToolLocaleContent<LotteryOptimizerUI> = {
   },
   faq: faqData,
   howTo: howToData,
-  bibliography: bibliographyData,
+  bibliography,
   seo: seoData,
   schemas: [faqSchema, howToSchema, appSchema],
 };

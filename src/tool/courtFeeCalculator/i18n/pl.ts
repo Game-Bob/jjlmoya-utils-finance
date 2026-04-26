@@ -97,7 +97,6 @@ export const content: ToolLocaleContent<CourtFeeCalculatorUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Często zadawane pytania': 'Źródła i odniesienia',
   ui: {
     labelTitle: 'Kalkulator Opłat Sądowych',
     labelDescription: 'Oblicz dokładną kwotę Modelu 696 według jurysdykcji i postępowania. Dla firm i profesjonalistów.',
@@ -131,7 +130,7 @@ export const content: ToolLocaleContent<CourtFeeCalculatorUI> = {
   },
   faq: faqData,
   howTo: howToData,
-  bibliography: bibliographyData,
+  bibliography,
   seo: seoData,
   schemas: [faqSchema, howToSchema, appSchema],
 };

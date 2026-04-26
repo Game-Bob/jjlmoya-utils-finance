@@ -96,7 +96,6 @@ export const content: ToolLocaleContent<LegalInterestRateUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Häufig gestellte Fragen': 'Rechtliche Quellen',
   ui: {
     labelTitle: 'Gesetzlicher Zinssatz',
     labelDescription: 'Berechnen Sie die Zinsen gemäß dem Haushaltsgesetz 2026. Simulator mit 3,25 % für Spanien.',
@@ -122,7 +121,7 @@ export const content: ToolLocaleContent<LegalInterestRateUI> = {
   },
   faq: faqData,
   howTo: howToData,
-  bibliography: bibliographyData,
+  bibliography,
   seo: seoData,
   schemas: [faqSchema, howToSchema, appSchema],
 };

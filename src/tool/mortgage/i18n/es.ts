@@ -1,3 +1,4 @@
+﻿import { bibliography } from '../bibliography'
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { MortgageUI } from '../ui';
@@ -87,27 +88,9 @@ export const content: ToolLocaleContent<MortgageUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Preguntas Frecuentes',
   faq: faqData,
-  bibliographyTitle: 'Fuentes y Referencias',
-  bibliography: [
-    {
-      name: 'Banco de España: Portal del Cliente Bancario',
-      url: 'https://www.bde.es/bde/es/secciones/servicios/Particulares_y_e/Clientesbancarios/',
-    },
-    {
-      name: 'Banco de España: Información sobre hipotecas',
-      url: 'https://www.bde.es/bde/es/secciones/servicios/Particulares_y_e/Clientesbancarios/Productos_y_s/Hipotecas/',
-    },
-    {
-      name: 'AEPD: Guía de protección de datos en operaciones de crédito',
-      url: 'https://www.aepd.es/',
-    },
-    {
-      name: 'OCU: Calculadora hipotecaria y guía de compra',
-      url: 'https://www.ocu.org/dinero/hipotecas/',
-    },
-  ],
+  bibliography,
+  
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

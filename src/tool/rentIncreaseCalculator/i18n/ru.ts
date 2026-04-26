@@ -93,7 +93,6 @@ export const content: ToolLocaleContent<RentIncreaseUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Часто задаваемые вопросы': 'Источники и ссылки',
   ui: {
     labelTitle: 'Калькулятор повышения аренды',
     labelDescription: 'Безопасно корректируйте аренду в соответствии с IPC или применяйте законный лимит 3%.',
@@ -115,7 +114,7 @@ export const content: ToolLocaleContent<RentIncreaseUI> = {
   },
   faq: faqData,
   howTo: howToData,
-  bibliography: bibliographyData,
+  bibliography,
   seo: seoData,
   schemas: [faqSchema, howToSchema, appSchema],
 };

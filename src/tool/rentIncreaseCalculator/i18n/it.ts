@@ -93,7 +93,6 @@ export const content: ToolLocaleContent<RentIncreaseUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Domande Frequenti': 'Fonti e Riferimenti',
   ui: {
     labelTitle: 'Calcolatore Aumento Affitto',
     labelDescription: 'Aggiorna il tuo canone in base all’IPC o applica il limite legale del 3% in modo sicuro.',
@@ -115,7 +114,7 @@ export const content: ToolLocaleContent<RentIncreaseUI> = {
   },
   faq: faqData,
   howTo: howToData,
-  bibliography: bibliographyData,
+  bibliography,
   seo: seoData,
   schemas: [faqSchema, howToSchema, appSchema],
 };

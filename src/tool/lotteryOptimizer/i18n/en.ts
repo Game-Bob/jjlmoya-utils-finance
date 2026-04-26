@@ -131,7 +131,6 @@ export const content: ToolLocaleContent<LotteryOptimizerUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Frequently Asked Questions': 'Sources and References',
   ui: {
     gameTranslations,
     labelTitle: 'Lottery Optimizer',
@@ -167,7 +166,7 @@ export const content: ToolLocaleContent<LotteryOptimizerUI> = {
   },
   faq: faqData,
   howTo: howToData,
-  bibliography: bibliographyData,
+  bibliography,
   seo: seoData,
   schemas: [faqSchema, howToSchema, appSchema],
 };

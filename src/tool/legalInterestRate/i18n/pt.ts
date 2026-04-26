@@ -96,7 +96,6 @@ export const content: ToolLocaleContent<LegalInterestRateUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Perguntas Frequentes': 'Fontes Legais',
   ui: {
     labelTitle: 'Taxa de Juro Legal',
     labelDescription: 'Calcule o montante dos juros legais conforme a Lei de Orçamento 2026. Simulador a 3,25% para Espanha.',
@@ -122,7 +121,7 @@ export const content: ToolLocaleContent<LegalInterestRateUI> = {
   },
   faq: faqData,
   howTo: howToData,
-  bibliography: bibliographyData,
+  bibliography,
   seo: seoData,
   schemas: [faqSchema, howToSchema, appSchema],
 };

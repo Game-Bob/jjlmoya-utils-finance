@@ -1,3 +1,4 @@
+﻿import { bibliography } from '../bibliography'
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { MortgageUI } from '../ui';
@@ -87,23 +88,9 @@ export const content: ToolLocaleContent<MortgageUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Domande Frequenti',
   faq: faqData,
-  bibliographyTitle: 'Fonti e Riferimenti',
-  bibliography: [
-    {
-      name: 'Banca d’Italia: Portale del Cliente Bancario',
-      url: 'https://www.bancaditalia.it/pubblicazioni/guide-bi/index.html',
-    },
-    {
-      name: 'Banca d’Italia: Informazioni sui mutui',
-      url: 'https://www.bancaditalia.it/servizi-cittadino/servizi/esposti/guide/Guida_Mutuo_Ipotecario.pdf',
-    },
-    {
-      name: 'Altroconsumo: Calcolatore mutuo e guida all’acquisto',
-      url: 'https://www.altroconsumo.it/soldi/mutui',
-    },
-  ],
+  bibliography,
+  
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

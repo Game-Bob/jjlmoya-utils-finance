@@ -1,3 +1,4 @@
+﻿import { bibliography } from '../bibliography'
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { MortgageUI } from '../ui';
@@ -87,19 +88,9 @@ export const content: ToolLocaleContent<MortgageUI> = {
   slug,
   title,
   description,
-  faqTitle: '常见问题',
   faq: faqData,
-  bibliographyTitle: '来源与参考',
-  bibliography: [
-    {
-      name: '中国人民银行：个人住房贷款政策',
-      url: 'http://www.pbc.gov.cn/',
-    },
-    {
-      name: '房贷利率查询与建议',
-      url: 'https://zh.wikipedia.org/wiki/抵押贷款',
-    },
-  ],
+  bibliography,
+  
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

@@ -96,7 +96,6 @@ export const content: ToolLocaleContent<LegalInterestRateUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Sıkça Sorulan Sorular': 'Yasal Kaynaklar',
   ui: {
     labelTitle: 'Yasal Faiz Oranı',
     labelDescription: '2026 Bütçe Kanunu’na göre yasal faiz miktarını hesaplayın. İspanya için %3,25 oranında simülatör.',
@@ -122,7 +121,7 @@ export const content: ToolLocaleContent<LegalInterestRateUI> = {
   },
   faq: faqData,
   howTo: howToData,
-  bibliography: bibliographyData,
+  bibliography,
   seo: seoData,
   schemas: [faqSchema, howToSchema, appSchema],
 };

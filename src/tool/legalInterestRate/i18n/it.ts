@@ -96,7 +96,6 @@ export const content: ToolLocaleContent<LegalInterestRateUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Domande Frequenti': 'Fonti Legali',
   ui: {
     labelTitle: 'Tasso di Interesse Legale',
     labelDescription: 'Calcola l’importo degli interessi legali secondo la Legge di Bilancio 2026. Simulatore al 3,25% per la Spagna.',
@@ -122,7 +121,7 @@ export const content: ToolLocaleContent<LegalInterestRateUI> = {
   },
   faq: faqData,
   howTo: howToData,
-  bibliography: bibliographyData,
+  bibliography,
   seo: seoData,
   schemas: [faqSchema, howToSchema, appSchema],
 };

@@ -108,7 +108,6 @@ export const content: ToolLocaleContent<LegalInterestRateUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Questions Fréquemment Posées': 'Sources Légales',
   ui: {
     labelTitle: 'Taux d\'Intérêt Légal de l\'Argent',
     labelDescription: 'Calculez le montant exact des intérêts légaux selon la Loi budgétaire 2026 de l\'Espagne. Calculatrice automatique avec taux de 3,25%.',
@@ -134,7 +133,7 @@ export const content: ToolLocaleContent<LegalInterestRateUI> = {
   },
   faq: faqData,
   howTo: howToData,
-  bibliography: bibliographyData,
+  bibliography,
   seo: seoData,
   schemas: [faqSchema, howToSchema, appSchema],
 };

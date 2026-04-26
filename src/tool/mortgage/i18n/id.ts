@@ -1,3 +1,4 @@
+﻿import { bibliography } from '../bibliography'
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { MortgageUI } from '../ui';
@@ -87,19 +88,9 @@ export const content: ToolLocaleContent<MortgageUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Pertanyaan Umum',
   faq: faqData,
-  bibliographyTitle: 'Sumber dan Referensi',
-  bibliography: [
-    {
-      name: 'Otoritas Jasa Keuangan (OJK): Kredit Pemilikan Rumah (KPR)',
-      url: 'https://www.ojk.go.id/',
-    },
-    {
-      name: 'Bank Indonesia: Informasi Suku Bunga',
-      url: 'https://www.bi.go.id/',
-    },
-  ],
+  bibliography,
+  
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

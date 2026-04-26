@@ -1,3 +1,4 @@
+﻿import { bibliography } from '../bibliography'
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { InflationUI } from '../ui';
@@ -92,23 +93,9 @@ export const content: ToolLocaleContent<InflationUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Często zadawane pytania o inflację',
   faq: faqData,
-  bibliographyTitle: 'Oficjalne źródła i odniesienia',
-  bibliography: [
-    {
-      name: 'INE: Wskaźnik Cen Konsumpcyjnych (Hiszpania)',
-      url: 'https://www.ine.es/dyngs/INEsite/es/catalom.htm?cid=1254736116996',
-    },
-    {
-      name: 'Banco de España: Analiza inflacji',
-      url: 'https://www.bde.es/',
-    },
-    {
-      name: 'EBC: Polityka pieniężna i ceny',
-      url: 'https://www.ecb.europa.eu/',
-    },
-  ],
+  bibliography,
+  
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

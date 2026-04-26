@@ -1,3 +1,4 @@
+﻿import { bibliography } from '../bibliography'
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { LateInterestUI } from '../ui';
@@ -88,23 +89,9 @@ export const content: ToolLocaleContent<LateInterestUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Często Zadawane Pytania',
   faq: faqData,
-  bibliographyTitle: 'Źródła i Odniesienia',
-  bibliography: [
-    {
-      name: 'Hiszpańska Ustawa 3/2004 o Zwalczaniu Opóźnień w Płatnościach',
-      url: 'https://www.boe.es/',
-    },
-    {
-      name: 'Banco de España: Stopy Procentowe',
-      url: 'https://www.bde.es/',
-    },
-    {
-      name: 'Obliczanie Odsetek Składanych',
-      url: 'https://www.investopedia.com/terms/c/compoundinterest.asp',
-    },
-  ],
+  bibliography,
+  
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

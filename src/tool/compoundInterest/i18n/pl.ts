@@ -1,3 +1,4 @@
+﻿import { bibliography } from '../bibliography'
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { CompoundInterestUI } from '../ui';
@@ -87,23 +88,8 @@ export const content: ToolLocaleContent<CompoundInterestUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Często zadawane pytania',
   faq: faqData,
-  bibliographyTitle: 'Źródła i referencje',
-  bibliography: [
-    {
-      name: 'Investopedia: Compound Interest Definition',
-      url: 'https://www.investopedia.com/terms/c/compoundinterest.asp',
-    },
-    {
-      name: 'Investopedia: Rule of 72',
-      url: 'https://www.investopedia.com/terms/r/ruleof72.asp',
-    },
-    {
-      name: 'Procent składany - Wikipedia',
-      url: 'https://pl.wikipedia.org/wiki/Procent_składany',
-    },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

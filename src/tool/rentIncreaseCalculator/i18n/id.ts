@@ -93,7 +93,6 @@ export const content: ToolLocaleContent<RentIncreaseUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Pertanyaan Umum': 'Sumber dan Referensi',
   ui: {
     labelTitle: 'Kalkulator Kenaikan Sewa',
     labelDescription: 'Sesuaikan biaya sewa Anda sesuai dengan IPC atau terapkan batas hukum 3% dengan aman.',
@@ -115,7 +114,7 @@ export const content: ToolLocaleContent<RentIncreaseUI> = {
   },
   faq: faqData,
   howTo: howToData,
-  bibliography: bibliographyData,
+  bibliography,
   seo: seoData,
   schemas: [faqSchema, howToSchema, appSchema],
 };

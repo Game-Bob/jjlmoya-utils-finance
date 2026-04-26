@@ -1,3 +1,4 @@
+﻿import { bibliography } from '../bibliography'
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { MortgageUI } from '../ui';
@@ -87,19 +88,9 @@ export const content: ToolLocaleContent<MortgageUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Vanliga frågor',
   faq: faqData,
-  bibliographyTitle: 'Källor och referenser',
-  bibliography: [
-    {
-      name: 'Konsumenternas: Om bolån',
-      url: 'https://www.konsumenternas.se/lan--betalningar/lan/bolan/',
-    },
-    {
-      name: 'Finansinspektionen: Bolån och amorteringskrav',
-      url: 'https://www.fi.se/',
-    },
-  ],
+  bibliography,
+  
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [
