@@ -19,10 +19,40 @@ export const ui: ProfitabilityUI = {
   labelCopied: 'Disalin!',
 };
 
+const slug = 'kalkulator-profitabilitas-investasi-roi-cagr';
+const title = 'Kalkulator Profitabilitas: ROI & CAGR';
+const description = 'Analisis kinerja investasi Anda. Hitung ROI dan CAGR untuk memahami keuntungan riil Anda.';
+
+const faq = [
+  {
+    question: 'Berapa CAGR yang baik?',
+    answer: 'Secara historis S&P 500 memberikan imbal hasil sekitar 7-10% per tahun.',
+  },
+  {
+    question: 'Mengapa CAGR saya berbeda dari ROI total?',
+    answer: 'ROI adalah total pengembalian tanpa memandang waktu. CAGR adalah tingkat tahunan.',
+  },
+];
+
+const howTo = [
+  {
+    name: 'Masukkan modal awal',
+    text: 'Masukkan jumlah uang yang Anda investasikan semula.',
+  },
+  {
+    name: 'Masukkan nilai akhir',
+    text: 'Masukkan nilai pasar saat ini.',
+  },
+  {
+    name: 'Atur durasi waktu',
+    text: 'Tentukan berapa lama Anda memegang investasi tersebut.',
+  },
+];
+
 export const content: ToolLocaleContent<ProfitabilityUI> = {
-  slug: 'kalkulator-profitabilitas-investasi-roi-cagr',
-  title: 'Kalkulator Profitabilitas: ROI & CAGR',
-  description: 'Analisis kinerja investasi Anda. Hitung ROI dan CAGR untuk memahami keuntungan riil Anda.',
+  slug,
+  title,
+  description,
   ui,
   seo: [
     {
@@ -35,30 +65,48 @@ export const content: ToolLocaleContent<ProfitabilityUI> = {
       html: '<strong>ROI</strong> menunjukkan total persentase keuntungan, tetapi mengabaikan waktu. <strong>CAGR</strong> lebih baik untuk analisis jangka panjang.',
     },
   ],
-  faq: [
-    {
-      question: 'Berapa CAGR yang baik?',
-      answer: 'Secara historis S&P 500 memberikan imbal hasil sekitar 7-10% per tahun.',
-    },
-  ],
+  faq,
   bibliography: [
     {
       name: 'Definisi ROI - Investopedia',
       url: 'https://www.investopedia.com/terms/r/returnoninvestment.asp',
     },
   ],
-  howTo: [
-    {
-      name: 'Masukkan modal awal',
-      text: 'Masukkan jumlah uang yang Anda investasikan semula.',
-    },
-  ],
+  howTo,
   schemas: [
     {
       '@context': 'https://schema.org',
       '@type': 'FinancialProduct',
-      name: 'Kalkulator Profitabilitas',
-      description: 'Hitung ROI dan CAGR.',
+      name: title,
+      description,
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: faq.map((f) => ({
+        '@type': 'Question',
+        name: f.question,
+        acceptedAnswer: { '@type': 'Answer', text: f.answer },
+      })),
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'HowTo',
+      name: title,
+      step: howTo.map((h, i) => ({
+        '@type': 'HowToStep',
+        position: i + 1,
+        name: h.name,
+        text: h.text,
+      })),
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'SoftwareApplication',
+      name: title,
+      applicationCategory: 'FinanceApplication',
+      operatingSystem: 'All',
+      offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
     },
   ],
 };

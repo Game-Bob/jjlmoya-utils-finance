@@ -10,6 +10,9 @@ export interface FinancialFreedomUI extends Record<string, string> {
   labelYears: string;
   labelMonths: string;
   labelDays: string;
+  labelYearsShort: string;
+  labelMonthsShort: string;
+  labelDaysShort: string;
   labelStatus: string;
   labelRedZone: string;
   labelYellowZone: string;

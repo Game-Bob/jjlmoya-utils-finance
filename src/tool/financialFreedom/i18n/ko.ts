@@ -10,6 +10,9 @@ export const ui: FinancialFreedomUI = {
   labelYears: '년',
   labelMonths: '개월',
   labelDays: '일',
+  labelYearsShort: '년',
+  labelMonthsShort: '월',
+  labelDaysShort: '일',
   labelStatus: '재무적 안전 상태',
   labelRedZone: '레드 존: 고위험',
   labelYellowZone: '옐로우 존: 안정적',
@@ -23,10 +26,44 @@ export const ui: FinancialFreedomUI = {
   labelCopied: '복사 완료!',
 };
 
+const slug = 'financial-freedom-calculator';
+const title = '재무적 자유 및 생존 기간(런웨이) 계산기';
+const description = '저축액이 얼마나 지속될지 정확하게 계산하세요. 이 도구는 재무적 자립을 시각화하고 비상금 계획을 돕습니다.';
+
+const faq = [
+  {
+    question: '적절한 생존 기간은 어느 정도인가요?',
+    answer: '전문가들은 일반적으로 최소 3~6개월분의 지출액을 권장합니다. 진정한 자유를 위해 2년 이상을 목표로 하세요.',
+  },
+  {
+    question: '이 계산기는 인플레이션을 고려합니까?',
+    answer: '이 도구는 현재 지출에 대한 유동 자산의 즉각적인 계산을 위해 설계되었습니다.',
+  },
+  {
+    question: '개인 재무에서 "번레이트"란 무엇입니까?',
+    answer: '번레이트(소진율)는 생활비를 충당하기 위해 저축액을 소비하는 속도입니다.',
+  },
+];
+
+const howTo = [
+  {
+    name: '총 저축액 입력',
+    text: '현재 사용 가능한 현금 또는 유동 자산의 총액을 입력하세요.',
+  },
+  {
+    name: '지출 설정',
+    text: '한 달 또는 일 년 지출액을 입력하세요.',
+  },
+  {
+    name: '안전 구역 분석',
+    text: '레드, 옐로우, 그린 존 중 어디에 속하는지 확인하세요.',
+  },
+];
+
 export const content: ToolLocaleContent<FinancialFreedomUI> = {
-  slug: 'financial-freedom-calculator',
-  title: '재무적 자유 및 생존 기간(런웨이) 계산기',
-  description: '저축액이 얼마나 지속될지 정확하게 계산하세요. 이 도구는 재무적 자립을 시각화하고 비상금 계획을 돕습니다.',
+  slug,
+  title,
+  description,
   ui,
   seo: [
     {
@@ -39,30 +76,48 @@ export const content: ToolLocaleContent<FinancialFreedomUI> = {
       html: '<strong>생존 기간(런웨이)</strong>은 새로운 수입 없이 살 수 있는 기간입니다. 이는 재무적 자유의 궁극적인 척도입니다.',
     },
   ],
-  faq: [
-    {
-      question: '적절한 생존 기간은 어느 정도인가요?',
-      answer: '전문가들은 일반적으로 최소 3~6개월분의 지출액을 권장합니다. 진정한 자유를 위해 2년 이상을 목표로 하세요.',
-    },
-  ],
+  faq,
   bibliography: [
     {
       name: 'FIRE 운동의 원칙',
       url: 'https://ko.wikipedia.org/wiki/FIRE_운동',
     },
   ],
-  howTo: [
-    {
-      name: '총 저축액 입력',
-      text: '현재 사용 가능한 현금 또는 유동 자산의 총액을 입력하세요.',
-    },
-  ],
+  howTo,
   schemas: [
     {
       '@context': 'https://schema.org',
       '@type': 'FinancialProduct',
-      name: '재무적 자유 계산기',
-      description: '저축액 지속 기간을 계산합니다.',
+      name: title,
+      description,
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: faq.map((f) => ({
+        '@type': 'Question',
+        name: f.question,
+        acceptedAnswer: { '@type': 'Answer', text: f.answer },
+      })),
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'HowTo',
+      name: title,
+      step: howTo.map((h, i) => ({
+        '@type': 'HowToStep',
+        position: i + 1,
+        name: h.name,
+        text: h.text,
+      })),
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'SoftwareApplication',
+      name: title,
+      applicationCategory: 'FinanceApplication',
+      operatingSystem: 'All',
+      offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
     },
   ],
 };

@@ -19,12 +19,28 @@ const t = (ui ?? {}) as ProfitabilityUI;
   data-label-exponential={t.labelExponentialGrowth}
   data-label-copied={t.labelCopied}
   data-label-copy={t.labelCopyResult}
+  data-locale={Astro.props.locale || 'en'}
 >
   <div id="prof-card" class="prof-card positive">
     <div class="prof-grid">
       <div class="prof-inputs">
         <div class="prof-input-group">
-          <label class="prof-label">{t.labelInitialInvestment}</label>
+          <div class="prof-label-row">
+            <label class="prof-label">{t.labelInitialInvestment}</label>
+            <select id="prof-currency-select" class="prof-currency-select">
+              <option value="USD">USD ($)</option>
+              <option value="EUR">EUR (€)</option>
+              <option value="GBP">GBP (£)</option>
+              <option value="JPY">JPY (¥)</option>
+              <option value="CNY">CNY (元)</option>
+              <option value="RUB">RUB (₽)</option>
+              <option value="KRW">KRW (₩)</option>
+              <option value="TRY">TRY (₺)</option>
+              <option value="PLN">PLN (zł)</option>
+              <option value="SEK">SEK (kr)</option>
+              <option value="IDR">IDR (Rp)</option>
+            </select>
+          </div>
           <input type="number" id="prof-initial" value="10000" class="prof-input-field" />
         </div>
 
@@ -93,6 +109,7 @@ const t = (ui ?? {}) as ProfitabilityUI;
   const roiOut = document.getElementById('prof-roi');
   const cagrOut = document.getElementById('prof-cagr');
   const netOut = document.getElementById('prof-net');
+  const currencySelect = document.getElementById('prof-currency-select') as HTMLSelectElement;
   const ctx = document.getElementById('prof-chart') as HTMLCanvasElement;
 
   const labelPositive = root.dataset.labelPositive || '';
@@ -105,9 +122,17 @@ const t = (ui ?? {}) as ProfitabilityUI;
   let chart: Chart | null = null;
 
   const updateTextValues = (result: ProfitabilityResult) => {
+    const currencyCode = currencySelect.value;
+    const locale = root.dataset.locale || 'en';
+    const formatter = new Intl.NumberFormat(locale, {
+      style: 'currency',
+      currency: currencyCode,
+      maximumFractionDigits: 0
+    });
+
     if (roiOut) roiOut.innerText = `${result.roi > 0 ? '+' : ''}${result.roi}%`;
     if (cagrOut) cagrOut.innerText = `${result.cagr > 0 ? '+' : ''}${result.cagr}%`;
-    if (netOut) netOut.innerText = result.netProfit.toLocaleString();
+    if (netOut) netOut.innerText = formatter.format(result.netProfit);
   };
 
   const updateStatusUI = (result: ProfitabilityResult) => {
@@ -191,7 +216,7 @@ const t = (ui ?? {}) as ProfitabilityUI;
     updateChart(initial, final, result.years, result.cagr);
   };
 
-  [initialIn, finalIn, timeIn, unitIn].forEach(el => el.addEventListener('input', update));
+  [initialIn, finalIn, timeIn, unitIn, currencySelect].forEach(el => el.addEventListener('input', update));
 
   copyBtn.addEventListener('click', () => {
     const text = `Investment Performance: ROI ${roiOut?.innerText}, CAGR ${cagrOut?.innerText} over ${timeIn.value} ${unitIn.value}. Total net: ${netOut?.innerText}`;
@@ -204,6 +229,18 @@ const t = (ui ?? {}) as ProfitabilityUI;
     });
   });
 
+  const preselectCurrency = () => {
+    const locale = root.dataset.locale || 'en';
+    const mapping: Record<string, string> = {
+      es: 'EUR', de: 'EUR', fr: 'EUR', it: 'EUR', pt: 'EUR', nl: 'EUR',
+      en: 'USD',
+      tr: 'TRY', pl: 'PLN', sv: 'SEK', id: 'IDR',
+      ru: 'RUB', ja: 'JPY', zh: 'CNY', ko: 'KRW'
+    };
+    if (mapping[locale]) currencySelect.value = mapping[locale];
+  };
+
+  preselectCurrency();
   update();
 </script>
 

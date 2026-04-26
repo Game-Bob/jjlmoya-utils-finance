@@ -10,6 +10,9 @@ export const ui: FinancialFreedomUI = {
   labelYears: 'Years',
   labelMonths: 'Months',
   labelDays: 'Days',
+  labelYearsShort: 'y',
+  labelMonthsShort: 'm',
+  labelDaysShort: 'd',
   labelStatus: 'Financial Security Status',
   labelRedZone: 'Red Zone: High Risk',
   labelYellowZone: 'Yellow Zone: Stable',
@@ -23,10 +26,44 @@ export const ui: FinancialFreedomUI = {
   labelCopied: 'Copied!',
 };
 
+const slug = 'financial-freedom-calculator';
+const title = 'Financial Freedom & Survival Runway Calculator';
+const description = 'Calculate exactly how long your savings will last. Our survival runway tool helps you visualize your financial independence and plan your exit strategy or emergency fund.';
+
+const faq = [
+  {
+    question: 'What is a good survival runway?',
+    answer: 'Financial experts generally recommend a minimum of 3 to 6 months of expenses in an emergency fund. However, for true financial independence, a runway of 2 years or more is considered the "Freedom Zone".',
+  },
+  {
+    question: 'Does this calculator include inflation?',
+    answer: 'This tool is designed for immediate "physics" calculation of current liquid assets against current spending. For multi-decade retirement planning, you should also consult a compound interest calculator.',
+  },
+  {
+    question: 'What is "Burn Rate" in personal finance?',
+    answer: 'Burn rate is the rate at which you spend your savings to cover life expenses. Knowing your daily burn rate helps you internalize the cost of your lifestyle choices.',
+  },
+];
+
+const howTo = [
+  {
+    name: 'Enter your total liquid savings',
+    text: 'Input the total amount of cash or easily accessible assets you have available.',
+  },
+  {
+    name: 'Set your recurring expenses',
+    text: 'Enter how much you spend per month or per year to cover your lifestyle.',
+  },
+  {
+    name: 'Analyze your security zone',
+    text: 'Check if you are in the Red, Yellow, or Green zone and see your daily burn rate.',
+  },
+];
+
 export const content: ToolLocaleContent<FinancialFreedomUI> = {
-  slug: 'financial-freedom-calculator',
-  title: 'Financial Freedom & Survival Runway Calculator',
-  description: 'Calculate exactly how long your savings will last. Our survival runway tool helps you visualize your financial independence and plan your exit strategy or emergency fund.',
+  slug,
+  title,
+  description,
   ui,
   seo: [
     {
@@ -94,20 +131,7 @@ export const content: ToolLocaleContent<FinancialFreedomUI> = {
       html: 'Small changes in spending have an exponential impact on your runway. A 10% reduction in expenses doesn\'t just save 10% of your money; it reduces your daily burn rate, making every dollar you already have last longer. This double-win effect is the secret to reaching financial independence years ahead of schedule.',
     },
   ],
-  faq: [
-    {
-      question: 'What is a good survival runway?',
-      answer: 'Financial experts generally recommend a minimum of 3 to 6 months of expenses in an emergency fund. However, for true financial independence, a runway of 2 years or more is considered the "Freedom Zone".',
-    },
-    {
-      question: 'Does this calculator include inflation?',
-      answer: 'This tool is designed for immediate "physics" calculation of current liquid assets against current spending. For multi-decade retirement planning, you should also consult a compound interest calculator.',
-    },
-    {
-      question: 'What is "Burn Rate" in personal finance?',
-      answer: 'Burn rate is the rate at which you spend your savings to cover life expenses. Knowing your daily burn rate helps you internalize the cost of your lifestyle choices.',
-    },
-  ],
+  faq,
   bibliography: [
     {
       name: 'FIRE Movement Principles',
@@ -118,26 +142,41 @@ export const content: ToolLocaleContent<FinancialFreedomUI> = {
       url: 'https://www.investopedia.com/terms/e/emergency_fund.asp',
     },
   ],
-  howTo: [
-    {
-      name: 'Enter your total liquid savings',
-      text: 'Input the total amount of cash or easily accessible assets you have available.',
-    },
-    {
-      name: 'Set your recurring expenses',
-      text: 'Enter how much you spend per month or per year to cover your lifestyle.',
-    },
-    {
-      name: 'Analyze your security zone',
-      text: 'Check if you are in the Red, Yellow, or Green zone and see your daily burn rate.',
-    },
-  ],
+  howTo,
   schemas: [
     {
       '@context': 'https://schema.org',
       '@type': 'FinancialProduct',
-      name: 'Financial Freedom Calculator',
-      description: 'A tool to calculate how long your savings will last based on your burn rate.',
+      name: title,
+      description,
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: faq.map((f) => ({
+        '@type': 'Question',
+        name: f.question,
+        acceptedAnswer: { '@type': 'Answer', text: f.answer },
+      })),
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'HowTo',
+      name: title,
+      step: howTo.map((h, i) => ({
+        '@type': 'HowToStep',
+        position: i + 1,
+        name: h.name,
+        text: h.text,
+      })),
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'SoftwareApplication',
+      name: title,
+      applicationCategory: 'FinanceApplication',
+      operatingSystem: 'All',
+      offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
     },
   ],
 };

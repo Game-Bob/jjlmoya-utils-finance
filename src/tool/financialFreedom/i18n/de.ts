@@ -10,6 +10,9 @@ export const ui: FinancialFreedomUI = {
   labelYears: 'Jahre',
   labelMonths: 'Monate',
   labelDays: 'Tage',
+  labelYearsShort: 'j',
+  labelMonthsShort: 'm',
+  labelDaysShort: 't',
   labelStatus: 'Finanzieller Sicherheitsstatus',
   labelRedZone: 'Rote Zone: Hohes Risiko',
   labelYellowZone: 'Gelbe Zone: Stabil',
@@ -23,10 +26,44 @@ export const ui: FinancialFreedomUI = {
   labelCopied: 'Kopiert!',
 };
 
+const slug = 'finanzielle-freiheit-rechner-uberlebensdauer';
+const title = 'Rechner für Finanzielle Freiheit & Überlebensdauer';
+const description = 'Berechnen Sie genau, wie lange Ihre Ersparnisse reichen werden. Unser Tool hilft Ihnen, Ihre finanzielle Unabhängigkeit zu visualisieren.';
+
+const faq = [
+  {
+    question: 'Was ist eine gute Überlebensdauer?',
+    answer: 'Experten empfehlen mindestens 3 bis 6 Monate. Für echte Freiheit sind 2 Jahre oder mehr ideal.',
+  },
+  {
+    question: 'Beinhaltet dieser Rechner die Inflation?',
+    answer: 'Dieses Tool ist für die sofortige Berechnung der aktuellen liquiden Mittel gegenüber den aktuellen Ausgaben konzipiert.',
+  },
+  {
+    question: 'Was ist die "Burn Rate" in den persönlichen Finanzen?',
+    answer: 'Die Burn Rate ist die Rate, mit der Sie Ihre Ersparnisse verbrauchen, um Ihre Lebenshaltungskosten zu decken.',
+  },
+];
+
+const howTo = [
+  {
+    name: 'Ersparnisse eingeben',
+    text: 'Geben Sie Ihr gesamtes verfügbares Bargeld ein.',
+  },
+  {
+    name: 'Ausgaben festlegen',
+    text: 'Geben Sie an, wie viel Sie pro Monat oder Jahr ausgeben.',
+  },
+  {
+    name: 'Sicherheitszone analysieren',
+    text: 'Prüfen Sie, ob Sie sich in der roten, gelben oder grünen Zone befinden.',
+  },
+];
+
 export const content: ToolLocaleContent<FinancialFreedomUI> = {
-  slug: 'finanzielle-freiheit-rechner-uberlebensdauer',
-  title: 'Rechner für Finanzielle Freiheit & Überlebensdauer',
-  description: 'Berechnen Sie genau, wie lange Ihre Ersparnisse reichen werden. Unser Tool hilft Ihnen, Ihre finanzielle Unabhängigkeit zu visualisieren.',
+  slug,
+  title,
+  description,
   ui,
   seo: [
     {
@@ -39,30 +76,48 @@ export const content: ToolLocaleContent<FinancialFreedomUI> = {
       html: 'Die <strong>Überlebensdauer</strong> (Runway) ist die Zeitspanne, in der Sie ohne neues Einkommen leben können. Es ist die ultimative Kennzahl für finanzielle Freiheit. Im Gegensatz zum Kontostand zeigt sie Ihnen, wie viel "menschliche Zeit" Sie gekauft haben.',
     },
   ],
-  faq: [
-    {
-      question: 'Was ist eine gute Überlebensdauer?',
-      answer: 'Experten empfehlen mindestens 3 bis 6 Monate. Für echte Freiheit sind 2 Jahre oder mehr ideal.',
-    },
-  ],
+  faq,
   bibliography: [
     {
       name: 'FIRE-Bewegung Prinzipien',
       url: 'https://de.wikipedia.org/wiki/FIRE-Bewegung',
     },
   ],
-  howTo: [
-    {
-      name: 'Ersparnisse eingeben',
-      text: 'Geben Sie Ihr gesamtes verfügbares Bargeld ein.',
-    },
-  ],
+  howTo,
   schemas: [
     {
       '@context': 'https://schema.org',
       '@type': 'FinancialProduct',
-      name: 'Finanzielle Freiheit Rechner',
-      description: 'Berechnen Sie die Dauer Ihrer Ersparnisse.',
+      name: title,
+      description,
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: faq.map((f) => ({
+        '@type': 'Question',
+        name: f.question,
+        acceptedAnswer: { '@type': 'Answer', text: f.answer },
+      })),
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'HowTo',
+      name: title,
+      step: howTo.map((h, i) => ({
+        '@type': 'HowToStep',
+        position: i + 1,
+        name: h.name,
+        text: h.text,
+      })),
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'SoftwareApplication',
+      name: title,
+      applicationCategory: 'FinanceApplication',
+      operatingSystem: 'All',
+      offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
     },
   ],
 };

@@ -19,10 +19,40 @@ export const ui: ProfitabilityUI = {
   labelCopied: 'Copiado!',
 };
 
+const slug = 'calculadora-rentabilidade-investimento-roi-cagr';
+const title = 'Calculadora de Rentabilidade: ROI & CAGR';
+const description = 'Analisa o rendimento dos teus investimentos. Calcula o ROI e o CAGR para entenderes os teus ganhos reais.';
+
+const faq = [
+  {
+    question: 'O que é um bom CAGR?',
+    answer: 'Historicamente o S&P 500 rende cerca de 7-10% ao ano.',
+  },
+  {
+    question: 'Porque é que o meu CAGR é diferente do ROI total?',
+    answer: 'O ROI é o retorno total independentemente do tempo. O CAGR é a taxa anual necessária para atingir esse retorno.',
+  },
+];
+
+const howTo = [
+  {
+    name: 'Insere o capital inicial',
+    text: 'Insere o montante investido originalmente.',
+  },
+  {
+    name: 'Insere o valor final',
+    text: 'Insere o valor de mercado atual.',
+  },
+  {
+    name: 'Define a duração',
+    text: 'Especifica quanto tempo mantiveste o investimento.',
+  },
+];
+
 export const content: ToolLocaleContent<ProfitabilityUI> = {
-  slug: 'calculadora-rentabilidade-investimento-roi-cagr',
-  title: 'Calculadora de Rentabilidade: ROI & CAGR',
-  description: 'Analisa o rendimento dos teus investimentos. Calcula o ROI e o CAGR para entenderes os teus ganhos reais.',
+  slug,
+  title,
+  description,
   ui,
   seo: [
     {
@@ -32,33 +62,51 @@ export const content: ToolLocaleContent<ProfitabilityUI> = {
     },
     {
       type: 'paragraph',
-      html: 'O <strong>ROI</strong> indica a percentagem total de ganho, mas ignora o tempo. O <strong>CAGR</strong> é melhor para análises a longo prazo.',
+      html: 'O <strong>ROI</strong> indica a percentagem total de ganho, mas ignora o tempo. El <strong>CAGR</strong> é melhor para análises a longo prazo.',
     },
   ],
-  faq: [
-    {
-      question: 'O que é um bom CAGR?',
-      answer: 'Historicamente o S&P 500 rende cerca de 7-10% ao ano.',
-    },
-  ],
+  faq,
   bibliography: [
     {
       name: 'Definição de ROI - Investopedia',
       url: 'https://www.investopedia.com/terms/r/returnoninvestment.asp',
     },
   ],
-  howTo: [
-    {
-      name: 'Insere o capital inicial',
-      text: 'Insere o montante investido originalmente.',
-    },
-  ],
+  howTo,
   schemas: [
     {
       '@context': 'https://schema.org',
       '@type': 'FinancialProduct',
-      name: 'Calculadora de Rentabilidade',
-      description: 'Calcula ROI e CAGR.',
+      name: title,
+      description,
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: faq.map((f) => ({
+        '@type': 'Question',
+        name: f.question,
+        acceptedAnswer: { '@type': 'Answer', text: f.answer },
+      })),
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'HowTo',
+      name: title,
+      step: howTo.map((h, i) => ({
+        '@type': 'HowToStep',
+        position: i + 1,
+        name: h.name,
+        text: h.text,
+      })),
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'SoftwareApplication',
+      name: title,
+      applicationCategory: 'FinanceApplication',
+      operatingSystem: 'All',
+      offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
     },
   ],
 };

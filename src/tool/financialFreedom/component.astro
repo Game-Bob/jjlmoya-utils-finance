@@ -16,9 +16,13 @@ const t = (ui ?? {}) as FinancialFreedomUI;
   data-label-years={t.labelYears}
   data-label-months={t.labelMonths}
   data-label-days={t.labelDays}
+  data-label-years-short={t.labelYearsShort}
+  data-label-months-short={t.labelMonthsShort}
+  data-label-days-short={t.labelDaysShort}
   data-label-red-zone={t.labelRedZone}
   data-label-yellow-zone={t.labelYellowZone}
   data-label-green-zone={t.labelGreenZone}
+  data-locale={Astro.props.locale || 'en'}
 >
   <div class="ff-card">
     <div class="ff-calculator-grid">
@@ -27,10 +31,17 @@ const t = (ui ?? {}) as FinancialFreedomUI;
           <div class="ff-input-label">
             <span>{t.labelSavings}</span>
             <select id="ff-currency-select" class="ff-currency-select">
-              <option value="$">$ (USD)</option>
-              <option value="€">€ (EUR)</option>
-              <option value="£">£ (GBP)</option>
-              <option value="¥">¥ (JPY)</option>
+              <option value="USD">USD ($)</option>
+              <option value="EUR">EUR (€)</option>
+              <option value="GBP">GBP (£)</option>
+              <option value="JPY">JPY (¥)</option>
+              <option value="CNY">CNY (元)</option>
+              <option value="RUB">RUB (₽)</option>
+              <option value="KRW">KRW (₩)</option>
+              <option value="TRY">TRY (₺)</option>
+              <option value="PLN">PLN (zł)</option>
+              <option value="SEK">SEK (kr)</option>
+              <option value="IDR">IDR (Rp)</option>
             </select>
           </div>
           <input type="number" id="ff-savings-input" value="50000" class="ff-input-field" />
@@ -126,13 +137,29 @@ const t = (ui ?? {}) as FinancialFreedomUI;
 
   let currentPeriod: 'monthly' | 'yearly' = 'monthly';
 
+  const labelYearsShort = root.dataset.labelYearsShort || 'y';
+  const labelMonthsShort = root.dataset.labelMonthsShort || 'm';
+  const labelDaysShort = root.dataset.labelDaysShort || 'd';
+
   const formatHumanTimeShort = (res: { years: number; months: number; days: number }) => {
-     if (res.years > 0) return `${res.years}y ${res.months}m`;
-     if (res.months > 0) return `${res.months}m ${res.days}d`;
-     return `${res.days}d`;
+     if (res.years > 0) return `${res.years}${labelYearsShort} ${res.months}${labelMonthsShort}`;
+     if (res.months > 0) return `${res.months}${labelMonthsShort} ${res.days}${labelDaysShort}`;
+     return `${res.days}${labelDaysShort}`;
   };
 
-  const updateDisplay = (result: FinancialFreedomResult, currency: string) => {
+  const updateDisplay = (result: FinancialFreedomResult, currencyCode: string) => {
+    const locale = root.dataset.locale || 'en';
+    const formatter = new Intl.NumberFormat(locale, {
+      style: 'currency',
+      currency: currencyCode,
+      maximumFractionDigits: 0
+    });
+    const formatterDaily = new Intl.NumberFormat(locale, {
+      style: 'currency',
+      currency: currencyCode,
+      maximumFractionDigits: 2
+    });
+
     if (yearsOut) yearsOut.innerText = result.humanTime.years.toString();
     if (monthsOut) monthsOut.innerText = result.humanTime.months.toString();
     if (daysOut) daysOut.innerText = result.humanTime.days.toString();
@@ -141,12 +168,12 @@ const t = (ui ?? {}) as FinancialFreedomUI;
        timeHeroOut.innerText = formatHumanTimeShort(result.humanTime);
     }
     
-    if (burnDailyOut) burnDailyOut.innerText = `${currency}${result.dailyBurn}`;
-    if (burnMonthlyOut) burnMonthlyOut.innerText = `${currency}${result.monthlyBurn}`;
+    if (burnDailyOut) burnDailyOut.innerText = formatterDaily.format(result.dailyBurn);
+    if (burnMonthlyOut) burnMonthlyOut.innerText = formatter.format(result.monthlyBurn);
     
     if (gainTimeOut) {
       const g = result.gainWithSavings;
-      gainTimeOut.innerText = `${g.years}y, ${g.months}m, ${g.days}d`;
+      gainTimeOut.innerText = `${g.years}${labelYearsShort}, ${g.months}${labelMonthsShort}, ${g.days}${labelDaysShort}`;
     }
   };
 
@@ -161,7 +188,7 @@ const t = (ui ?? {}) as FinancialFreedomUI;
   const update = () => {
     const savings = parseFloat(savingsInput.value) || 0;
     const expenses = parseFloat(expensesInput.value) || 0;
-    const currency = currencySelect.value;
+    const currencyCode = currencySelect.value;
 
     const result = FinancialFreedomCalculator.calculate({
       savings,
@@ -169,7 +196,7 @@ const t = (ui ?? {}) as FinancialFreedomUI;
       expensePeriod: currentPeriod
     });
 
-    updateDisplay(result, currency);
+    updateDisplay(result, currencyCode);
     updateStatus(result.status);
   };
 
@@ -207,10 +234,22 @@ const t = (ui ?? {}) as FinancialFreedomUI;
     update();
   };
 
+  const preselectCurrency = () => {
+    const locale = root.dataset.locale || 'en';
+    const mapping: Record<string, string> = {
+      es: 'EUR', de: 'EUR', fr: 'EUR', it: 'EUR', pt: 'EUR', nl: 'EUR',
+      en: 'USD',
+      tr: 'TRY', pl: 'PLN', sv: 'SEK', id: 'IDR',
+      ru: 'RUB', ja: 'JPY', zh: 'CNY', ko: 'KRW'
+    };
+    if (mapping[locale]) currencySelect.value = mapping[locale];
+  };
+
   periodBtns.forEach(btn => {
     btn.addEventListener('click', () => handlePeriodChange(btn as HTMLElement));
   });
 
+  preselectCurrency();
   update();
 </script>
 

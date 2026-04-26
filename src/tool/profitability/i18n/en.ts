@@ -19,10 +19,44 @@ export const ui: ProfitabilityUI = {
   labelCopied: 'Copied!',
 };
 
+const slug = 'profitability-calculator-roi-cagr';
+const title = 'Investment Profitability Calculator: ROI & CAGR';
+const description = 'Analyze your investment performance with precision. Calculate total Return on Investment (ROI) and Compound Annual Growth Rate (CAGR) to understand your true annualized gains.';
+
+const faq = [
+  {
+    question: 'What is a good CAGR?',
+    answer: 'A "good" CAGR depends on the asset class. Historically, the S&P 500 has returned around 7-10% annually. High-risk investments might target 15-20%+, while savings accounts usually offer much less.',
+  },
+  {
+    question: 'Why is my CAGR different from my total ROI?',
+    answer: 'ROI is the total return regardless of time. CAGR is the annual rate required to reach that total return. If your investment lasted more than a year, the CAGR will usually be a smaller number than the ROI.',
+  },
+  {
+    question: 'Can CAGR be negative?',
+    answer: 'Yes. If your final value is less than your initial investment, the CAGR will be negative, representing the annualized rate of loss.',
+  },
+];
+
+const howTo = [
+  {
+    name: 'Enter your initial capital',
+    text: 'Input the amount of money you originally invested.',
+  },
+  {
+    name: 'Enter the final or current value',
+    text: 'Input the current market value of your investment or the price at which you sold it.',
+  },
+  {
+    name: 'Set the time duration',
+    text: 'Specify how long you held the investment to calculate the annualized return (CAGR).',
+  },
+];
+
 export const content: ToolLocaleContent<ProfitabilityUI> = {
-  slug: 'profitability-calculator-roi-cagr',
-  title: 'Investment Profitability Calculator: ROI & CAGR',
-  description: 'Analyze your investment performance with precision. Calculate total Return on Investment (ROI) and Compound Annual Growth Rate (CAGR) to understand your true annualized gains.',
+  slug,
+  title,
+  description,
   ui,
   seo: [
     {
@@ -80,20 +114,7 @@ export const content: ToolLocaleContent<ProfitabilityUI> = {
       html: 'Our interactive chart compares linear growth (where you assume the gain is spread evenly) against exponential growth (CAGR). This visualization is crucial for understanding how compound interest works over time. Real investments rarely grow in a straight line; understanding the CAGR curve helps you set realistic expectations for future wealth building.',
     },
   ],
-  faq: [
-    {
-      question: 'What is a good CAGR?',
-      answer: 'A "good" CAGR depends on the asset class. Historically, the S&P 500 has returned around 7-10% annually. High-risk investments might target 15-20%+, while savings accounts usually offer much less.',
-    },
-    {
-      question: 'Why is my CAGR different from my total ROI?',
-      answer: 'ROI is the total return regardless of time. CAGR is the annual rate required to reach that total return. If your investment lasted more than a year, the CAGR will usually be a smaller number than the ROI.',
-    },
-    {
-      question: 'Can CAGR be negative?',
-      answer: 'Yes. If your final value is less than your initial investment, the CAGR will be negative, representing the annualized rate of loss.',
-    },
-  ],
+  faq,
   bibliography: [
     {
       name: 'Investopedia: ROI Definition',
@@ -104,26 +125,41 @@ export const content: ToolLocaleContent<ProfitabilityUI> = {
       url: 'https://www.investopedia.com/terms/c/cagr.asp',
     },
   ],
-  howTo: [
-    {
-      name: 'Enter your initial capital',
-      text: 'Input the amount of money you originally invested.',
-    },
-    {
-      name: 'Enter the final or current value',
-      text: 'Input the current market value of your investment or the price at which you sold it.',
-    },
-    {
-      name: 'Set the time duration',
-      text: 'Specify how long you held the investment to calculate the annualized return (CAGR).',
-    },
-  ],
+  howTo,
   schemas: [
     {
       '@context': 'https://schema.org',
       '@type': 'FinancialProduct',
-      name: 'Investment Profitability Calculator',
-      description: 'Calculates ROI and CAGR for any financial investment.',
+      name: title,
+      description,
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: faq.map((f) => ({
+        '@type': 'Question',
+        name: f.question,
+        acceptedAnswer: { '@type': 'Answer', text: f.answer },
+      })),
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'HowTo',
+      name: title,
+      step: howTo.map((h, i) => ({
+        '@type': 'HowToStep',
+        position: i + 1,
+        name: h.name,
+        text: h.text,
+      })),
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'SoftwareApplication',
+      name: title,
+      applicationCategory: 'FinanceApplication',
+      operatingSystem: 'All',
+      offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
     },
   ],
 };

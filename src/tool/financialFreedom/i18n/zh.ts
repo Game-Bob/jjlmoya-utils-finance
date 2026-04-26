@@ -10,6 +10,9 @@ export const ui: FinancialFreedomUI = {
   labelYears: '年',
   labelMonths: '个月',
   labelDays: '天',
+  labelYearsShort: '年',
+  labelMonthsShort: '月',
+  labelDaysShort: '日',
   labelStatus: '财务安全状态',
   labelRedZone: '红区：高风险',
   labelYellowZone: '黄区：稳定',
@@ -23,10 +26,44 @@ export const ui: FinancialFreedomUI = {
   labelCopied: '已复制！',
 };
 
+const slug = 'financial-freedom-calculator';
+const title = '财务自由与生存跑道计算器';
+const description = '精确计算您的储蓄能维持多久。我们的生存跑道工具可帮助您可视化财务独立。';
+
+const faq = [
+  {
+    question: '多少生存跑道才算好？',
+    answer: '专家通常建议至少预留 3 到 6 个月的支出。为了真正的自由，目标应设定为 2 年或更长。',
+  },
+  {
+    question: '此计算器是否包含通货膨胀？',
+    answer: '此工具专为流动资产与当前支出的即时计算而设计。',
+  },
+  {
+    question: '个人财务中的“烧钱率”是什么？',
+    answer: '烧钱率是指您消耗储蓄以支付生活费用的速度。',
+  },
+];
+
+const howTo = [
+  {
+    name: '输入总储蓄额',
+    text: '输入您拥有的现金或流动资产总额。',
+  },
+  {
+    name: '设置定期支出',
+    text: '输入您每月或每年的支出金额。',
+  },
+  {
+    name: '分析安全区域',
+    text: '检查您处于红区、黄区还是绿区。',
+  },
+];
+
 export const content: ToolLocaleContent<FinancialFreedomUI> = {
-  slug: 'financial-freedom-calculator',
-  title: '财务自由与生存跑道计算器',
-  description: '精确计算您的储蓄能维持多久。我们的生存跑道工具可帮助您可视化财务独立。',
+  slug,
+  title,
+  description,
   ui,
   seo: [
     {
@@ -39,30 +76,48 @@ export const content: ToolLocaleContent<FinancialFreedomUI> = {
       html: '<strong>生存跑道</strong>（runway）是指在没有新收入的情况下您可以维持生活的时间。它是衡量财务自由的终极指标。',
     },
   ],
-  faq: [
-    {
-      question: '多少生存跑道才算好？',
-      answer: '专家通常建议至少预留 3 到 6 个月的支出。为了真正的自由，目标应设定为 2 年或更长。',
-    },
-  ],
+  faq,
   bibliography: [
     {
       name: 'FIRE 运动原则',
       url: 'https://zh.wikipedia.org/wiki/FIRE_运动',
     },
   ],
-  howTo: [
-    {
-      name: '输入总储蓄额',
-      text: '输入您拥有的现金或流动资产总额。',
-    },
-  ],
+  howTo,
   schemas: [
     {
       '@context': 'https://schema.org',
       '@type': 'FinancialProduct',
-      name: '财务自由计算器',
-      description: '计算储蓄维持时间。',
+      name: title,
+      description,
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: faq.map((f) => ({
+        '@type': 'Question',
+        name: f.question,
+        acceptedAnswer: { '@type': 'Answer', text: f.answer },
+      })),
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'HowTo',
+      name: title,
+      step: howTo.map((h, i) => ({
+        '@type': 'HowToStep',
+        position: i + 1,
+        name: h.name,
+        text: h.text,
+      })),
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'SoftwareApplication',
+      name: title,
+      applicationCategory: 'FinanceApplication',
+      operatingSystem: 'All',
+      offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
     },
   ],
 };

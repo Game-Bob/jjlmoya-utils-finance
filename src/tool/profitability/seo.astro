@@ -1,12 +1,13 @@
 ---
+import { SEORenderer } from '@jjlmoya/utils-shared';
 import type { ProfitabilityLocaleContent } from './entry';
-import ToolSEO from '../../components/ToolSEO.astro';
 
 interface Props {
   content: ProfitabilityLocaleContent;
+  locale: string;
 }
 
-const { content } = Astro.props;
+const { content, locale } = Astro.props;
 ---
 
-<ToolSEO {content} />
+{content.seo && content.seo.length > 0 && <SEORenderer content={{ locale, sections: content.seo }} />}

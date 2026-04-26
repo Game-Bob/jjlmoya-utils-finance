@@ -6,10 +6,13 @@ export const ui: FinancialFreedomUI = {
   labelExpenses: 'Gastos Actuales',
   labelMonthly: 'Mensuales',
   labelYearly: 'Anuales',
-  labelTimeRemaining: 'Tu Pista de Supervivencia',
+  labelTimeRemaining: 'Tu Autonomía Financiera',
   labelYears: 'Años',
   labelMonths: 'Meses',
   labelDays: 'Días',
+  labelYearsShort: 'a',
+  labelMonthsShort: 'm',
+  labelDaysShort: 'd',
   labelStatus: 'Estado de Seguridad Financiera',
   labelRedZone: 'Zona Roja: Riesgo Alto',
   labelYellowZone: 'Zona Amarilla: Estable',
@@ -23,20 +26,54 @@ export const ui: FinancialFreedomUI = {
   labelCopied: '¡Copiado!',
 };
 
+const slug = 'calculadora-libertad-financiera-autonomia';
+const title = 'Calculadora de Libertad Financiera y Autonomía';
+const description = 'Calcula cuánto tiempo durarán tus ahorros. Nuestra herramienta de autonomía financiera te ayuda a visualizar tu independencia financiera y planificar tu fondo de emergencia.';
+
+const faq = [
+  {
+    question: '¿Qué es una buena autonomía financiera?',
+    answer: 'Los expertos recomiendan un mínimo de 3 a 6 meses de gastos en un fondo de emergencia. Sin embargo, para la libertad financiera real, una autonomía de 2 años o más se considera la "Zona de Libertad".',
+  },
+  {
+    question: '¿Incluye esta calculadora la inflación?',
+    answer: 'Esta herramienta está diseñada para el cálculo inmediato de activos líquidos contra gastos actuales. Para planes de jubilación a décadas vista, consulta una calculadora de interés compuesto.',
+  },
+  {
+    question: '¿Qué es el "Burn Rate" en finanzas personales?',
+    answer: 'El burn rate es el ritmo al que consumes tus ahorros para cubrir tus gastos. Conocer tu gasto diario te ayuda a interiorizar el coste de tu estilo de vida.',
+  },
+];
+
+const howTo = [
+  {
+    name: 'Introduce tus ahorros líquidos',
+    text: 'Ingresa el total de efectivo o activos fácilmente accesibles que tienes disponibles.',
+  },
+  {
+    name: 'Configura tus gastos recurrentes',
+    text: 'Indica cuánto gastas al mes o al año para cubrir tu estilo de vida.',
+  },
+  {
+    name: 'Analiza tu zona de seguridad',
+    text: 'Comprueba si estás en la zona Roja, Amarilla o Verde y revisa tu gasto diario.',
+  },
+];
+
 export const content: ToolLocaleContent<FinancialFreedomUI> = {
-  slug: 'calculadora-libertad-financiera-pista-aterrizaje',
-  title: 'Calculadora de Libertad Financiera y Pista de Aterrizaje',
-  description: 'Calcula cuánto tiempo durarán tus ahorros. Nuestra herramienta de pista de supervivencia te ayuda a visualizar tu independencia financiera y planificar tu fondo de emergencia.',
+  slug,
+  title,
+  description,
   ui,
   seo: [
     {
       type: 'title',
-      text: '¿Qué es la Pista de Supervivencia Financiera?',
+      text: '¿Qué es la Autonomía Financiera?',
       level: 2,
     },
     {
       type: 'paragraph',
-      html: 'La <strong>pista de supervivencia</strong> (o runway) es el tiempo que puedes vivir sin nuevos ingresos. Es la métrica definitiva de la libertad financiera. A diferencia de un saldo bancario, la pista te indica cuánto "tiempo humano" has comprado con tus ahorros. Conocer tu pista te permite tomar decisiones profesionales valientes o simplemente dormir mejor sabiendo que tienes una red de seguridad.',
+      html: 'La <strong>autonomía financiera</strong> (o runway) es el tiempo que puedes vivir sin nuevos ingresos. Es la métrica definitiva de la libertad financiera. A diferencia de un saldo bancario, la autonomía te indica cuánto "tiempo humano" has comprado con tus ahorros. Conocer tu autonomía te permite tomar decisiones profesionales valientes o simplemente dormir mejor sabiendo que tienes una red de seguridad.',
     },
     {
       type: 'title',
@@ -45,7 +82,7 @@ export const content: ToolLocaleContent<FinancialFreedomUI> = {
     },
     {
       type: 'paragraph',
-      html: 'Para hallar tu pista, dividimos tus ahorros líquidos totales entre tus gastos periódicos. Nuestra calculadora va más allá desglosando este tiempo en años, meses y días, dándote una sensación tangible de tu peso financiero. También calculamos tu <strong>Burn Rate</strong>: la cantidad exacta de dinero que sale de tu bolsillo cada día.',
+      html: 'Para hallar tu autonomía, dividimos tus ahorros líquidos totales entre tus gastos periódicos. Nuestra calculadora va más allá desglosando este tiempo en años, meses y días, dándote una sensación tangible de tu peso financiero. También calculamos tu <strong>Burn Rate</strong>: la cantidad exacta de dinero que sale de tu bolsillo cada día.',
     },
     {
       type: 'comparative',
@@ -53,7 +90,7 @@ export const content: ToolLocaleContent<FinancialFreedomUI> = {
       items: [
         {
           title: 'Zona Roja',
-          description: '0-6 meses de pista.',
+          description: '0-6 meses de autonomía.',
           points: [
             'Fragilidad financiera alta',
             'Prioridad: ahorrar',
@@ -63,7 +100,7 @@ export const content: ToolLocaleContent<FinancialFreedomUI> = {
         },
         {
           title: 'Zona Amarilla',
-          description: '6-24 meses de pista.',
+          description: '6-24 meses de autonomía.',
           points: [
             'Tranquilidad mental',
             'Resiste imprevistos',
@@ -86,7 +123,7 @@ export const content: ToolLocaleContent<FinancialFreedomUI> = {
     },
     {
       type: 'title',
-      text: 'Extiende tu pista: La regla del 10%',
+      text: 'Extiende tu autonomía: La regla del 10%',
       level: 3,
     },
     {
@@ -94,20 +131,7 @@ export const content: ToolLocaleContent<FinancialFreedomUI> = {
       html: 'Pequeños cambios en el gasto tienen un impacto exponencial. Una reducción del 10% en tus gastos no solo ahorra ese dinero; reduce tu ritmo de gasto diario, haciendo que cada euro que ya tienes dure más tiempo. Este efecto de doble victoria es el secreto para alcanzar la independencia financiera años antes de lo previsto.',
     },
   ],
-  faq: [
-    {
-      question: '¿Qué es una buena pista de supervivencia?',
-      answer: 'Los expertos recomiendan un mínimo de 3 a 6 meses de gastos en un fondo de emergencia. Sin embargo, para la libertad financiera real, una pista de 2 años o más se considera la "Zona de Libertad".',
-    },
-    {
-      question: '¿Incluye esta calculadora la inflación?',
-      answer: 'Esta herramienta está diseñada para el cálculo inmediato de activos líquidos contra gastos actuales. Para planes de jubilación a décadas vista, consulta una calculadora de interés compuesto.',
-    },
-    {
-      question: '¿Qué es el "Burn Rate" en finanzas personales?',
-      answer: 'El burn rate es el ritmo al que consumes tus ahorros para cubrir tus gastos. Conocer tu gasto diario te ayuda a interiorizar el coste de tu estilo de vida.',
-    },
-  ],
+  faq,
   bibliography: [
     {
       name: 'Principios del Movimiento FIRE',
@@ -118,26 +142,41 @@ export const content: ToolLocaleContent<FinancialFreedomUI> = {
       url: 'https://www.investopedia.com/terms/e/emergency_fund.asp',
     },
   ],
-  howTo: [
-    {
-      name: 'Introduce tus ahorros líquidos',
-      text: 'Ingresa el total de efectivo o activos fácilmente accesibles que tienes disponibles.',
-    },
-    {
-      name: 'Configura tus gastos recurrentes',
-      text: 'Indica cuánto gastas al mes o al año para cubrir tu estilo de vida.',
-    },
-    {
-      name: 'Analiza tu zona de seguridad',
-      text: 'Comprueba si estás en la zona Roja, Amarilla o Verde y revisa tu gasto diario.',
-    },
-  ],
+  howTo,
   schemas: [
     {
       '@context': 'https://schema.org',
       '@type': 'FinancialProduct',
-      name: 'Calculadora de Libertad Financiera',
-      description: 'Una herramienta para calcular cuánto durarán tus ahorros basándose en tu ritmo de gasto.',
+      name: title,
+      description,
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: faq.map((f) => ({
+        '@type': 'Question',
+        name: f.question,
+        acceptedAnswer: { '@type': 'Answer', text: f.answer },
+      })),
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'HowTo',
+      name: title,
+      step: howTo.map((h, i) => ({
+        '@type': 'HowToStep',
+        position: i + 1,
+        name: h.name,
+        text: h.text,
+      })),
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'SoftwareApplication',
+      name: title,
+      applicationCategory: 'FinanceApplication',
+      operatingSystem: 'All',
+      offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
     },
   ],
 };

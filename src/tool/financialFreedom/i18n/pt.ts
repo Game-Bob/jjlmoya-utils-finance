@@ -10,6 +10,9 @@ export const ui: FinancialFreedomUI = {
   labelYears: 'Anos',
   labelMonths: 'Meses',
   labelDays: 'Dias',
+  labelYearsShort: 'a',
+  labelMonthsShort: 'm',
+  labelDaysShort: 'd',
   labelStatus: 'Estado de Segurança Financeira',
   labelRedZone: 'Zona Vermelha: Alto Risco',
   labelYellowZone: 'Zona Amarela: Estável',
@@ -23,10 +26,44 @@ export const ui: FinancialFreedomUI = {
   labelCopied: 'Copiado!',
 };
 
+const slug = 'calculadora-liberdade-financeira-pista-sobrevivencia';
+const title = 'Calculadora de Liberdade Financeira e Pista de Sobrevivência';
+const description = 'Calcula exatamente quanto tempo as tuas poupanças vão durar. A nossa ferramenta de pista ajuda-te a visualizar a tua independência.';
+
+const faq = [
+  {
+    question: 'O que é uma boa pista?',
+    answer: 'Especialistas recomendam de 3 a 6 meses. Para liberdade real, foca em 2 anos ou mais.',
+  },
+  {
+    question: 'Esta calculadora inclui a inflação?',
+    answer: 'Esta ferramenta foi concebida para o cálculo imediato de ativos líquidos face aos gastos atuais.',
+  },
+  {
+    question: 'O que é o "Burn Rate" em finanças pessoais?',
+    answer: 'O burn rate é o ritmo a que consomes as tuas poupanças para cobrir os teus gastos.',
+  },
+];
+
+const howTo = [
+  {
+    name: 'Insere as tuas poupanças',
+    text: 'Insere o total de dinheiro líquido disponível.',
+  },
+  {
+    name: 'Define os teus gastos',
+    text: 'Indica quanto gastas por mês ou por ano.',
+  },
+  {
+    name: 'Analisa a tua zona de segurança',
+    text: 'Verifica se estás na zona Vermelha, Amarela ou Verde.',
+  },
+];
+
 export const content: ToolLocaleContent<FinancialFreedomUI> = {
-  slug: 'calculadora-liberdade-financeira-pista-sobrevivencia',
-  title: 'Calculadora de Liberdade Financeira e Pista de Sobrevivência',
-  description: 'Calcula exatamente quanto tempo as tuas poupanças vão durar. A nossa ferramenta de pista ajuda-te a visualizar a tua independência.',
+  slug,
+  title,
+  description,
   ui,
   seo: [
     {
@@ -39,30 +76,48 @@ export const content: ToolLocaleContent<FinancialFreedomUI> = {
       html: 'A <strong>pista de sobrevivência</strong> (runway) é o tempo que podes viver sem novos rendimentos. É a métrica definitiva da liberdade financeira.',
     },
   ],
-  faq: [
-    {
-      question: 'O que é uma boa pista?',
-      answer: 'Especialistas recomendam de 3 a 6 meses. Para liberdade real, foca em 2 anos ou mais.',
-    },
-  ],
+  faq,
   bibliography: [
     {
       name: 'Princípios do Movimento FIRE',
       url: 'https://pt.wikipedia.org/wiki/FIRE_movement',
     },
   ],
-  howTo: [
-    {
-      name: 'Insere as tuas poupanças',
-      text: 'Insere o total de dinheiro líquido disponível.',
-    },
-  ],
+  howTo,
   schemas: [
     {
       '@context': 'https://schema.org',
       '@type': 'FinancialProduct',
-      name: 'Calculadora de Liberdade Financeira',
-      description: 'Calcula a duração das tuas poupanças.',
+      name: title,
+      description,
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: faq.map((f) => ({
+        '@type': 'Question',
+        name: f.question,
+        acceptedAnswer: { '@type': 'Answer', text: f.answer },
+      })),
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'HowTo',
+      name: title,
+      step: howTo.map((h, i) => ({
+        '@type': 'HowToStep',
+        position: i + 1,
+        name: h.name,
+        text: h.text,
+      })),
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'SoftwareApplication',
+      name: title,
+      applicationCategory: 'FinanceApplication',
+      operatingSystem: 'All',
+      offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
     },
   ],
 };

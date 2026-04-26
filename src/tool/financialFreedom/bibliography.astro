@@ -1,12 +1,14 @@
 ---
-import type { FinancialFreedomLocaleContent } from './entry';
-import ToolBibliography from '../../components/ToolBibliography.astro';
+import { Bibliography as SharedBibliography } from '@jjlmoya/utils-shared';
+import { financialFreedom } from './index';
+import type { KnownLocale } from '../../types';
 
 interface Props {
-  content: FinancialFreedomLocaleContent;
+  locale?: KnownLocale;
 }
 
-const { content } = Astro.props;
+const { locale = 'en' } = Astro.props;
+const content = await financialFreedom.i18n[locale]?.();
 ---
 
-<ToolBibliography {content} />
+{content && <SharedBibliography links={content.bibliography} />}
