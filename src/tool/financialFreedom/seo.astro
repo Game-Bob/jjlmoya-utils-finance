@@ -1,13 +1,15 @@
 ---
 import { SEORenderer } from '@jjlmoya/utils-shared';
-import type { FinancialFreedomLocaleContent } from './entry';
+import { financialFreedom } from './entry';
+import type { KnownLocale } from '../../types';
 
 interface Props {
-  content: FinancialFreedomLocaleContent;
-  locale: string;
+  locale?: KnownLocale;
 }
 
-const { content, locale } = Astro.props;
+const { locale = 'es' } = Astro.props;
+const content = await financialFreedom.i18n[locale]?.();
+if (!content) return null;
 ---
 
-{content.seo && content.seo.length > 0 && <SEORenderer content={{ locale, sections: content.seo }} />}
+{content.seo?.length > 0 && <SEORenderer content={{ locale, sections: content.seo }} />}
