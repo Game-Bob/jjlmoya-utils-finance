@@ -1,0 +1,12 @@
+---
+import type { FinancialFreedomLocaleContent } from './entry';
+import ToolSEO from '../../components/ToolSEO.astro';
+
+interface Props {
+  content: FinancialFreedomLocaleContent;
+}
+
+const { content } = Astro.props;
+---
+
+<ToolSEO {content} />

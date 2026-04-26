@@ -1,0 +1,212 @@
+---
+import type { KnownLocale } from '../../types';
+import type { ProfitabilityUI } from './ui';
+
+interface Props {
+  locale?: KnownLocale;
+  ui?: Record<string, unknown>;
+}
+
+const { ui } = Astro.props;
+const t = (ui ?? {}) as ProfitabilityUI;
+---
+
+<div
+  class="prof-root"
+  data-label-positive={t.labelPositiveResult}
+  data-label-negative={t.labelNegativeResult}
+  data-label-linear={t.labelLinearGrowth}
+  data-label-exponential={t.labelExponentialGrowth}
+  data-label-copied={t.labelCopied}
+  data-label-copy={t.labelCopyResult}
+>
+  <div id="prof-card" class="prof-card positive">
+    <div class="prof-grid">
+      <div class="prof-inputs">
+        <div class="prof-input-group">
+          <label class="prof-label">{t.labelInitialInvestment}</label>
+          <input type="number" id="prof-initial" value="10000" class="prof-input-field" />
+        </div>
+
+        <div class="prof-input-group">
+          <label class="prof-label">{t.labelFinalValue}</label>
+          <input type="number" id="prof-final" value="15000" class="prof-input-field" />
+        </div>
+
+        <div class="prof-input-group">
+          <label class="prof-label">{t.labelTimeSelection}</label>
+          <div class="prof-time-row">
+            <input type="number" id="prof-time-value" value="3" class="prof-input-field" style="flex: 2;" />
+            <select id="prof-time-unit" class="prof-unit-select" style="flex: 1;">
+              <option value="years">{t.labelYears}</option>
+              <option value="months">{t.labelMonths}</option>
+              <option value="days">{t.labelDays}</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="prof-results">
+        <div class="prof-main-metric">
+          <div id="prof-status" class="prof-status-badge positive">{t.labelPositiveResult}</div>
+          <div id="prof-roi" class="prof-metric-val">0%</div>
+          <div class="prof-label">{t.labelROI}</div>
+        </div>
+
+        <div class="prof-submetrics">
+          <div class="prof-submetric-card">
+            <span class="prof-label">{t.labelCAGR}</span>
+            <span id="prof-cagr" class="prof-submetric-val">0%</span>
+          </div>
+          <div class="prof-submetric-card">
+            <span class="prof-label">{t.labelNetProfit}</span>
+            <span id="prof-net" class="prof-submetric-val">0</span>
+          </div>
+        </div>
+
+        <button id="prof-copy" class="prof-copy-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span>{t.labelCopyResult}</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="prof-chart-wrap">
+      <canvas id="prof-chart"></canvas>
+    </div>
+  </div>
+</div>
+
+<script>
+  import { ProfitabilityCalculator } from './logic';
+  import type { ProfitabilityResult } from './logic';
+  import Chart from 'chart.js/auto';
+
+  const root = document.querySelector('.prof-root') as HTMLElement;
+  const initialIn = document.getElementById('prof-initial') as HTMLInputElement;
+  const finalIn = document.getElementById('prof-final') as HTMLInputElement;
+  const timeIn = document.getElementById('prof-time-value') as HTMLInputElement;
+  const unitIn = document.getElementById('prof-time-unit') as HTMLSelectElement;
+  const copyBtn = document.getElementById('prof-copy') as HTMLButtonElement;
+  const card = document.getElementById('prof-card');
+  const statusOut = document.getElementById('prof-status');
+  const roiOut = document.getElementById('prof-roi');
+  const cagrOut = document.getElementById('prof-cagr');
+  const netOut = document.getElementById('prof-net');
+  const ctx = document.getElementById('prof-chart') as HTMLCanvasElement;
+
+  const labelPositive = root.dataset.labelPositive || '';
+  const labelNegative = root.dataset.labelNegative || '';
+  const labelLinear = root.dataset.labelLinear || '';
+  const labelExponential = root.dataset.labelExponential || '';
+  const labelCopied = root.dataset.labelCopied || '';
+  const labelCopy = root.dataset.labelCopy || '';
+
+  let chart: Chart | null = null;
+
+  const updateTextValues = (result: ProfitabilityResult) => {
+    if (roiOut) roiOut.innerText = `${result.roi > 0 ? '+' : ''}${result.roi}%`;
+    if (cagrOut) cagrOut.innerText = `${result.cagr > 0 ? '+' : ''}${result.cagr}%`;
+    if (netOut) netOut.innerText = result.netProfit.toLocaleString();
+  };
+
+  const updateStatusUI = (result: ProfitabilityResult) => {
+    const statusClass = result.isPositive ? 'positive' : 'negative';
+    if (card) card.className = `prof-card ${statusClass}`;
+    if (statusOut) {
+      statusOut.className = `prof-status-badge ${statusClass}`;
+      statusOut.innerText = result.isPositive ? labelPositive : labelNegative;
+    }
+  };
+
+  const updateUI = (result: ProfitabilityResult) => {
+    updateTextValues(result);
+    updateStatusUI(result);
+  };
+
+  const getChartDatasets = (linearData: number[], exponentialData: number[]) => [
+    {
+      label: labelLinear,
+      data: linearData,
+      borderColor: '#94a3b8',
+      borderDash: [5, 5],
+      tension: 0,
+      pointRadius: 0
+    },
+    {
+      label: labelExponential,
+      data: exponentialData,
+      borderColor: '#10b981',
+      backgroundColor: 'rgba(16, 185, 129, 0.1)',
+      fill: true,
+      tension: 0.4,
+      pointRadius: 0
+    }
+  ];
+
+  const getChartOptions = () => ({
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: { legend: { position: 'bottom' as const, labels: { font: { family: 'Outfit', weight: 'bold' } } } },
+    scales: { 
+      y: { grid: { color: 'rgba(0,0,0,0.05)' } }, 
+      x: { grid: { display: false }, title: { display: true, text: 'Years', font: { weight: 'bold' } } } 
+    }
+  });
+
+  const updateChart = (initial: number, final: number, years: number, cagr: number) => {
+    const steps = 12;
+    const labels = Array.from({ length: steps + 1 }, (_, i) => (years * i / steps).toFixed(1));
+    const linearData = labels.map((_, i) => initial + (final - initial) * i / steps);
+    const exponentialData = labels.map((_, i) => initial * Math.pow(1 + cagr / 100, years * i / steps));
+
+    if (chart) {
+      chart.data.labels = labels;
+      chart.data.datasets[0].data = linearData;
+      chart.data.datasets[1].data = exponentialData;
+      chart.update();
+    } else {
+      chart = new Chart(ctx, {
+        type: 'line',
+        data: { labels, datasets: getChartDatasets(linearData, exponentialData) },
+        options: getChartOptions() as Parameters<typeof Chart>[1]['options'],
+      });
+    }
+  };
+
+  const update = () => {
+    const initial = parseFloat(initialIn.value) || 0;
+    const final = parseFloat(finalIn.value) || 0;
+    const time = parseFloat(timeIn.value) || 0;
+    const unit = unitIn.value as 'years' | 'months' | 'days';
+
+    const result = ProfitabilityCalculator.calculate({
+      initialInvestment: initial,
+      finalValue: final,
+      timeValue: time,
+      timeUnit: unit
+    });
+
+    updateUI(result);
+    updateChart(initial, final, result.years, result.cagr);
+  };
+
+  [initialIn, finalIn, timeIn, unitIn].forEach(el => el.addEventListener('input', update));
+
+  copyBtn.addEventListener('click', () => {
+    const text = `Investment Performance: ROI ${roiOut?.innerText}, CAGR ${cagrOut?.innerText} over ${timeIn.value} ${unitIn.value}. Total net: ${netOut?.innerText}`;
+    navigator.clipboard.writeText(text).then(() => {
+      const span = copyBtn.querySelector('span');
+      if (span) {
+        span.innerText = labelCopied;
+        setTimeout(() => { span.innerText = labelCopy; }, 2000);
+      }
+    });
+  });
+
+  update();
+</script>
+
+<style>
+  @import './profitability-calculator.css';
+</style>

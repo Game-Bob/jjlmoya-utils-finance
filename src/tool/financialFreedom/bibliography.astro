@@ -1,0 +1,12 @@
+---
+import type { FinancialFreedomLocaleContent } from './entry';
+import ToolBibliography from '../../components/ToolBibliography.astro';
+
+interface Props {
+  content: FinancialFreedomLocaleContent;
+}
+
+const { content } = Astro.props;
+---
+
+<ToolBibliography {content} />

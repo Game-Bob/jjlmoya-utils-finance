@@ -1,0 +1,12 @@
+---
+import type { ProfitabilityLocaleContent } from './entry';
+import ToolSEO from '../../components/ToolSEO.astro';
+
+interface Props {
+  content: ProfitabilityLocaleContent;
+}
+
+const { content } = Astro.props;
+---
+
+<ToolSEO {content} />

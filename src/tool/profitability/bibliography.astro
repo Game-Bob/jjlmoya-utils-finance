@@ -1,0 +1,12 @@
+---
+import type { ProfitabilityLocaleContent } from './entry';
+import ToolBibliography from '../../components/ToolBibliography.astro';
+
+interface Props {
+  content: ProfitabilityLocaleContent;
+}
+
+const { content } = Astro.props;
+---
+
+<ToolBibliography {content} />

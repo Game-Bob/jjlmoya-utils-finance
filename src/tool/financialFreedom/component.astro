@@ -1,0 +1,219 @@
+---
+import type { KnownLocale } from '../../types';
+import type { FinancialFreedomUI } from './ui';
+
+interface Props {
+  locale?: KnownLocale;
+  ui?: Record<string, unknown>;
+}
+
+const { ui } = Astro.props;
+const t = (ui ?? {}) as FinancialFreedomUI;
+---
+
+<div
+  class="ff-root"
+  data-label-years={t.labelYears}
+  data-label-months={t.labelMonths}
+  data-label-days={t.labelDays}
+  data-label-red-zone={t.labelRedZone}
+  data-label-yellow-zone={t.labelYellowZone}
+  data-label-green-zone={t.labelGreenZone}
+>
+  <div class="ff-card">
+    <div class="ff-calculator-grid">
+      <div class="ff-inputs">
+        <div class="ff-input-group">
+          <div class="ff-input-label">
+            <span>{t.labelSavings}</span>
+            <select id="ff-currency-select" class="ff-currency-select">
+              <option value="$">$ (USD)</option>
+              <option value="€">€ (EUR)</option>
+              <option value="£">£ (GBP)</option>
+              <option value="¥">¥ (JPY)</option>
+            </select>
+          </div>
+          <input type="number" id="ff-savings-input" value="50000" class="ff-input-field" />
+          <input type="range" id="ff-savings-slider" min="0" max="1000000" step="1000" value="50000" class="ff-slider" />
+        </div>
+
+        <div class="ff-input-group">
+          <div class="ff-input-label">
+            <span>{t.labelExpenses}</span>
+            <div class="ff-switch">
+              <button class="ff-switch-btn active" data-period="monthly">{t.labelMonthly}</button>
+              <button class="ff-switch-btn" data-period="yearly">{t.labelYearly}</button>
+            </div>
+          </div>
+          <input type="number" id="ff-expenses-input" value="2000" class="ff-input-field" />
+          <input type="range" id="ff-expenses-slider" min="0" max="20000" step="100" value="2000" class="ff-slider" />
+        </div>
+      </div>
+
+      <div class="ff-results-main">
+        <div class="ff-time-hero">
+          <div class="ff-time-label">{t.labelTimeRemaining}</div>
+          <div id="ff-time-display" class="ff-time-display">0</div>
+        </div>
+        
+        <div class="ff-time-units">
+          <div class="ff-unit-card">
+            <span id="ff-years" class="ff-unit-val">0</span>
+            <span class="ff-unit-name">{t.labelYears}</span>
+          </div>
+          <div class="ff-unit-card">
+            <span id="ff-months" class="ff-unit-val">0</span>
+            <span class="ff-unit-name">{t.labelMonths}</span>
+          </div>
+          <div class="ff-unit-card">
+            <span id="ff-days" class="ff-unit-val">0</span>
+            <span class="ff-unit-name">{t.labelDays}</span>
+          </div>
+        </div>
+
+        <div id="ff-status" class="ff-status-indicator status-red">
+          <span id="ff-status-text">{t.labelRedZone}</span>
+        </div>
+
+        <div class="ff-burn-grid">
+          <div class="ff-unit-card ff-burn-card">
+            <div class="ff-unit-name">{t.labelBurnRateDaily}</div>
+            <div id="ff-burn-daily" class="ff-burn-val">0</div>
+          </div>
+          <div class="ff-unit-card ff-burn-card">
+            <div class="ff-unit-name">{t.labelBurnRateMonthly}</div>
+            <div id="ff-burn-monthly" class="ff-burn-val">0</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ff-what-if-card">
+      <div class="ff-what-if-title">{t.labelWhatIf}</div>
+      <p class="ff-what-if-desc">{t.labelWhatIfDescription}</p>
+      <div class="ff-gain-display">
+        <span id="ff-gain-time">0</span> {t.labelGainTime}
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  import { FinancialFreedomCalculator } from './logic';
+  import type { FinancialFreedomResult } from './logic';
+
+  const root = document.querySelector('.ff-root') as HTMLElement;
+  const savingsSlider = document.getElementById('ff-savings-slider') as HTMLInputElement;
+  const savingsInput = document.getElementById('ff-savings-input') as HTMLInputElement;
+  const expensesSlider = document.getElementById('ff-expenses-slider') as HTMLInputElement;
+  const expensesInput = document.getElementById('ff-expenses-input') as HTMLInputElement;
+  const currencySelect = document.getElementById('ff-currency-select') as HTMLSelectElement;
+  const periodBtns = document.querySelectorAll('.ff-switch-btn');
+  
+  const yearsOut = document.getElementById('ff-years');
+  const monthsOut = document.getElementById('ff-months');
+  const daysOut = document.getElementById('ff-days');
+  const burnDailyOut = document.getElementById('ff-burn-daily');
+  const burnMonthlyOut = document.getElementById('ff-burn-monthly');
+  const gainTimeOut = document.getElementById('ff-gain-time');
+  const statusOut = document.getElementById('ff-status');
+  const statusTextOut = document.getElementById('ff-status-text');
+  const timeHeroOut = document.getElementById('ff-time-display');
+  
+  const labelRedZone = root.dataset.labelRedZone || '';
+  const labelYellowZone = root.dataset.labelYellowZone || '';
+  const labelGreenZone = root.dataset.labelGreenZone || '';
+
+  let currentPeriod: 'monthly' | 'yearly' = 'monthly';
+
+  const formatHumanTimeShort = (res: { years: number; months: number; days: number }) => {
+     if (res.years > 0) return `${res.years}y ${res.months}m`;
+     if (res.months > 0) return `${res.months}m ${res.days}d`;
+     return `${res.days}d`;
+  };
+
+  const updateDisplay = (result: FinancialFreedomResult, currency: string) => {
+    if (yearsOut) yearsOut.innerText = result.humanTime.years.toString();
+    if (monthsOut) monthsOut.innerText = result.humanTime.months.toString();
+    if (daysOut) daysOut.innerText = result.humanTime.days.toString();
+    
+    if (timeHeroOut) {
+       timeHeroOut.innerText = formatHumanTimeShort(result.humanTime);
+    }
+    
+    if (burnDailyOut) burnDailyOut.innerText = `${currency}${result.dailyBurn}`;
+    if (burnMonthlyOut) burnMonthlyOut.innerText = `${currency}${result.monthlyBurn}`;
+    
+    if (gainTimeOut) {
+      const g = result.gainWithSavings;
+      gainTimeOut.innerText = `${g.years}y, ${g.months}m, ${g.days}d`;
+    }
+  };
+
+  const updateStatus = (status: string) => {
+    if (!statusOut || !statusTextOut) return;
+    statusOut.className = `ff-status-indicator status-${status}`;
+    if (status === 'red') statusTextOut.innerText = labelRedZone;
+    if (status === 'yellow') statusTextOut.innerText = labelYellowZone;
+    if (status === 'green') statusTextOut.innerText = labelGreenZone;
+  };
+
+  const update = () => {
+    const savings = parseFloat(savingsInput.value) || 0;
+    const expenses = parseFloat(expensesInput.value) || 0;
+    const currency = currencySelect.value;
+
+    const result = FinancialFreedomCalculator.calculate({
+      savings,
+      expenses,
+      expensePeriod: currentPeriod
+    });
+
+    updateDisplay(result, currency);
+    updateStatus(result.status);
+  };
+
+  const syncInput = (slider: HTMLInputElement, input: HTMLInputElement) => {
+    slider.addEventListener('input', () => {
+      input.value = slider.value;
+      update();
+    });
+    input.addEventListener('input', () => {
+      slider.value = input.value;
+      update();
+    });
+  };
+
+  syncInput(savingsSlider, savingsInput);
+  syncInput(expensesSlider, expensesInput);
+
+  currencySelect.addEventListener('change', update);
+
+  const handlePeriodChange = (btn: HTMLElement) => {
+    periodBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    currentPeriod = btn.dataset.period as 'monthly' | 'yearly';
+    
+    if (currentPeriod === 'monthly') {
+      expensesSlider.max = '20000';
+      expensesSlider.step = '100';
+      if (parseFloat(expensesInput.value) > 20000) expensesInput.value = '20000';
+    } else {
+      expensesSlider.max = '240000';
+      expensesSlider.step = '1000';
+    }
+    expensesSlider.value = expensesInput.value;
+    
+    update();
+  };
+
+  periodBtns.forEach(btn => {
+    btn.addEventListener('click', () => handlePeriodChange(btn as HTMLElement));
+  });
+
+  update();
+</script>
+
+<style>
+  @import './financial-freedom-calculator.css';
+</style>
