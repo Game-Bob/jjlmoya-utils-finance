@@ -189,6 +189,7 @@
     border: 2px solid var(--ibs-border-input);
     transition: all 0.3s ease;
     min-width: 0;
+    width: 100%;
 }
 
 .ibs-input-wrapper:focus-within {
@@ -207,6 +208,9 @@
     outline: none;
     letter-spacing: 0.02em;
     min-width: 0;
+    overflow-x: auto;
+    text-overflow: clip;
+    white-space: nowrap;
 }
 
 .ibs-input-wrapper input::placeholder {
@@ -454,13 +458,12 @@
     }
 
     .ibs-input-wrapper input {
-        padding: 1rem;
-        font-size: 1rem;
+        padding: 0.875rem 1rem;
+        font-size: 0.95rem;
     }
 
     .ibs-input-icon {
-        margin-right: 1rem;
-        font-size: 1.25rem;
+        display: none;
     }
 
     .ibs-bank-name-value,

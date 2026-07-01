@@ -27,7 +27,7 @@ const { ui } = Astro.props;
                         id="iban-input"
                         placeholder={ui.labelInputPlaceholder}
                         autocomplete="off"
-                        maxlength="34"
+                        maxlength="42"
                     />
                     <span class="ibs-input-icon" data-icon="card"></span>
                 </div>
@@ -91,6 +91,7 @@ const { ui } = Astro.props;
             formatted += value[i];
         }
         principalInput.value = formatted;
+        principalInput.scrollLeft = principalInput.scrollWidth;
 
         errorMsg?.classList.add("ibs-hidden");
         if (value.length === 0) {
