@@ -20,7 +20,7 @@ export const ui: ProfitabilityUI = {
 };
 
 const slug = 'calculateur-rentabilite-investissement-roi-cagr';
-const title = 'Calculateur de Rentabilité : ROI & CAGR';
+const title = 'Calculateur de Rentabilité: ROI & CAGR';
 const description = 'Analysez la performance de vos investissements. Calculez le ROI total et le CAGR pour comprendre vos gains réels.';
 
 const faq = [
@@ -57,7 +57,7 @@ export const content: ToolLocaleContent<ProfitabilityUI> = {
   seo: [
     {
       type: 'title',
-      text: 'ROI vs CAGR : Quelle métrique choisir ?',
+      text: 'ROI vs CAGR: Quelle métrique choisir ?',
       level: 2,
     },
     {

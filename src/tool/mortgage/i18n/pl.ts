@@ -105,7 +105,7 @@ export const content: ToolLocaleContent<MortgageUI> = {
     },
     {
       type: 'title',
-      text: '„Pułapka” Systemu Francuskiego: Z czego składa się Twoja rata?',
+      text: '"Pułapka" Systemu Francuskiego: Z czego składa się Twoja rata?',
       level: 3,
     },
     {

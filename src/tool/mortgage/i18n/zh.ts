@@ -105,7 +105,7 @@ export const content: ToolLocaleContent<MortgageUI> = {
     },
     {
       type: 'title',
-      text: '等额本息系统的“陷阱”：了解月供的构成',
+      text: '等额本息系统的"陷阱"：了解月供的构成',
       level: 3,
     },
     {

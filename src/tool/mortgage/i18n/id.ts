@@ -105,7 +105,7 @@ export const content: ToolLocaleContent<MortgageUI> = {
     },
     {
       type: 'title',
-      text: '„Jebakan” Sistem Prancis: Memahami Komposisi Angsuran Anda',
+      text: '"Jebakan" Sistem Prancis: Memahami Komposisi Angsuran Anda',
       level: 3,
     },
     {

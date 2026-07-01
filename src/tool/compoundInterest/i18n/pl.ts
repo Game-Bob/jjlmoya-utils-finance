@@ -17,10 +17,10 @@ const faqData = [
   {
     question: 'Jaka jest różnica między procentem prostym a składanym?',
     answer:
-      'W procencie prostym odsetki naliczane są tylko od kapitału początkowego. W składanym odsetki są reinwestowane, co oznacza, że „Twoje odsetki zarabiają kolejne odsetki”.',
+      'W procencie prostym odsetki naliczane są tylko od kapitału początkowego. W składanym odsetki są reinwestowane, co oznacza, że "Twoje odsetki zarabiają kolejne odsetki".',
   },
   {
-    question: 'Co to jest „Reguła 72”?',
+    question: 'Co to jest "Reguła 72"?',
     answer:
       'To szybki wzór pozwalający oszacować, po jakim czasie inwestycja podwoi swoją wartość: podziel 72 przez roczną stopę zwrotu. Na przykład przy 8% rocznie podwoisz swoje pieniądze w 9 lat.',
   },

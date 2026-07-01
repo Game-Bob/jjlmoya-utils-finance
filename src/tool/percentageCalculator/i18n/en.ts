@@ -153,7 +153,7 @@ export const content: ToolLocaleContent<PercentageCalculatorUI> = {
     {
       type: 'tip',
       title: 'The Reversibility Trick',
-      html: '<p>Did you know that X% of Y equals Y% of X exactly? For example, if you\'re asked to calculate 18% of 50 in your head, it sounds complicated. But flip it around—50% of 18 is easy: it\'s 9! This works for absolutely any numbers and is an amazing lifesaver in daily calculations.</p>',
+      html: '<p>Did you know that X% of Y equals Y% of X exactly? For example, if you\'re asked to calculate 18% of 50 in your head, it sounds complicated. But flip it around-50% of 18 is easy: it\'s 9! This works for absolutely any numbers and is an amazing lifesaver in daily calculations.</p>',
     },
     {
       type: 'title',

@@ -92,7 +92,7 @@ export const content: ToolLocaleContent<IBANBICSwiftUI> = {
   seo: [
     {
       type: 'title',
-      text: 'Convertisseur IBAN en BIC/SWIFT : Recherche Instantanée',
+      text: 'Convertisseur IBAN en BIC/SWIFT: Recherche Instantanée',
       level: 2,
     },
     {

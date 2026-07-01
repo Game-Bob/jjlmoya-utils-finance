@@ -18,7 +18,7 @@ const faqData = [
   },
   {
     question: 'Czy naprawdę opłaca się grać w hiszpańską Loterię Bożonarodzeniową (El Gordo)?',
-    answer: 'Z czysto matematycznego punktu widzenia – nie. Zwracane jest tylko 70% zebranych środków. Ma ona jednak znacznie wyższe prawdopodobieństwo wygrania nagrody głównej (1 na 100 000) niż Euromillions (1 na 140 milionów).',
+    answer: 'Z czysto matematycznego punktu widzenia - nie. Zwracane jest tylko 70% zebranych środków. Ma ona jednak znacznie wyższe prawdopodobieństwo wygrania nagrody głównej (1 na 100 000) niż Euromillions (1 na 140 milionów).',
   },
   {
     question: 'Czy mogę poprawić swoje szanse za pomocą statystyk?',

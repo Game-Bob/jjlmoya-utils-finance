@@ -17,7 +17,7 @@ const faqData = [
   {
     question: 'Ist er für die Berechnung der Mehrwertsteuer oder von Steuern geeignet?',
     answer:
-      'Ja, Block 4 („Prozentsatz addieren oder subtrahieren“) ist genau für Fälle wie die Anwendung einer MwSt. von 19 % auf einen Basispreis oder die Berechnung einer negativen Einkommensteuer konzipiert.',
+      'Ja, Block 4 ("Prozentsatz addieren oder subtrahieren") ist genau für Fälle wie die Anwendung einer MwSt. von 19 % auf einen Basispreis oder die Berechnung einer negativen Einkommensteuer konzipiert.',
   },
   {
     question: 'Können Dezimalzahlen und negative Zahlen verarbeitet werden?',
@@ -38,7 +38,7 @@ const howToData = [
   },
   {
     name: 'Geben Sie die Zahlen ein',
-    text: 'Füllen Sie die Felder „X“ und „Y“ aus. Machen Sie sich keine Sorgen um die Reihenfolge, der Text jedes Blocks führt Sie visuell.',
+    text: 'Füllen Sie die Felder "X" und "Y" aus. Machen Sie sich keine Sorgen um die Reihenfolge, der Text jedes Blocks führt Sie visuell.',
   },
   {
     name: 'Kopieren Sie das Sofortergebnis',
@@ -106,7 +106,7 @@ export const content: ToolLocaleContent<PercentageCalculatorUI> = {
     },
     {
       type: 'paragraph',
-      html: 'Unser 4 in 1 Prozentrechner gruppiert die am häufigsten nachgefragten Szenarien. Sie müssen nicht mehr bei Google nach „wie berechnet man 20 Prozent“ oder „Formel zur Prozentrechnung“ suchen. Sie haben die vier wesentlichen Operationen an einem Ort, interaktiv und mit sofortigen Ergebnissen.',
+      html: 'Unser 4 in 1 Prozentrechner gruppiert die am häufigsten nachgefragten Szenarien. Sie müssen nicht mehr bei Google nach "wie berechnet man 20 Prozent" oder "Formel zur Prozentrechnung" suchen. Sie haben die vier wesentlichen Operationen an einem Ort, interaktiv und mit sofortigen Ergebnissen.',
     },
     {
       type: 'title',
@@ -148,7 +148,7 @@ export const content: ToolLocaleContent<PercentageCalculatorUI> = {
     },
     {
       type: 'paragraph',
-      html: 'Oft blockieren wir, wenn wir große Prozentsätze oder Dezimalzahlen sehen, aber es gibt einige mathematische „Tricks“, die Ihnen das Leben erleichtern können. Der bekannteste ist die <strong>Reversibilität von Prozentsätzen</strong>.',
+      html: 'Oft blockieren wir, wenn wir große Prozentsätze oder Dezimalzahlen sehen, aber es gibt einige mathematische "Tricks", die Ihnen das Leben erleichtern können. Der bekannteste ist die <strong>Reversibilität von Prozentsätzen</strong>.',
     },
     {
       type: 'tip',

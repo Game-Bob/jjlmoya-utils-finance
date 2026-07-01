@@ -10,7 +10,7 @@ const description = '10/2012 Sayılı Kanun uyarınca şirketler için İspanyol
 const faqData = [
   {
     question: 'Şahıslar mahkeme harcı ödemekten muaf mıdır?',
-    answer: 'Evet, 2016 yılından bu yana İspanya’da gerçek kişiler tüm yargı kollarında mahkeme harcı ödemekten tamamen muaftır.',
+    answer: 'Evet, 2016 yılından bu yana İspanya\'da gerçek kişiler tüm yargı kollarında mahkeme harcı ödemekten tamamen muaftır.',
   },
   {
     question: 'Mahkeme harcının maksimum tutarı nedir?',
@@ -18,15 +18,15 @@ const faqData = [
   },
   {
     question: 'Model 696 nedir?',
-    answer: 'İspanya Vergi Dairesi’nin (AEAT) yargı yetkisinin kullanılmasına ilişkin harcın beyanı ve ödenmesi için kullanılan resmi formdur.',
+    answer: 'İspanya Vergi Dairesi\'nin (AEAT) yargı yetkisinin kullanılmasına ilişkin harcın beyanı ve ödenmesi için kullanılan resmi formdur.',
   },
   {
     question: 'Ceza davalarında harç ödenir mi?',
-    answer: 'Hayır, İspanya’da ceza hukuku kapsamındaki davalar için mahkeme harcı yoktur.',
+    answer: 'Hayır, İspanya\'da ceza hukuku kapsamındaki davalar için mahkeme harcı yoktur.',
   },
   {
     question: 'Değişken miktar nasıl hesaplanır?',
-    answer: 'Değişken miktar, 1 milyon euroya kadar olan dava değerinin %0,5’idir. Bu tutarın üzerindeki kısım için %0,25 uygulanır. Maksimum tutar 10.000 eurodur.',
+    answer: 'Değişken miktar, 1 milyon euroya kadar olan dava değerinin %0,5\'idir. Bu tutarın üzerindeki kısım için %0,25 uygulanır. Maksimum tutar 10.000 eurodur.',
   },
 ];
 
@@ -57,7 +57,7 @@ const seoData = [
   },
   {
     type: 'paragraph',
-    html: '<strong>Mahkeme Harçları Hesaplayıcı</strong>, 10/2012 Sayılı Kanun uyarınca İspanya’daki yargı yetkisi kullanmanın mali maliyetini hassas bir şekilde belirlemek için tasarlanmış teknik bir araçtır.',
+    html: '<strong>Mahkeme Harçları Hesaplayıcı</strong>, 10/2012 Sayılı Kanun uyarınca İspanya\'daki yargı yetkisi kullanmanın mali maliyetini hassas bir şekilde belirlemek için tasarlanmış teknik bir araçtır.',
   },
 ];
 
@@ -99,7 +99,7 @@ export const content: ToolLocaleContent<CourtFeeCalculatorUI> = {
   description,
   ui: {
     labelTitle: 'Mahkeme Harçları Hesaplayıcı',
-    labelDescription: 'Yargı koluna ve prosedüre göre Model 696’nın tam tutarını hesaplayın. Şirketler ve profesyoneller için.',
+    labelDescription: 'Yargı koluna ve prosedüre göre Model 696\'nın tam tutarını hesaplayın. Şirketler ve profesyoneller için.',
     labelLegalParameters: 'Yasal Parametreler',
     labelEntityType: 'Yükümlü Kişi',
     labelJurisdiction: 'Yargı Kolu',

@@ -10,24 +10,24 @@ const description =
 
 const faqData = [
   {
-    question: 'Cos’è l’interesse composto?',
+    question: 'Cos\'è l\'interesse composto?',
     answer:
-      'È l’interesse calcolato sul capitale iniziale e anche sugli interessi accumulati dei periodi precedenti. Ciò genera una crescita esponenziale dell’investimento nel tempo.',
+      'È l\'interesse calcolato sul capitale iniziale e anche sugli interessi accumulati dei periodi precedenti. Ciò genera una crescita esponenziale dell\'investimento nel tempo.',
   },
   {
-    question: 'Qual è la differenza con l’interesse semplice?',
+    question: 'Qual è la differenza con l\'interesse semplice?',
     answer:
-      'Nell’interesse semplice, gli interessi sono calcolati solo sul capitale iniziale. Nel composto, gli interessi vengono reinvestiti, il che significa che „i tuoi interessi generano altri interessi”.',
+      'Nell\'interesse semplice, gli interessi sono calcolati solo sul capitale iniziale. Nel composto, gli interessi vengono reinvestiti, il che significa che "i tuoi interessi generano altri interessi".',
   },
   {
-    question: 'Cos’è la „Regola del 72”?',
+    question: 'Cos\'è la "Regola del 72"?',
     answer:
-      'È una formula rapida per stimare quanto tempo impiegherà un investimento a raddoppiare: dividi 72 per il tasso di rendimento annuo. Ad esempio, all’8% annuo, raddoppierai i tuoi soldi in 9 anni.',
+      'È una formula rapida per stimare quanto tempo impiegherà un investimento a raddoppiare: dividi 72 per il tasso di rendimento annuo. Ad esempio, all\'8% annuo, raddoppierai i tuoi soldi in 9 anni.',
   },
   {
     question: 'Perché è importante iniziare a investire da giovani?',
     answer:
-      'A causa dell’effetto esponenziale, il fattore più determinante non è la quantità di denaro risparmiata, ma il tempo. Iniziare qualche anno prima può portare a una ricchezza finale molto maggiore grazie alla capitalizzazione.',
+      'A causa dell\'effetto esponenziale, il fattore più determinante non è la quantità di denaro risparmiata, ma il tempo. Iniziare qualche anno prima può portare a una ricchezza finale molto maggiore grazie alla capitalizzazione.',
   },
 ];
 
@@ -42,11 +42,11 @@ const howToData = [
   },
   {
     name: 'Stimare il rendimento annuo',
-    text: 'Inserisci la percentuale di profitto annuo che prevedi di ottenere (es. 7% per l’S&P 500 storico).',
+    text: 'Inserisci la percentuale di profitto annuo che prevedi di ottenere (es. 7% per l\'S&P 500 storico).',
   },
   {
-    name: 'Regolare l’orizzonte temporale',
-    text: 'Scegli per quanti anni manterrai l’investimento per visualizzare la crescita esponenziale del tuo capitale.',
+    name: 'Regolare l\'orizzonte temporale',
+    text: 'Scegli per quanti anni manterrai l\'investimento per visualizzare la crescita esponenziale del tuo capitale.',
   },
 ];
 
@@ -96,12 +96,12 @@ export const content: ToolLocaleContent<CompoundInterestUI> = {
   seo: [
     {
       type: 'title',
-      text: 'La Magia dell’Interesse Composto: Costruisci la tua ricchezza in modo esponenziale',
+      text: 'La Magia dell\'Interesse Composto: Costruisci la tua ricchezza in modo esponenziale',
       level: 2,
     },
     {
       type: 'paragraph',
-      html: 'Albert Einstein lo definì l’„ottava meraviglia del mondo”. L’<strong>interesse composto</strong> è il meccanismo più potente per generare ricchezza a lungo termine. Non devi essere un esperto di finanza per approfittarne: serve solo tempo, pazienza e denaro investito.',
+      html: 'Albert Einstein lo definì l\'"ottava meraviglia del mondo". L\'<strong>interesse composto</strong> è il meccanismo più potente per generare ricchezza a lungo termine. Non devi essere un esperto di finanza per approfittarne: serve solo tempo, pazienza e denaro investito.',
     },
     {
       type: 'title',
@@ -110,7 +110,7 @@ export const content: ToolLocaleContent<CompoundInterestUI> = {
     },
     {
       type: 'paragraph',
-      html: 'Immagina di avere una palla di neve in cima a una collina. L’<strong>interesse semplice</strong> è come far rotolare quella palla e dover aggiungere neve manualmente ogni metro per farla crescere. L’<strong>interesse composto</strong> è invece come lasciare che la palla rotoli da sola: raccoglie neve autonomamente e, più diventa grande, più superficie ha per raccogliere <em>ancora più</em> neve a ogni giro.',
+      html: 'Immagina di avere una palla di neve in cima a una collina. L\'<strong>interesse semplice</strong> è come far rotolare quella palla e dover aggiungere neve manualmente ogni metro per farla crescere. L\'<strong>interesse composto</strong> è invece come lasciare che la palla rotoli da sola: raccoglie neve autonomamente e, più diventa grande, più superficie ha per raccogliere <em>ancora più</em> neve a ogni giro.',
     },
     {
       type: 'comparative',
@@ -141,7 +141,7 @@ export const content: ToolLocaleContent<CompoundInterestUI> = {
     },
     {
       type: 'paragraph',
-      html: 'Matematicamente, i tuoi profitti generano nuovi profitti. Nei primi anni sembra lento, ma superato il „punto di svolta”, la curva s’impenna verticalmente. È qui che si creano le vere fortune.',
+      html: 'Matematicamente, i tuoi profitti generano nuovi profitti. Nei primi anni sembra lento, ma superato il "punto di svolta", la curva s\'impenna verticalmente. È qui che si creano le vere fortune.',
     },
     {
       type: 'title',
@@ -155,12 +155,12 @@ export const content: ToolLocaleContent<CompoundInterestUI> = {
     {
       type: 'tip',
       title: 'La Regola del 72',
-      html: '<p>Dividi 72 per il tuo rendimento annuo per sapere quanti anni impiegherai a <strong>raddoppiare i tuoi soldi</strong>.</p><p><em>Esempio: All’8%, raddoppi ogni 9 anni (72/8 = 9).</em></p><p>Questa formula magica funziona per qualsiasi tasso di rendimento e ti aiuta a stimare rapidamente la crescita dei tuoi investimenti.</p>',
+      html: '<p>Dividi 72 per il tuo rendimento annuo per sapere quanti anni impiegherai a <strong>raddoppiare i tuoi soldi</strong>.</p><p><em>Esempio: All\'8%, raddoppi ogni 9 anni (72/8 = 9).</em></p><p>Questa formula magica funziona per qualsiasi tasso di rendimento e ti aiuta a stimare rapidamente la crescita dei tuoi investimenti.</p>',
     },
     {
       type: 'tip',
       title: 'Consiglio 2026',
-      html: '<p>L’inflazione rimane un fattore. Assicurati che il tuo rendimento netto superi almeno il 2-3% annuo per non perdere potere d’acquisto. Investi in asset che crescono più velocemente dell’inflazione.</p>',
+      html: '<p>L\'inflazione rimane un fattore. Assicurati che il tuo rendimento netto superi almeno il 2-3% annuo per non perdere potere d\'acquisto. Investi in asset che crescono più velocemente dell\'inflazione.</p>',
     },
     {
       type: 'title',
@@ -169,7 +169,7 @@ export const content: ToolLocaleContent<CompoundInterestUI> = {
     },
     {
       type: 'paragraph',
-      html: 'L’interesse può capitalizzarsi annualmente, semestralmente, trimestralmente, mensilmente o perfino quotidianamente. Più <strong>frequente è la capitalizzazione</strong>, maggiore sarà l’effetto composto. Un medesimo capitale con lo stesso tasso crescerà di più se l’interesse si compone mensilmente rispetto a una composizione annuale.',
+      html: 'L\'interesse può capitalizzarsi annualmente, semestralmente, trimestralmente, mensilmente o perfino quotidianamente. Più <strong>frequente è la capitalizzazione</strong>, maggiore sarà l\'effetto composto. Un medesimo capitale con lo stesso tasso crescerà di più se l\'interesse si compone mensilmente rispetto a una composizione annuale.',
     },
   ],
   ui: {
@@ -185,7 +185,7 @@ export const content: ToolLocaleContent<CompoundInterestUI> = {
     labelYear: 'Anno',
     labelPrincipal: 'I tuoi soldi (Capitale)',
     labelInterest: 'Interessi Generati',
-    insightPrefix: '[TIP] Nell’anno ',
+    insightPrefix: '[TIP] Nell\'anno ',
     insightSuffix:
       ', i tuoi interessi annui generati supereranno i tuoi contributi. Il denaro lavora già più di te!',
     currencySymbol: '€',

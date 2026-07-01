@@ -6,13 +6,13 @@ import type { MortgageUI } from '../ui';
 const slug = 'mutuo';
 const title = 'Simulatore di Mutuo e Piano di Ammortamento alla Francese';
 const description =
-  'Calcola la tua rata mensile del mutuo, scopri quanto pagherai d’interessi e visualizza istantaneamente il tuo piano di ammortamento completo.';
+  'Calcola la tua rata mensile del mutuo, scopri quanto pagherai d\'interessi e visualizza istantaneamente il tuo piano di ammortamento completo.';
 
 const faqData = [
   {
-    question: 'Cos’è il sistema di ammortamento francese?',
+    question: 'Cos\'è il sistema di ammortamento francese?',
     answer:
-      'È il sistema più utilizzato. La rata mensile rimane costante, ma all’inizio paghi quasi solo interessi e pochissimo capitale. Alla fine, avviene il contrario. Per questo estinguere anticipatamente il mutuo è più vantaggioso nei primi anni.',
+      'È il sistema più utilizzato. La rata mensile rimane costante, ma all\'inizio paghi quasi solo interessi e pochissimo capitale. Alla fine, avviene il contrario. Per questo estinguere anticipatamente il mutuo è più vantaggioso nei primi anni.',
   },
   {
     question: 'Tasso fisso o variabile nel 2026?',
@@ -33,12 +33,12 @@ const faqData = [
 
 const howToData = [
   {
-    name: 'Inserire l’importo del prestito',
+    name: 'Inserire l\'importo del prestito',
     text: 'Scrivi la cifra totale che devi richiedere alla banca (sottraendo i tuoi risparmi versati come anticipo).',
   },
   {
     name: 'Regolare il tasso di interesse',
-    text: 'Inserisci il TAN (Tasso Annuo Nominale) offerto dall’istituto. Puoi confrontare tra tasso fisso o variabile.',
+    text: 'Inserisci il TAN (Tasso Annuo Nominale) offerto dall\'istituto. Puoi confrontare tra tasso fisso o variabile.',
   },
   {
     name: 'Scegliere la durata del rimborso',
@@ -46,7 +46,7 @@ const howToData = [
   },
   {
     name: 'Analizzare il piano di ammortamento',
-    text: 'Controlla mese per mese l’evoluzione del tuo debito e quanta parte della tua rata è destinata agli interessi rispetto al capitale.',
+    text: 'Controlla mese per mese l\'evoluzione del tuo debito e quanta parte della tua rata è destinata agli interessi rispetto al capitale.',
   },
 ];
 
@@ -105,7 +105,7 @@ export const content: ToolLocaleContent<MortgageUI> = {
     },
     {
       type: 'title',
-      text: 'La „Trappola” del Sistema Francese: Capire la Composizione della tua Rata',
+      text: 'La "Trappola" del Sistema Francese: Capire la Composizione della tua Rata',
       level: 3,
     },
     {
@@ -115,7 +115,7 @@ export const content: ToolLocaleContent<MortgageUI> = {
     {
       type: 'tip',
       title: 'Come si Evolverà la tua Rata',
-      html: '<p><strong>All’inizio (Anni 1-10):</strong> Paghi quasi solo INTERESSI e restituisci pochissimo capitale. Su un mutuo di 250.000€ al 3%, il tuo primo pagamento potrebbe essere per l’80% composto da interessi.</p><p><strong>A metà (Anni 11-25):</strong> La proporzione si equilibra gradualmente.</p><p><strong>Alla fine (Anni 26-30):</strong> Paghi quasi tutto CAPITALE e pochissimi interessi.</p>',
+      html: '<p><strong>All\'inizio (Anni 1-10):</strong> Paghi quasi solo INTERESSI e restituisci pochissimo capitale. Su un mutuo di 250.000€ al 3%, il tuo primo pagamento potrebbe essere per l\'80% composto da interessi.</p><p><strong>A metà (Anni 11-25):</strong> La proporzione si equilibra gradualmente.</p><p><strong>Alla fine (Anni 26-30):</strong> Paghi quasi tutto CAPITALE e pochissimi interessi.</p>',
     },
     {
       type: 'paragraph',
@@ -128,7 +128,7 @@ export const content: ToolLocaleContent<MortgageUI> = {
     },
     {
       type: 'paragraph',
-      html: 'La Banca d’Italia raccomanda che il mutuo <strong>non superi il 30-35% del tuo reddito netto mensile</strong>. Se superi questa soglia, aumenti significativamente il rischio di default in caso di imprevisti (perdita del lavoro, malattie, ecc.).',
+      html: 'La Banca d\'Italia raccomanda che il mutuo <strong>non superi il 30-35% del tuo reddito netto mensile</strong>. Se superi questa soglia, aumenti significativamente il rischio di default in caso di imprevisti (perdita del lavoro, malattie, ecc.).',
     },
     {
       type: 'title',
@@ -137,7 +137,7 @@ export const content: ToolLocaleContent<MortgageUI> = {
     },
     {
       type: 'paragraph',
-      html: 'Con l’Euribor fluttuante, scegliere tra <strong>Tasso Fisso</strong> o <strong>Tasso Variabile</strong> è una decisione strategica che può costare migliaia di euro all’anno.',
+      html: 'Con l\'Euribor fluttuante, scegliere tra <strong>Tasso Fisso</strong> o <strong>Tasso Variabile</strong> è una decisione strategica che può costare migliaia di euro all\'anno.',
     },
     {
       type: 'comparative',
@@ -145,11 +145,11 @@ export const content: ToolLocaleContent<MortgageUI> = {
       items: [
         {
           title: 'Tasso Fisso',
-          description: 'Paghi un po’ di più ora, ma dormi sereno sapendo che la tua rata non aumenterà mai.',
+          description: 'Paghi un po\' di più ora, ma dormi sereno sapendo che la tua rata non aumenterà mai.',
           points: [
             'Rata prevedibile per 30 anni',
             'Protezione contro il rialzo dei tassi',
-            'Pace mentale in un’economia incerta',
+            'Pace mentale in un\'economia incerta',
             'Ideale per budget limitati',
           ],
         },

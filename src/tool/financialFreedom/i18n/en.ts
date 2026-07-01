@@ -82,7 +82,7 @@ export const content: ToolLocaleContent<FinancialFreedomUI> = {
     },
     {
       type: 'paragraph',
-      html: 'To find your runway, we divide your total liquid savings by your periodic expenses. Our calculator goes further by breaking this down into years, months, and days, giving you a tangible sense of your financial weight. We also calculate your <strong>Burn Rate</strong>—the precise amount of money that leaves your pocket every single day.',
+      html: 'To find your runway, we divide your total liquid savings by your periodic expenses. Our calculator goes further by breaking this down into years, months, and days, giving you a tangible sense of your financial weight. We also calculate your <strong>Burn Rate</strong>-the precise amount of money that leaves your pocket every single day.',
     },
     {
       type: 'comparative',

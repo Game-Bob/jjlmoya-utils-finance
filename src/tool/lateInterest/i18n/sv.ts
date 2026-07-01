@@ -120,12 +120,12 @@ export const content: ToolLocaleContent<LateInterestUI> = {
     },
     {
       type: 'paragraph',
-      html: 'När skulden är till den offentliga förvaltningen är den <strong>skattemässiga dröjsmålsräntan</strong> högre än den lagstadgade räntan för att avskräcka från förseningar i skattebetalningar. För perioden <strong>2024–2026</strong> har den fastställts till <strong>4,0625 %</strong>. Detta är det tillägg som skattemyndigheten tar ut om du lämnar in en deklaration efter sista datum.',
+      html: 'När skulden är till den offentliga förvaltningen är den <strong>skattemässiga dröjsmålsräntan</strong> högre än den lagstadgade räntan för att avskräcka från förseningar i skattebetalningar. För perioden <strong>2024-2026</strong> har den fastställts till <strong>4,0625 %</strong>. Detta är det tillägg som skattemyndigheten tar ut om du lämnar in en deklaration efter sista datum.',
     },
     {
       type: 'tip',
       title: 'Skadeståndskaraktär, inte straff',
-      html: '<p><strong>Viktig information:</strong> Till skillnad från sanktioner har dröjsmålsränta karaktären av skadestånd, inte straff. Skattemyndigheten „straffar” dig inte, utan tar betalt för den tid du förfogat över pengar som borde ha funnits i statskassan.</p>',
+      html: '<p><strong>Viktig information:</strong> Till skillnad från sanktioner har dröjsmålsränta karaktären av skadestånd, inte straff. Skattemyndigheten "straffar" dig inte, utan tar betalt för den tid du förfogat över pengar som borde ha funnits i statskassan.</p>',
     },
     {
       type: 'title',
@@ -160,7 +160,7 @@ export const content: ToolLocaleContent<LateInterestUI> = {
       type: 'list',
       items: [
         '<strong>Civila skulder:</strong> Mellan privatpersoner tillämpas 3,25 % (lagstadgad ränta).',
-        '<strong>Handelsskulder:</strong> Styrs av lagen mot sena betalningar och uppgår till ca 10,15 % - 11,15 % under 2025–2026.',
+        '<strong>Handelsskulder:</strong> Styrs av lagen mot sena betalningar och uppgår till ca 10,15 % - 11,15 % under 2025-2026.',
         '<strong>Socialförsäkringsskulder:</strong> Här tillämpas 4,0625 % plus avgifter på 10 % till 20 %.',
         '<strong>Rättegångsränta:</strong> Vid domstolsbeslut 5,25 % från och med datumet för domen.',
       ],

@@ -30,7 +30,7 @@ const faq = [
   },
   {
     question: '为什么我的 CAGR 不同于总 ROI？',
-    answer: 'ROI 是不考虑时间的总收益率。CAGR 是将回报“年化”后的结果。',
+    answer: 'ROI 是不考虑时间的总收益率。CAGR 是将回报"年化"后的结果。',
   },
 ];
 
@@ -62,7 +62,7 @@ export const content: ToolLocaleContent<ProfitabilityUI> = {
     },
     {
       type: 'paragraph',
-      html: '<strong>ROI</strong> 显示总收益百分比，但忽略了时间。<strong>CAGR</strong> 对于长期分析更具优势，因为它将回报“年化”。',
+      html: '<strong>ROI</strong> 显示总收益百分比，但忽略了时间。<strong>CAGR</strong> 对于长期分析更具优势，因为它将回报"年化"。',
     },
   ],
   faq,

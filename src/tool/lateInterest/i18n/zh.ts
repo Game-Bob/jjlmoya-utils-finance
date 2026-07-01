@@ -125,7 +125,7 @@ export const content: ToolLocaleContent<LateInterestUI> = {
     {
       type: 'tip',
       title: '补偿性而非惩罚性',
-      html: '<p><strong>关键数据：</strong> 与罚款不同，滞纳金具有补偿性而非惩罚性。税务局并不是用这些钱来“惩罚”您，而是针对您持有本应在国库中的钱的时间段进行收费。</p>',
+      html: '<p><strong>关键数据：</strong> 与罚款不同，滞纳金具有补偿性而非惩罚性。税务局并不是用这些钱来"惩罚"您，而是针对您持有本应在国库中的钱的时间段进行收费。</p>',
     },
     {
       type: 'title',

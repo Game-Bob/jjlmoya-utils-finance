@@ -6,7 +6,7 @@ import type { LateInterestUI } from '../ui';
 const slug = 'gecikme-faizi-hesaplama-ispanya';
 const title = 'İspanya Gecikme Faizi ve Yasal Faiz Hesaplayıcı 2026';
 const description =
-  'İspanya’daki vergi (Hacienda) gecikme faizlerini ve ödeme yapılmaması durumundaki yasal faizleri hesaplayın. 2025 ve 2026 yılları için güncellenmiş simülatör.';
+  'İspanya\'daki vergi (Hacienda) gecikme faizlerini ve ödeme yapılmaması durumundaki yasal faizleri hesaplayın. 2025 ve 2026 yılları için güncellenmiş simülatör.';
 
 const faqData = [
   {
@@ -27,7 +27,7 @@ const faqData = [
   {
     question: 'Hangi gecikme faizi oranını uygulamalıyım?',
     answer:
-      'Bu, yerel mevzuata ve sözleşme şartlarına bağlıdır. İspanya’da Geç Ödemelerle Mücadele Kanunu azami oranları belirler. Özel durumunuz için bir hukuk danışmanına başvurun.',
+      'Bu, yerel mevzuata ve sözleşme şartlarına bağlıdır. İspanya\'da Geç Ödemelerle Mücadele Kanunu azami oranları belirler. Özel durumunuz için bir hukuk danışmanına başvurun.',
   },
   {
     question: 'Bu hesaplayıcıyı mahkeme borçları için kullanabilir miyim?',
@@ -102,7 +102,7 @@ export const content: ToolLocaleContent<LateInterestUI> = {
     },
     {
       type: 'paragraph',
-      html: 'İspanya’nın karmaşık hukuki ve mali düzeninde, bir borcun ödenmesindeki gecikme bedelsiz değildir. <strong>Gecikme faizi</strong> ve <strong>paranın yasal faizi</strong>, kanunun bir para borcunun yerine getirilmesindeki gecikmeden kaynaklanan zararı telafi etmek için kullandığı mekanizmalardır. İster vergi dairesine (<strong>Hacienda</strong>) olan bir borç, ister şirketler arası bir ödeme gecikmesi veya adli bir talep olsun, bu faizlerin nasıl tahakkuk ettiğini anlamak temel önemdedir.',
+      html: 'İspanya\'nın karmaşık hukuki ve mali düzeninde, bir borcun ödenmesindeki gecikme bedelsiz değildir. <strong>Gecikme faizi</strong> ve <strong>paranın yasal faizi</strong>, kanunun bir para borcunun yerine getirilmesindeki gecikmeden kaynaklanan zararı telafi etmek için kullandığı mekanizmalardır. İster vergi dairesine (<strong>Hacienda</strong>) olan bir borç, ister şirketler arası bir ödeme gecikmesi veya adli bir talep olsun, bu faizlerin nasıl tahakkuk ettiğini anlamak temel önemdedir.',
     },
     {
       type: 'title',
@@ -120,12 +120,12 @@ export const content: ToolLocaleContent<LateInterestUI> = {
     },
     {
       type: 'paragraph',
-      html: 'Borç Kamu İdaresi’ne olduğunda, vergi ödemelerindeki gecikmeyi caydırmak amacıyla <strong>vergi gecikme faizi</strong> yasal faizden daha yüksektir. <strong>2024-2026</strong> dönemi için bu oran <strong>%4,0625</strong> olarak belirlenmiştir. Bu, bir vergi beyannamesini süresinden sonra verdiğinizde Hacienda’nın sizden tahsil edeceği ek bedeldir.',
+      html: 'Borç Kamu İdaresi\'ne olduğunda, vergi ödemelerindeki gecikmeyi caydırmak amacıyla <strong>vergi gecikme faizi</strong> yasal faizden daha yüksektir. <strong>2024-2026</strong> dönemi için bu oran <strong>%4,0625</strong> olarak belirlenmiştir. Bu, bir vergi beyannamesini süresinden sonra verdiğinizde Hacienda\'nın sizden tahsil edeceği ek bedeldir.',
     },
     {
       type: 'tip',
       title: 'Cezai Değil, Tazminat Niteliğinde',
-      html: '<p><strong>Önemli bilgi:</strong> Yaptırımların aksine, gecikme faizleri cezai değil, tazminat niteliğindedir. Vergi dairesi sizi bununla „cezalandırmaz”, ancak kamu kasasında olması gereken bir parayı elinizde tuttuğunuz süre için ücret tahsil eder.</p>',
+      html: '<p><strong>Önemli bilgi:</strong> Yaptırımların aksine, gecikme faizleri cezai değil, tazminat niteliğindedir. Vergi dairesi sizi bununla "cezalandırmaz", ancak kamu kasasında olması gereken bir parayı elinizde tuttuğunuz süre için ücret tahsil eder.</p>',
     },
     {
       type: 'title',
@@ -160,7 +160,7 @@ export const content: ToolLocaleContent<LateInterestUI> = {
       type: 'list',
       items: [
         '<strong>Sivil Borçlar:</strong> Şahıslar arası borçlarda %3,25 (yasal) uygulanır.',
-        '<strong>Ticari Borçlar:</strong> Geç Ödemelerle Mücadele Kanunu’na tabidir ve 2025-2026 yıllarında %10,15 - %11,15 seviyelerine ulaşır.',
+        '<strong>Ticari Borçlar:</strong> Geç Ödemelerle Mücadele Kanunu\'na tabidir ve 2025-2026 yıllarında %10,15 - %11,15 seviyelerine ulaşır.',
         '<strong>Sosyal Güvenlik Borçları:</strong> %4,0625 artı %10 ile %20 arası gecikme zamları uygulanır.',
         '<strong>Yasal İşlem Faizleri:</strong> Mahkeme kararı olduğunda, karar tarihinden itibaren %5,25 uygulanır.',
       ],
@@ -172,7 +172,7 @@ export const content: ToolLocaleContent<LateInterestUI> = {
     },
     {
       type: 'paragraph',
-      html: 'Kendi hesabına çalışan biriyseniz veya bir şirketseniz, İspanya’da 3/2004 sayılı Kanun azami 60 günlük bir ödeme süresi belirler. Müşteriniz bu tarihi geçerse, hatırlatmaya gerek kalmaksızın otomatik olarak ticari gecikme faizi talep edebilir ve ayrıca tahsilat masrafları için 40 € tutarında sabit bir ücret alabilirsiniz.',
+      html: 'Kendi hesabına çalışan biriyseniz veya bir şirketseniz, İspanya\'da 3/2004 sayılı Kanun azami 60 günlük bir ödeme süresi belirler. Müşteriniz bu tarihi geçerse, hatırlatmaya gerek kalmaksızın otomatik olarak ticari gecikme faizi talep edebilir ve ayrıca tahsilat masrafları için 40 € tutarında sabit bir ücret alabilirsiniz.',
     },
   ],
   ui: {

@@ -5,7 +5,7 @@ import type { RentIncreaseUI } from '../ui';
 
 const slug = 'kira-artisi-hesaplama-ispanya-ipc';
 const title = 'İspanya Kira Artış Hesaplama IPC 3% Sınır';
-const description = 'Kiranızı IPC’ye veya İspanya Konut Yasası’na göre %3’lük yasal sınıra göre güncellemeyi ücretsiz hesaplayın.';
+const description = 'Kiranızı IPC\'ye veya İspanya Konut Yasası\'na göre %3\'lük yasal sınıra göre güncellemeyi ücretsiz hesaplayın.';
 
 const faqData = [
   {
@@ -21,8 +21,8 @@ const faqData = [
     answer: 'Ev sahibi, yeni kiranın uygulanacağı tarihten en az bir ay (30 gün) önce kiracıya artışı yazılı olarak bildirmelidir.',
   },
   {
-    question: 'IPC yasal sınır olan %3’ten yüksekse ne olur?',
-    answer: 'Gerçek IPC daha yüksek olsa bile, bir daimi konutun sahibi 2024 ve 2025 yılları boyunca yasal olarak %3’ten fazla bir artış talep edemez.',
+    question: 'IPC yasal sınır olan %3\'ten yüksekse ne olur?',
+    answer: 'Gerçek IPC daha yüksek olsa bile, bir daimi konutun sahibi 2024 ve 2025 yılları boyunca yasal olarak %3\'ten fazla bir artış talep edemez.',
   },
 ];
 
@@ -53,7 +53,7 @@ const seoData = [
   },
   {
     type: 'paragraph',
-    html: 'İspanya’da <strong>Tüketici Fiyat Endeksi (IPC)</strong> geleneksel olarak kira fiyatlarını ayarlamak için kullanılan bir ölçüttür. Ancak yeni Konut Yasası ile önemli sınırlamalar getirilmiştir.',
+    html: 'İspanya\'da <strong>Tüketici Fiyat Endeksi (IPC)</strong> geleneksel olarak kira fiyatlarını ayarlamak için kullanılan bir ölçüttür. Ancak yeni Konut Yasası ile önemli sınırlamalar getirilmiştir.',
   },
 ];
 
@@ -95,7 +95,7 @@ export const content: ToolLocaleContent<RentIncreaseUI> = {
   description,
   ui: {
     labelTitle: 'Kira Artışı Hesaplayıcı',
-    labelDescription: 'Kiranızı IPC’ye göre ayarlayın veya %3’lük yasal sınırı güvenle uygulayın.',
+    labelDescription: 'Kiranızı IPC\'ye göre ayarlayın veya %3\'lük yasal sınırı güvenle uygulayın.',
     labelCurrentRent: 'Mevcut Kira',
     labelCurrentRentPlaceholder: 'Örn. 800',
     labelIncrementType: 'Güncelleme Modu',

@@ -32,7 +32,7 @@ const faqData = [
   {
     question: 'Como é que a inflação afeta as minhas poupanças?',
     answer:
-      'A inflação atua como um „imposto silencioso”. Se a inflação for de 5% e o seu dinheiro estiver debaixo do colchão, no final do ano poderá comprar menos 5% de produtos. É fundamental investir para contrariar este efeito.',
+      'A inflação atua como um "imposto silencioso". Se a inflação for de 5% e o seu dinheiro estiver debaixo do colchão, no final do ano poderá comprar menos 5% de produtos. É fundamental investir para contrariar este efeito.',
   },
 ];
 
@@ -106,7 +106,7 @@ export const content: ToolLocaleContent<InflationUI> = {
     },
     {
       type: 'paragraph',
-      html: 'A inflação é o „imposto silencioso” que devora as suas poupanças ano após ano. Sabe quanto é que o seu dinheiro perdeu de valor desde 1980? Quanto custa realmente esse café que pagava a 300 pesetas há 20 anos?',
+      html: 'A inflação é o "imposto silencioso" que devora as suas poupanças ano após ano. Sabe quanto é que o seu dinheiro perdeu de valor desde 1980? Quanto custa realmente esse café que pagava a 300 pesetas há 20 anos?',
     },
     {
       type: 'title',

@@ -5,7 +5,7 @@ import type { DebtSnowballUI } from '../ui';
 
 const slug = 'borc-kartopu-metodu-hesaplayici';
 const title = 'Borç Kartopu Hesaplayıcı: Borç Ödeme Planı 2026';
-const description = 'Dave Ramsey’in kartopu metodu ile finansal özgürlük tarihinizi hesaplayın. Borçlarınızı düzenleyin ve aylık ödeme planınızı görselleştirin.';
+const description = 'Dave Ramsey\'in kartopu metodu ile finansal özgürlük tarihinizi hesaplayın. Borçlarınızı düzenleyin ve aylık ödeme planınızı görselleştirin.';
 
 const faqData = [
   {

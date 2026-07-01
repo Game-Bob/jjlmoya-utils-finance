@@ -15,19 +15,19 @@ const faqData = [
       'En yaygın kullanılan sistemdir. Aylık taksit her zaman aynıdır, ancak başlangıçta ödemenizin neredeyse tamamı faize, çok azı ise ana paraya gider. Sonunda ise durum tam tersidir. Bu nedenle erken ödeme yapmak ilk yıllarda daha karlıdır.',
   },
   {
-    question: '2026’da sabit mi yoksa değişken faiz mi tercih edilmeli?',
+    question: '2026\'da sabit mi yoksa değişken faiz mi tercih edilmeli?',
     answer:
       'Sabit faiz: Şimdi biraz daha fazla ödersiniz ama 30 yıl boyunca huzurla uyursunuz. Değişken faiz: Bugün daha ucuz olabilir, ancak faizler yükselirse taksitleriniz fırlayabilir. Bu, risk toleransınıza bağlıdır.',
   },
   {
     question: '10.000 TL erken ödeme yaparsam ne kadar tasarruf ederim?',
     answer:
-      'Zamana göre değişir. 200.000 TL’lik %3 faizli bir kredinin 1. yılında ödeme yaparsanız 15.000 TL’den fazla faiz tasarrufu sağlayabilirsiniz. 20. yılda yaparsanız tasarruf 2.000 TL’yi zor bulur. Zamanlama kritiktir.',
+      'Zamana göre değişir. 200.000 TL\'lik %3 faizli bir kredinin 1. yılında ödeme yaparsanız 15.000 TL\'den fazla faiz tasarrufu sağlayabilirsiniz. 20. yılda yaparsanız tasarruf 2.000 TL\'yi zor bulur. Zamanlama kritiktir.',
   },
   {
     question: 'Maaşımın yüzde kaçını krediye ayırmalıyım?',
     answer:
-      'Genel tavsiye, aylık net gelirinizin %30-35’ini (diğer borçlar dahil) geçmemesidir. Bu eşiğin aşılması, beklenmedik durumlarda temerrüt riskini önemli ölçüde artırır.',
+      'Genel tavsiye, aylık net gelirinizin %30-35\'ini (diğer borçlar dahil) geçmemesidir. Bu eşiğin aşılması, beklenmedik durumlarda temerrüt riskini önemli ölçüde artırır.',
   },
 ];
 
@@ -105,12 +105,12 @@ export const content: ToolLocaleContent<MortgageUI> = {
     },
     {
       type: 'title',
-      text: 'Fransız Sisteminin „Tuzağı”: Taksit Kompozisyonunu Anlamak',
+      text: 'Fransız Sisteminin "Tuzağı": Taksit Kompozisyonunu Anlamak',
       level: 3,
     },
     {
       type: 'paragraph',
-      html: 'Türkiye’deki çoğu kredi <strong>Fransız Amortisman Sistemi</strong> (eşit taksitli) kullanır. Ana özelliği, aylık taksitin her zaman aynı olmasıdır (sabit faiz durumunda), ancak içindeki ana para ve faiz oranları zamanla köklü bir şekilde değişir.',
+      html: 'Türkiye\'deki çoğu kredi <strong>Fransız Amortisman Sistemi</strong> (eşit taksitli) kullanır. Ana özelliği, aylık taksitin her zaman aynı olmasıdır (sabit faiz durumunda), ancak içindeki ana para ve faiz oranları zamanla köklü bir şekilde değişir.',
     },
     {
       type: 'tip',
@@ -128,7 +128,7 @@ export const content: ToolLocaleContent<MortgageUI> = {
     },
     {
       type: 'paragraph',
-      html: 'Genel tavsiye, kredi taksitlerinizin <strong>aylık net gelirinizin %30-35’ini geçmemesidir</strong>. Bu eşiğin aşılması, iş kaybı, hastalık gibi durumlarda ödeme zorluğu riskini ciddi şekilde artırır.',
+      html: 'Genel tavsiye, kredi taksitlerinizin <strong>aylık net gelirinizin %30-35\'ini geçmemesidir</strong>. Bu eşiğin aşılması, iş kaybı, hastalık gibi durumlarda ödeme zorluğu riskini ciddi şekilde artırır.',
     },
     {
       type: 'title',

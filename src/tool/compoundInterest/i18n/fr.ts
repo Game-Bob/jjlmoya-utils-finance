@@ -22,7 +22,7 @@ const faqData = [
   {
     question: "Qu'est-ce que la 'Règle des 72' ?",
     answer:
-      "C'est une formule rapide pour estimer combien de temps il faudra pour doubler un investissement : divisez 72 par le taux de rendement annuel. Par exemple, à 8% par an, vous doublez votre argent en 9 ans.",
+      "C'est une formule rapide pour estimer combien de temps il faudra pour doubler un investissement: divisez 72 par le taux de rendement annuel. Par exemple, à 8% par an, vous doublez votre argent en 9 ans.",
   },
   {
     question: 'Pourquoi est-il important de commencer à investir jeune ?',
@@ -96,21 +96,21 @@ export const content: ToolLocaleContent<CompoundInterestUI> = {
   seo: [
     {
       type: 'title',
-      text: 'La Magie de l\'Intérêt Composé : Construisez Votre Richesse Exponentiellement',
+      text: 'La Magie de l\'Intérêt Composé: Construisez Votre Richesse Exponentiellement',
       level: 2,
     },
     {
       type: 'paragraph',
-      html: 'Albert Einstein l\'a appelée la "huitième merveille du monde". L\'<strong>intérêt composé</strong> est le mécanisme le plus puissant pour construire une richesse à long terme. Vous n\'avez pas besoin d\'être un expert en finance pour l\'utiliser : vous avez juste besoin de temps, de patience et d\'argent investi.',
+      html: 'Albert Einstein l\'a appelée la "huitième merveille du monde". L\'<strong>intérêt composé</strong> est le mécanisme le plus puissant pour construire une richesse à long terme. Vous n\'avez pas besoin d\'être un expert en finance pour l\'utiliser: vous avez juste besoin de temps, de patience et d\'argent investi.',
     },
     {
       type: 'title',
-      text: 'Intérêt Simple vs Composé : La Métaphore de la Boule de Neige',
+      text: 'Intérêt Simple vs Composé: La Métaphore de la Boule de Neige',
       level: 3,
     },
     {
       type: 'paragraph',
-      html: 'Imaginez une boule de neige au sommet d\'une colline. L\'<strong>intérêt simple</strong> est comme la faire rouler vers le bas et devoir ajouter manuellement de la neige tous les mètres pour qu\'elle grandisse. L\'<strong>intérêt composé</strong> est comme la laisser rouler seule : elle ramasse naturellement de la neige, et plus elle devient grosse, plus elle a de surface pour ramasser <em>encore plus</em> de neige à chaque rotation.',
+      html: 'Imaginez une boule de neige au sommet d\'une colline. L\'<strong>intérêt simple</strong> est comme la faire rouler vers le bas et devoir ajouter manuellement de la neige tous les mètres pour qu\'elle grandisse. L\'<strong>intérêt composé</strong> est comme la laisser rouler seule: elle ramasse naturellement de la neige, et plus elle devient grosse, plus elle a de surface pour ramasser <em>encore plus</em> de neige à chaque rotation.',
     },
     {
       type: 'comparative',
@@ -120,7 +120,7 @@ export const content: ToolLocaleContent<CompoundInterestUI> = {
           title: 'Intérêt Simple',
           description: 'Les intérêts sont toujours calculés sur le capital original.',
           points: [
-            'Formule : Capital × Taux × Temps',
+            'Formule: Capital × Taux × Temps',
             'Croissance linéaire et prévisible',
             'Utilisé dans les prêts à court terme',
             'Pas de réinvestissement des bénéfices',
@@ -131,7 +131,7 @@ export const content: ToolLocaleContent<CompoundInterestUI> = {
           description: 'Les intérêts s\'ajoutent au capital et génèrent de nouveaux intérêts.',
           highlight: true,
           points: [
-            'Formule : Capital × (1 + Taux)^Temps',
+            'Formule: Capital × (1 + Taux)^Temps',
             'Croissance exponentielle accélérée',
             'Fondation de l\'investissement à long terme',
             'Vos bénéfices génèrent plus de bénéfices',
@@ -155,7 +155,7 @@ export const content: ToolLocaleContent<CompoundInterestUI> = {
     {
       type: 'tip',
       title: 'La Règle des 72',
-      html: '<p>Divisez 72 par votre rendement annuel pour découvrir en combien d\'années vous allez <strong>doubler votre argent</strong>.</p><p><em>Exemple : À 8%, vous doublez tous les 9 ans (72/8 = 9).</em></p><p>Cette formule magique fonctionne pour n\'importe quel taux de rendement et vous aide à estimer rapidement la croissance de vos investissements.</p>',
+      html: '<p>Divisez 72 par votre rendement annuel pour découvrir en combien d\'années vous allez <strong>doubler votre argent</strong>.</p><p><em>Exemple: À 8%, vous doublez tous les 9 ans (72/8 = 9).</em></p><p>Cette formule magique fonctionne pour n\'importe quel taux de rendement et vous aide à estimer rapidement la croissance de vos investissements.</p>',
     },
     {
       type: 'tip',
@@ -164,7 +164,7 @@ export const content: ToolLocaleContent<CompoundInterestUI> = {
     },
     {
       type: 'title',
-      text: 'Fréquence de Capitalisation : Est-ce Important?',
+      text: 'Fréquence de Capitalisation: Est-ce Important?',
       level: 3,
     },
     {

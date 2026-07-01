@@ -5,20 +5,20 @@ import type { LegalInterestRateUI } from '../ui';
 
 const slug = 'yasal-faiz-orani-ispanya-2026';
 const title = 'Yasal Faiz';
-const description = 'İspanya’da 2026 yılı için geçerli olan yasal faizi hesaplayın. Bütçe Kanunu’na göre %3,25 oranında simülatör.';
+const description = 'İspanya\'da 2026 yılı için geçerli olan yasal faizi hesaplayın. Bütçe Kanunu\'na göre %3,25 oranında simülatör.';
 
 const faqData = [
   {
     question: '2026 yılında yasal faiz oranı kaçtır?',
-    answer: 'İspanya’da 2026 mali yılı için paranın yasal faizi, Devlet Genel Bütçe Kanunu tarafından %3,25 olarak belirlenmiştir.',
+    answer: 'İspanya\'da 2026 mali yılı için paranın yasal faizi, Devlet Genel Bütçe Kanunu tarafından %3,25 olarak belirlenmiştir.',
   },
   {
     question: 'Gecikme faizi nasıl hesaplanır?',
-    answer: 'Gecikme faizi, ödenmemiş ana paranın %3,25 ile çarpılması ve gecikme gün sayısı ile çarpılıp 36.500’e bölünmesiyle hesaplanır. 365 gün esası kullanılır.',
+    answer: 'Gecikme faizi, ödenmemiş ana paranın %3,25 ile çarpılması ve gecikme gün sayısı ile çarpılıp 36.500\'e bölünmesiyle hesaplanır. 365 gün esası kullanılır.',
   },
   {
     question: 'Yasal faiz ile gecikme faizi arasındaki fark nedir?',
-    answer: 'Yasal faiz temel referans oranıdır. Vergi gecikme faizi (Hacienda) %4,0625’tir. Ticari işlemler faizi (yaklaşık %10,15) en yükseğidir.',
+    answer: 'Yasal faiz temel referans oranıdır. Vergi gecikme faizi (Hacienda) %4,0625\'tir. Ticari işlemler faizi (yaklaşık %10,15) en yükseğidir.',
   },
   {
     question: 'Sözleşme maddesi olmasa bile otomatik olarak uygulanır mı?',
@@ -26,7 +26,7 @@ const faqData = [
   },
   {
     question: 'Yasal işlem faizi (Interés Procesal) nedir?',
-    answer: 'Yasal işlem faizi %5,25’tir (yasal faiz artı 2 puan) ve para ödenmesine hükmeden bir mahkeme kararı verildiği andan itibaren uygulanır.',
+    answer: 'Yasal işlem faizi %5,25\'tir (yasal faiz artı 2 puan) ve para ödenmesine hükmeden bir mahkeme kararı verildiği andan itibaren uygulanır.',
   },
 ];
 
@@ -41,7 +41,7 @@ const howToData = [
   },
   {
     name: 'Sonucu görüntüleyin',
-    text: '2026’da geçerli olan %3,25 oranını uygulayarak oluşan faiz miktarını ve ödenecek toplamı otomatik olarak alın.',
+    text: '2026\'da geçerli olan %3,25 oranını uygulayarak oluşan faiz miktarını ve ödenecek toplamı otomatik olarak alın.',
   },
   {
     name: 'Diğer oranlara göz atın',
@@ -56,7 +56,7 @@ const seoData = [
   },
   {
     type: 'paragraph',
-    html: 'İspanya’da <strong>2026 yasal faiz oranı</strong> %<strong>3,25</strong>’tir. Aksi kararlaştırılmadıkça gecikme durumunda otomatik olarak uygulanır.',
+    html: 'İspanya\'da <strong>2026 yasal faiz oranı</strong> %<strong>3,25</strong>\'tir. Aksi kararlaştırılmadıkça gecikme durumunda otomatik olarak uygulanır.',
   },
 ];
 
@@ -98,7 +98,7 @@ export const content: ToolLocaleContent<LegalInterestRateUI> = {
   description,
   ui: {
     labelTitle: 'Yasal Faiz Oranı',
-    labelDescription: '2026 Bütçe Kanunu’na göre yasal faiz miktarını hesaplayın. İspanya için %3,25 oranında simülatör.',
+    labelDescription: '2026 Bütçe Kanunu\'na göre yasal faiz miktarını hesaplayın. İspanya için %3,25 oranında simülatör.',
     labelBadge: 'Resmi Gazete (BOE) 2026',
     labelSubtitle: 'Paranın yasal faiz oranı 2026 yılı için %3,25 seviyesinde korunmuştur.',
     labelLegalInterest: 'Yasal Faiz',

@@ -5,7 +5,7 @@ import type { DebtSnowballUI } from '../ui';
 
 const slug = 'metoda-kuli-snieznej-kalkulator-dlugow';
 const title = 'Kalkulator Metody Kuli Śnieżnej: Plan Spłaty Zadłużenia 2026';
-const description = 'Oblicz datę swojej wolności finansowej za pomocą metody kuli śnieżnej Dave’a Ramseya. Uporządkuj swoje długi i zwizualizuj miesięczny plan spłat.';
+const description = 'Oblicz datę swojej wolności finansowej za pomocą metody kuli śnieżnej Dave\'a Ramseya. Uporządkuj swoje długi i zwizualizuj miesięczny plan spłat.';
 
 const faqData = [
   {

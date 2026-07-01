@@ -9,19 +9,19 @@ const description = 'Ottieni istantaneamente il codice BIC/SWIFT di qualsiasi IB
 
 const faqData = [
   {
-    question: 'Cos’è il codice BIC o SWIFT?',
-    answer: 'È l’identificatore internazionale della tua banca. È necessario affinché il denaro sappia verso quale entità deve dirigersi quando viaggia fuori dalla zona SEPA (Europa).',
+    question: 'Cos\'è il codice BIC o SWIFT?',
+    answer: 'È l\'identificatore internazionale della tua banca. È necessario affinché il denaro sappia verso quale entità deve dirigersi quando viaggia fuori dalla zona SEPA (Europa).',
   },
   {
     question: 'Come faccio a sapere qual è il BIC della mia banca?',
-    answer: 'Puoi consultarlo nel tuo online banking o usare il nostro convertitore. Per le banche spagnole, inserendo l’IBAN, estraiamo il codice dell’entità e ti forniamo il BIC corrispondente.',
+    answer: 'Puoi consultarlo nel tuo online banking o usare il nostro convertitore. Per le banche spagnole, inserendo l\'IBAN, estraiamo il codice dell\'entità e ti forniamo il BIC corrispondente.',
   },
   {
     question: 'È sicuro inserire il mio IBAN qui?',
     answer: 'Assolutamente sì. Il nostro strumento convalida il codice localmente nel tuo browser. Non salviamo né inviamo i tuoi dati bancari a nessun server esterno.',
   },
   {
-    question: 'Perché l’IBAN ha 24 caratteri in Spagna?',
+    question: 'Perché l\'IBAN ha 24 caratteri in Spagna?',
     answer: 'È una norma standard. I primi 4 identificano il paese e il controllo, e gli altri 20 sono il vecchio numero di conto.',
   },
 ];
@@ -37,11 +37,11 @@ const howToData = [
   },
   {
     name: 'Premi il pulsante di conversione',
-    text: 'Il sistema convaliderà che le cifre di controllo siano corrette mediante l’algoritmo Modulo 97.',
+    text: 'Il sistema convaliderà che le cifre di controllo siano corrette mediante l\'algoritmo Modulo 97.',
   },
   {
     name: 'Copia il risultato',
-    text: 'Otterrai il codice BIC/SWIFT e il nome dell’entità bancaria pronti da copiare e usare.',
+    text: 'Otterrai il codice BIC/SWIFT e il nome dell\'entità bancaria pronti da copiare e usare.',
   },
 ];
 
@@ -105,7 +105,7 @@ export const content: ToolLocaleContent<IBANBICSwiftUI> = {
     labelBIC: 'Codice BIC / SWIFT',
     labelCountry: 'Paese / Formato',
     labelBank: 'Entità Bancaria',
-    labelError: 'L’IBAN inserito non sembra essere valido. Controlla le cifre.',
+    labelError: 'L\'IBAN inserito non sembra essere valido. Controlla le cifre.',
     labelCopyButton: 'Copia',
     labelCopied: 'Copiato',
     labelBankNotIdentified: 'Entità non identificata',

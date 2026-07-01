@@ -5,12 +5,12 @@ import type { FIRECalculatorUI } from '../ui';
 
 const slug = 'four-percent-rule-fire-calculator';
 const title = 'FIRE 计算器：实现财务自由的 4% 法则';
-const description = '使用 4% 法则计算实现财务独立所需积累的“魔法数字”。规划您的提前退休生活，并可视化通往经济自由的道路。';
+const description = '使用 4% 法则计算实现财务独立所需积累的"魔法数字"。规划您的提前退休生活，并可视化通往经济自由的道路。';
 
 const faqData = [
   {
     question: '什么是 4% 法则？',
-    answer: '4% 法则是基于“三一研究”（Trinity Study）的一种提款策略。它指出，如果您在退休的第一年提取资产的 4%，并在随后的几年中根据通货膨胀进行调整，您可以在 30 年内不耗尽资金。',
+    answer: '4% 法则是基于"三一研究"（Trinity Study）的一种提款策略。它指出，如果您在退休的第一年提取资产的 4%，并在随后的几年中根据通货膨胀进行调整，您可以在 30 年内不耗尽资金。',
   },
   {
     question: '什么是 FIRE？',
@@ -99,7 +99,7 @@ export const content: ToolLocaleContent<FIRECalculatorUI> = {
     },
     {
       type: 'paragraph',
-      html: '探索如何计算实现永续投资收益生活所需的资产规模。<strong>4% 法则</strong>源于 1998 年由三位财务教授进行的“三一研究”。他们分析了自 1926 年以来的历史数据，以确定每年可以提取多大比例的资金而不会在 30 年内耗尽投资组合。',
+      html: '探索如何计算实现永续投资收益生活所需的资产规模。<strong>4% 法则</strong>源于 1998 年由三位财务教授进行的"三一研究"。他们分析了自 1926 年以来的历史数据，以确定每年可以提取多大比例的资金而不会在 30 年内耗尽投资组合。',
     },
     {
       type: 'stats',

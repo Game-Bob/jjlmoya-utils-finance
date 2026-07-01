@@ -106,7 +106,7 @@ export const content: ToolLocaleContent<InflationUI> = {
     },
     {
       type: 'paragraph',
-      html: 'L\'inflation est l\'« impôt silencieux » qui dévore vos économies année après année. Savez-vous combien votre argent a perdu de valeur depuis 1980? Combien coûte réellement ce café que vous payiez 300 pesetas il y a 20 ans?',
+      html: 'L\'inflation est l\'" impôt silencieux " qui dévore vos économies année après année. Savez-vous combien votre argent a perdu de valeur depuis 1980? Combien coûte réellement ce café que vous payiez 300 pesetas il y a 20 ans?',
     },
     {
       type: 'title',

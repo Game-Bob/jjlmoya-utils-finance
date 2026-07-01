@@ -5,7 +5,7 @@ import type { LotteryOptimizerUI } from '../ui';
 
 const slug = 'piyango-optimize-edici-olasilik-hesaplayici';
 const title = 'Piyango Optimize Edici ve Olasılık Hesaplayıcı';
-const description = 'İspanya Noel Piyangosu, Euromillions ve Bonoloto’daki olasılıklarınızı analiz edin. İdeal bilet sayısını ve bahsinizin beklenen değerini hesaplayın.';
+const description = 'İspanya Noel Piyangosu, Euromillions ve Bonoloto\'daki olasılıklarınızı analiz edin. İdeal bilet sayısını ve bahsinizin beklenen değerini hesaplayın.';
 
 const faqData = [
   {
@@ -18,7 +18,7 @@ const faqData = [
   },
   {
     question: 'İspanya Noel Piyangosu (El Gordo) oynamak gerçekten mantıklı mı?',
-    answer: 'Tamamen matematiksel bir bakış açısıyla, hayır. Toplanan paranın sadece %70’i dağıtılır. Ancak, büyük ikramiye olasılığı (100.000’de 1), Euromillions’tan (140 milyonda 1) çok daha yüksektir.',
+    answer: 'Tamamen matematiksel bir bakış açısıyla, hayır. Toplanan paranın sadece %70\'i dağıtılır. Ancak, büyük ikramiye olasılığı (100.000\'de 1), Euromillions\'tan (140 milyonda 1) çok daha yüksektir.',
   },
   {
     question: 'İstatistiklerle şansımı artırabilir miyim?',
@@ -68,7 +68,7 @@ const gameTranslations = {
   },
   nino: {
     name: 'Çocuk Piyangosu (El Niño)',
-    description: 'Noel’e göre amorti olasılığını üç katına çıkarır.',
+    description: 'Noel\'e göre amorti olasılığını üç katına çıkarır.',
   },
   euromillones: {
     name: 'Euromillions',
@@ -76,7 +76,7 @@ const gameTranslations = {
   },
   primitiva: {
     name: 'La Primitiva',
-    description: 'İspanya’nın en eski piyangosu. Zor ama daha ucuz.',
+    description: 'İspanya\'nın en eski piyangosu. Zor ama daha ucuz.',
   },
   bonoloto: {
     name: 'Bonoloto',

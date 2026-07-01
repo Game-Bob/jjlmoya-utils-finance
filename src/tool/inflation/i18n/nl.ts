@@ -6,7 +6,7 @@ import type { InflationUI } from '../ui';
 const slug = 'inflatie-spanje';
 const title = 'Inflatiecalculator Spanje: Historische Geldwaarde';
 const description =
-  'Ontdek hoeveel uw peseta’s vandaag waard zouden zijn of hoeveel de kosten van levensonderhoud sinds 1980 zijn gestegen. Historische CPI-gegevens voor Spanje bijgewerkt tot 2026.';
+  'Ontdek hoeveel uw peseta\'s vandaag waard zouden zijn of hoeveel de kosten van levensonderhoud sinds 1980 zijn gestegen. Historische CPI-gegevens voor Spanje bijgewerkt tot 2026.';
 
 const faqData = [
   {
@@ -17,7 +17,7 @@ const faqData = [
   {
     question: 'Hoeveel waarde heeft het geld sinds 1980 verloren?',
     answer:
-      '1.000 peseta’s uit 1980 staan in koopkracht gelijk aan ongeveer 60 € vandaag. Het geld heeft in deze 40+ jaar meer dan 90% van zijn waarde verloren door de gecumuleerde inflatie.',
+      '1.000 peseta\'s uit 1980 staan in koopkracht gelijk aan ongeveer 60 € vandaag. Het geld heeft in deze 40+ jaar meer dan 90% van zijn waarde verloren door de gecumuleerde inflatie.',
   },
   {
     question: 'Waarom verliezen mijn spaartegoeden waarde als ik ze niet beweeg?',
@@ -27,12 +27,12 @@ const faqData = [
   {
     question: 'Wat was de periode met de hoogste inflatie in Spanje?',
     answer:
-      'De jaren ’80 waren het meest inflatoir, met percentages van dubbele cijfers (tot 15%). Prijzen veranderden drastisch van maand tot maand. Sinds de euro (2002) is de inflatie beter beheersbaar, behalve in de periode 2021-2023.',
+      'De jaren \'80 waren het meest inflatoir, met percentages van dubbele cijfers (tot 15%). Prijzen veranderden drastisch van maand tot maand. Sinds de euro (2002) is de inflatie beter beheersbaar, behalve in de periode 2021-2023.',
   },
   {
     question: 'Hoe beïnvloedt inflatie mijn spaargeld?',
     answer:
-      'Inflatie werkt als een „stille belasting”. Als de inflatie 5% is en uw geld ligt onder het matras, kunt u aan het eind van het jaar 5% minder producten kopen. Het is essentieel om te beleggen om dit effect tegen te gaan.',
+      'Inflatie werkt als een "stille belasting". Als de inflatie 5% is en uw geld ligt onder het matras, kunt u aan het eind van het jaar 5% minder producten kopen. Het is essentieel om te beleggen om dit effect tegen te gaan.',
   },
 ];
 
@@ -43,7 +43,7 @@ const howToData = [
   },
   {
     name: 'Bedrag invoeren',
-    text: 'Voer het bedrag in peseta’s (voor oude data) of in euro’s in dat u wilt vergelijken.',
+    text: 'Voer het bedrag in peseta\'s (voor oude data) of in euro\'s in dat u wilt vergelijken.',
   },
   {
     name: 'Eindjaar kiezen',
@@ -106,7 +106,7 @@ export const content: ToolLocaleContent<InflationUI> = {
     },
     {
       type: 'paragraph',
-      html: 'Inflatie is de „stille belasting” die jaar na jaar aan uw spaargeld vreet. Weet u hoeveel uw geld sinds 1980 in waarde is gedaald? Hoeveel kost die koffie die u 20 jaar geleden voor 300 peseta’s kocht nu werkelijk?',
+      html: 'Inflatie is de "stille belasting" die jaar na jaar aan uw spaargeld vreet. Weet u hoeveel uw geld sinds 1980 in waarde is gedaald? Hoeveel kost die koffie die u 20 jaar geleden voor 300 peseta\'s kocht nu werkelijk?',
     },
     {
       type: 'title',
@@ -174,7 +174,7 @@ export const content: ToolLocaleContent<InflationUI> = {
       columns: 2,
       items: [
         {
-          title: 'Crisis van de jaren ’80',
+          title: 'Crisis van de jaren \'80',
           description: 'Periode gekenmerkt door inflatie met dubbele cijfers en grote instabiliteit op de arbeidsmarkt.',
           points: [
             'Extreem hoge rentetarieven',

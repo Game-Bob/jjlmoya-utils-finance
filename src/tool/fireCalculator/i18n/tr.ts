@@ -10,7 +10,7 @@ const description = '%4 kuralını kullanarak finansal bağımsızlık için sih
 const faqData = [
   {
     question: '%4 Kuralı Nedir?',
-    answer: '%4 Kuralı, Trinity Çalışması’na dayanan bir çekim stratejisidir; emekliliğin ilk yılında mal varlığınızın %4’ünü çekebileceğinizi ve sonraki yıllarda enflasyona göre ayarlama yaparak fonlarınızı 30 yıl boyunca tüketmeden yaşayabileceğinizi belirtir.',
+    answer: '%4 Kuralı, Trinity Çalışması\'na dayanan bir çekim stratejisidir; emekliliğin ilk yılında mal varlığınızın %4\'ünü çekebileceğinizi ve sonraki yıllarda enflasyona göre ayarlama yaparak fonlarınızı 30 yıl boyunca tüketmeden yaşayabileceğinizi belirtir.',
   },
   {
     question: 'FIRE Nedir?',
@@ -22,11 +22,11 @@ const faqData = [
   },
   {
     question: 'Lean, Barista ve Fat FIRE Arasındaki Fark Nedir?',
-    answer: 'Lean FIRE, minimum giderlerle yaşamak (mevcut giderlerin %70’i), Barista FIRE, getiriler geri kalanını karşılarken yarı zamanlı çalışmak (%50 gider) ve Fat FIRE, lüks bir yaşam tarzına sahip olmaktır (%150 gider).',
+    answer: 'Lean FIRE, minimum giderlerle yaşamak (mevcut giderlerin %70\'i), Barista FIRE, getiriler geri kalanını karşılarken yarı zamanlı çalışmak (%50 gider) ve Fat FIRE, lüks bir yaşam tarzına sahip olmaktır (%150 gider).',
   },
   {
     question: '%4 Kuralı Gerçekçi mi?',
-    answer: '%4 kuralı, 30 yıl boyunca %50 hisse senedi-%50 tahvil portföyünde %95’lik bir tarihsel başarı olasılığına sahiptir. Ancak, getiri dizisi riskini hesaba katmaz ve esas olarak ABD piyasa verilerine dayanır.',
+    answer: '%4 kuralı, 30 yıl boyunca %50 hisse senedi-%50 tahvil portföyünde %95\'lik bir tarihsel başarı olasılığına sahiptir. Ancak, getiri dizisi riskini hesaba katmaz ve esas olarak ABD piyasa verilerine dayanır.',
   },
 ];
 
@@ -99,7 +99,7 @@ export const content: ToolLocaleContent<FIRECalculatorUI> = {
     },
     {
       type: 'paragraph',
-      html: 'Sonsuza dek getirilerle yaşamak için gereken mal varlığını nasıl hesaplayacağınızı keşfedin. <strong>%4 Kuralı</strong>, 1998 yılında üç finans profesörü tarafından yürütülen Trinity Çalışması’ndan doğmuştur. Portföyü 30 yılda tüketmeden yıllık olarak hangi yüzdenin çekilebileceğini belirlemek için 1926’dan bu yana olan tarihsel verileri analiz ettiler.',
+      html: 'Sonsuza dek getirilerle yaşamak için gereken mal varlığını nasıl hesaplayacağınızı keşfedin. <strong>%4 Kuralı</strong>, 1998 yılında üç finans profesörü tarafından yürütülen Trinity Çalışması\'ndan doğmuştur. Portföyü 30 yılda tüketmeden yıllık olarak hangi yüzdenin çekilebileceğini belirlemek için 1926\'dan bu yana olan tarihsel verileri analiz ettiler.',
     },
     {
       type: 'stats',
@@ -202,7 +202,7 @@ export const content: ToolLocaleContent<FIRECalculatorUI> = {
     },
     {
       type: 'paragraph',
-      html: 'Bugünkü 1.000 TL’nin gelecekte aynı şeyi satın almayacağını unutmayın. Projeksiyonlarınızın mevcut satın alma gücünü koruması için reel getirileri (enflasyon düşülmüş) kullanmak hayati önem taşır. %4 Kuralı, çekimlerinizi her yıl enflasyona göre ayarladığınızı varsayar.',
+      html: 'Bugünkü 1.000 TL\'nin gelecekte aynı şeyi satın almayacağını unutmayın. Projeksiyonlarınızın mevcut satın alma gücünü koruması için reel getirileri (enflasyon düşülmüş) kullanmak hayati önem taşır. %4 Kuralı, çekimlerinizi her yıl enflasyona göre ayarladığınızı varsayar.',
     },
   ],
   ui: {
@@ -233,7 +233,7 @@ export const content: ToolLocaleContent<FIRECalculatorUI> = {
     labelAdded: 'Eklendi:',
     labelSavePlan: 'Planı Kaydet',
     labelSWRTooltip: 'Safe Withdrawal Rate: Tasarruflarınızın bitme riski olmadan her yıl çekebileceğiniz yüzdesi.',
-    labelReturnTooltip: 'Yıllık piyasa getirisi (enflasyon düşülmüş hali). Tarihsel standart %7’dir.',
+    labelReturnTooltip: 'Yıllık piyasa getirisi (enflasyon düşülmüş hali). Tarihsel standart %7\'dir.',
     currencySymbol: '₺',
     currencyCode: 'TRY',
     currencyLocale: 'tr-TR',

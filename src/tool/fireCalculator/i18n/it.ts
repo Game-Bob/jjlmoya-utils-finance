@@ -5,15 +5,15 @@ import type { FIRECalculatorUI } from '../ui';
 
 const slug = 'calcolatore-regola-4-per-cento-fire';
 const title = 'Calcolatore FIRE: Regola del 4% per la tua Libertà Finanziaria';
-const description = 'Calcola il tuo numero magico per l’indipendenza finanziaria usando la regola del 4%. Pianifica il tuo pensionamento anticipato e visualizza il tuo percorso verso la libertà economica.';
+const description = 'Calcola il tuo numero magico per l\'indipendenza finanziaria usando la regola del 4%. Pianifica il tuo pensionamento anticipato e visualizza il tuo percorso verso la libertà economica.';
 
 const faqData = [
   {
-    question: 'Cos’è la Regola del 4%?',
-    answer: 'La Regola del 4% è una strategia di prelievo basata sullo Studio Trinity che indica che puoi prelevare il 4% del tuo patrimonio il primo anno di pensionamento, adeguandolo all’inflazione negli anni successivi, senza esaurire i fondi in 30 anni.',
+    question: 'Cos\'è la Regola del 4%?',
+    answer: 'La Regola del 4% è una strategia di prelievo basata sullo Studio Trinity che indica che puoi prelevare il 4% del tuo patrimonio il primo anno di pensionamento, adeguandolo all\'inflazione negli anni successivi, senza esaurire i fondi in 30 anni.',
   },
   {
-    question: 'Cos’è FIRE?',
+    question: 'Cos\'è FIRE?',
     answer: 'FIRE sta per Financial Independence, Retire Early (Indipendenza Finanziaria, Pensionamento Anticipato). È un movimento che mira a raggiungere la libertà economica attraverso una combinazione aggressiva di risparmio e investimento intelligente.',
   },
   {
@@ -21,7 +21,7 @@ const faqData = [
     answer: 'Il tuo numero magico è il patrimonio totale che devi accumulare per poter vivere di rendita senza lavorare. Si calcola dividendo le tue spese annuali per il tasso di prelievo sicuro (solitamente il 4%).',
   },
   {
-    question: 'Che differenza c’è tra Lean, Barista e Fat FIRE?',
+    question: 'Che differenza c\'è tra Lean, Barista e Fat FIRE?',
     answer: 'Lean FIRE significa vivere con spese minime (70% delle spese attuali), Barista FIRE significa lavorare part-time mentre le rendite coprono il resto (50% delle spese), e Fat FIRE significa avere uno stile di vita agiato (150% delle spese).',
   },
   {
@@ -113,16 +113,16 @@ export const content: ToolLocaleContent<FIRECalculatorUI> = {
     },
     {
       type: 'title',
-      text: 'Cos’è il Movimento FIRE?',
+      text: 'Cos\'è il Movimento FIRE?',
       level: 3,
     },
     {
       type: 'list',
       items: [
-        'FIRE è l’acronimo di Financial Independence, Retire Early (Indipendenza Finanziaria, Pensionamento Anticipato).',
+        'FIRE è l\'acronimo di Financial Independence, Retire Early (Indipendenza Finanziaria, Pensionamento Anticipato).',
         'Cerca la libertà di scegliere cosa fare del proprio tempo senza che il denaro sia un vincolo.',
-        'Si basa sull’ottimizzazione del risparmio e sull’investimento intelligente.',
-        'L’obiettivo è che i tuoi asset generino un flusso di cassa sufficiente a coprire le tue spese.',
+        'Si basa sull\'ottimizzazione del risparmio e sull\'investimento intelligente.',
+        'L\'obiettivo è che i tuoi asset generino un flusso di cassa sufficiente a coprire le tue spese.',
       ],
     },
     {
@@ -162,7 +162,7 @@ export const content: ToolLocaleContent<FIRECalculatorUI> = {
         '<strong>Tracciamento Spese:</strong> Analizza le tue spese reali degli ultimi 12 mesi.',
         '<strong>Definizione SWR:</strong> Scegli il tuo tasso di prelievo sicuro in base al rischio.',
         '<strong>Patrimonio Attuale:</strong> Inserisci il valore dei tuoi investimenti attuali.',
-        '<strong>Capacità di Risparmio:</strong> Proietta quanto tempo ti manca all’obiettivo.',
+        '<strong>Capacità di Risparmio:</strong> Proietta quanto tempo ti manca all\'obiettivo.',
         '<strong>Visualizzazione Grafica:</strong> Analizza il grafico di crescita della tua ricchezza.',
       ],
     },
@@ -197,17 +197,17 @@ export const content: ToolLocaleContent<FIRECalculatorUI> = {
     },
     {
       type: 'title',
-      text: 'Fattore Critico: L’Inflazione',
+      text: 'Fattore Critico: L\'Inflazione',
       level: 3,
     },
     {
       type: 'paragraph',
-      html: 'Ricorda che 1.000€ oggi non compreranno la stessa cosa in futuro. È vitale usare rendimenti reali (al netto dell’inflazione) affinché le tue proiezioni mantengano il potere d’acquisto attuale. La Regola del 4% assume che tu adegui i tuoi prelievi annualmente all’inflazione.',
+      html: 'Ricorda che 1.000€ oggi non compreranno la stessa cosa in futuro. È vitale usare rendimenti reali (al netto dell\'inflazione) affinché le tue proiezioni mantengano il potere d\'acquisto attuale. La Regola del 4% assume che tu adegui i tuoi prelievi annualmente all\'inflazione.',
     },
   ],
   ui: {
     labelTitle: 'Calcolatore FIRE: Regola del 4%',
-    labelDescription: 'Calcola il tuo numero magico per l’indipendenza finanziaria usando la regola del 4% e visualizza le tue tappe verso la libertà.',
+    labelDescription: 'Calcola il tuo numero magico per l\'indipendenza finanziaria usando la regola del 4% e visualizza le tue tappe verso la libertà.',
     labelMonthlyExpenses: 'Spese Mensili',
     labelSWR: 'Tasso di Prelievo (SWR)',
     labelCurrentWorth: 'Patrimonio Attuale',
@@ -233,7 +233,7 @@ export const content: ToolLocaleContent<FIRECalculatorUI> = {
     labelAdded: 'Aggiunto:',
     labelSavePlan: 'Salva Piano',
     labelSWRTooltip: 'Safe Withdrawal Rate: Percentuale dei tuoi risparmi che puoi prelevare ogni anno senza esaurire i soldi.',
-    labelReturnTooltip: 'Rendimento annuale del mercato (già al netto dell’inflazione). Lo standard storico è il 7%.',
+    labelReturnTooltip: 'Rendimento annuale del mercato (già al netto dell\'inflazione). Lo standard storico è il 7%.',
     currencySymbol: '€',
     currencyCode: 'EUR',
     currencyLocale: 'it-IT',

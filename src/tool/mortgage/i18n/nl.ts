@@ -101,7 +101,7 @@ export const content: ToolLocaleContent<MortgageUI> = {
     },
     {
       type: 'paragraph',
-      html: 'Een hypotheek is waarschijnlijk de grootste financiële verplichting die u in uw leven aangaat. Begrijpen hoe het aflossingssysteem werkt is cruciaal om slimme beslissingen te nemen die u tienduizenden euro’s kunnen besparen.',
+      html: 'Een hypotheek is waarschijnlijk de grootste financiële verplichting die u in uw leven aangaat. Begrijpen hoe het aflossingssysteem werkt is cruciaal om slimme beslissingen te nemen die u tienduizenden euro\'s kunnen besparen.',
     },
     {
       type: 'title',
@@ -137,7 +137,7 @@ export const content: ToolLocaleContent<MortgageUI> = {
     },
     {
       type: 'paragraph',
-      html: 'Met een schommelende rente is de keuze tussen <strong>Vaste Rente</strong> of <strong>Variabele Rente</strong> een strategische beslissing die elk jaar duizenden euro’s kan schelen.',
+      html: 'Met een schommelende rente is de keuze tussen <strong>Vaste Rente</strong> of <strong>Variabele Rente</strong> een strategische beslissing die elk jaar duizenden euro\'s kan schelen.',
     },
     {
       type: 'comparative',

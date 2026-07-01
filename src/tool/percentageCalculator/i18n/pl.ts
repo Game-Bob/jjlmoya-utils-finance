@@ -17,7 +17,7 @@ const faqData = [
   {
     question: 'Czy nadaje się do obliczania VAT lub podatków?',
     answer:
-      'Tak, blok 4 („Dodaj lub odejmij procent”) jest zaprojektowany właśnie dla takich przypadków, jak naliczenie 23% VAT do ceny netto lub obliczenie potrącenia zaliczki na podatek dochodowy.',
+      'Tak, blok 4 ("Dodaj lub odejmij procent") jest zaprojektowany właśnie dla takich przypadków, jak naliczenie 23% VAT do ceny netto lub obliczenie potrącenia zaliczki na podatek dochodowy.',
   },
   {
     question: 'Czy obsługuje liczby dziesiętne i ujemne?',
@@ -38,7 +38,7 @@ const howToData = [
   },
   {
     name: 'Wprowadź liczby',
-    text: 'Wypełnij pola „X” i „Y”. Nie martw się o kolejność, opisy w każdym bloku poprowadzą Cię wizualnie.',
+    text: 'Wypełnij pola "X" i "Y". Nie martw się o kolejność, opisy w każdym bloku poprowadzą Cię wizualnie.',
   },
   {
     name: 'Skopiuj natychmiastowy wynik',
@@ -106,7 +106,7 @@ export const content: ToolLocaleContent<PercentageCalculatorUI> = {
     },
     {
       type: 'paragraph',
-      html: 'Nasz kalkulator procentowy 4 w 1 grupuje najczęściej poszukiwane scenariusze. Nie musisz już szukać w Google „jak obliczyć 20 procent” czy „wzór na obliczanie procentu”. Masz cztery kluczowe operacje w jednym miejscu, w interaktywnej formie i z natychmiastowymi wynikami.',
+      html: 'Nasz kalkulator procentowy 4 w 1 grupuje najczęściej poszukiwane scenariusze. Nie musisz już szukać w Google "jak obliczyć 20 procent" czy "wzór na obliczanie procentu". Masz cztery kluczowe operacje w jednym miejscu, w interaktywnej formie i z natychmiastowymi wynikami.',
     },
     {
       type: 'title',
@@ -148,7 +148,7 @@ export const content: ToolLocaleContent<PercentageCalculatorUI> = {
     },
     {
       type: 'paragraph',
-      html: 'Często blokujemy się widząc duże procenty lub ułamki dziesiętne, ale istnieje kilka matematycznych „sztuczek”, które mogą ułatwić życie. Najsłynniejszą z nich jest <strong>odwracalność procentów</strong>.',
+      html: 'Często blokujemy się widząc duże procenty lub ułamki dziesiętne, ale istnieje kilka matematycznych "sztuczek", które mogą ułatwić życie. Najsłynniejszą z nich jest <strong>odwracalność procentów</strong>.',
     },
     {
       type: 'tip',

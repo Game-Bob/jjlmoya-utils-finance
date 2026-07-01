@@ -32,7 +32,7 @@ const faqData = [
   {
     question: 'Jak inflacja wpływa na moje oszczędności?',
     answer:
-      'Inflacja działa jak „cichy podatek”. Jeśli inflacja wynosi 5%, a Twoje pieniądze leżą w materacu, pod koniec roku będziesz mógł kupić o 5% mniej produktów. Inwestowanie jest kluczowe, aby przeciwdziałać temu efektowi.',
+      'Inflacja działa jak "cichy podatek". Jeśli inflacja wynosi 5%, a Twoje pieniądze leżą w materacu, pod koniec roku będziesz mógł kupić o 5% mniej produktów. Inwestowanie jest kluczowe, aby przeciwdziałać temu efektowi.',
   },
 ];
 
@@ -106,7 +106,7 @@ export const content: ToolLocaleContent<InflationUI> = {
     },
     {
       type: 'paragraph',
-      html: 'Inflacja to „cichy podatek”, który zżera Twoje oszczędności rok po roku. Czy wiesz, ile Twoje pieniądze straciły na wartości od 1980 roku? Ile naprawdę kosztuje kawa, za którą 20 lat temu płaciłeś 300 peset?',
+      html: 'Inflacja to "cichy podatek", który zżera Twoje oszczędności rok po roku. Czy wiesz, ile Twoje pieniądze straciły na wartości od 1980 roku? Ile naprawdę kosztuje kawa, za którą 20 lat temu płaciłeś 300 peset?',
     },
     {
       type: 'title',

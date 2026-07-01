@@ -125,7 +125,7 @@ export const content: ToolLocaleContent<LateInterestUI> = {
     {
       type: 'tip',
       title: 'Charakter Odszkodowawczy, a nie Karny',
-      html: '<p><strong>Kluczowy fakt:</strong> W przeciwieństwie do sankcji, odsetki za opóźnienie mają charakter odszkodowawczy, a nie karny. Fiskus nie „karze” Cię nimi, lecz pobiera opłatę za czas, w którym dysponowałeś pieniędzmi, które powinny znajdować się w kasie publicznej.</p>',
+      html: '<p><strong>Kluczowy fakt:</strong> W przeciwieństwie do sankcji, odsetki za opóźnienie mają charakter odszkodowawczy, a nie karny. Fiskus nie "karze" Cię nimi, lecz pobiera opłatę za czas, w którym dysponowałeś pieniędzmi, które powinny znajdować się w kasie publicznej.</p>',
     },
     {
       type: 'title',

@@ -125,7 +125,7 @@ export const content: ToolLocaleContent<LateInterestUI> = {
     {
       type: 'tip',
       title: 'Schadeloosstelling, geen Straf',
-      html: '<p><strong>Belangrijk feit:</strong> In tegenstelling tot boetes hebben verzuiminteresten een schadeloosstellend karakter en zijn ze niet bestraffend. De belastingdienst „straft” u er niet mee, maar brengt kosten in rekening voor de tijd dat u over geld beschikte dat in de schatkist had moeten zitten.</p>',
+      html: '<p><strong>Belangrijk feit:</strong> In tegenstelling tot boetes hebben verzuiminteresten een schadeloosstellend karakter en zijn ze niet bestraffend. De belastingdienst "straft" u er niet mee, maar brengt kosten in rekening voor de tijd dat u over geld beschikte dat in de schatkist had moeten zitten.</p>',
     },
     {
       type: 'title',

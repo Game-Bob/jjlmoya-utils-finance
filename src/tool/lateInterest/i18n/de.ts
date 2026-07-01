@@ -102,7 +102,7 @@ export const content: ToolLocaleContent<LateInterestUI> = {
     },
     {
       type: 'paragraph',
-      html: 'Im komplexen rechtlichen und steuerlichen Geflecht Spaniens ist der Zeitablauf bei einer Schuld nicht kostenlos. Die <strong>Verzugszinsen</strong> und der <strong>gesetzliche Zinssatz</strong> sind Mechanismen, die das Gesetz nutzt, um den Schaden auszugleichen, der durch die Verspätung bei der Erfüllung einer Geldverpflichtung entsteht. Ob es sich um eine Schuld beim Finanzamt (<strong>Hacienda</strong>), einen Zahlungsausfall zwischen Unternehmen oder eine gerichtliche Forderung handelt – es ist entscheidend zu verstehen, wie diese Zinsen anfallen.',
+      html: 'Im komplexen rechtlichen und steuerlichen Geflecht Spaniens ist der Zeitablauf bei einer Schuld nicht kostenlos. Die <strong>Verzugszinsen</strong> und der <strong>gesetzliche Zinssatz</strong> sind Mechanismen, die das Gesetz nutzt, um den Schaden auszugleichen, der durch die Verspätung bei der Erfüllung einer Geldverpflichtung entsteht. Ob es sich um eine Schuld beim Finanzamt (<strong>Hacienda</strong>), einen Zahlungsausfall zwischen Unternehmen oder eine gerichtliche Forderung handelt - es ist entscheidend zu verstehen, wie diese Zinsen anfallen.',
     },
     {
       type: 'title',
@@ -125,7 +125,7 @@ export const content: ToolLocaleContent<LateInterestUI> = {
     {
       type: 'tip',
       title: 'Entschädigungscharakter, keine Strafe',
-      html: '<p><strong>Wichtiger Hinweis:</strong> Im Gegensatz zu Sanktionen haben Verzugszinsen Entschädigungscharakter und sind keine Strafe. Das Finanzamt „bestraft” Sie nicht damit, sondern erhebt Gebühren für die Zeit, in der Sie über Geld verfügt haben, das in den öffentlichen Kassen sein sollte.</p>',
+      html: '<p><strong>Wichtiger Hinweis:</strong> Im Gegensatz zu Sanktionen haben Verzugszinsen Entschädigungscharakter und sind keine Strafe. Das Finanzamt "bestraft" Sie nicht damit, sondern erhebt Gebühren für die Zeit, in der Sie über Geld verfügt haben, das in den öffentlichen Kassen sein sollte.</p>',
     },
     {
       type: 'title',

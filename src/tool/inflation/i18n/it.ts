@@ -4,54 +4,54 @@ import type { ToolLocaleContent } from '../../../types';
 import type { InflationUI } from '../ui';
 
 const slug = 'inflazione-spagna';
-const title = 'Calcolatore d’Inflazione in Spagna: Valore Storico del Denaro';
+const title = 'Calcolatore d\'Inflazione in Spagna: Valore Storico del Denaro';
 const description =
   'Scopri quanto varrebbero oggi le tue pesetas o quanto è aumentato il costo della vita dal 1980. Dati storici IPC della Spagna aggiornati al 2026.';
 
 const faqData = [
   {
-    question: 'Cos’è l’IPC e come si calcola?',
+    question: 'Cos\'è l\'IPC e come si calcola?',
     answer:
-      'L’Indice dei Prezzi al Consumo (IPC) misura l’evoluzione dei prezzi di un paniere di beni e servizi rappresentativo del consumo spagnolo. Si calcola confrontando il costo di questo paniere in diversi periodi di tempo.',
+      'L\'Indice dei Prezzi al Consumo (IPC) misura l\'evoluzione dei prezzi di un paniere di beni e servizi rappresentativo del consumo spagnolo. Si calcola confrontando il costo di questo paniere in diversi periodi di tempo.',
   },
   {
     question: 'Quanto ha perso valore il denaro dal 1980?',
     answer:
-      '1.000 pesetas del 1980 equivalgono a circa 60€ di oggi in potere d’acquisto. Il denaro ha perso oltre il 90% del suo valore in questi 40+ anni a causa dell’inflazione accumulata.',
+      '1.000 pesetas del 1980 equivalgono a circa 60€ di oggi in potere d\'acquisto. Il denaro ha perso oltre il 90% del suo valore in questi 40+ anni a causa dell\'inflazione accumulata.',
   },
   {
     question: 'Perché i miei risparmi perdono valore se non li muovo?',
     answer:
-      'Se l’inflazione è del 3% annuo e il tuo conto dà lo 0% di interesse, perdi il 3% di potere d’acquisto ogni anno. Per mantenere il valore reale, i tuoi risparmi devono generare almeno il tasso d’inflazione.',
+      'Se l\'inflazione è del 3% annuo e il tuo conto dà lo 0% di interesse, perdi il 3% di potere d\'acquisto ogni anno. Per mantenere il valore reale, i tuoi risparmi devono generare almeno il tasso d\'inflazione.',
   },
   {
     question: 'Qual è stato il periodo di maggiore inflazione in Spagna?',
     answer:
-      'Gli anni ’80 sono stati i più inflazionistici, con tassi a due cifre (fino al 15%). I prezzi cambiavano drasticamente mese dopo mese. Dall’euro (2002), l’inflazione è stata più controllata, eccetto nel 2021-2023.',
+      'Gli anni \'80 sono stati i più inflazionistici, con tassi a due cifre (fino al 15%). I prezzi cambiavano drasticamente mese dopo mese. Dall\'euro (2002), l\'inflazione è stata più controllata, eccetto nel 2021-2023.',
   },
   {
-    question: 'Come influisce l’inflazione sui miei risparmi?',
+    question: 'Come influisce l\'inflazione sui miei risparmi?',
     answer:
-      'L’inflazione agisce come una „tassa silenziosa”. Se l’inflazione è del 5% e i tuoi soldi sono sotto il materasso, alla fine dell’anno potrai comprare il 5% in meno di prodotti. È fondamentale investire per contrastare questo effetto.',
+      'L\'inflazione agisce come una "tassa silenziosa". Se l\'inflazione è del 5% e i tuoi soldi sono sotto il materasso, alla fine dell\'anno potrai comprare il 5% in meno di prodotti. È fondamentale investire per contrastare questo effetto.',
   },
 ];
 
 const howToData = [
   {
-    name: 'Selezionare l’anno di origine',
+    name: 'Selezionare l\'anno di origine',
     text: 'Scegli la data da cui vuoi calcolare il valore del denaro (disponibile dal 1980 al 2026).',
   },
   {
     name: 'Inserire la quantità',
-    text: 'Scrivi l’importo in pesetas (per date antiche) o in euro che vuoi confrontare.',
+    text: 'Scrivi l\'importo in pesetas (per date antiche) o in euro che vuoi confrontare.',
   },
   {
-    name: 'Scegliere l’anno finale',
-    text: 'Definisci fino a quale momento vuoi vedere l’evoluzione del potere d’acquisto.',
+    name: 'Scegliere l\'anno finale',
+    text: 'Definisci fino a quale momento vuoi vedere l\'evoluzione del potere d\'acquisto.',
   },
   {
     name: 'Analizzare il risultato reale',
-    text: 'Osserva l’equivalenza del potere d’acquisto e la percentuale di inflazione accumulata in tale periodo.',
+    text: 'Osserva l\'equivalenza del potere d\'acquisto e la percentuale di inflazione accumulata in tale periodo.',
   },
 ];
 
@@ -106,7 +106,7 @@ export const content: ToolLocaleContent<InflationUI> = {
     },
     {
       type: 'paragraph',
-      html: 'L’inflazione è la „tassa silenziosa” che divora i tuoi risparmi anno dopo anno. Sai quanto ha perso valore il tuo denaro dal 1980? Quanto costa realmente quel caffè che pagavi 300 pesetas 20 anni fa?',
+      html: 'L\'inflazione è la "tassa silenziosa" che divora i tuoi risparmi anno dopo anno. Sai quanto ha perso valore il tuo denaro dal 1980? Quanto costa realmente quel caffè che pagavi 300 pesetas 20 anni fa?',
     },
     {
       type: 'title',
@@ -115,7 +115,7 @@ export const content: ToolLocaleContent<InflationUI> = {
     },
     {
       type: 'paragraph',
-      html: 'L’<strong>inflazione</strong> è l’incremento sostenuto e generalizzato dei prezzi. Anche se sembra un fenomeno tecnico, il suo impatto sull’economia reale è diretto: riduce la quantità di beni che puoi comprare con lo stesso denaro, erodendo il risparmio di tutta una vita se non si prendono misure protettive.',
+      html: 'L\'<strong>inflazione</strong> è l\'incremento sostenuto e generalizzato dei prezzi. Anche se sembra un fenomeno tecnico, il suo impatto sull\'economia reale è diretto: riduce la quantità di beni che puoi comprare con lo stesso denaro, erodendo il risparmio di tutta una vita se non si prendono misure protettive.',
     },
     {
       type: 'stats',
@@ -151,12 +151,12 @@ export const content: ToolLocaleContent<InflationUI> = {
           definition: 'Indicatore che riassume la variazione dei prezzi di un paniere base di consumo.',
         },
         {
-          term: 'Potere d’Acquisto',
+          term: 'Potere d\'Acquisto',
           definition: 'Capacità di spesa reale di una valuta in un momento determinato.',
         },
         {
           term: 'Deflazione',
-          definition: 'Discesa generalizzata dei prezzi che può paralizzare l’investimento.',
+          definition: 'Discesa generalizzata dei prezzi che può paralizzare l\'investimento.',
         },
         {
           term: 'Stagflazione',
@@ -174,7 +174,7 @@ export const content: ToolLocaleContent<InflationUI> = {
       columns: 2,
       items: [
         {
-          title: 'Crisi degli anni ’80',
+          title: 'Crisi degli anni \'80',
           description: 'Periodo segnato da inflazioni a due cifre e grande instabilità lavorativa.',
           points: [
             'Tassi di interesse estremamente alti',
@@ -189,7 +189,7 @@ export const content: ToolLocaleContent<InflationUI> = {
           points: [
             'Impatto diretto sul paniere della spesa',
             'Rialzo dei tassi della BCE per frenare il consumo',
-            'Recupero lento del potere d’acquisto',
+            'Recupero lento del potere d\'acquisto',
           ],
         },
       ],
@@ -208,7 +208,7 @@ export const content: ToolLocaleContent<InflationUI> = {
       type: 'card',
       icon: 'mdi:piggy-bank',
       title: 'Il Pericolo del Contante',
-      html: 'Tenere soldi sotto il materasso o in conti correnti senza rendimento è una perdita di capitale garantita. Un’inflazione media del 3% riduce a metà il valore dei tuoi risparmi in meno di 25 anni.',
+      html: 'Tenere soldi sotto il materasso o in conti correnti senza rendimento è una perdita di capitale garantita. Un\'inflazione media del 3% riduce a metà il valore dei tuoi risparmi in meno di 25 anni.',
     },
     {
       type: 'title',
@@ -220,11 +220,11 @@ export const content: ToolLocaleContent<InflationUI> = {
       title: 'Strategie di Investimento',
       items: [
         {
-          pro: 'Attivi Reali: Gli immobili tendono a rivalutarsi con l’inflazione.',
+          pro: 'Attivi Reali: Gli immobili tendono a rivalutarsi con l\'inflazione.',
           con: 'Bassa liquidità e alti costi di ingresso.',
         },
         {
-          pro: 'Borsa e Fondi: Rendimenti che solitamente superano l’IPC a lungo termine.',
+          pro: 'Borsa e Fondi: Rendimenti che solitamente superano l\'IPC a lungo termine.',
           con: 'Volatilità e rischio di mercato a breve termine.',
         },
       ],
@@ -239,43 +239,43 @@ export const content: ToolLocaleContent<InflationUI> = {
       items: [
         'Revisionare periodicamente le tue spese per individuare rincari nascosti.',
         'Diversificare i risparmi in differenti tipi di attivi.',
-        'Considerare titoli di stato legati all’inflazione.',
+        'Considerare titoli di stato legati all\'inflazione.',
         'Utilizzare calcolatori per contestualizzare offerte e salari.',
       ],
     },
     {
       type: 'diagnostic',
       variant: 'warning',
-      title: 'Avvertenza sull’Interesse Composto Negativo',
-      html: 'L’inflazione agisce come un interesse composto inverso. Ogni anno, la percentuale di perdita si applica su un valore già diminuito, accelerando la perdita di ricchezza se non si interviene.',
+      title: 'Avvertenza sull\'Interesse Composto Negativo',
+      html: 'L\'inflazione agisce come un interesse composto inverso. Ogni anno, la percentuale di perdita si applica su un valore già diminuito, accelerando la perdita di ricchezza se non si interviene.',
     },
     {
       type: 'summary',
       title: 'Conclusioni Chiave',
       items: [
-        'L’IPC è solo una media; la tua inflazione personale dipende dalle tue abitudini.',
+        'L\'IPC è solo una media; la tua inflazione personale dipende dalle tue abitudini.',
         'Investire non è opzionale se si vuole preservare il valore reale del lavoro.',
-        'I calcolatori d’inflazione sono vitali per capire contratti a lungo termine.',
+        'I calcolatori d\'inflazione sono vitali per capire contratti a lungo termine.',
       ],
     },
     {
       type: 'message',
       title: 'Prendi il Controllo della tua Economia',
-      html: 'Il nostro calcolatore utilizza dati ufficiali dell’INE per offrirti la visione più precisa del passato e presente economico della Spagna.',
+      html: 'Il nostro calcolatore utilizza dati ufficiali dell\'INE per offrirti la visione più precisa del passato e presente economico della Spagna.',
     },
   ],
   ui: {
-    labelTitle: 'Calcolatore d’Inflazione Spagna',
+    labelTitle: 'Calcolatore d\'Inflazione Spagna',
     labelInitialAmount: 'Denaro Iniziale',
-    labelInitialYear: 'Nell’anno',
+    labelInitialYear: 'Nell\'anno',
     labelFinalAmount: 'Equivalenza Oggi',
     labelFinalYear: 'Anno 2026',
     labelInflationRate: 'Inflazione Accumulata',
-    labelCalculatedOn: 'Calcolo realizzato utilizzando dati ufficiali dell’INE fino al 2025 e proiezioni stimate per la fine del 2026.',
+    labelCalculatedOn: 'Calcolo realizzato utilizzando dati ufficiali dell\'INE fino al 2025 e proiezioni stimate per la fine del 2026.',
     currencySymbol: '€',
     currencyCode: 'EUR',
     currencyLocale: 'it-IT',
-    labelYearSelect: 'Nell’anno',
+    labelYearSelect: 'Nell\'anno',
     labelIn: 'In',
     labelEquivalentToday: 'equivale oggi a',
     labelInflationAccumulated: 'Inflazione Accumulata',

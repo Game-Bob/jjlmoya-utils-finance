@@ -12,15 +12,15 @@ const faqData = [
   {
     question: 'Cosa sono gli interessi di mora?',
     answer:
-      'È l’interesse applicato su una somma non pagata entro il termine stabilito. Si applica sul debito originale e si accumula fino al saldo completo.',
+      'È l\'interesse applicato su una somma non pagata entro il termine stabilito. Si applica sul debito originale e si accumula fino al saldo completo.',
   },
   {
     question: 'Qual è la differenza tra interesse semplice e composto?',
     answer:
-      'L’interesse semplice si calcola solo sul capitale originale ogni giorno. Quello composto si calcola sul capitale più gli interessi accumulati, generando una crescita più rapida del debito.',
+      'L\'interesse semplice si calcola solo sul capitale originale ogni giorno. Quello composto si calcola sul capitale più gli interessi accumulati, generando una crescita più rapida del debito.',
   },
   {
-    question: 'Come si calcola l’interesse giornaliero?',
+    question: 'Come si calcola l\'interesse giornaliero?',
     answer:
       'Si divide il tasso annuo per 365 giorni e si applica al capitale originale. Per esempio, 10% annuo = 0,0274% al giorno.',
   },
@@ -43,11 +43,11 @@ const howToData = [
   },
   {
     name: 'Inserisci i dati',
-    text: 'Inserisci l’importo originale, il tasso di interesse e il periodo di ritardo.',
+    text: 'Inserisci l\'importo originale, il tasso di interesse e il periodo di ritardo.',
   },
   {
     name: 'Ottieni il risultato',
-    text: 'Il calcolatore mostra l’interesse giornaliero accumulato, il totale generato, l’importo finale e il tasso effettivo.',
+    text: 'Il calcolatore mostra l\'interesse giornaliero accumulato, il totale generato, l\'importo finale e il tasso effettivo.',
   },
 ];
 
@@ -102,30 +102,30 @@ export const content: ToolLocaleContent<LateInterestUI> = {
     },
     {
       type: 'paragraph',
-      html: 'Nel complesso sistema legale e fiscale spagnolo, il passare del tempo di fronte a un debito non è gratuito. L’<strong>interesse di mora</strong> e l’<strong>interesse legale del denaro</strong> sono i meccanismi che la legge utilizza per compensare il pregiudizio causato dal ritardo nell’adempimento di un’obbligazione pecuniaria. Che si tratti di un debito con il fisco (<strong>Hacienda</strong>), un mancato pagamento tra imprese o una reclamazione giudiziaria, capire come maturano questi interessi è fondamentale.',
+      html: 'Nel complesso sistema legale e fiscale spagnolo, il passare del tempo di fronte a un debito non è gratuito. L\'<strong>interesse di mora</strong> e l\'<strong>interesse legale del denaro</strong> sono i meccanismi che la legge utilizza per compensare il pregiudizio causato dal ritardo nell\'adempimento di un\'obbligazione pecuniaria. Che si tratti di un debito con il fisco (<strong>Hacienda</strong>), un mancato pagamento tra imprese o una reclamazione giudiziaria, capire come maturano questi interessi è fondamentale.',
     },
     {
       type: 'title',
-      text: 'Cos’è l’Interesse Legale del Denaro?',
+      text: 'Cos\'è l\'Interesse Legale del Denaro?',
       level: 3,
     },
     {
       type: 'paragraph',
-      html: 'L’interesse legale del denaro è la maggiorazione applicata a un debito quando le parti non hanno concordato un interesse specifico o quando la legge lo determina. Per gli anni <strong>2024, 2025 e 2026</strong>, questo tasso è rimasto stabile al <strong>3,25%</strong>. Questa percentuale serve come base per molti calcoli legali.',
+      html: 'L\'interesse legale del denaro è la maggiorazione applicata a un debito quando le parti non hanno concordato un interesse specifico o quando la legge lo determina. Per gli anni <strong>2024, 2025 e 2026</strong>, questo tasso è rimasto stabile al <strong>3,25%</strong>. Questa percentuale serve come base per molti calcoli legali.',
     },
     {
       type: 'title',
-      text: 'L’Interesse di Mora Tributario (Hacienda)',
+      text: 'L\'Interesse di Mora Tributario (Hacienda)',
       level: 3,
     },
     {
       type: 'paragraph',
-      html: 'Quando il debito è verso la Pubblica Amministrazione, l’<strong>interesse di mora tributario</strong> è superiore all’interesse legale per scoraggiare il ritardo nel pagamento delle imposte. Per il periodo <strong>2024-2026</strong>, è stato fissato al <strong>4,0625%</strong>. Questo è il sovrapprezzo che l’Hacienda ti applicherà se presenti una dichiarazione fuori termine.',
+      html: 'Quando il debito è verso la Pubblica Amministrazione, l\'<strong>interesse di mora tributario</strong> è superiore all\'interesse legale per scoraggiare il ritardo nel pagamento delle imposte. Per il periodo <strong>2024-2026</strong>, è stato fissato al <strong>4,0625%</strong>. Questo è il sovrapprezzo che l\'Hacienda ti applicherà se presenti una dichiarazione fuori termine.',
     },
     {
       type: 'tip',
       title: 'Carattere Indennitario, non Punitivo',
-      html: '<p><strong>Dato chiave:</strong> A differenza delle sanzioni, gli interessi di mora hanno carattere indennitario, non punitivo. L’Hacienda non ti „castiga”, ma ti addebita il tempo in cui hai disposto di denaro che doveva essere nelle casse pubbliche.</p>',
+      html: '<p><strong>Dato chiave:</strong> A differenza delle sanzioni, gli interessi di mora hanno carattere indennitario, non punitivo. L\'Hacienda non ti "castiga", ma ti addebita il tempo in cui hai disposto di denaro che doveva essere nelle casse pubbliche.</p>',
     },
     {
       type: 'title',
@@ -139,7 +139,7 @@ export const content: ToolLocaleContent<LateInterestUI> = {
     {
       type: 'list',
       items: [
-        '<strong>Capitale:</strong> L’importo totale del debito originale.',
+        '<strong>Capitale:</strong> L\'importo totale del debito originale.',
         '<strong>Giorni:</strong> Il numero di giorni trascorsi dal giorno successivo alla scadenza al giorno del pagamento effettivo.',
         '<strong>Tasso di Interesse:</strong> La percentuale annua applicabile (Es: 3,25 o 4,0625).',
         '<strong>36.500:</strong> Il fattore divisore per convertire la percentuale annua in giornaliera (365 giorni x 100).',
@@ -148,7 +148,7 @@ export const content: ToolLocaleContent<LateInterestUI> = {
     {
       type: 'card',
       icon: 'mdi:calculator',
-      title: 'Esempio Pratico: Debito con l’Hacienda',
+      title: 'Esempio Pratico: Debito con l\'Hacienda',
       html: '<p>Immagina di dovere 5.000 € per una dichiarazione scaduta da 180 giorni:</p><ul><li>Interesse applicabile (Mora): 4,0625%</li><li>Calcolo: (5.000 × 180 × 4,0625) / 36.500</li><li><strong>Interessi risultanti:</strong> 100,17 €</li><li>Totale da pagare: 5.100,17 €</li></ul>',
     },
     {
@@ -172,7 +172,7 @@ export const content: ToolLocaleContent<LateInterestUI> = {
     },
     {
       type: 'paragraph',
-      html: 'Se sei un lavoratore autonomo o un’impresa, la legge spagnola 3/2004 stabilisce un termine massimo di pagamento di 60 giorni. Se il tuo cliente supera tale data, puoi esigere l’interesse di mora commerciale in modo automatico, senza solleciti, e addebitare una quota fissa di 40 € per i costi di recupero.',
+      html: 'Se sei un lavoratore autonomo o un\'impresa, la legge spagnola 3/2004 stabilisce un termine massimo di pagamento di 60 giorni. Se il tuo cliente supera tale data, puoi esigere l\'interesse di mora commerciale in modo automatico, senza solleciti, e addebitare una quota fissa di 40 € per i costi di recupero.',
     },
   ],
   ui: {

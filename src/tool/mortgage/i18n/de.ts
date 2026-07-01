@@ -105,7 +105,7 @@ export const content: ToolLocaleContent<MortgageUI> = {
     },
     {
       type: 'title',
-      text: 'Die „Falle“ des Annuitätendarlehens: Die Zusammensetzung Ihrer Rate verstehen',
+      text: 'Die "Falle" des Annuitätendarlehens: Die Zusammensetzung Ihrer Rate verstehen',
       level: 3,
     },
     {

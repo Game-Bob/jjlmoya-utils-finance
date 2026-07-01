@@ -8,7 +8,7 @@ export const content: CategoryLocaleContent = {
   seo: [
     {
       type: 'title',
-      text: "Ingénierie Financière Personnelle : Décisions Basées sur les Mathématiques",
+      text: "Ingénierie Financière Personnelle: Décisions Basées sur les Mathématiques",
       level: 2,
     },
     {
@@ -21,7 +21,7 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'title',
-      text: "Investissement et Patrimoine : Le Pouvoir des Intérêts Composés",
+      text: "Investissement et Patrimoine: Le Pouvoir des Intérêts Composés",
       level: 2,
     },
     {
@@ -34,7 +34,7 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'title',
-      text: 'Finances du Foyer : Prêts Immobiliers et Loyers',
+      text: 'Finances du Foyer: Prêts Immobiliers et Loyers',
       level: 2,
     },
     {
@@ -75,16 +75,16 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'title',
-      text: 'Diversification et Gestion du Risque : Portefeuille Optimal',
+      text: 'Diversification et Gestion du Risque: Portefeuille Optimal',
       level: 2,
     },
     {
       type: 'paragraph',
-      html: "Le risque ne peut pas être éliminé, mais il peut être géré. La diversification est la stratégie fondamentale : ne pas mettre tous ses œufs dans le même panier. Nos outils permettent de modéliser un portefeuille hypothétique avec différentes proportions (60% actions, 30% obligations, 10% liquidités).",
+      html: "Le risque ne peut pas être éliminé, mais il peut être géré. La diversification est la stratégie fondamentale: ne pas mettre tous ses œufs dans le même panier. Nos outils permettent de modéliser un portefeuille hypothétique avec différentes proportions (60% actions, 30% obligations, 10% liquidités).",
     },
     {
       type: 'title',
-      text: 'Analyse de Rentabilité : ROI et Période de Récupération',
+      text: 'Analyse de Rentabilité: ROI et Période de Récupération',
       level: 2,
     },
     {
@@ -93,7 +93,7 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'title',
-      text: 'Fiscalité et Déductions : Optimisation Fiscale',
+      text: 'Fiscalité et Déductions: Optimisation Fiscale',
       level: 2,
     },
     {
@@ -102,7 +102,7 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'title',
-      text: 'Cryptomonnaies et Actifs Numériques : Conversion et Valorisation',
+      text: 'Cryptomonnaies et Actifs Numériques: Conversion et Valorisation',
       level: 2,
     },
     {
@@ -111,7 +111,7 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'title',
-      text: 'Planification de la Retraite Anticipée : FIRE',
+      text: 'Planification de la Retraite Anticipée: FIRE',
       level: 2,
     },
     {

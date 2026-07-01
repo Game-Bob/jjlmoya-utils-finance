@@ -17,10 +17,10 @@ const faqData = [
   {
     question: 'Was ist der Unterschied zum einfachen Zins?',
     answer:
-      'Beim einfachen Zins werden die Zinsen nur auf das ursprüngliche Kapital berechnet. Beim Zinseszins werden die Zinsen reinvestiert, was bedeutet, dass „Ihre Zinsen weitere Zinsen generieren“.',
+      'Beim einfachen Zins werden die Zinsen nur auf das ursprüngliche Kapital berechnet. Beim Zinseszins werden die Zinsen reinvestiert, was bedeutet, dass "Ihre Zinsen weitere Zinsen generieren".',
   },
   {
-    question: 'Was ist die „72er-Regel“?',
+    question: 'Was ist die "72er-Regel"?',
     answer:
       'Es ist eine Faustformel zur Schätzung, wie lange es dauert, bis sich eine Investition verdoppelt: Teilen Sie 72 durch die jährliche Rendite. Beispiel: Bei 8 % pro Jahr verdoppeln Sie Ihr Geld in 9 Jahren.',
   },
@@ -101,7 +101,7 @@ export const content: ToolLocaleContent<CompoundInterestUI> = {
     },
     {
       type: 'paragraph',
-      html: 'Albert Einstein nannte ihn das „achte Weltwunder“. Der <strong>Zinseszins</strong> ist der mächtigste Mechanismus, um langfristig Reichtum zu generieren. Man muss kein Finanzexperte sein, um ihn zu nutzen: Man braucht nur Zeit, Geduld und investiertes Geld.',
+      html: 'Albert Einstein nannte ihn das "achte Weltwunder". Der <strong>Zinseszins</strong> ist der mächtigste Mechanismus, um langfristig Reichtum zu generieren. Man muss kein Finanzexperte sein, um ihn zu nutzen: Man braucht nur Zeit, Geduld und investiertes Geld.',
     },
     {
       type: 'title',
@@ -141,7 +141,7 @@ export const content: ToolLocaleContent<CompoundInterestUI> = {
     },
     {
       type: 'paragraph',
-      html: 'Mathematisch gesehen generieren Ihre Gewinne neue Gewinne. In den ersten Jahren scheint es langsam zu sein, aber nach dem „Wendepunkt“ schießt die Kurve vertikal nach oben. Hier entstehen die wahren Vermögen.',
+      html: 'Mathematisch gesehen generieren Ihre Gewinne neue Gewinne. In den ersten Jahren scheint es langsam zu sein, aber nach dem "Wendepunkt" schießt die Kurve vertikal nach oben. Hier entstehen die wahren Vermögen.',
     },
     {
       type: 'title',

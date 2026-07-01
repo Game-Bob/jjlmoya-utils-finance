@@ -9,12 +9,12 @@ const description = 'Calcola la tua data di libertà finanziaria con il metodo p
 
 const faqData = [
   {
-    question: 'Cos’è il metodo della palla di neve?',
+    question: 'Cos\'è il metodo della palla di neve?',
     answer: 'È una strategia di pagamento dei debiti che consiste nel pagare i debiti in ordine dal saldo più basso al più alto, indipendentemente dal tasso di interesse. Si concentra sulla vittoria psicologica di eliminare velocemente i piccoli debiti.',
   },
   {
     question: 'Perché non ordinare per tasso di interesse (Metodo Valanga)?',
-    answer: 'Matematicamente, pagare prima l’interesse più alto fa risparmiare più soldi. Tuttavia, molte persone abbandonano perché non vedono risultati immediati. La Palla di Neve dà priorità alla motivazione: vedere sparire un debito velocemente dà l’energia per affrontare quelli grandi.',
+    answer: 'Matematicamente, pagare prima l\'interesse più alto fa risparmiare più soldi. Tuttavia, molte persone abbandonano perché non vedono risultati immediati. La Palla di Neve dà priorità alla motivazione: vedere sparire un debito velocemente dà l\'energia per affrontare quelli grandi.',
   },
   {
     question: 'Devo avere dei risparmi prima di iniziare il piano?',

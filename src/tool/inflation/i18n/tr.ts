@@ -6,7 +6,7 @@ import type { InflationUI } from '../ui';
 const slug = 'enflasyon-ispanya';
 const title = 'İspanya Enflasyon Hesaplayıcı: Paranın Tarihsel Değeri';
 const description =
-  'Pesetalarınızın bugün ne kadar değere sahip olacağını veya 1980’den bu yana yaşam maliyetinin ne kadar arttığını keşfedin. 2026 yılına kadar güncellenmiş İspanya tarihsel TÜFE verileri.';
+  'Pesetalarınızın bugün ne kadar değere sahip olacağını veya 1980\'den bu yana yaşam maliyetinin ne kadar arttığını keşfedin. 2026 yılına kadar güncellenmiş İspanya tarihsel TÜFE verileri.';
 
 const faqData = [
   {
@@ -15,31 +15,31 @@ const faqData = [
       'Tüketici Fiyat Endeksi (TÜFE), İspanya tüketimini temsil eden bir mal ve hizmet sepetinin fiyatlarındaki değişimi ölçer. Bu sepetin maliyetinin farklı zaman dilimlerinde karşılaştırılmasıyla hesaplanır.',
   },
   {
-    question: '1980’den bu yana para ne kadar değer kaybetti?',
+    question: '1980\'den bu yana para ne kadar değer kaybetti?',
     answer:
-      '1980 yılındaki 1.000 Peseta, satın alma gücü bakımından bugünün yaklaşık 60 Avrosuna eşdeğerdir. Para, birikimli enflasyon nedeniyle bu 40 yılı aşkın sürede değerinin %90’ından fazlasını kaybetmiştir.',
+      '1980 yılındaki 1.000 Peseta, satın alma gücü bakımından bugünün yaklaşık 60 Avrosuna eşdeğerdir. Para, birikimli enflasyon nedeniyle bu 40 yılı aşkın sürede değerinin %90\'ından fazlasını kaybetmiştir.',
   },
   {
     question: 'Neden birikimlerimi hareket ettirmezsem değer kaybediyorlar?',
     answer:
-      'Enflasyon yıllık %3 ise ve hesabınız %0 faiz veriyorsa, her yıl satın alma gücünüzün %3’ünü kaybedersiniz. Gerçek değeri korumak için birikimleriniz en az enflasyon oranı kadar getiri sağlamalıdır.',
+      'Enflasyon yıllık %3 ise ve hesabınız %0 faiz veriyorsa, her yıl satın alma gücünüzün %3\'ünü kaybedersiniz. Gerçek değeri korumak için birikimleriniz en az enflasyon oranı kadar getiri sağlamalıdır.',
   },
   {
-    question: 'İspanya’da en yüksek enflasyon dönemi hangisiydi?',
+    question: 'İspanya\'da en yüksek enflasyon dönemi hangisiydi?',
     answer:
-      '80’li yıllar, çift haneli oranlarla (%15’e kadar) en enflasyonist yıllardı. Fiyatlar aydan aya köklü bir şekilde değişiyordu. Euro’dan (2002) bu yana enflasyon, 2021-2023 dönemi hariç daha kontrollü olmuştur.',
+      '80\'li yıllar, çift haneli oranlarla (%15\'e kadar) en enflasyonist yıllardı. Fiyatlar aydan aya köklü bir şekilde değişiyordu. Euro\'dan (2002) bu yana enflasyon, 2021-2023 dönemi hariç daha kontrollü olmuştur.',
   },
   {
     question: 'Enflasyon birikimlerimi nasıl etkiler?',
     answer:
-      'Enflasyon „sessiz vergi” gibi hareket eder. Enflasyon %5 ise ve paranız yastık altındaysa, yıl sonunda %5 daha az ürün satın alabilirsiniz. Bu etkiyle mücadele etmek için yatırım yapmak esastır.',
+      'Enflasyon "sessiz vergi" gibi hareket eder. Enflasyon %5 ise ve paranız yastık altındaysa, yıl sonunda %5 daha az ürün satın alabilirsiniz. Bu etkiyle mücadele etmek için yatırım yapmak esastır.',
   },
 ];
 
 const howToData = [
   {
     name: 'Başlangıç yılını seçin',
-    text: 'Paranın değerini hesaplamak istediğiniz tarihi seçin (1980’den 2026’ya kadar mevcuttur).',
+    text: 'Paranın değerini hesaplamak istediğiniz tarihi seçin (1980\'den 2026\'ya kadar mevcuttur).',
   },
   {
     name: 'Tutarı girin',
@@ -106,7 +106,7 @@ export const content: ToolLocaleContent<InflationUI> = {
     },
     {
       type: 'paragraph',
-      html: 'Enflasyon, birikimlerinizi her yıl kemiren „sessiz vergi”dir. 1980’den bu yana paranızın ne kadar değer kaybettiğini biliyor musunuz? 20 yıl önce 300 Peseta ödediğiniz o kahve bugün gerçekte ne kadar?',
+      html: 'Enflasyon, birikimlerinizi her yıl kemiren "sessiz vergi"dir. 1980\'den bu yana paranızın ne kadar değer kaybettiğini biliyor musunuz? 20 yıl önce 300 Peseta ödediğiniz o kahve bugün gerçekte ne kadar?',
     },
     {
       type: 'title',
@@ -174,7 +174,7 @@ export const content: ToolLocaleContent<InflationUI> = {
       columns: 2,
       items: [
         {
-          title: '80’ler Krizi',
+          title: '80\'ler Krizi',
           description: 'Çift haneli enflasyonlar ve büyük iş gücü istikrarsızlığı ile işaretlenen dönem.',
           points: [
             'Aşırı yüksek faiz oranları',
@@ -188,7 +188,7 @@ export const content: ToolLocaleContent<InflationUI> = {
           highlight: true,
           points: [
             'Market sepetine doğrudan etki',
-            'Tüketimi frenlemek için AMB’nin faiz artırımı',
+            'Tüketimi frenlemek için AMB\'nin faiz artırımı',
             'Satın alma gücünün yavaş toparlanması',
           ],
         },
@@ -224,7 +224,7 @@ export const content: ToolLocaleContent<InflationUI> = {
           con: 'Düşük likidite ve yüksek giriş maliyetleri.',
         },
         {
-          pro: 'Borsa ve Fonlar: Uzun vadede genellikle TÜFE’yi aşan getiriler.',
+          pro: 'Borsa ve Fonlar: Uzun vadede genellikle TÜFE\'yi aşan getiriler.',
           con: 'Kısa vadede volatilite ve piyasa riski.',
         },
       ],
@@ -261,7 +261,7 @@ export const content: ToolLocaleContent<InflationUI> = {
     {
       type: 'message',
       title: 'Ekonominizin Kontrolünü Ele Alın',
-      html: 'Hesaplayıcımız, İspanya’nın ekonomik geçmişi ve bugünü hakkında size en doğru görünümü sunmak için resmi INE verilerini kullanır.',
+      html: 'Hesaplayıcımız, İspanya\'nın ekonomik geçmişi ve bugünü hakkında size en doğru görünümü sunmak için resmi INE verilerini kullanır.',
     },
   ],
   ui: {
@@ -271,7 +271,7 @@ export const content: ToolLocaleContent<InflationUI> = {
     labelFinalAmount: 'Bugünkü Karşılığı',
     labelFinalYear: '2026 Yılı',
     labelInflationRate: 'Birikimli Enflasyon',
-    labelCalculatedOn: 'Hesaplama 2025’e kadar olan resmi INE verileri ve 2026 sonu için tahmini öngörüler kullanılarak yapılmıştır.',
+    labelCalculatedOn: 'Hesaplama 2025\'e kadar olan resmi INE verileri ve 2026 sonu için tahmini öngörüler kullanılarak yapılmıştır.',
     currencySymbol: '€',
     currencyCode: 'EUR',
     currencyLocale: 'tr-TR',

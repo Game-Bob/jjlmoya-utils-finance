@@ -4,9 +4,9 @@ import type { ToolLocaleContent } from '../../../types';
 import type { PercentageCalculatorUI } from '../ui';
 
 const slug = 'yuzde-hesaplama';
-const title = '4’ü 1 Arada Yüzde Hesaplama: İndirimler, Artışlar ve Azalışlar';
+const title = '4\'ü 1 Arada Yüzde Hesaplama: İndirimler, Artışlar ve Azalışlar';
 const description =
-  'Yüzdeleri çevrimiçi ve ücretsiz olarak kolayca hesaplayın. Y’nin %X’ini bulma, yüzdelik fark, KDV ekleme veya çıkarma, indirimler ve otomatik bahşişler için 4 araç 1 arada.';
+  'Yüzdeleri çevrimiçi ve ücretsiz olarak kolayca hesaplayın. Y\'nin %X\'ini bulma, yüzdelik fark, KDV ekleme veya çıkarma, indirimler ve otomatik bahşişler için 4 araç 1 arada.';
 
 const faqData = [
   {
@@ -17,7 +17,7 @@ const faqData = [
   {
     question: 'KDV veya vergi hesaplamak için uygun mu?',
     answer:
-      'Evet, 4. blok („Yüzde ekle veya çıkar”) tam olarak bir taban fiyata %18 veya %20 KDV uygulamak veya stopaj hesaplamak gibi durumlar için tasarlanmıştır.',
+      'Evet, 4. blok ("Yüzde ekle veya çıkar") tam olarak bir taban fiyata %18 veya %20 KDV uygulamak veya stopaj hesaplamak gibi durumlar için tasarlanmıştır.',
   },
   {
     question: 'Ondalık ve negatif sayılarla çalışır mı?',
@@ -34,11 +34,11 @@ const faqData = [
 const howToData = [
   {
     name: 'Matematiksel Probleminizi Belirleyin',
-    text: '4 bloğun başlıklarını okuyun ve neyi bilmek istediğinizle eşleşeni seçin (Örn: 50’nin %20’si kaçtır? -> Blok 1).',
+    text: '4 bloğun başlıklarını okuyun ve neyi bilmek istediğinizle eşleşeni seçin (Örn: 50\'nin %20\'si kaçtır? -> Blok 1).',
   },
   {
     name: 'Rakamları Girin',
-    text: '„X” ve „Y” alanlarını doldurun. Sıralama konusunda endişelenmeyin, her bloğun cümlesi sizi görsel olarak yönlendirir.',
+    text: '"X" ve "Y" alanlarını doldurun. Sıralama konusunda endişelenmeyin, her bloğun cümlesi sizi görsel olarak yönlendirir.',
   },
   {
     name: 'Anlık Sonucu Kopyalayın',
@@ -92,7 +92,7 @@ export const content: ToolLocaleContent<PercentageCalculatorUI> = {
   seo: [
     {
       type: 'title',
-      text: '4’ü 1 Arada Yüzde Hesaplama: Hızlı Hesaplamalarda Ustalaşın',
+      text: '4\'ü 1 Arada Yüzde Hesaplama: Hızlı Hesaplamalarda Ustalaşın',
       level: 2,
     },
     {
@@ -106,7 +106,7 @@ export const content: ToolLocaleContent<PercentageCalculatorUI> = {
     },
     {
       type: 'paragraph',
-      html: '4’ü 1 arada yüzde hesaplayıcımız en çok talep edilen senaryoları gruplandırır. Artık Google’da „yüzde 20 nasıl hesaplanır” veya „yüzde hesaplama formülü” diye aramanıza gerek yok. Dört temel işlem tek bir yerde, etkileşimli ve anlık sonuçlarla elinizin altında.',
+      html: '4\'ü 1 arada yüzde hesaplayıcımız en çok talep edilen senaryoları gruplandırır. Artık Google\'da "yüzde 20 nasıl hesaplanır" veya "yüzde hesaplama formülü" diye aramanıza gerek yok. Dört temel işlem tek bir yerde, etkileşimli ve anlık sonuçlarla elinizin altında.',
     },
     {
       type: 'title',
@@ -120,20 +120,20 @@ export const content: ToolLocaleContent<PercentageCalculatorUI> = {
     {
       type: 'card',
       icon: 'mdi:percent',
-      title: '1. Y’nin %X’i kaçtır?',
-      html: '<p><strong>Klasik durum.</strong> İndirim veya bahşiş hesaplamak için kullanışlıdır. 120 TL’nin %15’inin ne kadar olduğunu bilmek istiyorsanız bu araç size göredir. Temeldeki formül sadece yüzdeyi 100’e böler ve toplam değerle çarpar.</p>',
+      title: '1. Y\'nin %X\'i kaçtır?',
+      html: '<p><strong>Klasik durum.</strong> İndirim veya bahşiş hesaplamak için kullanışlıdır. 120 TL\'nin %15\'inin ne kadar olduğunu bilmek istiyorsanız bu araç size göredir. Temeldeki formül sadece yüzdeyi 100\'e böler ve toplam değerle çarpar.</p>',
     },
     {
       type: 'card',
       icon: 'mdi:division',
-      title: '2. X, Y’nin yüzde kaçıdır?',
+      title: '2. X, Y\'nin yüzde kaçıdır?',
       html: '<p><strong>Oranlar için idealdir.</strong> 60 puanlık bir sınavdan 45 puan aldıysanız, 100 üzerinden notunuz kaçtır? Bu işlev, parçayı bütüne böler ve yüzle çarparak size tam göreceli ağırlığı verir.</p>',
     },
     {
       type: 'card',
       icon: 'mdi:chart-line-variant',
       title: '3. Yüzdelik Artış veya Azalış',
-      html: '<p><strong>Finans ve analitik için mükemmeldir.</strong> Kira geçen yıldan beri ne kadar arttı? Eskiden 8000 TL ödüyorken şimdi 8400 TL ödüyorsanız, bu işlev size %5’lik bir artış yaşadığınızı söyleyecektir. İki rakam arasındaki büyümeyi veya küçülmeyi ölçer.</p>',
+      html: '<p><strong>Finans ve analitik için mükemmeldir.</strong> Kira geçen yıldan beri ne kadar arttı? Eskiden 8000 TL ödüyorken şimdi 8400 TL ödüyorsanız, bu işlev size %5\'lik bir artış yaşadığınızı söyleyecektir. İki rakam arasındaki büyümeyi veya küçülmeyi ölçer.</p>',
     },
     {
       type: 'card',
@@ -148,12 +148,12 @@ export const content: ToolLocaleContent<PercentageCalculatorUI> = {
     },
     {
       type: 'paragraph',
-      html: 'Büyük yüzdeler veya ondalık sayılar gördüğümüzde genellikle tıkanırız ama hayatınızı kolaylaştırabilecek bazı matematiksel „numaralar” vardır. Bunların en ünlüsü <strong>yüzdelerin tersine çevrilebilirliğidir</strong>.',
+      html: 'Büyük yüzdeler veya ondalık sayılar gördüğümüzde genellikle tıkanırız ama hayatınızı kolaylaştırabilecek bazı matematiksel "numaralar" vardır. Bunların en ünlüsü <strong>yüzdelerin tersine çevrilebilirliğidir</strong>.',
     },
     {
       type: 'tip',
       title: 'Tersine çevrilebilirlik numarası',
-      html: '<p>Y’nin %X’inin, X’in %Y’sine tam olarak eşit olduğunu biliyor muydunuz? Örneğin, sizden zihinden 50’nin %18’ini hesaplamanız istenirse bu karmaşık gelebilir. Ama tersine çevirirseniz, 18’in %50’si çok kolaydır: bu 9’dur! Bu, mutlak her sayı için geçerlidir ve günlük hayatta inanılmaz bir can kurtarıcıdır.</p>',
+      html: '<p>Y\'nin %X\'inin, X\'in %Y\'sine tam olarak eşit olduğunu biliyor muydunuz? Örneğin, sizden zihinden 50\'nin %18\'ini hesaplamanız istenirse bu karmaşık gelebilir. Ama tersine çevirirseniz, 18\'in %50\'si çok kolaydır: bu 9\'dur! Bu, mutlak her sayı için geçerlidir ve günlük hayatta inanılmaz bir can kurtarıcıdır.</p>',
     },
     {
       type: 'title',
@@ -166,7 +166,7 @@ export const content: ToolLocaleContent<PercentageCalculatorUI> = {
     },
     {
       type: 'paragraph',
-      html: '100 TL’den %50 düşerse yeni değeri 50 TL olur. Bu 50 TL’den %50 artarsa artış 50’nin yarısı (25 TL) kadardır. Bu nedenle nihai fiyat 75 TL olacaktır. Bu, yüzdelik artış ve azalışların neden simetrik olmadığının ve bu gibi dinamik hesaplayıcıların ciddi finansal hataları neden önlediğinin klasik bir örneğidir.',
+      html: '100 TL\'den %50 düşerse yeni değeri 50 TL olur. Bu 50 TL\'den %50 artarsa artış 50\'nin yarısı (25 TL) kadardır. Bu nedenle nihai fiyat 75 TL olacaktır. Bu, yüzdelik artış ve azalışların neden simetrik olmadığının ve bu gibi dinamik hesaplayıcıların ciddi finansal hataları neden önlediğinin klasik bir örneğidir.',
     },
     {
       type: 'title',
@@ -175,13 +175,13 @@ export const content: ToolLocaleContent<PercentageCalculatorUI> = {
     },
     {
       type: 'paragraph',
-      html: 'Arayüzümüz dikkat dağıtıcı unsurlardan arındırılmıştır ve <strong>hızlı çalışmak</strong> için tasarlanmıştır. Tarayıcınızda sabitlenmiş bir sekmede tutabilir, alanlar arasında çevikçe geçiş yapabilir ve sonucun yanındaki kopyala düğmesi sayesinde tam veriyi yazım hatası riski olmadan Excel veya Google Sheets’inize aktarabilirsiniz.',
+      html: 'Arayüzümüz dikkat dağıtıcı unsurlardan arındırılmıştır ve <strong>hızlı çalışmak</strong> için tasarlanmıştır. Tarayıcınızda sabitlenmiş bir sekmede tutabilir, alanlar arasında çevikçe geçiş yapabilir ve sonucun yanındaki kopyala düğmesi sayesinde tam veriyi yazım hatası riski olmadan Excel veya Google Sheets\'inize aktarabilirsiniz.',
     },
     {
       type: 'list',
       items: [
         'Web ticaret ve fiziksel mağazalar: Ticari marjlar uygulayarak ve KDV ekleyerek satış fiyatının hızlı hesaplanması.',
-        'İnsan kaynakları yönetimi: Ücret farkının, vergi kesintilerinin ve TÜFE’ye endeksli maaş artışlarının belirlenmesi.',
+        'İnsan kaynakları yönetimi: Ücret farkının, vergi kesintilerinin ve TÜFE\'ye endeksli maaş artışlarının belirlenmesi.',
         'Üniversite eğitimi: Notları dengeleyen profesörler veya deneylerinin sapmasını analiz eden bilim dalları öğrencileri.',
         'Dijital pazarlama: E-ticarette CTR (Tıklanma Oranı), ROAS (Reklam Harcaması Getirisi) veya Dönüşüm Oranı ölçümü.',
       ],
@@ -190,12 +190,12 @@ export const content: ToolLocaleContent<PercentageCalculatorUI> = {
   ui: {
     labelTitle: 'Yüzde Hesaplama',
     labelCase1Title: 'Durum 1',
-    labelCase1Question: 'Y’nin %X’i kaçtır?',
+    labelCase1Question: 'Y\'nin %X\'i kaçtır?',
     labelCase1Placeholder1: 'X',
     labelCase1Placeholder2: 'Y',
     labelCase1Formula: 'Formül: (X / 100) × Y',
     labelCase2Title: 'Durum 2',
-    labelCase2Question: 'X, Y’nin yüzde kaçıdır?',
+    labelCase2Question: 'X, Y\'nin yüzde kaçıdır?',
     labelCase2Placeholder1: 'X',
     labelCase2Placeholder2: 'Y',
     labelCase2Formula: 'Formül: (X / Y) × 100',

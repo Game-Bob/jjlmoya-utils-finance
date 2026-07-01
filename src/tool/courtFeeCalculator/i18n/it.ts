@@ -5,7 +5,7 @@ import type { CourtFeeCalculatorUI } from '../ui';
 
 const slug = 'calcolatore-tasse-giudiziarie-spagna';
 const title = 'Calcolatore di Tasse Giudiziarie Spagna';
-const description = 'Calcola l’importo esatto delle tasse giudiziarie spagnole per le imprese secondo la Legge 10/2012. Simulatore per il Modello 696.';
+const description = 'Calcola l\'importo esatto delle tasse giudiziarie spagnole per le imprese secondo la Legge 10/2012. Simulatore per il Modello 696.';
 
 const faqData = [
   {
@@ -13,16 +13,16 @@ const faqData = [
     answer: 'Sì, dal 2016 le persone fisiche sono totalmente esenti dal pagamento delle tasse giudiziarie in Spagna in tutti gli ordini giurisdizionali.',
   },
   {
-    question: 'Qual è l’importo massimo della tassa giudiziaria?',
+    question: 'Qual è l\'importo massimo della tassa giudiziaria?',
     answer: 'La quota variabile è limitata a un massimo di 10.000 euro. Sommando la quota fissa, il totale massimo può essere superiore a seconda del tipo di procedimento.',
   },
   {
-    question: 'Cos’è il Modello 696?',
-    answer: 'È il modulo ufficiale dell’Agenzia delle Entrate spagnola (AEAT) utilizzato per l’autoliquidazione della tassa giudiziaria.',
+    question: 'Cos\'è il Modello 696?',
+    answer: 'È il modulo ufficiale dell\'Agenzia delle Entrate spagnola (AEAT) utilizzato per l\'autoliquidazione della tassa giudiziaria.',
   },
   {
-    question: 'Si paga la tassa nell’ordine penale?',
-    answer: 'No, in Spagna non esistono tasse giudiziarie per i processi nell’ordine penale.',
+    question: 'Si paga la tassa nell\'ordine penale?',
+    answer: 'No, in Spagna non esistono tasse giudiziarie per i processi nell\'ordine penale.',
   },
   {
     question: 'Come si calcola la quota variabile?',
@@ -37,11 +37,11 @@ const howToData = [
   },
   {
     name: 'Scegli la giurisdizione e il processo',
-    text: 'Seleziona l’ordine giurisdizionale (Civile, Amministrativo o Sociale) e il tipo di procedimento.',
+    text: 'Seleziona l\'ordine giurisdizionale (Civile, Amministrativo o Sociale) e il tipo di procedimento.',
   },
   {
-    name: 'Inserisci l’importo della lite',
-    text: 'Scrivi l’importo totale richiesto nella domanda. Per l’ordine sociale, questo campo non si applica.',
+    name: 'Inserisci l\'importo della lite',
+    text: 'Scrivi l\'importo totale richiesto nella domanda. Per l\'ordine sociale, questo campo non si applica.',
   },
   {
     name: 'Visualizza il dettaglio',
@@ -99,7 +99,7 @@ export const content: ToolLocaleContent<CourtFeeCalculatorUI> = {
   description,
   ui: {
     labelTitle: 'Calcolatore di Tasse Giudiziarie',
-    labelDescription: 'Calcola l’importo esatto del Modello 696 per giurisdizione e procedimento. Per imprese e professionisti.',
+    labelDescription: 'Calcola l\'importo esatto del Modello 696 per giurisdizione e procedimento. Per imprese e professionisti.',
     labelLegalParameters: 'Parametri Legali',
     labelEntityType: 'Soggetto Passivo',
     labelJurisdiction: 'Giurisdizione',

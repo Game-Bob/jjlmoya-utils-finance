@@ -17,12 +17,12 @@ const faqData = [
   {
     question: 'Basit faizden farkı nedir?',
     answer:
-      'Basit faizde, faiz sadece ana para üzerinden hesaplanır. Bileşikte ise faizler tekrar yatırıma eklenir, bu da „faizinizin faiz getirmesi” anlamına gelir.',
+      'Basit faizde, faiz sadece ana para üzerinden hesaplanır. Bileşikte ise faizler tekrar yatırıma eklenir, bu da "faizinizin faiz getirmesi" anlamına gelir.',
   },
   {
-    question: '„72 Kuralı” nedir?',
+    question: '"72 Kuralı" nedir?',
     answer:
-      'Bir yatırımın ne kadar sürede ikiye katlanacağını tahmin etmek için kullanılan hızlı bir formüldür: 72’yi yıllık getiri oranına bölün. Örneğin, yıllık %8 faizle paranızı 9 yılda ikiye katlarsınız.',
+      'Bir yatırımın ne kadar sürede ikiye katlanacağını tahmin etmek için kullanılan hızlı bir formüldür: 72\'yi yıllık getiri oranına bölün. Örneğin, yıllık %8 faizle paranızı 9 yılda ikiye katlarsınız.',
   },
   {
     question: 'Neden erken yaşta yatırım yapmaya başlamak önemlidir?',
@@ -101,7 +101,7 @@ export const content: ToolLocaleContent<CompoundInterestUI> = {
     },
     {
       type: 'paragraph',
-      html: 'Albert Einstein ona „dünyanın sekizinci harikası” demiştir. <strong>Bileşik faiz</strong>, uzun vadede servet yaratmak için en güçlü mekanizmadır. Bundan yararlanmak için finans uzmanı olmanıza gerek yok: sadece zaman, sabır ve yatırılan paraya ihtiyacınız var.',
+      html: 'Albert Einstein ona "dünyanın sekizinci harikası" demiştir. <strong>Bileşik faiz</strong>, uzun vadede servet yaratmak için en güçlü mekanizmadır. Bundan yararlanmak için finans uzmanı olmanıza gerek yok: sadece zaman, sabır ve yatırılan paraya ihtiyacınız var.',
     },
     {
       type: 'title',
@@ -141,7 +141,7 @@ export const content: ToolLocaleContent<CompoundInterestUI> = {
     },
     {
       type: 'paragraph',
-      html: 'Matematiksel olarak, kârınız yeni kârlar doğurur. İlk yıllarda yavaş görünür ama „kırılma noktasından” sonra eğri dikey olarak yükselir. Gerçek servetler burada yaratılır.',
+      html: 'Matematiksel olarak, kârınız yeni kârlar doğurur. İlk yıllarda yavaş görünür ama "kırılma noktasından" sonra eğri dikey olarak yükselir. Gerçek servetler burada yaratılır.',
     },
     {
       type: 'title',
@@ -155,12 +155,12 @@ export const content: ToolLocaleContent<CompoundInterestUI> = {
     {
       type: 'tip',
       title: '72 Kuralı',
-      html: '<p>Paranızın <strong>ikiye katlanmasının</strong> kaç yıl süreceğini öğrenmek için 72’yi yıllık getiri oranınıza bölün.</p><p><em>Örnek: %8 ile her 9 yılda bir ikiye katlanır (72/8 = 9).</em></p><p>Bu sihirli formül her getiri oranı için geçerlidir ve yatırımlarınızın büyümesini hızlıca tahmin etmenize yardımcı olur.',
+      html: '<p>Paranızın <strong>ikiye katlanmasının</strong> kaç yıl süreceğini öğrenmek için 72\'yi yıllık getiri oranınıza bölün.</p><p><em>Örnek: %8 ile her 9 yılda bir ikiye katlanır (72/8 = 9).</em></p><p>Bu sihirli formül her getiri oranı için geçerlidir ve yatırımlarınızın büyümesini hızlıca tahmin etmenize yardımcı olur.',
     },
     {
       type: 'tip',
       title: '2026 Tavsiyesi',
-      html: '<p>Enflasyon hala bir faktör. Satın alma gücünüzü kaybetmemek için net getirinizin yılda en az %2-3’ü geçtiğinden emin olun. Enflasyondan daha hızlı büyüyen varlıklara yatırım yapın.',
+      html: '<p>Enflasyon hala bir faktör. Satın alma gücünüzü kaybetmemek için net getirinizin yılda en az %2-3\'ü geçtiğinden emin olun. Enflasyondan daha hızlı büyüyen varlıklara yatırım yapın.',
     },
     {
       type: 'title',

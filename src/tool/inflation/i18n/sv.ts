@@ -27,12 +27,12 @@ const faqData = [
   {
     question: 'När var perioden med högst inflation i Spanien?',
     answer:
-      '80-talet var de mest inflationsdrivna åren, med tvåsiffriga nivåer (upp till 15 %). Priserna ändrades drastiskt månad för månad. Sedan euron infördes (2002) har inflationen varit mer kontrollerad, förutom under perioden 2021–2023.',
+      '80-talet var de mest inflationsdrivna åren, med tvåsiffriga nivåer (upp till 15 %). Priserna ändrades drastiskt månad för månad. Sedan euron infördes (2002) har inflationen varit mer kontrollerad, förutom under perioden 2021-2023.',
   },
   {
     question: 'Hur påverkar inflationen mina besparingar?',
     answer:
-      'Inflation fungerar som en „tyst skatt”. Om inflationen är 5 % och dina pengar ligger under madrassen, kommer du i slutet av året att kunna köpa 5 % färre produkter. Det är avgörande att investera för att motverka denna effekt.',
+      'Inflation fungerar som en "tyst skatt". Om inflationen är 5 % och dina pengar ligger under madrassen, kommer du i slutet av året att kunna köpa 5 % färre produkter. Det är avgörande att investera för att motverka denna effekt.',
   },
 ];
 
@@ -106,7 +106,7 @@ export const content: ToolLocaleContent<InflationUI> = {
     },
     {
       type: 'paragraph',
-      html: 'Inflation är den „tysta skatten” som äter upp dina besparingar år efter år. Vet du hur mycket dina pengar har förlorat i värde sedan 1980? Vad kostar egentligen den där kaffet som du betalade 300 pesetas för för 20 år sedan?',
+      html: 'Inflation är den "tysta skatten" som äter upp dina besparingar år efter år. Vet du hur mycket dina pengar har förlorat i värde sedan 1980? Vad kostar egentligen den där kaffet som du betalade 300 pesetas för för 20 år sedan?',
     },
     {
       type: 'title',

@@ -4,8 +4,8 @@ import type { ToolLocaleContent } from '../../../types';
 import type { IBANBICSwiftUI } from '../ui';
 
 const slug = 'iban-bic-swift-donusturucu';
-const title = 'IBAN’dan BIC SWIFT’e Dönüştürücü ve Banka Arama';
-const description = 'Herhangi bir İspanyol IBAN’ının BIC/SWIFT kodunu anında alın. Transferler için resmi algoritmalı banka hesabı doğrulayıcı.';
+const title = 'IBAN\'dan BIC SWIFT\'e Dönüştürücü ve Banka Arama';
+const description = 'Herhangi bir İspanyol IBAN\'ının BIC/SWIFT kodunu anında alın. Transferler için resmi algoritmalı banka hesabı doğrulayıcı.';
 
 const faqData = [
   {
@@ -21,7 +21,7 @@ const faqData = [
     answer: 'Tamamen güvenli. Aracımız kodu yerel olarak tarayıcınızda doğrular. Banka verilerinizi kaydetmiyoruz veya harici bir sunucuya göndermiyoruz.',
   },
   {
-    question: 'İspanya’da IBAN neden 24 karakterden oluşur?',
+    question: 'İspanya\'da IBAN neden 24 karakterden oluşur?',
     answer: 'Bu standart bir normdur. İlk 4 karakter ülkeyi ve kontrolü tanımlar, diğer 20 karakter ise eski banka hesap numarasıdır.',
   },
 ];
@@ -88,7 +88,7 @@ export const content: ToolLocaleContent<IBANBICSwiftUI> = {
   seo: [
     {
       type: 'title',
-      text: 'IBAN’dan BIC/SWIFT’e Dönüştürücü: Banka kodlarınız hakkında bilmeniz gereken her şey',
+      text: 'IBAN\'dan BIC/SWIFT\'e Dönüştürücü: Banka kodlarınız hakkında bilmeniz gereken her şey',
       level: 2,
     },
     {
@@ -97,7 +97,7 @@ export const content: ToolLocaleContent<IBANBICSwiftUI> = {
     },
   ],
   ui: {
-    labelTitle: 'IBAN’dan BIC / SWIFT’e Dönüştürücü',
+    labelTitle: 'IBAN\'dan BIC / SWIFT\'e Dönüştürücü',
     labelDescription: 'Herhangi bir İspanyol banka hesabının BIC kodunu anında hesaplayın.',
     labelInputIBAN: 'IBAN numaranızı girin',
     labelInputPlaceholder: 'ES00 0000 0000 0000 0000 0000',

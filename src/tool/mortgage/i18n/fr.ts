@@ -96,7 +96,7 @@ export const content: ToolLocaleContent<MortgageUI> = {
   seo: [
     {
       type: 'title',
-      text: 'Guide Complet du Crédit Immobilier : Comprendre l\'Amortissement',
+      text: 'Guide Complet du Crédit Immobilier: Comprendre l\'Amortissement',
       level: 2,
     },
     {
@@ -105,7 +105,7 @@ export const content: ToolLocaleContent<MortgageUI> = {
     },
     {
       type: 'title',
-      text: 'Le "Piège" des Intérêts Prépondérants : Comprendre Votre Ventilation de Paiement',
+      text: 'Le "Piège" des Intérêts Prépondérants: Comprendre Votre Ventilation de Paiement',
       level: 3,
     },
     {
@@ -132,7 +132,7 @@ export const content: ToolLocaleContent<MortgageUI> = {
     },
     {
       type: 'title',
-      text: 'Contexte 2026 : Taux Fixe vs Variable',
+      text: 'Contexte 2026: Taux Fixe vs Variable',
       level: 3,
     },
     {
@@ -168,7 +168,7 @@ export const content: ToolLocaleContent<MortgageUI> = {
     },
     {
       type: 'tip',
-      title: 'Taux Fixe vs Variable : Cela Dépend de Votre Profil',
+      title: 'Taux Fixe vs Variable: Cela Dépend de Votre Profil',
       html: '<p><strong>Choisissez Taux Fixe si :</strong> Votre budget est serré, vous recherchez la certitude, vous ne tolérez pas les surprises de paiement.</p><p><strong>Choisissez Taux Variable si :</strong> Vous avez un coussin financier, vous croyez que les taux baisseront, votre crédit est petit ou à court terme.</p>',
     },
   ],

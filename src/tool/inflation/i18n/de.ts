@@ -32,7 +32,7 @@ const faqData = [
   {
     question: 'Wie wirkt sich die Inflation auf meine Ersparnisse aus?',
     answer:
-      'Die Inflation wirkt wie eine „stille Steuer“. Wenn die Inflation 5 % beträgt und Ihr Geld unter der Matratze liegt, können Sie am Ende des Jahres 5 % weniger Produkte kaufen. Es ist wichtig zu investieren, um diesem Effekt entgegenzuwirken.',
+      'Die Inflation wirkt wie eine "stille Steuer". Wenn die Inflation 5 % beträgt und Ihr Geld unter der Matratze liegt, können Sie am Ende des Jahres 5 % weniger Produkte kaufen. Es ist wichtig zu investieren, um diesem Effekt entgegenzuwirken.',
   },
 ];
 
@@ -106,7 +106,7 @@ export const content: ToolLocaleContent<InflationUI> = {
     },
     {
       type: 'paragraph',
-      html: 'Die Inflation ist die „stille Steuer“, die Jahr für Jahr an Ihren Ersparnissen frisst. Wissen Sie, wie viel Ihr Geld seit 1980 an Wert verloren hat? Wie viel kostet eigentlich der Kaffee, für den Sie vor 20 Jahren 300 Peseten bezahlt haben?',
+      html: 'Die Inflation ist die "stille Steuer", die Jahr für Jahr an Ihren Ersparnissen frisst. Wissen Sie, wie viel Ihr Geld seit 1980 an Wert verloren hat? Wie viel kostet eigentlich der Kaffee, für den Sie vor 20 Jahren 300 Peseten bezahlt haben?',
     },
     {
       type: 'title',

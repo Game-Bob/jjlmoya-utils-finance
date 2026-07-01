@@ -9,7 +9,7 @@ const description = 'Analizza le tue probabilità nella Lotteria di Natale, Euro
 
 const faqData = [
   {
-    question: 'Cos’è la speranza matematica nella lotteria?',
+    question: 'Cos\'è la speranza matematica nella lotteria?',
     answer: 'È il valore medio che ti aspetti di vincere per ogni euro scommesso. In quasi tutte le lotterie, la speranza matematica è negativa (solitamente perdi 0,50€ per ogni 1€ giocato), il che significa che a lungo termine il banco vince sempre.',
   },
   {
@@ -18,11 +18,11 @@ const faqData = [
   },
   {
     question: 'Conviene davvero giocare alla Lotteria di Natale spagnola?',
-    answer: 'Da un punto di vista puramente matematico, no. Viene restituito solo il 70% della raccolta. Tuttavia, ha una probabilità di vincere il primo premio (1 su 100.000) molto più alta rispetto all’EuroMillions (1 su 140 milioni).',
+    answer: 'Da un punto di vista puramente matematico, no. Viene restituito solo il 70% della raccolta. Tuttavia, ha una probabilità di vincere il primo premio (1 su 100.000) molto più alta rispetto all\'EuroMillions (1 su 140 milioni).',
   },
   {
     question: 'Posso migliorare le mie possibilità con le statistiche?',
-    answer: 'No. Le estrazioni della lotteria sono processi casuali indipendenti. Il fatto che un numero sia uscito ieri non influisce affatto sull’estrazione di oggi.',
+    answer: 'No. Le estrazioni della lotteria sono processi casuali indipendenti. Il fatto che un numero sia uscito ieri non influisce affatto sull\'estrazione di oggi.',
   },
   {
     question: 'Cosa significa la "difficoltà" nella tabella comparativa?',
@@ -36,7 +36,7 @@ const howToData = [
     text: 'Scegli tra Lotteria di Natale, Primitiva, EuroMillions o Bonoloto per analizzare le regole specifiche.',
   },
   {
-    name: 'Definire l’investimento',
+    name: 'Definire l\'investimento',
     text: 'Indica quanti biglietti o scommesse intendi acquistare per questa estrazione.',
   },
   {
@@ -57,7 +57,7 @@ const seoData = [
   },
   {
     type: 'paragraph',
-    html: 'Giocare alla lotteria è, per molti, l’acquisto di un’illusione per pochi euro. Tuttavia, dietro le estrazioni risiede una delle branche più affascinanti della matematica: la statistica delle probabilità estreme.',
+    html: 'Giocare alla lotteria è, per molti, l\'acquisto di un\'illusione per pochi euro. Tuttavia, dietro le estrazioni risiede una delle branche più affascinanti della matematica: la statistica delle probabilità estreme.',
   },
 ];
 
@@ -130,8 +130,8 @@ export const content: ToolLocaleContent<LotteryOptimizerUI> = {
     labelTotalInvestment: 'Investimento Totale',
     labelTickets: 'Quantità di Biglietti / Scommesse',
     labelUnits: 'unità',
-    labelExposureAnalysis: 'Analisi dell’Esposizione',
-    labelSelectLottery: 'Seleziona una lotteria per vedere l’analisi del rischio.',
+    labelExposureAnalysis: 'Analisi dell\'Esposizione',
+    labelSelectLottery: 'Seleziona una lotteria per vedere l\'analisi del rischio.',
     labelOptimalCutoff: 'Punto di Interruzione Suggerito',
     labelProbabilitySuccess: 'Probabilità di Successo',
     labelExpectedValue: 'Valore Atteso (EV)',

@@ -92,7 +92,7 @@ export const content: ToolLocaleContent<PercentageCalculatorUI> = {
   seo: [
     {
       type: 'title',
-      text: 'Calculatrice de Pourcentages 4-en-1 : Maîtrisez les Calculs Rapides',
+      text: 'Calculatrice de Pourcentages 4-en-1: Maîtrisez les Calculs Rapides',
       level: 2,
     },
     {
@@ -153,7 +153,7 @@ export const content: ToolLocaleContent<PercentageCalculatorUI> = {
     {
       type: 'tip',
       title: 'L\'Astuce de Réversibilité',
-      html: '<p>Saviez-vous que X% de Y est exactement égal à Y% de X? Par exemple, si on vous demande de calculer 18% de 50 de tête, cela semble compliqué. Mais inversez-le—50% de 18 est facile: c\'est 9! Cela fonctionne pour absolument tous les nombres et c\'est une astuce incroyable au quotidien.</p>',
+      html: '<p>Saviez-vous que X% de Y est exactement égal à Y% de X? Par exemple, si on vous demande de calculer 18% de 50 de tête, cela semble compliqué. Mais inversez-le-50% de 18 est facile: c\'est 9! Cela fonctionne pour absolument tous les nombres et c\'est une astuce incroyable au quotidien.</p>',
     },
     {
       type: 'title',

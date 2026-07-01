@@ -125,7 +125,7 @@ export const content: ToolLocaleContent<LateInterestUI> = {
     {
       type: 'tip',
       title: 'Caráter Indemnizatório, não Punitivo',
-      html: '<p><strong>Dado chave:</strong> Ao contrário das sanções, os juros de mora têm caráter indemnizatório, não punitivo. O fisco não o „castiga” com eles, mas cobra-lhe pelo tempo em que dispôs de dinheiro que deveria estar nos cofres públicos.</p>',
+      html: '<p><strong>Dado chave:</strong> Ao contrário das sanções, os juros de mora têm caráter indemnizatório, não punitivo. O fisco não o "castiga" com eles, mas cobra-lhe pelo tempo em que dispôs de dinheiro que deveria estar nos cofres públicos.</p>',
     },
     {
       type: 'title',
