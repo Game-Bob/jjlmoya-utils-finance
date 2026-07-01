@@ -26,16 +26,27 @@ function translatableStrings(content: Record<string, unknown>): string[] {
   return TRANSLATABLE_KEYS.flatMap((key) => collectStrings(content[key]));
 }
 
+const SENTENCE_BOUNDARIES = ['.', ':', ';', '\n'];
+
+function isNumberPeriod(text: string, index: number): boolean {
+  const prev = text[index - 1];
+  const next = text[index + 1];
+  return prev !== undefined && next !== undefined && /\d/.test(prev) && /\d/.test(next);
+}
+
 function sentenceStart(text: string, endIndex: number): string {
   const beforeMark = text.slice(0, endIndex).trimEnd();
-  const boundary = Math.max(
-    beforeMark.lastIndexOf('.'),
-    beforeMark.lastIndexOf(':'),
-    beforeMark.lastIndexOf(';'),
-    beforeMark.lastIndexOf('\n'),
-  );
 
-  return beforeMark.slice(boundary + 1).trimStart();
+  for (let i = beforeMark.length - 1; i >= 0; i--) {
+    if (SENTENCE_BOUNDARIES.includes(beforeMark[i])) {
+      if (beforeMark[i] === '.' && isNumberPeriod(beforeMark, i)) {
+        continue;
+      }
+      return beforeMark.slice(i + 1).trimStart();
+    }
+  }
+
+  return beforeMark.trimStart();
 }
 
 function findMissingInvertedMarks(

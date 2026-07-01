@@ -10,27 +10,27 @@ const description =
 
 const faqData = [
   {
-    question: 'Qué es un interés por demora o moratorio?',
+    question: '¿Qué es un interés por demora o moratorio?',
     answer:
       'Es el interés que se cobra sobre una cantidad no pagada en el plazo establecido. Se aplica sobre la deuda original y se acumula hasta que se realice el pago completo.',
   },
   {
-    question: 'Cuál es la diferencia entre interés simple y compuesto?',
+    question: '¿Cuál es la diferencia entre interés simple y compuesto?',
     answer:
       'El interés simple se calcula solo sobre el capital original cada día. El compuesto se calcula sobre el capital más los intereses acumulados, generando un crecimiento más rápido de la deuda.',
   },
   {
-    question: 'Cómo se calcula el interés diario?',
+    question: '¿Cómo se calcula el interés diario?',
     answer:
       'Se divide la tasa anual entre 365 días y se aplica al capital original. Por ejemplo, 10% anual = 0,0274% diario.',
   },
   {
-    question: 'Qué tasa de interés por demora debo aplicar?',
+    question: '¿Qué tasa de interés por demora debo aplicar?',
     answer:
       'Depende de la legislación local y los términos del contrato. En España, la Ley de Morosidad establece tasas máximas. Consulta con un asesor legal para tu caso específico.',
   },
   {
-    question: 'Puedo usar esta calculadora para deudas legales?',
+    question: '¿Puedo usar esta calculadora para deudas legales?',
     answer:
       'Esta es una herramienta informativa. Para deudas reales, verifica los términos contractuales y la legislación local. Consulta con un abogado si tienes dudas.',
   },
