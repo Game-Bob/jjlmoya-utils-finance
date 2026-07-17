@@ -1,4 +1,4 @@
-﻿import { bibliography } from '../bibliography'
+import { bibliography } from '../bibliography'
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { InflationUI } from '../ui';
@@ -261,7 +261,7 @@ export const content: ToolLocaleContent<InflationUI> = {
     {
       type: 'message',
       title: 'Toma el Control de tu Economía',
-      html: 'Nuestra calculadora utiliza datos oficiales del INE para ofrecerte la visión más precisa del pasado y presente económico de España.',
+      html: 'Nuestra calculadora utiliza datos públicos del INE para ofrecerte la visión más precisa del pasado y presente económico de España.',
     },
   ],
   ui: {
@@ -271,7 +271,7 @@ export const content: ToolLocaleContent<InflationUI> = {
     labelFinalAmount: 'Equivalencia Hoy',
     labelFinalYear: 'Año 2026',
     labelInflationRate: 'Inflación Acumulada',
-    labelCalculatedOn: 'Cálculo realizado utilizando datos oficiales del INE hasta 2025 y proyecciones estimadas para el cierre de 2026.',
+    labelCalculatedOn: 'Cálculo realizado utilizando datos públicos del INE hasta 2025 y proyecciones estimadas para el cierre de 2026.',
     currencySymbol: '€',
     currencyCode: 'EUR',
     currencyLocale: 'es-ES',

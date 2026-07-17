@@ -11,7 +11,13 @@ const { ui } = Astro.props;
 const availableYears = InflationCalculator.getAvailableYears();
 ---
 
-<div class="inflation-container" data-currency-locale={ui.currencyLocale} data-currency-code={ui.currencyCode} data-label-inflation-accumulated={ui.labelInflationAccumulated}>
+<div class="inflation-container" data-currency-locale={ui.currencyLocale} data-currency-code={ui.currencyCode} data-label-inflation-accumulated={ui.labelInflationAccumulated}
+  data-label-inflation-rate={ui.labelInflationRate}
+  data-label-year-select={ui.labelYearSelect}
+  data-label-in={ui.labelIn}
+  data-label-equivalent-today={ui.labelEquivalentToday}
+  data-label-year={ui.labelYear}
+>
   <div class="inflation-header">
     <div class="inflation-header-title-group">
       <div class="inflation-header-icon">

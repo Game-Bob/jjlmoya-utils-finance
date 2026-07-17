@@ -114,7 +114,7 @@ const seoData = [
     items: [
       '<strong>Anualidad Cumplida:</strong> Solo cuando se cumpla cada año. No a mitad de año.',
       '<strong>Notificación Escrita:</strong> Con al menos 30 días de antelación (burofax o email certificado).',
-      '<strong>Certificación INE:</strong> Adjuntar datos oficiales del IPC.',
+      '<strong>Certificación INE:</strong> Adjuntar estadísticas del IPC.',
     ],
   },
   {

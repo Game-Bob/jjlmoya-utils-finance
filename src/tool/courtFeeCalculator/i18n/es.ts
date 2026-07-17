@@ -165,7 +165,7 @@ const seoData = [
   },
   {
     type: 'paragraph',
-    html: 'Nuestra <strong>Calculadora de Tasas Judiciales</strong> garantiza que profesionales y empresas operen con datos actualizados a 2026, cumpliendo con el rigor técnico que exige la práctica jurídica moderna.',
+    html: 'Nuestra <strong>Calculadora de Tasas Judiciales</strong> ayuda a que profesionales y empresas operen con datos de referencia para 2026, cumpliendo con el rigor técnico que exige la práctica jurídica moderna.',
   },
 ];
 

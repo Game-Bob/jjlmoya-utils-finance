@@ -9,7 +9,15 @@ interface Props {
 const { ui } = Astro.props;
 ---
 
-<div class="ibs-container" data-icon-bank="mdi:bank-outline" data-icon-card="mdi:credit-card-chip-outline" data-icon-sync="mdi:sync" data-icon-copy="mdi:content-copy" data-icon-check="mdi:check" data-icon-alert="mdi:alert-circle" data-icon-bank-check="mdi:bank-check">
+<div class="ibs-container" data-icon-bank="mdi:bank-outline" data-icon-card="mdi:credit-card-chip-outline" data-icon-sync="mdi:sync" data-icon-copy="mdi:content-copy" data-icon-check="mdi:check" data-icon-alert="mdi:alert-circle" data-icon-bank-check="mdi:bank-check"
+    data-label-copied={ui.labelCopied}
+    data-label-bank-not-identified={ui.labelBankNotIdentified}
+    data-label-bank-outside-spain={ui.labelBankOutsideSpain}
+    data-label-invalid-iban={ui.labelInvalidIBAN}
+    data-label-formatting-ok={ui.labelFormattingOK}
+    data-label-invalid={ui.labelInvalid || "Inválido"}
+    data-label-unknown-bic={ui.labelUnknownBIC || "BIC Desconocido"}
+>
     <div class="ibs-card">
         <header class="ibs-header">
             <h3>{ui.labelTitle}</h3>
@@ -103,8 +111,8 @@ const { ui } = Astro.props;
         errorMsg?.classList.remove("ibs-hidden");
         bankInfoBox?.classList.add("ibs-hidden");
         if (resBic) resBic.innerText = "-";
-        if (resCountry) resCountry.innerText = "Inválido";
-        if (resBank) resBank.innerText = "IBAN No Válido";
+        if (resCountry) resCountry.innerText = container?.getAttribute("data-label-invalid") || "";
+        if (resBank) resBank.innerText = container?.getAttribute("data-label-invalid-iban") || "";
     }
 
     function displayBankInfo(result: ReturnType<typeof IBANConverter.validate>) {
@@ -112,8 +120,10 @@ const { ui } = Astro.props;
             if (resBic) resBic.innerText = result.bankData.bic;
             if (resBank) resBank.innerText = result.bankData.name;
         } else {
-            const message = result.countryCode !== "ES" ? "Banco fuera de España (Datos limitados)" : "Entidad no identificada";
-            if (resBic) resBic.innerText = "BIC Desconocido";
+            const message = result.countryCode !== "ES"
+                ? (container?.getAttribute("data-label-bank-outside-spain") || "")
+                : (container?.getAttribute("data-label-bank-not-identified") || "");
+            if (resBic) resBic.innerText = container?.getAttribute("data-label-unknown-bic") || "";
             if (resBank) resBank.innerText = message;
         }
     }
@@ -122,7 +132,10 @@ const { ui } = Astro.props;
         errorMsg?.classList.add("ibs-hidden");
         bankInfoBox?.classList.remove("ibs-hidden");
 
-        if (resCountry) resCountry.innerText = `${result.countryCode} (Formato OK)`;
+        if (resCountry) {
+            const formatOk = container?.getAttribute("data-label-formatting-ok") || "";
+            resCountry.innerText = `${result.countryCode} (${formatOk})`;
+        }
         displayBankInfo(result);
     }
 

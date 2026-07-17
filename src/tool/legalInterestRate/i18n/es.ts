@@ -125,7 +125,7 @@ export const content: ToolLocaleContent<LegalInterestRateUI> = {
     labelInterestGenerated: 'Intereses Generados',
     labelTotalToPay: 'Total a Pagar',
     labelFormula: 'Esta calculadora aplica la fórmula estándar de interés simple:',
-    labelBase: 'Se utiliza una base de 365 días para el cálculo oficial según la normativa española vigente en 2026.',
+    labelBase: 'Se utiliza una base de 365 días para el cálculo de referencia según la normativa española vigente en 2026.',
     labelOfficialRegulation: 'Regulación Oficial',
     currencySymbol: '€',
     currencyCode: 'EUR',

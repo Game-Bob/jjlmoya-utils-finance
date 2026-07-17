@@ -14,4 +14,6 @@ export interface IBANBICSwiftUI {
   labelBankOutsideSpain: string;
   labelInvalidIBAN: string;
   labelFormattingOK: string;
+  labelInvalid?: string;
+  labelUnknownBIC?: string;
 }

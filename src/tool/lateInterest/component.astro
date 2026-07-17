@@ -22,6 +22,13 @@ const { ui } = Astro.props;
   data-report-label-interest={ui.reportLabelInterest}
   data-report-label-total={ui.reportLabelTotal}
   data-report-days-suffix={ui.reportDaysSuffix}
+  data-label-title={ui.labelTitle}
+  data-label-monthly-title={ui.labelMonthlyTitle}
+  data-label-simple-question={ui.labelSimpleQuestion}
+  data-label-compound-question={ui.labelCompoundQuestion}
+  data-label-monthly-question={ui.labelMonthlyQuestion}
+  data-label-monthly-rate={ui.labelMonthlyRate}
+  data-label-copied={ui.labelCopied || "¡Copiado!"}
 >
     <div class="li-card fade-in">
         <div class="li-input-grid">
@@ -237,7 +244,7 @@ ${labels.total}: ${finalTotalDisplay?.textContent}
 
         if (copyBtn) {
             const originalHtml = copyBtn.innerHTML;
-            copyBtn.innerHTML = '¡Copiado!';
+            copyBtn.innerHTML = container?.getAttribute("data-label-copied") || "";
             setTimeout(() => {
                 copyBtn.innerHTML = originalHtml;
             }, 2000);

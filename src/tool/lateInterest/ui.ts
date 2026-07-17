@@ -30,4 +30,5 @@ export interface LateInterestUI {
   formulaDescription: string;
   currencyCode: string;
   currencyLocale: string;
+  labelCopied?: string;
 }

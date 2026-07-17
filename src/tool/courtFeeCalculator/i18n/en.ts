@@ -165,7 +165,7 @@ const seoData = [
   },
   {
     type: 'paragraph',
-    html: 'Our <strong>Spanish Court Fees Calculator</strong> ensures that professionals and companies operate with data updated to 2026, meeting the technical rigor required by modern legal practice.',
+    html: 'Our <strong>Spanish Court Fees Calculator</strong> helps professionals and companies operate with data reference for 2026, meeting the technical rigor required by modern legal practice.',
   },
 ];
 

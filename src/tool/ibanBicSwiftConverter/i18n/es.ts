@@ -5,7 +5,7 @@ import type { IBANBICSwiftUI } from '../ui';
 
 const slug = 'conversor-iban-bic-swift';
 const title = 'Conversor de IBAN a BIC SWIFT y Buscador de Bancos';
-const description = 'Obtén el código BIC/SWIFT de cualquier IBAN español al instante. Validador de cuentas bancarias con algoritmo oficial y registros actualizados para transferencias.';
+const description = 'Obtén el código BIC/SWIFT de cualquier IBAN español al instante. Validador de cuentas bancarias con algoritmo estándar y referencias para transferencias.';
 
 const faqData = [
   {

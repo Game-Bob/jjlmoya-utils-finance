@@ -10,7 +10,7 @@ interface Props {
 const { ui } = Astro.props;
 ---
 
-<div class="ctf-container" data-currency-symbol={ui.currencySymbol} data-currency-code={ui.currencyCode} data-currency-locale={ui.currencyLocale}>
+<div class="ctf-container" data-title={ui.labelTitle} data-desc={ui.labelDescription} data-currency-symbol={ui.currencySymbol} data-currency-code={ui.currencyCode} data-currency-locale={ui.currencyLocale}>
   <div class="ctf-wrapper">
     <aside class="ctf-sidebar">
       <div class="ctf-section-title">
@@ -56,7 +56,7 @@ const { ui } = Astro.props;
         <div class="ctf-input-field" id="amount-container">
           <label for="claim-amount">{ui.labelClaimAmount}</label>
           <div style="position: relative;">
-            <input type="number" id="claim-amount" class="ctf-input-control" value="30000" step="1000" />
+            <input type="number" id="claim-amount" aria-label={ui.labelClaimAmount} class="ctf-input-control" value="30000" step="1000" />
             <span style="position: absolute; right: 1rem; top: 50%; transform: translateY(-50%); font-weight: 700; color: var(--ctf-accent);">{ui.currencySymbol}</span>
           </div>
         </div>
@@ -161,7 +161,7 @@ const { ui } = Astro.props;
     if (totalDisp) totalDisp.textContent = formatCurrency(result.totalFee);
     if (fixedDisp) fixedDisp.textContent = formatCurrency(result.fixedFee);
     if (variableDisp) variableDisp.textContent = formatCurrency(result.variableFee);
-    if (baseDisp) baseDisp.textContent = result.isExempt ? 'Exento' : formatCurrency(result.taxableBase);
+    if (baseDisp) baseDisp.textContent = result.isExempt ? (exentoTag?.textContent || "") : formatCurrency(result.taxableBase);
   }
 
   function calculate() {

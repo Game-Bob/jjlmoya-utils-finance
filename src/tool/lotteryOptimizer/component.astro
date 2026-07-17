@@ -10,7 +10,11 @@ interface Props {
 const { ui } = Astro.props;
 ---
 
-<div class="lo-container" data-currency-symbol={ui.currencySymbol} data-currency-code={ui.currencyCode} data-currency-locale={ui.currencyLocale} data-label-units={ui.labelUnits} data-label-low={ui.labelLow} data-label-medium={ui.labelMedium} data-label-high={ui.labelHigh} data-label-accessible={ui.labelAccessible} data-label-difficult={ui.labelDifficult} data-label-extreme={ui.labelExtreme} data-label-optimal={ui.labelOptimalCutoff} data-game-translations={JSON.stringify(ui.gameTranslations)}>
+<div class="lo-container" data-currency-symbol={ui.currencySymbol} data-currency-code={ui.currencyCode} data-currency-locale={ui.currencyLocale} data-label-units={ui.labelUnits} data-label-low={ui.labelLow} data-label-medium={ui.labelMedium} data-label-high={ui.labelHigh} data-label-accessible={ui.labelAccessible} data-label-difficult={ui.labelDifficult} data-label-extreme={ui.labelExtreme} data-label-optimal={ui.labelOptimalCutoff} data-game-translations={JSON.stringify(ui.gameTranslations)}
+    data-label-title={ui.labelTitle}
+    data-label-description={ui.labelDescription}
+    data-label-select-game={ui.labelSelectGame}
+>
     <div class="lo-games-grid">
         {['gordo', 'nino', 'euromillones', 'primitiva', 'bonoloto'].map((gameId) => (
             <button class="lo-game-btn" data-game-btn data-id={gameId}>

@@ -10,7 +10,10 @@ interface Props {
 const { ui } = Astro.props;
 ---
 
-<div class="lir-wrapper" data-currency-symbol={ui.currencySymbol} data-currency-code={ui.currencyCode} data-currency-locale={ui.currencyLocale}>
+<div class="lir-wrapper" data-currency-symbol={ui.currencySymbol} data-currency-code={ui.currencyCode} data-currency-locale={ui.currencyLocale}
+  data-label-description={ui.labelDescription}
+  data-label-official-regulation={ui.labelOfficialRegulation}
+>
   <div class="lir-container">
     <header class="lir-header">
       <span class="lir-badge">{ui.labelBadge}</span>
