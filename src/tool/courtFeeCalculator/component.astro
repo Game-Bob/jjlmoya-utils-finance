@@ -128,6 +128,14 @@ const { ui } = Astro.props;
     }).format(val);
   }
 
+  function setContent(el: HTMLElement | null, text: string) {
+    if (el) el.textContent = text;
+  }
+
+  function setDisplay(el: HTMLElement | null, display: string) {
+    if (el) el.style.display = display;
+  }
+
   function filterProcedureOptions(jurisdictionValue: string): string {
     if (!procedure) return '';
     const opts = procedure.options;
@@ -156,12 +164,16 @@ const { ui } = Astro.props;
     calculate();
   }
 
+  function resolveBaseText(result: ReturnType<typeof CourtFeeLogic.calculateFee>): string {
+    return result.isExempt ? (exentoTag?.textContent || "") : formatCurrency(result.taxableBase);
+  }
+
   function displayResults(result: ReturnType<typeof CourtFeeLogic.calculateFee>) {
-    if (exentoTag) exentoTag.style.display = result.isExempt ? 'inline-block' : 'none';
-    if (totalDisp) totalDisp.textContent = formatCurrency(result.totalFee);
-    if (fixedDisp) fixedDisp.textContent = formatCurrency(result.fixedFee);
-    if (variableDisp) variableDisp.textContent = formatCurrency(result.variableFee);
-    if (baseDisp) baseDisp.textContent = result.isExempt ? (exentoTag?.textContent || "") : formatCurrency(result.taxableBase);
+    setDisplay(exentoTag, result.isExempt ? 'inline-block' : 'none');
+    setContent(totalDisp, formatCurrency(result.totalFee));
+    setContent(fixedDisp, formatCurrency(result.fixedFee));
+    setContent(variableDisp, formatCurrency(result.variableFee));
+    setContent(baseDisp, resolveBaseText(result));
   }
 
   function calculate() {

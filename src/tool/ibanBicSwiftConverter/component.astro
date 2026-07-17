@@ -107,35 +107,43 @@ const { ui } = Astro.props;
         }
     }
 
+    function attr(name: string): string {
+        return container?.getAttribute(name) || "";
+    }
+
+    function setInnerText(el: HTMLElement | null, text: string) {
+        if (el) el.innerText = text;
+    }
+
     function displayInvalidResult() {
         errorMsg?.classList.remove("ibs-hidden");
         bankInfoBox?.classList.add("ibs-hidden");
-        if (resBic) resBic.innerText = "-";
-        if (resCountry) resCountry.innerText = container?.getAttribute("data-label-invalid") || "";
-        if (resBank) resBank.innerText = container?.getAttribute("data-label-invalid-iban") || "";
+        setInnerText(resBic, "-");
+        setInnerText(resCountry, attr("data-label-invalid"));
+        setInnerText(resBank, attr("data-label-invalid-iban"));
+    }
+
+    function resolveBankMessage(result: ReturnType<typeof IBANConverter.validate>): string {
+        return result.countryCode !== "ES"
+            ? attr("data-label-bank-outside-spain")
+            : attr("data-label-bank-not-identified");
     }
 
     function displayBankInfo(result: ReturnType<typeof IBANConverter.validate>) {
         if (result.bankData) {
-            if (resBic) resBic.innerText = result.bankData.bic;
-            if (resBank) resBank.innerText = result.bankData.name;
+            setInnerText(resBic, result.bankData.bic);
+            setInnerText(resBank, result.bankData.name);
         } else {
-            const message = result.countryCode !== "ES"
-                ? (container?.getAttribute("data-label-bank-outside-spain") || "")
-                : (container?.getAttribute("data-label-bank-not-identified") || "");
-            if (resBic) resBic.innerText = container?.getAttribute("data-label-unknown-bic") || "";
-            if (resBank) resBank.innerText = message;
+            setInnerText(resBic, attr("data-label-unknown-bic"));
+            setInnerText(resBank, resolveBankMessage(result));
         }
     }
 
     function displayValidResult(result: ReturnType<typeof IBANConverter.validate>) {
         errorMsg?.classList.add("ibs-hidden");
         bankInfoBox?.classList.remove("ibs-hidden");
-
-        if (resCountry) {
-            const formatOk = container?.getAttribute("data-label-formatting-ok") || "";
-            resCountry.innerText = `${result.countryCode} (${formatOk})`;
-        }
+        const formatOk = attr("data-label-formatting-ok");
+        setInnerText(resCountry, `${result.countryCode} (${formatOk})`);
         displayBankInfo(result);
     }
 
