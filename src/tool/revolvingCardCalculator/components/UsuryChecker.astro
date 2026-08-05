@@ -1,0 +1,32 @@
+---
+import type { RevolvingCardCalculatorUI } from '../ui';
+
+interface Props {
+  ui: RevolvingCardCalculatorUI;
+}
+
+const { ui } = Astro.props;
+---
+
+<div class="rev-usury-card">
+  <h3 class="rev-usury-title">{ui.usuryTitle}</h3>
+  
+  <div class="rev-usury-status-container" id="rev-usury-status-badge">
+    <div class="rev-status-icon-box" id="rev-status-icon"></div>
+    <div>
+      <h4 class="rev-status-text" id="rev-usury-status-text">Safe</h4>
+      <p class="rev-status-description" id="rev-usury-status-desc"></p>
+    </div>
+  </div>
+
+  <div class="rev-usury-stats">
+    <div class="rev-usury-stat-item">
+      <span class="rev-usury-stat-label">{ui.usuryReferenceLabel}</span>
+      <span class="rev-usury-stat-value" id="rev-usury-ref-val">0.00%</span>
+    </div>
+    <div class="rev-usury-stat-item">
+      <span class="rev-usury-stat-label">{ui.usuryThresholdLabel}</span>
+      <span class="rev-usury-stat-value" id="rev-usury-threshold-val">0.00%</span>
+    </div>
+  </div>
+</div>

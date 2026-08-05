@@ -1,0 +1,315 @@
+---
+import type { KnownLocale } from '../../types';
+import type { RevolvingCardCalculatorUI } from './ui';
+import CalculatorInputs from './components/CalculatorInputs.astro';
+import UsuryChecker from './components/UsuryChecker.astro';
+import AmortizationTable from './components/AmortizationTable.astro';
+import ChartDisplay from './components/ChartDisplay.astro';
+
+import './revolving-card-calculator.css';
+
+interface Props {
+  locale?: KnownLocale;
+  ui?: RevolvingCardCalculatorUI;
+}
+
+const { ui = {} as RevolvingCardCalculatorUI } = Astro.props;
+---
+
+<div
+  class="rev-container"
+  data-currency-symbol={ui.currencySymbol}
+  data-percent-symbol={ui.percentSymbol}
+  data-copied-label={ui.copiedLabel}
+  data-usury-safe={ui.usurySafeStatus}
+  data-usury-warning={ui.usuryWarningStatus}
+  data-usury-usurious={ui.usuryUsuriousStatus}
+>
+  <div class="rev-card fade-in">
+    <CalculatorInputs ui={ui} />
+    
+    <UsuryChecker ui={ui} />
+
+    <ChartDisplay ui={ui} />
+
+    <AmortizationTable ui={ui} />
+
+    <div class="action-row">
+      <button class="rev-btn-primary" id="rev-copy-report">
+        {ui.copyTooltip}
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  import { calculateAmortization, analyzeUsury } from './logic';
+  import { CURRENCY_SYMBOLS, MARKET_CURRENCY_MAP } from './constants';
+  import type { RevolvingInputs } from './types';
+
+  const container = document.querySelector('.rev-container');
+  const marketSelect = document.getElementById('rev-market') as HTMLSelectElement | null;
+  const currencySelect = document.getElementById('rev-currency') as HTMLSelectElement | null;
+  const customThresholdGroup = document.querySelector('.id-custom-threshold-group') as HTMLDivElement | null;
+  const customThresholdInput = document.getElementById('rev-custom-threshold') as HTMLInputElement | null;
+  const balanceInput = document.getElementById('rev-balance') as HTMLInputElement | null;
+  const creditLimitInput = document.getElementById('rev-credit-limit') as HTMLInputElement | null;
+  const aprInput = document.getElementById('rev-apr') as HTMLInputElement | null;
+  const paymentTypeSelect = document.getElementById('rev-payment-type') as HTMLSelectElement | null;
+  const paymentValueInput = document.getElementById('rev-payment-value') as HTMLInputElement | null;
+  const paymentValueUnit = document.getElementById('rev-payment-value-unit') as HTMLSpanElement | null;
+  const minPaymentGroup = document.getElementById('rev-min-payment-group') as HTMLDivElement | null;
+  const minPaymentInput = document.getElementById('rev-min-payment') as HTMLInputElement | null;
+
+  const usuryBadge = document.getElementById('rev-usury-status-badge');
+  const usuryIcon = document.getElementById('rev-status-icon');
+  const usuryStatusText = document.getElementById('rev-usury-status-text');
+  const usuryStatusDesc = document.getElementById('rev-usury-status-desc');
+  const usuryRefVal = document.getElementById('rev-usury-ref-val');
+  const usuryThresholdVal = document.getElementById('rev-usury-threshold-val');
+
+  const barPrincipal = document.getElementById('rev-bar-principal');
+  const barInterest = document.getElementById('rev-bar-interest');
+  const barPrincipalPct = document.getElementById('rev-bar-principal-pct');
+  const barInterestPct = document.getElementById('rev-bar-interest-pct');
+  const timelineTrack = document.getElementById('rev-timeline-track');
+
+  const totalInterestDisplay = document.getElementById('rev-total-interest');
+  const totalPaidDisplay = document.getElementById('rev-total-paid');
+  const monthsToPayDisplay = document.getElementById('rev-months-to-pay');
+  const yearsToPayDisplay = document.getElementById('rev-years-to-pay');
+  const infiniteDebtAlert = document.getElementById('rev-infinite-debt-alert');
+
+  const toggleTableBtn = document.getElementById('rev-toggle-table-btn');
+  const tableWrapper = document.getElementById('rev-table-wrapper');
+  const tableBody = document.getElementById('rev-table-body');
+  const copyReportBtn = document.getElementById('rev-copy-report');
+
+
+  function getCurrencySymbol(): string {
+    const val = currencySelect?.value || 'USD';
+    return CURRENCY_SYMBOLS[val] || '$';
+  }
+
+  function getPercentSymbol(): string {
+    return container?.getAttribute('data-percent-symbol') || '%';
+  }
+
+  function formatCurrency(value: number): string {
+    return `${getCurrencySymbol()}${value.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+  }
+
+  function formatPercent(value: number): string {
+    return `${value.toFixed(2)}${getPercentSymbol()}`;
+  }
+
+  function updateCurrencySymbols() {
+    const symbol = getCurrencySymbol();
+    document.querySelectorAll('.rev-currency-symbol').forEach((el) => {
+      el.textContent = symbol;
+    });
+  }
+
+  function updatePaymentUnit() {
+    if (!paymentTypeSelect || !paymentValueUnit || !minPaymentGroup) return;
+    if (paymentTypeSelect.value === 'percentage') {
+      paymentValueUnit.textContent = getPercentSymbol();
+      minPaymentGroup.style.display = 'flex';
+    } else {
+      paymentValueUnit.textContent = getCurrencySymbol();
+      minPaymentGroup.style.display = 'none';
+    }
+  }
+
+
+  function handleMarketChange() {
+    if (!marketSelect || !currencySelect) return;
+    const market = marketSelect.value;
+    const currency = MARKET_CURRENCY_MAP[market];
+    if (currency) {
+      currencySelect.value = currency;
+    }
+  }
+
+  function parseNum(el: HTMLInputElement | null, fallback: string): number {
+    return parseFloat(el?.value || fallback);
+  }
+
+  function readRawValues() {
+    return {
+      market: (marketSelect?.value || 'es') as RevolvingInputs['market'],
+      balance: parseNum(balanceInput, '0'),
+      creditLimit: parseNum(creditLimitInput, '0'),
+      apr: parseNum(aprInput, '0'),
+      paymentType: (paymentTypeSelect?.value || 'percentage') as RevolvingInputs['paymentType'],
+      paymentValue: parseNum(paymentValueInput, '0'),
+      minPaymentRaw: parseNum(minPaymentInput, '0'),
+      customThreshold: parseNum(customThresholdInput, '25'),
+    };
+  }
+
+  function getInputs(): RevolvingInputs {
+    const raw = readRawValues();
+    return {
+      balance: raw.balance,
+      creditLimit: raw.creditLimit,
+      apr: raw.apr,
+      paymentType: raw.paymentType,
+      paymentValue: raw.paymentValue,
+      minPaymentValue: raw.paymentType === 'percentage' ? raw.minPaymentRaw : 0,
+      market: raw.market,
+      customThreshold: raw.customThreshold,
+    };
+  }
+
+  function resolveStatusLabel(status: string): string {
+    const labels: Record<string, string> = {
+      safe: container?.getAttribute('data-usury-safe') || 'Legally Standard (Low Risk)',
+      warning: container?.getAttribute('data-usury-warning') || 'High Rate Warning (Medium Risk)',
+      usurious: container?.getAttribute('data-usury-usurious') || 'Potentially Usurious (High Risk)',
+    };
+    return labels[status] ?? labels['usurious']!;
+  }
+
+  function resolveStatusIcon(status: string): string {
+    if (status === 'safe') return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>';
+    if (status === 'warning') return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm1 14h-2v-2h2v2zm0-4h-2V7h2v5z"/></svg>';
+    return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>';
+  }
+
+  function updateUsuryUI(apr: number, market: RevolvingInputs['market'], customThreshold: number) {
+    if (!usuryBadge || !usuryIcon || !usuryStatusText || !usuryStatusDesc || !usuryRefVal || !usuryThresholdVal) return;
+    const analysis = analyzeUsury(apr, market, customThreshold);
+    usuryBadge.className = 'rev-usury-status-container ' + analysis.status;
+    usuryIcon.innerHTML = resolveStatusIcon(analysis.status);
+    usuryStatusText.textContent = resolveStatusLabel(analysis.status);
+    usuryStatusDesc.textContent = analysis.details;
+    usuryRefVal.textContent = formatPercent(analysis.referenceRate);
+    usuryThresholdVal.textContent = formatPercent(analysis.thresholdRate);
+  }
+
+  function updateSummaryDisplay(result: ReturnType<typeof calculateAmortization>) {
+    if (totalInterestDisplay) totalInterestDisplay.textContent = formatCurrency(result.totalInterest);
+    if (totalPaidDisplay) totalPaidDisplay.textContent = formatCurrency(result.totalPaid);
+    if (infiniteDebtAlert) infiniteDebtAlert.style.display = result.isInfinite ? 'flex' : 'none';
+    if (!monthsToPayDisplay || !yearsToPayDisplay) return;
+    if (result.isInfinite) {
+      monthsToPayDisplay.textContent = '∞';
+      yearsToPayDisplay.textContent = 'Never-ending debt';
+    } else {
+      monthsToPayDisplay.textContent = result.monthsToPay.toString();
+      yearsToPayDisplay.textContent = `${(result.monthsToPay / 12).toFixed(1)} years`;
+    }
+  }
+
+  function updateBreakdownBar(principal: number, interest: number) {
+    if (!barPrincipal || !barInterest || !barPrincipalPct || !barInterestPct) return;
+    const total = principal + interest;
+    const pp = total > 0 ? (principal / total) * 100 : 100;
+    const ip = total > 0 ? (interest / total) * 100 : 0;
+    barPrincipal.style.width = `${pp}%`;
+    barInterest.style.width = `${ip}%`;
+    barPrincipalPct.textContent = `${pp.toFixed(0)}%`;
+    barInterestPct.textContent = `${ip.toFixed(0)}%`;
+  }
+
+  function updateTimeline(result: ReturnType<typeof calculateAmortization>) {
+    if (!timelineTrack) return;
+    timelineTrack.innerHTML = '';
+    const fill = document.createElement('div');
+    fill.className = 'rev-timeline-fill';
+    fill.style.width = '100%';
+    if (result.isInfinite || result.schedule.length === 0) {
+      fill.style.background = 'var(--rc-chart-interest)';
+      timelineTrack.appendChild(fill);
+      return;
+    }
+    const step = Math.max(1, Math.floor(result.schedule.length / 10));
+    for (let i = 0; i < result.schedule.length; i += step) {
+      const row = result.schedule[i];
+      if (!row) continue;
+      const marker = document.createElement('div');
+      marker.className = 'rev-timeline-marker';
+      marker.style.cssText = `position:absolute;left:${(i / result.schedule.length) * 100}%;width:6px;height:12px;background:var(--rc-chart-principal);border-radius:3px`;
+      timelineTrack.appendChild(marker);
+    }
+    timelineTrack.appendChild(fill);
+  }
+
+  function updateTableBody(result: ReturnType<typeof calculateAmortization>) {
+    if (!tableBody) return;
+    tableBody.innerHTML = '';
+    result.schedule.slice(0, 120).forEach((row) => {
+      const tr = document.createElement('tr');
+      tr.innerHTML = `<td>${row.month}</td><td>${formatCurrency(row.initialBalance)}</td><td>${formatCurrency(row.interestPaid)}</td><td>${formatCurrency(row.principalPaid)}</td><td>${formatCurrency(row.payment)}</td><td>${formatCurrency(row.finalBalance)}</td>`;
+      tableBody.appendChild(tr);
+    });
+  }
+
+  function updateAmortizationUI(inputs: RevolvingInputs) {
+    const result = calculateAmortization(inputs);
+    updateSummaryDisplay(result);
+    updateBreakdownBar(inputs.balance, result.totalInterest);
+    updateTimeline(result);
+    updateTableBody(result);
+  }
+
+  function calculate() {
+    const inputs = getInputs();
+    if (marketSelect && customThresholdGroup) {
+      customThresholdGroup.style.display = marketSelect.value === 'custom' ? 'flex' : 'none';
+    }
+    updateCurrencySymbols();
+    updatePaymentUnit();
+    updateUsuryUI(inputs.apr, inputs.market, inputs.customThreshold || 25);
+    updateAmortizationUI(inputs);
+  }
+
+  function buildReportText(): string {
+    const inputs = getInputs();
+    const result = calculateAmortization(inputs);
+    const usury = analyzeUsury(inputs.apr, inputs.market, inputs.customThreshold || 25);
+    
+    return [
+      'REVOLVING CARD & USURY SIMULATION REPORT',
+      '========================================',
+      `Outstanding Balance: ${formatCurrency(inputs.balance)}`,
+      `Credit Limit: ${formatCurrency(inputs.creditLimit)}`,
+      `Interest Rate (APR / TAE): ${formatPercent(inputs.apr)}`,
+      `Market context: ${usury.marketName}`,
+      `Usury Compliance: ${usury.status.toUpperCase()} - ${usury.details}`,
+      '----------------------------------------',
+      `Time to Pay Off: ${result.isInfinite ? 'Infinite / Never' : `${result.monthsToPay} months`}`,
+      `Total Interest Paid: ${formatCurrency(result.totalInterest)}`,
+      `Total Amount Repaid: ${formatCurrency(result.totalPaid)}`,
+      '========================================'
+    ].join('\n');
+  }
+
+  function handleCopy() {
+    const text = buildReportText();
+    navigator.clipboard.writeText(text);
+    if (copyReportBtn) {
+      const originalText = copyReportBtn.textContent;
+      copyReportBtn.textContent = container?.getAttribute('data-copied-label') || 'Copied!';
+      setTimeout(() => {
+        copyReportBtn.textContent = originalText;
+      }, 2000);
+    }
+  }
+
+  marketSelect?.addEventListener('change', () => { handleMarketChange(); calculate(); });
+  marketSelect?.addEventListener('input', calculate);
+  [currencySelect, customThresholdInput, balanceInput, creditLimitInput, aprInput, paymentTypeSelect, paymentValueInput, minPaymentInput].forEach((el) => { el?.addEventListener('input', calculate); el?.addEventListener('change', calculate); });
+
+  toggleTableBtn?.addEventListener('click', () => {
+    if (tableWrapper) {
+      const isHidden = tableWrapper.style.display === 'none';
+      tableWrapper.style.display = isHidden ? 'block' : 'none';
+    }
+  });
+
+  copyReportBtn?.addEventListener('click', handleCopy);
+
+  calculate();
+</script>

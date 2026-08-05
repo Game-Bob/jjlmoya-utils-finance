@@ -1,0 +1,57 @@
+---
+import type { RevolvingCardCalculatorUI } from '../ui';
+
+interface Props {
+  ui: RevolvingCardCalculatorUI;
+}
+
+const { ui } = Astro.props;
+---
+
+<div class="rev-amortization-section">
+  <div class="rev-summary-grid">
+    <div class="rev-summary-card primary-gradient">
+      <span class="rev-summary-label">{ui.totalInterestLabel}</span>
+      <span class="rev-summary-value" id="rev-total-interest">0.00</span>
+    </div>
+
+    <div class="rev-summary-card">
+      <span class="rev-summary-label">{ui.totalPaidLabel}</span>
+      <span class="rev-summary-value" id="rev-total-paid">0.00</span>
+    </div>
+
+    <div class="rev-summary-card">
+      <span class="rev-summary-label">{ui.monthsToPayLabel}</span>
+      <span class="rev-summary-value" id="rev-months-to-pay">0</span>
+      <span class="rev-summary-subvalue" id="rev-years-to-pay">0 years</span>
+    </div>
+  </div>
+
+  <div class="rev-alert-box error" id="rev-infinite-debt-alert" style="display: none;">
+    <div class="rev-alert-icon"></div>
+    <div class="rev-alert-content">{ui.infiniteDebtWarning}</div>
+  </div>
+
+  <div class="rev-table-actions">
+    <button class="rev-btn-secondary" id="rev-toggle-table-btn">
+      {ui.tableTitle}
+    </button>
+  </div>
+
+  <div class="rev-table-container" id="rev-table-wrapper" style="display: none;">
+    <table class="rev-table">
+      <thead>
+        <tr>
+          <th>{ui.tableHeaderMonth}</th>
+          <th>{ui.tableHeaderInitial}</th>
+          <th>{ui.tableHeaderInterest}</th>
+          <th>{ui.tableHeaderPrincipal}</th>
+          <th>{ui.tableHeaderPayment}</th>
+          <th>{ui.tableHeaderFinal}</th>
+        </tr>
+      </thead>
+      <tbody id="rev-table-body">
+      </tbody>
+    </table>
+  </div>
+</div>

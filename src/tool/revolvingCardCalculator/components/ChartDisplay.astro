@@ -1,0 +1,35 @@
+---
+import type { RevolvingCardCalculatorUI } from '../ui';
+
+interface Props {
+  ui: RevolvingCardCalculatorUI;
+}
+
+const { ui } = Astro.props;
+---
+
+<div class="rev-chart-container">
+  <div class="rev-chart-header">
+    <h3 class="rev-chart-title">{ui.payoffYearsLabel}</h3>
+  </div>
+
+  <div class="rev-breakdown-bar-wrapper">
+    <div class="rev-bar-labels">
+      <span>Original Principal</span>
+      <span>Total Interest Paid</span>
+    </div>
+    <div class="rev-breakdown-bar">
+      <div id="rev-bar-principal" class="rev-bar-segment principal" style="width: 50%;">
+        <span class="rev-bar-pct" id="rev-bar-principal-pct">50%</span>
+      </div>
+      <div id="rev-bar-interest" class="rev-bar-segment interest" style="width: 50%;">
+        <span class="rev-bar-pct" id="rev-bar-interest-pct">50%</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="rev-timeline-visual">
+    <div class="rev-timeline-track" id="rev-timeline-track">
+    </div>
+  </div>
+</div>

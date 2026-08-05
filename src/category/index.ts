@@ -13,10 +13,11 @@ import { courtFeeCalculator } from '../tool/courtFeeCalculator/entry';
 import { legalInterestRate } from '../tool/legalInterestRate/entry';
 import { fireCalculator } from '../tool/fireCalculator/entry';
 import { debtSnowball } from '../tool/debtSnowball/entry';
+import { revolvingCardCalculator } from '../tool/revolvingCardCalculator/entry';
 
 export const financeCategory: FinanceCategoryEntry = {
   icon: 'mdi:finance',
-  tools: [compoundInterest, financialFreedom, profitability, mortgage, inflation, percentageCalculator, lateInterest, ibanBicSwift, rentIncrease, lotteryOptimizer, courtFeeCalculator, legalInterestRate, fireCalculator, debtSnowball],
+  tools: [compoundInterest, financialFreedom, profitability, mortgage, inflation, percentageCalculator, lateInterest, ibanBicSwift, rentIncrease, lotteryOptimizer, courtFeeCalculator, legalInterestRate, fireCalculator, debtSnowball, revolvingCardCalculator],
   i18n: {
     en: () => import('./i18n/en').then((m) => m.content),
     es: () => import('./i18n/es').then((m) => m.content),
