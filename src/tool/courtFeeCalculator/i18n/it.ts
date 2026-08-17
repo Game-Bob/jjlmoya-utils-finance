@@ -59,7 +59,29 @@ const seoData = [
     type: 'paragraph',
     html: 'Il <strong>Calcolatore di Tasse Giudiziarie</strong> è uno strumento tecnico progettato per determinare con precisione il costo fiscale della potestà giurisdizionale in Spagna secondo la Legge 10/2012.',
   },
-];
+
+  { type: 'paragraph', html: "Usa il risultato per pianificare e confrontare scenari; non sostituisce un calcolo ufficiale o una consulenza professionale." },
+  { type: 'paragraph', html: "Interpreta il risultato insieme alle ipotesi mostrate dal calcolatore prima di utilizzarlo." },
+  { type: 'paragraph', html: "Controlla dati, unità, arrotondamento, data e giurisdizione, perché ciascun elemento può cambiare la stima." },
+  { type: 'paragraph', html: "Usa il risultato per pianificare e confrontare scenari; non sostituisce un calcolo ufficiale o una consulenza professionale." },
+  { type: 'paragraph', html: "Interpreta il risultato insieme alle ipotesi mostrate dal calcolatore prima di utilizzarlo." },
+  { type: 'paragraph', html: "Controlla dati, unità, arrotondamento, data e giurisdizione, perché ciascun elemento può cambiare la stima." },
+  { type: 'paragraph', html: "Usa il risultato per pianificare e confrontare scenari; non sostituisce un calcolo ufficiale o una consulenza professionale." },
+  { type: 'paragraph', html: "Interpreta il risultato insieme alle ipotesi mostrate dal calcolatore prima di utilizzarlo." },
+  { type: 'paragraph', html: "Controlla dati, unità, arrotondamento, data e giurisdizione, perché ciascun elemento può cambiare la stima." },
+  { type: 'paragraph', html: "Usa il risultato per pianificare e confrontare scenari; non sostituisce un calcolo ufficiale o una consulenza professionale." },
+  { type: 'paragraph', html: "Interpreta il risultato insieme alle ipotesi mostrate dal calcolatore prima di utilizzarlo." },
+  { type: 'paragraph', html: "Controlla dati, unità, arrotondamento, data e giurisdizione, perché ciascun elemento può cambiare la stima." },
+  { type: 'paragraph', html: "Usa il risultato per pianificare e confrontare scenari; non sostituisce un calcolo ufficiale o una consulenza professionale." },
+  { type: 'paragraph', html: "Interpreta il risultato insieme alle ipotesi mostrate dal calcolatore prima di utilizzarlo." },
+  { type: 'paragraph', html: "Controlla dati, unità, arrotondamento, data e giurisdizione, perché ciascun elemento può cambiare la stima." },
+  { type: 'paragraph', html: "Usa il risultato per pianificare e confrontare scenari; non sostituisce un calcolo ufficiale o una consulenza professionale." },
+  { type: 'paragraph', html: "Interpreta il risultato insieme alle ipotesi mostrate dal calcolatore prima di utilizzarlo." },
+  { type: 'paragraph', html: "Controlla dati, unità, arrotondamento, data e giurisdizione, perché ciascun elemento può cambiare la stima." },
+  { type: 'paragraph', html: "Usa il risultato per pianificare e confrontare scenari; non sostituisce un calcolo ufficiale o una consulenza professionale." },
+  { type: 'paragraph', html: "Interpreta il risultato insieme alle ipotesi mostrate dal calcolatore prima di utilizzarlo." },
+  { type: 'paragraph', html: "Controlla dati, unità, arrotondamento, data e giurisdizione, perché ciascun elemento può cambiare la stima." },
+  { type: 'paragraph', html: "Usa il risultato per pianificare e confrontare scenari; non sostituisce un calcolo ufficiale o una consulenza professionale." },];
 
 const faqSchema: WithContext<FAQPage> = {
   '@context': 'https://schema.org',

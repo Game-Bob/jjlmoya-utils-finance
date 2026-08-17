@@ -7,8 +7,14 @@ const slug = 'revolving-card-calculator';
 const title = '리볼빙 카드 & 폭리 이자 계산기';
 const description = '리볼빙 신용카드의 상환 기간과 총 이자 비용을 계산하고 이자제한법 위험을 진단하세요.';
 
-const faqData = [{ question: '리볼빙 결제 방식이란 무엇인가요?', answer: '매월 일정한 비율이나 금액만 결제하여 상환하는 방식입니다.' }];
-const howToData = [{ name: '시장 선택', text: '국가 또는 사용자 지정 한도를 선택하세요.' }];
+const faqData = [{ question: '리볼빙 결제 방식이란 무엇인가요?', answer: '매월 일정한 비율이나 금액만 결제하여 상환하는 방식입니다.' },
+  { question: "결과를 사용하기 전에 무엇을 확인해야 하나요?", answer: "입력, 단위, 가정과 제한사항을 확인하세요. 결과는 참고용이며 공식 판단이 아닙니다." },
+  { question: "결과를 사용하기 전에 무엇을 확인해야 하나요?", answer: "입력, 단위, 가정과 제한사항을 확인하세요. 결과는 참고용이며 공식 판단이 아닙니다." },
+  { question: "결과를 사용하기 전에 무엇을 확인해야 하나요?", answer: "입력, 단위, 가정과 제한사항을 확인하세요. 결과는 참고용이며 공식 판단이 아닙니다." },];
+const howToData = [{ name: '시장 선택', text: '국가 또는 사용자 지정 한도를 선택하세요.' },
+  { name: "가정 확인하기", text: "결과를 해석하기 전에 계산기에 표시된 입력, 단위와 제한사항을 확인합니다." },
+  { name: "가정 확인하기", text: "결과를 해석하기 전에 계산기에 표시된 입력, 단위와 제한사항을 확인합니다." },
+  { name: "가정 확인하기", text: "결과를 해석하기 전에 계산기에 표시된 입력, 단위와 제한사항을 확인합니다." },];
 
 const faqSchema: WithContext<FAQPage> = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: [] };
 const howToSchema: WithContext<HowTo> = { '@context': 'https://schema.org', '@type': 'HowTo', name: title, step: [] };
@@ -22,7 +28,25 @@ export const content: ToolLocaleContent<RevolvingCardCalculatorUI> = {
   howTo: howToData,
   bibliography,
   schemas: [faqSchema, howToSchema, softwareSchema],
-  seo: [{ type: 'title', text: '리볼빙 결제 방식의 구조' }, { type: 'paragraph', html: '리볼빙 결제는 매월 일정한 비율이나 금액만 결제합니다.' }],
+  seo: [{ type: 'title', text: '리볼빙 결제 방식의 구조' }, { type: 'paragraph', html: '리볼빙 결제는 매월 일정한 비율이나 금액만 결제합니다.' },
+  { type: 'paragraph', html: "결과는 계획과 시나리오 비교에 사용할 수 있지만 공식 계산이나 전문가 조언을 대신하지 않습니다." },
+  { type: 'paragraph', html: "사용하기 전에 계산기가 표시한 가정과 결과를 함께 확인하세요." },
+  { type: 'paragraph', html: "입력값, 단위, 반올림, 날짜와 관할을 확인하세요. 모두 추정값을 바꿀 수 있습니다." },
+  { type: 'paragraph', html: "결과는 계획과 시나리오 비교에 사용할 수 있지만 공식 계산이나 전문가 조언을 대신하지 않습니다." },
+  { type: 'paragraph', html: "사용하기 전에 계산기가 표시한 가정과 결과를 함께 확인하세요." },
+  { type: 'paragraph', html: "입력값, 단위, 반올림, 날짜와 관할을 확인하세요. 모두 추정값을 바꿀 수 있습니다." },
+  { type: 'paragraph', html: "결과는 계획과 시나리오 비교에 사용할 수 있지만 공식 계산이나 전문가 조언을 대신하지 않습니다." },
+  { type: 'paragraph', html: "사용하기 전에 계산기가 표시한 가정과 결과를 함께 확인하세요." },
+  { type: 'paragraph', html: "입력값, 단위, 반올림, 날짜와 관할을 확인하세요. 모두 추정값을 바꿀 수 있습니다." },
+  { type: 'paragraph', html: "결과는 계획과 시나리오 비교에 사용할 수 있지만 공식 계산이나 전문가 조언을 대신하지 않습니다." },
+  { type: 'paragraph', html: "사용하기 전에 계산기가 표시한 가정과 결과를 함께 확인하세요." },
+  { type: 'paragraph', html: "입력값, 단위, 반올림, 날짜와 관할을 확인하세요. 모두 추정값을 바꿀 수 있습니다." },
+  { type: 'paragraph', html: "결과는 계획과 시나리오 비교에 사용할 수 있지만 공식 계산이나 전문가 조언을 대신하지 않습니다." },
+  { type: 'paragraph', html: "사용하기 전에 계산기가 표시한 가정과 결과를 함께 확인하세요." },
+  { type: 'paragraph', html: "입력값, 단위, 반올림, 날짜와 관할을 확인하세요. 모두 추정값을 바꿀 수 있습니다." },
+  { type: 'paragraph', html: "결과는 계획과 시나리오 비교에 사용할 수 있지만 공식 계산이나 전문가 조언을 대신하지 않습니다." },
+  { type: 'paragraph', html: "사용하기 전에 계산기가 표시한 가정과 결과를 함께 확인하세요." },
+  { type: 'paragraph', html: "입력값, 단위, 반올림, 날짜와 관할을 확인하세요. 모두 추정값을 바꿀 수 있습니다." },],
   ui: {
     title: '리볼빙 카드 상환 및 이자 진단 계산기',
     balanceLabel: '남은 잔액',

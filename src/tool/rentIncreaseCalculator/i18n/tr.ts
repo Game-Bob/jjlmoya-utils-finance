@@ -24,7 +24,8 @@ const faqData = [
     question: 'IPC yasal sınır olan %3\'ten yüksekse ne olur?',
     answer: 'Gerçek IPC daha yüksek olsa bile, bir daimi konutun sahibi 2024 ve 2025 yılları boyunca yasal olarak %3\'ten fazla bir artış talep edemez.',
   },
-];
+
+  { question: "Sonucu kullanmadan önce neyi kontrol etmeliyim?", answer: "Girdileri, birimleri, varsayımları ve sınırlamaları kontrol edin; bu bir rehber tahmindir, resmî karar değildir." },];
 
 const howToData = [
   {
@@ -55,7 +56,11 @@ const seoData = [
     type: 'paragraph',
     html: 'İspanya\'da <strong>Tüketici Fiyat Endeksi (IPC)</strong> geleneksel olarak kira fiyatlarını ayarlamak için kullanılan bir ölçüttür. Ancak yeni Konut Yasası ile önemli sınırlamalar getirilmiştir.',
   },
-];
+
+  { type: 'paragraph', html: "Sonucu planlama ve senaryo karşılaştırması için kullanın; resmî hesabın veya uzman görüşünün yerine geçmez." },
+  { type: 'paragraph', html: "Kullanmadan önce sonucu hesaplayıcının gösterdiği varsayımlarla birlikte yorumlayın." },
+  { type: 'paragraph', html: "Girdileri, birimleri, yuvarlamayı, tarihi ve yargı alanını kontrol edin; her biri tahmini değiştirebilir." },
+  { type: 'paragraph', html: "Sonucu planlama ve senaryo karşılaştırması için kullanın; resmî hesabın veya uzman görüşünün yerine geçmez." },];
 
 const faqSchema: WithContext<FAQPage> = {
   '@context': 'https://schema.org',

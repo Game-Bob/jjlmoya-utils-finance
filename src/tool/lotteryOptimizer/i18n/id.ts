@@ -59,7 +59,9 @@ const seoData = [
     type: 'paragraph',
     html: 'Bermain lotre bagi banyak orang adalah membeli sebuah ilusi dengan harga beberapa euro. Namun, di balik itu semua terdapat salah satu cabang matematika yang paling menarik: statistik peluang ekstrem.',
   },
-];
+
+  { type: 'paragraph', html: "Gunakan hasil untuk perencanaan dan perbandingan skenario; hasil ini bukan pengganti perhitungan resmi atau nasihat ahli." },
+  { type: 'paragraph', html: "Tafsirkan hasil bersama asumsi yang ditampilkan kalkulator sebelum menggunakannya." },];
 
 const gameTranslations = {
   gordo: {

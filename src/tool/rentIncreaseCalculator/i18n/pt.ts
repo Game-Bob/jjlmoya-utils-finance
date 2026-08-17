@@ -24,7 +24,8 @@ const faqData = [
     question: 'O que acontece se o IPC for superior ao limite legal de 3%?',
     answer: 'Mesmo que o IPC real seja superior, o proprietário de uma habitação habitual não pode exigir legalmente uma subida superior a 3% durante 2024 e 2025.',
   },
-];
+
+  { question: "O que devo verificar antes de usar o resultado?", answer: "Verifique dados, unidades, premissas e limitações; é uma orientação, não uma decisão oficial." },];
 
 const howToData = [
   {
@@ -55,7 +56,11 @@ const seoData = [
     type: 'paragraph',
     html: 'Em Espanha, o <strong>Índice de Preços no Consumidor (IPC)</strong> tem sido tradicionalmente o termómetro utilizado para ajustar o preço do aluguer. No entanto, a nova Lei de Habitação introduziu limites importantes.',
   },
-];
+
+  { type: 'paragraph', html: "Use o resultado para planear e comparar cenários; não substitui um cálculo oficial nem aconselhamento profissional." },
+  { type: 'paragraph', html: "Interprete o resultado juntamente com as premissas apresentadas pela calculadora antes de o utilizar." },
+  { type: 'paragraph', html: "Confirme dados, unidades, arredondamento, data e jurisdição, pois cada elemento pode alterar a estimativa." },
+  { type: 'paragraph', html: "Use o resultado para planear e comparar cenários; não substitui um cálculo oficial nem aconselhamento profissional." },];
 
 const faqSchema: WithContext<FAQPage> = {
   '@context': 'https://schema.org',

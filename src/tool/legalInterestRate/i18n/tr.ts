@@ -58,7 +58,9 @@ const seoData = [
     type: 'paragraph',
     html: 'İspanya\'da <strong>2026 yasal faiz oranı</strong> %<strong>3,25</strong>\'tir. Aksi kararlaştırılmadıkça gecikme durumunda otomatik olarak uygulanır.',
   },
-];
+
+  { type: 'paragraph', html: "Sonucu planlama ve senaryo karşılaştırması için kullanın; resmî hesabın veya uzman görüşünün yerine geçmez." },
+  { type: 'paragraph', html: "Kullanmadan önce sonucu hesaplayıcının gösterdiği varsayımlarla birlikte yorumlayın." },];
 
 const faqSchema: WithContext<FAQPage> = {
   '@context': 'https://schema.org',

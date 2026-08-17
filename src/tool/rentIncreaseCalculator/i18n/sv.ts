@@ -24,7 +24,8 @@ const faqData = [
     question: 'Vad händer om IPC är högre än den lagstadgade gränsen på 3 %?',
     answer: 'Även om den faktiska IPC-siffran är högre får ägaren till en permanentbostad enligt lag inte kräva en höjning på mer än 3 % under 2024 och 2025.',
   },
-];
+
+  { question: "Vad bör jag kontrollera innan resultatet används?", answer: "Kontrollera indata, enheter, antaganden och begränsningar; resultatet är vägledning, inte ett officiellt beslut." },];
 
 const howToData = [
   {
@@ -55,7 +56,11 @@ const seoData = [
     type: 'paragraph',
     html: 'I Spanien används <strong>konsumentprisindex (IPC)</strong> traditionellt för att justera hyrespriserna. Den nya bostadslagen har dock infört viktiga begränsningar.',
   },
-];
+
+  { type: 'paragraph', html: "Använd resultatet för planering och scenariejämförelser; det ersätter inte en officiell beräkning eller professionell rådgivning." },
+  { type: 'paragraph', html: "Tolka resultatet tillsammans med kalkylatorns antaganden innan du använder det." },
+  { type: 'paragraph', html: "Kontrollera indata, enheter, avrundning, datum och rättsområde eftersom varje del kan ändra uppskattningen." },
+  { type: 'paragraph', html: "Använd resultatet för planering och scenariejämförelser; det ersätter inte en officiell beräkning eller professionell rådgivning." },];
 
 const faqSchema: WithContext<FAQPage> = {
   '@context': 'https://schema.org',

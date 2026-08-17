@@ -59,7 +59,9 @@ const seoData = [
     type: 'paragraph',
     html: 'Loten kopen is voor velen het kopen van een illusie voor een paar euro. Achter de schermen schuilt echter een van de meest fascinerende takken van de wiskunde: de statistiek van extreme kansen.',
   },
-];
+
+  { type: 'paragraph', html: "Gebruik het resultaat voor planning en scenariokeuze; het vervangt geen officiële berekening of professioneel advies." },
+  { type: 'paragraph', html: "Interpreteer het resultaat samen met de aannames van de calculator voordat u het gebruikt." },];
 
 const gameTranslations = {
   gordo: {

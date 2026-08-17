@@ -91,7 +91,7 @@ export const content: ToolLocaleContent<LateInterestUI> = {
   description,
   faq: faqData,
   bibliography,
-  
+
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [
@@ -174,7 +174,9 @@ export const content: ToolLocaleContent<LateInterestUI> = {
       type: 'paragraph',
       html: 'Se é trabalhador por conta própria ou empresa, a Lei espanhola 3/2004 estabelece um prazo máximo de pagamento de 60 dias. Se o seu cliente passar dessa data, pode exigir o juro de mora comercial de forma automática, sem necessidade de aviso, e ainda cobrar uma quantia fixa de 40 € por custos de cobrança.',
     },
-  ],
+
+  { type: 'paragraph', html: "Interprete o resultado juntamente com as premissas apresentadas pela calculadora antes de o utilizar." },
+  { type: 'paragraph', html: "Confirme dados, unidades, arredondamento, data e jurisdição, pois cada elemento pode alterar a estimativa." },],
   ui: {
     labelTitle: 'Calculadora de Juros de Mora',
     labelSimpleTitle: 'Simples',

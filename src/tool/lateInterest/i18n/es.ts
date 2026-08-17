@@ -91,7 +91,7 @@ export const content: ToolLocaleContent<LateInterestUI> = {
   description,
   faq: faqData,
   bibliography,
-  
+
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [
@@ -174,7 +174,9 @@ export const content: ToolLocaleContent<LateInterestUI> = {
       type: 'paragraph',
       html: 'Si eres autónomo o empresa, la Ley 3/2004 establece un plazo máximo de pago de 60 días. Si tu cliente se pasa de esa fecha, puedes exigir el interés de demora comercial de forma automática, sin necesidad de recordatorio, y además cobrar una cantidad fija de 40 € por costes de cobro.',
     },
-  ],
+
+  { type: 'paragraph', html: "Interpreta el resultado junto con los supuestos que muestra la calculadora antes de utilizarlo." },
+  { type: 'paragraph', html: "Comprueba los datos, las unidades, el redondeo, la fecha y la jurisdicción, porque todos pueden cambiar la estimación." },],
   ui: {
     labelTitle: 'Calculadora de Intereses de Demora',
     labelSimpleTitle: 'Simple',

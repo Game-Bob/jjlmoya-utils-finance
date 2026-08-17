@@ -59,7 +59,9 @@ const seoData = [
     type: 'paragraph',
     html: 'Lotto zu spielen ist für viele der Kauf einer Illusion für ein paar Euro. Doch hinter den Kulissen steckt faszinierende Mathematik: die Statistik extremer Wahrscheinlichkeiten.',
   },
-];
+
+  { type: 'paragraph', html: "Nutzen Sie das Ergebnis zur Planung und zum Szenarienvergleich; es ersetzt keine offizielle Berechnung oder Fachberatung." },
+  { type: 'paragraph', html: "Deuten Sie das Ergebnis gemeinsam mit den angezeigten Annahmen, bevor Sie es verwenden." },];
 
 const gameTranslations = {
   gordo: {

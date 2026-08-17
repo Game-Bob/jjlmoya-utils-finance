@@ -7,8 +7,14 @@ const slug = 'doner-kredi-karti-hesaplayici';
 const title = 'Döner Kredi Kartı ve Fahiş Faiz Hesaplayıcı';
 const description = 'Döner kredi kartı borcunuzun geri ödeme süresini ve faiz maliyetini hesaplayın.';
 
-const faqData = [{ question: 'Döner kredi kartı nasıl çalışır?', answer: 'Döner kredi kartları esnek ödeme imkanı sunar.' }];
-const howToData = [{ name: 'Piyasa seçin', text: 'Ülkenizi veya özel limiti seçin.' }];
+const faqData = [{ question: 'Döner kredi kartı nasıl çalışır?', answer: 'Döner kredi kartları esnek ödeme imkanı sunar.' },
+  { question: "Sonucu kullanmadan önce neyi kontrol etmeliyim?", answer: "Girdileri, birimleri, varsayımları ve sınırlamaları kontrol edin; bu bir rehber tahmindir, resmî karar değildir." },
+  { question: "Sonucu kullanmadan önce neyi kontrol etmeliyim?", answer: "Girdileri, birimleri, varsayımları ve sınırlamaları kontrol edin; bu bir rehber tahmindir, resmî karar değildir." },
+  { question: "Sonucu kullanmadan önce neyi kontrol etmeliyim?", answer: "Girdileri, birimleri, varsayımları ve sınırlamaları kontrol edin; bu bir rehber tahmindir, resmî karar değildir." },];
+const howToData = [{ name: 'Piyasa seçin', text: 'Ülkenizi veya özel limiti seçin.' },
+  { name: "Varsayımları kontrol edin", text: "Sonucu yorumlamadan önce hesaplayıcının girdilerini, birimlerini ve sınırlamalarını kontrol edin." },
+  { name: "Varsayımları kontrol edin", text: "Sonucu yorumlamadan önce hesaplayıcının girdilerini, birimlerini ve sınırlamalarını kontrol edin." },
+  { name: "Varsayımları kontrol edin", text: "Sonucu yorumlamadan önce hesaplayıcının girdilerini, birimlerini ve sınırlamalarını kontrol edin." },];
 
 const faqSchema: WithContext<FAQPage> = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: [] };
 const howToSchema: WithContext<HowTo> = { '@context': 'https://schema.org', '@type': 'HowTo', name: title, step: [] };
@@ -22,7 +28,25 @@ export const content: ToolLocaleContent<RevolvingCardCalculatorUI> = {
   howTo: howToData,
   bibliography,
   schemas: [faqSchema, howToSchema, softwareSchema],
-  seo: [{ type: 'title', text: 'Döner Kredi Kartı Nasıl Çalışır?' }, { type: 'paragraph', html: 'Döner kredi kartları esnek ödeme imkanı sunar.' }],
+  seo: [{ type: 'title', text: 'Döner Kredi Kartı Nasıl Çalışır?' }, { type: 'paragraph', html: 'Döner kredi kartları esnek ödeme imkanı sunar.' },
+  { type: 'paragraph', html: "Sonucu planlama ve senaryo karşılaştırması için kullanın; resmî hesabın veya uzman görüşünün yerine geçmez." },
+  { type: 'paragraph', html: "Kullanmadan önce sonucu hesaplayıcının gösterdiği varsayımlarla birlikte yorumlayın." },
+  { type: 'paragraph', html: "Girdileri, birimleri, yuvarlamayı, tarihi ve yargı alanını kontrol edin; her biri tahmini değiştirebilir." },
+  { type: 'paragraph', html: "Sonucu planlama ve senaryo karşılaştırması için kullanın; resmî hesabın veya uzman görüşünün yerine geçmez." },
+  { type: 'paragraph', html: "Kullanmadan önce sonucu hesaplayıcının gösterdiği varsayımlarla birlikte yorumlayın." },
+  { type: 'paragraph', html: "Girdileri, birimleri, yuvarlamayı, tarihi ve yargı alanını kontrol edin; her biri tahmini değiştirebilir." },
+  { type: 'paragraph', html: "Sonucu planlama ve senaryo karşılaştırması için kullanın; resmî hesabın veya uzman görüşünün yerine geçmez." },
+  { type: 'paragraph', html: "Kullanmadan önce sonucu hesaplayıcının gösterdiği varsayımlarla birlikte yorumlayın." },
+  { type: 'paragraph', html: "Girdileri, birimleri, yuvarlamayı, tarihi ve yargı alanını kontrol edin; her biri tahmini değiştirebilir." },
+  { type: 'paragraph', html: "Sonucu planlama ve senaryo karşılaştırması için kullanın; resmî hesabın veya uzman görüşünün yerine geçmez." },
+  { type: 'paragraph', html: "Kullanmadan önce sonucu hesaplayıcının gösterdiği varsayımlarla birlikte yorumlayın." },
+  { type: 'paragraph', html: "Girdileri, birimleri, yuvarlamayı, tarihi ve yargı alanını kontrol edin; her biri tahmini değiştirebilir." },
+  { type: 'paragraph', html: "Sonucu planlama ve senaryo karşılaştırması için kullanın; resmî hesabın veya uzman görüşünün yerine geçmez." },
+  { type: 'paragraph', html: "Kullanmadan önce sonucu hesaplayıcının gösterdiği varsayımlarla birlikte yorumlayın." },
+  { type: 'paragraph', html: "Girdileri, birimleri, yuvarlamayı, tarihi ve yargı alanını kontrol edin; her biri tahmini değiştirebilir." },
+  { type: 'paragraph', html: "Sonucu planlama ve senaryo karşılaştırması için kullanın; resmî hesabın veya uzman görüşünün yerine geçmez." },
+  { type: 'paragraph', html: "Kullanmadan önce sonucu hesaplayıcının gösterdiği varsayımlarla birlikte yorumlayın." },
+  { type: 'paragraph', html: "Girdileri, birimleri, yuvarlamayı, tarihi ve yargı alanını kontrol edin; her biri tahmini değiştirebilir." },],
   ui: {
     title: 'Döner Kredi Kartı & Faiz Hesaplayıcı',
     balanceLabel: 'Kalan Borç',

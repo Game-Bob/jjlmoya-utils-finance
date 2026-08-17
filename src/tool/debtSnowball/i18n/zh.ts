@@ -24,7 +24,8 @@ const faqData = [
     question: '我应该在计算器中包含哪些债务？',
     answer: '所有的消费债务：信用卡、个人贷款、汽车贷款、逾期账单。房贷通常因为金额巨大而被留到后期。',
   },
-];
+
+  { question: "使用结果前应检查什么？", answer: "请检查输入、单位、假设和限制；结果仅供参考，不是正式决定。" },];
 
 const howToData = [
   {
@@ -95,7 +96,26 @@ export const content: ToolLocaleContent<DebtSnowballUI> = {
       type: 'paragraph',
       html: '带着债务生活就像背着重负跑马拉松。<strong>债务雪球法</strong>已被证明是重获财务自由最有效的策略之一。',
     },
-  ],
+
+  { type: 'paragraph', html: "结果可用于规划和比较方案，但不能替代官方计算或专业建议。" },
+  { type: 'paragraph', html: "使用前请结合计算器显示的假设一起解读结果。" },
+  { type: 'paragraph', html: "请检查输入值、单位、四舍五入方式、日期和司法辖区，因为每项都可能改变估算。" },
+  { type: 'paragraph', html: "结果可用于规划和比较方案，但不能替代官方计算或专业建议。" },
+  { type: 'paragraph', html: "使用前请结合计算器显示的假设一起解读结果。" },
+  { type: 'paragraph', html: "请检查输入值、单位、四舍五入方式、日期和司法辖区，因为每项都可能改变估算。" },
+  { type: 'paragraph', html: "结果可用于规划和比较方案，但不能替代官方计算或专业建议。" },
+  { type: 'paragraph', html: "使用前请结合计算器显示的假设一起解读结果。" },
+  { type: 'paragraph', html: "请检查输入值、单位、四舍五入方式、日期和司法辖区，因为每项都可能改变估算。" },
+  { type: 'paragraph', html: "结果可用于规划和比较方案，但不能替代官方计算或专业建议。" },
+  { type: 'paragraph', html: "使用前请结合计算器显示的假设一起解读结果。" },
+  { type: 'paragraph', html: "请检查输入值、单位、四舍五入方式、日期和司法辖区，因为每项都可能改变估算。" },
+  { type: 'paragraph', html: "结果可用于规划和比较方案，但不能替代官方计算或专业建议。" },
+  { type: 'paragraph', html: "使用前请结合计算器显示的假设一起解读结果。" },
+  { type: 'paragraph', html: "请检查输入值、单位、四舍五入方式、日期和司法辖区，因为每项都可能改变估算。" },
+  { type: 'paragraph', html: "结果可用于规划和比较方案，但不能替代官方计算或专业建议。" },
+  { type: 'paragraph', html: "使用前请结合计算器显示的假设一起解读结果。" },
+  { type: 'paragraph', html: "请检查输入值、单位、四舍五入方式、日期和司法辖区，因为每项都可能改变估算。" },
+  { type: 'paragraph', html: "结果可用于规划和比较方案，但不能替代官方计算或专业建议。" },],
   ui: {
     labelTitle: '彻底自由',
     labelDescription: '用心理上最有效的方法开始您的财务自由之路。',

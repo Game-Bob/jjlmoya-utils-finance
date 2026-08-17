@@ -24,7 +24,8 @@ const faqData = [
     question: 'IPCが法定上限の3%を超えた場合はどうなりますか？',
     answer: '実際のIPCがどれほど高くても、居住用賃貸住宅の所有者は、2024年と2025年の間、3%を超える値上げを法的に要求することはできません。',
   },
-];
+
+  { question: "結果を使う前に何を確認すべきですか？", answer: "入力、単位、前提、制限事項を確認してください。結果は目安であり、公式な判断ではありません。" },];
 
 const howToData = [
   {
@@ -55,7 +56,11 @@ const seoData = [
     type: 'paragraph',
     html: 'スペインでは、伝統的に<strong>消費者物価指数 (IPC)</strong>が家賃価格の調整に使用されてきました。しかし、新しい住宅法により重要な制限が導入されています。',
   },
-];
+
+  { type: 'paragraph', html: "結果は計画や条件比較に使えますが、公式計算や専門家の助言の代わりにはなりません。" },
+  { type: 'paragraph', html: "利用する前に、計算機が示す前提条件と結果を一緒に確認してください。" },
+  { type: 'paragraph', html: "入力値、単位、丸め、日付、地域を確認してください。どれも推定結果を変える可能性があります。" },
+  { type: 'paragraph', html: "結果は計画や条件比較に使えますが、公式計算や専門家の助言の代わりにはなりません。" },];
 
 const faqSchema: WithContext<FAQPage> = {
   '@context': 'https://schema.org',

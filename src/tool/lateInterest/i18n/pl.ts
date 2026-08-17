@@ -91,7 +91,7 @@ export const content: ToolLocaleContent<LateInterestUI> = {
   description,
   faq: faqData,
   bibliography,
-  
+
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [
@@ -174,7 +174,9 @@ export const content: ToolLocaleContent<LateInterestUI> = {
       type: 'paragraph',
       html: 'Jeśli jesteś przedsiębiorcą lub firmą, hiszpańska ustawa 3/2004 ustala maksymalny termin płatności na 60 dni. Jeśli klient przekroczy ten termin, możesz automatycznie żądać odsetek za opóźnienie w transakcjach handlowych bez wezwania, a dodatkowo pobrać stałą kwotę 40 € za koszty windykacji.',
     },
-  ],
+
+  { type: 'paragraph', html: "Przed użyciem zinterpretuj wynik razem z założeniami pokazanymi przez kalkulator." },
+  { type: 'paragraph', html: "Sprawdź dane, jednostki, zaokrąglenie, datę i jurysdykcję, ponieważ każdy element może zmienić szacunek." },],
   ui: {
     labelTitle: 'Kalkulator Odsetek za Opóźnienie',
     labelSimpleTitle: 'Proste',

@@ -95,7 +95,9 @@ export const content: ToolLocaleContent<IBANBICSwiftUI> = {
       type: 'paragraph',
       html: '국제 금융의 복잡한 세계에서 해외 송금 시 <strong>IBAN</strong>과 <strong>BIC</strong>(SWIFT라고도 함)는 매우 중요한 역할을 합니다.',
     },
-  ],
+
+  { type: 'paragraph', html: "결과는 계획과 시나리오 비교에 사용할 수 있지만 공식 계산이나 전문가 조언을 대신하지 않습니다." },
+  { type: 'paragraph', html: "사용하기 전에 계산기가 표시한 가정과 결과를 함께 확인하세요." },],
   ui: {
     labelTitle: 'IBAN을 BIC / SWIFT로 변환',
     labelDescription: '스페인 은행 계좌의 BIC 코드를 즉시 계산합니다.',

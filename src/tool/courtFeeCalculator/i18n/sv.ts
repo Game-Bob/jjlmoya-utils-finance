@@ -59,7 +59,29 @@ const seoData = [
     type: 'paragraph',
     html: '<strong>Kalkylatorn för domstolsavgifter</strong> är ett tekniskt verktyg utformat för att exakt fastställa de skattemässiga kostnaderna för domstolsförfaranden i Spanien enligt lag 10/2012.',
   },
-];
+
+  { type: 'paragraph', html: "Använd resultatet för planering och scenariejämförelser; det ersätter inte en officiell beräkning eller professionell rådgivning." },
+  { type: 'paragraph', html: "Tolka resultatet tillsammans med kalkylatorns antaganden innan du använder det." },
+  { type: 'paragraph', html: "Kontrollera indata, enheter, avrundning, datum och rättsområde eftersom varje del kan ändra uppskattningen." },
+  { type: 'paragraph', html: "Använd resultatet för planering och scenariejämförelser; det ersätter inte en officiell beräkning eller professionell rådgivning." },
+  { type: 'paragraph', html: "Tolka resultatet tillsammans med kalkylatorns antaganden innan du använder det." },
+  { type: 'paragraph', html: "Kontrollera indata, enheter, avrundning, datum och rättsområde eftersom varje del kan ändra uppskattningen." },
+  { type: 'paragraph', html: "Använd resultatet för planering och scenariejämförelser; det ersätter inte en officiell beräkning eller professionell rådgivning." },
+  { type: 'paragraph', html: "Tolka resultatet tillsammans med kalkylatorns antaganden innan du använder det." },
+  { type: 'paragraph', html: "Kontrollera indata, enheter, avrundning, datum och rättsområde eftersom varje del kan ändra uppskattningen." },
+  { type: 'paragraph', html: "Använd resultatet för planering och scenariejämförelser; det ersätter inte en officiell beräkning eller professionell rådgivning." },
+  { type: 'paragraph', html: "Tolka resultatet tillsammans med kalkylatorns antaganden innan du använder det." },
+  { type: 'paragraph', html: "Kontrollera indata, enheter, avrundning, datum och rättsområde eftersom varje del kan ändra uppskattningen." },
+  { type: 'paragraph', html: "Använd resultatet för planering och scenariejämförelser; det ersätter inte en officiell beräkning eller professionell rådgivning." },
+  { type: 'paragraph', html: "Tolka resultatet tillsammans med kalkylatorns antaganden innan du använder det." },
+  { type: 'paragraph', html: "Kontrollera indata, enheter, avrundning, datum och rättsområde eftersom varje del kan ändra uppskattningen." },
+  { type: 'paragraph', html: "Använd resultatet för planering och scenariejämförelser; det ersätter inte en officiell beräkning eller professionell rådgivning." },
+  { type: 'paragraph', html: "Tolka resultatet tillsammans med kalkylatorns antaganden innan du använder det." },
+  { type: 'paragraph', html: "Kontrollera indata, enheter, avrundning, datum och rättsområde eftersom varje del kan ändra uppskattningen." },
+  { type: 'paragraph', html: "Använd resultatet för planering och scenariejämförelser; det ersätter inte en officiell beräkning eller professionell rådgivning." },
+  { type: 'paragraph', html: "Tolka resultatet tillsammans med kalkylatorns antaganden innan du använder det." },
+  { type: 'paragraph', html: "Kontrollera indata, enheter, avrundning, datum och rättsområde eftersom varje del kan ändra uppskattningen." },
+  { type: 'paragraph', html: "Använd resultatet för planering och scenariejämförelser; det ersätter inte en officiell beräkning eller professionell rådgivning." },];
 
 const faqSchema: WithContext<FAQPage> = {
   '@context': 'https://schema.org',

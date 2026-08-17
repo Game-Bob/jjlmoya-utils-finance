@@ -58,7 +58,9 @@ const seoData = [
     type: 'paragraph',
     html: 'L\'<strong>interesse legale 2026</strong> è del <strong>3,25%</strong> in Spagna. Si applica automaticamente in caso di ritardato pagamento se non diversamente pattuito.',
   },
-];
+
+  { type: 'paragraph', html: "Usa il risultato per pianificare e confrontare scenari; non sostituisce un calcolo ufficiale o una consulenza professionale." },
+  { type: 'paragraph', html: "Interpreta il risultato insieme alle ipotesi mostrate dal calcolatore prima di utilizzarlo." },];
 
 const faqSchema: WithContext<FAQPage> = {
   '@context': 'https://schema.org',

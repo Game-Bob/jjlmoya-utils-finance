@@ -75,7 +75,12 @@ export const content: ToolLocaleContent<FinancialFreedomUI> = {
       type: 'paragraph',
       html: '<strong>Survival runway</strong> adalah jumlah waktu Anda dapat bertahan hidup tanpa pendapatan baru. Ini adalah metrik utama kebebasan finansial.',
     },
-  ],
+
+  { type: 'paragraph', html: "Gunakan hasil untuk perencanaan dan perbandingan skenario; hasil ini bukan pengganti perhitungan resmi atau nasihat ahli." },
+  { type: 'paragraph', html: "Tafsirkan hasil bersama asumsi yang ditampilkan kalkulator sebelum menggunakannya." },
+  { type: 'paragraph', html: "Periksa input, satuan, pembulatan, tanggal, dan yurisdiksi karena semuanya dapat mengubah estimasi." },
+  { type: 'paragraph', html: "Gunakan hasil untuk perencanaan dan perbandingan skenario; hasil ini bukan pengganti perhitungan resmi atau nasihat ahli." },
+  { type: 'paragraph', html: "Tafsirkan hasil bersama asumsi yang ditampilkan kalkulator sebelum menggunakannya." },],
   faq,
   bibliography: [
     {

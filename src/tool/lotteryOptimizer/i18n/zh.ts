@@ -59,7 +59,9 @@ const seoData = [
     type: 'paragraph',
     html: '对许多人来说，买彩票是用几欧元购买一个幻想。然而，在彩球旋转的背后，蕴含着数学中最引人入胜的领域之一：极端概率统计学。',
   },
-];
+
+  { type: 'paragraph', html: "结果可用于规划和比较方案，但不能替代官方计算或专业建议。" },
+  { type: 'paragraph', html: "使用前请结合计算器显示的假设一起解读结果。" },];
 
 const gameTranslations = {
   gordo: {

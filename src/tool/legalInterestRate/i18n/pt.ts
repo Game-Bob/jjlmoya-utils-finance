@@ -58,7 +58,9 @@ const seoData = [
     type: 'paragraph',
     html: 'O <strong>juro legal 2026</strong> é de <strong>3,25%</strong> em Espanha. Aplica-se automaticamente em caso de atraso no pagamento se não houver outro acordo.',
   },
-];
+
+  { type: 'paragraph', html: "Use o resultado para planear e comparar cenários; não substitui um cálculo oficial nem aconselhamento profissional." },
+  { type: 'paragraph', html: "Interprete o resultado juntamente com as premissas apresentadas pela calculadora antes de o utilizar." },];
 
 const faqSchema: WithContext<FAQPage> = {
   '@context': 'https://schema.org',

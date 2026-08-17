@@ -91,7 +91,7 @@ export const content: ToolLocaleContent<LateInterestUI> = {
   description,
   faq: faqData,
   bibliography,
-  
+
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [
@@ -174,7 +174,9 @@ export const content: ToolLocaleContent<LateInterestUI> = {
       type: 'paragraph',
       html: 'Jika Anda adalah pekerja mandiri atau perusahaan, Undang-Undang Spanyol 3/2004 menetapkan batas waktu pembayaran maksimum 60 hari. Jika klien Anda melewati tanggal tersebut, Anda dapat menuntut bunga keterlambatan komersial secara otomatis, tanpa memerlukan pengingat, dan juga membebankan jumlah tetap 40 € untuk biaya penagihan.',
     },
-  ],
+
+  { type: 'paragraph', html: "Tafsirkan hasil bersama asumsi yang ditampilkan kalkulator sebelum menggunakannya." },
+  { type: 'paragraph', html: "Periksa input, satuan, pembulatan, tanggal, dan yurisdiksi karena semuanya dapat mengubah estimasi." },],
   ui: {
     labelTitle: 'Kalkulator Bunga Keterlambatan',
     labelSimpleTitle: 'Sederhana',

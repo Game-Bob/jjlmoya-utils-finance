@@ -75,7 +75,12 @@ export const content: ToolLocaleContent<FinancialFreedomUI> = {
       type: 'paragraph',
       html: 'Die <strong>Überlebensdauer</strong> (Runway) ist die Zeitspanne, in der Sie ohne neues Einkommen leben können. Es ist die ultimative Kennzahl für finanzielle Freiheit. Im Gegensatz zum Kontostand zeigt sie Ihnen, wie viel "menschliche Zeit" Sie gekauft haben.',
     },
-  ],
+
+  { type: 'paragraph', html: "Nutzen Sie das Ergebnis zur Planung und zum Szenarienvergleich; es ersetzt keine offizielle Berechnung oder Fachberatung." },
+  { type: 'paragraph', html: "Deuten Sie das Ergebnis gemeinsam mit den angezeigten Annahmen, bevor Sie es verwenden." },
+  { type: 'paragraph', html: "Prüfen Sie Eingaben, Einheiten, Rundung, Datum und Recht, weil jedes Element die Schätzung verändern kann." },
+  { type: 'paragraph', html: "Nutzen Sie das Ergebnis zur Planung und zum Szenarienvergleich; es ersetzt keine offizielle Berechnung oder Fachberatung." },
+  { type: 'paragraph', html: "Deuten Sie das Ergebnis gemeinsam mit den angezeigten Annahmen, bevor Sie es verwenden." },],
   faq,
   bibliography: [
     {

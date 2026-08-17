@@ -58,7 +58,9 @@ const seoData = [
     type: 'paragraph',
     html: '西班牙 <strong>2026 年的法定利息</strong>为 <strong>3.25%</strong>。除非另有约定，否则在延迟付款时会自动适用。',
   },
-];
+
+  { type: 'paragraph', html: "结果可用于规划和比较方案，但不能替代官方计算或专业建议。" },
+  { type: 'paragraph', html: "使用前请结合计算器显示的假设一起解读结果。" },];
 
 const faqSchema: WithContext<FAQPage> = {
   '@context': 'https://schema.org',

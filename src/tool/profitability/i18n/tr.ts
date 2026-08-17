@@ -32,7 +32,8 @@ const faq = [
     question: 'CAGR neden toplam ROI\'den farklıdır?',
     answer: 'ROI zamandan bağımsız toplam getiridir. CAGR ise yıllık orandır.',
   },
-];
+
+  { question: "Sonucu kullanmadan önce neyi kontrol etmeliyim?", answer: "Girdileri, birimleri, varsayımları ve sınırlamaları kontrol edin; bu bir rehber tahmindir, resmî karar değildir." },];
 
 const howTo = [
   {
@@ -64,7 +65,12 @@ export const content: ToolLocaleContent<ProfitabilityUI> = {
       type: 'paragraph',
       html: '<strong>ROI</strong> toplam getiri yüzdesini gösterir ancak zamanı dikkate almaz. <strong>CAGR</strong> uzun vadeli analiz için daha iyidir.',
     },
-  ],
+
+  { type: 'paragraph', html: "Sonucu planlama ve senaryo karşılaştırması için kullanın; resmî hesabın veya uzman görüşünün yerine geçmez." },
+  { type: 'paragraph', html: "Kullanmadan önce sonucu hesaplayıcının gösterdiği varsayımlarla birlikte yorumlayın." },
+  { type: 'paragraph', html: "Girdileri, birimleri, yuvarlamayı, tarihi ve yargı alanını kontrol edin; her biri tahmini değiştirebilir." },
+  { type: 'paragraph', html: "Sonucu planlama ve senaryo karşılaştırması için kullanın; resmî hesabın veya uzman görüşünün yerine geçmez." },
+  { type: 'paragraph', html: "Kullanmadan önce sonucu hesaplayıcının gösterdiği varsayımlarla birlikte yorumlayın." },],
   faq,
   bibliography: [
     {

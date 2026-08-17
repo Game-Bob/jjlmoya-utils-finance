@@ -95,7 +95,9 @@ export const content: ToolLocaleContent<IBANBICSwiftUI> = {
       type: 'paragraph',
       html: 'In der Welt der internationalen Finanzen dominieren zwei Akronyme jede Überweisung: <strong>IBAN</strong> und <strong>BIC</strong> (auch als SWIFT bekannt).',
     },
-  ],
+
+  { type: 'paragraph', html: "Nutzen Sie das Ergebnis zur Planung und zum Szenarienvergleich; es ersetzt keine offizielle Berechnung oder Fachberatung." },
+  { type: 'paragraph', html: "Deuten Sie das Ergebnis gemeinsam mit den angezeigten Annahmen, bevor Sie es verwenden." },],
   ui: {
     labelTitle: 'IBAN zu BIC / SWIFT Konverter',
     labelDescription: 'Berechnen Sie sofort den BIC-Code jedes spanischen Bankkontos.',

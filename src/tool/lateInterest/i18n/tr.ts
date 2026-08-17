@@ -91,7 +91,7 @@ export const content: ToolLocaleContent<LateInterestUI> = {
   description,
   faq: faqData,
   bibliography,
-  
+
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [
@@ -174,7 +174,9 @@ export const content: ToolLocaleContent<LateInterestUI> = {
       type: 'paragraph',
       html: 'Kendi hesabına çalışan biriyseniz veya bir şirketseniz, İspanya\'da 3/2004 sayılı Kanun azami 60 günlük bir ödeme süresi belirler. Müşteriniz bu tarihi geçerse, hatırlatmaya gerek kalmaksızın otomatik olarak ticari gecikme faizi talep edebilir ve ayrıca tahsilat masrafları için 40 € tutarında sabit bir ücret alabilirsiniz.',
     },
-  ],
+
+  { type: 'paragraph', html: "Kullanmadan önce sonucu hesaplayıcının gösterdiği varsayımlarla birlikte yorumlayın." },
+  { type: 'paragraph', html: "Girdileri, birimleri, yuvarlamayı, tarihi ve yargı alanını kontrol edin; her biri tahmini değiştirebilir." },],
   ui: {
     labelTitle: 'Gecikme Faizi Hesaplayıcı',
     labelSimpleTitle: 'Basit',

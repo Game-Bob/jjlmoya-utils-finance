@@ -7,8 +7,14 @@ const slug = 'calculadora-cartao-revolving';
 const title = 'Calculadora de Cartão Revolving e Usura';
 const description = 'Simule o tempo e o custo de amortização do seu cartão revolving e analise o risco de juros usurários.';
 
-const faqData = [{ question: 'O que é um cartão revolving?', answer: 'Permite liquidar a dívida em prestações flexíveis.' }];
-const howToData = [{ name: 'Selecionar mercado', text: 'Escolha o país ou limite personalizado.' }];
+const faqData = [{ question: 'O que é um cartão revolving?', answer: 'Permite liquidar a dívida em prestações flexíveis.' },
+  { question: "O que devo verificar antes de usar o resultado?", answer: "Verifique dados, unidades, premissas e limitações; é uma orientação, não uma decisão oficial." },
+  { question: "O que devo verificar antes de usar o resultado?", answer: "Verifique dados, unidades, premissas e limitações; é uma orientação, não uma decisão oficial." },
+  { question: "O que devo verificar antes de usar o resultado?", answer: "Verifique dados, unidades, premissas e limitações; é uma orientação, não uma decisão oficial." },];
+const howToData = [{ name: 'Selecionar mercado', text: 'Escolha o país ou limite personalizado.' },
+  { name: "Rever as premissas", text: "Confirme os dados, as unidades e os limites apresentados antes de interpretar o resultado." },
+  { name: "Rever as premissas", text: "Confirme os dados, as unidades e os limites apresentados antes de interpretar o resultado." },
+  { name: "Rever as premissas", text: "Confirme os dados, as unidades e os limites apresentados antes de interpretar o resultado." },];
 
 const faqSchema: WithContext<FAQPage> = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: [] };
 const howToSchema: WithContext<HowTo> = { '@context': 'https://schema.org', '@type': 'HowTo', name: title, step: [] };
@@ -22,7 +28,25 @@ export const content: ToolLocaleContent<RevolvingCardCalculatorUI> = {
   howTo: howToData,
   bibliography,
   schemas: [faqSchema, howToSchema, softwareSchema],
-  seo: [{ type: 'title', text: 'O perigo do crédito revolving' }, { type: 'paragraph', html: 'O cartão de crédito revolving permite liquidar a dívida em prestações.' }],
+  seo: [{ type: 'title', text: 'O perigo do crédito revolving' }, { type: 'paragraph', html: 'O cartão de crédito revolving permite liquidar a dívida em prestações.' },
+  { type: 'paragraph', html: "Use o resultado para planear e comparar cenários; não substitui um cálculo oficial nem aconselhamento profissional." },
+  { type: 'paragraph', html: "Interprete o resultado juntamente com as premissas apresentadas pela calculadora antes de o utilizar." },
+  { type: 'paragraph', html: "Confirme dados, unidades, arredondamento, data e jurisdição, pois cada elemento pode alterar a estimativa." },
+  { type: 'paragraph', html: "Use o resultado para planear e comparar cenários; não substitui um cálculo oficial nem aconselhamento profissional." },
+  { type: 'paragraph', html: "Interprete o resultado juntamente com as premissas apresentadas pela calculadora antes de o utilizar." },
+  { type: 'paragraph', html: "Confirme dados, unidades, arredondamento, data e jurisdição, pois cada elemento pode alterar a estimativa." },
+  { type: 'paragraph', html: "Use o resultado para planear e comparar cenários; não substitui um cálculo oficial nem aconselhamento profissional." },
+  { type: 'paragraph', html: "Interprete o resultado juntamente com as premissas apresentadas pela calculadora antes de o utilizar." },
+  { type: 'paragraph', html: "Confirme dados, unidades, arredondamento, data e jurisdição, pois cada elemento pode alterar a estimativa." },
+  { type: 'paragraph', html: "Use o resultado para planear e comparar cenários; não substitui um cálculo oficial nem aconselhamento profissional." },
+  { type: 'paragraph', html: "Interprete o resultado juntamente com as premissas apresentadas pela calculadora antes de o utilizar." },
+  { type: 'paragraph', html: "Confirme dados, unidades, arredondamento, data e jurisdição, pois cada elemento pode alterar a estimativa." },
+  { type: 'paragraph', html: "Use o resultado para planear e comparar cenários; não substitui um cálculo oficial nem aconselhamento profissional." },
+  { type: 'paragraph', html: "Interprete o resultado juntamente com as premissas apresentadas pela calculadora antes de o utilizar." },
+  { type: 'paragraph', html: "Confirme dados, unidades, arredondamento, data e jurisdição, pois cada elemento pode alterar a estimativa." },
+  { type: 'paragraph', html: "Use o resultado para planear e comparar cenários; não substitui um cálculo oficial nem aconselhamento profissional." },
+  { type: 'paragraph', html: "Interprete o resultado juntamente com as premissas apresentadas pela calculadora antes de o utilizar." },
+  { type: 'paragraph', html: "Confirme dados, unidades, arredondamento, data e jurisdição, pois cada elemento pode alterar a estimativa." },],
   ui: {
     title: 'Simulador de Cartão Revolving e Teste de Usura',
     balanceLabel: 'Saldo Devedor',

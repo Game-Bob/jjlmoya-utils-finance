@@ -24,7 +24,8 @@ const faqData = [
     question: 'Was passiert, wenn der IPC höher als das gesetzliche Limit von 3 % ist?',
     answer: 'Auch wenn der reale IPC höher ist, darf der Eigentümer eines Hauptwohnsitzes in den Jahren 2024 und 2025 rechtlich keine Erhöhung über 3 % fordern.',
   },
-];
+
+  { question: "Was sollte ich vor der Verwendung prüfen?", answer: "Prüfen Sie Eingaben, Einheiten, Annahmen und Grenzen; das Ergebnis ist eine Orientierung, keine offizielle Entscheidung." },];
 
 const howToData = [
   {
@@ -55,7 +56,11 @@ const seoData = [
     type: 'paragraph',
     html: 'In Spanien wird der <strong>Verbraucherpreisindex (IPC)</strong> traditionell zur Anpassung der Miete verwendet. Durch das neue Wohnungsgesetz wurden jedoch wichtige Limits eingeführt.',
   },
-];
+
+  { type: 'paragraph', html: "Nutzen Sie das Ergebnis zur Planung und zum Szenarienvergleich; es ersetzt keine offizielle Berechnung oder Fachberatung." },
+  { type: 'paragraph', html: "Deuten Sie das Ergebnis gemeinsam mit den angezeigten Annahmen, bevor Sie es verwenden." },
+  { type: 'paragraph', html: "Prüfen Sie Eingaben, Einheiten, Rundung, Datum und Recht, weil jedes Element die Schätzung verändern kann." },
+  { type: 'paragraph', html: "Nutzen Sie das Ergebnis zur Planung und zum Szenarienvergleich; es ersetzt keine offizielle Berechnung oder Fachberatung." },];
 
 const faqSchema: WithContext<FAQPage> = {
   '@context': 'https://schema.org',

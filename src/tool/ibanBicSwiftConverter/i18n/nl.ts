@@ -95,7 +95,9 @@ export const content: ToolLocaleContent<IBANBICSwiftUI> = {
       type: 'paragraph',
       html: 'In de complexe wereld van de internationale financiën domineren twee acroniemen elke overschrijving: <strong>IBAN</strong> en <strong>BIC</strong> (ook bekend als SWIFT).',
     },
-  ],
+
+  { type: 'paragraph', html: "Gebruik het resultaat voor planning en scenariokeuze; het vervangt geen officiële berekening of professioneel advies." },
+  { type: 'paragraph', html: "Interpreteer het resultaat samen met de aannames van de calculator voordat u het gebruikt." },],
   ui: {
     labelTitle: 'IBAN naar BIC / SWIFT Converter',
     labelDescription: 'Bereken direct de BIC-code van elke Spaanse bankrekening.',

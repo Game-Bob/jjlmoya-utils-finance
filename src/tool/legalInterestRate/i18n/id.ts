@@ -58,7 +58,9 @@ const seoData = [
     type: 'paragraph',
     html: '<strong>Suku bunga hukum 2026</strong> adalah <strong>3,25%</strong> di Spanyol. Ini diterapkan secara otomatis jika terjadi keterlambatan pembayaran kecuali disepakati lain.',
   },
-];
+
+  { type: 'paragraph', html: "Gunakan hasil untuk perencanaan dan perbandingan skenario; hasil ini bukan pengganti perhitungan resmi atau nasihat ahli." },
+  { type: 'paragraph', html: "Tafsirkan hasil bersama asumsi yang ditampilkan kalkulator sebelum menggunakannya." },];
 
 const faqSchema: WithContext<FAQPage> = {
   '@context': 'https://schema.org',

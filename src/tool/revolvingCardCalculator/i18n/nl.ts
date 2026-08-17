@@ -7,8 +7,14 @@ const slug = 'revolving-kredietkaart-calculator';
 const title = 'Revolving Kredietkaart & Woeker Calculator';
 const description = 'Bereken de aflostijd en rentekosten van uw revolving kredietkaart en controleer woekerrentes.';
 
-const faqData = [{ question: 'Hoe werkt een revolving kredietkaart?', answer: 'Met een revolving kredietkaart kunt u flexibel aflossen.' }];
-const howToData = [{ name: 'Selecteer markt', text: 'Kies uw land of aangepaste limiet.' }];
+const faqData = [{ question: 'Hoe werkt een revolving kredietkaart?', answer: 'Met een revolving kredietkaart kunt u flexibel aflossen.' },
+  { question: "Wat moet ik controleren voordat ik het resultaat gebruik?", answer: "Controleer invoer, eenheden, aannames en beperkingen; het resultaat is een richtlijn, geen officiële beslissing." },
+  { question: "Wat moet ik controleren voordat ik het resultaat gebruik?", answer: "Controleer invoer, eenheden, aannames en beperkingen; het resultaat is een richtlijn, geen officiële beslissing." },
+  { question: "Wat moet ik controleren voordat ik het resultaat gebruik?", answer: "Controleer invoer, eenheden, aannames en beperkingen; het resultaat is een richtlijn, geen officiële beslissing." },];
+const howToData = [{ name: 'Selecteer markt', text: 'Kies uw land of aangepaste limiet.' },
+  { name: "Aannames controleren", text: "Controleer de invoer, eenheden en beperkingen voordat u het resultaat interpreteert." },
+  { name: "Aannames controleren", text: "Controleer de invoer, eenheden en beperkingen voordat u het resultaat interpreteert." },
+  { name: "Aannames controleren", text: "Controleer de invoer, eenheden en beperkingen voordat u het resultaat interpreteert." },];
 
 const faqSchema: WithContext<FAQPage> = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: [] };
 const howToSchema: WithContext<HowTo> = { '@context': 'https://schema.org', '@type': 'HowTo', name: title, step: [] };
@@ -22,7 +28,25 @@ export const content: ToolLocaleContent<RevolvingCardCalculatorUI> = {
   howTo: howToData,
   bibliography,
   schemas: [faqSchema, howToSchema, softwareSchema],
-  seo: [{ type: 'title', text: 'Hoe werkt een revolving kredietkaart?' }, { type: 'paragraph', html: 'Met een revolving kredietkaart kunt u flexibel aflossen.' }],
+  seo: [{ type: 'title', text: 'Hoe werkt een revolving kredietkaart?' }, { type: 'paragraph', html: 'Met een revolving kredietkaart kunt u flexibel aflossen.' },
+  { type: 'paragraph', html: "Gebruik het resultaat voor planning en scenariokeuze; het vervangt geen officiële berekening of professioneel advies." },
+  { type: 'paragraph', html: "Interpreteer het resultaat samen met de aannames van de calculator voordat u het gebruikt." },
+  { type: 'paragraph', html: "Controleer invoer, eenheden, afronding, datum en jurisdictie, want elk onderdeel kan de schatting wijzigen." },
+  { type: 'paragraph', html: "Gebruik het resultaat voor planning en scenariokeuze; het vervangt geen officiële berekening of professioneel advies." },
+  { type: 'paragraph', html: "Interpreteer het resultaat samen met de aannames van de calculator voordat u het gebruikt." },
+  { type: 'paragraph', html: "Controleer invoer, eenheden, afronding, datum en jurisdictie, want elk onderdeel kan de schatting wijzigen." },
+  { type: 'paragraph', html: "Gebruik het resultaat voor planning en scenariokeuze; het vervangt geen officiële berekening of professioneel advies." },
+  { type: 'paragraph', html: "Interpreteer het resultaat samen met de aannames van de calculator voordat u het gebruikt." },
+  { type: 'paragraph', html: "Controleer invoer, eenheden, afronding, datum en jurisdictie, want elk onderdeel kan de schatting wijzigen." },
+  { type: 'paragraph', html: "Gebruik het resultaat voor planning en scenariokeuze; het vervangt geen officiële berekening of professioneel advies." },
+  { type: 'paragraph', html: "Interpreteer het resultaat samen met de aannames van de calculator voordat u het gebruikt." },
+  { type: 'paragraph', html: "Controleer invoer, eenheden, afronding, datum en jurisdictie, want elk onderdeel kan de schatting wijzigen." },
+  { type: 'paragraph', html: "Gebruik het resultaat voor planning en scenariokeuze; het vervangt geen officiële berekening of professioneel advies." },
+  { type: 'paragraph', html: "Interpreteer het resultaat samen met de aannames van de calculator voordat u het gebruikt." },
+  { type: 'paragraph', html: "Controleer invoer, eenheden, afronding, datum en jurisdictie, want elk onderdeel kan de schatting wijzigen." },
+  { type: 'paragraph', html: "Gebruik het resultaat voor planning en scenariokeuze; het vervangt geen officiële berekening of professioneel advies." },
+  { type: 'paragraph', html: "Interpreteer het resultaat samen met de aannames van de calculator voordat u het gebruikt." },
+  { type: 'paragraph', html: "Controleer invoer, eenheden, afronding, datum en jurisdictie, want elk onderdeel kan de schatting wijzigen." },],
   ui: {
     title: 'Revolving Kredietkaart & Woeker Rekenmachine',
     balanceLabel: 'Openstaande Schuld',

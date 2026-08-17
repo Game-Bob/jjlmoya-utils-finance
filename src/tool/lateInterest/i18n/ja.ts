@@ -91,7 +91,7 @@ export const content: ToolLocaleContent<LateInterestUI> = {
   description,
   faq: faqData,
   bibliography,
-  
+
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [
@@ -174,7 +174,9 @@ export const content: ToolLocaleContent<LateInterestUI> = {
       type: 'paragraph',
       html: '自営業者や企業の場合、スペインの法律（Ley 3/2004）により支払期限は最大60日と定められています。顧客がこの期限を過ぎた場合、催促を行わなくても自動的に商事遅延利息を請求でき、さらに回収費用として一律40ユーロを請求する権利があります。',
     },
-  ],
+
+  { type: 'paragraph', html: "利用する前に、計算機が示す前提条件と結果を一緒に確認してください。" },
+  { type: 'paragraph', html: "入力値、単位、丸め、日付、地域を確認してください。どれも推定結果を変える可能性があります。" },],
   ui: {
     labelTitle: '遅延利息計算機',
     labelSimpleTitle: '単利',

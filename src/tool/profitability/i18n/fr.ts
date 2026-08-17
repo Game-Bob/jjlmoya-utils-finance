@@ -32,7 +32,8 @@ const faq = [
     question: 'Pourquoi mon CAGR est-il différent de mon ROI total ?',
     answer: 'Le ROI est le rendement total sans tenir compte du temps. Le CAGR est le taux annuel nécessaire pour atteindre ce rendement total.',
   },
-];
+
+  { question: "Que faut-il vérifier avant d'utiliser le résultat ?", answer: "Vérifiez les données, unités, hypothèses et limites ; il s'agit d'une indication, pas d'une décision officielle." },];
 
 const howTo = [
   {
@@ -64,7 +65,12 @@ export const content: ToolLocaleContent<ProfitabilityUI> = {
       type: 'paragraph',
       html: 'Le <strong>ROI</strong> indique le gain total en pourcentage, mais ignore le temps. Le <strong>CAGR</strong> est supérieur pour l\'analyse à long terme car il "annualise" vos rendements.',
     },
-  ],
+
+  { type: 'paragraph', html: "Utilisez le résultat pour planifier et comparer des scénarios ; il ne remplace ni un calcul officiel ni un avis professionnel." },
+  { type: 'paragraph', html: "Interprétez le résultat avec les hypothèses affichées par le calculateur avant de l'utiliser." },
+  { type: 'paragraph', html: "Vérifiez les données, unités, arrondi, date et juridiction, car chacun de ces éléments peut modifier l'estimation." },
+  { type: 'paragraph', html: "Utilisez le résultat pour planifier et comparer des scénarios ; il ne remplace ni un calcul officiel ni un avis professionnel." },
+  { type: 'paragraph', html: "Interprétez le résultat avec les hypothèses affichées par le calculateur avant de l'utiliser." },],
   faq,
   bibliography: [
     {

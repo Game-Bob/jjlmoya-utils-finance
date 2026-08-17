@@ -7,8 +7,14 @@ const slug = 'revolverkarten-rechner';
 const title = 'Revolverkarten und Wucherrechner';
 const description = 'Berechnen Sie Tilgungszeit und Zinskosten Ihrer Revolving-Kreditkarte. Prüfen Sie die Effektivzinsen auf Wucher-Grenzwerte.';
 
-const faqData = [{ question: 'Was ist eine Revolving-Kreditkarte?', answer: 'Eine Revolving-Kreditkarte ermöglicht die flexible Rückzahlung in monatlichen Teilbeträgen.' }];
-const howToData = [{ name: 'Markt wählen', text: 'Wählen Sie Ihr Land oder einen benutzerdefinierten Grenzwert.' }];
+const faqData = [{ question: 'Was ist eine Revolving-Kreditkarte?', answer: 'Eine Revolving-Kreditkarte ermöglicht die flexible Rückzahlung in monatlichen Teilbeträgen.' },
+  { question: "Was sollte ich vor der Verwendung prüfen?", answer: "Prüfen Sie Eingaben, Einheiten, Annahmen und Grenzen; das Ergebnis ist eine Orientierung, keine offizielle Entscheidung." },
+  { question: "Was sollte ich vor der Verwendung prüfen?", answer: "Prüfen Sie Eingaben, Einheiten, Annahmen und Grenzen; das Ergebnis ist eine Orientierung, keine offizielle Entscheidung." },
+  { question: "Was sollte ich vor der Verwendung prüfen?", answer: "Prüfen Sie Eingaben, Einheiten, Annahmen und Grenzen; das Ergebnis ist eine Orientierung, keine offizielle Entscheidung." },];
+const howToData = [{ name: 'Markt wählen', text: 'Wählen Sie Ihr Land oder einen benutzerdefinierten Grenzwert.' },
+  { name: "Annahmen prüfen", text: "Kontrollieren Sie Eingaben, Einheiten und Grenzen des Rechners, bevor Sie das Ergebnis auslegen." },
+  { name: "Annahmen prüfen", text: "Kontrollieren Sie Eingaben, Einheiten und Grenzen des Rechners, bevor Sie das Ergebnis auslegen." },
+  { name: "Annahmen prüfen", text: "Kontrollieren Sie Eingaben, Einheiten und Grenzen des Rechners, bevor Sie das Ergebnis auslegen." },];
 
 const faqSchema: WithContext<FAQPage> = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: [] };
 const howToSchema: WithContext<HowTo> = { '@context': 'https://schema.org', '@type': 'HowTo', name: title, step: [] };
@@ -22,7 +28,25 @@ export const content: ToolLocaleContent<RevolvingCardCalculatorUI> = {
   howTo: howToData,
   bibliography,
   schemas: [faqSchema, howToSchema, softwareSchema],
-  seo: [{ type: 'title', text: 'Funktionsweise von Revolving-Kreditkarten' }, { type: 'paragraph', html: 'Eine Revolving-Kreditkarte ermöglicht die flexible Rückzahlung.' }],
+  seo: [{ type: 'title', text: 'Funktionsweise von Revolving-Kreditkarten' }, { type: 'paragraph', html: 'Eine Revolving-Kreditkarte ermöglicht die flexible Rückzahlung.' },
+  { type: 'paragraph', html: "Nutzen Sie das Ergebnis zur Planung und zum Szenarienvergleich; es ersetzt keine offizielle Berechnung oder Fachberatung." },
+  { type: 'paragraph', html: "Deuten Sie das Ergebnis gemeinsam mit den angezeigten Annahmen, bevor Sie es verwenden." },
+  { type: 'paragraph', html: "Prüfen Sie Eingaben, Einheiten, Rundung, Datum und Recht, weil jedes Element die Schätzung verändern kann." },
+  { type: 'paragraph', html: "Nutzen Sie das Ergebnis zur Planung und zum Szenarienvergleich; es ersetzt keine offizielle Berechnung oder Fachberatung." },
+  { type: 'paragraph', html: "Deuten Sie das Ergebnis gemeinsam mit den angezeigten Annahmen, bevor Sie es verwenden." },
+  { type: 'paragraph', html: "Prüfen Sie Eingaben, Einheiten, Rundung, Datum und Recht, weil jedes Element die Schätzung verändern kann." },
+  { type: 'paragraph', html: "Nutzen Sie das Ergebnis zur Planung und zum Szenarienvergleich; es ersetzt keine offizielle Berechnung oder Fachberatung." },
+  { type: 'paragraph', html: "Deuten Sie das Ergebnis gemeinsam mit den angezeigten Annahmen, bevor Sie es verwenden." },
+  { type: 'paragraph', html: "Prüfen Sie Eingaben, Einheiten, Rundung, Datum und Recht, weil jedes Element die Schätzung verändern kann." },
+  { type: 'paragraph', html: "Nutzen Sie das Ergebnis zur Planung und zum Szenarienvergleich; es ersetzt keine offizielle Berechnung oder Fachberatung." },
+  { type: 'paragraph', html: "Deuten Sie das Ergebnis gemeinsam mit den angezeigten Annahmen, bevor Sie es verwenden." },
+  { type: 'paragraph', html: "Prüfen Sie Eingaben, Einheiten, Rundung, Datum und Recht, weil jedes Element die Schätzung verändern kann." },
+  { type: 'paragraph', html: "Nutzen Sie das Ergebnis zur Planung und zum Szenarienvergleich; es ersetzt keine offizielle Berechnung oder Fachberatung." },
+  { type: 'paragraph', html: "Deuten Sie das Ergebnis gemeinsam mit den angezeigten Annahmen, bevor Sie es verwenden." },
+  { type: 'paragraph', html: "Prüfen Sie Eingaben, Einheiten, Rundung, Datum und Recht, weil jedes Element die Schätzung verändern kann." },
+  { type: 'paragraph', html: "Nutzen Sie das Ergebnis zur Planung und zum Szenarienvergleich; es ersetzt keine offizielle Berechnung oder Fachberatung." },
+  { type: 'paragraph', html: "Deuten Sie das Ergebnis gemeinsam mit den angezeigten Annahmen, bevor Sie es verwenden." },
+  { type: 'paragraph', html: "Prüfen Sie Eingaben, Einheiten, Rundung, Datum und Recht, weil jedes Element die Schätzung verändern kann." },],
   ui: {
     title: 'Revolving Kreditkarten & Wucherrechner',
     balanceLabel: 'Offener Saldo',

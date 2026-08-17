@@ -58,7 +58,9 @@ const seoData = [
     type: 'paragraph',
     html: '<strong>Odsetki ustawowe w 2026 roku</strong> wynoszą <strong>3,25%</strong> w Hiszpanii. Stosuje się je automatycznie w przypadku opóźnienia, jeśli nie uzgodniono inaczej.',
   },
-];
+
+  { type: 'paragraph', html: "Używaj wyniku do planowania i porównywania scenariuszy; nie zastępuje obliczeń urzędowych ani porady specjalisty." },
+  { type: 'paragraph', html: "Przed użyciem zinterpretuj wynik razem z założeniami pokazanymi przez kalkulator." },];
 
 const faqSchema: WithContext<FAQPage> = {
   '@context': 'https://schema.org',

@@ -95,7 +95,9 @@ export const content: ToolLocaleContent<IBANBICSwiftUI> = {
       type: 'paragraph',
       html: '国際金融の複雑な世界では、<strong>IBAN</strong>と<strong>BIC</strong>（SWIFTとも呼ばれる）という2つの略称が送金業務において重要となります。',
     },
-  ],
+
+  { type: 'paragraph', html: "結果は計画や条件比較に使えますが、公式計算や専門家の助言の代わりにはなりません。" },
+  { type: 'paragraph', html: "利用する前に、計算機が示す前提条件と結果を一緒に確認してください。" },],
   ui: {
     labelTitle: 'IBANからBIC / SWIFTへの変換',
     labelDescription: 'スペインの銀行口座のBICコードを即座に算出します。',

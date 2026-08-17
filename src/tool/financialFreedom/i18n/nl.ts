@@ -75,7 +75,12 @@ export const content: ToolLocaleContent<FinancialFreedomUI> = {
       type: 'paragraph',
       html: 'De <strong>survival runway</strong> is de hoeveelheid tijd die je kunt leven zonder nieuw inkomen. Het is de ultieme maatstaf voor financiële vrijheid.',
     },
-  ],
+
+  { type: 'paragraph', html: "Gebruik het resultaat voor planning en scenariokeuze; het vervangt geen officiële berekening of professioneel advies." },
+  { type: 'paragraph', html: "Interpreteer het resultaat samen met de aannames van de calculator voordat u het gebruikt." },
+  { type: 'paragraph', html: "Controleer invoer, eenheden, afronding, datum en jurisdictie, want elk onderdeel kan de schatting wijzigen." },
+  { type: 'paragraph', html: "Gebruik het resultaat voor planning en scenariokeuze; het vervangt geen officiële berekening of professioneel advies." },
+  { type: 'paragraph', html: "Interpreteer het resultaat samen met de aannames van de calculator voordat u het gebruikt." },],
   faq,
   bibliography: [
     {

@@ -59,7 +59,9 @@ const seoData = [
     type: 'paragraph',
     html: 'Granie w loterię to dla wielu zakup iluzji za kilka euro. Jednak za kulisami kryje się jedna z najbardziej fascynujących dziedzin matematyki: statystyka ekstremalnych prawdopodobieństw.',
   },
-];
+
+  { type: 'paragraph', html: "Używaj wyniku do planowania i porównywania scenariuszy; nie zastępuje obliczeń urzędowych ani porady specjalisty." },
+  { type: 'paragraph', html: "Przed użyciem zinterpretuj wynik razem z założeniami pokazanymi przez kalkulator." },];
 
 const gameTranslations = {
   gordo: {

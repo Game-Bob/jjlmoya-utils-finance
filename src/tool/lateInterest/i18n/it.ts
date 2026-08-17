@@ -91,7 +91,7 @@ export const content: ToolLocaleContent<LateInterestUI> = {
   description,
   faq: faqData,
   bibliography,
-  
+
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [
@@ -174,7 +174,9 @@ export const content: ToolLocaleContent<LateInterestUI> = {
       type: 'paragraph',
       html: 'Se sei un lavoratore autonomo o un\'impresa, la legge spagnola 3/2004 stabilisce un termine massimo di pagamento di 60 giorni. Se il tuo cliente supera tale data, puoi esigere l\'interesse di mora commerciale in modo automatico, senza solleciti, e addebitare una quota fissa di 40 € per i costi di recupero.',
     },
-  ],
+
+  { type: 'paragraph', html: "Interpreta il risultato insieme alle ipotesi mostrate dal calcolatore prima di utilizzarlo." },
+  { type: 'paragraph', html: "Controlla dati, unità, arrotondamento, data e giurisdizione, perché ciascun elemento può cambiare la stima." },],
   ui: {
     labelTitle: 'Calcolatore Interessi di Mora',
     labelSimpleTitle: 'Semplice',

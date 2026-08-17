@@ -75,7 +75,12 @@ export const content: ToolLocaleContent<FinancialFreedomUI> = {
       type: 'paragraph',
       html: '<strong>Czas przetrwania</strong> (runway) to okres, w którym możesz żyć bez nowych dochodów. To ostateczna miara wolności finansowej.',
     },
-  ],
+
+  { type: 'paragraph', html: "Używaj wyniku do planowania i porównywania scenariuszy; nie zastępuje obliczeń urzędowych ani porady specjalisty." },
+  { type: 'paragraph', html: "Przed użyciem zinterpretuj wynik razem z założeniami pokazanymi przez kalkulator." },
+  { type: 'paragraph', html: "Sprawdź dane, jednostki, zaokrąglenie, datę i jurysdykcję, ponieważ każdy element może zmienić szacunek." },
+  { type: 'paragraph', html: "Używaj wyniku do planowania i porównywania scenariuszy; nie zastępuje obliczeń urzędowych ani porady specjalisty." },
+  { type: 'paragraph', html: "Przed użyciem zinterpretuj wynik razem z założeniami pokazanymi przez kalkulator." },],
   faq,
   bibliography: [
     {

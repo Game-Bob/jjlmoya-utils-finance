@@ -91,7 +91,7 @@ export const content: ToolLocaleContent<LateInterestUI> = {
   description,
   faq: faqData,
   bibliography,
-  
+
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [
@@ -174,7 +174,9 @@ export const content: ToolLocaleContent<LateInterestUI> = {
       type: 'paragraph',
       html: '如果您是自由职业者或公司，西班牙第 3/2004 号法律规定了 60 天的最长付款期限。如果您的客户超过该日期，您可以自动要求商业滞纳金而无需提醒，并额外收取 40 欧元的固定追收费用。',
     },
-  ],
+
+  { type: 'paragraph', html: "使用前请结合计算器显示的假设一起解读结果。" },
+  { type: 'paragraph', html: "请检查输入值、单位、四舍五入方式、日期和司法辖区，因为每项都可能改变估算。" },],
   ui: {
     labelTitle: '滞纳金计算器',
     labelSimpleTitle: '单利',

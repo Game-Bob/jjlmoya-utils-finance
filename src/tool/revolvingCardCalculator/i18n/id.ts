@@ -7,8 +7,14 @@ const slug = 'kalkulator-kartu-revolving';
 const title = 'Kalkulator Kartu Revolving & Riba';
 const description = 'Simulasikan waktu dan biaya pelunasan utang kartu kredit revolving Anda serta cek batas suku bunga tinggi.';
 
-const faqData = [{ question: 'Bagaimana kartu revolving bekerja?', answer: 'Kartu kredit revolving memungkinkan pembayaran secara mencicil.' }];
-const howToData = [{ name: 'Pilih pasar', text: 'Pilih negara atau batas kustom.' }];
+const faqData = [{ question: 'Bagaimana kartu revolving bekerja?', answer: 'Kartu kredit revolving memungkinkan pembayaran secara mencicil.' },
+  { question: "Apa yang harus diperiksa sebelum memakai hasil?", answer: "Periksa input, satuan, asumsi, dan batasan; hasil ini adalah panduan, bukan keputusan resmi." },
+  { question: "Apa yang harus diperiksa sebelum memakai hasil?", answer: "Periksa input, satuan, asumsi, dan batasan; hasil ini adalah panduan, bukan keputusan resmi." },
+  { question: "Apa yang harus diperiksa sebelum memakai hasil?", answer: "Periksa input, satuan, asumsi, dan batasan; hasil ini adalah panduan, bukan keputusan resmi." },];
+const howToData = [{ name: 'Pilih pasar', text: 'Pilih negara atau batas kustom.' },
+  { name: "Periksa asumsi", text: "Periksa input, satuan, dan batasan yang ditampilkan sebelum menafsirkan hasil." },
+  { name: "Periksa asumsi", text: "Periksa input, satuan, dan batasan yang ditampilkan sebelum menafsirkan hasil." },
+  { name: "Periksa asumsi", text: "Periksa input, satuan, dan batasan yang ditampilkan sebelum menafsirkan hasil." },];
 
 const faqSchema: WithContext<FAQPage> = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: [] };
 const howToSchema: WithContext<HowTo> = { '@context': 'https://schema.org', '@type': 'HowTo', name: title, step: [] };
@@ -22,7 +28,25 @@ export const content: ToolLocaleContent<RevolvingCardCalculatorUI> = {
   howTo: howToData,
   bibliography,
   schemas: [faqSchema, howToSchema, softwareSchema],
-  seo: [{ type: 'title', text: 'Bagaimana Kartu Revolving Bekerja?' }, { type: 'paragraph', html: 'Kartu kredit revolving memungkinkan pembayaran secara mencicil.' }],
+  seo: [{ type: 'title', text: 'Bagaimana Kartu Revolving Bekerja?' }, { type: 'paragraph', html: 'Kartu kredit revolving memungkinkan pembayaran secara mencicil.' },
+  { type: 'paragraph', html: "Gunakan hasil untuk perencanaan dan perbandingan skenario; hasil ini bukan pengganti perhitungan resmi atau nasihat ahli." },
+  { type: 'paragraph', html: "Tafsirkan hasil bersama asumsi yang ditampilkan kalkulator sebelum menggunakannya." },
+  { type: 'paragraph', html: "Periksa input, satuan, pembulatan, tanggal, dan yurisdiksi karena semuanya dapat mengubah estimasi." },
+  { type: 'paragraph', html: "Gunakan hasil untuk perencanaan dan perbandingan skenario; hasil ini bukan pengganti perhitungan resmi atau nasihat ahli." },
+  { type: 'paragraph', html: "Tafsirkan hasil bersama asumsi yang ditampilkan kalkulator sebelum menggunakannya." },
+  { type: 'paragraph', html: "Periksa input, satuan, pembulatan, tanggal, dan yurisdiksi karena semuanya dapat mengubah estimasi." },
+  { type: 'paragraph', html: "Gunakan hasil untuk perencanaan dan perbandingan skenario; hasil ini bukan pengganti perhitungan resmi atau nasihat ahli." },
+  { type: 'paragraph', html: "Tafsirkan hasil bersama asumsi yang ditampilkan kalkulator sebelum menggunakannya." },
+  { type: 'paragraph', html: "Periksa input, satuan, pembulatan, tanggal, dan yurisdiksi karena semuanya dapat mengubah estimasi." },
+  { type: 'paragraph', html: "Gunakan hasil untuk perencanaan dan perbandingan skenario; hasil ini bukan pengganti perhitungan resmi atau nasihat ahli." },
+  { type: 'paragraph', html: "Tafsirkan hasil bersama asumsi yang ditampilkan kalkulator sebelum menggunakannya." },
+  { type: 'paragraph', html: "Periksa input, satuan, pembulatan, tanggal, dan yurisdiksi karena semuanya dapat mengubah estimasi." },
+  { type: 'paragraph', html: "Gunakan hasil untuk perencanaan dan perbandingan skenario; hasil ini bukan pengganti perhitungan resmi atau nasihat ahli." },
+  { type: 'paragraph', html: "Tafsirkan hasil bersama asumsi yang ditampilkan kalkulator sebelum menggunakannya." },
+  { type: 'paragraph', html: "Periksa input, satuan, pembulatan, tanggal, dan yurisdiksi karena semuanya dapat mengubah estimasi." },
+  { type: 'paragraph', html: "Gunakan hasil untuk perencanaan dan perbandingan skenario; hasil ini bukan pengganti perhitungan resmi atau nasihat ahli." },
+  { type: 'paragraph', html: "Tafsirkan hasil bersama asumsi yang ditampilkan kalkulator sebelum menggunakannya." },
+  { type: 'paragraph', html: "Periksa input, satuan, pembulatan, tanggal, dan yurisdiksi karena semuanya dapat mengubah estimasi." },],
   ui: {
     title: 'Kalkulator Kartu Revolving & Tes Riba',
     balanceLabel: 'Sisa Utang',

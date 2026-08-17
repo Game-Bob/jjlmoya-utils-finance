@@ -95,7 +95,9 @@ export const content: ToolLocaleContent<IBANBICSwiftUI> = {
       type: 'paragraph',
       html: 'Uluslararası finansın karmaşık dünyasında, her transfer işlemine iki kısaltma hakimdir: <strong>IBAN</strong> ve <strong>BIC</strong> (SWIFT olarak da bilinir).',
     },
-  ],
+
+  { type: 'paragraph', html: "Sonucu planlama ve senaryo karşılaştırması için kullanın; resmî hesabın veya uzman görüşünün yerine geçmez." },
+  { type: 'paragraph', html: "Kullanmadan önce sonucu hesaplayıcının gösterdiği varsayımlarla birlikte yorumlayın." },],
   ui: {
     labelTitle: 'IBAN\'dan BIC / SWIFT\'e Dönüştürücü',
     labelDescription: 'Herhangi bir İspanyol banka hesabının BIC kodunu anında hesaplayın.',

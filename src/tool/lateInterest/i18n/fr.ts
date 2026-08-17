@@ -91,7 +91,7 @@ export const content: ToolLocaleContent<LateInterestUI> = {
   description,
   faq: faqData,
   bibliography,
-  
+
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [
@@ -174,7 +174,9 @@ export const content: ToolLocaleContent<LateInterestUI> = {
       type: 'paragraph',
       html: 'Si vous êtes travailleur indépendant ou entreprise, la Loi de Lutte contre le Retard de Paiement établit un délai maximum de paiement de 60 jours. Si votre client dépasse cette date, vous pouvez exiger automatiquement des intérêts de retard commerciaux, sans avoir besoin d\'un rappel, et vous pouvez également percevoir un montant forfaitaire de 40 € pour frais de recouvrement.',
     },
-  ],
+
+  { type: 'paragraph', html: "Interprétez le résultat avec les hypothèses affichées par le calculateur avant de l'utiliser." },
+  { type: 'paragraph', html: "Vérifiez les données, unités, arrondi, date et juridiction, car chacun de ces éléments peut modifier l'estimation." },],
   ui: {
     labelTitle: 'Calculatrice d\'Intérêts de Retard',
     labelSimpleTitle: 'Simple',

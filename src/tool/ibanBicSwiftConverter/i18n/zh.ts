@@ -95,7 +95,9 @@ export const content: ToolLocaleContent<IBANBICSwiftUI> = {
       type: 'paragraph',
       html: '在复杂的国际金融世界中，两个缩写统治着每笔转账操作：<strong>IBAN</strong> 和 <strong>BIC</strong>（也称为 SWIFT）。',
     },
-  ],
+
+  { type: 'paragraph', html: "结果可用于规划和比较方案，但不能替代官方计算或专业建议。" },
+  { type: 'paragraph', html: "使用前请结合计算器显示的假设一起解读结果。" },],
   ui: {
     labelTitle: 'IBAN 转 BIC / SWIFT 转换器',
     labelDescription: '立即计算任何西班牙银行账户的 BIC 代码。',

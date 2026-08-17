@@ -95,7 +95,9 @@ export const content: ToolLocaleContent<IBANBICSwiftUI> = {
       type: 'paragraph',
       html: 'Dalam dunia keuangan internasional yang kompleks, dua akronim mendominasi setiap operasi transfer: <strong>IBAN</strong> dan <strong>BIC</strong> (juga dikenal sebagai SWIFT).',
     },
-  ],
+
+  { type: 'paragraph', html: "Gunakan hasil untuk perencanaan dan perbandingan skenario; hasil ini bukan pengganti perhitungan resmi atau nasihat ahli." },
+  { type: 'paragraph', html: "Tafsirkan hasil bersama asumsi yang ditampilkan kalkulator sebelum menggunakannya." },],
   ui: {
     labelTitle: 'Konverter IBAN ke BIC / SWIFT',
     labelDescription: 'Hitung kode BIC dari akun bank Spanyol mana pun secara instan.',

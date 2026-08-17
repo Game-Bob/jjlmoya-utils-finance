@@ -75,7 +75,12 @@ export const content: ToolLocaleContent<FinancialFreedomUI> = {
       type: 'paragraph',
       html: '<strong>Hayatta kalma süresi</strong> (runway), yeni bir gelir olmadan yaşayabileceğiniz süredir. Finansal özgürlüğün temel ölçütüdür.',
     },
-  ],
+
+  { type: 'paragraph', html: "Sonucu planlama ve senaryo karşılaştırması için kullanın; resmî hesabın veya uzman görüşünün yerine geçmez." },
+  { type: 'paragraph', html: "Kullanmadan önce sonucu hesaplayıcının gösterdiği varsayımlarla birlikte yorumlayın." },
+  { type: 'paragraph', html: "Girdileri, birimleri, yuvarlamayı, tarihi ve yargı alanını kontrol edin; her biri tahmini değiştirebilir." },
+  { type: 'paragraph', html: "Sonucu planlama ve senaryo karşılaştırması için kullanın; resmî hesabın veya uzman görüşünün yerine geçmez." },
+  { type: 'paragraph', html: "Kullanmadan önce sonucu hesaplayıcının gösterdiği varsayımlarla birlikte yorumlayın." },],
   faq,
   bibliography: [
     {

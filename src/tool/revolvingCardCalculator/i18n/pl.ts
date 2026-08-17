@@ -7,8 +7,14 @@ const slug = 'kalkulator-kart-revolving';
 const title = 'Kalkulator Kart Revolving i Lichwy';
 const description = 'Symuluj czas i koszt spłaty karty kredytowej typu revolving oraz sprawdź limity lichwiarskie.';
 
-const faqData = [{ question: 'Jak działają karty odnawialne?', answer: 'Karty odnawialne pozwalają na elastyczną spłatę długu.' }];
-const howToData = [{ name: 'Wybierz rynek', text: 'Wybierz kraj lub własny limit.' }];
+const faqData = [{ question: 'Jak działają karty odnawialne?', answer: 'Karty odnawialne pozwalają na elastyczną spłatę długu.' },
+  { question: "Co sprawdzić przed użyciem wyniku?", answer: "Sprawdź dane, jednostki, założenia i ograniczenia; wynik jest wskazówką, a nie decyzją urzędową." },
+  { question: "Co sprawdzić przed użyciem wyniku?", answer: "Sprawdź dane, jednostki, założenia i ograniczenia; wynik jest wskazówką, a nie decyzją urzędową." },
+  { question: "Co sprawdzić przed użyciem wyniku?", answer: "Sprawdź dane, jednostki, założenia i ograniczenia; wynik jest wskazówką, a nie decyzją urzędową." },];
+const howToData = [{ name: 'Wybierz rynek', text: 'Wybierz kraj lub własny limit.' },
+  { name: "Sprawdź założenia", text: "Przed interpretacją wyniku sprawdź dane, jednostki i ograniczenia kalkulatora." },
+  { name: "Sprawdź założenia", text: "Przed interpretacją wyniku sprawdź dane, jednostki i ograniczenia kalkulatora." },
+  { name: "Sprawdź założenia", text: "Przed interpretacją wyniku sprawdź dane, jednostki i ograniczenia kalkulatora." },];
 
 const faqSchema: WithContext<FAQPage> = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: [] };
 const howToSchema: WithContext<HowTo> = { '@context': 'https://schema.org', '@type': 'HowTo', name: title, step: [] };
@@ -22,7 +28,25 @@ export const content: ToolLocaleContent<RevolvingCardCalculatorUI> = {
   howTo: howToData,
   bibliography,
   schemas: [faqSchema, howToSchema, softwareSchema],
-  seo: [{ type: 'title', text: 'Jak działają karty odnawialne (revolving)?' }, { type: 'paragraph', html: 'Karty odnawialne pozwalają na elastyczną spłatę długu.' }],
+  seo: [{ type: 'title', text: 'Jak działają karty odnawialne (revolving)?' }, { type: 'paragraph', html: 'Karty odnawialne pozwalają na elastyczną spłatę długu.' },
+  { type: 'paragraph', html: "Używaj wyniku do planowania i porównywania scenariuszy; nie zastępuje obliczeń urzędowych ani porady specjalisty." },
+  { type: 'paragraph', html: "Przed użyciem zinterpretuj wynik razem z założeniami pokazanymi przez kalkulator." },
+  { type: 'paragraph', html: "Sprawdź dane, jednostki, zaokrąglenie, datę i jurysdykcję, ponieważ każdy element może zmienić szacunek." },
+  { type: 'paragraph', html: "Używaj wyniku do planowania i porównywania scenariuszy; nie zastępuje obliczeń urzędowych ani porady specjalisty." },
+  { type: 'paragraph', html: "Przed użyciem zinterpretuj wynik razem z założeniami pokazanymi przez kalkulator." },
+  { type: 'paragraph', html: "Sprawdź dane, jednostki, zaokrąglenie, datę i jurysdykcję, ponieważ każdy element może zmienić szacunek." },
+  { type: 'paragraph', html: "Używaj wyniku do planowania i porównywania scenariuszy; nie zastępuje obliczeń urzędowych ani porady specjalisty." },
+  { type: 'paragraph', html: "Przed użyciem zinterpretuj wynik razem z założeniami pokazanymi przez kalkulator." },
+  { type: 'paragraph', html: "Sprawdź dane, jednostki, zaokrąglenie, datę i jurysdykcję, ponieważ każdy element może zmienić szacunek." },
+  { type: 'paragraph', html: "Używaj wyniku do planowania i porównywania scenariuszy; nie zastępuje obliczeń urzędowych ani porady specjalisty." },
+  { type: 'paragraph', html: "Przed użyciem zinterpretuj wynik razem z założeniami pokazanymi przez kalkulator." },
+  { type: 'paragraph', html: "Sprawdź dane, jednostki, zaokrąglenie, datę i jurysdykcję, ponieważ każdy element może zmienić szacunek." },
+  { type: 'paragraph', html: "Używaj wyniku do planowania i porównywania scenariuszy; nie zastępuje obliczeń urzędowych ani porady specjalisty." },
+  { type: 'paragraph', html: "Przed użyciem zinterpretuj wynik razem z założeniami pokazanymi przez kalkulator." },
+  { type: 'paragraph', html: "Sprawdź dane, jednostki, zaokrąglenie, datę i jurysdykcję, ponieważ każdy element może zmienić szacunek." },
+  { type: 'paragraph', html: "Używaj wyniku do planowania i porównywania scenariuszy; nie zastępuje obliczeń urzędowych ani porady specjalisty." },
+  { type: 'paragraph', html: "Przed użyciem zinterpretuj wynik razem z założeniami pokazanymi przez kalkulator." },
+  { type: 'paragraph', html: "Sprawdź dane, jednostki, zaokrąglenie, datę i jurysdykcję, ponieważ każdy element może zmienić szacunek." },],
   ui: {
     title: 'Kalkulator Kart Revolving i Test Lichwy',
     balanceLabel: 'Pozostałe Zadłużenie',

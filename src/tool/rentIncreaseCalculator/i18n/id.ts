@@ -24,7 +24,8 @@ const faqData = [
     question: 'Apa yang terjadi jika IPC lebih tinggi dari batas hukum 3%?',
     answer: 'Meskipun IPC riil lebih tinggi, pemilik tempat tinggal utama secara hukum tidak dapat menuntut kenaikan lebih dari 3% selama tahun 2024 dan 2025.',
   },
-];
+
+  { question: "Apa yang harus diperiksa sebelum memakai hasil?", answer: "Periksa input, satuan, asumsi, dan batasan; hasil ini adalah panduan, bukan keputusan resmi." },];
 
 const howToData = [
   {
@@ -55,7 +56,11 @@ const seoData = [
     type: 'paragraph',
     html: 'Di Spanyol, <strong>Indeks Harga Konsumen (IPC)</strong> secara tradisional digunakan sebagai tolok ukur untuk menyesuaikan harga sewa. Namun, Undang-Undang Perumahan baru telah memperkenalkan batasan penting.',
   },
-];
+
+  { type: 'paragraph', html: "Gunakan hasil untuk perencanaan dan perbandingan skenario; hasil ini bukan pengganti perhitungan resmi atau nasihat ahli." },
+  { type: 'paragraph', html: "Tafsirkan hasil bersama asumsi yang ditampilkan kalkulator sebelum menggunakannya." },
+  { type: 'paragraph', html: "Periksa input, satuan, pembulatan, tanggal, dan yurisdiksi karena semuanya dapat mengubah estimasi." },
+  { type: 'paragraph', html: "Gunakan hasil untuk perencanaan dan perbandingan skenario; hasil ini bukan pengganti perhitungan resmi atau nasihat ahli." },];
 
 const faqSchema: WithContext<FAQPage> = {
   '@context': 'https://schema.org',

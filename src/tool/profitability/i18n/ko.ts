@@ -32,7 +32,8 @@ const faq = [
     question: '왜 CAGR이 전체 ROI와 다른가요?',
     answer: 'ROI는 시간에 관계없는 총 수익률입니다. CAGR은 이를 연간 단위로 환산한 것입니다.',
   },
-];
+
+  { question: "결과를 사용하기 전에 무엇을 확인해야 하나요?", answer: "입력, 단위, 가정과 제한사항을 확인하세요. 결과는 참고용이며 공식 판단이 아닙니다." },];
 
 const howTo = [
   {
@@ -64,7 +65,12 @@ export const content: ToolLocaleContent<ProfitabilityUI> = {
       type: 'paragraph',
       html: '<strong>ROI</strong>는 전체 수익률을 나타내지만 기간을 고려하지 않습니다. <strong>CAGR</strong>은 기간을 "연환산"하므로 장기 분석에 우수합니다.',
     },
-  ],
+
+  { type: 'paragraph', html: "결과는 계획과 시나리오 비교에 사용할 수 있지만 공식 계산이나 전문가 조언을 대신하지 않습니다." },
+  { type: 'paragraph', html: "사용하기 전에 계산기가 표시한 가정과 결과를 함께 확인하세요." },
+  { type: 'paragraph', html: "입력값, 단위, 반올림, 날짜와 관할을 확인하세요. 모두 추정값을 바꿀 수 있습니다." },
+  { type: 'paragraph', html: "결과는 계획과 시나리오 비교에 사용할 수 있지만 공식 계산이나 전문가 조언을 대신하지 않습니다." },
+  { type: 'paragraph', html: "사용하기 전에 계산기가 표시한 가정과 결과를 함께 확인하세요." },],
   faq,
   bibliography: [
     {

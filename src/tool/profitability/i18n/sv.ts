@@ -32,7 +32,8 @@ const faq = [
     question: 'Varför skiljer sig min CAGR från min totala ROI?',
     answer: 'ROI är den totala vinsten oavsett tid. CAGR är den årliga takten.',
   },
-];
+
+  { question: "Vad bör jag kontrollera innan resultatet används?", answer: "Kontrollera indata, enheter, antaganden och begränsningar; resultatet är vägledning, inte ett officiellt beslut." },];
 
 const howTo = [
   {
@@ -64,7 +65,12 @@ export const content: ToolLocaleContent<ProfitabilityUI> = {
       type: 'paragraph',
       html: '<strong>ROI</strong> visar den totala procentuella vinsten men ignorerar tiden. <strong>CAGR</strong> är bättre för långsiktig analys.',
     },
-  ],
+
+  { type: 'paragraph', html: "Använd resultatet för planering och scenariejämförelser; det ersätter inte en officiell beräkning eller professionell rådgivning." },
+  { type: 'paragraph', html: "Tolka resultatet tillsammans med kalkylatorns antaganden innan du använder det." },
+  { type: 'paragraph', html: "Kontrollera indata, enheter, avrundning, datum och rättsområde eftersom varje del kan ändra uppskattningen." },
+  { type: 'paragraph', html: "Använd resultatet för planering och scenariejämförelser; det ersätter inte en officiell beräkning eller professionell rådgivning." },
+  { type: 'paragraph', html: "Tolka resultatet tillsammans med kalkylatorns antaganden innan du använder det." },],
   faq,
   bibliography: [
     {

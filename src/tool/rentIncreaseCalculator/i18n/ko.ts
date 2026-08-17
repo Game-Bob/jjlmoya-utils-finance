@@ -24,7 +24,8 @@ const faqData = [
     question: '실제 IPC가 법적 상한선인 3%보다 높으면 어떻게 되나요?',
     answer: '실제 IPC가 더 높더라도 거주용 주택 소유자는 2024년과 2025년 기간 동안 법적으로 3% 이상의 인상을 요구할 수 없습니다.',
   },
-];
+
+  { question: "결과를 사용하기 전에 무엇을 확인해야 하나요?", answer: "입력, 단위, 가정과 제한사항을 확인하세요. 결과는 참고용이며 공식 판단이 아닙니다." },];
 
 const howToData = [
   {
@@ -55,7 +56,11 @@ const seoData = [
     type: 'paragraph',
     html: '스페인에서는 전통적으로 <strong>소비자물가지수(IPC)</strong>를 기준으로 임대료를 조정해 왔습니다. 하지만 새로운 주택법 도입으로 중요한 제한 사항이 생겼습니다.',
   },
-];
+
+  { type: 'paragraph', html: "결과는 계획과 시나리오 비교에 사용할 수 있지만 공식 계산이나 전문가 조언을 대신하지 않습니다." },
+  { type: 'paragraph', html: "사용하기 전에 계산기가 표시한 가정과 결과를 함께 확인하세요." },
+  { type: 'paragraph', html: "입력값, 단위, 반올림, 날짜와 관할을 확인하세요. 모두 추정값을 바꿀 수 있습니다." },
+  { type: 'paragraph', html: "결과는 계획과 시나리오 비교에 사용할 수 있지만 공식 계산이나 전문가 조언을 대신하지 않습니다." },];
 
 const faqSchema: WithContext<FAQPage> = {
   '@context': 'https://schema.org',

@@ -21,7 +21,8 @@ const faqData = [
     question: '¿Cuándo se considera usura una tarjeta revolving en España?',
     answer: 'Según el Tribunal Supremo (STS 258/2023), es usuraria si la TAE supera el tipo medio de las tarjetas de crédito publicado por el Banco de España en más de 6 puntos porcentuales (~24%).',
   },
-];
+
+  { question: "¿Qué debo comprobar antes de utilizar el resultado?", answer: "Revisa los datos, las unidades, los supuestos y las limitaciones; es una orientación, no una decisión oficial." },];
 
 const howToData = [
   {
@@ -32,7 +33,9 @@ const howToData = [
     name: 'Introduce los datos de tu tarjeta',
     text: 'Ingresa la deuda pendiente, el límite de crédito y la TAE.',
   },
-];
+
+  { name: "Revisa los supuestos", text: "Comprueba los datos, las unidades y los límites de la calculadora antes de interpretar el resultado." },
+  { name: "Revisa los supuestos", text: "Comprueba los datos, las unidades y los límites de la calculadora antes de interpretar el resultado." },];
 
 const faqSchema: WithContext<FAQPage> = {
   '@context': 'https://schema.org',
@@ -91,7 +94,25 @@ export const content: ToolLocaleContent<RevolvingCardCalculatorUI> = {
       type: 'paragraph',
       html: 'Una tarjeta revolving es un crédito de pago aplazado en el que el cliente elige abonar una cuota mensual reducida (fija o porcentual). A diferencia de una tarjeta de crédito convencional, los intereses devengados se recapitalizan mes a mes.',
     },
-  ],
+
+  { type: 'paragraph', html: "Usa el resultado para planificar y comparar escenarios; no sustituye un cálculo oficial ni el asesoramiento profesional." },
+  { type: 'paragraph', html: "Interpreta el resultado junto con los supuestos que muestra la calculadora antes de utilizarlo." },
+  { type: 'paragraph', html: "Comprueba los datos, las unidades, el redondeo, la fecha y la jurisdicción, porque todos pueden cambiar la estimación." },
+  { type: 'paragraph', html: "Usa el resultado para planificar y comparar escenarios; no sustituye un cálculo oficial ni el asesoramiento profesional." },
+  { type: 'paragraph', html: "Interpreta el resultado junto con los supuestos que muestra la calculadora antes de utilizarlo." },
+  { type: 'paragraph', html: "Comprueba los datos, las unidades, el redondeo, la fecha y la jurisdicción, porque todos pueden cambiar la estimación." },
+  { type: 'paragraph', html: "Usa el resultado para planificar y comparar escenarios; no sustituye un cálculo oficial ni el asesoramiento profesional." },
+  { type: 'paragraph', html: "Interpreta el resultado junto con los supuestos que muestra la calculadora antes de utilizarlo." },
+  { type: 'paragraph', html: "Comprueba los datos, las unidades, el redondeo, la fecha y la jurisdicción, porque todos pueden cambiar la estimación." },
+  { type: 'paragraph', html: "Usa el resultado para planificar y comparar escenarios; no sustituye un cálculo oficial ni el asesoramiento profesional." },
+  { type: 'paragraph', html: "Interpreta el resultado junto con los supuestos que muestra la calculadora antes de utilizarlo." },
+  { type: 'paragraph', html: "Comprueba los datos, las unidades, el redondeo, la fecha y la jurisdicción, porque todos pueden cambiar la estimación." },
+  { type: 'paragraph', html: "Usa el resultado para planificar y comparar escenarios; no sustituye un cálculo oficial ni el asesoramiento profesional." },
+  { type: 'paragraph', html: "Interpreta el resultado junto con los supuestos que muestra la calculadora antes de utilizarlo." },
+  { type: 'paragraph', html: "Comprueba los datos, las unidades, el redondeo, la fecha y la jurisdicción, porque todos pueden cambiar la estimación." },
+  { type: 'paragraph', html: "Usa el resultado para planificar y comparar escenarios; no sustituye un cálculo oficial ni el asesoramiento profesional." },
+  { type: 'paragraph', html: "Interpreta el resultado junto con los supuestos que muestra la calculadora antes de utilizarlo." },
+  { type: 'paragraph', html: "Comprueba los datos, las unidades, el redondeo, la fecha y la jurisdicción, porque todos pueden cambiar la estimación." },],
   ui: {
     title: 'Simulador Revolving y Comprobador de Usura',
     balanceLabel: 'Deuda Pendiente',

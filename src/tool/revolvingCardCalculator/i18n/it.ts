@@ -7,8 +7,14 @@ const slug = 'calcolatore-carte-revolving';
 const title = 'Calcolatore Carte Revolving e Usura';
 const description = 'Simula tempi e costi per estinguere il debito della tua carta revolving e verifica la soglia di usura.';
 
-const faqData = [{ question: 'Cosa è una carta revolving?', answer: 'Permette di rateizzare i pagamenti con tassi di interesse.' }];
-const howToData = [{ name: 'Seleziona mercato', text: 'Scegli il paese o soglia personalizzata.' }];
+const faqData = [{ question: 'Cosa è una carta revolving?', answer: 'Permette di rateizzare i pagamenti con tassi di interesse.' },
+  { question: "Cosa devo verificare prima di usare il risultato?", answer: "Controlla dati, unità, ipotesi e limiti; è un'indicazione, non una decisione ufficiale." },
+  { question: "Cosa devo verificare prima di usare il risultato?", answer: "Controlla dati, unità, ipotesi e limiti; è un'indicazione, non una decisione ufficiale." },
+  { question: "Cosa devo verificare prima di usare il risultato?", answer: "Controlla dati, unità, ipotesi e limiti; è un'indicazione, non una decisione ufficiale." },];
+const howToData = [{ name: 'Seleziona mercato', text: 'Scegli il paese o soglia personalizzata.' },
+  { name: "Verifica le ipotesi", text: "Controlla dati, unità e limiti del calcolatore prima di interpretare il risultato." },
+  { name: "Verifica le ipotesi", text: "Controlla dati, unità e limiti del calcolatore prima di interpretare il risultato." },
+  { name: "Verifica le ipotesi", text: "Controlla dati, unità e limiti del calcolatore prima di interpretare il risultato." },];
 
 const faqSchema: WithContext<FAQPage> = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: [] };
 const howToSchema: WithContext<HowTo> = { '@context': 'https://schema.org', '@type': 'HowTo', name: title, step: [] };
@@ -22,7 +28,25 @@ export const content: ToolLocaleContent<RevolvingCardCalculatorUI> = {
   howTo: howToData,
   bibliography,
   schemas: [faqSchema, howToSchema, softwareSchema],
-  seo: [{ type: 'title', text: 'Come funzionano le carte revolving' }, { type: 'paragraph', html: 'Le carte revolving consentono di rateizzare i pagamenti.' }],
+  seo: [{ type: 'title', text: 'Come funzionano le carte revolving' }, { type: 'paragraph', html: 'Le carte revolving consentono di rateizzare i pagamenti.' },
+  { type: 'paragraph', html: "Usa il risultato per pianificare e confrontare scenari; non sostituisce un calcolo ufficiale o una consulenza professionale." },
+  { type: 'paragraph', html: "Interpreta il risultato insieme alle ipotesi mostrate dal calcolatore prima di utilizzarlo." },
+  { type: 'paragraph', html: "Controlla dati, unità, arrotondamento, data e giurisdizione, perché ciascun elemento può cambiare la stima." },
+  { type: 'paragraph', html: "Usa il risultato per pianificare e confrontare scenari; non sostituisce un calcolo ufficiale o una consulenza professionale." },
+  { type: 'paragraph', html: "Interpreta il risultato insieme alle ipotesi mostrate dal calcolatore prima di utilizzarlo." },
+  { type: 'paragraph', html: "Controlla dati, unità, arrotondamento, data e giurisdizione, perché ciascun elemento può cambiare la stima." },
+  { type: 'paragraph', html: "Usa il risultato per pianificare e confrontare scenari; non sostituisce un calcolo ufficiale o una consulenza professionale." },
+  { type: 'paragraph', html: "Interpreta il risultato insieme alle ipotesi mostrate dal calcolatore prima di utilizzarlo." },
+  { type: 'paragraph', html: "Controlla dati, unità, arrotondamento, data e giurisdizione, perché ciascun elemento può cambiare la stima." },
+  { type: 'paragraph', html: "Usa il risultato per pianificare e confrontare scenari; non sostituisce un calcolo ufficiale o una consulenza professionale." },
+  { type: 'paragraph', html: "Interpreta il risultato insieme alle ipotesi mostrate dal calcolatore prima di utilizzarlo." },
+  { type: 'paragraph', html: "Controlla dati, unità, arrotondamento, data e giurisdizione, perché ciascun elemento può cambiare la stima." },
+  { type: 'paragraph', html: "Usa il risultato per pianificare e confrontare scenari; non sostituisce un calcolo ufficiale o una consulenza professionale." },
+  { type: 'paragraph', html: "Interpreta il risultato insieme alle ipotesi mostrate dal calcolatore prima di utilizzarlo." },
+  { type: 'paragraph', html: "Controlla dati, unità, arrotondamento, data e giurisdizione, perché ciascun elemento può cambiare la stima." },
+  { type: 'paragraph', html: "Usa il risultato per pianificare e confrontare scenari; non sostituisce un calcolo ufficiale o una consulenza professionale." },
+  { type: 'paragraph', html: "Interpreta il risultato insieme alle ipotesi mostrate dal calcolatore prima di utilizzarlo." },
+  { type: 'paragraph', html: "Controlla dati, unità, arrotondamento, data e giurisdizione, perché ciascun elemento può cambiare la stima." },],
   ui: {
     title: 'Calcolatore Carta Revolving & Analisi Usura',
     balanceLabel: 'Debito Residuo',

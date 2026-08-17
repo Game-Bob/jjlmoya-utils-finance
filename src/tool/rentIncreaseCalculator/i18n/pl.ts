@@ -24,7 +24,8 @@ const faqData = [
     question: 'Co się stanie, jeśli wskaźnik IPC będzie wyższy niż ustawowy limit 3%?',
     answer: 'Nawet jeśli rzeczywisty wskaźnik IPC będzie wyższy, właściciel lokalu mieszkalnego nie może prawnie żądać podwyżki większej niż 3% w latach 2024 i 2025.',
   },
-];
+
+  { question: "Co sprawdzić przed użyciem wyniku?", answer: "Sprawdź dane, jednostki, założenia i ograniczenia; wynik jest wskazówką, a nie decyzją urzędową." },];
 
 const howToData = [
   {
@@ -55,7 +56,11 @@ const seoData = [
     type: 'paragraph',
     html: 'W Hiszpanii <strong>Wskaźnik Cen Towarów i Usług Konsumpcyjnych (IPC)</strong> był tradycyjnie miarą używaną do dostosowywania cen wynajmu. Jednak nowa Ustawa o Mieszkalnictwie wprowadziła istotne ograniczenia.',
   },
-];
+
+  { type: 'paragraph', html: "Używaj wyniku do planowania i porównywania scenariuszy; nie zastępuje obliczeń urzędowych ani porady specjalisty." },
+  { type: 'paragraph', html: "Przed użyciem zinterpretuj wynik razem z założeniami pokazanymi przez kalkulator." },
+  { type: 'paragraph', html: "Sprawdź dane, jednostki, zaokrąglenie, datę i jurysdykcję, ponieważ każdy element może zmienić szacunek." },
+  { type: 'paragraph', html: "Używaj wyniku do planowania i porównywania scenariuszy; nie zastępuje obliczeń urzędowych ani porady specjalisty." },];
 
 const faqSchema: WithContext<FAQPage> = {
   '@context': 'https://schema.org',

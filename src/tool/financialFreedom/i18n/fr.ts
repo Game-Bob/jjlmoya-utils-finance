@@ -75,7 +75,12 @@ export const content: ToolLocaleContent<FinancialFreedomUI> = {
       type: 'paragraph',
       html: 'La <strong>piste de survie</strong> (ou runway) est la durée pendant laquelle vous pouvez vivre sans nouveau revenu. C\'est l\'indicateur ultime de la liberté financière. Contrairement à un simple solde bancaire, la piste vous indique combien de "temps humain" vous avez acheté avec votre épargne.',
     },
-  ],
+
+  { type: 'paragraph', html: "Utilisez le résultat pour planifier et comparer des scénarios ; il ne remplace ni un calcul officiel ni un avis professionnel." },
+  { type: 'paragraph', html: "Interprétez le résultat avec les hypothèses affichées par le calculateur avant de l'utiliser." },
+  { type: 'paragraph', html: "Vérifiez les données, unités, arrondi, date et juridiction, car chacun de ces éléments peut modifier l'estimation." },
+  { type: 'paragraph', html: "Utilisez le résultat pour planifier et comparer des scénarios ; il ne remplace ni un calcul officiel ni un avis professionnel." },
+  { type: 'paragraph', html: "Interprétez le résultat avec les hypothèses affichées par le calculateur avant de l'utiliser." },],
   faq,
   bibliography: [
     {

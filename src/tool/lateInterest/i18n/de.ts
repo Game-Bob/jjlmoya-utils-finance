@@ -91,7 +91,7 @@ export const content: ToolLocaleContent<LateInterestUI> = {
   description,
   faq: faqData,
   bibliography,
-  
+
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [
@@ -174,7 +174,9 @@ export const content: ToolLocaleContent<LateInterestUI> = {
       type: 'paragraph',
       html: 'Wenn Sie Selbstständiger oder ein Unternehmen sind, legt das spanische Gesetz 3/2004 eine maximale Zahlungsfrist von 60 Tagen fest. Wenn Ihr Kunde diese Frist überschreitet, können Sie automatisch Verzugszinsen für Handelsgeschäfte verlangen, ohne dass eine Mahnung erforderlich ist, und zusätzlich einen Pauschalbetrag von 40 € für Beitreibungskosten erheben.',
     },
-  ],
+
+  { type: 'paragraph', html: "Deuten Sie das Ergebnis gemeinsam mit den angezeigten Annahmen, bevor Sie es verwenden." },
+  { type: 'paragraph', html: "Prüfen Sie Eingaben, Einheiten, Rundung, Datum und Recht, weil jedes Element die Schätzung verändern kann." },],
   ui: {
     labelTitle: 'Verzugszinsrechner',
     labelSimpleTitle: 'Einfach',

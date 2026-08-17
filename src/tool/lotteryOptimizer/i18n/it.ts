@@ -59,7 +59,9 @@ const seoData = [
     type: 'paragraph',
     html: 'Giocare alla lotteria è, per molti, l\'acquisto di un\'illusione per pochi euro. Tuttavia, dietro le estrazioni risiede una delle branche più affascinanti della matematica: la statistica delle probabilità estreme.',
   },
-];
+
+  { type: 'paragraph', html: "Usa il risultato per pianificare e confrontare scenari; non sostituisce un calcolo ufficiale o una consulenza professionale." },
+  { type: 'paragraph', html: "Interpreta il risultato insieme alle ipotesi mostrate dal calcolatore prima di utilizzarlo." },];
 
 const gameTranslations = {
   gordo: {

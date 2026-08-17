@@ -32,7 +32,8 @@ const faq = [
     question: 'Dlaczego mój CAGR różni się od całkowitego ROI?',
     answer: 'ROI to całkowity zwrot bez względu na czas. CAGR to stopa roczna.',
   },
-];
+
+  { question: "Co sprawdzić przed użyciem wyniku?", answer: "Sprawdź dane, jednostki, założenia i ograniczenia; wynik jest wskazówką, a nie decyzją urzędową." },];
 
 const howTo = [
   {
@@ -64,7 +65,12 @@ export const content: ToolLocaleContent<ProfitabilityUI> = {
       type: 'paragraph',
       html: '<strong>ROI</strong> pokazuje całkowity zysk procentowy, ale ignoruje czas. <strong>CAGR</strong> jest lepszy do analizy długoterminowej.',
     },
-  ],
+
+  { type: 'paragraph', html: "Używaj wyniku do planowania i porównywania scenariuszy; nie zastępuje obliczeń urzędowych ani porady specjalisty." },
+  { type: 'paragraph', html: "Przed użyciem zinterpretuj wynik razem z założeniami pokazanymi przez kalkulator." },
+  { type: 'paragraph', html: "Sprawdź dane, jednostki, zaokrąglenie, datę i jurysdykcję, ponieważ każdy element może zmienić szacunek." },
+  { type: 'paragraph', html: "Używaj wyniku do planowania i porównywania scenariuszy; nie zastępuje obliczeń urzędowych ani porady specjalisty." },
+  { type: 'paragraph', html: "Przed użyciem zinterpretuj wynik razem z założeniami pokazanymi przez kalkulator." },],
   faq,
   bibliography: [
     {

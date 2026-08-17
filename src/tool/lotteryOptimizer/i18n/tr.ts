@@ -59,7 +59,9 @@ const seoData = [
     type: 'paragraph',
     html: 'Piyango oynamak, birçoğu için birkaç euro karşılığında bir illüzyon satın almaktır. Ancak çekilişlerin arkasında matematiğin en büyüleyici dallarından biri olan uç olasılıkların istatistiği yatar.',
   },
-];
+
+  { type: 'paragraph', html: "Sonucu planlama ve senaryo karşılaştırması için kullanın; resmî hesabın veya uzman görüşünün yerine geçmez." },
+  { type: 'paragraph', html: "Kullanmadan önce sonucu hesaplayıcının gösterdiği varsayımlarla birlikte yorumlayın." },];
 
 const gameTranslations = {
   gordo: {

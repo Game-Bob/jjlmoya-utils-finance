@@ -91,7 +91,7 @@ export const content: ToolLocaleContent<LateInterestUI> = {
   description,
   faq: faqData,
   bibliography,
-  
+
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [
@@ -174,7 +174,9 @@ export const content: ToolLocaleContent<LateInterestUI> = {
       type: 'paragraph',
       html: '자영업자나 기업인 경우, 스페인 법률 3/2004는 최대 지불 기한을 60일로 정하고 있습니다. 고객이 이 기간을 넘기면 독촉 없이도 자동으로 상사 지연 이자를 청구할 수 있으며, 추가로 회수 비용으로 40유로의 고정 금액을 청구할 권리가 생깁니다.',
     },
-  ],
+
+  { type: 'paragraph', html: "사용하기 전에 계산기가 표시한 가정과 결과를 함께 확인하세요." },
+  { type: 'paragraph', html: "입력값, 단위, 반올림, 날짜와 관할을 확인하세요. 모두 추정값을 바꿀 수 있습니다." },],
   ui: {
     labelTitle: '지연 이자 계산기',
     labelSimpleTitle: '단리',

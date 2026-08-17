@@ -59,7 +59,9 @@ const seoData = [
     type: 'paragraph',
     html: 'Att spela på lotteri är för många köpet av en illusion för några euro. Men bakom dragningarna döljer sig en av matematikens mest fascinerande grenar: statistiken för extrema sannolikheter.',
   },
-];
+
+  { type: 'paragraph', html: "Använd resultatet för planering och scenariejämförelser; det ersätter inte en officiell beräkning eller professionell rådgivning." },
+  { type: 'paragraph', html: "Tolka resultatet tillsammans med kalkylatorns antaganden innan du använder det." },];
 
 const gameTranslations = {
   gordo: {

@@ -91,7 +91,7 @@ export const content: ToolLocaleContent<LateInterestUI> = {
   description,
   faq: faqData,
   bibliography,
-  
+
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [
@@ -174,7 +174,9 @@ export const content: ToolLocaleContent<LateInterestUI> = {
       type: 'paragraph',
       html: 'Om du är egenföretagare eller ett företag fastställer spansk lag 3/2004 en maximal betalningsfrist på 60 dagar. Om din kund överskrider det datumet kan du automatiskt kräva kommersiell dröjsmålsränta utan påminnelser, och dessutom ta ut ett fast belopp på 40 € för inkassokostnader.',
     },
-  ],
+
+  { type: 'paragraph', html: "Tolka resultatet tillsammans med kalkylatorns antaganden innan du använder det." },
+  { type: 'paragraph', html: "Kontrollera indata, enheter, avrundning, datum och rättsområde eftersom varje del kan ändra uppskattningen." },],
   ui: {
     labelTitle: 'Kalkylator för dröjsmålsränta',
     labelSimpleTitle: 'Enkel',

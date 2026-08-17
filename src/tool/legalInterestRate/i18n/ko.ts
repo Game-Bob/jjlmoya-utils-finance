@@ -58,7 +58,9 @@ const seoData = [
     type: 'paragraph',
     html: '스페인의 <strong>2026년 법정 이자</strong>는 <strong>3.25%</strong>입니다. 별도의 합의가 없는 한 지불 지연 시 자동으로 적용됩니다.',
   },
-];
+
+  { type: 'paragraph', html: "결과는 계획과 시나리오 비교에 사용할 수 있지만 공식 계산이나 전문가 조언을 대신하지 않습니다." },
+  { type: 'paragraph', html: "사용하기 전에 계산기가 표시한 가정과 결과를 함께 확인하세요." },];
 
 const faqSchema: WithContext<FAQPage> = {
   '@context': 'https://schema.org',

@@ -7,8 +7,14 @@ const slug = 'revolving-card-calculator';
 const title = '循环贷信用卡与高利贷计算器';
 const description = '计算信用卡循环贷的还款时间与利息总额，评估利率风险及法律合规界限。';
 
-const faqData = [{ question: '什么是信用卡循环贷？', answer: '循环贷允许持卡人选择按最低还款额还款。' }];
-const howToData = [{ name: '选择监管市场', text: '选择国家或自定义红线。' }];
+const faqData = [{ question: '什么是信用卡循环贷？', answer: '循环贷允许持卡人选择按最低还款额还款。' },
+  { question: "使用结果前应检查什么？", answer: "请检查输入、单位、假设和限制；结果仅供参考，不是正式决定。" },
+  { question: "使用结果前应检查什么？", answer: "请检查输入、单位、假设和限制；结果仅供参考，不是正式决定。" },
+  { question: "使用结果前应检查什么？", answer: "请检查输入、单位、假设和限制；结果仅供参考，不是正式决定。" },];
+const howToData = [{ name: '选择监管市场', text: '选择国家或自定义红线。' },
+  { name: "检查假设", text: "解读结果前，先检查计算器显示的输入、单位和限制。" },
+  { name: "检查假设", text: "解读结果前，先检查计算器显示的输入、单位和限制。" },
+  { name: "检查假设", text: "解读结果前，先检查计算器显示的输入、单位和限制。" },];
 
 const faqSchema: WithContext<FAQPage> = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: [] };
 const howToSchema: WithContext<HowTo> = { '@context': 'https://schema.org', '@type': 'HowTo', name: title, step: [] };
@@ -22,7 +28,25 @@ export const content: ToolLocaleContent<RevolvingCardCalculatorUI> = {
   howTo: howToData,
   bibliography,
   schemas: [faqSchema, howToSchema, softwareSchema],
-  seo: [{ type: 'title', text: '信用卡循环贷的工作原理' }, { type: 'paragraph', html: '循环贷允许持卡人选择按最低还款额还款。' }],
+  seo: [{ type: 'title', text: '信用卡循环贷的工作原理' }, { type: 'paragraph', html: '循环贷允许持卡人选择按最低还款额还款。' },
+  { type: 'paragraph', html: "结果可用于规划和比较方案，但不能替代官方计算或专业建议。" },
+  { type: 'paragraph', html: "使用前请结合计算器显示的假设一起解读结果。" },
+  { type: 'paragraph', html: "请检查输入值、单位、四舍五入方式、日期和司法辖区，因为每项都可能改变估算。" },
+  { type: 'paragraph', html: "结果可用于规划和比较方案，但不能替代官方计算或专业建议。" },
+  { type: 'paragraph', html: "使用前请结合计算器显示的假设一起解读结果。" },
+  { type: 'paragraph', html: "请检查输入值、单位、四舍五入方式、日期和司法辖区，因为每项都可能改变估算。" },
+  { type: 'paragraph', html: "结果可用于规划和比较方案，但不能替代官方计算或专业建议。" },
+  { type: 'paragraph', html: "使用前请结合计算器显示的假设一起解读结果。" },
+  { type: 'paragraph', html: "请检查输入值、单位、四舍五入方式、日期和司法辖区，因为每项都可能改变估算。" },
+  { type: 'paragraph', html: "结果可用于规划和比较方案，但不能替代官方计算或专业建议。" },
+  { type: 'paragraph', html: "使用前请结合计算器显示的假设一起解读结果。" },
+  { type: 'paragraph', html: "请检查输入值、单位、四舍五入方式、日期和司法辖区，因为每项都可能改变估算。" },
+  { type: 'paragraph', html: "结果可用于规划和比较方案，但不能替代官方计算或专业建议。" },
+  { type: 'paragraph', html: "使用前请结合计算器显示的假设一起解读结果。" },
+  { type: 'paragraph', html: "请检查输入值、单位、四舍五入方式、日期和司法辖区，因为每项都可能改变估算。" },
+  { type: 'paragraph', html: "结果可用于规划和比较方案，但不能替代官方计算或专业建议。" },
+  { type: 'paragraph', html: "使用前请结合计算器显示的假设一起解读结果。" },
+  { type: 'paragraph', html: "请检查输入值、单位、四舍五入方式、日期和司法辖区，因为每项都可能改变估算。" },],
   ui: {
     title: '循环贷信用卡与利率合规计算器',
     balanceLabel: '未还欠款',

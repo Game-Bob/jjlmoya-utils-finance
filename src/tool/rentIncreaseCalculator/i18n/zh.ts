@@ -24,7 +24,8 @@ const faqData = [
     question: '如果 IPC 高于 3% 的法定上限会怎样？',
     answer: '即使国家统计局公布的实际 IPC 为 5% 或 6%，在 2024 年和 2025 年期间，常住住房的房东依法也不得要求超过 3% 的涨幅。',
   },
-];
+
+  { question: "使用结果前应检查什么？", answer: "请检查输入、单位、假设和限制；结果仅供参考，不是正式决定。" },];
 
 const howToData = [
   {
@@ -55,7 +56,11 @@ const seoData = [
     type: 'paragraph',
     html: '在西班牙，<strong>消费者物价指数 (IPC)</strong> 传统上是用于调整房租价格的指标。然而，随着第 <strong>12/2023 号《住房权法》</strong>的实施，引入了每个租客和房东都必须了解的限制。',
   },
-];
+
+  { type: 'paragraph', html: "结果可用于规划和比较方案，但不能替代官方计算或专业建议。" },
+  { type: 'paragraph', html: "使用前请结合计算器显示的假设一起解读结果。" },
+  { type: 'paragraph', html: "请检查输入值、单位、四舍五入方式、日期和司法辖区，因为每项都可能改变估算。" },
+  { type: 'paragraph', html: "结果可用于规划和比较方案，但不能替代官方计算或专业建议。" },];
 
 const faqSchema: WithContext<FAQPage> = {
   '@context': 'https://schema.org',

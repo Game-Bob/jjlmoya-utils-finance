@@ -58,7 +58,9 @@ const seoData = [
     type: 'paragraph',
     html: 'スペインの<strong>2026年の法定利息</strong>は<strong>3.25%</strong>です。他の合意がない限り、支払遅延に対して自動的に適用されます。',
   },
-];
+
+  { type: 'paragraph', html: "結果は計画や条件比較に使えますが、公式計算や専門家の助言の代わりにはなりません。" },
+  { type: 'paragraph', html: "利用する前に、計算機が示す前提条件と結果を一緒に確認してください。" },];
 
 const faqSchema: WithContext<FAQPage> = {
   '@context': 'https://schema.org',

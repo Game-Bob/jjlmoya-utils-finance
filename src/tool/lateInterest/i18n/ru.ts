@@ -91,7 +91,7 @@ export const content: ToolLocaleContent<LateInterestUI> = {
   description,
   faq: faqData,
   bibliography,
-  
+
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [
@@ -174,7 +174,9 @@ export const content: ToolLocaleContent<LateInterestUI> = {
       type: 'paragraph',
       html: 'Если вы являетесь самозанятым или компанией, испанский закон 3/2004 устанавливает максимальный срок оплаты в 60 дней. Если ваш клиент нарушает этот срок, вы можете автоматически требовать уплаты коммерческих процентов за просрочку без необходимости напоминания, а также взимать фиксированную сумму в 40 € в качестве расходов по взысканию.',
     },
-  ],
+
+  { type: 'paragraph', html: "Перед использованием интерпретируйте результат вместе с допущениями, указанными калькулятором." },
+  { type: 'paragraph', html: "Проверьте ввод, единицы, округление, дату и юрисдикцию: каждый параметр может изменить оценку." },],
   ui: {
     labelTitle: 'Калькулятор процентов за просрочку',
     labelSimpleTitle: 'Простой',

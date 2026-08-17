@@ -58,7 +58,9 @@ const seoData = [
     type: 'paragraph',
     html: 'Der <strong>gesetzliche Zinssatz 2026</strong> beträgt in Spanien <strong>3,25 %</strong>. Er wird automatisch bei Zahlungsverzug angewendet, sofern nichts anderes vereinbart wurde.',
   },
-];
+
+  { type: 'paragraph', html: "Nutzen Sie das Ergebnis zur Planung und zum Szenarienvergleich; es ersetzt keine offizielle Berechnung oder Fachberatung." },
+  { type: 'paragraph', html: "Deuten Sie das Ergebnis gemeinsam mit den angezeigten Annahmen, bevor Sie es verwenden." },];
 
 const faqSchema: WithContext<FAQPage> = {
   '@context': 'https://schema.org',

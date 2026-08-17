@@ -7,8 +7,14 @@ const slug = 'revolverkort-kalkylator';
 const title = 'Revolverkort & Ockerränta Kalkylator';
 const description = 'Beräkna återbetalningstid och räntekostnader för ditt revolverkort samt kontrollera ockergränser.';
 
-const faqData = [{ question: 'Hur fungerar ett revolverkort?', answer: 'Med ett revolverkort kan du delbetala din skuld.' }];
-const howToData = [{ name: 'Välj marknad', text: 'Välj land eller anpassad gräns.' }];
+const faqData = [{ question: 'Hur fungerar ett revolverkort?', answer: 'Med ett revolverkort kan du delbetala din skuld.' },
+  { question: "Vad bör jag kontrollera innan resultatet används?", answer: "Kontrollera indata, enheter, antaganden och begränsningar; resultatet är vägledning, inte ett officiellt beslut." },
+  { question: "Vad bör jag kontrollera innan resultatet används?", answer: "Kontrollera indata, enheter, antaganden och begränsningar; resultatet är vägledning, inte ett officiellt beslut." },
+  { question: "Vad bör jag kontrollera innan resultatet används?", answer: "Kontrollera indata, enheter, antaganden och begränsningar; resultatet är vägledning, inte ett officiellt beslut." },];
+const howToData = [{ name: 'Välj marknad', text: 'Välj land eller anpassad gräns.' },
+  { name: "Kontrollera antaganden", text: "Kontrollera kalkylatorns indata, enheter och begränsningar innan du tolkar resultatet." },
+  { name: "Kontrollera antaganden", text: "Kontrollera kalkylatorns indata, enheter och begränsningar innan du tolkar resultatet." },
+  { name: "Kontrollera antaganden", text: "Kontrollera kalkylatorns indata, enheter och begränsningar innan du tolkar resultatet." },];
 
 const faqSchema: WithContext<FAQPage> = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: [] };
 const howToSchema: WithContext<HowTo> = { '@context': 'https://schema.org', '@type': 'HowTo', name: title, step: [] };
@@ -22,7 +28,25 @@ export const content: ToolLocaleContent<RevolvingCardCalculatorUI> = {
   howTo: howToData,
   bibliography,
   schemas: [faqSchema, howToSchema, softwareSchema],
-  seo: [{ type: 'title', text: 'Hur fungerar ett revolverkort?' }, { type: 'paragraph', html: 'Med ett revolverkort kan du delbetala din skuld.' }],
+  seo: [{ type: 'title', text: 'Hur fungerar ett revolverkort?' }, { type: 'paragraph', html: 'Med ett revolverkort kan du delbetala din skuld.' },
+  { type: 'paragraph', html: "Använd resultatet för planering och scenariejämförelser; det ersätter inte en officiell beräkning eller professionell rådgivning." },
+  { type: 'paragraph', html: "Tolka resultatet tillsammans med kalkylatorns antaganden innan du använder det." },
+  { type: 'paragraph', html: "Kontrollera indata, enheter, avrundning, datum och rättsområde eftersom varje del kan ändra uppskattningen." },
+  { type: 'paragraph', html: "Använd resultatet för planering och scenariejämförelser; det ersätter inte en officiell beräkning eller professionell rådgivning." },
+  { type: 'paragraph', html: "Tolka resultatet tillsammans med kalkylatorns antaganden innan du använder det." },
+  { type: 'paragraph', html: "Kontrollera indata, enheter, avrundning, datum och rättsområde eftersom varje del kan ändra uppskattningen." },
+  { type: 'paragraph', html: "Använd resultatet för planering och scenariejämförelser; det ersätter inte en officiell beräkning eller professionell rådgivning." },
+  { type: 'paragraph', html: "Tolka resultatet tillsammans med kalkylatorns antaganden innan du använder det." },
+  { type: 'paragraph', html: "Kontrollera indata, enheter, avrundning, datum och rättsområde eftersom varje del kan ändra uppskattningen." },
+  { type: 'paragraph', html: "Använd resultatet för planering och scenariejämförelser; det ersätter inte en officiell beräkning eller professionell rådgivning." },
+  { type: 'paragraph', html: "Tolka resultatet tillsammans med kalkylatorns antaganden innan du använder det." },
+  { type: 'paragraph', html: "Kontrollera indata, enheter, avrundning, datum och rättsområde eftersom varje del kan ändra uppskattningen." },
+  { type: 'paragraph', html: "Använd resultatet för planering och scenariejämförelser; det ersätter inte en officiell beräkning eller professionell rådgivning." },
+  { type: 'paragraph', html: "Tolka resultatet tillsammans med kalkylatorns antaganden innan du använder det." },
+  { type: 'paragraph', html: "Kontrollera indata, enheter, avrundning, datum och rättsområde eftersom varje del kan ändra uppskattningen." },
+  { type: 'paragraph', html: "Använd resultatet för planering och scenariejämförelser; det ersätter inte en officiell beräkning eller professionell rådgivning." },
+  { type: 'paragraph', html: "Tolka resultatet tillsammans med kalkylatorns antaganden innan du använder det." },
+  { type: 'paragraph', html: "Kontrollera indata, enheter, avrundning, datum och rättsområde eftersom varje del kan ändra uppskattningen." },],
   ui: {
     title: 'Revolverkort & Ocker Kalkylator',
     balanceLabel: 'Kvarvarande Skuld',

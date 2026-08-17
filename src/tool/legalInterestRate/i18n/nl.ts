@@ -58,7 +58,9 @@ const seoData = [
     type: 'paragraph',
     html: 'De <strong>wettelijke rente in 2026</strong> bedraagt <strong>3,25%</strong> in Spanje. Dit wordt automatisch toegepast bij betalingsachterstand als er niets anders is overeengekomen.',
   },
-];
+
+  { type: 'paragraph', html: "Gebruik het resultaat voor planning en scenariokeuze; het vervangt geen officiële berekening of professioneel advies." },
+  { type: 'paragraph', html: "Interpreteer het resultaat samen met de aannames van de calculator voordat u het gebruikt." },];
 
 const faqSchema: WithContext<FAQPage> = {
   '@context': 'https://schema.org',

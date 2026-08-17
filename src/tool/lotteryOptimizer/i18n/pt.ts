@@ -59,7 +59,9 @@ const seoData = [
     type: 'paragraph',
     html: 'Jogar na lotaria é, para muitos, a compra de uma ilusão por alguns euros. No entanto, por trás dos sorteios reside uma das áreas mais fascinantes da matemática: a estatística de probabilidades extremas.',
   },
-];
+
+  { type: 'paragraph', html: "Use o resultado para planear e comparar cenários; não substitui um cálculo oficial nem aconselhamento profissional." },
+  { type: 'paragraph', html: "Interprete o resultado juntamente com as premissas apresentadas pela calculadora antes de o utilizar." },];
 
 const gameTranslations = {
   gordo: {

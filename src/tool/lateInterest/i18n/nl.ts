@@ -91,7 +91,7 @@ export const content: ToolLocaleContent<LateInterestUI> = {
   description,
   faq: faqData,
   bibliography,
-  
+
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [
@@ -174,7 +174,9 @@ export const content: ToolLocaleContent<LateInterestUI> = {
       type: 'paragraph',
       html: 'Als u zelfstandige of een bedrijf bent, stelt de Spaanse wet 3/2004 een maximale betalingstermijn van 60 dagen vast. Als uw klant die datum overschrijdt, kunt u automatisch commerciële verzuiminterest eisen zonder herinneringen, plus een vast bedrag van € 40 voor incassokosten.',
     },
-  ],
+
+  { type: 'paragraph', html: "Interpreteer het resultaat samen met de aannames van de calculator voordat u het gebruikt." },
+  { type: 'paragraph', html: "Controleer invoer, eenheden, afronding, datum en jurisdictie, want elk onderdeel kan de schatting wijzigen." },],
   ui: {
     labelTitle: 'Verzuiminterest Calculator',
     labelSimpleTitle: 'Enkelvoudig',

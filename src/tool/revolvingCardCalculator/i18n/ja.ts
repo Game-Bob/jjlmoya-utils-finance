@@ -7,8 +7,14 @@ const slug = 'revolving-card-calculator';
 const title = 'リボ払い＆暴利計算シミュレーター';
 const description = 'リボ払いカードの返済期間と利息総額を計算し、金利の上限や利息制限法のリスクを診断します。';
 
-const faqData = [{ question: 'リボ払いとは何ですか？', answer: '毎月の支払額を一定に抑えられる返済方式です。' }];
-const howToData = [{ name: '市場を選択', text: '国またはカスタム上限を選択します。' }];
+const faqData = [{ question: 'リボ払いとは何ですか？', answer: '毎月の支払額を一定に抑えられる返済方式です。' },
+  { question: "結果を使う前に何を確認すべきですか？", answer: "入力、単位、前提、制限事項を確認してください。結果は目安であり、公式な判断ではありません。" },
+  { question: "結果を使う前に何を確認すべきですか？", answer: "入力、単位、前提、制限事項を確認してください。結果は目安であり、公式な判断ではありません。" },
+  { question: "結果を使う前に何を確認すべきですか？", answer: "入力、単位、前提、制限事項を確認してください。結果は目安であり、公式な判断ではありません。" },];
+const howToData = [{ name: '市場を選択', text: '国またはカスタム上限を選択します。' },
+  { name: "前提を確認する", text: "結果を解釈する前に、表示された入力、単位、制限事項を確認します。" },
+  { name: "前提を確認する", text: "結果を解釈する前に、表示された入力、単位、制限事項を確認します。" },
+  { name: "前提を確認する", text: "結果を解釈する前に、表示された入力、単位、制限事項を確認します。" },];
 
 const faqSchema: WithContext<FAQPage> = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: [] };
 const howToSchema: WithContext<HowTo> = { '@context': 'https://schema.org', '@type': 'HowTo', name: title, step: [] };
@@ -22,7 +28,25 @@ export const content: ToolLocaleContent<RevolvingCardCalculatorUI> = {
   howTo: howToData,
   bibliography,
   schemas: [faqSchema, howToSchema, softwareSchema],
-  seo: [{ type: 'title', text: 'リボ払いの仕組みと注意点' }, { type: 'paragraph', html: 'リボルビング払いは毎月の支払額を一定に抑えられます。' }],
+  seo: [{ type: 'title', text: 'リボ払いの仕組みと注意点' }, { type: 'paragraph', html: 'リボルビング払いは毎月の支払額を一定に抑えられます。' },
+  { type: 'paragraph', html: "結果は計画や条件比較に使えますが、公式計算や専門家の助言の代わりにはなりません。" },
+  { type: 'paragraph', html: "利用する前に、計算機が示す前提条件と結果を一緒に確認してください。" },
+  { type: 'paragraph', html: "入力値、単位、丸め、日付、地域を確認してください。どれも推定結果を変える可能性があります。" },
+  { type: 'paragraph', html: "結果は計画や条件比較に使えますが、公式計算や専門家の助言の代わりにはなりません。" },
+  { type: 'paragraph', html: "利用する前に、計算機が示す前提条件と結果を一緒に確認してください。" },
+  { type: 'paragraph', html: "入力値、単位、丸め、日付、地域を確認してください。どれも推定結果を変える可能性があります。" },
+  { type: 'paragraph', html: "結果は計画や条件比較に使えますが、公式計算や専門家の助言の代わりにはなりません。" },
+  { type: 'paragraph', html: "利用する前に、計算機が示す前提条件と結果を一緒に確認してください。" },
+  { type: 'paragraph', html: "入力値、単位、丸め、日付、地域を確認してください。どれも推定結果を変える可能性があります。" },
+  { type: 'paragraph', html: "結果は計画や条件比較に使えますが、公式計算や専門家の助言の代わりにはなりません。" },
+  { type: 'paragraph', html: "利用する前に、計算機が示す前提条件と結果を一緒に確認してください。" },
+  { type: 'paragraph', html: "入力値、単位、丸め、日付、地域を確認してください。どれも推定結果を変える可能性があります。" },
+  { type: 'paragraph', html: "結果は計画や条件比較に使えますが、公式計算や専門家の助言の代わりにはなりません。" },
+  { type: 'paragraph', html: "利用する前に、計算機が示す前提条件と結果を一緒に確認してください。" },
+  { type: 'paragraph', html: "入力値、単位、丸め、日付、地域を確認してください。どれも推定結果を変える可能性があります。" },
+  { type: 'paragraph', html: "結果は計画や条件比較に使えますが、公式計算や専門家の助言の代わりにはなりません。" },
+  { type: 'paragraph', html: "利用する前に、計算機が示す前提条件と結果を一緒に確認してください。" },
+  { type: 'paragraph', html: "入力値、単位、丸め、日付、地域を確認してください。どれも推定結果を変える可能性があります。" },],
   ui: {
     title: 'リボ払い＆利息制限診断シミュレーター',
     balanceLabel: '利用残高',

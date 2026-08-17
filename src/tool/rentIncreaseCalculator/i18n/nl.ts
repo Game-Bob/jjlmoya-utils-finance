@@ -24,7 +24,8 @@ const faqData = [
     question: 'Wat gebeurt er als de IPC hoger is dan de wettelijke limiet van 3%?',
     answer: 'Zelfs als de werkelijke IPC hoger is, mag de eigenaar van een hoofdverblijf in 2024 und 2025 wettelijk geen verhoging van meer dan 3% eisen.',
   },
-];
+
+  { question: "Wat moet ik controleren voordat ik het resultaat gebruik?", answer: "Controleer invoer, eenheden, aannames en beperkingen; het resultaat is een richtlijn, geen officiële beslissing." },];
 
 const howToData = [
   {
@@ -55,7 +56,11 @@ const seoData = [
     type: 'paragraph',
     html: 'In Spanje wordt de <strong>Consumentenprijsindex (IPC)</strong> traditioneel gebruikt om de huurprijs aan te passen. De nieuwe Woonwet heeft echter belangrijke limieten geïntroduceerd.',
   },
-];
+
+  { type: 'paragraph', html: "Gebruik het resultaat voor planning en scenariokeuze; het vervangt geen officiële berekening of professioneel advies." },
+  { type: 'paragraph', html: "Interpreteer het resultaat samen met de aannames van de calculator voordat u het gebruikt." },
+  { type: 'paragraph', html: "Controleer invoer, eenheden, afronding, datum en jurisdictie, want elk onderdeel kan de schatting wijzigen." },
+  { type: 'paragraph', html: "Gebruik het resultaat voor planning en scenariokeuze; het vervangt geen officiële berekening of professioneel advies." },];
 
 const faqSchema: WithContext<FAQPage> = {
   '@context': 'https://schema.org',

@@ -58,7 +58,9 @@ const seoData = [
     type: 'paragraph',
     html: 'Den <strong>lagstadgade räntan 2026</strong> är <strong>3,25 %</strong> i Spanien. Den tillämpas automatiskt vid försening om inget annat har avtalats.',
   },
-];
+
+  { type: 'paragraph', html: "Använd resultatet för planering och scenariejämförelser; det ersätter inte en officiell beräkning eller professionell rådgivning." },
+  { type: 'paragraph', html: "Tolka resultatet tillsammans med kalkylatorns antaganden innan du använder det." },];
 
 const faqSchema: WithContext<FAQPage> = {
   '@context': 'https://schema.org',

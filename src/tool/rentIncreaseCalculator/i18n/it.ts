@@ -24,7 +24,8 @@ const faqData = [
     question: 'Cosa succede se l\'IPC è superiore al limite legale del 3%?',
     answer: 'Anche se l\'IPC reale è superiore, il proprietario di un\'abitazione principale non può richiedere legalmente un aumento superiore al 3% durante il 2024 e il 2025.',
   },
-];
+
+  { question: "Cosa devo verificare prima di usare il risultato?", answer: "Controlla dati, unità, ipotesi e limiti; è un'indicazione, non una decisione ufficiale." },];
 
 const howToData = [
   {
@@ -55,7 +56,11 @@ const seoData = [
     type: 'paragraph',
     html: 'In Spagna, l\'<strong>Indice dei Prezzi al Consumo (IPC)</strong> è tradizionalmente lo strumento utilizzato per adeguare il prezzo dell\'affitto. Tuttavia, la nuova Legge sulla Casa ha introdotto limiti importanti.',
   },
-];
+
+  { type: 'paragraph', html: "Usa il risultato per pianificare e confrontare scenari; non sostituisce un calcolo ufficiale o una consulenza professionale." },
+  { type: 'paragraph', html: "Interpreta il risultato insieme alle ipotesi mostrate dal calcolatore prima di utilizzarlo." },
+  { type: 'paragraph', html: "Controlla dati, unità, arrotondamento, data e giurisdizione, perché ciascun elemento può cambiare la stima." },
+  { type: 'paragraph', html: "Usa il risultato per pianificare e confrontare scenari; non sostituisce un calcolo ufficiale o una consulenza professionale." },];
 
 const faqSchema: WithContext<FAQPage> = {
   '@context': 'https://schema.org',

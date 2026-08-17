@@ -104,7 +104,9 @@ export const content: ToolLocaleContent<ProfitabilityUI> = {
         },
       ],
     },
-  ],
+
+  { type: 'paragraph', html: "Usa el resultado para planificar y comparar escenarios; no sustituye un cálculo oficial ni el asesoramiento profesional." },
+  { type: 'paragraph', html: "Interpreta el resultado junto con los supuestos que muestra la calculadora antes de utilizarlo." },],
   faq,
   bibliography: [
     {
