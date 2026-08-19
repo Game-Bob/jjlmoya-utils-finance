@@ -30,4 +30,4 @@ export { LEGAL_INTEREST_RATE_TOOL } from './tool/legalInterestRate';
 export { FIRE_CALCULATOR_TOOL } from './tool/fireCalculator';
 export { DEBT_SNOWBALL_TOOL } from './tool/debtSnowball';
 export { REVOLVING_CARD_CALCULATOR_TOOL } from './tool/revolvingCardCalculator';
-
+export { PESETA_VALUE_TOOL } from './tool/pesetaValue';

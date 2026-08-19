@@ -1,0 +1,33 @@
+export interface PesetaValueUI extends Record<string, string> {
+  labelAmount: string;
+  labelAmountHint: string;
+  labelOriginYear: string;
+  labelOriginYearHint: string;
+  labelReferenceYear: string;
+  labelNominalEuros: string;
+  labelTodayValue: string;
+  labelPurchasingPowerChange: string;
+  labelNominalDifference: string;
+  labelConversionRate: string;
+  labelCpiMethod: string;
+  labelPreset100: string;
+  labelPreset1000: string;
+  labelPreset10000: string;
+  labelPreset100000: string;
+  labelPesetas: string;
+  labelEuro: string;
+  labelFrom: string;
+  labelTo: string;
+  labelOpenYears: string;
+  labelCloseYears: string;
+  labelDecade: string;
+  labelCoin: string;
+  labelBanknote: string;
+  labelCashPieces: string;
+  labelState: string;
+  labelStatePositive: string;
+  labelStateNeutral: string;
+  labelStateNegative: string;
+  labelReset: string;
+  currencyLocale: string;
+}

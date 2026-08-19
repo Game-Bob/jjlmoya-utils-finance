@@ -1,0 +1,86 @@
+---
+import type { PesetaValueUI } from './ui';
+import { getSupportedYears, REFERENCE_YEAR } from './logic';
+
+interface Props {
+  ui: PesetaValueUI;
+}
+
+const { ui } = Astro.props;
+const years = getSupportedYears();
+const decades = [...new Set(years.map((year) => Math.floor(year / 10) * 10))];
+---
+
+<div class="pv-tool" data-peseta-value>
+  <script is:inline type="application/json" data-peseta-config set:html={JSON.stringify(ui)}></script>
+  <div class="pv-stage">
+    <div class="pv-controls">
+      <div class="pv-control-heading">
+        <span class="pv-eyebrow">{ui.labelAmountHint}</span>
+        <span class="pv-amount-label" data-amount-label>1,000 {ui.labelPesetas}</span>
+      </div>
+      <label class="pv-label" for="pv-amount">{ui.labelAmount}</label>
+      <div class="pv-amount-field">
+        <input id="pv-amount" data-peseta-input type="number" min="1" step="1" value="1000" inputmode="numeric" />
+        <span>{ui.labelPesetas}</span>
+      </div>
+      <div class="pv-presets" aria-label={ui.labelAmountHint}>
+        <button type="button" data-preset="100">{ui.labelPreset100}</button>
+        <button type="button" data-preset="1000" class="is-active">{ui.labelPreset1000}</button>
+        <button type="button" data-preset="10000">{ui.labelPreset10000}</button>
+        <button type="button" data-preset="100000">{ui.labelPreset100000}</button>
+      </div>
+      <div class="pv-year-control">
+        <span class="pv-label">{ui.labelOriginYear}</span>
+        <div class="pv-select" data-year-select>
+          <button type="button" class="pv-select-trigger" data-year-trigger aria-expanded="false" aria-haspopup="listbox">2000</button>
+          <div class="pv-year-menu" data-year-menu role="listbox" aria-label={ui.labelOpenYears}>
+            <div class="pv-decade-nav" role="tablist" aria-label={ui.labelDecade}>
+              {decades.map((decade) => <button type="button" data-decade={decade} class:is-active={decade === 2000} role="tab" aria-selected={decade === 2000}>{decade}s</button>)}
+            </div>
+            <div class="pv-year-grid">
+              {years.map((year) => <button type="button" data-year-option data-year={year} data-decade={Math.floor(year / 10) * 10} class:is-selected={year === 2000} role="option" aria-selected={year === 2000} hidden={Math.floor(year / 10) * 10 !== 2000}>{year}</button>)}
+            </div>
+          </div>
+        </div>
+        <input type="hidden" data-year-value value="2000" />
+        <span class="pv-help">{ui.labelOriginYearHint}</span>
+      </div>
+      <button type="button" class="pv-reset" data-reset>{ui.labelReset}</button>
+    </div>
+
+    <div class="pv-visual" aria-live="polite">
+      <div class="pv-skyline" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+      <div class="pv-cash-scene" data-cash-scene>
+        <div class="pv-cash-pieces" data-cash-pieces aria-label={ui.labelCashPieces}>
+          <div class="pv-cash-piece pv-cash-banknote pv-cash-value-1000" data-cash-initial aria-hidden="true"><strong>1,000</strong></div>
+        </div>
+        <span class="pv-cash-caption" data-cash-caption>1,000 {ui.labelPesetas}</span>
+      </div>
+      <div class="pv-orbit"><span class="pv-orbit-dot"></span></div>
+      <div class="pv-visual-caption" aria-label={ui.labelReferenceYear}><span>{ui.labelFrom} <strong data-result-origin>2000</strong></span><span>{ui.labelTo} <strong data-result-reference>{REFERENCE_YEAR}</strong></span></div>
+      <div class="pv-state"><span class="pv-state-dot"></span><span data-result-state-label>{ui.labelState}</span></div>
+    </div>
+  </div>
+
+  <div class="pv-results">
+    <div class="pv-result-main">
+      <span class="pv-result-kicker">{ui.labelTodayValue}</span>
+      <strong data-result-adjusted aria-label={ui.labelEuro}>€0.00</strong>
+      <span class="pv-result-note" data-result-change aria-label={ui.labelPurchasingPowerChange}>0.0%</span>
+    </div>
+    <div class="pv-result-grid">
+      <div><span>{ui.labelNominalEuros}</span><strong data-result-nominal>€0.00</strong></div>
+      <div><span>{ui.labelNominalDifference}</span><strong data-result-difference>€0.00</strong></div>
+      <div><span>{ui.labelConversionRate}</span><strong>166.386</strong></div>
+      <div><span>{ui.labelCpiMethod}</span><strong data-result-cpi>1.00×</strong></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  import { mountPesetaValue } from './controller';
+  const root = document.querySelector<HTMLElement>('[data-peseta-value]');
+  const config = root?.querySelector('[data-peseta-config]');
+  if (root && config?.textContent) mountPesetaValue(root, JSON.parse(config.textContent));
+</script>
