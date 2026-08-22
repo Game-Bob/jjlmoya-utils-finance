@@ -1,0 +1,130 @@
+---
+import { calculateSalaryCost, DEFAULT_SALARY_INPUT } from './logic';
+import type { SalaryEmployerCostUI } from './ui';
+
+interface Props {
+  ui: SalaryEmployerCostUI;
+}
+
+const { ui } = Astro.props;
+const initial = calculateSalaryCost(DEFAULT_SALARY_INPUT);
+if (!initial) return null;
+const money = (value: number) => new Intl.NumberFormat(ui.currencyLocale, {
+  style: 'currency',
+  currency: 'EUR',
+  maximumFractionDigits: 2,
+}).format(value);
+const netShare = initial.annualNet / initial.annualEmployerCost * 100;
+const irpfShare = netShare + initial.annualIrpf / initial.annualEmployerCost * 100;
+const employeeShare = irpfShare + initial.annualEmployeeSocialSecurity / initial.annualEmployerCost * 100;
+const orbitStyle = `--orbit-net:${netShare}%;--orbit-irpf:${irpfShare}%;--orbit-employee:${employeeShare}%`;
+---
+
+<section class="salary-orbit" data-salary-tool data-valid="true" style={orbitStyle}>
+  <form class="salary-orbit-console" novalidate>
+    <div class="salary-orbit-eyebrow">{ui.labelGrossSalary}</div>
+    <div class="salary-orbit-amount">
+      <label class="salary-orbit-amount-field" for="salary-orbit-amount">
+        <span>{ui.labelGrossSalaryHint}</span>
+        <span class="salary-orbit-number-wrap">
+          <input id="salary-orbit-amount" data-input-amount type="number" min="17094" max="240000" step="100" value="30000" inputmode="decimal" />
+          <b aria-hidden="true">€</b>
+        </span>
+      </label>
+      <div class="salary-orbit-switch" role="group" aria-label={ui.labelGrossSalary}>
+        <button type="button" class="is-active" data-field="amountMode" data-value="annual" aria-pressed="true">{ui.labelAnnual}</button>
+        <button type="button" data-field="amountMode" data-value="monthly" aria-pressed="false">{ui.labelMonthly}</button>
+      </div>
+    </div>
+    <input class="salary-orbit-beam" data-input-amount type="range" min="17094" max="240000" step="100" value="30000" aria-label={ui.labelGrossSalary} />
+
+    <div class="salary-orbit-choice-line">
+      <fieldset>
+        <legend>{ui.labelPaySchedule}</legend>
+        <div class="salary-orbit-switch">
+          <button type="button" data-field="payPeriods" data-value="12" aria-pressed="false">{ui.labelTwelvePayments}</button>
+          <button type="button" class="is-active" data-field="payPeriods" data-value="14" aria-pressed="true">{ui.labelFourteenPayments}</button>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>{ui.labelContract}</legend>
+        <div class="salary-orbit-switch">
+          <button type="button" class="is-active" data-field="contractType" data-value="permanent" aria-pressed="true">{ui.labelPermanent}</button>
+          <button type="button" data-field="contractType" data-value="temporary" aria-pressed="false">{ui.labelTemporary}</button>
+        </div>
+      </fieldset>
+    </div>
+
+    <label class="salary-orbit-dial" for="salary-orbit-irpf">
+      <span><b>{ui.labelIrpfRate}</b><small>{ui.labelIrpfHint}</small></span>
+      <output data-output-irpf for="salary-orbit-irpf">15.0%</output>
+      <input id="salary-orbit-irpf" data-input-irpf type="range" min="0" max="47" step="0.1" value="15" />
+    </label>
+
+    <label class="salary-orbit-dial" for="salary-orbit-risk">
+      <span><b>{ui.labelRiskRate}</b><small>{ui.labelRiskHint}</small></span>
+      <output data-output-risk for="salary-orbit-risk">1.50%</output>
+      <input id="salary-orbit-risk" data-input-risk type="range" min="0.9" max="7.15" step="0.05" value="1.5" />
+    </label>
+    <div class="salary-orbit-presets" role="group" aria-label={ui.labelRiskRate}>
+      <button type="button" class="is-active" data-field="riskRate" data-value="1.5" aria-pressed="true">{ui.labelOfficePreset}</button>
+      <button type="button" data-field="riskRate" data-value="2" aria-pressed="false">{ui.labelTradePreset}</button>
+      <button type="button" data-field="riskRate" data-value="6.7" aria-pressed="false">{ui.labelConstructionPreset}</button>
+    </div>
+
+    <div class="salary-orbit-console-foot">
+      <span>{ui.labelPrivacy}</span>
+      <button type="button" data-action="reset">{ui.labelReset}</button>
+    </div>
+  </form>
+
+  <div class="salary-orbit-observatory" aria-live="polite">
+    <div class="salary-orbit-view-switch" role="group" aria-label={ui.labelAnnualView}>
+      <button type="button" class="is-active" data-field="view" data-value="annual" aria-pressed="true">{ui.labelAnnualView}</button>
+      <button type="button" data-field="view" data-value="payment" aria-pressed="false">{ui.labelPerPaymentView}</button>
+    </div>
+
+    <div class="salary-orbit-status" data-result-state data-state="typical">{ui.labelTypicalGap}</div>
+    <div class="salary-orbit-art">
+      <div class="salary-orbit-trail salary-orbit-trail-outer"></div>
+      <div class="salary-orbit-trail salary-orbit-trail-inner"></div>
+      <div class="salary-orbit-disc">
+        <span>{ui.labelNetCore}</span>
+        <strong data-result-net>{money(initial.annualNet)}</strong>
+        <small>{ui.labelWorkerKeeps} <b data-result-keeps>{initial.workerKeepsPercent.toFixed(1)}%</b></small>
+      </div>
+      <div class="salary-orbit-annotation salary-orbit-annotation-gross">
+        <span>{ui.labelGross}</span><strong data-result-gross>{money(initial.annualGross)}</strong>
+      </div>
+      <div class="salary-orbit-annotation salary-orbit-annotation-irpf">
+        <span>{ui.labelIrpf}</span><strong data-result-irpf>{money(initial.annualIrpf)}</strong>
+      </div>
+      <div class="salary-orbit-annotation salary-orbit-annotation-employee">
+        <span>{ui.labelEmployeeSocialSecurity}</span><strong data-result-employee>{money(initial.annualEmployeeSocialSecurity)}</strong>
+      </div>
+      <div class="salary-orbit-annotation salary-orbit-annotation-employer">
+        <span>{ui.labelEmployerHalo}</span><strong data-result-employer>{money(initial.annualEmployerSocialSecurity)}</strong>
+      </div>
+    </div>
+
+    <div class="salary-orbit-total">
+      <span>{ui.labelEmployerCost}</span>
+      <strong data-result-cost>{money(initial.annualEmployerCost)}</strong>
+    </div>
+    <div class="salary-orbit-metrics">
+      <div><span>{ui.labelContributionBase}</span><strong data-result-base>{money(initial.monthlyContributionBase)}</strong></div>
+      <div><span>{ui.labelCostMultiplier}</span><strong data-result-multiplier>{initial.costMultiplier.toFixed(3)}x</strong></div>
+      <div><span>{ui.labelEmployeeDeductions}</span><strong>{ui.labelDeductionsFormula}</strong></div>
+    </div>
+    <p class="salary-orbit-scope">{ui.labelModelScope} {ui.labelMinimumSalary}</p>
+    <div class="salary-orbit-invalid" data-invalid-message>{ui.labelInvalid}</div>
+  </div>
+
+  <script is:inline type="application/json" data-salary-config set:html={JSON.stringify({ ui })} />
+</section>
+
+<script>
+  import { initSalaryEmployerCost } from './controller';
+
+  document.querySelectorAll<HTMLElement>('[data-salary-tool]').forEach(initSalaryEmployerCost);
+</script>
