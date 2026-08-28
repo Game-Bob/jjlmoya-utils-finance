@@ -1,0 +1,83 @@
+---
+import type { DividendYieldUI } from './ui';
+import { calculateDividendYield } from './logic';
+import { renderCouponScene, renderResults } from './dom-views';
+import './dividend-yield-calculator.css';
+
+interface Props {
+  ui: DividendYieldUI;
+  locale?: string;
+}
+
+const { ui } = Astro.props;
+const initial = {
+  pricePerShare: 100,
+  dividendPerPayment: 1,
+  cadence: 'quarterly' as const,
+  shares: 50,
+  withholdingRate: 0,
+  growthRate: 0,
+};
+const initialResult = calculateDividendYield(initial);
+const config = JSON.stringify({ ui, initial });
+---
+
+<div class="dividend-yield-tool" data-dividend-yield-tool>
+  <form class="dy-inputs" aria-label="Dividend yield inputs">
+    <div class="dy-field dy-field-wide">
+      <label for="dy-price">{ui.priceLabel}</label>
+      <input id="dy-price" data-dividend-input="price" type="number" min="0.01" step="0.01" value={initial.pricePerShare} inputmode="decimal" />
+      <span>{ui.priceHelp}</span>
+    </div>
+    <div class="dy-field dy-field-wide">
+      <label for="dy-dividend">{ui.dividendLabel}</label>
+      <input id="dy-dividend" data-dividend-input="dividend" type="number" min="0" step="0.01" value={initial.dividendPerPayment} inputmode="decimal" />
+      <span>{ui.dividendHelp}</span>
+    </div>
+    <fieldset class="dy-cadence">
+      <legend>{ui.cadenceLabel}</legend>
+      <div class="dy-cadence-options">
+        <button type="button" data-dividend-cadence="annual" aria-pressed="false">{ui.annualOption}</button>
+        <button type="button" data-dividend-cadence="quarterly" class="is-active" aria-pressed="true">{ui.quarterlyOption}</button>
+      </div>
+    </fieldset>
+    <div class="dy-field">
+      <label for="dy-shares">{ui.sharesLabel}</label>
+      <input id="dy-shares" data-dividend-input="shares" type="number" min="0" step="1" value={initial.shares} inputmode="numeric" />
+      <span>{ui.sharesHelp}</span>
+    </div>
+    <div class="dy-field">
+      <label for="dy-withholding">{ui.withholdingLabel}</label>
+      <input id="dy-withholding" data-dividend-input="withholding" type="number" min="0" max="100" step="0.1" value={initial.withholdingRate} inputmode="decimal" />
+      <span>{ui.withholdingHelp}</span>
+    </div>
+    <div class="dy-field">
+      <label for="dy-growth">{ui.growthLabel}</label>
+      <input id="dy-growth" data-dividend-input="growth" type="number" min="-100" step="0.1" value={initial.growthRate} inputmode="decimal" />
+      <span>{ui.growthHelp}</span>
+    </div>
+  </form>
+
+  <section class="dy-output" aria-live="polite">
+    <div class="dy-scene-wrap" data-dividend-scene set:html={initialResult ? renderCouponScene(initialResult, ui) : ''}></div>
+    <div class="dy-results" data-dividend-results set:html={initialResult ? renderResults(initialResult, ui) : ''}></div>
+    <p class="dy-error" data-dividend-error hidden>{ui.emptyMessage}</p>
+  </section>
+
+  <details class="dy-method">
+    <summary>{ui.formulaTitle}</summary>
+    <p>{ui.formulaText}</p>
+    <p class="dy-risk-note">{ui.riskNote}</p>
+  </details>
+</div>
+
+<script is:inline type="application/json" data-dividend-yield-config set:html={config}></script>
+<script>
+  import { initDividendYield } from './controller';
+
+  const root = document.querySelector<HTMLElement>('[data-dividend-yield-tool]');
+  const configElement = document.querySelector<HTMLScriptElement>('[data-dividend-yield-config]');
+  if (root && configElement?.textContent) {
+    initDividendYield(root, JSON.parse(configElement.textContent));
+  }
+</script>

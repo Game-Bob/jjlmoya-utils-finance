@@ -1,0 +1,25 @@
+import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
+import type { ToolLocaleContent } from '../../../types';
+import type { DividendYieldUI } from '../ui';
+import { bibliography } from '../bibliography';
+
+const title = '股票股息率计算器';
+const description = '根据股票数据计算税前和扣缴后股息率、年度收入以及股息增长情景。';
+const faq = [{ question: '股息率如何计算？', answer: '将每次股息乘以每年的支付次数，除以股价，再乘以100。季度支付需要先乘以四。' }, { question: '应该输入年度股息还是季度股息？', answer: '选择与输入金额对应的支付频率。计算器会自动把季度支付折算为年度金额。' }, { question: '税前和税后股息收入有什么区别？', answer: '税前收入是扣除输入的预扣比例之前的年度股息。税后收入只是应用该比例的简单估算，实际税额可能不同。' }, { question: '高股息率是否代表股票更好？', answer: '不一定。股价下跌会让股息率升高，公司也可能降低或停止分红。应分别研究公司和相关风险。' }];
+const howTo = [{ name: '输入股价', text: '输入要作为参考的每股价格。' }, { name: '添加股息支付', text: '输入每股股息，并选择年度或季度支付。' }, { name: '查看结果', text: '查看税前股息率、扣缴后股息率和年度收入。增长率只用于单独的情景。' }];
+const faqSchema: WithContext<FAQPage> = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faq.map((item) => ({ '@type': 'Question', name: item.question, acceptedAnswer: { '@type': 'Answer', text: item.answer } })) };
+const howToSchema: WithContext<HowTo> = { '@context': 'https://schema.org', '@type': 'HowTo', name: title, description, step: howTo.map((step, index) => ({ '@type': 'HowToStep', position: index + 1, name: step.name, text: step.text })) };
+const appSchema: WithContext<SoftwareApplication> = { '@context': 'https://schema.org', '@type': 'SoftwareApplication', name: title, description, applicationCategory: 'FinanceApplication', operatingSystem: 'All', offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' }, inLanguage: 'zh' };
+const ui: DividendYieldUI = { priceLabel: '股价', priceHelp: '输入所用货币的金额', dividendLabel: '每次股息', dividendHelp: '输入同一货币的每股金额', cadenceLabel: '支付频率', annualOption: '每年', quarterlyOption: '每季度', sharesLabel: '持有股数', sharesHelp: '计算总收入时可选', withholdingLabel: '预扣比例 (%)', withholdingHelp: '用于简单估算税后收入', growthLabel: '假设增长率 (%)', growthHelp: '未来情景的可选输入', grossYieldLabel: '税前股息率', netYieldLabel: '扣缴后', grossIncomeLabel: '税前年收入', netIncomeLabel: '税后年收入', annualDividendLabel: '年度股息', priceShareLabel: '股价', couponNote: '此条带将年度股息显示为输入股价的一部分。', forwardTitle: '使用增长假设的未来情景', forwardYieldLabel: '股息按输入增长时的股息率', forwardDividendLabel: '未来每股股息', growthNote: '这是情景，不是预测。', formulaTitle: '计算方法', formulaText: '每股年度股息等于每次支付金额乘以年度支付次数。税前股息率等于每股年度股息除以股价再乘以100。税后收入会将预扣比例应用于税前收入。增长率只改变未来情景。', riskNote: '股息率是根据输入数字得到的比例，不包括股价变化、费用、减息、通胀以及公司改变分红的风险。', emptyMessage: '输入正数股价和不小于零的股息后即可查看结果。', annualSuffix: '每年', perShareSuffix: '每股', percentageSuffix: '%', };
+const p = (html: string) => ({ type: 'paragraph' as const, html: `<p>${html}</p>` });
+export const content: ToolLocaleContent<DividendYieldUI> = { slug: 'dividend-yield-calculator', title, description, ui, faq, bibliography, howTo, schemas: [faqSchema, howToSchema, appSchema], seo: [
+  { type: 'title', text: '理解并计算股票股息率', level: 2 }, p('股息率把股票一年的现金分红与作为参考的股价进行比较。本计算器会把每次支付换算成年金额，除以股价并显示百分比，也会按照持有股数估算年度收入，并单独展示扣缴后的简单情景。'), p('结果是一个比例，不是收益保证。股价变化、费用、汇率、特别股息以及公司减息或停发股息的风险都不包括在内。请把它作为比较数字的起点，然后研究公司和具体股票。'),
+  { type: 'title', text: '股息率公式', level: 3 }, p('<strong>股息率 = 每股年度股息 / 股价 x 100</strong>。季度支付在计算前会乘以四，年度支付则直接使用输入金额。'),
+  { type: 'table', headers: ['数值', '计算', '用途'], rows: [['每股年度股息', '每次金额 x 每年支付次数', '让年度和季度支付可以用同一标准比较'], ['税前股息率', '年度股息 / 股价 x 100', '显示分红占参考股价的比例'], ['税前年收入', '每股年度股息 x 股数', '估算预扣之前的收入'], ['税后年收入', '税前收入 x (1 - 预扣比例 / 100)', '提供应用输入比例后的简单估算']] },
+  { type: 'title', text: '年度和季度支付示例', level: 3 }, p('假设股价为100，每季度支付1。年度股息为1 x 4 = 4，税前股息率为4 / 100 x 100 = 4%。持有50股时，预扣前的估计年收入为200。'), p('如果同一股票每年支付一次4，股息率仍然是4%。支付频率只影响年度换算，选错频率会使结果失真。'),
+  { type: 'title', text: '股价为什么会改变股息率', level: 3 }, p('即使公司维持相同股息，股息率也会变化。年度股息为4时，股价100对应4%，股价80对应5%。较高的比例不一定代表公司盈利能力提高，也可能只是市场价格下跌。'), p('比较股票时使用相同的价格口径，例如当前价格、某日收盘价或买入价，并记录价格日期和股息期间，因为这些因素都会影响解释。不要把按历史买入价计算的个人收益率与新投资者按当前价格看到的市场股息率混为一谈；它们回答的是不同问题。'),
+  { type: 'title', text: '区分股息率、预扣和收入', level: 3 }, { type: 'comparative', columns: 3, items: [{ title: '税前股息率', description: '每股年度股息与参考股价的比较。', points: ['比较分红和价格', '不扣除预扣', '不包括股价盈亏'] }, { title: '扣缴后股息率', description: '税前股息率减去输入的比例。', points: ['用于计划的简单情景', '实际税务可能不同', '不是报税结果'], highlight: true }, { title: '年度收入', description: '由年度股息和持有股数得到的现金金额。', points: ['税前收入不扣预扣', '税后收入使用输入比例', '取决于股数'] }] }, p('预扣比例不一定等于最终税负。居住地、公司所在国家、账户类型、税收协定和退税程序都可能产生影响。计算器只会机械地应用输入比例。'),
+  { type: 'title', text: '如何正确使用计算器', level: 3 }, { type: 'list', items: ['股价和股息使用同一货币，并保持可比较的时间口径。', '根据输入金额的频率选择每年或每季度。', '需要总收入时再输入持有股数。', '把预扣比例作为明确假设，并单独确认适用规则。', '用增长率测试情景，不要把它当作未来预测。', '比较结果时记录股价日期和股息期间。'] },
+  { type: 'title', text: '高股息率能说明什么，不能说明什么', level: 3 }, p('高股息率可能来自较大的分红，也可能来自股价下跌。它应当促使你进一步研究，而不是成为单独的买入信号。请查看现金流、利润、负债、分红历史、公司政策和最新公告，也要确认分红是否来自持续经营，而不是一次性事件。'), { type: 'tip', title: '把增长率当作情景', html: '<p>未来视图只把输入的增长率应用到当前股息，不会模拟再投资、股价、派息率、利润增长或公司未来决策。请将结果标记为假设。</p>' },
+  { type: 'title', text: '本股息率计算器的限制', level: 3 }, p('本工具处理定期每股支付、年度或季度频率、可选股数、输入的预扣比例和一步增长情景。它不会预测总股东回报、评估股息安全性、处理特别股息、换算货币或计算当地税费。它也不会判断某家公司是否适合你的投资目标。做决定前，应结合公司公告、财务报告、分红政策和自己的风险承受能力，并确认数字所对应的日期和期间。还要注意，过去的股息并不能保证未来继续支付，市场价格也可能大幅波动，任何结果都需要结合实际背景解读和审慎判断。请勿忽视风险和不确定性。'),
+] };

@@ -1,0 +1,33 @@
+export interface DividendYieldUI extends Record<string, string> {
+  priceLabel: string;
+  priceHelp: string;
+  dividendLabel: string;
+  dividendHelp: string;
+  cadenceLabel: string;
+  annualOption: string;
+  quarterlyOption: string;
+  sharesLabel: string;
+  sharesHelp: string;
+  withholdingLabel: string;
+  withholdingHelp: string;
+  growthLabel: string;
+  growthHelp: string;
+  grossYieldLabel: string;
+  netYieldLabel: string;
+  grossIncomeLabel: string;
+  netIncomeLabel: string;
+  annualDividendLabel: string;
+  priceShareLabel: string;
+  couponNote: string;
+  forwardTitle: string;
+  forwardYieldLabel: string;
+  forwardDividendLabel: string;
+  growthNote: string;
+  formulaTitle: string;
+  formulaText: string;
+  riskNote: string;
+  emptyMessage: string;
+  annualSuffix: string;
+  perShareSuffix: string;
+  percentageSuffix: string;
+}
