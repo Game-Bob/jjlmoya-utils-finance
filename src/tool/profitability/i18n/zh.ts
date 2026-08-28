@@ -66,8 +66,8 @@ export const content: ToolLocaleContent<ProfitabilityUI> = {
       html: '<strong>ROI</strong> 显示总收益百分比，但忽略了时间。<strong>CAGR</strong> 对于长期分析更具优势，因为它将回报"年化"。',
     },
 
-  { type: 'paragraph', html: "结果可用于规划和比较方案，但不能替代官方计算或专业建议。" },
-  { type: 'paragraph', html: "使用前请结合计算器显示的假设一起解读结果。" },
+  { type: 'paragraph', html: "结果可用于规划和比较方案，但不能替代官方计算或专业建议。比较不同投资时，请确保初始价值、最终价值、持有期限和费用采用相同口径，并确认增长率没有把一次性收益误当成年化回报。" },
+  { type: 'paragraph', html: "使用前请结合计算器显示的假设一起解读结果。ROI适合查看一次投资的总体回报，而CAGR更适合把不同持有期限换算到同一年度尺度；两者应结合现金流时间、费用和风险一起判断。" },
   { type: 'paragraph', html: "请检查输入值、单位、四舍五入方式、日期和司法辖区，因为每项都可能改变估算。" },
   { type: 'paragraph', html: "结果可用于规划和比较方案，但不能替代官方计算或专业建议。" },
   { type: 'paragraph', html: "使用前请结合计算器显示的假设一起解读结果。" },],

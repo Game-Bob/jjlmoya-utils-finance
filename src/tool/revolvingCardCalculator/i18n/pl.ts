@@ -29,7 +29,7 @@ export const content: ToolLocaleContent<RevolvingCardCalculatorUI> = {
   bibliography,
   schemas: [faqSchema, howToSchema, softwareSchema],
   seo: [{ type: 'title', text: 'Jak działają karty odnawialne (revolving)?' }, { type: 'paragraph', html: 'Karty odnawialne pozwalają na elastyczną spłatę długu.' },
-  { type: 'paragraph', html: "Używaj wyniku do planowania i porównywania scenariuszy; nie zastępuje obliczeń urzędowych ani porady specjalisty." },
+  { type: 'paragraph', html: "Używaj wyniku do planowania i porównywania scenariuszy; nie zastępuje obliczeń urzędowych ani porady specjalisty. Karta revolving pozwala płacić tylko część salda, dlatego odsetki naliczają się dalej od pozostałego zadłużenia. Niska rata może sprawić, że spłata potrwa wiele lat, a jeśli nie pokrywa miesięcznych odsetek, saldo może nie maleć. Wprowadź aktualny bilans, rzeczywistą stopę roczną, prowizje i kwotę planowanej spłaty, a następnie porównaj wynik z warunkami umowy i wyciągiem. Nowe zakupy, wypłaty gotówki, opłaty za opóźnienie i zmiana oprocentowania zmieniają harmonogram, więc po każdej istotnej zmianie wykonaj nowe obliczenie." },
   { type: 'paragraph', html: "Przed użyciem zinterpretuj wynik razem z założeniami pokazanymi przez kalkulator." },
   { type: 'paragraph', html: "Sprawdź dane, jednostki, zaokrąglenie, datę i jurysdykcję, ponieważ każdy element może zmienić szacunek." },
   { type: 'paragraph', html: "Używaj wyniku do planowania i porównywania scenariuszy; nie zastępuje obliczeń urzędowych ani porady specjalisty." },
@@ -46,7 +46,7 @@ export const content: ToolLocaleContent<RevolvingCardCalculatorUI> = {
   { type: 'paragraph', html: "Sprawdź dane, jednostki, zaokrąglenie, datę i jurysdykcję, ponieważ każdy element może zmienić szacunek." },
   { type: 'paragraph', html: "Używaj wyniku do planowania i porównywania scenariuszy; nie zastępuje obliczeń urzędowych ani porady specjalisty." },
   { type: 'paragraph', html: "Przed użyciem zinterpretuj wynik razem z założeniami pokazanymi przez kalkulator." },
-  { type: 'paragraph', html: "Sprawdź dane, jednostki, zaokrąglenie, datę i jurysdykcję, ponieważ każdy element może zmienić szacunek." },],
+  { type: 'paragraph', html: "Sprawdź dane, jednostki, zaokrąglenie, datę i jurysdykcję, ponieważ każdy element może zmienić szacunek. Karta revolving nie spłaca automatycznie całego salda: odsetki są naliczane od pozostałego zadłużenia, a niska rata może wydłużyć spłatę o wiele lat. Wprowadź aktualne saldo, rzeczywistą roczną stopę oprocentowania, opłaty i kwotę comiesięcznej spłaty. Jeżeli rata nie pokrywa miesięcznych odsetek, dług może nie maleć lub nawet rosnąć. Nowe zakupy i wypłaty gotówki zmieniają harmonogram, dlatego porównuj scenariusz bez dodatkowego użycia karty z planem, który uwzględnia nowe transakcje. Sprawdź umowę i wyciąg, ponieważ kalkulator jest narzędziem do planowania, a nie opinią prawną ani oficjalnym harmonogramem kredytodawcy." },],
   ui: {
     title: 'Kalkulator Kart Revolving i Test Lichwy',
     balanceLabel: 'Pozostałe Zadłużenie',

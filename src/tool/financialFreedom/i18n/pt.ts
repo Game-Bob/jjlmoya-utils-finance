@@ -73,14 +73,31 @@ export const content: ToolLocaleContent<FinancialFreedomUI> = {
     },
     {
       type: 'paragraph',
-      html: 'A <strong>pista de sobrevivência</strong> (runway) é o tempo que podes viver sem novos rendimentos. É a métrica definitiva da liberdade financeira.',
+      html: 'A <strong>pista de sobrevivência</strong> (runway) é o tempo que podes viver sem novos rendimentos. É a métrica definitiva da liberdade financeira: transforma o dinheiro líquido que já tens numa medida concreta de tempo e margem de segurança.',
     },
-
-  { type: 'paragraph', html: "Use o resultado para planear e comparar cenários; não substitui um cálculo oficial nem aconselhamento profissional." },
-  { type: 'paragraph', html: "Interprete o resultado juntamente com as premissas apresentadas pela calculadora antes de o utilizar." },
-  { type: 'paragraph', html: "Confirme dados, unidades, arredondamento, data e jurisdição, pois cada elemento pode alterar a estimativa." },
-  { type: 'paragraph', html: "Use o resultado para planear e comparar cenários; não substitui um cálculo oficial nem aconselhamento profissional." },
-  { type: 'paragraph', html: "Interprete o resultado juntamente com as premissas apresentadas pela calculadora antes de o utilizar." },],
+    {
+      type: 'title',
+      text: 'Como calcular a tua autonomia financeira',
+      level: 3,
+    },
+    {
+      type: 'paragraph',
+      html: 'A calculadora divide as poupanças líquidas pelas despesas do período escolhido e apresenta o resultado em anos, meses e dias. Também mostra o <strong>burn rate</strong>, ou seja, quanto sai em média por dia para manter o teu estilo de vida. Inclui renda, alimentação, transportes, seguros e prestações nas despesas para obter uma estimativa realista.',
+    },
+    {
+      type: 'title',
+      text: 'Como interpretar as zonas de segurança',
+      level: 3,
+    },
+    {
+      type: 'paragraph',
+      html: 'Menos de seis meses coloca-te na zona vermelha e indica uma reserva frágil. Entre seis e vinte e quatro meses estás na zona amarela, com mais margem para uma quebra de rendimento. Acima de vinte e quatro meses, a zona verde oferece uma base mais confortável para mudar de trabalho, iniciar um projeto ou tomar decisões com calma.',
+    },
+    {
+      type: 'paragraph',
+      html: 'Usa o resultado para planear e comparar cenários, como reduzir despesas em 10% ou aumentar a poupança. É uma estimativa: não inclui automaticamente inflação, rendimentos de investimentos, impostos ou despesas extraordinárias. Confirma sempre os dados, unidades, arredondamentos e premissas apresentadas pela calculadora.',
+    },
+  ],
   faq,
   bibliography: [
     {

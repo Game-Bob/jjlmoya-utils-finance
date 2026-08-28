@@ -115,7 +115,7 @@ export const content: ToolLocaleContent<DebtSnowballUI> = {
   { type: 'paragraph', html: "Sonucu planlama ve senaryo karşılaştırması için kullanın; resmî hesabın veya uzman görüşünün yerine geçmez." },
   { type: 'paragraph', html: "Kullanmadan önce sonucu hesaplayıcının gösterdiği varsayımlarla birlikte yorumlayın." },
   { type: 'paragraph', html: "Girdileri, birimleri, yuvarlamayı, tarihi ve yargı alanını kontrol edin; her biri tahmini değiştirebilir." },
-  { type: 'paragraph', html: "Sonucu planlama ve senaryo karşılaştırması için kullanın; resmî hesabın veya uzman görüşünün yerine geçmez." },],
+  { type: 'paragraph', html: "Sonucu planlama ve senaryo karşılaştırması için kullanın; resmî hesabın veya uzman görüşünün yerine geçmez. Bakiyeleri, faiz oranlarını ve asgari ödemeleri her ay güncelleyin; yeni harcamalar, gecikme ücretleri ve değişen sözleşme koşulları ödeme süresini veya toplam maliyeti değiştirebilir. Asgari ödemeleri karşılamakta zorlanıyorsanız borç verenle erken iletişime geçin ve uygulanabilir bir bütçe oluşturmadan yeni borç eklemeyin." },],
   ui: {
     labelTitle: 'Tam özgürlük',
     labelDescription: 'Finansal özgürlüğe giden yolunuza psikolojik olarak en etkili yöntemle başlayın.',

@@ -73,14 +73,31 @@ export const content: ToolLocaleContent<FinancialFreedomUI> = {
     },
     {
       type: 'paragraph',
-      html: '<strong>Czas przetrwania</strong> (runway) to okres, w którym możesz żyć bez nowych dochodów. To ostateczna miara wolności finansowej.',
+      html: '<strong>Czas przetrwania</strong> (runway) to okres, w którym możesz żyć bez nowych dochodów. To konkretna miara wolności finansowej: pokazuje, ile tygodni, miesięcy lub lat możesz sfinansować z posiadanych płynnych oszczędności.',
     },
-
-  { type: 'paragraph', html: "Używaj wyniku do planowania i porównywania scenariuszy; nie zastępuje obliczeń urzędowych ani porady specjalisty." },
-  { type: 'paragraph', html: "Przed użyciem zinterpretuj wynik razem z założeniami pokazanymi przez kalkulator." },
-  { type: 'paragraph', html: "Sprawdź dane, jednostki, zaokrąglenie, datę i jurysdykcję, ponieważ każdy element może zmienić szacunek." },
-  { type: 'paragraph', html: "Używaj wyniku do planowania i porównywania scenariuszy; nie zastępuje obliczeń urzędowych ani porady specjalisty." },
-  { type: 'paragraph', html: "Przed użyciem zinterpretuj wynik razem z założeniami pokazanymi przez kalkulator." },],
+    {
+      type: 'title',
+      text: 'Jak obliczyć czas finansowego bezpieczeństwa',
+      level: 3,
+    },
+    {
+      type: 'paragraph',
+      html: 'Kalkulator dzieli płynne oszczędności przez wydatki miesięczne lub roczne i przedstawia wynik w latach, miesiącach oraz dniach. Oblicza także dzienny <strong>burn rate</strong>, czyli średnią kwotę potrzebną do utrzymania stylu życia. Uwzględnij czynsz, żywność, transport, ubezpieczenia i raty, aby wynik był użyteczny.',
+    },
+    {
+      type: 'title',
+      text: 'Jak czytać strefy bezpieczeństwa',
+      level: 3,
+    },
+    {
+      type: 'paragraph',
+      html: 'Mniej niż sześć miesięcy oznacza strefę Czerwoną i niewielki margines przy utracie dochodu. Od sześciu do dwudziestu czterech miesięcy znajdujesz się w strefie Żółtej, z większą przestrzenią na zmianę pracy lub nieprzewidziane wydatki. Powyżej dwudziestu czterech miesięcy zaczyna się strefa Zielona, która daje więcej swobody w planowaniu.',
+    },
+    {
+      type: 'paragraph',
+      html: 'Wyniku używaj do porównywania scenariuszy, na przykład przy wydatkach niższych o 10% lub dodatkowym oszczędzaniu. To szacunek planistyczny: inflacja, zyski z inwestycji, podatki i wydatki nadzwyczajne nie są automatycznie uwzględniane. Sprawdź dane, jednostki, zaokrąglenia i założenia kalkulatora.',
+    },
+  ],
   faq,
   bibliography: [
     {

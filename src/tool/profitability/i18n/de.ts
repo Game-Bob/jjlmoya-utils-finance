@@ -66,14 +66,31 @@ export const content: ToolLocaleContent<ProfitabilityUI> = {
     },
     {
       type: 'paragraph',
-      html: 'Der <strong>ROI</strong> zeigt den prozentualen Gesamtgewinn, ignoriert aber die Zeit. Die <strong>CAGR</strong> ist besser für langfristige Analysen.',
+      html: 'Der <strong>ROI</strong> zeigt den prozentualen Gesamtgewinn, ignoriert aber die Zeit. Die <strong>CAGR</strong> ist für langfristige Analysen aussagekräftiger, weil sie das Ergebnis auf eine jährliche, zusammengesetzte Wachstumsrate umrechnet und Investitionen mit unterschiedlicher Laufzeit vergleichbar macht.',
     },
-
-  { type: 'paragraph', html: "Nutzen Sie das Ergebnis zur Planung und zum Szenarienvergleich; es ersetzt keine offizielle Berechnung oder Fachberatung." },
-  { type: 'paragraph', html: "Deuten Sie das Ergebnis gemeinsam mit den angezeigten Annahmen, bevor Sie es verwenden." },
-  { type: 'paragraph', html: "Prüfen Sie Eingaben, Einheiten, Rundung, Datum und Recht, weil jedes Element die Schätzung verändern kann." },
-  { type: 'paragraph', html: "Nutzen Sie das Ergebnis zur Planung und zum Szenarienvergleich; es ersetzt keine offizielle Berechnung oder Fachberatung." },
-  { type: 'paragraph', html: "Deuten Sie das Ergebnis gemeinsam mit den angezeigten Annahmen, bevor Sie es verwenden." },],
+    {
+      type: 'title',
+      text: 'So verwenden Sie den Rentabilitätsrechner',
+      level: 3,
+    },
+    {
+      type: 'paragraph',
+      html: 'Geben Sie das Anfangskapital, den aktuellen Wert oder Verkaufspreis und die Haltedauer in Tagen, Monaten oder Jahren ein. Der Rechner ermittelt Gewinn oder Verlust, den Gesamt-ROI und die geometrische Jahresrendite. Verwenden Sie bei Vergleichen dieselben Zeitangaben und berücksichtigen Sie, ob Gebühren, Einzahlungen, Entnahmen und Dividenden enthalten sind.',
+    },
+    {
+      type: 'title',
+      text: 'Gesamt-ROI oder annualisierte Rendite?',
+      level: 3,
+    },
+    {
+      type: 'paragraph',
+      html: 'Der ROI beantwortet die Frage, wie viel Sie insgesamt gewonnen oder verloren haben. Die CAGR beantwortet, welcher konstante jährliche Zinseszinssatz denselben Anfangs- und Endwert ergeben hätte. 20 % in einem Jahr sind deshalb nicht mit 20 % in fünf Jahren gleichzusetzen. Die Visualisierung stellt lineares und zusammengesetztes Wachstum gegenüber.',
+    },
+    {
+      type: 'paragraph',
+      html: 'Die CAGR ist ein theoretischer Durchschnitt und verbirgt den tatsächlichen Kursverlauf und die Volatilität. Prüfen Sie Daten, Einheiten, Rundung, Zeitraum und Annahmen, bevor Sie das Ergebnis nutzen. Es dient der Orientierung und ersetzt keine persönliche Finanzberatung.',
+    },
+  ],
   faq,
   bibliography: [
     {

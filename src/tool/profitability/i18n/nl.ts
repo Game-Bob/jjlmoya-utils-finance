@@ -63,14 +63,31 @@ export const content: ToolLocaleContent<ProfitabilityUI> = {
     },
     {
       type: 'paragraph',
-      html: '<strong>ROI</strong> geeft het totale groeipercentage aan, maar negeert de tijd. <strong>CAGR</strong> is beter voor langetermijnanalyse.',
+      html: '<strong>ROI</strong> geeft het totale groeipercentage aan, maar negeert de tijd. <strong>CAGR</strong> is nuttiger voor langetermijnanalyse omdat het het resultaat omzet in een samengesteld jaarlijks groeipercentage en beleggingen met verschillende looptijden vergelijkbaar maakt.',
     },
-
-  { type: 'paragraph', html: "Gebruik het resultaat voor planning en scenariokeuze; het vervangt geen officiële berekening of professioneel advies." },
-  { type: 'paragraph', html: "Interpreteer het resultaat samen met de aannames van de calculator voordat u het gebruikt." },
-  { type: 'paragraph', html: "Controleer invoer, eenheden, afronding, datum en jurisdictie, want elk onderdeel kan de schatting wijzigen." },
-  { type: 'paragraph', html: "Gebruik het resultaat voor planning en scenariokeuze; het vervangt geen officiële berekening of professioneel advies." },
-  { type: 'paragraph', html: "Interpreteer het resultaat samen met de aannames van de calculator voordat u het gebruikt." },],
+    {
+      type: 'title',
+      text: 'De rendementscalculator gebruiken',
+      level: 3,
+    },
+    {
+      type: 'paragraph',
+      html: 'Vul het startkapitaal, de huidige waarde of verkoopprijs en de looptijd in dagen, maanden of jaren in. De tool berekent winst of verlies, totale ROI en geometrische jaarlijkse groei. Gebruik dezelfde tijdseenheid wanneer je beleggingen vergelijkt en controleer of kosten, stortingen, opnames en dividenden zijn meegenomen.',
+    },
+    {
+      type: 'title',
+      text: 'Totale ROI of geannualiseerd rendement?',
+      level: 3,
+    },
+    {
+      type: 'paragraph',
+      html: 'ROI beantwoordt de vraag hoeveel je in totaal hebt gewonnen of verloren. CAGR laat zien welk constant samengesteld jaarpercentage dezelfde begin- en eindwaarde zou hebben opgeleverd. 20% in één jaar is daarom niet hetzelfde als 20% in vijf jaar. De grafiek maakt het verschil tussen lineaire en samengestelde groei zichtbaar.',
+    },
+    {
+      type: 'paragraph',
+      html: 'CAGR is een theoretisch gemiddelde en verbergt volatiliteit en het werkelijke prijsverloop. Controleer gegevens, eenheden, datums, afronding en aannames voordat je het resultaat gebruikt. Het is een hulpmiddel voor oriëntatie en vervangt geen persoonlijk financieel advies.',
+    },
+  ],
   faq,
   bibliography: [
     {

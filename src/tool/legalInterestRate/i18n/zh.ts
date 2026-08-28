@@ -56,11 +56,18 @@ const seoData = [
   },
   {
     type: 'paragraph',
-    html: '西班牙 <strong>2026 年的法定利息</strong>为 <strong>3.25%</strong>。除非另有约定，否则在延迟付款时会自动适用。',
+    html: '西班牙 <strong>2026 年的法定利息</strong>为 <strong>3.25%</strong>。除非另有约定，否则在延迟付款时会自动适用。本计算器可以根据未付款本金和延迟天数估算应计利息及应付总额。',
   },
-
-  { type: 'paragraph', html: "结果可用于规划和比较方案，但不能替代官方计算或专业建议。" },
-  { type: 'paragraph', html: "使用前请结合计算器显示的假设一起解读结果。" },];
+  {
+    type: 'title',
+    text: '简单利息公式和其他参考利率',
+    level: 3,
+  },
+  {
+    type: 'paragraph',
+    html: '计算方式是本金乘以年利率和延迟天数，再除以 365 天。税务滞纳金、诉讼程序利息和商业交易利息可能采用不同的参考利率，因此应根据债务类型查看对应栏目。计算结果用于估算和方案比较，不能替代官方核算或专业法律意见。',
+  },
+];
 
 const faqSchema: WithContext<FAQPage> = {
   '@context': 'https://schema.org',

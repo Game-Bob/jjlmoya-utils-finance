@@ -70,7 +70,7 @@ export const content: ToolLocaleContent<ProfitabilityUI> = {
   { type: 'paragraph', html: "Przed użyciem zinterpretuj wynik razem z założeniami pokazanymi przez kalkulator." },
   { type: 'paragraph', html: "Sprawdź dane, jednostki, zaokrąglenie, datę i jurysdykcję, ponieważ każdy element może zmienić szacunek." },
   { type: 'paragraph', html: "Używaj wyniku do planowania i porównywania scenariuszy; nie zastępuje obliczeń urzędowych ani porady specjalisty." },
-  { type: 'paragraph', html: "Przed użyciem zinterpretuj wynik razem z założeniami pokazanymi przez kalkulator." },],
+  { type: 'paragraph', html: "Przed użyciem zinterpretuj wynik razem z założeniami pokazanymi przez kalkulator. CAGR jest średnią teoretyczną i nie pokazuje zmienności ceny; sprawdź okres, opłaty, wpłaty i wypłaty przed porównaniem inwestycji. ROI pokazuje wynik całkowity, a CAGR ułatwia porównanie różnych okresów." },],
   faq,
   bibliography: [
     {

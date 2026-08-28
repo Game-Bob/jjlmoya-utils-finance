@@ -58,9 +58,16 @@ const seoData = [
     type: 'paragraph',
     html: 'İspanya\'da <strong>2026 yasal faiz oranı</strong> %<strong>3,25</strong>\'tir. Aksi kararlaştırılmadıkça gecikme durumunda otomatik olarak uygulanır.',
   },
-
-  { type: 'paragraph', html: "Sonucu planlama ve senaryo karşılaştırması için kullanın; resmî hesabın veya uzman görüşünün yerine geçmez." },
-  { type: 'paragraph', html: "Kullanmadan önce sonucu hesaplayıcının gösterdiği varsayımlarla birlikte yorumlayın." },];
+  {
+    type: 'title',
+    text: 'Basit faiz formülü ve sonuçların yorumu',
+    level: 3,
+  },
+  {
+    type: 'paragraph',
+    html: 'Hesaplama, ödenmemiş ana parayı yıllık oran ve gecikme günleriyle çarpar; 365 günlük esas kullanılarak faiz tutarını bulur. Toplam ödeme, ana para ile oluşan faizin toplamıdır. Vergi, ticari işlem veya mahkeme kararı gibi farklı bir durum söz konusuysa ilgili referans oranını ayrıca kontrol edin.',
+  },
+];
 
 const faqSchema: WithContext<FAQPage> = {
   '@context': 'https://schema.org',

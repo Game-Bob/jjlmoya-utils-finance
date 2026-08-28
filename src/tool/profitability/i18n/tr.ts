@@ -70,7 +70,7 @@ export const content: ToolLocaleContent<ProfitabilityUI> = {
   { type: 'paragraph', html: "Kullanmadan önce sonucu hesaplayıcının gösterdiği varsayımlarla birlikte yorumlayın." },
   { type: 'paragraph', html: "Girdileri, birimleri, yuvarlamayı, tarihi ve yargı alanını kontrol edin; her biri tahmini değiştirebilir." },
   { type: 'paragraph', html: "Sonucu planlama ve senaryo karşılaştırması için kullanın; resmî hesabın veya uzman görüşünün yerine geçmez." },
-  { type: 'paragraph', html: "Kullanmadan önce sonucu hesaplayıcının gösterdiği varsayımlarla birlikte yorumlayın." },],
+  { type: 'paragraph', html: "Kullanmadan önce sonucu hesaplayıcının gösterdiği varsayımlarla birlikte yorumlayın. CAGR teorik bir ortalamadır ve fiyat dalgalanmasını göstermez; yatırım dönemini, ücretleri, para girişlerini ve çekimleri kontrol edin. ROI toplam sonucu, CAGR ise farklı süreleri karşılaştırmayı kolaylaştırır." },],
   faq,
   bibliography: [
     {

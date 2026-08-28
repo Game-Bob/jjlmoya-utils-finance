@@ -63,14 +63,31 @@ export const content: ToolLocaleContent<ProfitabilityUI> = {
     },
     {
       type: 'paragraph',
-      html: 'Il <strong>ROI</strong> indica il guadagno percentuale totale, ma ignora il tempo. Il <strong>CAGR</strong> è migliore per le analisi a lungo termine.',
+      html: 'Il <strong>ROI</strong> indica il guadagno percentuale totale, ma ignora il tempo. Il <strong>CAGR</strong> è più utile per le analisi a lungo termine perché converte il risultato in un tasso annuo composto e permette di confrontare investimenti con durate diverse.',
     },
-
-  { type: 'paragraph', html: "Usa il risultato per pianificare e confrontare scenari; non sostituisce un calcolo ufficiale o una consulenza professionale." },
-  { type: 'paragraph', html: "Interpreta il risultato insieme alle ipotesi mostrate dal calcolatore prima di utilizzarlo." },
-  { type: 'paragraph', html: "Controlla dati, unità, arrotondamento, data e giurisdizione, perché ciascun elemento può cambiare la stima." },
-  { type: 'paragraph', html: "Usa il risultato per pianificare e confrontare scenari; non sostituisce un calcolo ufficiale o una consulenza professionale." },
-  { type: 'paragraph', html: "Interpreta il risultato insieme alle ipotesi mostrate dal calcolatore prima di utilizzarlo." },],
+    {
+      type: 'title',
+      text: 'Come usare il calcolatore di redditività',
+      level: 3,
+    },
+    {
+      type: 'paragraph',
+      html: 'Inserisci il capitale iniziale, il valore attuale o il prezzo di vendita e la durata in giorni, mesi o anni. Lo strumento calcola utile o perdita, ROI totale e crescita annuale geometrica. Per confrontare due investimenti usa la stessa unità di tempo e verifica se commissioni, versamenti, prelievi e dividendi sono inclusi.',
+    },
+    {
+      type: 'title',
+      text: 'ROI totale o rendimento annualizzato?',
+      level: 3,
+    },
+    {
+      type: 'paragraph',
+      html: 'Il ROI risponde alla domanda "quanto ho guadagnato in totale?". Il CAGR risponde a "quale tasso annuo composto avrebbe prodotto questo risultato?". Un +20% in un anno non equivale a un +20% in cinque anni. Il grafico rende visibile la differenza tra crescita lineare e composta.',
+    },
+    {
+      type: 'paragraph',
+      html: 'Il CAGR è una media teorica e nasconde la volatilità e il percorso reale del prezzo. Controlla dati, unità, date, arrotondamenti e ipotesi prima di usare il risultato. È uno strumento di orientamento e non sostituisce una consulenza finanziaria personalizzata.',
+    },
+  ],
   faq,
   bibliography: [
     {

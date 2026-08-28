@@ -63,14 +63,31 @@ export const content: ToolLocaleContent<ProfitabilityUI> = {
     },
     {
       type: 'paragraph',
-      html: 'O <strong>ROI</strong> indica a percentagem total de ganho, mas ignora o tempo. El <strong>CAGR</strong> é melhor para análises a longo prazo.',
+      html: 'O <strong>ROI</strong> indica a percentagem total de ganho, mas ignora o tempo. O <strong>CAGR</strong> é mais útil para análises a longo prazo porque transforma o resultado numa taxa anual composta e permite comparar investimentos com durações diferentes.',
     },
-
-  { type: 'paragraph', html: "Use o resultado para planear e comparar cenários; não substitui um cálculo oficial nem aconselhamento profissional." },
-  { type: 'paragraph', html: "Interprete o resultado juntamente com as premissas apresentadas pela calculadora antes de o utilizar." },
-  { type: 'paragraph', html: "Confirme dados, unidades, arredondamento, data e jurisdição, pois cada elemento pode alterar a estimativa." },
-  { type: 'paragraph', html: "Use o resultado para planear e comparar cenários; não substitui um cálculo oficial nem aconselhamento profissional." },
-  { type: 'paragraph', html: "Interprete o resultado juntamente com as premissas apresentadas pela calculadora antes de o utilizar." },],
+    {
+      type: 'title',
+      text: 'Como utilizar o calculador de rentabilidade',
+      level: 3,
+    },
+    {
+      type: 'paragraph',
+      html: 'Introduza o capital inicial, o valor atual ou preço de venda e a duração em dias, meses ou anos. A ferramenta calcula o lucro ou prejuízo, o ROI total e o crescimento anual geométrico. Para comparar investimentos, use a mesma unidade de tempo e confirme se comissões, depósitos, levantamentos e dividendos estão incluídos.',
+    },
+    {
+      type: 'title',
+      text: 'ROI total ou rendimento anualizado?',
+      level: 3,
+    },
+    {
+      type: 'paragraph',
+      html: 'O ROI responde a "quanto ganhei no total?". O CAGR responde a "que taxa anual composta produziria este resultado?". Um ganho de 20% num ano não equivale a 20% em cinco anos. A visualização ajuda a distinguir crescimento linear de crescimento composto.',
+    },
+    {
+      type: 'paragraph',
+      html: 'O CAGR é uma média teórica e esconde a volatilidade e o caminho real do preço. Confirme dados, unidades, datas, arredondamentos e premissas antes de utilizar o resultado. É uma ferramenta de orientação e não substitui aconselhamento financeiro personalizado.',
+    },
+  ],
   faq,
   bibliography: [
     {

@@ -28,7 +28,7 @@ export const content: ToolLocaleContent<RevolvingCardCalculatorUI> = {
   howTo: howToData,
   bibliography,
   schemas: [faqSchema, howToSchema, softwareSchema],
-  seo: [{ type: 'title', text: '리볼빙 결제 방식의 구조' }, { type: 'paragraph', html: '리볼빙 결제는 매월 일정한 비율이나 금액만 결제합니다.' },
+  seo: [{ type: 'title', text: '리볼빙 결제 방식의 구조' }, { type: 'paragraph', html: '리볼빙 결제는 매월 일정한 비율이나 금액만 결제합니다. 잔액이 다음 결제 기간으로 넘어가면서 이자가 계속 붙기 때문에, 낮은 월 납입액이 반드시 낮은 총비용을 의미하지는 않습니다.' },
   { type: 'paragraph', html: "결과는 계획과 시나리오 비교에 사용할 수 있지만 공식 계산이나 전문가 조언을 대신하지 않습니다." },
   { type: 'paragraph', html: "사용하기 전에 계산기가 표시한 가정과 결과를 함께 확인하세요." },
   { type: 'paragraph', html: "입력값, 단위, 반올림, 날짜와 관할을 확인하세요. 모두 추정값을 바꿀 수 있습니다." },
@@ -46,7 +46,7 @@ export const content: ToolLocaleContent<RevolvingCardCalculatorUI> = {
   { type: 'paragraph', html: "입력값, 단위, 반올림, 날짜와 관할을 확인하세요. 모두 추정값을 바꿀 수 있습니다." },
   { type: 'paragraph', html: "결과는 계획과 시나리오 비교에 사용할 수 있지만 공식 계산이나 전문가 조언을 대신하지 않습니다." },
   { type: 'paragraph', html: "사용하기 전에 계산기가 표시한 가정과 결과를 함께 확인하세요." },
-  { type: 'paragraph', html: "입력값, 단위, 반올림, 날짜와 관할을 확인하세요. 모두 추정값을 바꿀 수 있습니다." },],
+  { type: 'paragraph', html: "입력값, 단위, 반올림, 날짜와 관할을 확인하세요. 모두 추정값을 바꿀 수 있습니다. 잔액, 연이율, 월 상환액, 수수료와 신규 사용 여부에 따라 실제 상환 기간이 달라지므로 계약서와 명세서도 함께 확인하세요. 상환 중 추가 결제가 발생하면 계산 결과보다 기간과 이자가 늘어날 수 있습니다." },],
   ui: {
     title: '리볼빙 카드 상환 및 이자 진단 계산기',
     balanceLabel: '남은 잔액',

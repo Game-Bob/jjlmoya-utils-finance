@@ -115,7 +115,7 @@ export const content: ToolLocaleContent<DebtSnowballUI> = {
   { type: 'paragraph', html: "Używaj wyniku do planowania i porównywania scenariuszy; nie zastępuje obliczeń urzędowych ani porady specjalisty." },
   { type: 'paragraph', html: "Przed użyciem zinterpretuj wynik razem z założeniami pokazanymi przez kalkulator." },
   { type: 'paragraph', html: "Sprawdź dane, jednostki, zaokrąglenie, datę i jurysdykcję, ponieważ każdy element może zmienić szacunek." },
-  { type: 'paragraph', html: "Używaj wyniku do planowania i porównywania scenariuszy; nie zastępuje obliczeń urzędowych ani porady specjalisty." },],
+  { type: 'paragraph', html: "Metoda kuli śnieżnej daje szybkie poczucie postępu, ale nie zawsze minimalizuje całkowite odsetki. Porównaj ją z metodą lawiny, uwzględnij realny budżet i nie zwiększaj sald podczas spłaty. Wynik jest symulacją, a nie poradą finansową. Jeśli rata nie pokrywa miesięcznych odsetek, sprawdź dane i nie zwiększaj obciążenia ponad swoje możliwości. Regularnie aktualizuj saldo, raty i oprocentowanie oraz porównuj datę wolności z całkowitym kosztem planu." },],
   ui: {
     labelTitle: 'Całkowita wolność',
     labelDescription: 'Rozpocznij swoją drogę do wolności finansowej z psychologicznie najskuteczniejszą metodą.',

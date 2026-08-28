@@ -63,7 +63,7 @@ export const content: ToolLocaleContent<ProfitabilityUI> = {
     },
     {
       type: 'paragraph',
-      html: '<strong>ROI</strong> visar den totala procentuella vinsten men ignorerar tiden. <strong>CAGR</strong> är bättre för långsiktig analys.',
+      html: '<strong>ROI</strong> visar den totala procentuella vinsten men ignorerar tiden. <strong>CAGR</strong> är bättre för långsiktig analys eftersom måttet omvandlar utvecklingen till en genomsnittlig årlig tillväxttakt och gör investeringar med olika löptid lättare att jämföra. Kontrollera att startvärde, slutvärde, period och avgifter bygger på samma antaganden.',
     },
 
   { type: 'paragraph', html: "Använd resultatet för planering och scenariejämförelser; det ersätter inte en officiell beräkning eller professionell rådgivning." },

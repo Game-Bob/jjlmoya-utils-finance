@@ -73,14 +73,31 @@ export const content: ToolLocaleContent<FinancialFreedomUI> = {
     },
     {
       type: 'paragraph',
-      html: 'De <strong>survival runway</strong> is de hoeveelheid tijd die je kunt leven zonder nieuw inkomen. Het is de ultieme maatstaf voor financiële vrijheid.',
+      html: 'De <strong>survival runway</strong> is de tijd waarin je zonder nieuw inkomen kunt leven. Het is een concrete maatstaf voor financiële vrijheid: je ziet hoeveel weken, maanden of jaren je huidige liquide vermogen kan dragen.',
     },
-
-  { type: 'paragraph', html: "Gebruik het resultaat voor planning en scenariokeuze; het vervangt geen officiële berekening of professioneel advies." },
-  { type: 'paragraph', html: "Interpreteer het resultaat samen met de aannames van de calculator voordat u het gebruikt." },
-  { type: 'paragraph', html: "Controleer invoer, eenheden, afronding, datum en jurisdictie, want elk onderdeel kan de schatting wijzigen." },
-  { type: 'paragraph', html: "Gebruik het resultaat voor planning en scenariokeuze; het vervangt geen officiële berekening of professioneel advies." },
-  { type: 'paragraph', html: "Interpreteer het resultaat samen met de aannames van de calculator voordat u het gebruikt." },],
+    {
+      type: 'title',
+      text: 'Zo bereken je je financiële buffer',
+      level: 3,
+    },
+    {
+      type: 'paragraph',
+      html: 'De calculator deelt je liquide spaargeld door je uitgaven per maand of per jaar en toont het resultaat in jaren, maanden en dagen. Ook berekent hij je dagelijkse <strong>burn rate</strong>: het bedrag dat gemiddeld uitgaat om je levensstijl te betalen. Neem huur, boodschappen, vervoer, verzekeringen en aflossingen mee voor een bruikbare schatting.',
+    },
+    {
+      type: 'title',
+      text: 'De rode, gele en groene zone begrijpen',
+      level: 3,
+    },
+    {
+      type: 'paragraph',
+      html: 'Minder dan zes maanden is de rode zone en wijst op een kwetsbare reserve. Tussen zes en vierentwintig maanden zit je in de gele zone, met meer ruimte bij inkomensverlies. Boven vierentwintig maanden begint de groene zone: je hebt dan meer vrijheid om werk, een onderneming of investeringen rustig te plannen.',
+    },
+    {
+      type: 'paragraph',
+      html: 'Gebruik het resultaat om scenario\'s te vergelijken, bijvoorbeeld met 10% lagere uitgaven of extra spaargeld. Het blijft een planningstaxatie en houdt niet automatisch rekening met inflatie, beleggingsrendement, belastingen of onverwachte kosten. Controleer daarom invoer, eenheden, afronding en de aannames van de calculator.',
+    },
+  ],
   faq,
   bibliography: [
     {

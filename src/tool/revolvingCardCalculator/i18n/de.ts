@@ -16,8 +16,26 @@ const howToData = [{ name: 'Markt wählen', text: 'Wählen Sie Ihr Land oder ein
   { name: "Annahmen prüfen", text: "Kontrollieren Sie Eingaben, Einheiten und Grenzen des Rechners, bevor Sie das Ergebnis auslegen." },
   { name: "Annahmen prüfen", text: "Kontrollieren Sie Eingaben, Einheiten und Grenzen des Rechners, bevor Sie das Ergebnis auslegen." },];
 
-const faqSchema: WithContext<FAQPage> = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: [] };
-const howToSchema: WithContext<HowTo> = { '@context': 'https://schema.org', '@type': 'HowTo', name: title, step: [] };
+const faqSchema: WithContext<FAQPage> = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqData.map((item) => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: { '@type': 'Answer', text: item.answer },
+  })),
+};
+const howToSchema: WithContext<HowTo> = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: title,
+  step: howToData.map((step, index) => ({
+    '@type': 'HowToStep',
+    position: index + 1,
+    name: step.name,
+    text: step.text,
+  })),
+};
 const softwareSchema: WithContext<SoftwareApplication> = { '@context': 'https://schema.org', '@type': 'SoftwareApplication', name: title, applicationCategory: 'FinanceApplication', operatingSystem: 'All' };
 
 export const content: ToolLocaleContent<RevolvingCardCalculatorUI> = {
@@ -29,24 +47,24 @@ export const content: ToolLocaleContent<RevolvingCardCalculatorUI> = {
   bibliography,
   schemas: [faqSchema, howToSchema, softwareSchema],
   seo: [{ type: 'title', text: 'Funktionsweise von Revolving-Kreditkarten' }, { type: 'paragraph', html: 'Eine Revolving-Kreditkarte ermöglicht die flexible Rückzahlung.' },
-  { type: 'paragraph', html: "Nutzen Sie das Ergebnis zur Planung und zum Szenarienvergleich; es ersetzt keine offizielle Berechnung oder Fachberatung." },
-  { type: 'paragraph', html: "Deuten Sie das Ergebnis gemeinsam mit den angezeigten Annahmen, bevor Sie es verwenden." },
-  { type: 'paragraph', html: "Prüfen Sie Eingaben, Einheiten, Rundung, Datum und Recht, weil jedes Element die Schätzung verändern kann." },
-  { type: 'paragraph', html: "Nutzen Sie das Ergebnis zur Planung und zum Szenarienvergleich; es ersetzt keine offizielle Berechnung oder Fachberatung." },
-  { type: 'paragraph', html: "Deuten Sie das Ergebnis gemeinsam mit den angezeigten Annahmen, bevor Sie es verwenden." },
-  { type: 'paragraph', html: "Prüfen Sie Eingaben, Einheiten, Rundung, Datum und Recht, weil jedes Element die Schätzung verändern kann." },
-  { type: 'paragraph', html: "Nutzen Sie das Ergebnis zur Planung und zum Szenarienvergleich; es ersetzt keine offizielle Berechnung oder Fachberatung." },
-  { type: 'paragraph', html: "Deuten Sie das Ergebnis gemeinsam mit den angezeigten Annahmen, bevor Sie es verwenden." },
-  { type: 'paragraph', html: "Prüfen Sie Eingaben, Einheiten, Rundung, Datum und Recht, weil jedes Element die Schätzung verändern kann." },
-  { type: 'paragraph', html: "Nutzen Sie das Ergebnis zur Planung und zum Szenarienvergleich; es ersetzt keine offizielle Berechnung oder Fachberatung." },
-  { type: 'paragraph', html: "Deuten Sie das Ergebnis gemeinsam mit den angezeigten Annahmen, bevor Sie es verwenden." },
-  { type: 'paragraph', html: "Prüfen Sie Eingaben, Einheiten, Rundung, Datum und Recht, weil jedes Element die Schätzung verändern kann." },
-  { type: 'paragraph', html: "Nutzen Sie das Ergebnis zur Planung und zum Szenarienvergleich; es ersetzt keine offizielle Berechnung oder Fachberatung." },
-  { type: 'paragraph', html: "Deuten Sie das Ergebnis gemeinsam mit den angezeigten Annahmen, bevor Sie es verwenden." },
-  { type: 'paragraph', html: "Prüfen Sie Eingaben, Einheiten, Rundung, Datum und Recht, weil jedes Element die Schätzung verändern kann." },
-  { type: 'paragraph', html: "Nutzen Sie das Ergebnis zur Planung und zum Szenarienvergleich; es ersetzt keine offizielle Berechnung oder Fachberatung." },
-  { type: 'paragraph', html: "Deuten Sie das Ergebnis gemeinsam mit den angezeigten Annahmen, bevor Sie es verwenden." },
-  { type: 'paragraph', html: "Prüfen Sie Eingaben, Einheiten, Rundung, Datum und Recht, weil jedes Element die Schätzung verändern kann." },],
+  { type: 'paragraph', html: "Eine <strong>Revolving-Kreditkarte</strong> erlaubt flexible Teilzahlungen, kann aber bei hohen effektiven Jahreszinsen zu einer langwierigen Schuld werden. Der offene Betrag wird in den nächsten Abrechnungszeitraum übertragen und weiter verzinst." },
+  { type: 'paragraph', html: "Bei einem Ratenkredit ist die Laufzeit meist von Anfang an geplant. Bei einer Revolving-Karte hängt sie dagegen stark von der Monatsrate ab: Eine kleine Rate kann den Saldo über Jahre bestehen lassen." },
+  { type: 'paragraph', html: "Der effektive Jahreszins ist wichtiger als die Höhe der beworbenen Monatsrate. Prüfen Sie auch Gebühren und Bedingungen, bevor Sie verschiedene Kartenangebote vergleichen." },
+  { type: 'paragraph', html: "Wenn eine Rate als Prozentsatz des offenen Saldos festgelegt wird, sinkt auch der absolute Zahlungsbetrag mit dem Saldo. Dadurch wird in späteren Monaten oft weniger Kapital getilgt." },
+  { type: 'paragraph', html: "Zuerst werden die laufenden Monatszinsen bedient; nur der Rest reduziert die Schuld. Liegt die Rate unter den Zinsen, wächst der Saldo statt zu sinken und der Rechner kann eine unendliche Tilgungsdauer anzeigen." },
+  { type: 'paragraph', html: "Der Simulator stellt deshalb Zinsen, Tilgung und Endsaldo für jeden Monat gegenüber. So erkennen Sie, ob Ihre Zahlung wirklich Kapital abbaut." },
+  { type: 'paragraph', html: "Wählen Sie zuerst Spanien, USA, Großbritannien oder einen benutzerdefinierten Referenzmarkt. Geben Sie danach offenen Saldo, Kreditrahmen und effektiven Jahreszins ein." },
+  { type: 'paragraph', html: "Vergleichen Sie eine feste Monatsrate mit einer prozentualen Rate. Bei der prozentualen Variante ist ein absoluter Mindestbetrag wichtig, damit die Zahlung nicht zu klein wird, sobald der Saldo fällt." },
+  { type: 'paragraph', html: "Lesen Sie Gesamtzinsen, Gesamtrückzahlung und Monate bis zur Tilgung gemeinsam. Die kürzeste Laufzeit und die geringsten Zinsen sind nicht immer dieselbe Einstellung." },
+  { type: 'paragraph', html: "Der Wucherstatus vergleicht den eingegebenen Zinssatz mit dem Schwellenwert des gewählten Marktes. Der Hinweis ist eine Rechenhilfe und keine verbindliche rechtliche Bewertung eines Vertrags." },
+  { type: 'paragraph', html: "In Spanien kann die rechtliche Beurteilung einer Revolving-Karte vom Vergleich mit dem damaligen durchschnittlichen Marktzinssatz abhängen. In anderen Ländern gelten andere Regeln, Obergrenzen oder Gerichtsentscheidungen." },
+  { type: 'paragraph', html: "Ein Warnhinweis beweist keinen Rechtsverstoß, und ein unauffälliger Status schließt eine Prüfung nicht aus. Für einen konkreten Vertrag sollten Sie lokale Verbraucher- oder Rechtsberatung einholen." },
+  { type: 'paragraph', html: "Die Simulation verwendet den eingegebenen Saldo, den effektiven Jahreszins und regelmäßige monatliche Zahlungen. Sie geht davon aus, dass keine neuen Käufe, Verzugsgebühren oder Zinsänderungen hinzukommen." },
+  { type: 'paragraph', html: "Tatsächliche Abrechnungen können tägliche Zinsberechnung, Gebühren, Versicherungen, Mindestbeträge oder unterschiedliche Zahlungsdaten enthalten. Diese Details können Laufzeit und Gesamtkosten verändern." },
+  { type: 'paragraph', html: "Verwenden Sie das Ergebnis, um Fragen an die Bank zu formulieren und Szenarien zu vergleichen. Es ersetzt weder den Kontoauszug noch die Prüfung der Vertragsbedingungen." },
+  { type: 'paragraph', html: "Verwenden Sie das Ergebnis, um Fragen an die Bank zu formulieren und Szenarien zu vergleichen. Es ersetzt weder den Kontoauszug noch die Prüfung der Vertragsbedingungen." },
+  { type: 'paragraph', html: "Vergleichen Sie die Laufzeit, die Gesamtzinsen und den Endsaldo gemeinsam. Eine niedrigere Monatsrate kann kurzfristig entlasten, erhöht aber häufig die Gesamtkosten." },
+  { type: 'paragraph', html: "Aktualisieren Sie die Eingaben nach jeder Änderung von Saldo, Zinssatz, Gebühren oder Zahlungsverhalten und bewahren Sie die verwendeten Vertragsdaten auf." },],
   ui: {
     title: 'Revolving Kreditkarten & Wucherrechner',
     balanceLabel: 'Offener Saldo',

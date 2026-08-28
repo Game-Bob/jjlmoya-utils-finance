@@ -63,7 +63,7 @@ export const content: ToolLocaleContent<ProfitabilityUI> = {
     },
     {
       type: 'paragraph',
-      html: '<strong>ROI</strong>は全体の収益率を示しますが、期間を考慮しません。<strong>CAGR</strong>は期間を「年換算」するため、長期分析に優れています。',
+      html: '<strong>ROI</strong>は全体の収益率を示しますが、期間を考慮しません。<strong>CAGR</strong>は期間を「年換算」するため、長期分析に優れています。開始額、終了額、保有期間、手数料を同じ条件で入力すると、異なる投資をより公平に比較できます。',
     },
 
   { type: 'paragraph', html: "結果は計画や条件比較に使えますが、公式計算や専門家の助言の代わりにはなりません。" },

@@ -29,7 +29,7 @@ export const content: ToolLocaleContent<RevolvingCardCalculatorUI> = {
   bibliography,
   schemas: [faqSchema, howToSchema, softwareSchema],
   seo: [{ type: 'title', text: 'O perigo do crédito revolving' }, { type: 'paragraph', html: 'O cartão de crédito revolving permite liquidar a dívida em prestações.' },
-  { type: 'paragraph', html: "Use o resultado para planear e comparar cenários; não substitui um cálculo oficial nem aconselhamento profissional." },
+  { type: 'paragraph', html: "Use o resultado para planear e comparar cenários; não substitui um cálculo oficial nem aconselhamento profissional. Num cartão revolving, apenas parte do saldo é paga e os juros continuam a incidir sobre a dívida restante. Uma prestação baixa pode prolongar a liquidação por muitos anos e, se não cobrir os juros mensais, o saldo pode não diminuir. Introduza o saldo atual, a taxa anual efetiva, as comissões e o pagamento mensal que pretende fazer, e confirme tudo no contrato e no extrato. Compras novas, levantamentos, encargos de atraso ou uma taxa alterada mudam o calendário; repita a simulação sempre que uma destas condições mudar." },
   { type: 'paragraph', html: "Interprete o resultado juntamente com as premissas apresentadas pela calculadora antes de o utilizar." },
   { type: 'paragraph', html: "Confirme dados, unidades, arredondamento, data e jurisdição, pois cada elemento pode alterar a estimativa." },
   { type: 'paragraph', html: "Use o resultado para planear e comparar cenários; não substitui um cálculo oficial nem aconselhamento profissional." },
@@ -46,7 +46,7 @@ export const content: ToolLocaleContent<RevolvingCardCalculatorUI> = {
   { type: 'paragraph', html: "Confirme dados, unidades, arredondamento, data e jurisdição, pois cada elemento pode alterar a estimativa." },
   { type: 'paragraph', html: "Use o resultado para planear e comparar cenários; não substitui um cálculo oficial nem aconselhamento profissional." },
   { type: 'paragraph', html: "Interprete o resultado juntamente com as premissas apresentadas pela calculadora antes de o utilizar." },
-  { type: 'paragraph', html: "Confirme dados, unidades, arredondamento, data e jurisdição, pois cada elemento pode alterar a estimativa." },],
+  { type: 'paragraph', html: "Confirme dados, unidades, arredondamento, data e jurisdição, pois cada elemento pode alterar a estimativa. Um cartão revolving não liquida automaticamente todo o saldo: os juros continuam a incidir sobre a dívida restante e uma prestação baixa pode prolongar o pagamento durante anos. Introduza o saldo atual, a taxa anual efetiva, as comissões e o valor mensal realmente pago. Se a prestação não cobrir os juros do mês, a dívida pode deixar de diminuir ou até aumentar. Novas compras e levantamentos alteram imediatamente o plano, por isso compare um cenário sem utilização adicional com outro que inclua as transações esperadas. Confirme sempre os valores no contrato e no extrato, pois a calculadora apoia o planeamento e não substitui o cálculo oficial do credor nem aconselhamento jurídico." },],
   ui: {
     title: 'Simulador de Cartão Revolving e Teste de Usura',
     balanceLabel: 'Saldo Devedor',

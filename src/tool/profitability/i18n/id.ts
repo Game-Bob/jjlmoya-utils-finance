@@ -69,8 +69,8 @@ export const content: ToolLocaleContent<ProfitabilityUI> = {
   { type: 'paragraph', html: "Gunakan hasil untuk perencanaan dan perbandingan skenario; hasil ini bukan pengganti perhitungan resmi atau nasihat ahli." },
   { type: 'paragraph', html: "Tafsirkan hasil bersama asumsi yang ditampilkan kalkulator sebelum menggunakannya." },
   { type: 'paragraph', html: "Periksa input, satuan, pembulatan, tanggal, dan yurisdiksi karena semuanya dapat mengubah estimasi." },
-  { type: 'paragraph', html: "Gunakan hasil untuk perencanaan dan perbandingan skenario; hasil ini bukan pengganti perhitungan resmi atau nasihat ahli." },
-  { type: 'paragraph', html: "Tafsirkan hasil bersama asumsi yang ditampilkan kalkulator sebelum menggunakannya." },],
+  { type: 'paragraph', html: "Gunakan hasil untuk perencanaan dan perbandingan skenario; hasil ini bukan pengganti perhitungan resmi atau nasihat ahli. Pastikan nilai awal, nilai akhir, dan periode investasi memang berasal dari rentang waktu yang sama." },
+  { type: 'paragraph', html: "CAGR adalah rata-rata teoretis yang tidak menunjukkan volatilitas atau urutan naik turunnya harga. Periksa biaya, setoran, penarikan, satuan waktu, pembulatan, dan asumsi sebelum menafsirkan hasil." },],
   faq,
   bibliography: [
     {

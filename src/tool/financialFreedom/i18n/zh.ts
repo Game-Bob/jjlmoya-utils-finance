@@ -73,14 +73,14 @@ export const content: ToolLocaleContent<FinancialFreedomUI> = {
     },
     {
       type: 'paragraph',
-      html: '<strong>生存跑道</strong>（runway）是指在没有新收入的情况下您可以维持生活的时间。它是衡量财务自由的终极指标。',
+      html: '<strong>生存跑道</strong>（runway）是指在没有新收入的情况下您可以维持生活的时间。它是衡量财务自由的终极指标，也能帮助您判断应急储备是否足够。将住房、食品、交通、保险、贷款和其他固定开支纳入计算，结果会更接近真实生活。',
     },
 
   { type: 'paragraph', html: "结果可用于规划和比较方案，但不能替代官方计算或专业建议。" },
   { type: 'paragraph', html: "使用前请结合计算器显示的假设一起解读结果。" },
   { type: 'paragraph', html: "请检查输入值、单位、四舍五入方式、日期和司法辖区，因为每项都可能改变估算。" },
   { type: 'paragraph', html: "结果可用于规划和比较方案，但不能替代官方计算或专业建议。" },
-  { type: 'paragraph', html: "使用前请结合计算器显示的假设一起解读结果。" },],
+  { type: 'paragraph', html: "使用前请结合计算器显示的假设一起解读结果。将房租、食品、交通、保险和贷款等真实生活支出纳入预算，可以更准确地了解现有储蓄能够维持多久，也能帮助您比较降低开支或增加储蓄后的变化，并估算收入中断时需要准备的安全储备。" },],
   faq,
   bibliography: [
     {

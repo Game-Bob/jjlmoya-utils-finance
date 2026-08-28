@@ -115,7 +115,7 @@ export const content: ToolLocaleContent<DebtSnowballUI> = {
   { type: 'paragraph', html: "Use o resultado para planear e comparar cenários; não substitui um cálculo oficial nem aconselhamento profissional." },
   { type: 'paragraph', html: "Interprete o resultado juntamente com as premissas apresentadas pela calculadora antes de o utilizar." },
   { type: 'paragraph', html: "Confirme dados, unidades, arredondamento, data e jurisdição, pois cada elemento pode alterar a estimativa." },
-  { type: 'paragraph', html: "Use o resultado para planear e comparar cenários; não substitui um cálculo oficial nem aconselhamento profissional." },],
+  { type: 'paragraph', html: "Use o resultado para planear e comparar cenários; não substitui um cálculo oficial nem aconselhamento profissional. Compare a bola de neve com a avalanche e escolha uma prestação extra que consiga manter todos os meses. Atualize saldos, juros e pagamentos quando a sua situação mudar." },],
   ui: {
     labelTitle: 'Liberdade total',
     labelDescription: 'Inicie o seu caminho para a liberdade financeira com o método psicologicamente mais eficaz.',

@@ -73,14 +73,31 @@ export const content: ToolLocaleContent<FinancialFreedomUI> = {
     },
     {
       type: 'paragraph',
-      html: '<strong>Survival runway</strong> adalah jumlah waktu Anda dapat bertahan hidup tanpa pendapatan baru. Ini adalah metrik utama kebebasan finansial.',
+      html: '<strong>Survival runway</strong> adalah berapa lama Anda dapat hidup tanpa pendapatan baru. Ini adalah ukuran nyata kebebasan finansial karena mengubah tabungan likuid yang sudah dimiliki menjadi waktu dan ruang aman yang mudah dipahami.',
     },
-
-  { type: 'paragraph', html: "Gunakan hasil untuk perencanaan dan perbandingan skenario; hasil ini bukan pengganti perhitungan resmi atau nasihat ahli." },
-  { type: 'paragraph', html: "Tafsirkan hasil bersama asumsi yang ditampilkan kalkulator sebelum menggunakannya." },
-  { type: 'paragraph', html: "Periksa input, satuan, pembulatan, tanggal, dan yurisdiksi karena semuanya dapat mengubah estimasi." },
-  { type: 'paragraph', html: "Gunakan hasil untuk perencanaan dan perbandingan skenario; hasil ini bukan pengganti perhitungan resmi atau nasihat ahli." },
-  { type: 'paragraph', html: "Tafsirkan hasil bersama asumsi yang ditampilkan kalkulator sebelum menggunakannya." },],
+    {
+      type: 'title',
+      text: 'Cara menghitung waktu bertahan',
+      level: 3,
+    },
+    {
+      type: 'paragraph',
+      html: 'Kalkulator membagi tabungan likuid dengan pengeluaran bulanan atau tahunan, lalu menampilkan hasil dalam tahun, bulan, dan hari. Kalkulator juga menunjukkan <strong>burn rate</strong>, yaitu jumlah rata-rata yang keluar setiap hari untuk membiayai gaya hidup. Masukkan sewa, makanan, transportasi, asuransi, cicilan, dan pengeluaran rutin lain agar estimasi lebih realistis.',
+    },
+    {
+      type: 'title',
+      text: 'Memahami zona keamanan finansial',
+      level: 3,
+    },
+    {
+      type: 'paragraph',
+      html: 'Kurang dari enam bulan berada di zona Merah dan menunjukkan cadangan yang rapuh. Enam hingga dua puluh empat bulan berada di zona Kuning, dengan ruang lebih besar jika pendapatan terhenti. Di atas dua puluh empat bulan masuk zona Hijau dan memberi dasar yang lebih kuat untuk berganti pekerjaan, memulai usaha, atau membuat keputusan dengan tenang.',
+    },
+    {
+      type: 'paragraph',
+      html: 'Gunakan hasilnya untuk membandingkan skenario, misalnya mengurangi pengeluaran 10% atau menambah tabungan. Ini adalah estimasi perencanaan; inflasi, hasil investasi, pajak, dan biaya tak terduga tidak otomatis dihitung. Periksa input, satuan, pembulatan, tanggal, dan asumsi yang ditampilkan sebelum menggunakannya.',
+    },
+  ],
   faq,
   bibliography: [
     {

@@ -29,7 +29,7 @@ export const content: ToolLocaleContent<RevolvingCardCalculatorUI> = {
   bibliography,
   schemas: [faqSchema, howToSchema, softwareSchema],
   seo: [{ type: 'title', text: 'Hur fungerar ett revolverkort?' }, { type: 'paragraph', html: 'Med ett revolverkort kan du delbetala din skuld.' },
-  { type: 'paragraph', html: "Använd resultatet för planering och scenariejämförelser; det ersätter inte en officiell beräkning eller professionell rådgivning." },
+  { type: 'paragraph', html: "Använd resultatet för planering och scenariejämförelser; det ersätter inte en officiell beräkning eller professionell rådgivning. Ett revolverkort låter dig betala bara en del av saldot, medan räntan fortsätter på den kvarvarande skulden. En låg betalning kan förlänga återbetalningen i många år och en betalning som inte täcker månadens ränta gör att skulden kanske inte minskar. Ange aktuellt saldo, effektiv årsränta, avgifter och planerad månadsbetalning och jämför alltid med avtalet och kontoutdraget. Nya köp, kontantuttag, förseningsavgifter eller ändrad ränta ändrar tidsplanen, så kör en ny simulering när villkoren ändras." },
   { type: 'paragraph', html: "Tolka resultatet tillsammans med kalkylatorns antaganden innan du använder det." },
   { type: 'paragraph', html: "Kontrollera indata, enheter, avrundning, datum och rättsområde eftersom varje del kan ändra uppskattningen." },
   { type: 'paragraph', html: "Använd resultatet för planering och scenariejämförelser; det ersätter inte en officiell beräkning eller professionell rådgivning." },
@@ -46,7 +46,7 @@ export const content: ToolLocaleContent<RevolvingCardCalculatorUI> = {
   { type: 'paragraph', html: "Kontrollera indata, enheter, avrundning, datum och rättsområde eftersom varje del kan ändra uppskattningen." },
   { type: 'paragraph', html: "Använd resultatet för planering och scenariejämförelser; det ersätter inte en officiell beräkning eller professionell rådgivning." },
   { type: 'paragraph', html: "Tolka resultatet tillsammans med kalkylatorns antaganden innan du använder det." },
-  { type: 'paragraph', html: "Kontrollera indata, enheter, avrundning, datum och rättsområde eftersom varje del kan ändra uppskattningen." },],
+  { type: 'paragraph', html: "Kontrollera indata, enheter, avrundning, datum och rättsområde eftersom varje del kan ändra uppskattningen. Ett revolverkort betalar inte automatiskt hela saldot; ränta fortsätter att tas ut på den kvarvarande skulden och en låg månadsbetalning kan förlänga återbetalningen i många år. Ange aktuellt saldo, verklig årlig ränta, avgifter och den månadsbetalning du faktiskt kan göra. Om betalningen inte täcker månadens ränta minskar skulden kanske inte alls. Nya köp eller kontantuttag förändrar planen direkt, så jämför ett scenario utan ny användning med ett scenario där kommande transaktioner räknas med. Kontrollera alltid avtalet och kontoutdraget, eftersom kalkylatorn är ett planeringsstöd och inte ersätter långivarens officiella beräkning eller juridisk rådgivning." },],
   ui: {
     title: 'Revolverkort & Ocker Kalkylator',
     balanceLabel: 'Kvarvarande Skuld',

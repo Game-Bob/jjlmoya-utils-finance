@@ -73,14 +73,31 @@ export const content: ToolLocaleContent<FinancialFreedomUI> = {
     },
     {
       type: 'paragraph',
-      html: 'L\'<strong>autonomia finanziaria</strong> (runway) è il tempo che puoi vivere senza nuove entrate. È la metrica definitiva della libertà finanziaria.',
+      html: 'L\'<strong>autonomia finanziaria</strong> (runway) è il tempo che puoi vivere senza nuove entrate. È la metrica definitiva della libertà finanziaria: mostra quante settimane, mesi o anni puoi acquistare con la liquidità che hai già messo da parte.',
     },
-
-  { type: 'paragraph', html: "Usa il risultato per pianificare e confrontare scenari; non sostituisce un calcolo ufficiale o una consulenza professionale." },
-  { type: 'paragraph', html: "Interpreta il risultato insieme alle ipotesi mostrate dal calcolatore prima di utilizzarlo." },
-  { type: 'paragraph', html: "Controlla dati, unità, arrotondamento, data e giurisdizione, perché ciascun elemento può cambiare la stima." },
-  { type: 'paragraph', html: "Usa il risultato per pianificare e confrontare scenari; non sostituisce un calcolo ufficiale o una consulenza professionale." },
-  { type: 'paragraph', html: "Interpreta il risultato insieme alle ipotesi mostrate dal calcolatore prima di utilizzarlo." },],
+    {
+      type: 'title',
+      text: 'Come si calcola il tempo di autonomia',
+      level: 3,
+    },
+    {
+      type: 'paragraph',
+      html: 'Il calcolo divide i risparmi liquidi per le spese del periodo scelto. Il risultato viene poi convertito in anni, mesi e giorni e accompagnato dal <strong>burn rate</strong>, cioè la somma che esce ogni giorno per sostenere il tuo stile di vita. Inserisci le spese reali, non solo le bollette ricorrenti: affitto, alimentari, trasporti, assicurazioni e rate cambiano la durata effettiva.',
+    },
+    {
+      type: 'title',
+      text: 'Come leggere le zone di sicurezza',
+      level: 3,
+    },
+    {
+      type: 'paragraph',
+      html: 'La zona rossa indica meno di sei mesi di autonomia e suggerisce di rafforzare il fondo di emergenza. Tra sei e ventiquattro mesi entri nella zona gialla: hai più margine per assorbire una perdita di reddito o pianificare un cambiamento. Oltre i ventiquattro mesi, la zona verde offre una base più solida per negoziare il lavoro, avviare un progetto o investire con calma.',
+    },
+    {
+      type: 'paragraph',
+      html: 'Usa il risultato per pianificare e confrontare scenari, ad esempio riducendo le spese del 10% o aggiungendo risparmi. È una stima di pianificazione: non considera automaticamente inflazione, rendimento degli investimenti, imposte o spese straordinarie. Interpreta sempre il numero insieme alle ipotesi mostrate dal calcolatore.',
+    },
+  ],
   faq,
   bibliography: [
     {

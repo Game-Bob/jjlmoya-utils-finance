@@ -63,14 +63,31 @@ export const content: ToolLocaleContent<ProfitabilityUI> = {
     },
     {
       type: 'paragraph',
-      html: 'Le <strong>ROI</strong> indique le gain total en pourcentage, mais ignore le temps. Le <strong>CAGR</strong> est supérieur pour l\'analyse à long terme car il "annualise" vos rendements.',
+      html: 'Le <strong>ROI</strong> indique le gain total en pourcentage, mais ignore le temps. Le <strong>CAGR</strong> est plus utile pour l\'analyse à long terme car il annualise vos rendements et permet de comparer des placements détenus pendant des durées différentes.',
     },
-
-  { type: 'paragraph', html: "Utilisez le résultat pour planifier et comparer des scénarios ; il ne remplace ni un calcul officiel ni un avis professionnel." },
-  { type: 'paragraph', html: "Interprétez le résultat avec les hypothèses affichées par le calculateur avant de l'utiliser." },
-  { type: 'paragraph', html: "Vérifiez les données, unités, arrondi, date et juridiction, car chacun de ces éléments peut modifier l'estimation." },
-  { type: 'paragraph', html: "Utilisez le résultat pour planifier et comparer des scénarios ; il ne remplace ni un calcul officiel ni un avis professionnel." },
-  { type: 'paragraph', html: "Interprétez le résultat avec les hypothèses affichées par le calculateur avant de l'utiliser." },],
+    {
+      type: 'title',
+      text: 'Comment utiliser le calculateur de rentabilité',
+      level: 3,
+    },
+    {
+      type: 'paragraph',
+      html: 'Saisissez le capital initial, la valeur actuelle ou le prix de vente, puis choisissez une durée en jours, mois ou années. L\'outil calcule le bénéfice ou la perte en euros, le ROI total et la moyenne géométrique de la croissance annuelle. Pour comparer deux placements, utilisez la même convention de durée et vérifiez que les dépôts, retraits, frais et dividendes sont traités de la même façon.',
+    },
+    {
+      type: 'title',
+      text: 'ROI total ou rendement annualisé ?',
+      level: 3,
+    },
+    {
+      type: 'paragraph',
+      html: 'Le ROI répond à la question "combien ai-je gagné au total ?". Le CAGR répond à "quel taux annuel composé aurait produit ce résultat ?". Un placement qui gagne 20 % en un an n\'est pas équivalent à un placement qui gagne 20 % en cinq ans. Le graphique oppose une progression linéaire à la courbe composée pour rendre cette différence visible.',
+    },
+    {
+      type: 'paragraph',
+      html: 'Le CAGR est une moyenne théorique et ne décrit pas le chemin réel de l\'investissement: il masque la volatilité et suppose une valeur initiale et finale fiables. Utilisez le résultat pour explorer des scénarios, après avoir vérifié les unités, les dates, les frais et les hypothèses affichées par le calculateur. Il ne remplace pas un avis financier personnalisé.',
+    },
+  ],
   faq,
   bibliography: [
     {

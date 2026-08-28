@@ -79,8 +79,8 @@ export const content: ToolLocaleContent<FinancialFreedomUI> = {
   { type: 'paragraph', html: "Sonucu planlama ve senaryo karşılaştırması için kullanın; resmî hesabın veya uzman görüşünün yerine geçmez." },
   { type: 'paragraph', html: "Kullanmadan önce sonucu hesaplayıcının gösterdiği varsayımlarla birlikte yorumlayın." },
   { type: 'paragraph', html: "Girdileri, birimleri, yuvarlamayı, tarihi ve yargı alanını kontrol edin; her biri tahmini değiştirebilir." },
-  { type: 'paragraph', html: "Sonucu planlama ve senaryo karşılaştırması için kullanın; resmî hesabın veya uzman görüşünün yerine geçmez." },
-  { type: 'paragraph', html: "Kullanmadan önce sonucu hesaplayıcının gösterdiği varsayımlarla birlikte yorumlayın." },],
+  { type: 'paragraph', html: "Sonucu planlama ve senaryo karşılaştırması için kullanın; resmî hesabın veya uzman görüşünün yerine geçmez. Hesaplama, mevcut likit birikimi ve düzenli harcamaları karşılaştıran bir tahmindir." },
+  { type: 'paragraph', html: "Aylık harcamalarınızı gerçek yaşam maliyetleriyle birlikte değerlendirin; enflasyon, yatırım getirisi, vergiler ve beklenmedik giderler sonucu değiştirebilir. Kullanımdan önce girdileri ve varsayımları kontrol edin." },],
   faq,
   bibliography: [
     {

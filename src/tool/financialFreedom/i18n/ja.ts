@@ -80,7 +80,7 @@ export const content: ToolLocaleContent<FinancialFreedomUI> = {
   { type: 'paragraph', html: "利用する前に、計算機が示す前提条件と結果を一緒に確認してください。" },
   { type: 'paragraph', html: "入力値、単位、丸め、日付、地域を確認してください。どれも推定結果を変える可能性があります。" },
   { type: 'paragraph', html: "結果は計画や条件比較に使えますが、公式計算や専門家の助言の代わりにはなりません。" },
-  { type: 'paragraph', html: "利用する前に、計算機が示す前提条件と結果を一緒に確認してください。" },],
+  { type: 'paragraph', html: "利用する前に、計算機が示す前提条件と結果を一緒に確認してください。家賃、食費、交通費、保険料、ローンなど実際の生活費を入力すると、貯蓄で何か月生活できるかをより現実的に把握できます。" },],
   faq,
   bibliography: [
     {

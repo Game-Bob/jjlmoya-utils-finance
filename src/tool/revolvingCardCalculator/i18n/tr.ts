@@ -29,7 +29,7 @@ export const content: ToolLocaleContent<RevolvingCardCalculatorUI> = {
   bibliography,
   schemas: [faqSchema, howToSchema, softwareSchema],
   seo: [{ type: 'title', text: 'Döner Kredi Kartı Nasıl Çalışır?' }, { type: 'paragraph', html: 'Döner kredi kartları esnek ödeme imkanı sunar.' },
-  { type: 'paragraph', html: "Sonucu planlama ve senaryo karşılaştırması için kullanın; resmî hesabın veya uzman görüşünün yerine geçmez." },
+  { type: 'paragraph', html: "Sonucu planlama ve senaryo karşılaştırması için kullanın; resmî hesabın veya uzman görüşünün yerine geçmez. Döner kartta borcun yalnızca bir bölümü ödenirken kalan bakiyeye faiz işlemeye devam eder. Düşük ödeme tutarı borcun yıllarca sürmesine, ödeme aylık faizi karşılamıyorsa bakiyenin hiç azalmamasına yol açabilir. Güncel bakiyeyi, gerçek yıllık oranı, ücretleri ve planlanan aylık ödemeyi girin; sonucu sözleşme ve ekstreyle karşılaştırın. Yeni alışverişler, nakit çekimleri, gecikme ücretleri veya değişen faiz oranı ödeme takvimini değiştirir; koşullar değiştiğinde simülasyonu tekrarlayın." },
   { type: 'paragraph', html: "Kullanmadan önce sonucu hesaplayıcının gösterdiği varsayımlarla birlikte yorumlayın." },
   { type: 'paragraph', html: "Girdileri, birimleri, yuvarlamayı, tarihi ve yargı alanını kontrol edin; her biri tahmini değiştirebilir." },
   { type: 'paragraph', html: "Sonucu planlama ve senaryo karşılaştırması için kullanın; resmî hesabın veya uzman görüşünün yerine geçmez." },
@@ -46,7 +46,7 @@ export const content: ToolLocaleContent<RevolvingCardCalculatorUI> = {
   { type: 'paragraph', html: "Girdileri, birimleri, yuvarlamayı, tarihi ve yargı alanını kontrol edin; her biri tahmini değiştirebilir." },
   { type: 'paragraph', html: "Sonucu planlama ve senaryo karşılaştırması için kullanın; resmî hesabın veya uzman görüşünün yerine geçmez." },
   { type: 'paragraph', html: "Kullanmadan önce sonucu hesaplayıcının gösterdiği varsayımlarla birlikte yorumlayın." },
-  { type: 'paragraph', html: "Girdileri, birimleri, yuvarlamayı, tarihi ve yargı alanını kontrol edin; her biri tahmini değiştirebilir." },],
+  { type: 'paragraph', html: "Girdileri, birimleri, yuvarlamayı, tarihi ve yargı alanını kontrol edin; her biri tahmini değiştirebilir. Döner kredi kartı bakiyeyi her ay otomatik olarak kapatmaz; kalan borca faiz işlemeye devam eder ve düşük ödeme tutarı borcun yıllarca sürmesine neden olabilir. Güncel bakiyeyi, gerçek yıllık faiz oranını, ücretleri ve her ay ödeyebileceğiniz tutarı girin. Ödeme aylık faizi karşılamıyorsa borç azalmaz, hatta büyüyebilir. Yeni alışverişler ve nakit çekimleri ödeme planını hemen değiştirir; bu nedenle yeni kullanım olmayan senaryoyu, beklenen işlemleri içeren senaryoyla karşılaştırın. Sözleşmeyi ve hesap ekstresini kontrol edin; hesaplayıcı planlama içindir ve kredi kuruluşunun resmî hesabının veya hukuki danışmanlığın yerini tutmaz." },],
   ui: {
     title: 'Döner Kredi Kartı & Faiz Hesaplayıcı',
     balanceLabel: 'Kalan Borç',

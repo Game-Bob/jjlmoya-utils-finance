@@ -137,7 +137,7 @@ export const content: ToolLocaleContent<SalaryEmployerCostUI> = {
 },
   seo: [
     { type: 'title', text: "Van brutosalaris naar de werkelijke bedrijfskosten in Spanje", level: 2 },
-    { type: 'paragraph', html: "Bereken het nettosalaris, IRPF-inhouding, werknemersbijdragen en de totale werkgeverskosten in Spanje volgens de regels van 2026." },
+    { type: 'paragraph', html: "Bereken het nettosalaris, IRPF-inhouding, werknemersbijdragen en de totale werkgeverskosten in Spanje volgens de regels van 2026. Een salarisaanbod heeft drie verschillende bedragen: het brutoloon in het contract, het bedrag dat de werknemer ontvangt en de volledige kost voor de werkgever. Gebruik dezelfde aannames wanneer je vacatures, werknemersbudgetten of contractvormen vergelijkt." },
     { type: 'title', text: "De formule voor werkgeverskosten in Spanje", level: 2 },
     { type: 'paragraph', html: "Het bedrijf betaalt het brutosalaris plus de werkgeversbijdragen Sociale Zekerheid." },
     { type: 'table', headers: ['Layer', 'Details'], rows: [['Net', "Nettosalaris kern"], ['Employer Cost', "Totale werkgeverskosten"]] },
@@ -150,7 +150,7 @@ export const content: ToolLocaleContent<SalaryEmployerCostUI> = {
     { type: 'paragraph', html: "Nee. De calculator behoudt hetzelfde bruto jaarbedrag." },
     { type: 'tip', title: "Betalingsschema", html: "Kies 12/14 betalingen, type contract, IRPF en ongevallenpremie." },
     { type: 'title', text: "Beperkingen van deze Spaanse salarisschatting", level: 2 },
-    { type: 'paragraph', html: "Alleen Spanje. Algemeen Stelsel 2026, voltijds dienstverband. Resultaten zijn schattingen." },
+    { type: 'paragraph', html: "Alleen Spanje. Algemeen Stelsel 2026, voltijds dienstverband en een gewoon contant salaris. Resultaten zijn schattingen. Het werkelijke nettoloon en de werkgeverskosten kunnen veranderen door persoonlijke omstandigheden, regionale belasting, voordelen, bonussen en contractvoorwaarden. Gebruik voor een eerlijke vergelijking steeds dezelfde IRPF-inhouding, contractvorm, betalingsfrequentie en beroepspremie. Twaalf of veertien betalingen wijzigen het jaarbedrag niet, maar wel het gemiddelde per betaling. Bij hoge salarissen kunnen de bijdragegrens en de progressieve solidariteitsbijdrage het resultaat beïnvloeden. Het model houdt geen rekening met deeltijdgrondslagen, zelfstandigheid, bijzondere looncomponenten of latere looncorrecties. Controleer belangrijke beslissingen met een actuele loonstrook of officiële berekening en laat de gebruikte aannames gelijk wanneer je vacatures of contractaanbiedingen naast elkaar legt. Bewaar de invoer en controleer een nieuwe berekening wanneer tarieven, loonregels of uw persoonlijke situatie veranderen." },
   ],
   faq,
   bibliography,
