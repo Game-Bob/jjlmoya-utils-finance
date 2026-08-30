@@ -3,7 +3,7 @@ import type { CategoryLocaleContent } from '../../types';
 export const content: CategoryLocaleContent = {
   slug: 'finanse',
   title: 'Precyzyjne Narzędzia i Kalkulatory Finansowe',
-  description: 'Zoptymalizuj swoje finanse dzięki bezpłatnym narzędziom online. Symulatory kredytów hipotecznych, kalkulator odsetek składanych, aktualizacje czynszu i odsetki za zwłokę zaktualizowane na 2026.',
+  description: 'Zoptymalizuj finanse dzięki darmowym narzędziom online: kredyty hipoteczne, odsetki składane, czynsz i odsetki za zwłokę w 2026 roku.',
   seo: [
     {
       type: 'title',

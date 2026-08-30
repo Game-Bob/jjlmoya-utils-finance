@@ -71,7 +71,7 @@ export const content: CategoryLocaleContent = {
     {
       type: 'tip',
       title: 'Strategic Savings Advice',
-      html: '<p><strong>2026 Strategy:</strong> In a persistent inflation environment, keeping cash idle is a guaranteed loss. Use the compound interest simulator to evaluate how small increases in return rate dramatically impact your retirement.</p>',
+      html: '<p><strong>2026 Strategy:</strong> In a persistent inflation environment, keeping cash idle can reduce its purchasing power. Use the compound interest simulator to evaluate how small changes in return rate may affect your retirement.</p>',
     },
     {
       type: 'title',

@@ -4,7 +4,7 @@ export const content: CategoryLocaleContent = {
   slug: 'finanzas',
   title: 'Herramientas y Calculadoras Financieras de Precisión',
   description:
-    'Optimiza tus finanzas con herramientas gratuitas online. Simuladores de hipotecas, cálculo de interés compuesto, actualización de alquileres e intereses de demora actualizados a 2026.',
+    'Optimiza tus finanzas con herramientas gratuitas online: hipotecas, interés compuesto, alquileres e intereses de demora para 2026.',
   seo: [
     {
       type: 'title',
@@ -48,7 +48,7 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'paragraph',
-      html: 'En el ámbito legal y tributario, los plazos y porcentajes son críticos. Proporcionamos herramientas actualizadas para calcular el <strong>interés legal del dinero (3,25% en 2026)</strong> y los intereses de demora para deudas civiles o con Hacienda, evitando que pagues recargos innecesarios por falta de información.',
+      html: 'En el ámbito legal y tributario, los plazos y porcentajes son críticos. Proporcionamos herramientas de referencia para calcular el <strong>interés legal del dinero (3,25% en 2026)</strong> y los intereses de demora para deudas civiles o con Hacienda. Comprueba siempre la norma vigente antes de tomar una decisión.',
     },
     {
       type: 'title',
@@ -62,7 +62,7 @@ export const content: CategoryLocaleContent = {
     {
       type: 'list',
       items: [
-        '<strong>Datos Actualizados:</strong> Tasas de interés, límites de IPC y variables fiscales revisadas para el ejercicio 2026.',
+        '<strong>Datos de referencia:</strong> Tasas de interés, límites de IPC y variables fiscales indicadas para el ejercicio 2026.',
         '<strong>Privacidad Total:</strong> Tus datos financieros personales se procesan estrictamente en el navegador sin almacenamiento en servidores.',
         '<strong>Rigor Matemático:</strong> Algoritmos de amortización y cálculo de interés real siguiendo estándares bancarios europeos.',
         '<strong>Transparencia Legal:</strong> Herramientas adaptadas a la legislación española vigente (Ley de Vivienda, Modelos Tributarios).',
@@ -71,7 +71,7 @@ export const content: CategoryLocaleContent = {
     {
       type: 'tip',
       title: 'Consejo Estratégico de Ahorro',
-      html: '<p><strong>Estrategia 2026:</strong> En un entorno de inflación persistente, mantener el efectivo inactivo es una pérdida garantizada. Usa el simulador de interés compuesto para evaluar cómo pequeños aumentos en la tasa de retorno impactan drásticamente en tu jubilación.</p>',
+      html: '<p><strong>Estrategia 2026:</strong> En un entorno de inflación persistente, mantener el efectivo inactivo puede reducir su poder adquisitivo. Usa el simulador de interés compuesto para valorar cómo pequeños cambios en la rentabilidad pueden afectar a tu jubilación.</p>',
     },
     {
       type: 'title',
