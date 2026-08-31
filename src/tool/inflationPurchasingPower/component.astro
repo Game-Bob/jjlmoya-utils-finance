@@ -1,0 +1,79 @@
+---
+import type { InflationPurchasingPowerUI } from './ui';
+import type { InflationPurchasingPowerInput } from './logic';
+import { calculateInflationTimeline } from './logic';
+import { renderTimelineResults, renderTimelineScene } from './dom-views';
+import './inflation-purchasing-power-timeline.css';
+
+interface Props {
+  ui: InflationPurchasingPowerUI;
+  locale?: string;
+}
+
+const { ui } = Astro.props;
+const initial: InflationPurchasingPowerInput = {
+  startingAmount: 1000,
+  annualInflationRate: 2.5,
+  years: 20,
+  annualCashFlow: 0,
+  cashFlowMode: 'none',
+};
+const initialResult = calculateInflationTimeline(initial);
+const config = JSON.stringify({ ui, initial });
+---
+
+<div class="inflation-purchasing-power-tool" data-ipp-tool>
+  <form class="ipp-controls" aria-label="Inflation purchasing power inputs">
+    <div class="ipp-field">
+      <label for="ipp-amount">{ui.amountLabel}</label>
+      <input id="ipp-amount" data-ipp-input="amount" type="number" min="0.01" step="0.01" value={initial.startingAmount} inputmode="decimal" />
+      <small>{ui.amountHelp}</small>
+    </div>
+    <div class="ipp-field">
+      <label for="ipp-inflation">{ui.inflationLabel}</label>
+      <input id="ipp-inflation" data-ipp-input="inflation" type="number" min="-99.99" max="100" step="0.1" value={initial.annualInflationRate} inputmode="decimal" />
+      <small>{ui.inflationHelp}</small>
+    </div>
+    <div class="ipp-field">
+      <label for="ipp-years">{ui.yearsLabel}</label>
+      <input id="ipp-years" data-ipp-input="years" type="number" min="1" max="80" step="1" value={initial.years} inputmode="numeric" />
+      <small>{ui.yearsHelp}</small>
+    </div>
+    <div class="ipp-field">
+      <label for="ipp-cash-flow">{ui.cashFlowLabel}</label>
+      <input id="ipp-cash-flow" data-ipp-input="cash-flow" type="number" min="0" step="0.01" value={initial.annualCashFlow} inputmode="decimal" disabled />
+      <small>{ui.cashFlowHelp}</small>
+    </div>
+    <fieldset class="ipp-flow">
+      <legend>{ui.cashFlowModeLabel}</legend>
+      <div class="ipp-flow-options">
+        <button type="button" data-ipp-mode="none" class="is-active" aria-pressed="true">{ui.noCashFlowOption}</button>
+        <button type="button" data-ipp-mode="contribution" aria-pressed="false">{ui.contributionOption}</button>
+        <button type="button" data-ipp-mode="withdrawal" aria-pressed="false">{ui.withdrawalOption}</button>
+      </div>
+    </fieldset>
+  </form>
+
+  <section class="ipp-output" aria-live="polite">
+    <div class="ipp-scene-wrap" data-ipp-scene set:html={initialResult ? renderTimelineScene(initialResult, ui) : ''}></div>
+    <div class="ipp-result-wrap" data-ipp-results set:html={initialResult ? renderTimelineResults(initialResult, ui) : ''}></div>
+    <p class="ipp-error" data-ipp-error hidden>{ui.emptyMessage}</p>
+  </section>
+
+  <details class="ipp-method">
+    <summary>{ui.methodTitle}</summary>
+    <p>{ui.methodText}</p>
+    <p>{ui.limitationText}</p>
+  </details>
+</div>
+
+<script is:inline type="application/json" data-ipp-config set:html={config}></script>
+<script>
+  import { initInflationPurchasingPower } from './controller';
+
+  const root = document.querySelector<HTMLElement>('[data-ipp-tool]');
+  const configElement = document.querySelector<HTMLScriptElement>('[data-ipp-config]');
+  if (root && configElement?.textContent) {
+    initInflationPurchasingPower(root, JSON.parse(configElement.textContent));
+  }
+</script>
