@@ -53,4 +53,5 @@ import { revolvingCardCalculator } from './tool/revolvingCardCalculator/entry';
 import { pesetaValue } from './tool/pesetaValue/entry';
 import { salaryEmployerCost } from './tool/salaryEmployerCost/entry';
 import { dividendYield } from './tool/dividendYield/entry';
-export const ALL_ENTRIES = [compoundInterest, financialFreedom, profitability, courtFeeCalculator, debtSnowball, fireCalculator, ibanBicSwift, inflation, lateInterest, legalInterestRate, lotteryOptimizer, mortgage, percentageCalculator, rentIncrease, revolvingCardCalculator, pesetaValue, salaryEmployerCost, dividendYield];
+import { mortgageExtraPaymentPlanner } from './tool/mortgageExtraPaymentPlanner/entry';
+export const ALL_ENTRIES = [compoundInterest, financialFreedom, profitability, courtFeeCalculator, debtSnowball, fireCalculator, ibanBicSwift, inflation, lateInterest, legalInterestRate, lotteryOptimizer, mortgage, percentageCalculator, rentIncrease, revolvingCardCalculator, pesetaValue, salaryEmployerCost, dividendYield, mortgageExtraPaymentPlanner];

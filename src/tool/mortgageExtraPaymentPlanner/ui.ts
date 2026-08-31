@@ -1,0 +1,48 @@
+import type { CurrencyCode, MortgageFrequency } from './logic';
+
+export interface MortgageExtraPaymentPlannerUI extends Record<string, unknown> {
+  currencyLabel: string;
+  currencyHelp: string;
+  principalLabel: string;
+  principalHelp: string;
+  annualRateLabel: string;
+  annualRateHelp: string;
+  termLabel: string;
+  termHelp: string;
+  frequencyLabel: string;
+  recurringExtraLabel: string;
+  recurringExtraHelp: string;
+  oneOffExtraLabel: string;
+  oneOffExtraHelp: string;
+  oneOffPeriodLabel: string;
+  oneOffPeriodHelp: string;
+  startDateLabel: string;
+  startDateHelp: string;
+  extraSectionTitle: string;
+  outputTitle: string;
+  regularPaymentLabel: string;
+  interestSavedLabel: string;
+  periodsSavedLabel: string;
+  payoffDateLabel: string;
+  totalInterestLabel: string;
+  totalExtraLabel: string;
+  baselineLabel: string;
+  planLabel: string;
+  balanceSceneLabel: string;
+  balanceSceneHelp: string;
+  annualScheduleTitle: string;
+  yearLabel: string;
+  paymentLabel: string;
+  interestLabel: string;
+  principalPaidLabel: string;
+  extraPaidLabel: string;
+  endingBalanceLabel: string;
+  formulaTitle: string;
+  formulaText: string;
+  riskNote: string;
+  emptyMessage: string;
+  invalidInputMessage: string;
+  currencyOptions: Record<CurrencyCode, string>;
+  currencySymbols: Record<CurrencyCode, string>;
+  frequencyOptions: Record<MortgageFrequency, string>;
+}

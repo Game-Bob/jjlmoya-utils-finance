@@ -1,0 +1,25 @@
+import type { CurrencyCode } from './logic';
+
+export const DEFAULT_CURRENCY_BY_LOCALE: Record<string, CurrencyCode> = {
+  'en-au': 'AUD',
+  'en-ca': 'CAD',
+  'en-gb': 'GBP',
+  'en-in': 'INR',
+  'fr-ca': 'CAD',
+  'pt-br': 'BRL',
+  de: 'EUR',
+  en: 'USD',
+  es: 'EUR',
+  fr: 'EUR',
+  id: 'IDR',
+  it: 'EUR',
+  ja: 'JPY',
+  ko: 'KRW',
+  nl: 'EUR',
+  pl: 'PLN',
+  pt: 'EUR',
+  ru: 'RUB',
+  sv: 'SEK',
+  tr: 'TRY',
+  zh: 'CNY',
+};

@@ -1,0 +1,138 @@
+---
+import type { KnownLocale } from '../../types';
+import { calculateMortgage, getDefaultCurrency, type MortgageInputs } from './logic';
+import type { MortgageExtraPaymentPlannerUI } from './ui';
+import './mortgage-amortization-extra-payment-planner.css';
+
+interface Props {
+  ui: MortgageExtraPaymentPlannerUI;
+  locale?: KnownLocale;
+}
+
+const { ui, locale = 'en' } = Astro.props;
+const initialCurrency = getDefaultCurrency(locale);
+const initial: MortgageInputs = {
+  principal: 250000,
+  annualRate: 3.5,
+  termYears: 25,
+  frequency: 'monthly',
+  recurringExtra: 150,
+  oneOffExtra: 5000,
+  oneOffPeriod: 12,
+  startDate: '2026-09-01',
+  currency: initialCurrency,
+};
+const initialResult = calculateMortgage(initial);
+const config = JSON.stringify({ ui, initial, locale });
+const currencyOptions = Object.entries(ui.currencyOptions) as [string, string][];
+const frequencyOptions = Object.entries(ui.frequencyOptions) as [string, string][];
+---
+
+<div class="mortgage-planner" data-mortgage-planner>
+  <form class="mortgage-controls" aria-label="Mortgage amortization inputs">
+    <div class="mortgage-currency-bar">
+      <div>
+        <span class="mortgage-eyebrow">{ui.currencyLabel}</span>
+        <p class="mortgage-currency-help">{ui.currencyHelp}</p>
+      </div>
+      <div class="mortgage-field mortgage-currency-control">
+        <label>{ui.currencyLabel}</label>
+        <div class="mortgage-select" data-mortgage-select="currency" data-value={initial.currency}>
+          <button type="button" class="mortgage-select-trigger" data-mortgage-trigger aria-haspopup="listbox" aria-expanded="false">{ui.currencyOptions[initial.currency]}</button>
+          <div class="mortgage-select-menu" data-mortgage-menu role="listbox" hidden>
+            {currencyOptions.map(([value, label]) => <button type="button" data-mortgage-option data-value={value} role="option" aria-selected={value === initial.currency}>{label}</button>)}
+          </div>
+        </div>
+      </div>
+      <strong class="mortgage-status" data-mortgage-status>{initialResult ? `0 ${ui.periodsSavedLabel}` : ui.invalidInputMessage}</strong>
+    </div>
+
+    <div class="mortgage-input-grid">
+      <div class="mortgage-field mortgage-field-major">
+        <label for="mortgage-principal">{ui.principalLabel}</label>
+        <input id="mortgage-principal" data-mortgage-input="principal" type="number" min="0.01" step="0.01" value={initial.principal} inputmode="decimal" />
+        <span>{ui.principalHelp}</span>
+      </div>
+      <div class="mortgage-field">
+        <label for="mortgage-rate">{ui.annualRateLabel}</label>
+        <input id="mortgage-rate" data-mortgage-input="annualRate" type="number" min="0" max="100" step="0.01" value={initial.annualRate} inputmode="decimal" />
+        <span>{ui.annualRateHelp}</span>
+      </div>
+      <div class="mortgage-field">
+        <label for="mortgage-term">{ui.termLabel}</label>
+        <input id="mortgage-term" data-mortgage-input="termYears" type="number" min="0.25" max="100" step="0.25" value={initial.termYears} inputmode="decimal" />
+        <span>{ui.termHelp}</span>
+      </div>
+      <div class="mortgage-field">
+        <label>{ui.frequencyLabel}</label>
+        <div class="mortgage-select" data-mortgage-select="frequency" data-value={initial.frequency}>
+          <button type="button" class="mortgage-select-trigger" data-mortgage-trigger aria-haspopup="listbox" aria-expanded="false">{ui.frequencyOptions[initial.frequency]}</button>
+          <div class="mortgage-select-menu" data-mortgage-menu role="listbox" hidden>
+            {frequencyOptions.map(([value, label]) => <button type="button" data-mortgage-option data-value={value} role="option" aria-selected={value === initial.frequency}>{label}</button>)}
+          </div>
+        </div>
+      </div>
+      <div class="mortgage-field">
+        <label for="mortgage-date">{ui.startDateLabel}</label>
+        <input id="mortgage-date" data-mortgage-input="startDate" type="date" value={initial.startDate} />
+        <span>{ui.startDateHelp}</span>
+      </div>
+    </div>
+
+    <details class="mortgage-extra-details">
+      <summary>{ui.extraSectionTitle}</summary>
+      <div class="mortgage-extra-grid">
+        <div class="mortgage-field">
+          <label for="mortgage-recurring-extra">{ui.recurringExtraLabel}</label>
+          <input id="mortgage-recurring-extra" data-mortgage-input="recurringExtra" type="number" min="0" step="0.01" value={initial.recurringExtra} inputmode="decimal" />
+          <span>{ui.recurringExtraHelp}</span>
+        </div>
+        <div class="mortgage-field">
+          <label for="mortgage-one-off-extra">{ui.oneOffExtraLabel}</label>
+          <input id="mortgage-one-off-extra" data-mortgage-input="oneOffExtra" type="number" min="0" step="0.01" value={initial.oneOffExtra} inputmode="decimal" />
+          <span>{ui.oneOffExtraHelp}</span>
+        </div>
+        <div class="mortgage-field">
+          <label for="mortgage-one-off-period">{ui.oneOffPeriodLabel}</label>
+          <input id="mortgage-one-off-period" data-mortgage-input="oneOffPeriod" type="number" min="1" step="1" value={initial.oneOffPeriod} inputmode="numeric" />
+          <span>{ui.oneOffPeriodHelp}</span>
+        </div>
+      </div>
+    </details>
+  </form>
+
+  <section class="mortgage-output" aria-live="polite">
+    <div class="mortgage-output-heading">
+      <span class="mortgage-eyebrow">{ui.outputTitle}</span>
+      <span class="mortgage-output-currency" data-mortgage-output-currency>{ui.currencySymbols[initial.currency]} {initial.currency}</span>
+    </div>
+    <div class="mortgage-output-grid">
+      <div class="mortgage-scene" data-mortgage-scene>
+        <div class="mortgage-initial-scene" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+      </div>
+      <div class="mortgage-results" data-mortgage-results>
+        {initialResult && <div class="mortgage-static-result"><span>{ui.regularPaymentLabel}</span><strong>{new Intl.NumberFormat(locale, { style: 'currency', currency: initial.currency }).format(initialResult.regularPayment)}</strong></div>}
+      </div>
+    </div>
+    <p class="mortgage-empty" data-mortgage-empty hidden>{ui.emptyMessage}</p>
+    <div class="mortgage-annual-wrap">
+      <div class="mortgage-annual-heading"><h2>{ui.annualScheduleTitle}</h2><span>{ui.currencyLabel}</span></div>
+      <div class="mortgage-annual-table-scroll" data-mortgage-annual></div>
+    </div>
+  </section>
+
+  <details class="mortgage-method">
+    <summary>{ui.formulaTitle}</summary>
+    <p>{ui.formulaText}</p>
+    <p class="mortgage-risk-note">{ui.riskNote}</p>
+  </details>
+</div>
+
+<script is:inline type="application/json" data-mortgage-config set:html={config}></script>
+<script>
+  import { initMortgagePlanner } from './controller';
+
+  const root = document.querySelector<HTMLElement>('[data-mortgage-planner]');
+  const configElement = document.querySelector<HTMLScriptElement>('[data-mortgage-config]');
+  if (root && configElement?.textContent) initMortgagePlanner(root, JSON.parse(configElement.textContent));
+</script>
