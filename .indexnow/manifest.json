@@ -1,0 +1,1266 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-04T11:00:33.794Z",
+  "pages": {
+    "https://www.gamebob.dev/de/werkzeuge/kategorien/finanzen/dividendenrendite-rechner-aktien/": {
+      "hash": "e8f9444a876a2798a5683ed572bfef04ed51558e3c690819416361f51cb09cfb",
+      "route": "/de/werkzeuge/kategorien/finanzen/dividendenrendite-rechner-aktien/"
+    },
+    "https://www.gamebob.dev/de/werkzeuge/kategorien/finanzen/finanzielle-freiheit-rechner-uberlebensdauer/": {
+      "hash": "26a091f698038d2faa94a4e51d2c64f062f32bb6406c3232c35aa7acbdb79799",
+      "route": "/de/werkzeuge/kategorien/finanzen/finanzielle-freiheit-rechner-uberlebensdauer/"
+    },
+    "https://www.gamebob.dev/de/werkzeuge/kategorien/finanzen/fire-rechner-4-prozent-regel/": {
+      "hash": "085e017b96cb4054fa3210c5990932a257b8fbe34d4aa15a4f8ad4383f8e6057",
+      "route": "/de/werkzeuge/kategorien/finanzen/fire-rechner-4-prozent-regel/"
+    },
+    "https://www.gamebob.dev/de/werkzeuge/kategorien/finanzen/gerichtskostenrechner-spanien/": {
+      "hash": "01c16573a5e59fd696eaefeeacb59216675d9bfdb1e1504de7603ef5cad3bacf",
+      "route": "/de/werkzeuge/kategorien/finanzen/gerichtskostenrechner-spanien/"
+    },
+    "https://www.gamebob.dev/de/werkzeuge/kategorien/finanzen/gesetzlicher-zinssatz-spanien-2026/": {
+      "hash": "c3735157ffa4068e895e27ac8bacfb50caa9fd2ed9e3e7997e4028a101d088a6",
+      "route": "/de/werkzeuge/kategorien/finanzen/gesetzlicher-zinssatz-spanien-2026/"
+    },
+    "https://www.gamebob.dev/de/werkzeuge/kategorien/finanzen/hypotheken-amortisationsrechner-sondertilgung/": {
+      "hash": "bff1a3146b8a3aa1fc56f127aaee9e5a73eadc1542a92eec535e67a4fffb4150",
+      "route": "/de/werkzeuge/kategorien/finanzen/hypotheken-amortisationsrechner-sondertilgung/"
+    },
+    "https://www.gamebob.dev/de/werkzeuge/kategorien/finanzen/hypothekenrechner/": {
+      "hash": "efe79919736d42ba0ebe6039d6ff1226a558d94a45c123874572b43e1f8b8782",
+      "route": "/de/werkzeuge/kategorien/finanzen/hypothekenrechner/"
+    },
+    "https://www.gamebob.dev/de/werkzeuge/kategorien/finanzen/iban-bic-swift-konverter/": {
+      "hash": "0e3a00310936b6333efab16f96d205ab84a5d38b5d1178b771ea0039cc805865",
+      "route": "/de/werkzeuge/kategorien/finanzen/iban-bic-swift-konverter/"
+    },
+    "https://www.gamebob.dev/de/werkzeuge/kategorien/finanzen/": {
+      "hash": "fdb971b0b17dedb332d7dccfd6b0d5a36eca2133c9777d220e7a04f7d2123eb0",
+      "route": "/de/werkzeuge/kategorien/finanzen/"
+    },
+    "https://www.gamebob.dev/de/werkzeuge/kategorien/finanzen/inflation-kaufkraft-zeitstrahl-rechner/": {
+      "hash": "54ec69d96840d1a411b7efb8554d313e63b596a11530b5bb5319406d3d8c97f2",
+      "route": "/de/werkzeuge/kategorien/finanzen/inflation-kaufkraft-zeitstrahl-rechner/"
+    },
+    "https://www.gamebob.dev/de/werkzeuge/kategorien/finanzen/inflation-rechner-spanien/": {
+      "hash": "1fba30745c4c6cfd0d93931fd416b6bd39892cbedd1bcc30c0d269e66753e2f2",
+      "route": "/de/werkzeuge/kategorien/finanzen/inflation-rechner-spanien/"
+    },
+    "https://www.gamebob.dev/de/werkzeuge/kategorien/finanzen/lotto-optimierer-wahrscheinlichkeitsrechner/": {
+      "hash": "dd337b8d1630ddcb5f65a146ca4270472371ebb15beb7d46ad2a5d7405912eef",
+      "route": "/de/werkzeuge/kategorien/finanzen/lotto-optimierer-wahrscheinlichkeitsrechner/"
+    },
+    "https://www.gamebob.dev/de/werkzeuge/kategorien/finanzen/mieterhoehungsrechner-spanien-ipc/": {
+      "hash": "9249e4dfe1645e301239c483c02537733cc1628db98e08ea282c82dd2c519c22",
+      "route": "/de/werkzeuge/kategorien/finanzen/mieterhoehungsrechner-spanien-ipc/"
+    },
+    "https://www.gamebob.dev/de/werkzeuge/kategorien/finanzen/peseten-in-euro-umrechner/": {
+      "hash": "658d6a0347fe7f145045ff9785e15db3683fcf75d5b3661e5dc7e7597f848166",
+      "route": "/de/werkzeuge/kategorien/finanzen/peseten-in-euro-umrechner/"
+    },
+    "https://www.gamebob.dev/de/werkzeuge/kategorien/finanzen/prozentrechner/": {
+      "hash": "33191ab4697248c04b50282714b001a0a0efbb5a43a9a8ad1286b1296fddefd8",
+      "route": "/de/werkzeuge/kategorien/finanzen/prozentrechner/"
+    },
+    "https://www.gamebob.dev/de/werkzeuge/kategorien/finanzen/rechner-verzugszinsen-spanien/": {
+      "hash": "ccdd6b57ae05d2bc30a39584c4479b3719758952cdb8b0ca3c5183edce05181e",
+      "route": "/de/werkzeuge/kategorien/finanzen/rechner-verzugszinsen-spanien/"
+    },
+    "https://www.gamebob.dev/de/werkzeuge/kategorien/finanzen/rentabilitatsrechner-investition-roi-cagr/": {
+      "hash": "50f42426a71ef1b2d7482d81e99f4a44933c4e76c15560c39e9f819eed371037",
+      "route": "/de/werkzeuge/kategorien/finanzen/rentabilitatsrechner-investition-roi-cagr/"
+    },
+    "https://www.gamebob.dev/de/werkzeuge/kategorien/finanzen/revolverkarten-rechner/": {
+      "hash": "6ce98ca29a0f281b93c412ffb281b2e85d3c5684b3b5cd95fa727b02a2dfba58",
+      "route": "/de/werkzeuge/kategorien/finanzen/revolverkarten-rechner/"
+    },
+    "https://www.gamebob.dev/de/werkzeuge/kategorien/finanzen/schneeball-methode-schuldenrechner/": {
+      "hash": "64f48668e2a766cdb9702e900342c53edb8324a368ab216799b3348256c14c38",
+      "route": "/de/werkzeuge/kategorien/finanzen/schneeball-methode-schuldenrechner/"
+    },
+    "https://www.gamebob.dev/de/werkzeuge/kategorien/finanzen/spanien-brutto-netto-gehaltsrechner-arbeitgeberkosten/": {
+      "hash": "11c0a15332e6a94e95db5e26bb10cf7e1f21f686ea8d3ab6d27b1a19427f215b",
+      "route": "/de/werkzeuge/kategorien/finanzen/spanien-brutto-netto-gehaltsrechner-arbeitgeberkosten/"
+    },
+    "https://www.gamebob.dev/de/werkzeuge/kategorien/finanzen/zinseszins-rechner/": {
+      "hash": "f585386adf7db2ae1d7e46aa8f92826695d92931ecd9a762d2959a1ad5528c9b",
+      "route": "/de/werkzeuge/kategorien/finanzen/zinseszins-rechner/"
+    },
+    "https://www.gamebob.dev/en/utilities/categories/finance/compound-interest-calculator/": {
+      "hash": "6231517203810f305cc4639c90d4749af126f03d8adca6f847317b305130e27b",
+      "route": "/en/utilities/categories/finance/compound-interest-calculator/"
+    },
+    "https://www.gamebob.dev/en/utilities/categories/finance/debt-snowball-calculator/": {
+      "hash": "6268850c0b34c8b4e3df72551a14086af48b91d130d24a2b925ba265710e1e70",
+      "route": "/en/utilities/categories/finance/debt-snowball-calculator/"
+    },
+    "https://www.gamebob.dev/en/utilities/categories/finance/dividend-yield-calculator/": {
+      "hash": "0d4ec57493be112e86f4fd7d01fa069b8b7ebfeb95ebe71509d364515f210bf9",
+      "route": "/en/utilities/categories/finance/dividend-yield-calculator/"
+    },
+    "https://www.gamebob.dev/en/utilities/categories/finance/financial-freedom-calculator/": {
+      "hash": "ead37836b549ab082e5efe59c2072f8342b5d4b61258b228db7f8c6e6ce60d39",
+      "route": "/en/utilities/categories/finance/financial-freedom-calculator/"
+    },
+    "https://www.gamebob.dev/en/utilities/categories/finance/four-percent-rule-fire-calculator/": {
+      "hash": "e57df924251f6c14be71a6057a0dbed96df19ca38c61e92b502c0ca598a933d5",
+      "route": "/en/utilities/categories/finance/four-percent-rule-fire-calculator/"
+    },
+    "https://www.gamebob.dev/en/utilities/categories/finance/iban-to-bic-swift-converter/": {
+      "hash": "8af301dce4a1ffdc3a36492dd50085857fc818f42c21ee7db437d195db6e5dbd",
+      "route": "/en/utilities/categories/finance/iban-to-bic-swift-converter/"
+    },
+    "https://www.gamebob.dev/en/utilities/categories/finance/": {
+      "hash": "462b50de1992ffa15dcb3a133b14166cacb20e20b42515d69171f248108f8cb5",
+      "route": "/en/utilities/categories/finance/"
+    },
+    "https://www.gamebob.dev/en/utilities/categories/finance/inflation-calculator-spain/": {
+      "hash": "db9e3a6c94d0931593c1aebb5bf8e957e1fad8f28cbbd42596d219e8bf8eeaf7",
+      "route": "/en/utilities/categories/finance/inflation-calculator-spain/"
+    },
+    "https://www.gamebob.dev/en/utilities/categories/finance/inflation-purchasing-power-timeline-calculator/": {
+      "hash": "a5d70e28e781e8eb6b5c1a0c10d6fa504bf2cf2f3a2e9ddc2ef2f17e4437e458",
+      "route": "/en/utilities/categories/finance/inflation-purchasing-power-timeline-calculator/"
+    },
+    "https://www.gamebob.dev/en/utilities/categories/finance/late-interest-calculator/": {
+      "hash": "2072e41c26bf91b68b501482a70dff0a497838fdca8b6fcb09a3e0aa0635e5c5",
+      "route": "/en/utilities/categories/finance/late-interest-calculator/"
+    },
+    "https://www.gamebob.dev/en/utilities/categories/finance/legal-interest-on-money-spain/": {
+      "hash": "cfb030103cb47017b5d463d6608800620bbd9d2123bd762cd511ec74530b4f28",
+      "route": "/en/utilities/categories/finance/legal-interest-on-money-spain/"
+    },
+    "https://www.gamebob.dev/en/utilities/categories/finance/mortgage-amortization-extra-payment-planner/": {
+      "hash": "6fe9e55e86e58770ed09bb3e2f2e2b7873b7c78a7c14d8693ca1386a2860b422",
+      "route": "/en/utilities/categories/finance/mortgage-amortization-extra-payment-planner/"
+    },
+    "https://www.gamebob.dev/en/utilities/categories/finance/mortgage-calculator/": {
+      "hash": "86a7585922c0448f6bc18c4d4e352beeba342a1a004d9007695c2b58f1c64a6c",
+      "route": "/en/utilities/categories/finance/mortgage-calculator/"
+    },
+    "https://www.gamebob.dev/en/utilities/categories/finance/percentage-calculator/": {
+      "hash": "855a01e7c2a90dfae094b2c85bbe40dcc6ffebecb5fd3d2a7da97eaf40b98240",
+      "route": "/en/utilities/categories/finance/percentage-calculator/"
+    },
+    "https://www.gamebob.dev/en/utilities/categories/finance/pesetas-to-euros-with-inflation-calculator/": {
+      "hash": "bdca4429b2f0b4dbb3ec54123f5e4031340022d8b0ed4de1cd9028caad8ad4b9",
+      "route": "/en/utilities/categories/finance/pesetas-to-euros-with-inflation-calculator/"
+    },
+    "https://www.gamebob.dev/en/utilities/categories/finance/profitability-calculator-roi-cagr/": {
+      "hash": "5de5bd89a5dcff8d0cadf82b98217c53a6825a8c9f6ee6a074113584f8eacbd0",
+      "route": "/en/utilities/categories/finance/profitability-calculator-roi-cagr/"
+    },
+    "https://www.gamebob.dev/en/utilities/categories/finance/rent-increase-calculator/": {
+      "hash": "8dfe85fd6bdc71ec70d6cafc60b3272a28bead92b2ece16816e27970d7e65afe",
+      "route": "/en/utilities/categories/finance/rent-increase-calculator/"
+    },
+    "https://www.gamebob.dev/en/utilities/categories/finance/revolving-card-calculator/": {
+      "hash": "45942a0d65f3a463df2dd23f2079125cb24584a1be376448144396519ce5ad7c",
+      "route": "/en/utilities/categories/finance/revolving-card-calculator/"
+    },
+    "https://www.gamebob.dev/en/utilities/categories/finance/spain-gross-net-salary-employer-cost-calculator/": {
+      "hash": "f9c2ab631a1cafa321f17da122937ee71203aaa3a238615d5c8f3432a880b7de",
+      "route": "/en/utilities/categories/finance/spain-gross-net-salary-employer-cost-calculator/"
+    },
+    "https://www.gamebob.dev/en/utilities/categories/finance/spain-lottery-optimizer/": {
+      "hash": "803175269bced352266214b3a77c0d778613f46b883414ac88a6871041f64631",
+      "route": "/en/utilities/categories/finance/spain-lottery-optimizer/"
+    },
+    "https://www.gamebob.dev/en/utilities/categories/finance/spanish-court-fees-calculator/": {
+      "hash": "2119041a9d478acc6de227dcd2f9ff80920c77b28ec402b8c7ab398d9c198c10",
+      "route": "/en/utilities/categories/finance/spanish-court-fees-calculator/"
+    },
+    "https://www.gamebob.dev/fr/utilitaires/categories/finances/calculateur-amortissement-hypotheque-remboursements-anticipes/": {
+      "hash": "73aa79070e38797fb98a5c9759211026e3039fe869ff0d17ee48df29abbb659f",
+      "route": "/fr/utilitaires/categories/finances/calculateur-amortissement-hypotheque-remboursements-anticipes/"
+    },
+    "https://www.gamebob.dev/fr/utilitaires/categories/finances/calculateur-evolution-pouvoir-achat-inflation/": {
+      "hash": "3a1078555087a6b7d46570dcecfa2216f8462088de713d95cbc34c54b9e6aff7",
+      "route": "/fr/utilitaires/categories/finances/calculateur-evolution-pouvoir-achat-inflation/"
+    },
+    "https://www.gamebob.dev/fr/utilitaires/categories/finances/calculateur-interets-composes/": {
+      "hash": "b58e98447b51d1748717edbc0d128d12fc89c67bd05c74da310dbe2da2383c84",
+      "route": "/fr/utilitaires/categories/finances/calculateur-interets-composes/"
+    },
+    "https://www.gamebob.dev/fr/utilitaires/categories/finances/calculateur-liberte-financiere-piste-survie/": {
+      "hash": "0828243ec516dc2d3f6a59c02c8012f69e80a7ecfcb552933615f9f439d055e4",
+      "route": "/fr/utilitaires/categories/finances/calculateur-liberte-financiere-piste-survie/"
+    },
+    "https://www.gamebob.dev/fr/utilitaires/categories/finances/calculateur-rendement-dividende-actions/": {
+      "hash": "4a2dd02a8317c3687c1e95b57514db1c4bc7ccf657b2cb43ee04445210162b9a",
+      "route": "/fr/utilitaires/categories/finances/calculateur-rendement-dividende-actions/"
+    },
+    "https://www.gamebob.dev/fr/utilitaires/categories/finances/calculateur-rentabilite-investissement-roi-cagr/": {
+      "hash": "ed153db73e37abd8a3905c9613758ae759a776a728e6eecea4ec745e26d35c0b",
+      "route": "/fr/utilitaires/categories/finances/calculateur-rentabilite-investissement-roi-cagr/"
+    },
+    "https://www.gamebob.dev/fr/utilitaires/categories/finances/calculateur-salaire-brut-net-cout-employeur-espagne/": {
+      "hash": "ecdabf8b2ec9dadc175c9acb4790b9c24226479488d5094cc5138a3ae4a4b6d5",
+      "route": "/fr/utilitaires/categories/finances/calculateur-salaire-brut-net-cout-employeur-espagne/"
+    },
+    "https://www.gamebob.dev/fr/utilitaires/categories/finances/calculatrice-augmentation-loyer/": {
+      "hash": "e2ec2b7100677c067eff398aa58212c68bac6d52f8b30990a11b5fb438ccf72e",
+      "route": "/fr/utilitaires/categories/finances/calculatrice-augmentation-loyer/"
+    },
+    "https://www.gamebob.dev/fr/utilitaires/categories/finances/calculatrice-boule-de-neige-dette/": {
+      "hash": "efc7ee321a5fca0a39b84c92f21e9cff7a7146f362e5bd461d6834a00454c8c1",
+      "route": "/fr/utilitaires/categories/finances/calculatrice-boule-de-neige-dette/"
+    },
+    "https://www.gamebob.dev/fr/utilitaires/categories/finances/calculatrice-carte-revolving/": {
+      "hash": "00b52d47c949b89ac7866417bdce821b7f44b5aab3544276c220fe8be7cacf3f",
+      "route": "/fr/utilitaires/categories/finances/calculatrice-carte-revolving/"
+    },
+    "https://www.gamebob.dev/fr/utilitaires/categories/finances/calculatrice-frais-judiciaires-espagne/": {
+      "hash": "2e747776973b0449a674d63de7a10ab5d9ada0a760bccd8d91dcf371380446e0",
+      "route": "/fr/utilitaires/categories/finances/calculatrice-frais-judiciaires-espagne/"
+    },
+    "https://www.gamebob.dev/fr/utilitaires/categories/finances/calculatrice-hypotheque/": {
+      "hash": "1d156169cc356cbbbd792273a990f3393b8602d5998c4a1319bc3bddb904d090",
+      "route": "/fr/utilitaires/categories/finances/calculatrice-hypotheque/"
+    },
+    "https://www.gamebob.dev/fr/utilitaires/categories/finances/calculatrice-inflation-espagne/": {
+      "hash": "adf910a9997f88912d80a0e1dc4b9057ee29a6fd1659263c1de19162dd132fa2",
+      "route": "/fr/utilitaires/categories/finances/calculatrice-inflation-espagne/"
+    },
+    "https://www.gamebob.dev/fr/utilitaires/categories/finances/calculatrice-interets-retard/": {
+      "hash": "6e95d74939316dfd7bd407e19cbc65a66d05bf73e9beff131d020bd58dda9dc3",
+      "route": "/fr/utilitaires/categories/finances/calculatrice-interets-retard/"
+    },
+    "https://www.gamebob.dev/fr/utilitaires/categories/finances/calculatrice-pourcentages/": {
+      "hash": "60cf04723e2da16d956d0911dd61ed9459afdd5fad6c66971bf7371cd561ca71",
+      "route": "/fr/utilitaires/categories/finances/calculatrice-pourcentages/"
+    },
+    "https://www.gamebob.dev/fr/utilitaires/categories/finances/calculatrice-regle-4-pour-cent-fire/": {
+      "hash": "5e12ef1bb32b0d3037de7f7ad5b89d97371542b1e17447a266fb9d3fe0d222f7",
+      "route": "/fr/utilitaires/categories/finances/calculatrice-regle-4-pour-cent-fire/"
+    },
+    "https://www.gamebob.dev/fr/utilitaires/categories/finances/convertisseur-iban-bic-swift/": {
+      "hash": "8f4ef85454327b32c981191d64758eca15d3b22c2051ca144625f43ac3007320",
+      "route": "/fr/utilitaires/categories/finances/convertisseur-iban-bic-swift/"
+    },
+    "https://www.gamebob.dev/fr/utilitaires/categories/finances/convertisseur-pesetas-euros-valeur-2026/": {
+      "hash": "a10c067a3fa2cbddbdcd3b8b08e4464a72fe70169987654a217606bf2af9b839",
+      "route": "/fr/utilitaires/categories/finances/convertisseur-pesetas-euros-valeur-2026/"
+    },
+    "https://www.gamebob.dev/fr/utilitaires/categories/finances/": {
+      "hash": "1338497a7ac70367664756980c9c9cb58dabb45af70afefef6d22dcbcc2b8e99",
+      "route": "/fr/utilitaires/categories/finances/"
+    },
+    "https://www.gamebob.dev/fr/utilitaires/categories/finances/interet-legal-argent-espagne/": {
+      "hash": "d769c72d5c61f73bdb74cff5124080362434423d185c2e49ac1f9782858d84ae",
+      "route": "/fr/utilitaires/categories/finances/interet-legal-argent-espagne/"
+    },
+    "https://www.gamebob.dev/fr/utilitaires/categories/finances/optimiseur-loterie-espagne/": {
+      "hash": "4c7d308274de29481f45ca1a55bbfdb6105cf2a80c1dad127c78ea2b54d42a5c",
+      "route": "/fr/utilitaires/categories/finances/optimiseur-loterie-espagne/"
+    },
+    "https://www.gamebob.dev/id/utilitas/kategori/keuangan/bunga-majemuk/": {
+      "hash": "5def4a64bb63c13085c489c1b4f22009d191e8dd628e44828f1d8260cb5b1cd1",
+      "route": "/id/utilitas/kategori/keuangan/bunga-majemuk/"
+    },
+    "https://www.gamebob.dev/id/utilitas/kategori/keuangan/": {
+      "hash": "96bad4ab820ca1f41a12539987beb7a9afea0ed9e5523d5898e813dec5e33ede",
+      "route": "/id/utilitas/kategori/keuangan/"
+    },
+    "https://www.gamebob.dev/id/utilitas/kategori/keuangan/inflasi-spanyol/": {
+      "hash": "f3bda7d9cf2c301cfb8d3a4b89cfdea2c1550552731a89900b334e94b556b0d4",
+      "route": "/id/utilitas/kategori/keuangan/inflasi-spanyol/"
+    },
+    "https://www.gamebob.dev/id/utilitas/kategori/keuangan/kalkulator-amortisasi-hipotek-pembayaran-ekstra/": {
+      "hash": "ac6f7f79ff61155154a5a2cf4947ea880ff84e42d627d172af29316feddbc826",
+      "route": "/id/utilitas/kategori/keuangan/kalkulator-amortisasi-hipotek-pembayaran-ekstra/"
+    },
+    "https://www.gamebob.dev/id/utilitas/kategori/keuangan/kalkulator-aturan-4-persen-fire/": {
+      "hash": "221202e24425083f1d3ea57dcd4dac5369c754ece2a0e95cfd899f596035d3be",
+      "route": "/id/utilitas/kategori/keuangan/kalkulator-aturan-4-persen-fire/"
+    },
+    "https://www.gamebob.dev/id/utilitas/kategori/keuangan/kalkulator-biaya-pengadilan-spanyol/": {
+      "hash": "702e6b25a22e5702d6b0da5fe9d10e8f167eb940a34581dd321e12e1601b9dcb",
+      "route": "/id/utilitas/kategori/keuangan/kalkulator-biaya-pengadilan-spanyol/"
+    },
+    "https://www.gamebob.dev/id/utilitas/kategori/keuangan/kalkulator-bunga-keterlambatan-spanyol/": {
+      "hash": "5b0e0910e5fed06b79fb282e9f6e60ceceb6c58bf65d2dab2e83d61ea75404a9",
+      "route": "/id/utilitas/kategori/keuangan/kalkulator-bunga-keterlambatan-spanyol/"
+    },
+    "https://www.gamebob.dev/id/utilitas/kategori/keuangan/kalkulator-gaji-kotor-bersih-biaya-pemberi-kerja-spanyol/": {
+      "hash": "1c47753c3394362c7badb5969e622a785db72430695e06392b41eb2fe61a3d4b",
+      "route": "/id/utilitas/kategori/keuangan/kalkulator-gaji-kotor-bersih-biaya-pemberi-kerja-spanyol/"
+    },
+    "https://www.gamebob.dev/id/utilitas/kategori/keuangan/kalkulator-garis-waktu-daya-beli-inflasi/": {
+      "hash": "95abb20bc00e1af7b9440e6f91fd6f750500463e8669f7d92e35da71f1e25f59",
+      "route": "/id/utilitas/kategori/keuangan/kalkulator-garis-waktu-daya-beli-inflasi/"
+    },
+    "https://www.gamebob.dev/id/utilitas/kategori/keuangan/kalkulator-hipotek/": {
+      "hash": "384564f761621c47fc833f94d66064ae6b4adc825f94980837d594ddec25099a",
+      "route": "/id/utilitas/kategori/keuangan/kalkulator-hipotek/"
+    },
+    "https://www.gamebob.dev/id/utilitas/kategori/keuangan/kalkulator-imbal-hasil-dividen-saham/": {
+      "hash": "9f8291a21d05e7af9523c1a07bf4dab981d313198d19759ce6793bacf6c7d5bb",
+      "route": "/id/utilitas/kategori/keuangan/kalkulator-imbal-hasil-dividen-saham/"
+    },
+    "https://www.gamebob.dev/id/utilitas/kategori/keuangan/kalkulator-kartu-revolving/": {
+      "hash": "10add2c8f409884ff34b09052eb8c04891fde7164db9d07e121bfc1528ddc55d",
+      "route": "/id/utilitas/kategori/keuangan/kalkulator-kartu-revolving/"
+    },
+    "https://www.gamebob.dev/id/utilitas/kategori/keuangan/kalkulator-kebebasan-finansial-runway-bertahan-hidup/": {
+      "hash": "858c4b3b1920427d09d541a7017d0f6d6c6e90cbb2eadd8611c417de921f65c9",
+      "route": "/id/utilitas/kategori/keuangan/kalkulator-kebebasan-finansial-runway-bertahan-hidup/"
+    },
+    "https://www.gamebob.dev/id/utilitas/kategori/keuangan/kalkulator-kenaikan-sewa-spanyol-ipc/": {
+      "hash": "dfc9f0a4e2c8be527b22b8c34fcc796872437778047f86fc37d4eb6c8b41293f",
+      "route": "/id/utilitas/kategori/keuangan/kalkulator-kenaikan-sewa-spanyol-ipc/"
+    },
+    "https://www.gamebob.dev/id/utilitas/kategori/keuangan/kalkulator-metode-bola-salju-utang/": {
+      "hash": "96f3cf963e9e708fb9a90c9655a4bfd87f5e8880cde8c7286def2710963a17f5",
+      "route": "/id/utilitas/kategori/keuangan/kalkulator-metode-bola-salju-utang/"
+    },
+    "https://www.gamebob.dev/id/utilitas/kategori/keuangan/kalkulator-persentase/": {
+      "hash": "a1c18c37c9f844b58313e8630e7e89b387c95a4a4d9d3cadbf9084293a25e986",
+      "route": "/id/utilitas/kategori/keuangan/kalkulator-persentase/"
+    },
+    "https://www.gamebob.dev/id/utilitas/kategori/keuangan/kalkulator-profitabilitas-investasi-roi-cagr/": {
+      "hash": "dd415f962a0b6fb36904bc189b773424cb60dfb32f330b0eb8ddfc09c66ee635",
+      "route": "/id/utilitas/kategori/keuangan/kalkulator-profitabilitas-investasi-roi-cagr/"
+    },
+    "https://www.gamebob.dev/id/utilitas/kategori/keuangan/konverter-iban-ke-bic-swift/": {
+      "hash": "d0d95c727ccb1431195fe7efeb1459579c5c1c9f1cb14a15fa5090d3f55096af",
+      "route": "/id/utilitas/kategori/keuangan/konverter-iban-ke-bic-swift/"
+    },
+    "https://www.gamebob.dev/id/utilitas/kategori/keuangan/konverter-peseta-ke-euro-nilai-2026/": {
+      "hash": "051e420faa8dc791db12809ca846c454415c5fcc49e2d56f9156140d36c5f0e5",
+      "route": "/id/utilitas/kategori/keuangan/konverter-peseta-ke-euro-nilai-2026/"
+    },
+    "https://www.gamebob.dev/id/utilitas/kategori/keuangan/pengoptimal-lotre-kalkulator-peluang/": {
+      "hash": "756973a7a1d087661e101fa789c6e7ad84f74950642eda08849f07752d1ee1d1",
+      "route": "/id/utilitas/kategori/keuangan/pengoptimal-lotre-kalkulator-peluang/"
+    },
+    "https://www.gamebob.dev/id/utilitas/kategori/keuangan/suku-bunga-hukum-spanyol-2026/": {
+      "hash": "6b44f2a025207de2018d1a70a33b391fa9a0e388712340d627c3767d81982906",
+      "route": "/id/utilitas/kategori/keuangan/suku-bunga-hukum-spanyol-2026/"
+    },
+    "https://www.gamebob.dev/it/utilita/categorie/finanza/calcolatore-ammortamento-mutuo-pagamenti-extra/": {
+      "hash": "31cdeb34a63fcb889284bb55ec9b2e353d3a146f8d7aad59212b5a31d71829db",
+      "route": "/it/utilita/categorie/finanza/calcolatore-ammortamento-mutuo-pagamenti-extra/"
+    },
+    "https://www.gamebob.dev/it/utilita/categorie/finanza/calcolatore-aumento-affitto-spagna-ipc/": {
+      "hash": "e37cd26924019c7e6c9fdcf91397d4bd8304c482930d000e885a31bcfdaa53db",
+      "route": "/it/utilita/categorie/finanza/calcolatore-aumento-affitto-spagna-ipc/"
+    },
+    "https://www.gamebob.dev/it/utilita/categorie/finanza/calcolatore-carte-revolving/": {
+      "hash": "28d48071a992779c88d075627187cb98d3f5fad4b557672560086678463982a8",
+      "route": "/it/utilita/categorie/finanza/calcolatore-carte-revolving/"
+    },
+    "https://www.gamebob.dev/it/utilita/categorie/finanza/calcolatore-liberta-finanziaria-autonomia/": {
+      "hash": "e4b91f76ccf1041c0faccae62109a64cdab2bdaaa03c97c6678412b4cdba3588",
+      "route": "/it/utilita/categorie/finanza/calcolatore-liberta-finanziaria-autonomia/"
+    },
+    "https://www.gamebob.dev/it/utilita/categorie/finanza/calcolatore-percentuali/": {
+      "hash": "13413518460421729fea71d81b63bbed253d1283a9a9416f0235c676f957d4f6",
+      "route": "/it/utilita/categorie/finanza/calcolatore-percentuali/"
+    },
+    "https://www.gamebob.dev/it/utilita/categorie/finanza/calcolatore-redditivita-investimento-roi-cagr/": {
+      "hash": "88a9b19c72633dcedebed09991b81686857e7fba0104cade7b278e7c583025a0",
+      "route": "/it/utilita/categorie/finanza/calcolatore-redditivita-investimento-roi-cagr/"
+    },
+    "https://www.gamebob.dev/it/utilita/categorie/finanza/calcolatore-regola-4-per-cento-fire/": {
+      "hash": "e4ffa4dd6a337fbc6ff2e94977412c67d32aa7b2a46e9d9b9f6e497730a57fe8",
+      "route": "/it/utilita/categorie/finanza/calcolatore-regola-4-per-cento-fire/"
+    },
+    "https://www.gamebob.dev/it/utilita/categorie/finanza/calcolatore-rendimento-dividendi-azioni/": {
+      "hash": "5159972481ddc140761a2237b9a4b5bdc4715f549c1dd734b441e69c45b49a38",
+      "route": "/it/utilita/categorie/finanza/calcolatore-rendimento-dividendi-azioni/"
+    },
+    "https://www.gamebob.dev/it/utilita/categorie/finanza/calcolatore-stipendio-lordo-netto-costo-azienda-spagna/": {
+      "hash": "12ae17a1701a60ddfb30b641267180c7e5028796addb60cff0120566ad25a4f0",
+      "route": "/it/utilita/categorie/finanza/calcolatore-stipendio-lordo-netto-costo-azienda-spagna/"
+    },
+    "https://www.gamebob.dev/it/utilita/categorie/finanza/calcolatore-tasse-giudiziarie-spagna/": {
+      "hash": "b635ee2aa3382a0afba852be8964595396e084b401a5b898107d909177e51090",
+      "route": "/it/utilita/categorie/finanza/calcolatore-tasse-giudiziarie-spagna/"
+    },
+    "https://www.gamebob.dev/it/utilita/categorie/finanza/calcolatore-timeline-potere-acquisto-inflazione/": {
+      "hash": "9060af4ea1d4e01b5f67542419190a622528491cb53e3cf96579381383996a96",
+      "route": "/it/utilita/categorie/finanza/calcolatore-timeline-potere-acquisto-inflazione/"
+    },
+    "https://www.gamebob.dev/it/utilita/categorie/finanza/calcolo-interessi-mora-spagna/": {
+      "hash": "86fee12d62099d55ab94cfdcf7bbdb37118b1f535544685bb113617325e93d79",
+      "route": "/it/utilita/categorie/finanza/calcolo-interessi-mora-spagna/"
+    },
+    "https://www.gamebob.dev/it/utilita/categorie/finanza/convertitore-iban-bic-swift/": {
+      "hash": "e05db11bf07552ba0722b3adc88626efb7cae424bff2d62fe49bcee39c2bd71d",
+      "route": "/it/utilita/categorie/finanza/convertitore-iban-bic-swift/"
+    },
+    "https://www.gamebob.dev/it/utilita/categorie/finanza/convertitore-peseta-euro-valore-2026/": {
+      "hash": "641d5a9839872739f40a43a7257c1e53840969515197830d9f50471698e484bf",
+      "route": "/it/utilita/categorie/finanza/convertitore-peseta-euro-valore-2026/"
+    },
+    "https://www.gamebob.dev/it/utilita/categorie/finanza/": {
+      "hash": "1b18be28887e434a2227776d54e1cf55dab034d846e9e5bf83059e9f2eeb31aa",
+      "route": "/it/utilita/categorie/finanza/"
+    },
+    "https://www.gamebob.dev/it/utilita/categorie/finanza/inflazione-spagna/": {
+      "hash": "65fae0f717cab1f4269edcbb1769153f3ae3b3576892186638df821d98046dd8",
+      "route": "/it/utilita/categorie/finanza/inflazione-spagna/"
+    },
+    "https://www.gamebob.dev/it/utilita/categorie/finanza/interesse-composto/": {
+      "hash": "ba1142bceb51b1e54b558a53728e2c909ae6b7fee0f46248abd2f3ab4192683d",
+      "route": "/it/utilita/categorie/finanza/interesse-composto/"
+    },
+    "https://www.gamebob.dev/it/utilita/categorie/finanza/interesse-legale-denaro-spagna-2026/": {
+      "hash": "01de828986f86c27e8d8d5556a4fd95da5500eed846cc26ddb20909be5e56785",
+      "route": "/it/utilita/categorie/finanza/interesse-legale-denaro-spagna-2026/"
+    },
+    "https://www.gamebob.dev/it/utilita/categorie/finanza/metodo-palla-di-neve-calcolatore-debiti/": {
+      "hash": "0a87bdde444dd162dc805f3e92ab5bea61ff0ce803d82ebe1992048435f25141",
+      "route": "/it/utilita/categorie/finanza/metodo-palla-di-neve-calcolatore-debiti/"
+    },
+    "https://www.gamebob.dev/it/utilita/categorie/finanza/mutuo/": {
+      "hash": "df025ef66ba7c9b2988303f9ab7961f0ab5d86a2929dc250974d1f3d7f14d722",
+      "route": "/it/utilita/categorie/finanza/mutuo/"
+    },
+    "https://www.gamebob.dev/it/utilita/categorie/finanza/ottimizzatore-lotterie-calcolatore-probabilita/": {
+      "hash": "6f1456b52b2b379678a0e3f00cf6c6407c53ec7efbd13c560f7139e0d65bf395",
+      "route": "/it/utilita/categorie/finanza/ottimizzatore-lotterie-calcolatore-probabilita/"
+    },
+    "https://www.gamebob.dev/ja/utilities/categories/finance/compound-interest-calculator/": {
+      "hash": "3592ffef07f141a9bb2da883e7188003a08755c00cf8751d29aef6efb20a639b",
+      "route": "/ja/utilities/categories/finance/compound-interest-calculator/"
+    },
+    "https://www.gamebob.dev/ja/utilities/categories/finance/debt-snowball-calculator/": {
+      "hash": "8b15124b9391c053b2c66462ee9c827d62e3dd34bedd949a4e667ea2d27b6f6b",
+      "route": "/ja/utilities/categories/finance/debt-snowball-calculator/"
+    },
+    "https://www.gamebob.dev/ja/utilities/categories/finance/dividend-yield-calculator/": {
+      "hash": "4a82feb2428007315a5a428587b74771907c789a716c7024e17b5db1cd8bf393",
+      "route": "/ja/utilities/categories/finance/dividend-yield-calculator/"
+    },
+    "https://www.gamebob.dev/ja/utilities/categories/finance/financial-freedom-calculator/": {
+      "hash": "4f616eefb0b464d5c5270078cff687a1c67fc6a47be37e24b2c47a25cd348211",
+      "route": "/ja/utilities/categories/finance/financial-freedom-calculator/"
+    },
+    "https://www.gamebob.dev/ja/utilities/categories/finance/four-percent-rule-fire-calculator/": {
+      "hash": "c9b7388a7adc1a8be06bcd84a9f4f460093466a05b94baaf95c67750a5e3b071",
+      "route": "/ja/utilities/categories/finance/four-percent-rule-fire-calculator/"
+    },
+    "https://www.gamebob.dev/ja/utilities/categories/finance/iban-to-bic-swift-converter/": {
+      "hash": "68c5a74170ae5fcdfc7c25bc13cecd4ab38412c5d23a3952f13e38c08408075b",
+      "route": "/ja/utilities/categories/finance/iban-to-bic-swift-converter/"
+    },
+    "https://www.gamebob.dev/ja/utilities/categories/finance/": {
+      "hash": "361af6b0e88cc34cdeae21f5e443e80a064c9fb6920c8fb2c12aa27e9f794a09",
+      "route": "/ja/utilities/categories/finance/"
+    },
+    "https://www.gamebob.dev/ja/utilities/categories/finance/inflation-calculator-spain/": {
+      "hash": "3e96c5395faf2fa03dcceafaf6d99dc6c5d482c0551b67b900b3128e298e7820",
+      "route": "/ja/utilities/categories/finance/inflation-calculator-spain/"
+    },
+    "https://www.gamebob.dev/ja/utilities/categories/finance/inflation-purchasing-power-timeline-calculator/": {
+      "hash": "945e985d8cb111caf2f9ec3345843c0b528d0538bad66b1ea92613ecba82c64e",
+      "route": "/ja/utilities/categories/finance/inflation-purchasing-power-timeline-calculator/"
+    },
+    "https://www.gamebob.dev/ja/utilities/categories/finance/late-interest-calculator/": {
+      "hash": "42dd8181a8fc79f9c5f813761d2f46c4aaeb6301dfedaeef5042d71e3c2adf4d",
+      "route": "/ja/utilities/categories/finance/late-interest-calculator/"
+    },
+    "https://www.gamebob.dev/ja/utilities/categories/finance/legal-interest-on-money-spain/": {
+      "hash": "3b2d217f2158a22af12def58d45862da27ea302e5b02aa4687f501c97c542f62",
+      "route": "/ja/utilities/categories/finance/legal-interest-on-money-spain/"
+    },
+    "https://www.gamebob.dev/ja/utilities/categories/finance/mortgage-amortization-extra-payment-planner/": {
+      "hash": "6edd1a588230003ebb1b4813073ab3783b5027701401feb0fa133747fe98548c",
+      "route": "/ja/utilities/categories/finance/mortgage-amortization-extra-payment-planner/"
+    },
+    "https://www.gamebob.dev/ja/utilities/categories/finance/mortgage-calculator/": {
+      "hash": "7c1b7d9d0dfaed73bef3ec8fc279f23d7aecb6001caf9a55d9b6b8926217b71d",
+      "route": "/ja/utilities/categories/finance/mortgage-calculator/"
+    },
+    "https://www.gamebob.dev/ja/utilities/categories/finance/percentage-calculator/": {
+      "hash": "0b03b529859b2636929802ef06d8e2f3cde76a1c8758d00499c7ccc621997c16",
+      "route": "/ja/utilities/categories/finance/percentage-calculator/"
+    },
+    "https://www.gamebob.dev/ja/utilities/categories/finance/pesetas-to-euros-with-inflation-calculator/": {
+      "hash": "e74cc554330d7c2b7b1e9ecec47b549d34fe182530ae31c7ba884654176c198f",
+      "route": "/ja/utilities/categories/finance/pesetas-to-euros-with-inflation-calculator/"
+    },
+    "https://www.gamebob.dev/ja/utilities/categories/finance/profitability-calculator-roi-cagr/": {
+      "hash": "41ad2fc0913a0e8dd9609197c4ce8efb9901e8c2d984abb7fe38c42e58eca835",
+      "route": "/ja/utilities/categories/finance/profitability-calculator-roi-cagr/"
+    },
+    "https://www.gamebob.dev/ja/utilities/categories/finance/rent-increase-calculator/": {
+      "hash": "d53ddada4900fe51b2c800901252bc8876cad21a553d082a85894170b2eed4ad",
+      "route": "/ja/utilities/categories/finance/rent-increase-calculator/"
+    },
+    "https://www.gamebob.dev/ja/utilities/categories/finance/revolving-card-calculator/": {
+      "hash": "dc8332d5970de7d35382c9c321378519aa0067af6d8ef959b26ab23573625a70",
+      "route": "/ja/utilities/categories/finance/revolving-card-calculator/"
+    },
+    "https://www.gamebob.dev/ja/utilities/categories/finance/spain-gross-net-salary-employer-cost-calculator/": {
+      "hash": "a631f7c70086b3db866fce8a99b493fda28bed14a6850f0286066783e9f6a71c",
+      "route": "/ja/utilities/categories/finance/spain-gross-net-salary-employer-cost-calculator/"
+    },
+    "https://www.gamebob.dev/ja/utilities/categories/finance/spain-lottery-optimizer/": {
+      "hash": "9c42a181c6a5c894de5ba4e105e0027ead2289ec7eab097e6094cd99202bd7a8",
+      "route": "/ja/utilities/categories/finance/spain-lottery-optimizer/"
+    },
+    "https://www.gamebob.dev/ja/utilities/categories/finance/spanish-court-fees-calculator/": {
+      "hash": "42bb71ad35d36cc32b79dd325a243dabd140cd338c2326d09ba0c20168b1a153",
+      "route": "/ja/utilities/categories/finance/spanish-court-fees-calculator/"
+    },
+    "https://www.gamebob.dev/ko/utilities/categories/finance/compound-interest-calculator/": {
+      "hash": "0ef7938174d05ef88ca6565d9cedc7d5e08c2ae85674cbc70cb9317972cf562c",
+      "route": "/ko/utilities/categories/finance/compound-interest-calculator/"
+    },
+    "https://www.gamebob.dev/ko/utilities/categories/finance/debt-snowball-calculator/": {
+      "hash": "a4d715c3c98e964c3453d74155a9feb46feea13be19ed52d57ba4b8b44351ef2",
+      "route": "/ko/utilities/categories/finance/debt-snowball-calculator/"
+    },
+    "https://www.gamebob.dev/ko/utilities/categories/finance/dividend-yield-calculator/": {
+      "hash": "69c95a11d98b4029e5e1715bf551bebc96a6ec261a5b10039f51fe8d764c4461",
+      "route": "/ko/utilities/categories/finance/dividend-yield-calculator/"
+    },
+    "https://www.gamebob.dev/ko/utilities/categories/finance/financial-freedom-calculator/": {
+      "hash": "9a7abec2c7f1f424c8e73306da6894c23037e2ceeae449528eb60587dd00069c",
+      "route": "/ko/utilities/categories/finance/financial-freedom-calculator/"
+    },
+    "https://www.gamebob.dev/ko/utilities/categories/finance/four-percent-rule-fire-calculator/": {
+      "hash": "dd32b530cf60ab742ec49ae70b652ce78cad667e44276f777afce7563a77b625",
+      "route": "/ko/utilities/categories/finance/four-percent-rule-fire-calculator/"
+    },
+    "https://www.gamebob.dev/ko/utilities/categories/finance/iban-to-bic-swift-converter/": {
+      "hash": "f480ca02a02e155c408ae89c28bb942754d3b2380dda40c7968cb93ad2f31258",
+      "route": "/ko/utilities/categories/finance/iban-to-bic-swift-converter/"
+    },
+    "https://www.gamebob.dev/ko/utilities/categories/finance/": {
+      "hash": "9e11011d946db6ab85ae639ef45a3d9467e81524d2e3bbf2dc52570d06931df7",
+      "route": "/ko/utilities/categories/finance/"
+    },
+    "https://www.gamebob.dev/ko/utilities/categories/finance/inflation-calculator-spain/": {
+      "hash": "458633bea1adf1e7df332c6f6c139f59c593fe4ebbb88918489fed4af712cb12",
+      "route": "/ko/utilities/categories/finance/inflation-calculator-spain/"
+    },
+    "https://www.gamebob.dev/ko/utilities/categories/finance/inflation-purchasing-power-timeline-calculator/": {
+      "hash": "06e2b34d19b44c8c9af7dd8c7205655493a933c91a871227f53c043e03e00c53",
+      "route": "/ko/utilities/categories/finance/inflation-purchasing-power-timeline-calculator/"
+    },
+    "https://www.gamebob.dev/ko/utilities/categories/finance/late-interest-calculator/": {
+      "hash": "46bf540cac659fdbb220550bb00c4704f44ca769b5ebd6f070fb00a3c3a7eb5f",
+      "route": "/ko/utilities/categories/finance/late-interest-calculator/"
+    },
+    "https://www.gamebob.dev/ko/utilities/categories/finance/legal-interest-on-money-spain/": {
+      "hash": "757d30bc955b2ec42038a193d90c4ca8e2eafcc17817ebda3c643989dc5a816b",
+      "route": "/ko/utilities/categories/finance/legal-interest-on-money-spain/"
+    },
+    "https://www.gamebob.dev/ko/utilities/categories/finance/mortgage-amortization-extra-payment-planner/": {
+      "hash": "a111d78df3f2ab8034ef5084085b4ce7d35dc63d5a44b94b07be1a87ad1380cd",
+      "route": "/ko/utilities/categories/finance/mortgage-amortization-extra-payment-planner/"
+    },
+    "https://www.gamebob.dev/ko/utilities/categories/finance/mortgage-calculator/": {
+      "hash": "6fd2e35f831b1899556d1865564219cdadbd5ec73e6fd60729936b2aaf0109c9",
+      "route": "/ko/utilities/categories/finance/mortgage-calculator/"
+    },
+    "https://www.gamebob.dev/ko/utilities/categories/finance/percentage-calculator/": {
+      "hash": "c566e0cb498a94b5160453c6f42b9b31b5a25fbfd3dea8179c48cbc64c36d0f9",
+      "route": "/ko/utilities/categories/finance/percentage-calculator/"
+    },
+    "https://www.gamebob.dev/ko/utilities/categories/finance/pesetas-to-euros-with-inflation-calculator/": {
+      "hash": "f770c3cb5e4353911c95cb01643dd346689c0ad4a2a54773097f1067e736d492",
+      "route": "/ko/utilities/categories/finance/pesetas-to-euros-with-inflation-calculator/"
+    },
+    "https://www.gamebob.dev/ko/utilities/categories/finance/profitability-calculator-roi-cagr/": {
+      "hash": "3438a1d9e86a95fcbc31eba4e03d12b49a429e2749f3f9fba403975b7d61c80c",
+      "route": "/ko/utilities/categories/finance/profitability-calculator-roi-cagr/"
+    },
+    "https://www.gamebob.dev/ko/utilities/categories/finance/rent-increase-calculator/": {
+      "hash": "7dc19b17292aa1288fc7004052e6cd1536f902fdb2f03097efcc82eeb82af9b0",
+      "route": "/ko/utilities/categories/finance/rent-increase-calculator/"
+    },
+    "https://www.gamebob.dev/ko/utilities/categories/finance/revolving-card-calculator/": {
+      "hash": "d29d2deccc9364f72fbd58c2db2f636567d1a7bbc1011773616eedcb3a5b6964",
+      "route": "/ko/utilities/categories/finance/revolving-card-calculator/"
+    },
+    "https://www.gamebob.dev/ko/utilities/categories/finance/spain-gross-net-salary-employer-cost-calculator/": {
+      "hash": "6058f61300fc50ec5414b6ed0cf00c4e4e76bb8b22bfab0c0950bdeadb6fc1ea",
+      "route": "/ko/utilities/categories/finance/spain-gross-net-salary-employer-cost-calculator/"
+    },
+    "https://www.gamebob.dev/ko/utilities/categories/finance/spain-lottery-optimizer/": {
+      "hash": "88087b942d5a713f841ae8b18bf63534e68ba547001d7939547407a123823870",
+      "route": "/ko/utilities/categories/finance/spain-lottery-optimizer/"
+    },
+    "https://www.gamebob.dev/ko/utilities/categories/finance/spanish-court-fees-calculator/": {
+      "hash": "8f868498150d720d240effc1dcc8113be88e62a8cc51e5d0712097ec1a272cf5",
+      "route": "/ko/utilities/categories/finance/spanish-court-fees-calculator/"
+    },
+    "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/financien/berekening-wettelijke-rente-spanje/": {
+      "hash": "85c87521eae1dba35b3d4c0d12d0ee7a7298c54247f31bfb5fd042e93e59d502",
+      "route": "/nl/hulpmiddelen/categorieen/financien/berekening-wettelijke-rente-spanje/"
+    },
+    "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/financien/calculator-dividendrendement-aandelen/": {
+      "hash": "79b39b19d1b389ce25ccb546f32fb66b78f760e956c5a333ed2a4d9f446268cc",
+      "route": "/nl/hulpmiddelen/categorieen/financien/calculator-dividendrendement-aandelen/"
+    },
+    "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/financien/financiele-vrijheid-calculator-overlevingstijd/": {
+      "hash": "82cb4b98e01eb5b0961475286e5e20f2aedf7e61767400b6c9ab2f9f10357024",
+      "route": "/nl/hulpmiddelen/categorieen/financien/financiele-vrijheid-calculator-overlevingstijd/"
+    },
+    "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/financien/fire-calculator-4-procent-regel/": {
+      "hash": "119294ba0374fde390c0706d84dd6d5ce2e48b05e1d807dd998fdf53892e564a",
+      "route": "/nl/hulpmiddelen/categorieen/financien/fire-calculator-4-procent-regel/"
+    },
+    "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/financien/gerechtskosten-calculator-spanje/": {
+      "hash": "1471600cba0ba8a8d522ad72f3d1cdbcbdd9fdd6f366bf23d562ac6bda97d9fa",
+      "route": "/nl/hulpmiddelen/categorieen/financien/gerechtskosten-calculator-spanje/"
+    },
+    "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/financien/huurverhoging-calculator-spanje-ipc/": {
+      "hash": "1b79809b409d8ef8df85392deefbcc454574f884f21915c86e7e3fc458713e08",
+      "route": "/nl/hulpmiddelen/categorieen/financien/huurverhoging-calculator-spanje-ipc/"
+    },
+    "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/financien/hypotheek-aflossingscalculator-extra-betalingen/": {
+      "hash": "337d26a2cb189b6ca42c34bf0733c2d1f74d09722b90c0cfc813253a725aae06",
+      "route": "/nl/hulpmiddelen/categorieen/financien/hypotheek-aflossingscalculator-extra-betalingen/"
+    },
+    "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/financien/hypotheek-berekenen/": {
+      "hash": "b26f77cf100d0e4bb5cf655b748d3f7e47ee514a42d581f88cd07d84a3d6c1d7",
+      "route": "/nl/hulpmiddelen/categorieen/financien/hypotheek-berekenen/"
+    },
+    "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/financien/iban-bic-swift-converter/": {
+      "hash": "e2b53e012e3435b6dd2768152dd7621a9ae3317bc5224e1201c115c49770f932",
+      "route": "/nl/hulpmiddelen/categorieen/financien/iban-bic-swift-converter/"
+    },
+    "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/financien/": {
+      "hash": "f6ea6fd0a190f6d63e75d15dcc61ed1e1a8a23afb4ad4e6d2384b416521038bf",
+      "route": "/nl/hulpmiddelen/categorieen/financien/"
+    },
+    "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/financien/inflatie-koopkracht-tijdlijn-calculator/": {
+      "hash": "065c025661128ddabd3e5407d6bc05d981841bd68df935dd8f6a05ba02f0be59",
+      "route": "/nl/hulpmiddelen/categorieen/financien/inflatie-koopkracht-tijdlijn-calculator/"
+    },
+    "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/financien/inflatie-spanje/": {
+      "hash": "106023e66948e34035c11f5f2ea8fe54858bbcf10c07f146e2f0e5e25e80f635",
+      "route": "/nl/hulpmiddelen/categorieen/financien/inflatie-spanje/"
+    },
+    "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/financien/loterij-optimizer-kansberekenaar/": {
+      "hash": "50bbac43246b3f81d70bc0cbf3301c94bd9fa652d1d301b724edc1133cf5bee8",
+      "route": "/nl/hulpmiddelen/categorieen/financien/loterij-optimizer-kansberekenaar/"
+    },
+    "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/financien/peseta-naar-euro-omrekenen-waarde-2026/": {
+      "hash": "93bfb33b0e1ab4b78e4d0bed2115c41f11c618679f321512f16b7f45aaf0337a",
+      "route": "/nl/hulpmiddelen/categorieen/financien/peseta-naar-euro-omrekenen-waarde-2026/"
+    },
+    "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/financien/procent-calculator/": {
+      "hash": "7f37c0365445cfbbd04362e3e7e2f11eb9fce4b76f732a6e849a029f3951d20d",
+      "route": "/nl/hulpmiddelen/categorieen/financien/procent-calculator/"
+    },
+    "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/financien/rendement-calculator-investering-roi-cagr/": {
+      "hash": "8e1cc6313b0cc817a7d7be807616f175da23a488f8696a6324dcaac8600fc220",
+      "route": "/nl/hulpmiddelen/categorieen/financien/rendement-calculator-investering-roi-cagr/"
+    },
+    "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/financien/revolving-kredietkaart-calculator/": {
+      "hash": "551fe23dda2abe6a44f41774caead9e918be96b7da5324b2a049238c7d457879",
+      "route": "/nl/hulpmiddelen/categorieen/financien/revolving-kredietkaart-calculator/"
+    },
+    "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/financien/samengestelde-interest/": {
+      "hash": "f5d32a8dcb98ec8f9caf998f3710f3e7a2c297c50156e67ca845a5fb15d9daee",
+      "route": "/nl/hulpmiddelen/categorieen/financien/samengestelde-interest/"
+    },
+    "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/financien/sneeuwbalmethode-schuldenrekenmachine/": {
+      "hash": "1535a0f5286602dfedde0044766ad4ea07a435c103ef42e5b6f20e6b69e68da0",
+      "route": "/nl/hulpmiddelen/categorieen/financien/sneeuwbalmethode-schuldenrekenmachine/"
+    },
+    "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/financien/spanje-bruto-netto-salaris-werkgeverskosten-calculator/": {
+      "hash": "94a3ada2df5a8956093036a4cdca62e4acca0b9ef29449a428e0d4566d8b1522",
+      "route": "/nl/hulpmiddelen/categorieen/financien/spanje-bruto-netto-salaris-werkgeverskosten-calculator/"
+    },
+    "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/financien/wettelijke-rente-spanje-2026/": {
+      "hash": "8c21e5fb2d3cca8c27eaa0934246f97878a05f5658a8d2535a2cb9e29546d5b2",
+      "route": "/nl/hulpmiddelen/categorieen/financien/wettelijke-rente-spanje-2026/"
+    },
+    "https://www.gamebob.dev/pl/narzedzia/kategorie/finanse/": {
+      "hash": "02b0e4429dce863a6427899cfd6d76fdd8286fd311b84ba8086bc13f02dd2605",
+      "route": "/pl/narzedzia/kategorie/finanse/"
+    },
+    "https://www.gamebob.dev/pl/narzedzia/kategorie/finanse/inflacja-hiszpania/": {
+      "hash": "198f261a7769760eb9f2d9f12cdcea5ffbe4da0de318be4b097a4ac4b97c3b8e",
+      "route": "/pl/narzedzia/kategorie/finanse/inflacja-hiszpania/"
+    },
+    "https://www.gamebob.dev/pl/narzedzia/kategorie/finanse/kalkulator-amortyzacji-hipoteki-nadplaty/": {
+      "hash": "3085a9d05bee84e6242032bbfc983b16c23fa6b6b550c76350ee7e6484a35c9c",
+      "route": "/pl/narzedzia/kategorie/finanse/kalkulator-amortyzacji-hipoteki-nadplaty/"
+    },
+    "https://www.gamebob.dev/pl/narzedzia/kategorie/finanse/kalkulator-hipoteczny/": {
+      "hash": "a3940597cbb39395e7edd27475ee6c3cbbe225a560cb3c50b0b45ec6016e75bc",
+      "route": "/pl/narzedzia/kategorie/finanse/kalkulator-hipoteczny/"
+    },
+    "https://www.gamebob.dev/pl/narzedzia/kategorie/finanse/kalkulator-kart-revolving/": {
+      "hash": "f9f27da39c8733b692e6dd8086ec8806664c7e649c518feb8c08490e5bde5169",
+      "route": "/pl/narzedzia/kategorie/finanse/kalkulator-kart-revolving/"
+    },
+    "https://www.gamebob.dev/pl/narzedzia/kategorie/finanse/kalkulator-odsetek-za-opoznienie-hiszpania/": {
+      "hash": "1491829047425e14a118819a1aefea68ddb5ce382c67f6dd03f6d8b5d0e90033",
+      "route": "/pl/narzedzia/kategorie/finanse/kalkulator-odsetek-za-opoznienie-hiszpania/"
+    },
+    "https://www.gamebob.dev/pl/narzedzia/kategorie/finanse/kalkulator-oplat-sadowych-hiszpania/": {
+      "hash": "3a110fc60cd9a78a005511cfb7842009fe53bd8397d47117cc3265a8582bd2d5",
+      "route": "/pl/narzedzia/kategorie/finanse/kalkulator-oplat-sadowych-hiszpania/"
+    },
+    "https://www.gamebob.dev/pl/narzedzia/kategorie/finanse/kalkulator-osi-czasu-sily-nabywczej-inflacji/": {
+      "hash": "e143d11d76f4421fd53149d154ffc14d9cfb75db7e8216ccf792b0252decbe8c",
+      "route": "/pl/narzedzia/kategorie/finanse/kalkulator-osi-czasu-sily-nabywczej-inflacji/"
+    },
+    "https://www.gamebob.dev/pl/narzedzia/kategorie/finanse/kalkulator-podwyzki-czynszu-hiszpania-ipc/": {
+      "hash": "0994c6a82d4d04d140798d7aa4d2694ea8ac88426c7452597d75208c22677b77",
+      "route": "/pl/narzedzia/kategorie/finanse/kalkulator-podwyzki-czynszu-hiszpania-ipc/"
+    },
+    "https://www.gamebob.dev/pl/narzedzia/kategorie/finanse/kalkulator-procentowy/": {
+      "hash": "b10182bdd76647cc62a831a62cabba87f0caea90b0bd9ba35071df0b9aadaa09",
+      "route": "/pl/narzedzia/kategorie/finanse/kalkulator-procentowy/"
+    },
+    "https://www.gamebob.dev/pl/narzedzia/kategorie/finanse/kalkulator-reguly-4-procent-fire/": {
+      "hash": "26a9219502001c932f78061c33f4899f4f610a550552420ed00e4d1271aaf065",
+      "route": "/pl/narzedzia/kategorie/finanse/kalkulator-reguly-4-procent-fire/"
+    },
+    "https://www.gamebob.dev/pl/narzedzia/kategorie/finanse/kalkulator-rentownosci-inwestycji-roi-cagr/": {
+      "hash": "42301108eec0fcfe385b056b7a2cacb22ed752ee447216adb57e6ce672f2101e",
+      "route": "/pl/narzedzia/kategorie/finanse/kalkulator-rentownosci-inwestycji-roi-cagr/"
+    },
+    "https://www.gamebob.dev/pl/narzedzia/kategorie/finanse/kalkulator-stopy-dywidendy-akcji/": {
+      "hash": "c097ba2aecf937e9dc9ea1868738ee36b5f7b00b74b2dd301cc93c03c27178e0",
+      "route": "/pl/narzedzia/kategorie/finanse/kalkulator-stopy-dywidendy-akcji/"
+    },
+    "https://www.gamebob.dev/pl/narzedzia/kategorie/finanse/kalkulator-wolnosci-finansowej-czas-przetrwania/": {
+      "hash": "c2f06cdd70fe9bc562c737e9bc7356306715177eaf16d316c478e575dbde43bd",
+      "route": "/pl/narzedzia/kategorie/finanse/kalkulator-wolnosci-finansowej-czas-przetrwania/"
+    },
+    "https://www.gamebob.dev/pl/narzedzia/kategorie/finanse/kalkulator-wynagrodzenia-brutto-netto-koszt-pracodawcy-hiszpania/": {
+      "hash": "0dfbbfe45fb82d87b0571e89fed7fea867d51e95f386861d3b85ce008ead80b0",
+      "route": "/pl/narzedzia/kategorie/finanse/kalkulator-wynagrodzenia-brutto-netto-koszt-pracodawcy-hiszpania/"
+    },
+    "https://www.gamebob.dev/pl/narzedzia/kategorie/finanse/konwerter-iban-na-bic-swift/": {
+      "hash": "5c7addff01ff83bd1816c4919dbc1fc4100a30caaa30296ff8615d706649b15a",
+      "route": "/pl/narzedzia/kategorie/finanse/konwerter-iban-na-bic-swift/"
+    },
+    "https://www.gamebob.dev/pl/narzedzia/kategorie/finanse/metoda-kuli-snieznej-kalkulator-dlugow/": {
+      "hash": "db86a07ba6374423dae15d3e4a45efe74ab981bb65192ee53ebf773737ef576e",
+      "route": "/pl/narzedzia/kategorie/finanse/metoda-kuli-snieznej-kalkulator-dlugow/"
+    },
+    "https://www.gamebob.dev/pl/narzedzia/kategorie/finanse/odsetki-ustawowe-hiszpania-2026/": {
+      "hash": "97e6764630a0388404bec5661f8a6a57ca61df92ab04889eba243908d598aaa5",
+      "route": "/pl/narzedzia/kategorie/finanse/odsetki-ustawowe-hiszpania-2026/"
+    },
+    "https://www.gamebob.dev/pl/narzedzia/kategorie/finanse/optymalizator-loterii-kalkulator-prawdopodobienstwa/": {
+      "hash": "3c16d74f4ccf8064fb0b73a0e0e736dcf5bfbcd9092f1609d66f327ed8c82025",
+      "route": "/pl/narzedzia/kategorie/finanse/optymalizator-loterii-kalkulator-prawdopodobienstwa/"
+    },
+    "https://www.gamebob.dev/pl/narzedzia/kategorie/finanse/procent-skladany/": {
+      "hash": "d5256257e6f069b5cd32ac6462d60756426b3f165d4d75a49615d731fe7c0a2e",
+      "route": "/pl/narzedzia/kategorie/finanse/procent-skladany/"
+    },
+    "https://www.gamebob.dev/pl/narzedzia/kategorie/finanse/przelicznik-peset-na-euro-wartosc-2026/": {
+      "hash": "5bf47f20fdbd5cc71ddbb9a7d3a8c0637591a1cd8dafc36e17776c768c24bb1d",
+      "route": "/pl/narzedzia/kategorie/finanse/przelicznik-peset-na-euro-wartosc-2026/"
+    },
+    "https://www.gamebob.dev/pt/utilidades/categorias/financas/calculadora-amortizacao-hipoteca-pagamentos-extra/": {
+      "hash": "0ef3be9ad39673f435d8cbe226cb841f0db28d79942076fced8f4945e5b22981",
+      "route": "/pt/utilidades/categorias/financas/calculadora-amortizacao-hipoteca-pagamentos-extra/"
+    },
+    "https://www.gamebob.dev/pt/utilidades/categorias/financas/calculadora-aumento-aluguer-espanha-ipc/": {
+      "hash": "23ac472722f636817987b6c04212efb056fcef1fbfad7515896a7e89e8f9f71d",
+      "route": "/pt/utilidades/categorias/financas/calculadora-aumento-aluguer-espanha-ipc/"
+    },
+    "https://www.gamebob.dev/pt/utilidades/categorias/financas/calculadora-cartao-revolving/": {
+      "hash": "daf2f8b1e09c378ed56e205ab1965f5ac9f61c3c5dded51034a6a9a73c112673",
+      "route": "/pt/utilidades/categorias/financas/calculadora-cartao-revolving/"
+    },
+    "https://www.gamebob.dev/pt/utilidades/categorias/financas/calculadora-de-porcentagem/": {
+      "hash": "3766ca83a265dfaadf23d92bfbc54d113bae9c4df0b5f4a943d91d6df45a1b70",
+      "route": "/pt/utilidades/categorias/financas/calculadora-de-porcentagem/"
+    },
+    "https://www.gamebob.dev/pt/utilidades/categorias/financas/calculadora-juros-mora-espanha/": {
+      "hash": "65d64620445a0b7268852c6e53652417230d5a1bfb8bb282b2649794c26f1b9e",
+      "route": "/pt/utilidades/categorias/financas/calculadora-juros-mora-espanha/"
+    },
+    "https://www.gamebob.dev/pt/utilidades/categorias/financas/calculadora-liberdade-financeira-pista-sobrevivencia/": {
+      "hash": "05613d74a3a29a307c45ea53bb3d372fc5bc0f0cfedbd05999ae7e7f1a96fec2",
+      "route": "/pt/utilidades/categorias/financas/calculadora-liberdade-financeira-pista-sobrevivencia/"
+    },
+    "https://www.gamebob.dev/pt/utilidades/categorias/financas/calculadora-linha-tempo-poder-compra-inflacao/": {
+      "hash": "cb8548b7b0edb61a470417d334f05ccb278db142f4822dbc5ff529408f2bfe26",
+      "route": "/pt/utilidades/categorias/financas/calculadora-linha-tempo-poder-compra-inflacao/"
+    },
+    "https://www.gamebob.dev/pt/utilidades/categorias/financas/calculadora-regra-4-por-cento-fire/": {
+      "hash": "ec1dd3ca4357fee1bba6abbd62b943a2f8b565f5c1f48401b0b198e173d10e24",
+      "route": "/pt/utilidades/categorias/financas/calculadora-regra-4-por-cento-fire/"
+    },
+    "https://www.gamebob.dev/pt/utilidades/categorias/financas/calculadora-rendimento-dividendos-acoes/": {
+      "hash": "bc1f554251de56f13d27ec1e2d622e75d5eb0e8aa17adcf5648b8cd876a64d1b",
+      "route": "/pt/utilidades/categorias/financas/calculadora-rendimento-dividendos-acoes/"
+    },
+    "https://www.gamebob.dev/pt/utilidades/categorias/financas/calculadora-rentabilidade-investimento-roi-cagr/": {
+      "hash": "572f63e800807e8ffec88dbcd8520526f36f9e2fa1b679f88449ce3c16f83200",
+      "route": "/pt/utilidades/categorias/financas/calculadora-rentabilidade-investimento-roi-cagr/"
+    },
+    "https://www.gamebob.dev/pt/utilidades/categorias/financas/calculadora-salario-bruto-liquido-custo-empresa-espanha/": {
+      "hash": "be7beac320e40f38637cb73f7717e8ae81286f725c98610c0de25c8454bbd28d",
+      "route": "/pt/utilidades/categorias/financas/calculadora-salario-bruto-liquido-custo-empresa-espanha/"
+    },
+    "https://www.gamebob.dev/pt/utilidades/categorias/financas/calculadora-taxas-judiciais-espanha/": {
+      "hash": "8849af9389b6fecdf25db6335f6eade812142a5c2dcb020a96b1a82a47ace345",
+      "route": "/pt/utilidades/categorias/financas/calculadora-taxas-judiciais-espanha/"
+    },
+    "https://www.gamebob.dev/pt/utilidades/categorias/financas/conversor-iban-para-bic-swift/": {
+      "hash": "246f6a76e3e4a8fc6924d213158844336fb84beb4ab18e77c784951882d68262",
+      "route": "/pt/utilidades/categorias/financas/conversor-iban-para-bic-swift/"
+    },
+    "https://www.gamebob.dev/pt/utilidades/categorias/financas/conversor-pesetas-euros-valor-2026/": {
+      "hash": "02b268080389fdda366d7c33af92079a9f61ffce624a8c2d09e07289fa492df2",
+      "route": "/pt/utilidades/categorias/financas/conversor-pesetas-euros-valor-2026/"
+    },
+    "https://www.gamebob.dev/pt/utilidades/categorias/financas/": {
+      "hash": "dba6c7abe25e0c174afa8fd4b4a9cb050a4becf579cff0743be8ab33811c7ef4",
+      "route": "/pt/utilidades/categorias/financas/"
+    },
+    "https://www.gamebob.dev/pt/utilidades/categorias/financas/inflacao-espanha/": {
+      "hash": "f77c2d77ae4eeeac615c28c40e4458ce991fc1d8ab91fb0624eaf16e156106f3",
+      "route": "/pt/utilidades/categorias/financas/inflacao-espanha/"
+    },
+    "https://www.gamebob.dev/pt/utilidades/categorias/financas/juro-legal-dinheiro-espanha-2026/": {
+      "hash": "56254b8c1f0023c6e3bfa67969d22f7a995de7f1e88b9c208c40479448e0e8ff",
+      "route": "/pt/utilidades/categorias/financas/juro-legal-dinheiro-espanha-2026/"
+    },
+    "https://www.gamebob.dev/pt/utilidades/categorias/financas/juros-compostos/": {
+      "hash": "5e69fabb6e23f34ed9af816614709f757d228e946d32ca832e185cef2d41b287",
+      "route": "/pt/utilidades/categorias/financas/juros-compostos/"
+    },
+    "https://www.gamebob.dev/pt/utilidades/categorias/financas/metodo-bola-de-neve-calculadora-dividas/": {
+      "hash": "1cd19211e11a36d812f5963ed8ebc7275cafc08a3e5ec1dcbe031e170c1fe497",
+      "route": "/pt/utilidades/categorias/financas/metodo-bola-de-neve-calculadora-dividas/"
+    },
+    "https://www.gamebob.dev/pt/utilidades/categorias/financas/otimizador-loterias-calculadora-probabilidades/": {
+      "hash": "b82f27097112f542da2cae583285a7c167a184934df516396edf505ee6d50531",
+      "route": "/pt/utilidades/categorias/financas/otimizador-loterias-calculadora-probabilidades/"
+    },
+    "https://www.gamebob.dev/pt/utilidades/categorias/financas/simulador-hipoteca/": {
+      "hash": "38b0e8c5e7ceca9cff0e7d9eee9f09a0aae4a10372100b9e095b3536728c2bdb",
+      "route": "/pt/utilidades/categorias/financas/simulador-hipoteca/"
+    },
+    "https://www.gamebob.dev/ru/instrumenty/kategorii/finansy/": {
+      "hash": "286e9cb6fd56c600f40c6063b0fb1fb38c2e8f568bd73a39abf793bf59e478bd",
+      "route": "/ru/instrumenty/kategorii/finansy/"
+    },
+    "https://www.gamebob.dev/ru/instrumenty/kategorii/finansy/inflyatsiya-ispaniya/": {
+      "hash": "b26cbc863b6ef1b52751f0d8606a314cdc1414ac011fd7f3bd8fb9db4d80d8de",
+      "route": "/ru/instrumenty/kategorii/finansy/inflyatsiya-ispaniya/"
+    },
+    "https://www.gamebob.dev/ru/instrumenty/kategorii/finansy/ipotechniy-kalkulyator/": {
+      "hash": "cbddf487bd455aaa8a2a91ac9a16e46469ed514dbfe8273d9b854aff9163b1b0",
+      "route": "/ru/instrumenty/kategorii/finansy/ipotechniy-kalkulyator/"
+    },
+    "https://www.gamebob.dev/ru/instrumenty/kategorii/finansy/kalkulyator-amortizatsii-ipoteki-dopolnitelnye-platezhi/": {
+      "hash": "06df255f8b735d4805531be01ad809c4a0d5fba1f26d88755ca9587ece0ca5ab",
+      "route": "/ru/instrumenty/kategorii/finansy/kalkulyator-amortizatsii-ipoteki-dopolnitelnye-platezhi/"
+    },
+    "https://www.gamebob.dev/ru/instrumenty/kategorii/finansy/kalkulyator-dinamiki-pokupatelnoy-sposobnosti-inflyatsii/": {
+      "hash": "b1106b9739bbb90d5be2f0a2df98210c9aa04c28f00552fcdd359054d72f2088",
+      "route": "/ru/instrumenty/kategorii/finansy/kalkulyator-dinamiki-pokupatelnoy-sposobnosti-inflyatsii/"
+    },
+    "https://www.gamebob.dev/ru/instrumenty/kategorii/finansy/kalkulyator-dividendnoy-dokhodnosti-aktsiy/": {
+      "hash": "3cffad8d06b9564dffc945d745f0c0d210937b2e86280161e6c2421ddbbdcd45",
+      "route": "/ru/instrumenty/kategorii/finansy/kalkulyator-dividendnoy-dokhodnosti-aktsiy/"
+    },
+    "https://www.gamebob.dev/ru/instrumenty/kategorii/finansy/kalkulyator-finansovoj-svobody-zapas-vyzhivaniya/": {
+      "hash": "a2995e624012ef687246ca36b9b7c79021f5b5a9541379e6342abc1374512c3c",
+      "route": "/ru/instrumenty/kategorii/finansy/kalkulyator-finansovoj-svobody-zapas-vyzhivaniya/"
+    },
+    "https://www.gamebob.dev/ru/instrumenty/kategorii/finansy/kalkulyator-povysheniya-arendy-ispaniya-ipc/": {
+      "hash": "2e2707e07fccc2f8c334ec6736aef59b8deb3d75f02d185ec8751618a1b732f4",
+      "route": "/ru/instrumenty/kategorii/finansy/kalkulyator-povysheniya-arendy-ispaniya-ipc/"
+    },
+    "https://www.gamebob.dev/ru/instrumenty/kategorii/finansy/kalkulyator-protsentov-za-prosrochku-ispaniya/": {
+      "hash": "e608ba4d58fa4876767b5c50af2920a738a36913a144965291a10630046896d6",
+      "route": "/ru/instrumenty/kategorii/finansy/kalkulyator-protsentov-za-prosrochku-ispaniya/"
+    },
+    "https://www.gamebob.dev/ru/instrumenty/kategorii/finansy/kalkulyator-rentabelnosti-investicij-roi-cagr/": {
+      "hash": "566db09b5094737f28453404f756768735c126d5094c2ea43137c75fbb3f48a5",
+      "route": "/ru/instrumenty/kategorii/finansy/kalkulyator-rentabelnosti-investicij-roi-cagr/"
+    },
+    "https://www.gamebob.dev/ru/instrumenty/kategorii/finansy/kalkulyator-revolvernykh-kart/": {
+      "hash": "91fc19913cf30b5ffc0f0e35d8a00178cb4c44ecdf1e65803f3341d8b5b1bb30",
+      "route": "/ru/instrumenty/kategorii/finansy/kalkulyator-revolvernykh-kart/"
+    },
+    "https://www.gamebob.dev/ru/instrumenty/kategorii/finansy/kalkulyator-sudebnykh-poshlin-ispaniya/": {
+      "hash": "9c03455aae10164d3ce55ce68e920488cd6b9ebf1cd712087883fbf9fe33a674",
+      "route": "/ru/instrumenty/kategorii/finansy/kalkulyator-sudebnykh-poshlin-ispaniya/"
+    },
+    "https://www.gamebob.dev/ru/instrumenty/kategorii/finansy/kalkulyator-zarplaty-brutto-netto-rashody-rabotodatelya-ispaniya/": {
+      "hash": "f418309831d1745e95feaceaa05af615f50370f86d201fa1f9103a1e82c05888",
+      "route": "/ru/instrumenty/kategorii/finansy/kalkulyator-zarplaty-brutto-netto-rashody-rabotodatelya-ispaniya/"
+    },
+    "https://www.gamebob.dev/ru/instrumenty/kategorii/finansy/kalykulyator-pravila-4-protsentov-fire/": {
+      "hash": "f8f3c899ca6d4f03210cdb0eaa45e6348ed69f1f72ffc4d00a98f2d44c6856dd",
+      "route": "/ru/instrumenty/kategorii/finansy/kalykulyator-pravila-4-protsentov-fire/"
+    },
+    "https://www.gamebob.dev/ru/instrumenty/kategorii/finansy/kalykulyator-protsentov/": {
+      "hash": "b71c8dff07d58aa059cb4f8ea47524e0af1d6973f89e2e33cbb3a9ac61a3ffe4",
+      "route": "/ru/instrumenty/kategorii/finansy/kalykulyator-protsentov/"
+    },
+    "https://www.gamebob.dev/ru/instrumenty/kategorii/finansy/konverter-iban-v-bic-swift/": {
+      "hash": "db7aa963734bfebca7a687c52299abffbedf530e1ddacb50b174ad2e00071490",
+      "route": "/ru/instrumenty/kategorii/finansy/konverter-iban-v-bic-swift/"
+    },
+    "https://www.gamebob.dev/ru/instrumenty/kategorii/finansy/konverter-peset-v-evro-stoimost-2026/": {
+      "hash": "82f2fd533c87627b2be9facf833ec607e84c61c4cca21b463598d23eaba39a08",
+      "route": "/ru/instrumenty/kategorii/finansy/konverter-peset-v-evro-stoimost-2026/"
+    },
+    "https://www.gamebob.dev/ru/instrumenty/kategorii/finansy/metod-snezhnogo-koma-kalkulyator-dolgov/": {
+      "hash": "b058671d94cfa8224409af2473121fc23c1112f76aa7a05a54c2331fbc908d22",
+      "route": "/ru/instrumenty/kategorii/finansy/metod-snezhnogo-koma-kalkulyator-dolgov/"
+    },
+    "https://www.gamebob.dev/ru/instrumenty/kategorii/finansy/optimizator-loterei-kalkulyator-veroyatnosti/": {
+      "hash": "9b9d76c40fbdde35ba89ac2527451d3bf53d938412ad684cba43f079b918fc28",
+      "route": "/ru/instrumenty/kategorii/finansy/optimizator-loterei-kalkulyator-veroyatnosti/"
+    },
+    "https://www.gamebob.dev/ru/instrumenty/kategorii/finansy/slozhniy-protsent/": {
+      "hash": "8a1890e1d251842af7be400fec4543a6bcfa08fbecb883aa1ae0953be852134c",
+      "route": "/ru/instrumenty/kategorii/finansy/slozhniy-protsent/"
+    },
+    "https://www.gamebob.dev/ru/instrumenty/kategorii/finansy/zakonnyj-protsent-ispaniya-2026/": {
+      "hash": "be42c564df58b969efaf72adcafd407669ca84df18b732422835a44c3a410bbd",
+      "route": "/ru/instrumenty/kategorii/finansy/zakonnyj-protsent-ispaniya-2026/"
+    },
+    "https://www.gamebob.dev/sv/verktyg/kategorier/ekonomi/bolanekalkylator/": {
+      "hash": "8d75a5e0d173d5a9426f705478bfe3b6a5811977ad757c517a5937d1e5447c9a",
+      "route": "/sv/verktyg/kategorier/ekonomi/bolanekalkylator/"
+    },
+    "https://www.gamebob.dev/sv/verktyg/kategorier/ekonomi/bolanekalkylator-amortering-extra-inbetalningar/": {
+      "hash": "e363bb413822e810842379392e3f6a183e489ea8f3345479b5a1213fa380c749",
+      "route": "/sv/verktyg/kategorier/ekonomi/bolanekalkylator-amortering-extra-inbetalningar/"
+    },
+    "https://www.gamebob.dev/sv/verktyg/kategorier/ekonomi/ekonomisk-frihet-kalkylator-overlevnadstid/": {
+      "hash": "bed8d45f7f679abe2c96cde58e78692abfb7101eb5f0a29c61a4ee245818625a",
+      "route": "/sv/verktyg/kategorier/ekonomi/ekonomisk-frihet-kalkylator-overlevnadstid/"
+    },
+    "https://www.gamebob.dev/sv/verktyg/kategorier/ekonomi/fire-kalkylator-4-procents-regeln/": {
+      "hash": "f499137dd6cec570b4a381506f0eeb538cc6b2568f288e1beeec4b90beed1811",
+      "route": "/sv/verktyg/kategorier/ekonomi/fire-kalkylator-4-procents-regeln/"
+    },
+    "https://www.gamebob.dev/sv/verktyg/kategorier/ekonomi/iban-bic-swift-konverterare/": {
+      "hash": "4c280d44ed805d66330db451850c5e323815fbda8dbfa71d029ab654ba903c85",
+      "route": "/sv/verktyg/kategorier/ekonomi/iban-bic-swift-konverterare/"
+    },
+    "https://www.gamebob.dev/sv/verktyg/kategorier/ekonomi/": {
+      "hash": "ea3d5f3d27c7d6a2049c3559edbc0c79fa7373f03745256907bcf420e68ac707",
+      "route": "/sv/verktyg/kategorier/ekonomi/"
+    },
+    "https://www.gamebob.dev/sv/verktyg/kategorier/ekonomi/inflation-kopkraft-tidslinje-kalkylator/": {
+      "hash": "df76b338fca2ed344f5b7b6841f1e7c37c247dc9e3f579face18e2ff314d3e2d",
+      "route": "/sv/verktyg/kategorier/ekonomi/inflation-kopkraft-tidslinje-kalkylator/"
+    },
+    "https://www.gamebob.dev/sv/verktyg/kategorier/ekonomi/inflation-spanien/": {
+      "hash": "a1b12a2afb956c2b3461d1a3a141b5447d5540eeef8bf3aa0d5e41e53bedd3a3",
+      "route": "/sv/verktyg/kategorier/ekonomi/inflation-spanien/"
+    },
+    "https://www.gamebob.dev/sv/verktyg/kategorier/ekonomi/kalkylator-direktavkastning-aktier/": {
+      "hash": "75995a87e964e59406044d46e2ab0358ddc6ea05d057b9a7cd5c4efe52289d2a",
+      "route": "/sv/verktyg/kategorier/ekonomi/kalkylator-direktavkastning-aktier/"
+    },
+    "https://www.gamebob.dev/sv/verktyg/kategorier/ekonomi/kalkylator-domstolsavgifter-spanien/": {
+      "hash": "7acbb46a352b3b2160208846e4b9cb373844a7475544ff37bec6f8208cc08d84",
+      "route": "/sv/verktyg/kategorier/ekonomi/kalkylator-domstolsavgifter-spanien/"
+    },
+    "https://www.gamebob.dev/sv/verktyg/kategorier/ekonomi/kalkylator-drojsmalsranta-spanien/": {
+      "hash": "e83c64bb8769b1abc1fbc1d15bb7fb74b981a770ec163f7482ab97ad240cbdef",
+      "route": "/sv/verktyg/kategorier/ekonomi/kalkylator-drojsmalsranta-spanien/"
+    },
+    "https://www.gamebob.dev/sv/verktyg/kategorier/ekonomi/kalkylator-hyreshojning-spanien-ipc/": {
+      "hash": "0c3827821b0ebc13333126b199ef8cd044d4a52fb769743149cff5af3d79190f",
+      "route": "/sv/verktyg/kategorier/ekonomi/kalkylator-hyreshojning-spanien-ipc/"
+    },
+    "https://www.gamebob.dev/sv/verktyg/kategorier/ekonomi/lagstadgad-ranta-spanien-2026/": {
+      "hash": "98e0d5948ff1ce3829e827ec3c0475049047757f6eb3ca39760f8e94af9b87e7",
+      "route": "/sv/verktyg/kategorier/ekonomi/lagstadgad-ranta-spanien-2026/"
+    },
+    "https://www.gamebob.dev/sv/verktyg/kategorier/ekonomi/lotteri-optimerare-sannolikhetskalkylator/": {
+      "hash": "1152f0365e35ffd9981e7a00e99bba9a3e7433d0d4a693998225892fd36b0686",
+      "route": "/sv/verktyg/kategorier/ekonomi/lotteri-optimerare-sannolikhetskalkylator/"
+    },
+    "https://www.gamebob.dev/sv/verktyg/kategorier/ekonomi/peseta-till-euro-omvandlare-varde-2026/": {
+      "hash": "84a904aad444e3a67320a2fa99062af0f78886f0cf6c434e2b3b65edf2124402",
+      "route": "/sv/verktyg/kategorier/ekonomi/peseta-till-euro-omvandlare-varde-2026/"
+    },
+    "https://www.gamebob.dev/sv/verktyg/kategorier/ekonomi/procentraknare/": {
+      "hash": "64479d069ec5ceec51093d8d8cf4e3456b1e93da731c06b8fdec624908193c0b",
+      "route": "/sv/verktyg/kategorier/ekonomi/procentraknare/"
+    },
+    "https://www.gamebob.dev/sv/verktyg/kategorier/ekonomi/profitabilitetskalkylator-investering-roi-cagr/": {
+      "hash": "375d7feb426866df781ba9b77a7cfd7247982033fbcc76a8f2bc97929be74102",
+      "route": "/sv/verktyg/kategorier/ekonomi/profitabilitetskalkylator-investering-roi-cagr/"
+    },
+    "https://www.gamebob.dev/sv/verktyg/kategorier/ekonomi/ranta-pa-ranta-kalkylator/": {
+      "hash": "765c8edbfcbaf8aad8e0eafd8467454ed55cbbcd4a4db6e8ee200f9d9cfe86e8",
+      "route": "/sv/verktyg/kategorier/ekonomi/ranta-pa-ranta-kalkylator/"
+    },
+    "https://www.gamebob.dev/sv/verktyg/kategorier/ekonomi/revolverkort-kalkylator/": {
+      "hash": "d9aeb5a7faf5afc86283be4b5a7ecb2fe903a83cf339b81b07faf2d2c67006a2",
+      "route": "/sv/verktyg/kategorier/ekonomi/revolverkort-kalkylator/"
+    },
+    "https://www.gamebob.dev/sv/verktyg/kategorier/ekonomi/snobollsmetoden-skuld-kalkylator/": {
+      "hash": "25b04975816abdd43b00c431a926c785457f142d52c97b710ed56763dbd9bc56",
+      "route": "/sv/verktyg/kategorier/ekonomi/snobollsmetoden-skuld-kalkylator/"
+    },
+    "https://www.gamebob.dev/sv/verktyg/kategorier/ekonomi/spanien-brutto-netto-lon-arbetsgivarkostnad-kalkylator/": {
+      "hash": "f0316eb95e33b955bc81b6cc98e82a9768d37aa53e860d78c53641da0a4a2469",
+      "route": "/sv/verktyg/kategorier/ekonomi/spanien-brutto-netto-lon-arbetsgivarkostnad-kalkylator/"
+    },
+    "https://www.gamebob.dev/tr/araclar/kategoriler/finans/bilesik-faiz-hesaplama/": {
+      "hash": "60e6c5749419760537cd8d2efd06b82b6bba6a48efe7d7e3ef599f8a20389d84",
+      "route": "/tr/araclar/kategoriler/finans/bilesik-faiz-hesaplama/"
+    },
+    "https://www.gamebob.dev/tr/araclar/kategoriler/finans/borc-kartopu-metodu-hesaplayici/": {
+      "hash": "052a7f75d8bef0b07ba9d482fcec27385d9e039c84d9a5703ed29ed116c5f776",
+      "route": "/tr/araclar/kategoriler/finans/borc-kartopu-metodu-hesaplayici/"
+    },
+    "https://www.gamebob.dev/tr/araclar/kategoriler/finans/doner-kredi-karti-hesaplayici/": {
+      "hash": "9f0015f24387d3272578bb80513248beccfb2f7032cebd4a1a408ffe18438e47",
+      "route": "/tr/araclar/kategoriler/finans/doner-kredi-karti-hesaplayici/"
+    },
+    "https://www.gamebob.dev/tr/araclar/kategoriler/finans/enflasyon-ispanya/": {
+      "hash": "11d92624adc285666fa4caf6ead95532d00425f7d34435741a804532a79d8026",
+      "route": "/tr/araclar/kategoriler/finans/enflasyon-ispanya/"
+    },
+    "https://www.gamebob.dev/tr/araclar/kategoriler/finans/enflasyon-satin-alma-gucu-zaman-cizelgesi-hesaplama/": {
+      "hash": "bd84e74e21dcd33f9476ab15080ded8d980e152ded6ba1771fdcda7ffff9c1b4",
+      "route": "/tr/araclar/kategoriler/finans/enflasyon-satin-alma-gucu-zaman-cizelgesi-hesaplama/"
+    },
+    "https://www.gamebob.dev/tr/araclar/kategoriler/finans/finansal-ozgurluk-hesaplama-hayatta-kalma-suresi/": {
+      "hash": "62ff81c1a62072b3b03a9a8dff145894079994af894f04d9fdf966efb5576f3a",
+      "route": "/tr/araclar/kategoriler/finans/finansal-ozgurluk-hesaplama-hayatta-kalma-suresi/"
+    },
+    "https://www.gamebob.dev/tr/araclar/kategoriler/finans/fire-hesaplayici-yuzde-4-kurali/": {
+      "hash": "5e060ab39dbb7b47dec0735e8e3e67af90d95dd4fe0730ca294eb4c5a7458972",
+      "route": "/tr/araclar/kategoriler/finans/fire-hesaplayici-yuzde-4-kurali/"
+    },
+    "https://www.gamebob.dev/tr/araclar/kategoriler/finans/gecikme-faizi-hesaplama-ispanya/": {
+      "hash": "20f1665b61a87862106f4f3efdab35200c12d9bbf25481fad213e2777fa210d3",
+      "route": "/tr/araclar/kategoriler/finans/gecikme-faizi-hesaplama-ispanya/"
+    },
+    "https://www.gamebob.dev/tr/araclar/kategoriler/finans/hisse-temettu-verimi-hesaplama/": {
+      "hash": "d984676a231499c5e20871962811af489428288f6e8c6dd95aa829d752524cd2",
+      "route": "/tr/araclar/kategoriler/finans/hisse-temettu-verimi-hesaplama/"
+    },
+    "https://www.gamebob.dev/tr/araclar/kategoriler/finans/iban-bic-swift-donusturucu/": {
+      "hash": "92660c4b66e95310295660045e1d1f9fe8044954e301228b36911ed59202159b",
+      "route": "/tr/araclar/kategoriler/finans/iban-bic-swift-donusturucu/"
+    },
+    "https://www.gamebob.dev/tr/araclar/kategoriler/finans/": {
+      "hash": "1ccc715b02fa469dbb51191d5ba1ecf6eed8fb89bf1f4b24865b14880247ef06",
+      "route": "/tr/araclar/kategoriler/finans/"
+    },
+    "https://www.gamebob.dev/tr/araclar/kategoriler/finans/ispanya-brut-net-maas-isveren-maliyeti-hesaplama/": {
+      "hash": "2df02fa4826be53f78c6cfbb00b06bb3ef7445360bf38e9ebd152b11e715da15",
+      "route": "/tr/araclar/kategoriler/finans/ispanya-brut-net-maas-isveren-maliyeti-hesaplama/"
+    },
+    "https://www.gamebob.dev/tr/araclar/kategoriler/finans/kira-artisi-hesaplama-ispanya-ipc/": {
+      "hash": "048b299c50289929cfd0282270436c737b5017df74b26ef9a465bd6edd85ec6e",
+      "route": "/tr/araclar/kategoriler/finans/kira-artisi-hesaplama-ispanya-ipc/"
+    },
+    "https://www.gamebob.dev/tr/araclar/kategoriler/finans/konut-kredisi-amortisman-ekstra-odemeler-hesaplama/": {
+      "hash": "e240a69a50ed7c8c41b0ce3ccc505df49737af5be768ad1482c0827dfd47510f",
+      "route": "/tr/araclar/kategoriler/finans/konut-kredisi-amortisman-ekstra-odemeler-hesaplama/"
+    },
+    "https://www.gamebob.dev/tr/araclar/kategoriler/finans/konut-kredisi-hesaplama/": {
+      "hash": "9bc3659f2e4b221720d1a5444328c0bd39b93abe13d89b566f72ef7e150078bc",
+      "route": "/tr/araclar/kategoriler/finans/konut-kredisi-hesaplama/"
+    },
+    "https://www.gamebob.dev/tr/araclar/kategoriler/finans/mahkeme-harclari-hesaplayici-ispanya/": {
+      "hash": "f8bd06cb77fc19ab26b46302fc228fdceabede0fa432c7e6ebc89ccbf43e566e",
+      "route": "/tr/araclar/kategoriler/finans/mahkeme-harclari-hesaplayici-ispanya/"
+    },
+    "https://www.gamebob.dev/tr/araclar/kategoriler/finans/peseta-euro-donusturucu-deger-2026/": {
+      "hash": "49ed071593804261059378485bf7b0239f20ccd3ab97f0a45354013d42180407",
+      "route": "/tr/araclar/kategoriler/finans/peseta-euro-donusturucu-deger-2026/"
+    },
+    "https://www.gamebob.dev/tr/araclar/kategoriler/finans/piyango-optimize-edici-olasilik-hesaplayici/": {
+      "hash": "88bb248096c1bffc7af18af7861a2989b08e2035070fc92e3b98f26ea7de4199",
+      "route": "/tr/araclar/kategoriler/finans/piyango-optimize-edici-olasilik-hesaplayici/"
+    },
+    "https://www.gamebob.dev/tr/araclar/kategoriler/finans/yasal-faiz-orani-ispanya-2026/": {
+      "hash": "de41ec2749bac6ef9213b8d08163092f2a22d252ae884f2cf0479306ddd369fa",
+      "route": "/tr/araclar/kategoriler/finans/yasal-faiz-orani-ispanya-2026/"
+    },
+    "https://www.gamebob.dev/tr/araclar/kategoriler/finans/yatirim-karlilik-hesaplama-roi-cagr/": {
+      "hash": "d5efe13da629058219f139233278063d24b2f5b582a9e6ef50ef82a3429bd799",
+      "route": "/tr/araclar/kategoriler/finans/yatirim-karlilik-hesaplama-roi-cagr/"
+    },
+    "https://www.gamebob.dev/tr/araclar/kategoriler/finans/yuzde-hesaplama/": {
+      "hash": "ccbbe1d4a6d6d842aece2de607d08b996a7d1c8bea2ef2e7b83276ef52718517",
+      "route": "/tr/araclar/kategoriler/finans/yuzde-hesaplama/"
+    },
+    "https://www.jjlmoya.es/utilidades/bola-nieve-deuda/": {
+      "hash": "3e0a2eefe57f5019ddf0369e9651d9e06acb35d121cbf1cf671f02d942b5937b",
+      "route": "/utilidades/bola-nieve-deuda/"
+    },
+    "https://www.jjlmoya.es/utilidades/calculadora-amortizacion-hipoteca-pagos-extra/": {
+      "hash": "ca0df68712f5f9467b8822c2ac3df43097b7e0797d95f598b58681b97b30f055",
+      "route": "/utilidades/calculadora-amortizacion-hipoteca-pagos-extra/"
+    },
+    "https://www.jjlmoya.es/utilidades/calculadora-intereses-demora/": {
+      "hash": "90d47c01bc9646c63647cb6e45c1cb4bcf05bde8a665d85cf974af8be0cf88c2",
+      "route": "/utilidades/calculadora-intereses-demora/"
+    },
+    "https://www.jjlmoya.es/utilidades/calculadora-libertad-financiera-autonomia/": {
+      "hash": "649c5673f8cca942b31af5aac218d1c712a5c79269b6a6984687d79c3e63ef85",
+      "route": "/utilidades/calculadora-libertad-financiera-autonomia/"
+    },
+    "https://www.jjlmoya.es/utilidades/calculadora-linea-tiempo-poder-adquisitivo-inflacion/": {
+      "hash": "b9902141a8811edd5552c25684ad46e751676fbcb0bb322cb82db768730a4eed",
+      "route": "/utilidades/calculadora-linea-tiempo-poder-adquisitivo-inflacion/"
+    },
+    "https://www.jjlmoya.es/utilidades/calculadora-porcentajes/": {
+      "hash": "c3d6af7022f32d9b2e6b347f08254e75be2dfe73f60178778c94975951310f05",
+      "route": "/utilidades/calculadora-porcentajes/"
+    },
+    "https://www.jjlmoya.es/utilidades/calculadora-regla-4-por-ciento-fire/": {
+      "hash": "8294c538037ef1730022b1282caa9dcafa3ef968d97a216472e281c703ae77de",
+      "route": "/utilidades/calculadora-regla-4-por-ciento-fire/"
+    },
+    "https://www.jjlmoya.es/utilidades/calculadora-rentabilidad-dividendo-acciones/": {
+      "hash": "23ffcafc8ec72ec57555f2df3f3de5a4bcb6f0f145011ea94d493d138e0bb5c5",
+      "route": "/utilidades/calculadora-rentabilidad-dividendo-acciones/"
+    },
+    "https://www.jjlmoya.es/utilidades/calculadora-rentabilidad-inversion-roi-cagr/": {
+      "hash": "7c167f1a6c382e047138be4e446fb80726bebfa812b4e12c08ea1349a2e23e95",
+      "route": "/utilidades/calculadora-rentabilidad-inversion-roi-cagr/"
+    },
+    "https://www.jjlmoya.es/utilidades/calculadora-salario-bruto-neto-coste-empresa-espana/": {
+      "hash": "4e8af205c5457376636b18d2e75472ec98c44b5dad0432851b372b51296589bf",
+      "route": "/utilidades/calculadora-salario-bruto-neto-coste-empresa-espana/"
+    },
+    "https://www.jjlmoya.es/utilidades/calculadora-subida-alquiler-ipc/": {
+      "hash": "99994528efee1c50692015e0fd1dd6b74cd7c1651dc97df9dfdedf651bd82bf8",
+      "route": "/utilidades/calculadora-subida-alquiler-ipc/"
+    },
+    "https://www.jjlmoya.es/utilidades/calculadora-tarjeta-revolving/": {
+      "hash": "83d26bc1db648c6bc70ec58fe4164ea63d3ec331bf00ab35385c20868bf19d94",
+      "route": "/utilidades/calculadora-tarjeta-revolving/"
+    },
+    "https://www.jjlmoya.es/utilidades/calculadora-tasas-judiciales/": {
+      "hash": "fa38dc4c03ef423b95ac9e5b8b1966c3d7cf25dd4016ee5d25d4cf4ee9496492",
+      "route": "/utilidades/calculadora-tasas-judiciales/"
+    },
+    "https://www.jjlmoya.es/utilidades/categorias/finanzas/": {
+      "hash": "dc12fca04930d05084a109d9fc120ef803770637f234db8ba019b8dc406f1ef5",
+      "route": "/utilidades/categorias/finanzas/"
+    },
+    "https://www.jjlmoya.es/utilidades/conversor-iban-bic-swift/": {
+      "hash": "745d938bef12e94d92acb56670d52c9e97ebba28b8188fe3b9572c9a4bef0e25",
+      "route": "/utilidades/conversor-iban-bic-swift/"
+    },
+    "https://www.jjlmoya.es/utilidades/conversor-pesetas-euros-valor-actual/": {
+      "hash": "04046f07af0c34096ee477d433cca72a07ac2d43fe97ba4289f3754c7ba614b2",
+      "route": "/utilidades/conversor-pesetas-euros-valor-actual/"
+    },
+    "https://www.jjlmoya.es/utilidades/hipoteca/": {
+      "hash": "28ab488fc1d89f8fe2df055a2f7f5c6844ae22ed533387730f87330324b33568",
+      "route": "/utilidades/hipoteca/"
+    },
+    "https://www.jjlmoya.es/utilidades/inflacion/": {
+      "hash": "d862210c1ec7efb272dcaac57913e8a11f28513ce5715d171b66740576748147",
+      "route": "/utilidades/inflacion/"
+    },
+    "https://www.jjlmoya.es/utilidades/interes-compuesto/": {
+      "hash": "05ea3c20e7e7f00b120155bc450570d1e68582da14b1cea4f2753f5f25f11def",
+      "route": "/utilidades/interes-compuesto/"
+    },
+    "https://www.jjlmoya.es/utilidades/interes-legal-dinero-2026/": {
+      "hash": "5e2807e05fada25c2b82e23a4f523fbca62eb9b21c61fcd9ece22dd1182f22a4",
+      "route": "/utilidades/interes-legal-dinero-2026/"
+    },
+    "https://www.jjlmoya.es/utilidades/optimizador-loterias/": {
+      "hash": "a0ce6f88c9e84e33d3472c0820757174ec31d4e6ad897275c69df8b529a59a6e",
+      "route": "/utilidades/optimizador-loterias/"
+    },
+    "https://www.gamebob.dev/zh/utilities/categories/finance/compound-interest-calculator/": {
+      "hash": "a3a5127dda671000c6d48d3e865132c0654006664f92ac9f611b015229920085",
+      "route": "/zh/utilities/categories/finance/compound-interest-calculator/"
+    },
+    "https://www.gamebob.dev/zh/utilities/categories/finance/debt-snowball-calculator/": {
+      "hash": "7382329606716601620e9daaa6167919dff7bf90bafd09d82179c7e6ccfaa3a5",
+      "route": "/zh/utilities/categories/finance/debt-snowball-calculator/"
+    },
+    "https://www.gamebob.dev/zh/utilities/categories/finance/dividend-yield-calculator/": {
+      "hash": "cdd4303be130f4128f8171f4e13718fdbf6d1ffe21dd336717c61848ca4f5ea8",
+      "route": "/zh/utilities/categories/finance/dividend-yield-calculator/"
+    },
+    "https://www.gamebob.dev/zh/utilities/categories/finance/financial-freedom-calculator/": {
+      "hash": "0433797154dfd312e7e55acf0ee049a3228607e2b0bfc56f2c92b8f096ab1662",
+      "route": "/zh/utilities/categories/finance/financial-freedom-calculator/"
+    },
+    "https://www.gamebob.dev/zh/utilities/categories/finance/four-percent-rule-fire-calculator/": {
+      "hash": "0e30e6b1adf96dea8d7df837dcc0458a747afc44ecda12d7b791877c4571f9c3",
+      "route": "/zh/utilities/categories/finance/four-percent-rule-fire-calculator/"
+    },
+    "https://www.gamebob.dev/zh/utilities/categories/finance/iban-to-bic-swift-converter/": {
+      "hash": "55969fd7664022d1dbc0283c4385ee747d8ee86d486df593b6097d36173f0064",
+      "route": "/zh/utilities/categories/finance/iban-to-bic-swift-converter/"
+    },
+    "https://www.gamebob.dev/zh/utilities/categories/finance/": {
+      "hash": "21bdf515a1e672ec4f724304043cdc0c24a720fe1a7bdca665d5454217af655f",
+      "route": "/zh/utilities/categories/finance/"
+    },
+    "https://www.gamebob.dev/zh/utilities/categories/finance/inflation-calculator-spain/": {
+      "hash": "c9ca0f0658ecea156faa1ee2d88fd026d3fcd9c4342bbd26d9b85e99cdaa4c0a",
+      "route": "/zh/utilities/categories/finance/inflation-calculator-spain/"
+    },
+    "https://www.gamebob.dev/zh/utilities/categories/finance/inflation-purchasing-power-timeline-calculator/": {
+      "hash": "4bdfc68f6d4bea6d92f7809f6d10500995bf6591a1d6e25a67a7e5697e8c7c85",
+      "route": "/zh/utilities/categories/finance/inflation-purchasing-power-timeline-calculator/"
+    },
+    "https://www.gamebob.dev/zh/utilities/categories/finance/late-interest-calculator/": {
+      "hash": "ca0a0f7cc538332050b78fcbaf33939e5ff004a212cc814f50bc2eb2810001c7",
+      "route": "/zh/utilities/categories/finance/late-interest-calculator/"
+    },
+    "https://www.gamebob.dev/zh/utilities/categories/finance/legal-interest-on-money-spain/": {
+      "hash": "613983ae64921d50c0f1d66453291f5ba7ca0c29cf5fc52fd2c8a0f205e37087",
+      "route": "/zh/utilities/categories/finance/legal-interest-on-money-spain/"
+    },
+    "https://www.gamebob.dev/zh/utilities/categories/finance/mortgage-amortization-extra-payment-planner/": {
+      "hash": "82a4219893501df0bc4042bca27108220db0c41f898e10f84932048cbbf55f1c",
+      "route": "/zh/utilities/categories/finance/mortgage-amortization-extra-payment-planner/"
+    },
+    "https://www.gamebob.dev/zh/utilities/categories/finance/mortgage-calculator/": {
+      "hash": "41d1866008eae55d99ce02e3809c6a49513e4983f2f166307083873bd4fa1374",
+      "route": "/zh/utilities/categories/finance/mortgage-calculator/"
+    },
+    "https://www.gamebob.dev/zh/utilities/categories/finance/percentage-calculator/": {
+      "hash": "43621645e8722563e40d329fd1f1b5193664cd6007945a2789f2583873af434f",
+      "route": "/zh/utilities/categories/finance/percentage-calculator/"
+    },
+    "https://www.gamebob.dev/zh/utilities/categories/finance/pesetas-to-euros-with-inflation-calculator/": {
+      "hash": "d853b875f55e5af3e972db2de0c31b9b99ed3cd048abbf354605feed00df2ebe",
+      "route": "/zh/utilities/categories/finance/pesetas-to-euros-with-inflation-calculator/"
+    },
+    "https://www.gamebob.dev/zh/utilities/categories/finance/profitability-calculator-roi-cagr/": {
+      "hash": "7a2dfbab23ba169ba46502b5b2d9108ebbf44b24b807515398fbeb82e76052fe",
+      "route": "/zh/utilities/categories/finance/profitability-calculator-roi-cagr/"
+    },
+    "https://www.gamebob.dev/zh/utilities/categories/finance/rent-increase-calculator/": {
+      "hash": "88851ae2772d9119e7125f717defa07eebe5b5144136de1bbc434d420cb5c539",
+      "route": "/zh/utilities/categories/finance/rent-increase-calculator/"
+    },
+    "https://www.gamebob.dev/zh/utilities/categories/finance/revolving-card-calculator/": {
+      "hash": "d848dbdcea4daae4d422db191394731f2b46ec1eabc5493cf2176e3cfc36a2e8",
+      "route": "/zh/utilities/categories/finance/revolving-card-calculator/"
+    },
+    "https://www.gamebob.dev/zh/utilities/categories/finance/spain-gross-net-salary-employer-cost-calculator/": {
+      "hash": "222c4a39c54d5414316eaaeb5b24c38445ead885e914067dae2a642620b685c1",
+      "route": "/zh/utilities/categories/finance/spain-gross-net-salary-employer-cost-calculator/"
+    },
+    "https://www.gamebob.dev/zh/utilities/categories/finance/spain-lottery-optimizer/": {
+      "hash": "202279e70dab69316ab37fe294d9945c3130f1bf7c1532625899627378d76c19",
+      "route": "/zh/utilities/categories/finance/spain-lottery-optimizer/"
+    },
+    "https://www.gamebob.dev/zh/utilities/categories/finance/spanish-court-fees-calculator/": {
+      "hash": "1fd48062e0a69f722a7c1affb6ce1205c716e91eb0285ef114a4d05f292ed937",
+      "route": "/zh/utilities/categories/finance/spanish-court-fees-calculator/"
+    }
+  }
+}
