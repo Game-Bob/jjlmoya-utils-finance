@@ -1,3 +1,4 @@
+import type { ToolDefinition } from '../../types';
 import { lotteryOptimizer } from './entry';
 export * from './entry';
 export const LOTTERY_OPTIMIZER_TOOL: ToolDefinition = {

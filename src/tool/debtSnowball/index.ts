@@ -1,3 +1,4 @@
+import type { ToolDefinition } from '../../types';
 import { debtSnowball } from './entry';
 import { DebtSnowballLogic } from './logic';
 export * from './entry';

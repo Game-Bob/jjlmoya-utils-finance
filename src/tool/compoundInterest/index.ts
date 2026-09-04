@@ -1,3 +1,4 @@
+import type { ToolDefinition } from '../../types';
 import { compoundInterest } from './entry';
 export * from './entry';
 export const COMPOUND_INTEREST_TOOL: ToolDefinition = {

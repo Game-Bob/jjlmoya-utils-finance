@@ -1,3 +1,4 @@
+import type { ToolDefinition } from '../../types';
 import { legalInterestRate } from './entry';
 export * from './entry';
 export const LEGAL_INTEREST_RATE_TOOL: ToolDefinition = {
