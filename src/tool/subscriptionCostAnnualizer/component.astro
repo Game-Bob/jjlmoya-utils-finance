@@ -1,0 +1,58 @@
+---
+import type { SubscriptionCostAnnualizerUI } from './ui';
+import type { SubscriptionCalculatorInput } from './logic';
+import { calculateSubscriptionCosts } from './logic';
+import { renderSubscriptionResults, renderSubscriptionScene } from './dom-views';
+import './subscription-cost-annualizer.css';
+
+interface Props { ui: SubscriptionCostAnnualizerUI; locale?: string; }
+
+const { ui } = Astro.props;
+const initial: SubscriptionCalculatorInput = {
+  currency: 'USD',
+  subscriptions: [
+    { id: 'streaming', name: 'Streaming', amount: 12, frequency: 'monthly', renewalDate: '2026-10-12' },
+    { id: 'cloud', name: 'Cloud backup', amount: 4, frequency: 'monthly', renewalDate: '2026-10-20' },
+    { id: 'magazine', name: 'Magazine', amount: 24, frequency: 'quarterly', renewalDate: '2026-11-05' },
+  ],
+};
+const initialResult = calculateSubscriptionCosts(initial);
+const config = JSON.stringify({ ui, initial });
+---
+
+<div class="subscription-cost-annualizer-tool" data-sca-tool>
+  <form class="sca-controls" aria-label={ui.subscriptionLabel}>
+    <div class="sca-currency-field">
+      <label for="sca-currency">{ui.currencyLabel}</label>
+      <select id="sca-currency" data-sca-currency>
+        <option value="USD">USD — US dollar</option>
+        <option value="EUR">EUR — Euro</option>
+        <option value="GBP">GBP — Pound sterling</option>
+        <option value="CAD">CAD — Canadian dollar</option>
+        <option value="AUD">AUD — Australian dollar</option>
+        <option value="JPY">JPY — Japanese yen</option>
+      </select>
+      <small>{ui.currencyHelp}</small>
+    </div>
+    <div class="sca-list-heading"><h2>{ui.subscriptionLabel}</h2><span>{ui.reorderHint}</span></div>
+    <div class="sca-list" data-sca-list></div>
+    <div class="sca-actions"><button type="button" class="sca-primary-button" data-sca-add>{ui.addButton}</button><button type="button" class="sca-secondary-button" data-sca-reset>{ui.resetButton}</button></div>
+  </form>
+
+  <section class="sca-output" aria-live="polite">
+    <div class="sca-scene-wrap" data-sca-scene set:html={initialResult ? renderSubscriptionScene(initialResult, ui) : ''}></div>
+    <div class="sca-results-wrap" data-sca-results set:html={initialResult ? renderSubscriptionResults(initialResult, ui) : ''}></div>
+    <p class="sca-error" data-sca-error hidden>{ui.emptyMessage}</p>
+  </section>
+
+  <p class="sca-privacy">{ui.privacyNote}</p>
+  <details class="sca-method"><summary>{ui.methodTitle}</summary><p>{ui.methodText}</p><p>{ui.limitationText}</p></details>
+</div>
+
+<script is:inline type="application/json" data-sca-config set:html={config}></script>
+<script>
+  import { initSubscriptionCostAnnualizer } from './controller';
+  const root = document.querySelector<HTMLElement>('[data-sca-tool]');
+  const configElement = document.querySelector<HTMLScriptElement>('[data-sca-config]');
+  if (root && configElement?.textContent) initSubscriptionCostAnnualizer(root, JSON.parse(configElement.textContent));
+</script>
