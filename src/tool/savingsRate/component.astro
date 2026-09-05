@@ -1,0 +1,326 @@
+---
+import type { SavingsRateUI } from './ui';
+
+interface Props {
+  ui: SavingsRateUI;
+  locale?: string;
+}
+
+const { ui, locale = 'en' } = Astro.props;
+---
+
+<div
+  class="savings-rate-tool"
+  id="savings-rate-tool"
+  data-locale={locale}
+  data-label-target-met={ui.labelTargetMet}
+  data-label-more-needed={ui.labelMoreNeeded}
+  data-label-scenario-target-met={ui.labelScenarioTargetMet}
+  data-label-scenario-more-needed={ui.labelScenarioMoreNeeded}
+  data-label-copied={ui.labelCopied}
+  data-label-invalid={ui.labelInvalidInput}
+  data-label-rate={ui.labelRate}
+  data-label-percentage-points={ui.labelPercentagePoints}
+>
+  <form class="savings-rate-workbench savings-rate-card" id="savings-rate-form" novalidate>
+    <section class="savings-rate-input-panel" aria-labelledby="savings-rate-input-title">
+      <div class="savings-rate-kicker">{ui.labelMoneyPicture}</div>
+      <h2 id="savings-rate-input-title">Your numbers</h2>
+
+      <div class="savings-rate-period-row">
+        <span class="savings-rate-field-label">{ui.labelPeriod}</span>
+        <div class="savings-rate-segmented" role="group" aria-label={ui.labelPeriod}>
+          <button type="button" class="savings-rate-segment is-active" data-period="monthly" aria-pressed="true">{ui.labelMonthly}</button>
+          <button type="button" class="savings-rate-segment" data-period="yearly" aria-pressed="false">{ui.labelYearly}</button>
+        </div>
+      </div>
+
+      <div class="savings-rate-inline-row">
+        <label for="savings-rate-currency">{ui.labelCurrency}</label>
+        <select id="savings-rate-currency" class="savings-rate-select">
+          <option value="USD">USD, {ui.labelCurrencyUSD}</option>
+          <option value="EUR">EUR, {ui.labelCurrencyEUR}</option>
+          <option value="GBP">GBP, {ui.labelCurrencyGBP}</option>
+          <option value="CAD">CAD, {ui.labelCurrencyCAD}</option>
+          <option value="AUD">AUD, {ui.labelCurrencyAUD}</option>
+          <option value="JPY">JPY, {ui.labelCurrencyJPY}</option>
+        </select>
+      </div>
+
+      <div class="savings-rate-field">
+        <label for="savings-rate-income">{ui.labelIncome}</label>
+        <div class="savings-rate-money-input"><span aria-hidden="true" data-currency-symbol>$</span><input id="savings-rate-income" type="number" min="0.01" step="100" value="4000" inputmode="decimal" required /></div>
+        <small>{ui.labelIncomeHelp}</small>
+      </div>
+
+      <div class="savings-rate-field">
+        <label for="savings-rate-saved">{ui.labelSaved}</label>
+        <div class="savings-rate-money-input"><span aria-hidden="true" data-currency-symbol>$</span><input id="savings-rate-saved" type="number" min="0" step="50" value="1000" inputmode="decimal" required /></div>
+        <small>{ui.labelSavedHelp}</small>
+      </div>
+
+      <div class="savings-rate-field">
+        <label for="savings-rate-extra">{ui.labelExtraContribution}</label>
+        <div class="savings-rate-money-input"><span aria-hidden="true" data-currency-symbol>$</span><input id="savings-rate-extra" type="number" min="0" step="50" value="200" inputmode="decimal" required /></div>
+        <small>{ui.labelExtraContributionHelp}</small>
+      </div>
+
+      <div class="savings-rate-field savings-rate-target-field">
+        <label for="savings-rate-target">{ui.labelTargetRate}</label>
+        <div class="savings-rate-percent-input"><input id="savings-rate-target" type="number" min="0" max="100" step="1" value="30" inputmode="decimal" required /><span aria-hidden="true">%</span></div>
+        <small>{ui.labelTargetRateHelp}</small>
+      </div>
+
+      <div class="savings-rate-scenario-inputs" aria-labelledby="savings-rate-scenario-title">
+        <div class="savings-rate-scenario-heading">
+          <h3 id="savings-rate-scenario-title">{ui.labelScenario}</h3>
+          <p>{ui.labelScenarioHelp}</p>
+        </div>
+        <div class="savings-rate-two-fields">
+          <div class="savings-rate-field">
+            <label for="savings-rate-income-change">{ui.labelIncomeChange}</label>
+            <div class="savings-rate-percent-input"><input id="savings-rate-income-change" type="number" step="1" value="0" inputmode="decimal" /><span aria-hidden="true">%</span></div>
+          </div>
+          <div class="savings-rate-field">
+            <label for="savings-rate-spending-change">{ui.labelSpendingChange}</label>
+            <div class="savings-rate-percent-input"><input id="savings-rate-spending-change" type="number" step="1" value="0" inputmode="decimal" /><span aria-hidden="true">%</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="savings-rate-actions">
+        <button type="button" class="savings-rate-button savings-rate-button-muted" id="savings-rate-reset">{ui.labelReset}</button>
+        <button type="button" class="savings-rate-button savings-rate-button-primary" id="savings-rate-copy">{ui.labelCopyResult}</button>
+      </div>
+      <p class="savings-rate-error" id="savings-rate-error" role="alert" hidden>{ui.labelInvalidInput}</p>
+    </section>
+
+    <section class="savings-rate-results-panel" aria-labelledby="savings-rate-results-title">
+      <div class="savings-rate-results-topline">
+        <div>
+          <div class="savings-rate-kicker">{ui.labelSavingsSnapshot}</div>
+          <h2 id="savings-rate-results-title">{ui.labelCurrentRate}</h2>
+        </div>
+        <div class="savings-rate-period-badge" id="savings-rate-period-badge">{ui.labelMonthly}</div>
+      </div>
+
+      <div class="savings-rate-illustration" aria-hidden="true">
+        <svg viewBox="0 0 560 178" role="presentation">
+          <path class="savings-rate-illustration-sun" d="M52 53a25 25 0 1 0 0 1Z" />
+          <path class="savings-rate-illustration-cloud" d="M80 78c0-8 7-15 16-15 4-11 21-13 28-2 13-4 25 5 25 17H80Z" />
+          <path class="savings-rate-illustration-road" d="M24 143c62-30 105-34 161-18 54 15 86 2 132-20 55-27 114-29 219 6" />
+          <path class="savings-rate-illustration-road-line" d="M48 132c31-12 58-14 84-9m31 10c26 3 47-4 69-14m33-14c26-12 53-17 81-16m33 3c27 1 52 7 80 16" />
+          <path class="savings-rate-illustration-jar" d="M230 83h72l-6 64h-60l-6-64Z" />
+          <path class="savings-rate-illustration-lid" d="M226 76h80v13h-80z" />
+          <path class="savings-rate-illustration-jar-line" d="M242 105h48m-45 17h42" />
+          <circle class="savings-rate-illustration-coin" cx="347" cy="117" r="13" />
+          <circle class="savings-rate-illustration-coin" cx="374" cy="133" r="10" />
+          <circle class="savings-rate-illustration-coin-light" cx="365" cy="102" r="8" />
+          <path class="savings-rate-illustration-flag" d="M449 137V48m0 1 48 14-48 16" />
+          <path class="savings-rate-illustration-flag-fill" d="m452 52 39 11-39 11Z" />
+          <circle class="savings-rate-illustration-spark" cx="422" cy="74" r="4" />
+          <circle class="savings-rate-illustration-spark" cx="516" cy="89" r="3" />
+        </svg>
+      </div>
+
+      <div class="savings-rate-hero">
+        <div class="savings-rate-ring" id="savings-rate-ring" aria-hidden="true"><div class="savings-rate-ring-inner"><strong id="savings-rate-rate">30%</strong><span>{ui.labelRate}</span></div></div>
+        <div class="savings-rate-hero-copy">
+          <p id="savings-rate-status" class="savings-rate-status" role="status" aria-live="polite">{ui.labelTargetMet}</p>
+          <p id="savings-rate-target-detail">0 {ui.labelMoreNeeded}</p>
+        </div>
+      </div>
+
+      <dl class="savings-rate-metric-grid">
+        <div><dt>{ui.labelAnnualSaved}</dt><dd id="savings-rate-annual-saved">$14,400</dd></div>
+        <div><dt>{ui.labelAnnualIncome}</dt><dd id="savings-rate-annual-income">$48,000</dd></div>
+        <div><dt>{ui.labelSpending}</dt><dd id="savings-rate-spending">$2,800</dd></div>
+        <div><dt>{ui.labelTargetGap}</dt><dd id="savings-rate-gap">0 {ui.labelPercentagePoints}</dd></div>
+      </dl>
+
+      <div class="savings-rate-scenario-card">
+        <div class="savings-rate-scenario-card-heading">
+          <div><div class="savings-rate-kicker">{ui.labelTrySmallChange}</div><h3>{ui.labelScenario}</h3></div>
+          <strong id="savings-rate-scenario-rate">30%</strong>
+        </div>
+        <div class="savings-rate-scenario-bar" aria-hidden="true"><span id="savings-rate-scenario-bar-fill"></span><i id="savings-rate-target-marker"></i></div>
+        <div class="savings-rate-scenario-summary"><span id="savings-rate-scenario-change">0 {ui.labelPercentagePoints}</span><span>{ui.labelScenarioChange}</span></div>
+        <dl class="savings-rate-scenario-metrics">
+          <div><dt>{ui.labelScenarioSaved}</dt><dd id="savings-rate-scenario-saved">$1,200</dd></div>
+          <div><dt>{ui.labelScenarioSpending}</dt><dd id="savings-rate-scenario-spending">$2,800</dd></div>
+          <div><dt>{ui.labelScenarioTarget}</dt><dd id="savings-rate-scenario-target">{ui.labelScenarioTargetMet}</dd></div>
+        </dl>
+      </div>
+    </section>
+  </form>
+</div>
+
+<script>
+  import { calculateSavingsRate, type SavingsPeriod } from './logic';
+
+  const root = document.getElementById('savings-rate-tool');
+  if (root) {
+    const getInput = (id: string) => document.getElementById(id) as HTMLInputElement | null;
+    const income = getInput('savings-rate-income');
+    const saved = getInput('savings-rate-saved');
+    const extra = getInput('savings-rate-extra');
+    const target = getInput('savings-rate-target');
+    const incomeChange = getInput('savings-rate-income-change');
+    const spendingChange = getInput('savings-rate-spending-change');
+    const currency = document.getElementById('savings-rate-currency') as HTMLSelectElement | null;
+    const periodButtons = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-period]'));
+    const symbols = Array.from(document.querySelectorAll<HTMLElement>('[data-currency-symbol]'));
+    const error = document.getElementById('savings-rate-error');
+    const periodBadge = document.getElementById('savings-rate-period-badge');
+    let period: SavingsPeriod = 'monthly';
+
+    const labels = {
+      targetMet: root.dataset.labelTargetMet ?? '',
+      moreNeeded: root.dataset.labelMoreNeeded ?? '',
+      scenarioTargetMet: root.dataset.labelScenarioTargetMet ?? '',
+      scenarioMoreNeeded: root.dataset.labelScenarioMoreNeeded ?? '',
+      invalid: root.dataset.labelInvalid ?? '',
+      rate: root.dataset.labelRate ?? '',
+      percentagePoints: root.dataset.labelPercentagePoints ?? '',
+    };
+    const currencySymbols: Record<string, string> = { USD: '$', EUR: '€', GBP: '£', CAD: '$', AUD: '$', JPY: '¥' };
+
+    const setText = (id: string, value: string): void => {
+      const element = document.getElementById(id);
+      if (element) element.textContent = value;
+    };
+
+    const formatMoney = (value: number): string => {
+      const code = currency?.value ?? 'USD';
+      return new Intl.NumberFormat(root.dataset.locale ?? 'en', { style: 'currency', currency: code, maximumFractionDigits: code === 'JPY' ? 0 : 2 }).format(value).replace(/\u00a0/g, ' ');
+    };
+
+    const read = (element: HTMLInputElement | null): number => Number(element?.value ?? '');
+
+    const renderError = (): void => {
+      if (error) {
+        error.hidden = false;
+        error.textContent = labels.invalid;
+      }
+      document.getElementById('savings-rate-form')?.setAttribute('aria-invalid', 'true');
+    };
+
+    const clearError = (): void => {
+      if (error) error.hidden = true;
+      document.getElementById('savings-rate-form')?.removeAttribute('aria-invalid');
+    };
+
+    const renderBaseline = (result: NonNullable<ReturnType<typeof calculateSavingsRate>>): void => {
+      setText('savings-rate-rate', `${result.rate}%`);
+      setText('savings-rate-annual-saved', formatMoney(result.annualSaved));
+      setText('savings-rate-annual-income', formatMoney(result.annualIncome));
+      setText('savings-rate-spending', formatMoney(result.spending));
+      setText('savings-rate-gap', result.targetGap <= 0 ? labels.targetMet : `${result.targetGap} ${labels.percentagePoints}`);
+      setText('savings-rate-status', result.targetGap <= 0 ? labels.targetMet : `${result.targetGap} ${labels.percentagePoints} ${labels.moreNeeded}`);
+      setText('savings-rate-target-detail', result.additionalToTarget <= 0 ? labels.targetMet : `${formatMoney(result.additionalToTarget)} ${labels.moreNeeded}`);
+    };
+
+    const renderScenario = (result: NonNullable<ReturnType<typeof calculateSavingsRate>>): void => {
+      setText('savings-rate-scenario-rate', `${result.scenario.rate}%`);
+      setText('savings-rate-scenario-change', `${result.scenario.changeFromBase >= 0 ? '+' : ''}${result.scenario.changeFromBase} ${labels.percentagePoints}`);
+      setText('savings-rate-scenario-saved', formatMoney(result.scenario.saved));
+      setText('savings-rate-scenario-spending', formatMoney(result.scenario.spending));
+      setText('savings-rate-scenario-target', result.scenario.additionalToTarget <= 0 ? labels.scenarioTargetMet : `${formatMoney(result.scenario.additionalToTarget)} ${labels.scenarioMoreNeeded}`);
+    };
+
+    const renderGauges = (result: NonNullable<ReturnType<typeof calculateSavingsRate>>): void => {
+      const ringRate = Math.min(100, Math.max(0, result.rate));
+      const ring = document.getElementById('savings-rate-ring');
+      if (ring) ring.style.setProperty('--rate', `${ringRate * 3.6}deg`);
+      const bar = document.getElementById('savings-rate-scenario-bar-fill');
+      if (bar) bar.style.width = `${Math.min(100, Math.max(0, result.scenario.rate))}%`;
+      const marker = document.getElementById('savings-rate-target-marker');
+      if (marker) marker.style.left = `${Math.min(100, Math.max(0, result.targetRate))}%`;
+    };
+
+    const renderValid = (result: NonNullable<ReturnType<typeof calculateSavingsRate>>): void => {
+      clearError();
+      renderBaseline(result);
+      renderScenario(result);
+      renderGauges(result);
+    };
+
+    const updateSymbols = (): void => {
+      symbols.forEach((symbol) => { symbol.textContent = currencySymbols[currency?.value ?? 'USD'] ?? '$'; });
+    };
+
+    const update = (): void => {
+      const result = calculateSavingsRate({
+        income: read(income),
+        saved: read(saved),
+        extraContribution: read(extra),
+        targetRate: read(target),
+        incomeChange: read(incomeChange),
+        spendingChange: read(spendingChange),
+        period,
+      });
+      if (!result) return renderError();
+      renderValid(result);
+    };
+
+    const setPeriod = (nextPeriod: SavingsPeriod): void => {
+      period = nextPeriod;
+      periodButtons.forEach((button) => button.setAttribute('aria-pressed', String(button.dataset.period === period)));
+      periodButtons.forEach((button) => button.classList.toggle('is-active', button.dataset.period === period));
+      if (periodBadge) {
+        periodBadge.textContent = periodButtons.find((button) => button.dataset.period === period)?.textContent ?? period;
+      }
+      update();
+    };
+
+    const reset = (): void => {
+      if (income) income.value = '4000';
+      if (saved) saved.value = '1000';
+      if (extra) extra.value = '200';
+      if (target) target.value = '30';
+      if (incomeChange) incomeChange.value = '0';
+      if (spendingChange) spendingChange.value = '0';
+      if (currency) currency.value = 'USD';
+      setPeriod('monthly');
+      updateSymbols();
+    };
+
+    const readText = (id: string): string => document.getElementById(id)?.textContent ?? '';
+    const readValue = (id: string): string => (document.getElementById(id) as HTMLInputElement | null)?.value ?? '';
+    const getCopyText = (): string => [
+      `Savings rate: ${readText('savings-rate-rate')}`,
+      `Annualized savings: ${readText('savings-rate-annual-saved')}`,
+      `Target: ${readValue('savings-rate-target')}%`,
+      `Scenario rate: ${readText('savings-rate-scenario-rate')}`,
+    ].join('\n');
+
+    const showCopied = (): void => {
+      const button = document.getElementById('savings-rate-copy');
+      if (!button) return;
+      const previous = button.textContent;
+      button.textContent = root.dataset.labelCopied ?? 'Copied';
+      window.setTimeout(() => { button.textContent = previous; }, 1600);
+    };
+
+    const copy = async (): Promise<void> => {
+      try {
+        await navigator.clipboard.writeText(getCopyText());
+        showCopied();
+      } catch {
+        renderError();
+      }
+    };
+
+    [income, saved, extra, target, incomeChange, spendingChange].forEach((input) => input?.addEventListener('input', update));
+    currency?.addEventListener('change', () => { updateSymbols(); update(); });
+    periodButtons.forEach((button) => button.addEventListener('click', () => setPeriod((button.dataset.period ?? 'monthly') as SavingsPeriod)));
+    document.getElementById('savings-rate-reset')?.addEventListener('click', reset);
+    document.getElementById('savings-rate-copy')?.addEventListener('click', copy);
+    updateSymbols();
+    update();
+  }
+</script>
+
+<style>
+  @import './savings-rate-calculator.css';
+</style>

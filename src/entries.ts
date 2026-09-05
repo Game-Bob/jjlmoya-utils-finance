@@ -1,7 +1,11 @@
+import { savingsRate } from './tool/savingsRate/entry';
+
 export { compoundInterest } from './tool/compoundInterest/entry';
 export type { CompoundInterestLocaleContent } from './tool/compoundInterest/entry';
 export { financialFreedom } from './tool/financialFreedom/entry';
 export type { FinancialFreedomLocaleContent } from './tool/financialFreedom/entry';
+export { savingsRate };
+export type { SavingsRateLocaleContent } from './tool/savingsRate/entry';
 export { profitability } from './tool/profitability/entry';
 export type { ProfitabilityLocaleContent } from './tool/profitability/entry';
 export { courtFeeCalculator } from './tool/courtFeeCalculator/entry';
@@ -63,4 +67,4 @@ import { mortgageExtraPaymentPlanner } from './tool/mortgageExtraPaymentPlanner/
 import { inflationPurchasingPower } from './tool/inflationPurchasingPower/entry';
 import { subscriptionCostAnnualizer } from './tool/subscriptionCostAnnualizer/entry';
 import { loanToIncomeRatio } from './tool/loanToIncomeRatio/entry';
-export const ALL_ENTRIES = [compoundInterest, financialFreedom, profitability, courtFeeCalculator, debtSnowball, fireCalculator, ibanBicSwift, inflation, lateInterest, legalInterestRate, lotteryOptimizer, mortgage, percentageCalculator, rentIncrease, revolvingCardCalculator, pesetaValue, salaryEmployerCost, dividendYield, mortgageExtraPaymentPlanner, inflationPurchasingPower, subscriptionCostAnnualizer, loanToIncomeRatio];
+export const ALL_ENTRIES = [compoundInterest, financialFreedom, savingsRate, profitability, courtFeeCalculator, debtSnowball, fireCalculator, ibanBicSwift, inflation, lateInterest, legalInterestRate, lotteryOptimizer, mortgage, percentageCalculator, rentIncrease, revolvingCardCalculator, pesetaValue, salaryEmployerCost, dividendYield, mortgageExtraPaymentPlanner, inflationPurchasingPower, subscriptionCostAnnualizer, loanToIncomeRatio];

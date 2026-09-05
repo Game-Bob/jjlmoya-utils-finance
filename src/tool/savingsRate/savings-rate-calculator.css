@@ -1,0 +1,575 @@
+.savings-rate-tool {
+  --sr-ink: #20294d;
+  --sr-muted: #687392;
+  --sr-paper: #fffdf8;
+  --sr-panel: #f0f3ff;
+  --sr-line: #d7def2;
+  --sr-accent: #435ee8;
+  --sr-accent-dark: #2639a8;
+  --sr-warm: #f5b544;
+  --sr-coral: #f27d6d;
+  --sr-sky: #dfeaff;
+
+  width: 100%;
+  max-width: 72rem;
+  margin: 0 auto;
+  color: var(--sr-ink);
+}
+
+.savings-rate-tool *,
+.savings-rate-tool *::before,
+.savings-rate-tool *::after {
+  box-sizing: border-box;
+}
+
+:global(.theme-dark) .savings-rate-tool {
+  --sr-ink: #f5f6ff;
+  --sr-muted: #b9c1df;
+  --sr-paper: #202947;
+  --sr-panel: #2b365b;
+  --sr-line: #4b5982;
+  --sr-accent: #9cacff;
+  --sr-accent-dark: #b9c4ff;
+  --sr-warm: #ffc95d;
+  --sr-coral: #ff9d8f;
+  --sr-sky: #303d67;
+}
+
+.savings-rate-workbench {
+  display: grid;
+  grid-template-columns: minmax(17rem, 0.88fr) minmax(20rem, 1.12fr);
+  min-width: 0;
+  overflow: hidden;
+  border: 2px solid var(--sr-line);
+  border-radius: 1.7rem;
+  background: var(--sr-paper);
+  box-shadow: 0 1.5rem 3rem rgba(32, 41, 77, 0.12);
+}
+
+.savings-rate-input-panel,
+.savings-rate-results-panel {
+  min-width: 0;
+  padding: clamp(1.3rem, 3vw, 2.25rem);
+}
+
+.savings-rate-input-panel {
+  border-right: 2px solid var(--sr-line);
+}
+
+.savings-rate-results-panel {
+  background: var(--sr-panel);
+}
+
+.savings-rate-kicker {
+  margin-bottom: 0.35rem;
+  color: var(--sr-accent-dark);
+  font-size: 0.7rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.savings-rate-input-panel h2,
+.savings-rate-results-panel h2,
+.savings-rate-scenario-card h3 {
+  margin: 0;
+  color: var(--sr-ink);
+}
+
+.savings-rate-input-panel h2,
+.savings-rate-results-panel h2 {
+  font-size: clamp(1.4rem, 3vw, 1.9rem);
+  letter-spacing: -0.025em;
+}
+
+.savings-rate-period-row,
+.savings-rate-inline-row,
+.savings-rate-results-topline,
+.savings-rate-scenario-card-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+}
+
+.savings-rate-period-row {
+  margin: 1.5rem 0 1.2rem;
+}
+
+.savings-rate-field-label,
+.savings-rate-inline-row label {
+  color: var(--sr-muted);
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.savings-rate-segmented {
+  display: inline-flex;
+  gap: 0.2rem;
+  padding: 0.25rem;
+  border: 1px solid var(--sr-line);
+  border-radius: 0.8rem;
+  background: var(--sr-panel);
+}
+
+.savings-rate-segment,
+.savings-rate-button {
+  border: 0;
+  border-radius: 0.6rem;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 900;
+  transition:
+    transform 0.18s ease,
+    background 0.18s ease,
+    filter 0.18s ease;
+}
+
+.savings-rate-segment {
+  padding: 0.52rem 0.75rem;
+  background: transparent;
+  color: var(--sr-muted);
+  font-size: 0.8rem;
+}
+
+.savings-rate-segment.is-active {
+  background: var(--sr-accent-dark);
+  color: #fff;
+}
+
+.savings-rate-segment:focus-visible,
+.savings-rate-button:focus-visible,
+.savings-rate-select:focus-visible {
+  outline: 3px solid var(--sr-warm);
+  outline-offset: 3px;
+}
+
+.savings-rate-inline-row {
+  margin-bottom: 1.2rem;
+}
+
+.savings-rate-select {
+  width: min(12.5rem, 60%);
+  border: 1px solid var(--sr-line);
+  border-radius: 0.65rem;
+  padding: 0.6rem 0.7rem;
+  background: var(--sr-panel);
+  color: var(--sr-ink);
+  font: inherit;
+  font-weight: 700;
+}
+
+.savings-rate-field {
+  margin: 1.05rem 0;
+}
+
+.savings-rate-field label {
+  display: block;
+  margin-bottom: 0.42rem;
+  color: var(--sr-ink);
+  font-size: 0.92rem;
+  font-weight: 900;
+}
+
+.savings-rate-field small,
+.savings-rate-scenario-heading p {
+  display: block;
+  margin: 0.4rem 0 0;
+  color: var(--sr-muted);
+  font-size: 0.76rem;
+  line-height: 1.45;
+}
+
+.savings-rate-money-input,
+.savings-rate-percent-input {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--sr-line);
+  border-radius: 0.75rem;
+  background: var(--sr-panel);
+  color: var(--sr-muted);
+  font-weight: 900;
+}
+
+.savings-rate-money-input span,
+.savings-rate-percent-input span {
+  padding: 0 0.75rem;
+}
+
+.savings-rate-money-input input,
+.savings-rate-percent-input input {
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  padding: 0.78rem 0.65rem;
+  background: transparent;
+  color: var(--sr-ink);
+  font: inherit;
+  font-size: 1.05rem;
+  font-weight: 900;
+}
+
+.savings-rate-money-input:focus-within,
+.savings-rate-percent-input:focus-within,
+.savings-rate-select:focus-visible {
+  border-color: var(--sr-accent);
+  outline: 3px solid color-mix(in srgb, var(--sr-accent) 34%, transparent);
+  outline-offset: 2px;
+}
+
+.savings-rate-scenario-inputs {
+  margin-top: 1.5rem;
+  border-top: 2px dotted var(--sr-line);
+  padding-top: 1.4rem;
+}
+
+.savings-rate-scenario-heading h3 {
+  font-size: 1rem;
+}
+
+.savings-rate-scenario-heading p {
+  margin-top: 0.25rem;
+}
+
+.savings-rate-two-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.savings-rate-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1.4rem;
+}
+
+.savings-rate-button {
+  padding: 0.78rem 1rem;
+}
+
+.savings-rate-button-muted {
+  border: 2px solid var(--sr-accent-dark);
+  background: transparent;
+  color: var(--sr-accent-dark);
+}
+
+.savings-rate-button-primary {
+  background: var(--sr-accent-dark);
+  color: #fff;
+  box-shadow: 0 0.45rem 0.9rem rgba(38, 57, 168, 0.2);
+}
+
+:global(.theme-dark) .savings-rate-button-primary {
+  color: #202947;
+}
+
+.savings-rate-button:hover,
+.savings-rate-button:focus-visible {
+  transform: translateY(-2px);
+  filter: brightness(1.08);
+}
+
+.savings-rate-error {
+  margin: 0.85rem 0 0;
+  color: #b42318;
+  font-size: 0.85rem;
+  font-weight: 800;
+}
+
+:global(.theme-dark) .savings-rate-error {
+  color: #ffb4a9;
+}
+
+.savings-rate-period-badge {
+  border: 2px solid var(--sr-accent);
+  border-radius: 2rem;
+  padding: 0.45rem 0.7rem;
+  color: var(--sr-accent-dark);
+  font-size: 0.75rem;
+  font-weight: 900;
+}
+
+.savings-rate-illustration {
+  margin: 1.25rem 0 1.5rem;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--sr-accent) 20%, var(--sr-line));
+  border-radius: 1.15rem;
+  background: var(--sr-sky);
+}
+
+.savings-rate-illustration svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.savings-rate-illustration-sun {
+  fill: var(--sr-warm);
+}
+
+.savings-rate-illustration-cloud {
+  fill: color-mix(in srgb, var(--sr-paper) 78%, var(--sr-sky));
+}
+
+.savings-rate-illustration-road {
+  fill: none;
+  stroke: color-mix(in srgb, var(--sr-accent) 30%, var(--sr-sky));
+  stroke-linecap: round;
+  stroke-width: 32;
+}
+
+.savings-rate-illustration-road-line {
+  fill: none;
+  stroke: color-mix(in srgb, var(--sr-paper) 84%, var(--sr-sky));
+  stroke-dasharray: 16 13;
+  stroke-linecap: round;
+  stroke-width: 4;
+}
+
+.savings-rate-illustration-jar {
+  fill: var(--sr-coral);
+  stroke: var(--sr-ink);
+  stroke-width: 3;
+}
+
+.savings-rate-illustration-lid {
+  fill: var(--sr-warm);
+  stroke: var(--sr-ink);
+  stroke-width: 3;
+}
+
+.savings-rate-illustration-jar-line {
+  fill: none;
+  stroke: color-mix(in srgb, var(--sr-paper) 88%, var(--sr-coral));
+  stroke-linecap: round;
+  stroke-width: 4;
+}
+
+.savings-rate-illustration-coin {
+  fill: var(--sr-warm);
+  stroke: var(--sr-ink);
+  stroke-width: 3;
+}
+
+.savings-rate-illustration-coin-light,
+.savings-rate-illustration-spark {
+  fill: var(--sr-paper);
+  stroke: var(--sr-ink);
+  stroke-width: 2;
+}
+
+.savings-rate-illustration-flag {
+  fill: none;
+  stroke: var(--sr-ink);
+  stroke-linecap: round;
+  stroke-width: 4;
+}
+
+.savings-rate-illustration-flag-fill {
+  fill: var(--sr-coral);
+}
+
+.savings-rate-hero {
+  display: grid;
+  grid-template-columns: 11rem 1fr;
+  align-items: center;
+  gap: clamp(1rem, 4vw, 2rem);
+  margin: 1.25rem 0 2rem;
+}
+
+.savings-rate-ring {
+  --rate: 108deg;
+
+  display: grid;
+  width: min(11rem, 100%);
+  aspect-ratio: 1;
+  place-items: center;
+  border-radius: 50%;
+  background: conic-gradient(
+    var(--sr-accent) var(--rate),
+    color-mix(in srgb, var(--sr-line) 62%, transparent) 0
+  );
+  transform: rotate(-90deg);
+}
+
+.savings-rate-ring-inner {
+  display: grid;
+  width: 76%;
+  aspect-ratio: 1;
+  place-items: center;
+  align-content: center;
+  border-radius: 50%;
+  background: var(--sr-paper);
+  text-align: center;
+  transform: rotate(90deg);
+}
+
+.savings-rate-ring-inner strong {
+  color: var(--sr-ink);
+  font-size: clamp(1.7rem, 5vw, 2.6rem);
+  line-height: 1;
+}
+
+.savings-rate-ring-inner span {
+  margin-top: 0.35rem;
+  color: var(--sr-muted);
+  font-size: 0.7rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.savings-rate-status {
+  margin: 0;
+  color: var(--sr-accent-dark);
+  font-size: 1.2rem;
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+.savings-rate-hero-copy > p:last-child {
+  margin: 0.65rem 0 0;
+  color: var(--sr-muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.savings-rate-metric-grid,
+.savings-rate-scenario-metrics {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.65rem;
+  margin: 0;
+}
+
+.savings-rate-metric-grid div,
+.savings-rate-scenario-metrics div {
+  min-width: 0;
+  border: 1px solid var(--sr-line);
+  border-radius: 0.8rem;
+  padding: 0.85rem;
+  background: color-mix(in srgb, var(--sr-paper) 68%, transparent);
+}
+
+.savings-rate-metric-grid dt,
+.savings-rate-scenario-metrics dt {
+  color: var(--sr-muted);
+  font-size: 0.7rem;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.savings-rate-metric-grid dd,
+.savings-rate-scenario-metrics dd {
+  margin: 0.35rem 0 0;
+  color: var(--sr-ink);
+  font-size: 1.05rem;
+  font-weight: 900;
+  overflow-wrap: anywhere;
+}
+
+.savings-rate-scenario-card {
+  margin-top: 1.5rem;
+  border: 2px solid color-mix(in srgb, var(--sr-warm) 70%, var(--sr-line));
+  border-radius: 1rem;
+  padding: 1.1rem;
+  background: color-mix(in srgb, var(--sr-warm) 12%, var(--sr-paper));
+}
+
+.savings-rate-scenario-card h3 {
+  font-size: 1rem;
+}
+
+.savings-rate-scenario-card-heading > strong {
+  color: var(--sr-accent-dark);
+  font-size: 1.5rem;
+}
+
+.savings-rate-scenario-bar {
+  position: relative;
+  height: 0.65rem;
+  margin: 1.3rem 0 0.4rem;
+  border-radius: 1rem;
+  background: var(--sr-line);
+}
+
+.savings-rate-scenario-bar span {
+  display: block;
+  width: 0;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--sr-accent-dark);
+  transition: width 0.25s ease;
+}
+
+.savings-rate-scenario-bar i {
+  position: absolute;
+  top: 50%;
+  width: 0.9rem;
+  height: 0.9rem;
+  border: 2px solid var(--sr-paper);
+  border-radius: 50%;
+  background: var(--sr-coral);
+  box-shadow: 0 0 0 2px var(--sr-coral);
+  transform: translate(-50%, -50%);
+}
+
+.savings-rate-scenario-summary {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  color: var(--sr-muted);
+  font-size: 0.74rem;
+}
+
+.savings-rate-scenario-summary span:first-child {
+  color: var(--sr-accent-dark);
+  font-weight: 900;
+}
+
+.savings-rate-scenario-metrics {
+  margin-top: 1rem;
+}
+
+@media (max-width: 760px) {
+  .savings-rate-workbench {
+    grid-template-columns: 1fr;
+  }
+
+  .savings-rate-input-panel {
+    border-right: 0;
+    border-bottom: 2px solid var(--sr-line);
+  }
+}
+
+@media (max-width: 480px) {
+  .savings-rate-period-row,
+  .savings-rate-inline-row {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .savings-rate-select {
+    width: 100%;
+  }
+
+  .savings-rate-hero {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+  }
+
+  .savings-rate-hero-copy {
+    width: 100%;
+  }
+
+  .savings-rate-two-fields,
+  .savings-rate-metric-grid,
+  .savings-rate-scenario-metrics {
+    grid-template-columns: 1fr;
+  }
+}

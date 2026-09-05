@@ -18,6 +18,7 @@ export type {
 export { ALL_ENTRIES, ALL_TOOLS } from './tools';
 
 export { COMPOUND_INTEREST_TOOL } from './tool/compoundInterest';
+export { SAVINGS_RATE_TOOL } from './tool/savingsRate';
 export { MORTGAGE_TOOL } from './tool/mortgage';
 export { INFLATION_TOOL } from './tool/inflation';
 export { PERCENTAGE_CALCULATOR_TOOL } from './tool/percentageCalculator';

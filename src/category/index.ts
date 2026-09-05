@@ -1,6 +1,7 @@
 import type { FinanceCategoryEntry } from '../types';
 import { compoundInterest } from '../tool/compoundInterest/entry';
 import { financialFreedom } from '../tool/financialFreedom/entry';
+import { savingsRate } from '../tool/savingsRate/entry';
 import { profitability } from '../tool/profitability/entry';
 import { mortgage } from '../tool/mortgage/entry';
 import { inflation } from '../tool/inflation/entry';
@@ -23,7 +24,7 @@ import { loanToIncomeRatio } from '../tool/loanToIncomeRatio/entry';
 
 export const financeCategory: FinanceCategoryEntry = {
   icon: 'mdi:finance',
-  tools: [compoundInterest, financialFreedom, profitability, mortgage, inflation, percentageCalculator, lateInterest, ibanBicSwift, rentIncrease, lotteryOptimizer, courtFeeCalculator, legalInterestRate, fireCalculator, debtSnowball, revolvingCardCalculator, pesetaValue, salaryEmployerCost, dividendYield, inflationPurchasingPower, subscriptionCostAnnualizer, loanToIncomeRatio],
+  tools: [compoundInterest, financialFreedom, savingsRate, profitability, mortgage, inflation, percentageCalculator, lateInterest, ibanBicSwift, rentIncrease, lotteryOptimizer, courtFeeCalculator, legalInterestRate, fireCalculator, debtSnowball, revolvingCardCalculator, pesetaValue, salaryEmployerCost, dividendYield, inflationPurchasingPower, subscriptionCostAnnualizer, loanToIncomeRatio],
   i18n: {
     en: () => import('./i18n/en').then((m) => m.content),
     es: () => import('./i18n/es').then((m) => m.content),
