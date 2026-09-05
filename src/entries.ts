@@ -38,6 +38,8 @@ export { inflationPurchasingPower } from './tool/inflationPurchasingPower/entry'
 export type { InflationPurchasingPowerLocaleContent } from './tool/inflationPurchasingPower/entry';
 export { subscriptionCostAnnualizer } from './tool/subscriptionCostAnnualizer/entry';
 export type { SubscriptionCostAnnualizerLocaleContent } from './tool/subscriptionCostAnnualizer/entry';
+export { loanToIncomeRatio } from './tool/loanToIncomeRatio/entry';
+export type { LoanToIncomeRatioLocaleContent } from './tool/loanToIncomeRatio/entry';
 export { financeCategory } from './category';
 import { compoundInterest } from './tool/compoundInterest/entry';
 import { financialFreedom } from './tool/financialFreedom/entry';
@@ -60,4 +62,5 @@ import { dividendYield } from './tool/dividendYield/entry';
 import { mortgageExtraPaymentPlanner } from './tool/mortgageExtraPaymentPlanner/entry';
 import { inflationPurchasingPower } from './tool/inflationPurchasingPower/entry';
 import { subscriptionCostAnnualizer } from './tool/subscriptionCostAnnualizer/entry';
-export const ALL_ENTRIES = [compoundInterest, financialFreedom, profitability, courtFeeCalculator, debtSnowball, fireCalculator, ibanBicSwift, inflation, lateInterest, legalInterestRate, lotteryOptimizer, mortgage, percentageCalculator, rentIncrease, revolvingCardCalculator, pesetaValue, salaryEmployerCost, dividendYield, mortgageExtraPaymentPlanner, inflationPurchasingPower, subscriptionCostAnnualizer];
+import { loanToIncomeRatio } from './tool/loanToIncomeRatio/entry';
+export const ALL_ENTRIES = [compoundInterest, financialFreedom, profitability, courtFeeCalculator, debtSnowball, fireCalculator, ibanBicSwift, inflation, lateInterest, legalInterestRate, lotteryOptimizer, mortgage, percentageCalculator, rentIncrease, revolvingCardCalculator, pesetaValue, salaryEmployerCost, dividendYield, mortgageExtraPaymentPlanner, inflationPurchasingPower, subscriptionCostAnnualizer, loanToIncomeRatio];

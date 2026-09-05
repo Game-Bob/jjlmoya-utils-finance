@@ -4,8 +4,8 @@ import { financeCategory } from '../data';
 
 describe('Tool Validation Suite', () => {
   describe('Library Registration', () => {
-    it('should have 21 tools in ALL_TOOLS', () => {
-      expect(ALL_TOOLS.length).toBe(21);
+    it('should have 22 tools in ALL_TOOLS', () => {
+      expect(ALL_TOOLS.length).toBe(22);
     });
 
     it('financeCategory should be defined', () => {

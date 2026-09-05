@@ -1,0 +1,453 @@
+---
+import { CURRENCIES } from './currency';
+import type { LoanToIncomeRatioUI } from './ui';
+import './loan-to-income-ratio.css';
+
+interface Props {
+  ui: LoanToIncomeRatioUI;
+}
+
+const { ui } = Astro.props;
+const currencyOptions = [
+  { ...CURRENCIES.EUR, label: ui.labelEuro },
+  { ...CURRENCIES.USD, label: ui.labelUSDollar },
+  { ...CURRENCIES.GBP, label: ui.labelPoundSterling },
+  { ...CURRENCIES.RUB, label: ui.labelRussianRuble },
+];
+---
+
+<div
+  class="lti-tool"
+  id="loan-to-income-ratio-tool"
+  data-label-within-threshold={ui.labelWithinThreshold}
+  data-label-over-threshold={ui.labelOverThreshold}
+  data-label-no-new-loan={ui.labelNoNewLoan}
+  data-label-invalid-input={ui.labelInvalidInput}
+  data-label-copied={ui.labelCopied}
+  data-label-percentage-points={ui.labelPercentagePoints}
+  data-label-current-scenario={ui.labelCurrentScenario}
+  data-label-projected-scenario={ui.labelProjectedScenario}
+  data-label-ratio-change={ui.labelRatioChange}
+  data-label-threshold-margin={ui.labelThresholdMargin}
+  data-label-new-loan-total={ui.labelNewLoanTotal}
+  data-label-currency-rate={ui.labelCurrencyRate}
+  data-label-currency-rate-date={ui.labelCurrencyRateDate}
+>
+  <div class="lti-workbench">
+    <form class="lti-input-panel" id="loan-to-income-form">
+      <div class="lti-panel-kicker">{ui.labelHowToRead}</div>
+
+      <div class="lti-field">
+        <div class="lti-field-label">{ui.labelCurrency}</div>
+        <div class="lti-currency-selector">
+          <button
+            type="button"
+            class="lti-currency-trigger"
+            id="lti-currency-trigger"
+            aria-haspopup="listbox"
+            aria-expanded="false"
+            aria-controls="lti-currency-menu"
+          >
+            <span class="lti-currency-trigger-code" id="lti-selected-currency-code">EUR</span>
+            <span class="lti-currency-trigger-label" id="lti-selected-currency-label">{ui.labelEuro}</span>
+            <span class="lti-currency-trigger-icon" aria-hidden="true"></span>
+          </button>
+          <div class="lti-currency-menu" id="lti-currency-menu" hidden>
+            <label class="lti-visually-hidden" for="lti-currency-search">{ui.labelSelectCurrency}</label>
+            <input
+              id="lti-currency-search"
+              class="lti-currency-search"
+              type="search"
+              placeholder={ui.labelSelectCurrency}
+              autocomplete="off"
+            />
+            <div class="lti-currency-options" id="lti-currency-options" role="listbox" aria-label={ui.labelSelectCurrency}>
+              {currencyOptions.map((option) => (
+                <button
+                  type="button"
+                  class="lti-currency-button"
+                  role="option"
+                  data-currency={option.code}
+                  data-search={`${option.code} ${option.label}`}
+                  aria-selected={option.code === 'EUR' ? 'true' : 'false'}
+                >
+                  <strong>{option.code}</strong>
+                  <span>{option.label}</span>
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+        <small id="lti-currency-rate">{ui.labelCurrencyRate}: 1 EUR = 1 EUR · {ui.labelCurrencyRateDate}</small>
+        <small>{ui.labelCurrencyHelp}</small>
+      </div>
+
+      <div class="lti-field">
+        <label for="lti-income">{ui.labelIncome}</label>
+        <div class="lti-input-wrap">
+          <span class="lti-currency-symbol" aria-hidden="true">€</span>
+          <input id="lti-income" type="number" min="1" max="1000000000" step="100" value="5000" required />
+        </div>
+        <small>{ui.labelIncomeHelp}</small>
+      </div>
+
+      <div class="lti-field">
+        <div class="lti-field-label">{ui.labelIncomeBasis}</div>
+        <div class="lti-choice-group" role="group" aria-label={ui.labelIncomeBasis}>
+          <button type="button" class="lti-choice-button" data-basis="gross" aria-pressed="true">{ui.labelGrossIncome}</button>
+          <button type="button" class="lti-choice-button" data-basis="net" aria-pressed="false">{ui.labelNetIncome}</button>
+        </div>
+      </div>
+
+      <div class="lti-field">
+        <label for="lti-existing">{ui.labelExistingPayments}</label>
+        <div class="lti-input-wrap">
+          <span class="lti-currency-symbol" aria-hidden="true">€</span>
+          <input id="lti-existing" type="number" min="0" max="1000000000" step="50" value="1200" required />
+        </div>
+        <small>{ui.labelExistingPaymentsHelp}</small>
+      </div>
+
+      <div class="lti-new-loan">
+        <div class="lti-section-label">{ui.labelProjectedScenario}</div>
+        <div class="lti-field">
+          <label for="lti-new-payment">{ui.labelNewPayment}</label>
+          <div class="lti-input-wrap">
+            <span class="lti-currency-symbol" aria-hidden="true">€</span>
+            <input id="lti-new-payment" type="number" min="0" max="1000000000" step="50" value="500" required />
+          </div>
+          <small>{ui.labelNewPaymentHelp}</small>
+        </div>
+
+        <div class="lti-two-fields">
+          <div class="lti-field">
+            <label for="lti-term">{ui.labelLoanTerm}</label>
+            <div class="lti-input-wrap lti-input-wrap-suffix">
+              <input id="lti-term" type="number" min="0" max="600" step="1" value="60" required />
+              <span>{ui.labelMonths}</span>
+            </div>
+          </div>
+          <div class="lti-field">
+            <label for="lti-threshold">{ui.labelThreshold}</label>
+            <div class="lti-input-wrap lti-input-wrap-suffix">
+              <input id="lti-threshold" type="number" min="1" max="100" step="0.5" value="36" required />
+              <span>%</span>
+            </div>
+          </div>
+        </div>
+        <small class="lti-threshold-help">{ui.labelThresholdHelp}</small>
+      </div>
+
+      <div class="lti-form-actions">
+        <button type="button" class="lti-button lti-button-secondary" id="lti-reset">{ui.labelReset}</button>
+        <button type="button" class="lti-button lti-button-primary" id="lti-copy">{ui.labelCopyResult}</button>
+      </div>
+    </form>
+
+    <section class="lti-results-panel" aria-label={ui.labelProjectedScenario}>
+      <div class="lti-results-topline">
+        <span class="lti-panel-kicker">{ui.labelProjectedScenario}</span>
+        <span class="lti-status" id="lti-status" role="status" aria-live="polite">{ui.labelWithinThreshold}</span>
+      </div>
+
+      <div class="lti-ratio-display">
+        <div class="lti-ratio-main">
+          <span>{ui.labelProjectedRatio}</span>
+          <strong id="lti-projected-ratio">34%</strong>
+          <small id="lti-status-detail">{ui.labelWithinThreshold}</small>
+        </div>
+        <div class="lti-gauge" aria-hidden="true">
+          <div class="lti-gauge-track"><span id="lti-gauge-fill"></span><i id="lti-gauge-marker"></i></div>
+          <div class="lti-gauge-labels"><span>{ui.labelZeroPercent}</span><span>{ui.labelThreshold}</span><span>{ui.labelFullPercent}</span></div>
+        </div>
+      </div>
+
+      <div class="lti-scenario-grid">
+        <article class="lti-scenario-card lti-scenario-current">
+          <div class="lti-card-heading"><span class="lti-dot"></span><h3>{ui.labelCurrentScenario}</h3></div>
+          <span class="lti-card-ratio-label">{ui.labelCurrentRatio}</span>
+          <strong id="lti-current-ratio">24%</strong>
+          <dl>
+            <div><dt>{ui.labelMonthlyDebt}</dt><dd id="lti-current-debt">€1,200</dd></div>
+            <div><dt>{ui.labelRemainingIncome}</dt><dd id="lti-current-remaining">€3,800</dd></div>
+          </dl>
+        </article>
+        <article class="lti-scenario-card lti-scenario-projected">
+          <div class="lti-card-heading"><span class="lti-dot"></span><h3>{ui.labelProjectedScenario}</h3></div>
+          <span class="lti-card-ratio-label">{ui.labelProjectedRatio}</span>
+          <strong id="lti-projected-ratio-card">34%</strong>
+          <dl>
+            <div><dt>{ui.labelMonthlyDebt}</dt><dd id="lti-projected-debt">€1,700</dd></div>
+            <div><dt>{ui.labelRemainingIncome}</dt><dd id="lti-projected-remaining">€3,300</dd></div>
+          </dl>
+        </article>
+      </div>
+
+      <div class="lti-insight-grid">
+        <div><span>{ui.labelRatioChange}</span><strong id="lti-ratio-change">+10 {ui.labelPercentagePoints}</strong></div>
+        <div><span>{ui.labelThresholdMargin}</span><strong id="lti-threshold-margin">€100</strong></div>
+        <div><span>{ui.labelNewLoanTotal}</span><strong id="lti-new-loan-total">€30,000</strong></div>
+      </div>
+
+      <p class="lti-empty-state" id="lti-error" role="alert" aria-live="polite" hidden>{ui.labelInvalidInput}</p>
+      <p class="lti-no-loan" id="lti-no-loan" hidden>{ui.labelNoNewLoan}</p>
+      <div class="lti-formula"><span>{ui.labelFormula}</span><code>{ui.labelFormulaExpression}</code></div>
+    </section>
+  </div>
+</div>
+
+<script>
+  import { calculateLoanToIncomeRatio, type IncomeBasis } from './logic';
+  import { CURRENCIES, convertCurrencyAmount, type CurrencyCode } from './currency';
+
+  const container = document.getElementById('loan-to-income-ratio-tool');
+  const form = document.getElementById('loan-to-income-form') as HTMLFormElement | null;
+  const getInput = (id: string) => document.getElementById(id) as HTMLInputElement | null;
+  const income = getInput('lti-income');
+  const existing = getInput('lti-existing');
+  const newPayment = getInput('lti-new-payment');
+  const term = getInput('lti-term');
+  const threshold = getInput('lti-threshold');
+  const error = document.getElementById('lti-error');
+  const noLoan = document.getElementById('lti-no-loan');
+  const status = document.getElementById('lti-status');
+  const statusDetail = document.getElementById('lti-status-detail');
+  const gaugeFill = document.getElementById('lti-gauge-fill');
+  const gaugeMarker = document.getElementById('lti-gauge-marker');
+  const currencyTrigger = document.getElementById('lti-currency-trigger') as HTMLButtonElement | null;
+  const currencyMenu = document.getElementById('lti-currency-menu');
+  const currencySearch = document.getElementById('lti-currency-search') as HTMLInputElement | null;
+  const currencyButtons = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-currency]'));
+  const basisButtons = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-basis]'));
+  const currencySymbols = Array.from(document.querySelectorAll<HTMLElement>('.lti-currency-symbol'));
+  const labels = {
+    within: container?.dataset.labelWithinThreshold ?? '',
+    over: container?.dataset.labelOverThreshold ?? '',
+    invalid: container?.dataset.labelInvalidInput ?? '',
+    copied: container?.dataset.labelCopied ?? '',
+    percentagePoints: container?.dataset.labelPercentagePoints ?? '',
+    currentScenario: container?.dataset.labelCurrentScenario ?? '',
+    projectedScenario: container?.dataset.labelProjectedScenario ?? '',
+    ratioChange: container?.dataset.labelRatioChange ?? '',
+    thresholdMargin: container?.dataset.labelThresholdMargin ?? '',
+    newLoanTotal: container?.dataset.labelNewLoanTotal ?? '',
+    currencyRate: container?.dataset.labelCurrencyRate ?? '',
+    currencyRateDate: container?.dataset.labelCurrencyRateDate ?? '',
+  };
+  let selectedCurrency: CurrencyCode = 'EUR';
+  let selectedBasis: IncomeBasis = 'gross';
+
+  const roundInput = (value: number): number => Math.round((value + Number.EPSILON) * 100) / 100;
+  const formatMoney = (value: number): string => {
+    const currency = CURRENCIES[selectedCurrency];
+    return new Intl.NumberFormat(currency.locale, {
+      style: 'currency',
+      currency: currency.code,
+      maximumFractionDigits: currency.code === 'RUB' ? 0 : 2,
+    }).format(value).replace(/\u00a0/g, ' ');
+  };
+  const setText = (id: string, value: string): void => {
+    const element = document.getElementById(id);
+    if (element) element.textContent = value;
+  };
+  const readNumber = (element: HTMLInputElement | null): number => Number(element?.value ?? '');
+  const amountInputs = [income, existing, newPayment];
+
+  const filterCurrencyOptions = (): void => {
+    const query = currencySearch?.value.trim().toLocaleLowerCase() ?? '';
+    currencyButtons.forEach((button) => {
+      const searchableText = button.dataset.search?.toLocaleLowerCase() ?? '';
+      button.hidden = Boolean(query) && !searchableText.includes(query);
+    });
+  };
+
+  const openCurrencyMenu = (): void => {
+    if (!currencyMenu || !currencyTrigger) return;
+    currencyMenu.hidden = false;
+    currencyTrigger.setAttribute('aria-expanded', 'true');
+    filterCurrencyOptions();
+    currencySearch?.focus();
+  };
+
+  const closeCurrencyMenu = (returnFocus = false): void => {
+    if (!currencyMenu || !currencyTrigger) return;
+    currencyMenu.hidden = true;
+    currencyTrigger.setAttribute('aria-expanded', 'false');
+    if (currencySearch) currencySearch.value = '';
+    filterCurrencyOptions();
+    if (returnFocus) currencyTrigger.focus();
+  };
+
+  const focusCurrencyOption = (direction: 1 | -1): void => {
+    const visibleButtons = currencyButtons.filter((button) => !button.hidden);
+    if (!visibleButtons.length) return;
+    const focusedIndex = visibleButtons.indexOf(document.activeElement as HTMLButtonElement);
+    const nextIndex = focusedIndex < 0 ? 0 : (focusedIndex + direction + visibleButtons.length) % visibleButtons.length;
+    visibleButtons[nextIndex]?.focus();
+  };
+
+  const renderCurrency = (): void => {
+    const currency = CURRENCIES[selectedCurrency];
+    const selectedButton = currencyButtons.find((button) => button.dataset.currency === selectedCurrency);
+    currencyButtons.forEach((button) => {
+      const active = button.dataset.currency === selectedCurrency;
+      button.setAttribute('aria-selected', String(active));
+      button.toggleAttribute('data-active', active);
+    });
+    setText('lti-selected-currency-code', currency.code);
+    setText('lti-selected-currency-label', selectedButton?.querySelector('span')?.textContent ?? currency.code);
+    currencySymbols.forEach((symbol) => { symbol.textContent = currency.symbol; });
+    const rate = currency.unitsPerEuro >= 10 ? currency.unitsPerEuro.toFixed(2) : currency.unitsPerEuro.toFixed(4);
+    setText('lti-currency-rate', `${labels.currencyRate}: 1 EUR = ${rate} ${currency.code} · ${labels.currencyRateDate}`);
+  };
+
+  const convertInputs = (from: CurrencyCode, to: CurrencyCode): void => {
+    amountInputs.forEach((input) => {
+      if (!input) return;
+      const value = Number(input.value);
+      if (Number.isFinite(value)) input.value = String(roundInput(convertCurrencyAmount(value, from, to)));
+    });
+  };
+
+  const renderInvalid = (): void => {
+    if (error) {
+      error.hidden = false;
+      error.textContent = labels.invalid;
+    }
+    form?.setAttribute('aria-invalid', 'true');
+  };
+
+  const renderStatus = (result: NonNullable<ReturnType<typeof calculateLoanToIncomeRatio>>): void => {
+    const projectedState = result.projected.withinThreshold ? labels.within : labels.over;
+    if (status) status.textContent = projectedState;
+    if (statusDetail) statusDetail.textContent = projectedState;
+    status?.toggleAttribute('data-over', !result.projected.withinThreshold);
+  };
+
+  const renderValid = (result: NonNullable<ReturnType<typeof calculateLoanToIncomeRatio>>): void => {
+    if (error) error.hidden = true;
+    form?.removeAttribute('aria-invalid');
+    renderStatus(result);
+    setText('lti-current-ratio', `${result.current.ratio}%`);
+    setText('lti-projected-ratio', `${result.projected.ratio}%`);
+    setText('lti-projected-ratio-card', `${result.projected.ratio}%`);
+    setText('lti-current-debt', formatMoney(result.current.monthlyDebt));
+    setText('lti-projected-debt', formatMoney(result.projected.monthlyDebt));
+    setText('lti-current-remaining', formatMoney(result.current.remainingIncome));
+    setText('lti-projected-remaining', formatMoney(result.projected.remainingIncome));
+    setText('lti-ratio-change', `${result.ratioChange >= 0 ? '+' : ''}${result.ratioChange} ${labels.percentagePoints}`);
+    setText('lti-threshold-margin', formatMoney(result.projected.thresholdMargin));
+    setText('lti-new-loan-total', formatMoney(result.newLoanTotal));
+    if (gaugeFill) gaugeFill.style.width = `${Math.min(100, Math.max(0, result.projected.ratio))}%`;
+    if (gaugeMarker) gaugeMarker.style.left = `${Math.min(100, Math.max(0, result.threshold))}%`;
+    if (noLoan) noLoan.hidden = result.projected.monthlyDebt !== result.current.monthlyDebt;
+  };
+
+  function update(): void {
+    const result = calculateLoanToIncomeRatio({
+      income: readNumber(income),
+      incomeBasis: selectedBasis,
+      existingMonthlyPayments: readNumber(existing),
+      newMonthlyPayment: readNumber(newPayment),
+      newLoanTermMonths: readNumber(term),
+      threshold: readNumber(threshold),
+    });
+    if (!result) return renderInvalid();
+    renderValid(result);
+  }
+
+  function selectCurrency(nextCurrency: CurrencyCode): void {
+    if (nextCurrency === selectedCurrency) return;
+    convertInputs(selectedCurrency, nextCurrency);
+    selectedCurrency = nextCurrency;
+    renderCurrency();
+    update();
+    closeCurrencyMenu(true);
+  }
+
+  function selectBasis(nextBasis: IncomeBasis): void {
+    selectedBasis = nextBasis;
+    basisButtons.forEach((button) => button.setAttribute('aria-pressed', String(button.dataset.basis === selectedBasis)));
+    update();
+  }
+
+  function reset(): void {
+    if (income) income.value = '5000';
+    if (existing) existing.value = '1200';
+    if (newPayment) newPayment.value = '500';
+    if (term) term.value = '60';
+    if (threshold) threshold.value = '36';
+    selectedBasis = 'gross';
+    selectedCurrency = 'EUR';
+    basisButtons.forEach((button) => button.setAttribute('aria-pressed', String(button.dataset.basis === selectedBasis)));
+    renderCurrency();
+    update();
+  }
+
+  async function copyResult(): Promise<void> {
+    const getText = (id: string): string => document.getElementById(id)?.textContent ?? '';
+    const resultText = [
+      `${labels.currentScenario}: ${getText('lti-current-ratio')}`,
+      `${labels.projectedScenario}: ${getText('lti-projected-ratio')}`,
+      `${labels.ratioChange}: ${getText('lti-ratio-change')}`,
+      `${labels.thresholdMargin}: ${getText('lti-threshold-margin')}`,
+      `${labels.newLoanTotal}: ${getText('lti-new-loan-total')}`,
+    ].join('\n');
+    try {
+      await navigator.clipboard.writeText(resultText);
+      const copyButton = document.getElementById('lti-copy');
+      if (!copyButton) return;
+      const previous = copyButton.textContent;
+      copyButton.textContent = labels.copied;
+      window.setTimeout(() => { copyButton.textContent = previous; }, 1800);
+    } catch {
+      document.getElementById('lti-copy')?.replaceChildren(labels.invalid);
+    }
+  }
+
+  amountInputs.forEach((input) => input?.addEventListener('input', update));
+  currencyTrigger?.addEventListener('click', () => {
+    if (currencyMenu?.hidden) openCurrencyMenu();
+    else closeCurrencyMenu();
+  });
+  currencyTrigger?.addEventListener('keydown', (event) => {
+    if (event.key === 'ArrowDown' || event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      openCurrencyMenu();
+    }
+  });
+  currencySearch?.addEventListener('input', filterCurrencyOptions);
+  currencySearch?.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+      event.preventDefault();
+      closeCurrencyMenu(true);
+    }
+    if (event.key === 'ArrowDown') {
+      event.preventDefault();
+      focusCurrencyOption(1);
+    }
+  });
+  currencyButtons.forEach((button) => button.addEventListener('click', () => selectCurrency(button.dataset.currency as CurrencyCode)));
+  currencyButtons.forEach((button) => button.addEventListener('keydown', (event) => {
+    if (event.key === 'ArrowDown' || event.key === 'ArrowRight') {
+      event.preventDefault();
+      focusCurrencyOption(1);
+    }
+    if (event.key === 'ArrowUp' || event.key === 'ArrowLeft') {
+      event.preventDefault();
+      focusCurrencyOption(-1);
+    }
+    if (event.key === 'Escape') {
+      event.preventDefault();
+      closeCurrencyMenu(true);
+    }
+  }));
+  document.addEventListener('click', (event) => {
+    if (!currencyMenu?.hidden && !currencyMenu?.contains(event.target as Node) && event.target !== currencyTrigger) closeCurrencyMenu();
+  });
+  basisButtons.forEach((button) => button.addEventListener('click', () => selectBasis(button.dataset.basis as IncomeBasis)));
+  document.getElementById('lti-reset')?.addEventListener('click', reset);
+  document.getElementById('lti-copy')?.addEventListener('click', copyResult);
+  renderCurrency();
+  update();
+</script>
