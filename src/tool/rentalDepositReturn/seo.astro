@@ -1,0 +1,11 @@
+---
+import { SEORenderer } from '@jjlmoya/utils-shared';
+import { rentalDepositReturn } from './entry';
+import type { KnownLocale } from '../../types';
+
+interface Props { locale?: KnownLocale; }
+const { locale = 'en' } = Astro.props;
+const content = await rentalDepositReturn.i18n[locale]?.() ?? await rentalDepositReturn.i18n.en?.();
+---
+
+{content?.seo && <SEORenderer content={{ locale, sections: content.seo }} />}

@@ -1,0 +1,53 @@
+---
+import type { RentalDepositReturnUI } from './ui';
+import { CURRENCIES, getDefaultCurrency, type CurrencyCode } from './currency';
+import type { RentalDepositInput } from './logic';
+import { calculateRentalDepositReturn } from './logic';
+import { renderDepositResults, renderDepositScene } from './dom-views';
+import './rental-deposit-return-calculator.css';
+
+interface Props { ui: RentalDepositReturnUI; locale?: string; }
+
+const { ui, locale = 'en' } = Astro.props;
+const initialCurrency = getDefaultCurrency(locale);
+const initial: RentalDepositInput = {
+  currency: initialCurrency,
+  deposit: 1200,
+  deductions: [
+    { id: 'final-bills', description: 'Final utility bills', amount: 84, status: 'confirmed' },
+    { id: 'wall-repair', description: 'Wall repair', amount: 165, status: 'disputed' },
+    { id: 'cleaning', description: 'Cleaning charge', amount: 60, status: 'disputed' },
+  ],
+};
+const initialResult = calculateRentalDepositReturn(initial);
+const config = JSON.stringify({ ui, initial, locale });
+const currencyOptions = Object.values(CURRENCIES) as Array<{ code: CurrencyCode; symbol: string }>;
+---
+
+<div class="rdr-tool" data-rdr-tool>
+  <form class="rdr-controls" aria-label={ui.deductionsTitle}>
+    <div class="rdr-top-controls">
+      <label class="rdr-deposit-field"><span>{ui.depositLabel}</span><input data-rdr-deposit type="number" min="0" step="0.01" inputmode="decimal" required /><small>{ui.depositHelp}</small></label>
+      <div class="rdr-currency-field"><span class="rdr-field-label">{ui.currencyLabel}</span><div class="rdr-currency-select" data-rdr-currency-select data-value={initialCurrency}>
+        <button type="button" class="rdr-currency-trigger" id="rdr-currency-trigger" data-rdr-currency-trigger aria-haspopup="listbox" aria-expanded="false" aria-controls="rdr-currency-menu" aria-label={`${ui.currencyLabel}: ${initialCurrency}`}><span class="rdr-currency-trigger-symbol" data-rdr-currency-symbol aria-hidden="true">{CURRENCIES[initialCurrency].symbol}</span><span class="rdr-currency-trigger-arrow" aria-hidden="true"></span></button>
+        <div class="rdr-currency-menu" id="rdr-currency-menu" data-rdr-currency-menu role="listbox" hidden aria-label={ui.currencyLabel}>
+          {currencyOptions.map((option) => <button type="button" class="rdr-currency-option" data-rdr-currency-option data-value={option.code} role="option" aria-label={`${option.code}: ${option.symbol}`} aria-selected={option.code === initialCurrency}><span aria-hidden="true">{option.symbol}</span></button>)}
+        </div>
+      </div><small>{ui.currencyHelp}</small></div>
+    </div>
+    <div class="rdr-list-heading"><div><h2>{ui.deductionsTitle}</h2><p>{ui.deductionsHelp}</p></div><button type="button" class="rdr-secondary-button" data-rdr-reset>{ui.resetButton}</button></div>
+    <div class="rdr-list" data-rdr-list></div>
+    <div class="rdr-actions"><button type="button" class="rdr-primary-button" data-rdr-add>{ui.addButton}</button><button type="button" class="rdr-copy-button" data-rdr-copy><span data-rdr-copy-label>{ui.copyButton}</span></button></div>
+  </form>
+  <section class="rdr-output" aria-live="polite"><div class="rdr-scene-wrap" data-rdr-scene set:html={initialResult ? renderDepositScene(initialResult, ui, locale) : ''}></div><div class="rdr-results-wrap" data-rdr-results set:html={initialResult ? renderDepositResults(initialResult, ui, locale) : ''}></div><p class="rdr-error" data-rdr-error hidden>{ui.emptyMessage}</p></section>
+  <p class="rdr-privacy">{ui.privacyNote}</p>
+  <details class="rdr-method"><summary>{ui.methodTitle}</summary><p>{ui.methodText}</p><p>{ui.limitationText}</p></details>
+</div>
+
+<script is:inline type="application/json" data-rdr-config set:html={config}></script>
+<script>
+  import { initRentalDepositReturn } from './controller';
+  const root = document.querySelector<HTMLElement>('[data-rdr-tool]');
+  const configElement = document.querySelector<HTMLScriptElement>('[data-rdr-config]');
+  if (root && configElement?.textContent) initRentalDepositReturn(root, JSON.parse(configElement.textContent));
+</script>
