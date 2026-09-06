@@ -1,0 +1,172 @@
+---
+import type { KnownLocale } from '../../types';
+import { currencyOptions, defaultCurrencyByLocale } from './currency';
+import type { InsuranceDeductibleInput } from './logic';
+import type { InsuranceDeductibleBreakEvenCalculatorUI } from './ui';
+
+interface Props { locale?: KnownLocale; ui?: InsuranceDeductibleBreakEvenCalculatorUI; }
+const { ui } = Astro.props;
+const t = ui as InsuranceDeductibleBreakEvenCalculatorUI;
+const currentLocale = Astro.props.locale ?? 'en';
+const defaultCurrency = defaultCurrencyByLocale[currentLocale] ?? 'USD';
+const initial: InsuranceDeductibleInput = { currency: defaultCurrency, damageCost: 2500, deductible: 500, annualPremium: 1200, premiumIncreasePercent: 10, surchargeYears: 3 };
+const config = JSON.stringify({ ui: t, initial, locale: currentLocale, currency: defaultCurrency, currencies: currencyOptions });
+---
+
+<div class="idb-tool" data-idb-tool data-claim={t.labelClaimRecommended} data-pay-yourself={t.labelPayYourselfRecommended} data-break-even={t.labelBreakEvenRecommendation} data-invalid={t.labelInvalidInput} data-copied={t.labelCopied} data-copy-failed={t.labelCopyFailed} data-locale={currentLocale}>
+  <form class="idb-card" data-idb-form novalidate>
+    <div class="idb-glance" aria-live="polite">
+      <div><span>{t.labelRecommendation}</span><strong data-idb-recommendation>{t.labelClaimRecommended}</strong></div>
+      <div><span>{t.labelDifference}</span><strong data-idb-difference>0</strong></div>
+    </div>
+
+    <div class="idb-inputs">
+      <div class="idb-field idb-currency-field">
+        <span class="idb-label" id="idb-currency-label">{t.labelCurrency}</span>
+        <div class="idb-currency-select">
+          <button type="button" class="idb-currency-trigger" data-idb-currency-trigger aria-expanded="false" aria-haspopup="listbox" aria-labelledby="idb-currency-label">
+            <span class="idb-currency-trigger-main"><strong data-idb-selected-symbol>$</strong><span data-idb-selected-code>{defaultCurrency}</span></span><span class="idb-currency-arrow" aria-hidden="true"></span>
+          </button>
+          <div class="idb-currency-menu" data-idb-currency-menu role="listbox" aria-label={t.labelCurrency} hidden>
+            {currencyOptions.map(({ code, symbol, name }) => <button type="button" class="idb-currency-option" data-idb-currency={code} role="option" aria-selected={code === defaultCurrency} aria-label={`${symbol} ${name}`}><strong>{symbol}</strong><span>{code}</span></button>)}
+          </div>
+        </div>
+        <small class="idb-help">{t.labelApproximateRates}</small>
+      </div>
+      <div class="idb-field">
+        <label for="idb-damage">{t.labelDamageCost}</label>
+        <div class="idb-input-wrap"><input id="idb-damage" data-field="damageCost" type="number" min="0.01" max="1000000000000" step="0.01" value={initial.damageCost} placeholder={t.labelAmountPlaceholder} inputmode="decimal" required /><span data-idb-unit aria-hidden="true">$</span></div>
+        <small data-error-for="damageCost" hidden></small>
+      </div>
+      <div class="idb-field">
+        <label for="idb-deductible">{t.labelDeductible}</label>
+        <div class="idb-input-wrap"><input id="idb-deductible" data-field="deductible" type="number" min="0" max="1000000000000" step="0.01" value={initial.deductible} placeholder={t.labelAmountPlaceholder} inputmode="decimal" required /><span data-idb-unit aria-hidden="true">$</span></div>
+        <small data-error-for="deductible" hidden></small>
+      </div>
+      <div class="idb-field">
+        <label for="idb-premium">{t.labelAnnualPremium}</label>
+        <div class="idb-input-wrap"><input id="idb-premium" data-field="annualPremium" type="number" min="0" max="1000000000000" step="0.01" value={initial.annualPremium} placeholder={t.labelAmountPlaceholder} inputmode="decimal" required /><span data-idb-unit aria-hidden="true">$</span></div>
+        <small data-error-for="annualPremium" hidden></small>
+      </div>
+      <div class="idb-field">
+        <label for="idb-increase">{t.labelPremiumIncrease}</label>
+        <div class="idb-input-wrap"><input id="idb-increase" data-field="premiumIncreasePercent" type="number" min="0" max="100" step="0.1" value={initial.premiumIncreasePercent} placeholder={t.labelPercentPlaceholder} inputmode="decimal" required /><span aria-hidden="true">%</span></div>
+        <small data-error-for="premiumIncreasePercent" hidden></small>
+      </div>
+      <div class="idb-field">
+        <label for="idb-years">{t.labelSurchargeYears}</label>
+        <div class="idb-input-wrap"><input id="idb-years" data-field="surchargeYears" type="number" min="0.5" max="20" step="0.5" value={initial.surchargeYears} placeholder={t.labelYearsPlaceholder} inputmode="decimal" required /><span aria-hidden="true">yr</span></div>
+        <small data-error-for="surchargeYears" hidden></small>
+      </div>
+    </div>
+
+    <div class="idb-actions"><button type="button" class="idb-button idb-button-secondary" data-idb-reset>{t.labelReset}</button><button type="button" class="idb-button idb-button-primary" data-idb-copy>{t.labelCopy}</button><span data-idb-copy-status role="status" aria-live="polite"></span></div>
+
+    <section class="idb-output" aria-live="polite" aria-atomic="true">
+      <div class="idb-visual" data-idb-visual role="img" aria-label={t.labelVisual}>
+        <div class="idb-visual-heading"><span>{t.labelClaimRoute}</span><span>{t.labelPayYourselfRoute}</span></div>
+        <div class="idb-bars"><div class="idb-bar-side"><strong data-idb-claim-value>0</strong><div class="idb-bar-track"><i data-idb-claim-bar></i></div></div><div class="idb-scale" aria-hidden="true">⇄</div><div class="idb-bar-side"><strong data-idb-pay-value>0</strong><div class="idb-bar-track"><i data-idb-pay-bar></i></div></div></div>
+      </div>
+      <p class="idb-error-summary" data-idb-error-summary hidden>{t.labelInvalidInput}</p>
+      <div class="idb-result-grid">
+        <div><span>{t.labelClaimCost}</span><strong data-idb-claim-cost>0</strong></div>
+        <div><span>{t.labelPayYourselfCost}</span><strong data-idb-pay-cost>0</strong></div>
+        <div><span>{t.labelPremiumSurcharge}</span><strong data-idb-surcharge>0</strong></div>
+        <div><span>{t.labelInsurerShare}</span><strong data-idb-insurer-share>0</strong></div>
+        <div class="idb-emphasis"><span>{t.labelBreakEvenDamage}</span><strong data-idb-break-even>0</strong></div>
+        <div class="idb-emphasis"><span>{t.labelDifference}</span><strong data-idb-result-difference>0</strong></div>
+      </div>
+      <p class="idb-result-note" data-idb-result-note></p>
+    </section>
+
+    <p class="idb-privacy">{t.labelPrivacyNote}</p>
+    <details class="idb-method"><summary>{t.labelMethodTitle}</summary><p>{t.labelMethodText}</p></details>
+  </form>
+</div>
+
+<script is:inline type="application/json" data-idb-config set:html={config}></script>
+<script>
+  import { convertInsuranceCurrency, type InsuranceCurrencyCode } from './currency';
+  import { calculateInsuranceDeductibleBreakEven, validateInsuranceInput, type InsuranceDeductibleInput } from './logic';
+
+  const configElement = document.querySelector<HTMLScriptElement>('[data-idb-config]');
+  const root = document.querySelector<HTMLElement>('[data-idb-tool]');
+  const form = root?.querySelector<HTMLFormElement>('[data-idb-form]');
+  if (root && form && configElement?.textContent) {
+    const config = JSON.parse(configElement.textContent) as { initial: InsuranceDeductibleInput; locale: string; currency: InsuranceCurrencyCode; };
+    let selectedCurrency = config.currency;
+    const fields = Array.from(form.querySelectorAll<HTMLInputElement>('[data-field]'));
+    const moneyKeys = ['damageCost', 'deductible', 'annualPremium'] as const;
+    const getNumber = (key: keyof InsuranceDeductibleInput): number => Number(form.querySelector<HTMLInputElement>(`[data-field="${key}"]`)?.value ?? Number.NaN);
+    const readInput = (): InsuranceDeductibleInput => ({ currency: selectedCurrency, damageCost: getNumber('damageCost'), deductible: getNumber('deductible'), annualPremium: getNumber('annualPremium'), premiumIncreasePercent: getNumber('premiumIncreasePercent'), surchargeYears: getNumber('surchargeYears') });
+    const formatMoney = (value: number): string => new Intl.NumberFormat(config.locale, { style: 'currency', currency: selectedCurrency, maximumFractionDigits: 2 }).format(value);
+    const formatSigned = (value: number): string => `${value > 0 ? '+' : ''}${formatMoney(value)}`;
+    const recommendationKeyFor = (recommendation: string): 'claim' | 'payYourself' | 'breakEven' => {
+      if (recommendation === 'claim') return 'claim';
+      if (recommendation === 'payYourself') return 'payYourself';
+      return 'breakEven';
+    };
+    const setText = (selector: string, value: string): void => { const element = root.querySelector<HTMLElement>(selector); if (element) element.textContent = value; };
+    const setCurrencyState = (): void => {
+      root.querySelectorAll<HTMLButtonElement>('[data-idb-currency]').forEach((button) => button.setAttribute('aria-selected', String(button.dataset.idbCurrency === selectedCurrency)));
+      const selectedOption = Array.from(root.querySelectorAll<HTMLButtonElement>('[data-idb-currency]')).find((button) => button.dataset.idbCurrency === selectedCurrency);
+      const symbol = selectedOption?.querySelector('strong')?.textContent ?? selectedCurrency;
+      setText('[data-idb-selected-symbol]', symbol);
+      setText('[data-idb-selected-code]', selectedCurrency);
+      root.querySelectorAll<HTMLElement>('[data-idb-unit]').forEach((unit) => { unit.textContent = symbol; });
+    };
+    const clearResults = (): void => { ['claimCost', 'payCost', 'surcharge', 'insurerShare', 'breakEven', 'resultDifference', 'difference'].forEach((key) => setText(`[data-idb-${key === 'resultDifference' ? 'result-difference' : key}]`, '—')); root.querySelector<HTMLElement>('[data-idb-claim-bar]')?.style.setProperty('width', '0%'); root.querySelector<HTMLElement>('[data-idb-pay-bar]')?.style.setProperty('width', '0%'); setText('[data-idb-result-note]', ''); root.dataset.state = 'error'; };
+    const showErrors = (input: InsuranceDeductibleInput): boolean => {
+      const errors = validateInsuranceInput(input);
+      fields.forEach((field) => { const key = field.dataset.field as keyof InsuranceDeductibleInput; const invalid = Boolean(errors[key]); const error = form.querySelector<HTMLElement>(`[data-error-for="${key}"]`); field.setAttribute('aria-invalid', String(invalid)); if (error) { error.hidden = !invalid; error.textContent = invalid ? root.dataset.invalid ?? '' : ''; } });
+      const summary = root.querySelector<HTMLElement>('[data-idb-error-summary]');
+      if (summary) summary.hidden = Object.keys(errors).length === 0;
+      if (Object.keys(errors).length > 0) clearResults();
+      return Object.keys(errors).length > 0;
+    };
+    const update = (): void => {
+      const input = readInput();
+      if (showErrors(input)) return;
+      const result = calculateInsuranceDeductibleBreakEven(input);
+      if (!result) return;
+      const recommendationKey = recommendationKeyFor(result.recommendation);
+      setText('[data-idb-recommendation]', root.dataset[recommendationKey] ?? '');
+      setText('[data-idb-difference]', formatSigned(result.difference));
+      setText('[data-idb-claim-cost]', formatMoney(result.claimCost));
+      setText('[data-idb-pay-cost]', formatMoney(result.payYourselfCost));
+      setText('[data-idb-surcharge]', formatMoney(result.premiumSurcharge));
+      setText('[data-idb-insurer-share]', formatMoney(result.insurerShare));
+      setText('[data-idb-break-even]', formatMoney(result.breakEvenDamage));
+      setText('[data-idb-result-difference]', formatSigned(result.difference));
+      const maxCost = Math.max(result.claimCost, result.payYourselfCost, 1);
+      root.querySelector<HTMLElement>('[data-idb-claim-bar]')?.style.setProperty('width', `${Math.max(8, result.claimCost / maxCost * 100)}%`);
+      root.querySelector<HTMLElement>('[data-idb-pay-bar]')?.style.setProperty('width', `${Math.max(8, result.payYourselfCost / maxCost * 100)}%`);
+      setText('[data-idb-claim-value]', formatMoney(result.claimCost));
+      setText('[data-idb-pay-value]', formatMoney(result.payYourselfCost));
+      const resultNote = result.insurerShare > 0 ? `${formatMoney(result.insurerShare)} is the estimated amount above the deductible. Confirm the covered amount, limits and reporting rules before acting.` : 'The damage is at or below the deductible in this model, so the estimated insurer contribution is zero.';
+      setText('[data-idb-result-note]', resultNote);
+      root.dataset.state = result.recommendation;
+    };
+    fields.forEach((field) => field.addEventListener('input', update));
+    const currencyMenu = root.querySelector<HTMLElement>('[data-idb-currency-menu]');
+    const currencyTrigger = root.querySelector<HTMLButtonElement>('[data-idb-currency-trigger]');
+    const closeCurrencyMenu = (): void => { if (currencyMenu && currencyTrigger) { currencyMenu.hidden = true; currencyTrigger.setAttribute('aria-expanded', 'false'); } };
+    currencyTrigger?.addEventListener('click', () => { if (currencyMenu) { currencyMenu.hidden = !currencyMenu.hidden; currencyTrigger.setAttribute('aria-expanded', String(!currencyMenu.hidden)); } });
+    root.querySelectorAll<HTMLButtonElement>('[data-idb-currency]').forEach((button) => button.addEventListener('click', () => {
+      const nextCurrency = button.dataset.idbCurrency as InsuranceCurrencyCode;
+      moneyKeys.forEach((key) => { const field = form.querySelector<HTMLInputElement>(`[data-field="${key}"]`); const value = Number(field?.value); if (field && Number.isFinite(value)) field.value = String(convertInsuranceCurrency(value, selectedCurrency, nextCurrency)); });
+      selectedCurrency = nextCurrency;
+      setCurrencyState();
+      closeCurrencyMenu();
+      update();
+    }));
+    form.querySelector('[data-idb-reset]')?.addEventListener('click', () => { fields.forEach((field) => { const key = field.dataset.field as keyof InsuranceDeductibleInput; field.value = String(config.initial[key]); }); selectedCurrency = config.currency; setCurrencyState(); closeCurrencyMenu(); update(); });
+    form.querySelector('[data-idb-copy]')?.addEventListener('click', () => { const result = calculateInsuranceDeductibleBreakEven(readInput()); if (!result) return; const summary = `${root.dataset[recommendationKeyFor(result.recommendation)] ?? ''}. Claim: ${formatMoney(result.claimCost)}. Pay yourself: ${formatMoney(result.payYourselfCost)}. Break-even damage: ${formatMoney(result.breakEvenDamage)}.`; navigator.clipboard?.writeText(summary).then(() => setText('[data-idb-copy-status]', root.dataset.copied ?? '')).catch(() => setText('[data-idb-copy-status]', root.dataset.copyFailed ?? '')); });
+    setCurrencyState();
+    update();
+  }
+</script>
+
+<style>
+  @import './insurance-deductible-break-even-calculator.css';
+</style>

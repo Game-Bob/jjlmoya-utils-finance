@@ -1,0 +1,33 @@
+export interface InsuranceDeductibleBreakEvenCalculatorUI extends Record<string, string> {
+  labelDamageCost: string;
+  labelDeductible: string;
+  labelAnnualPremium: string;
+  labelPremiumIncrease: string;
+  labelSurchargeYears: string;
+  labelCurrency: string;
+  labelClaimRoute: string;
+  labelPayYourselfRoute: string;
+  labelClaimCost: string;
+  labelPayYourselfCost: string;
+  labelPremiumSurcharge: string;
+  labelInsurerShare: string;
+  labelBreakEvenDamage: string;
+  labelDifference: string;
+  labelRecommendation: string;
+  labelClaimRecommended: string;
+  labelPayYourselfRecommended: string;
+  labelBreakEvenRecommendation: string;
+  labelVisual: string;
+  labelReset: string;
+  labelCopy: string;
+  labelCopied: string;
+  labelCopyFailed: string;
+  labelInvalidInput: string;
+  labelMethodTitle: string;
+  labelMethodText: string;
+  labelPrivacyNote: string;
+  labelAmountPlaceholder: string;
+  labelPercentPlaceholder: string;
+  labelYearsPlaceholder: string;
+  labelApproximateRates: string;
+}

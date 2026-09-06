@@ -48,6 +48,8 @@ export { rentalDepositReturn } from './tool/rentalDepositReturn/entry';
 export type { RentalDepositReturnLocaleContent } from './tool/rentalDepositReturn/entry';
 export { capitalGainsTaxScenarioCalculator } from './tool/capitalGainsTaxScenarioCalculator/entry';
 export type { CapitalGainsTaxScenarioCalculatorLocaleContent } from './tool/capitalGainsTaxScenarioCalculator/entry';
+export { insuranceDeductibleBreakEvenCalculator } from './tool/insuranceDeductibleBreakEvenCalculator/entry';
+export type { InsuranceDeductibleBreakEvenCalculatorLocaleContent } from './tool/insuranceDeductibleBreakEvenCalculator/entry';
 export { financeCategory } from './category';
 import { compoundInterest } from './tool/compoundInterest/entry';
 import { financialFreedom } from './tool/financialFreedom/entry';
@@ -73,4 +75,5 @@ import { subscriptionCostAnnualizer } from './tool/subscriptionCostAnnualizer/en
 import { loanToIncomeRatio } from './tool/loanToIncomeRatio/entry';
 import { rentalDepositReturn } from './tool/rentalDepositReturn/entry';
 import { capitalGainsTaxScenarioCalculator } from './tool/capitalGainsTaxScenarioCalculator/entry';
-export const ALL_ENTRIES = [compoundInterest, financialFreedom, savingsRate, profitability, courtFeeCalculator, debtSnowball, fireCalculator, ibanBicSwift, inflation, lateInterest, legalInterestRate, lotteryOptimizer, mortgage, percentageCalculator, rentIncrease, revolvingCardCalculator, pesetaValue, salaryEmployerCost, dividendYield, mortgageExtraPaymentPlanner, inflationPurchasingPower, subscriptionCostAnnualizer, loanToIncomeRatio, rentalDepositReturn, capitalGainsTaxScenarioCalculator];
+import { insuranceDeductibleBreakEvenCalculator } from './tool/insuranceDeductibleBreakEvenCalculator/entry';
+export const ALL_ENTRIES = [compoundInterest, financialFreedom, savingsRate, profitability, courtFeeCalculator, debtSnowball, fireCalculator, ibanBicSwift, inflation, lateInterest, legalInterestRate, lotteryOptimizer, mortgage, percentageCalculator, rentIncrease, revolvingCardCalculator, pesetaValue, salaryEmployerCost, dividendYield, mortgageExtraPaymentPlanner, inflationPurchasingPower, subscriptionCostAnnualizer, loanToIncomeRatio, rentalDepositReturn, capitalGainsTaxScenarioCalculator, insuranceDeductibleBreakEvenCalculator];
