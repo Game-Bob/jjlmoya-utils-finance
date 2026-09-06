@@ -36,3 +36,4 @@ export { SALARY_EMPLOYER_COST_TOOL } from './tool/salaryEmployerCost';
 export { DIVIDEND_YIELD_TOOL } from './tool/dividendYield';
 export { MORTGAGE_EXTRA_PAYMENT_PLANNER_TOOL } from './tool/mortgageExtraPaymentPlanner';
 export { LOAN_TO_INCOME_RATIO_TOOL } from './tool/loanToIncomeRatio';
+export { CAPITAL_GAINS_TAX_SCENARIO_CALCULATOR_TOOL } from './tool/capitalGainsTaxScenarioCalculator';

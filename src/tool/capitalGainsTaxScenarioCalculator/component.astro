@@ -1,0 +1,328 @@
+---
+import type { KnownLocale } from '../../types';
+import type { CapitalGainsInput } from './logic';
+import type { CapitalGainsTaxScenarioCalculatorUI } from './ui';
+
+interface Props {
+  locale?: KnownLocale;
+  ui?: CapitalGainsTaxScenarioCalculatorUI;
+}
+
+const { ui } = Astro.props;
+const t = ui as CapitalGainsTaxScenarioCalculatorUI;
+const currentLocale = Astro.props.locale ?? 'en';
+const defaultCurrencyByLocale: Record<string, string> = {
+  de: 'EUR',
+  en: 'USD',
+  es: 'EUR',
+  fr: 'EUR',
+  id: 'IDR',
+  it: 'EUR',
+  ja: 'JPY',
+  ko: 'KRW',
+  nl: 'EUR',
+  pl: 'PLN',
+  pt: 'EUR',
+  ru: 'RUB',
+  sv: 'SEK',
+  tr: 'TRY',
+  zh: 'CNY',
+};
+const currencyOptions = [
+  { code: 'USD', symbol: '$' },
+  { code: 'EUR', symbol: '€' },
+  { code: 'GBP', symbol: '£' },
+  { code: 'JPY', symbol: '¥' },
+  { code: 'CNY', symbol: '¥' },
+  { code: 'KRW', symbol: '₩' },
+  { code: 'RUB', symbol: '₽' },
+  { code: 'INR', symbol: '₹' },
+  { code: 'CAD', symbol: 'C$' },
+  { code: 'AUD', symbol: 'A$' },
+  { code: 'CHF', symbol: 'CHF' },
+  { code: 'PLN', symbol: 'zł' },
+  { code: 'SEK', symbol: 'kr' },
+  { code: 'NOK', symbol: 'kr' },
+  { code: 'DKK', symbol: 'kr' },
+  { code: 'TRY', symbol: '₺' },
+  { code: 'BRL', symbol: 'R$' },
+  { code: 'MXN', symbol: 'MX$' },
+  { code: 'IDR', symbol: 'Rp' },
+  { code: 'CZK', symbol: 'Kč' },
+  { code: 'HUF', symbol: 'Ft' },
+  { code: 'ILS', symbol: '₪' },
+  { code: 'ZAR', symbol: 'R' },
+  { code: 'SGD', symbol: 'S$' },
+  { code: 'HKD', symbol: 'HK$' },
+] as const;
+const defaultCurrency = defaultCurrencyByLocale[currentLocale] ?? 'USD';
+const initial: CapitalGainsInput = {
+  purchasePrice: 100000,
+  acquisitionCosts: 5000,
+  improvements: 10000,
+  salePrice: 180000,
+  sellingCosts: 6000,
+  taxRate: 20,
+  alternativeSalePrice: 190000,
+  alternativeSellingCosts: 7000,
+};
+const config = JSON.stringify({ ui: t, initial, locale: currentLocale, currency: defaultCurrency, currencies: currencyOptions });
+---
+
+<div
+  class="cgt-tool"
+  data-cgt-tool
+  data-status-gain={t.labelGainStatus}
+  data-status-loss={t.labelLossStatus}
+  data-status-break-even={t.labelBreakEvenStatus}
+  data-better-current={t.labelCurrentIsBetter}
+  data-better-alternative={t.labelAlternativeIsBetter}
+  data-better-same={t.labelSameOutcome}
+  data-invalid={t.labelInvalidInput}
+  data-copy={t.labelCopy}
+  data-copied={t.labelCopied}
+  data-locale={Astro.props.locale ?? 'en'}
+>
+  <form class="cgt-card" data-cgt-form novalidate>
+    <div class="cgt-glance" aria-live="polite">
+      <span>{t.labelNetGainAfterTax}</span>
+      <strong><small>{t.labelCurrentScenario}</small><span data-cgt-glance-current>0</span></strong>
+      <strong><small>{t.labelAlternativeScenario}</small><span data-cgt-glance-alternative>0</span></strong>
+    </div>
+    <div class="cgt-inputs">
+      <div class="cgt-field cgt-currency-field">
+        <label for="cgt-currency">{t.labelCurrency}</label>
+        <div class="cgt-select-wrap">
+          <select id="cgt-currency" data-cgt-currency>
+            {currencyOptions.map(({ code, symbol }) => (
+              <option value={code} selected={code === defaultCurrency}>{code} ({symbol})</option>
+            ))}
+          </select>
+          <span class="cgt-select-arrow" aria-hidden="true"></span>
+        </div>
+      </div>
+      <div class="cgt-field">
+        <label for="cgt-purchase">{t.labelPurchasePrice}</label>
+        <div class="cgt-input-wrap"><input id="cgt-purchase" data-field="purchasePrice" type="number" min="0.01" max="1000000000000000" step="0.01" value={initial.purchasePrice} placeholder={t.labelAmountPlaceholder} inputmode="decimal" required /><span data-cgt-unit aria-hidden="true">$</span></div>
+        <small data-error-for="purchasePrice" hidden></small>
+      </div>
+      <div class="cgt-field">
+        <label for="cgt-acquisition">{t.labelAcquisitionCosts}</label>
+        <div class="cgt-input-wrap"><input id="cgt-acquisition" data-field="acquisitionCosts" type="number" min="0" max="1000000000000000" step="0.01" value={initial.acquisitionCosts} placeholder={t.labelAmountPlaceholder} inputmode="decimal" required /><span data-cgt-unit aria-hidden="true">$</span></div>
+        <small data-error-for="acquisitionCosts" hidden></small>
+      </div>
+      <div class="cgt-field">
+        <label for="cgt-improvements">{t.labelImprovements}</label>
+        <div class="cgt-input-wrap"><input id="cgt-improvements" data-field="improvements" type="number" min="0" max="1000000000000000" step="0.01" value={initial.improvements} placeholder={t.labelAmountPlaceholder} inputmode="decimal" required /><span data-cgt-unit aria-hidden="true">$</span></div>
+        <small data-error-for="improvements" hidden></small>
+      </div>
+      <div class="cgt-field">
+        <label for="cgt-sale">{t.labelSalePrice}</label>
+        <div class="cgt-input-wrap"><input id="cgt-sale" data-field="salePrice" type="number" min="0.01" max="1000000000000000" step="0.01" value={initial.salePrice} placeholder={t.labelAmountPlaceholder} inputmode="decimal" required /><span data-cgt-unit aria-hidden="true">$</span></div>
+        <small data-error-for="salePrice" hidden></small>
+      </div>
+      <div class="cgt-field">
+        <label for="cgt-selling">{t.labelSellingCosts}</label>
+        <div class="cgt-input-wrap"><input id="cgt-selling" data-field="sellingCosts" type="number" min="0" max="1000000000000000" step="0.01" value={initial.sellingCosts} placeholder={t.labelAmountPlaceholder} inputmode="decimal" required /><span data-cgt-unit aria-hidden="true">$</span></div>
+        <small data-error-for="sellingCosts" hidden></small>
+      </div>
+      <div class="cgt-field">
+        <label for="cgt-tax">{t.labelTaxRate}</label>
+        <div class="cgt-input-wrap"><input id="cgt-tax" data-field="taxRate" type="number" min="0" max="100" step="0.01" value={initial.taxRate} placeholder={t.labelPercentPlaceholder} inputmode="decimal" required /><span aria-hidden="true">%</span></div>
+        <small data-error-for="taxRate" hidden></small>
+      </div>
+      <div class="cgt-field cgt-alternative-field">
+        <label for="cgt-alt-sale">{t.labelAlternativeSalePrice}</label>
+        <div class="cgt-input-wrap"><input id="cgt-alt-sale" data-field="alternativeSalePrice" type="number" min="0.01" max="1000000000000000" step="0.01" value={initial.alternativeSalePrice} placeholder={t.labelAmountPlaceholder} inputmode="decimal" required /><span data-cgt-unit aria-hidden="true">$</span></div>
+        <small data-error-for="alternativeSalePrice" hidden></small>
+      </div>
+      <div class="cgt-field cgt-alternative-field">
+        <label for="cgt-alt-selling">{t.labelAlternativeSellingCosts}</label>
+        <div class="cgt-input-wrap"><input id="cgt-alt-selling" data-field="alternativeSellingCosts" type="number" min="0" max="1000000000000000" step="0.01" value={initial.alternativeSellingCosts} placeholder={t.labelAmountPlaceholder} inputmode="decimal" required /><span data-cgt-unit aria-hidden="true">$</span></div>
+        <small data-error-for="alternativeSellingCosts" hidden></small>
+      </div>
+    </div>
+
+    <div class="cgt-actions">
+      <button type="button" class="cgt-button cgt-button-secondary" data-cgt-reset>{t.labelReset}</button>
+      <button type="button" class="cgt-button cgt-button-primary" data-cgt-copy>{t.labelCopy}</button>
+      <span class="cgt-copy-status" data-cgt-copy-status role="status" aria-live="polite"></span>
+    </div>
+
+    <section class="cgt-output" aria-live="polite" aria-atomic="true">
+      <div class="cgt-status" data-cgt-status>{t.labelGainStatus}</div>
+      <div class="cgt-visual" data-cgt-visual role="img" aria-label={t.labelVisual}>
+        <div class="cgt-visual-heading"><span>{t.labelCurrentScenario}</span><span>{t.labelAlternativeScenario}</span></div>
+        <div class="cgt-visual-bars">
+          <div class="cgt-bar-side"><strong data-cgt-current-bar-value>0</strong><div class="cgt-bar-track"><i data-cgt-current-bar></i></div></div>
+          <div class="cgt-visual-rail" aria-hidden="true"><span>⇄</span></div>
+          <div class="cgt-bar-side"><strong data-cgt-alternative-bar-value>0</strong><div class="cgt-bar-track"><i data-cgt-alternative-bar></i></div></div>
+        </div>
+      </div>
+
+      <div class="cgt-scenarios">
+        <section class="cgt-scenario" data-scenario="current">
+          <h2>{t.labelCurrentScenario}</h2>
+          <dl>
+            <div><dt>{t.labelAcquisitionBasis}</dt><dd data-cgt-current-basis></dd></div>
+            <div><dt>{t.labelNetSaleValue}</dt><dd data-cgt-current-sale></dd></div>
+            <div><dt>{t.labelGainOrLoss}</dt><dd data-cgt-current-gain></dd></div>
+            <div><dt>{t.labelEstimatedTax}</dt><dd data-cgt-current-tax></dd></div>
+            <div class="cgt-emphasis"><dt>{t.labelNetGainAfterTax}</dt><dd data-cgt-current-net></dd></div>
+            <div><dt>{t.labelNetProceeds}</dt><dd data-cgt-current-proceeds></dd></div>
+          </dl>
+          <p class="cgt-note" data-cgt-current-note>{t.labelTaxableGainNote}</p>
+        </section>
+        <section class="cgt-scenario" data-scenario="alternative">
+          <h2>{t.labelAlternativeScenario}</h2>
+          <dl>
+            <div><dt>{t.labelAcquisitionBasis}</dt><dd data-cgt-alternative-basis></dd></div>
+            <div><dt>{t.labelNetSaleValue}</dt><dd data-cgt-alternative-sale></dd></div>
+            <div><dt>{t.labelGainOrLoss}</dt><dd data-cgt-alternative-gain></dd></div>
+            <div><dt>{t.labelEstimatedTax}</dt><dd data-cgt-alternative-tax></dd></div>
+            <div class="cgt-emphasis"><dt>{t.labelNetGainAfterTax}</dt><dd data-cgt-alternative-net></dd></div>
+            <div><dt>{t.labelNetProceeds}</dt><dd data-cgt-alternative-proceeds></dd></div>
+          </dl>
+          <p class="cgt-note" data-cgt-alternative-note>{t.labelTaxableGainNote}</p>
+        </section>
+      </div>
+
+      <div class="cgt-comparison" data-cgt-comparison>
+        <span>{t.labelBetterScenario}</span>
+        <strong data-cgt-better></strong>
+        <small data-cgt-difference></small>
+      </div>
+      <p class="cgt-error-summary" data-cgt-error-summary hidden>{t.labelInvalidInput}</p>
+    </section>
+
+    <p class="cgt-privacy">{t.labelPrivacyNote}</p>
+    <details class="cgt-method"><summary>{t.labelMethodTitle}</summary><p>{t.labelMethodText}</p></details>
+  </form>
+</div>
+
+<script is:inline type="application/json" data-cgt-config set:html={config}></script>
+<script>
+  import { calculateCapitalGains, validateCapitalGainsInput, type CapitalGainsInput, type CapitalGainsScenarioResult } from './logic';
+
+  const configElement = document.querySelector<HTMLScriptElement>('[data-cgt-config]');
+  const root = document.querySelector<HTMLElement>('[data-cgt-tool]');
+  const form = root?.querySelector<HTMLFormElement>('[data-cgt-form]');
+  if (root && form && configElement?.textContent) {
+    const config = JSON.parse(configElement.textContent) as { initial: CapitalGainsInput; locale: string; currency: string; currencies: Array<{ code: string; symbol: string }> };
+    let selectedCurrency = config.currency;
+    const fields = Array.from(form.querySelectorAll<HTMLInputElement>('[data-field]'));
+    const amountKeys = ['purchasePrice', 'acquisitionCosts', 'improvements', 'salePrice', 'sellingCosts', 'alternativeSalePrice', 'alternativeSellingCosts'] as const;
+    const getInput = (key: keyof CapitalGainsInput): number => Number(form.querySelector<HTMLInputElement>(`[data-field="${key}"]`)?.value ?? Number.NaN);
+    const readInput = (): CapitalGainsInput => ({
+      purchasePrice: getInput('purchasePrice'),
+      acquisitionCosts: getInput('acquisitionCosts'),
+      improvements: getInput('improvements'),
+      salePrice: getInput('salePrice'),
+      sellingCosts: getInput('sellingCosts'),
+      taxRate: getInput('taxRate'),
+      alternativeSalePrice: getInput('alternativeSalePrice'),
+      alternativeSellingCosts: getInput('alternativeSellingCosts'),
+    });
+    const format = (value: number): string => new Intl.NumberFormat(config.locale, { style: 'currency', currency: selectedCurrency, maximumFractionDigits: 2 }).format(value);
+    const formatSigned = (value: number): string => `${value > 0 ? '+' : ''}${format(value)}`;
+    const text = (selector: string, value: string): void => { const target = root.querySelector<HTMLElement>(selector); if (target) target.textContent = value; };
+    const setScenario = (prefix: string, scenario: CapitalGainsScenarioResult): void => {
+      text(`[data-cgt-${prefix}-basis]`, format(scenario.acquisitionBasis));
+      text(`[data-cgt-${prefix}-sale]`, format(scenario.netSaleValue));
+      text(`[data-cgt-${prefix}-gain]`, formatSigned(scenario.gainOrLoss));
+      text(`[data-cgt-${prefix}-tax]`, format(scenario.estimatedTax));
+      text(`[data-cgt-${prefix}-net]`, formatSigned(scenario.netGainAfterTax));
+      text(`[data-cgt-${prefix}-proceeds]`, format(scenario.netProceeds));
+      const note = root.querySelector<HTMLElement>(`[data-cgt-${prefix}-note]`);
+      if (note) note.hidden = scenario.taxableGain > 0;
+    };
+    const statusDatasetKey = (status: CapitalGainsScenarioResult['status']): string => {
+      if (status === 'gain') return 'statusGain';
+      if (status === 'loss') return 'statusLoss';
+      return 'statusBreakEven';
+    };
+    const betterDatasetKey = (scenario: 'current' | 'alternative' | 'same'): string => {
+      if (scenario === 'current') return 'betterCurrent';
+      if (scenario === 'alternative') return 'betterAlternative';
+      return 'betterSame';
+    };
+    const updateVisual = (result: ReturnType<typeof calculateCapitalGains>): void => {
+      if (!result) return;
+      const maxGain = Math.max(result.current.netGainAfterTax, result.alternative.netGainAfterTax, 1);
+      const getWidth = (value: number): string => `${Math.max(4, Math.min(100, (Math.max(0, value) / maxGain) * 100))}%`;
+      root.querySelector<HTMLElement>('[data-cgt-current-bar]')?.style.setProperty('width', getWidth(result.current.netGainAfterTax));
+      root.querySelector<HTMLElement>('[data-cgt-alternative-bar]')?.style.setProperty('width', getWidth(result.alternative.netGainAfterTax));
+      text('[data-cgt-current-bar-value]', format(result.current.netGainAfterTax));
+      text('[data-cgt-alternative-bar-value]', format(result.alternative.netGainAfterTax));
+      text('[data-cgt-glance-current]', format(result.current.netGainAfterTax));
+      text('[data-cgt-glance-alternative]', format(result.alternative.netGainAfterTax));
+    };
+    const updateCurrencyUnits = (): void => {
+      const symbol = config.currencies.find(({ code }) => code === selectedCurrency)?.symbol ?? selectedCurrency;
+      root.querySelectorAll<HTMLElement>('[data-cgt-unit]').forEach((unit) => { unit.textContent = symbol; });
+    };
+    const updateComparison = (result: ReturnType<typeof calculateCapitalGains>): void => {
+      if (!result) return;
+      text('[data-cgt-better]', root.dataset[betterDatasetKey(result.comparison.betterScenario)] ?? '');
+      text('[data-cgt-difference]', `${formatSigned(result.comparison.netGainDifference)} after estimated tax`);
+      root.querySelector<HTMLElement>('[data-cgt-comparison]')?.removeAttribute('hidden');
+    };
+    const showErrors = (input: CapitalGainsInput): boolean => {
+      const errors = validateCapitalGainsInput(input);
+      [...amountKeys, 'taxRate' as const].forEach((key) => {
+        const field = form.querySelector<HTMLInputElement>(`[data-field="${key}"]`);
+        const error = form.querySelector<HTMLElement>(`[data-error-for="${key}"]`);
+        const invalid = Boolean(errors[key]);
+        if (field) field.setAttribute('aria-invalid', String(invalid));
+        if (error) { error.hidden = !invalid; error.textContent = invalid ? root.dataset.invalid ?? '' : ''; }
+      });
+      const summary = root.querySelector<HTMLElement>('[data-cgt-error-summary]');
+      if (summary) summary.hidden = Object.keys(errors).length === 0;
+      return Object.keys(errors).length > 0;
+    };
+    const update = (): void => {
+      const input = readInput();
+      if (showErrors(input)) return;
+      const result = calculateCapitalGains(input);
+      if (!result) return;
+      const status = result.current.status;
+      text('[data-cgt-status]', root.dataset[statusDatasetKey(status)] ?? '');
+      root.dataset.status = status;
+      setScenario('current', result.current);
+      setScenario('alternative', result.alternative);
+      updateVisual(result);
+      updateComparison(result);
+    };
+
+    fields.forEach((field) => field.addEventListener('input', update));
+    form.querySelector('[data-cgt-reset]')?.addEventListener('click', () => {
+      fields.forEach((field) => { const key = field.dataset.field as keyof CapitalGainsInput; field.value = String(config.initial[key]); });
+      selectedCurrency = config.currency;
+      const currencySelect = form.querySelector<HTMLSelectElement>('[data-cgt-currency]');
+      if (currencySelect) currencySelect.value = selectedCurrency;
+      updateCurrencyUnits();
+      update();
+    });
+    form.querySelector<HTMLSelectElement>('[data-cgt-currency]')?.addEventListener('change', (event) => {
+      selectedCurrency = (event.currentTarget as HTMLSelectElement).value;
+      updateCurrencyUnits();
+      update();
+    });
+    form.querySelector('[data-cgt-copy]')?.addEventListener('click', () => {
+      const result = calculateCapitalGains(readInput());
+      if (!result) return;
+      const copyText = `${root.dataset.status ?? 'Scenario'}: ${formatSigned(result.current.netGainAfterTax)} after estimated tax. Alternative: ${formatSigned(result.alternative.netGainAfterTax)}. Difference: ${formatSigned(result.comparison.netGainDifference)}.`;
+      navigator.clipboard?.writeText(copyText).then(() => {
+        text('[data-cgt-copy-status]', root.dataset.copied ?? '');
+      }).catch(() => {
+        text('[data-cgt-copy-status]', root.dataset.copy ?? '');
+      });
+    });
+    updateCurrencyUnits();
+    update();
+  }
+</script>
+
+<style>
+  @import './capital-gains-tax-scenario-calculator.css';
+</style>
