@@ -1,0 +1,462 @@
+:root {
+  --n-ink: #1f2933;
+  --n-muted: #5f6c76;
+  --n-paper: #fffdf8;
+  --n-surface: #f4efe5;
+  --n-line: #d8cdbb;
+  --n-accent: #b35c35;
+  --n-accent-strong: #7d351e;
+  --n-accent-soft: #f1d8c6;
+  --n-safe: #2f6f5e;
+  --n-review: #9b6b1f;
+  --n-exposed: #9b3e34;
+}
+
+.theme-dark {
+  --n-ink: #f7f1e7;
+  --n-muted: #c5b9a8;
+  --n-paper: #242321;
+  --n-surface: #302e2a;
+  --n-line: #5d5346;
+  --n-accent: #e08a5c;
+  --n-accent-strong: #ffb38b;
+  --n-accent-soft: #5d392c;
+  --n-safe: #79c3a8;
+  --n-review: #e3b76c;
+  --n-exposed: #f08c80;
+}
+
+.ric-tool {
+  --n-ink: #1f2933;
+  --n-muted: #5f6c76;
+  --n-paper: #fffdf8;
+  --n-surface: #f4efe5;
+  --n-line: #d8cdbb;
+  --n-accent: #b35c35;
+  --n-accent-strong: #7d351e;
+  --n-accent-soft: #f1d8c6;
+  --n-safe: #2f6f5e;
+  --n-review: #9b6b1f;
+  --n-exposed: #9b3e34;
+
+  color: var(--n-ink);
+}
+.theme-dark .ric-tool {
+  --n-ink: #f7f1e7;
+  --n-muted: #c5b9a8;
+  --n-paper: #242321;
+  --n-surface: #302e2a;
+  --n-line: #5d5346;
+  --n-accent: #e08a5c;
+  --n-accent-strong: #ffb38b;
+  --n-accent-soft: #5d392c;
+  --n-safe: #79c3a8;
+  --n-review: #e3b76c;
+  --n-exposed: #f08c80;
+}
+.ric-card {
+  background: var(--n-paper);
+  border: 1px solid var(--n-line);
+  border-radius: 1.25rem;
+  overflow: hidden;
+}
+.ric-workspace {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+}
+.ric-inventory-panel,
+.ric-policy-panel {
+  padding: clamp(1.2rem, 3vw, 2.4rem);
+}
+.ric-inventory-panel {
+  background: var(--n-surface);
+  border-right: 1px solid var(--n-line);
+}
+.ric-panel-heading {
+  max-width: 34rem;
+}
+.ric-eyebrow {
+  color: var(--n-accent-strong);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.ric-panel-heading h2 {
+  margin: 0.45rem 0 0.35rem;
+  font-size: clamp(1.35rem, 2vw, 2rem);
+  letter-spacing: -0.04em;
+}
+.ric-panel-heading p {
+  color: var(--n-muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: 0;
+}
+.ric-shelf-scene {
+  margin: 1.7rem 0 1.3rem;
+  padding: 1rem 0 0.85rem;
+  border-top: 3px solid var(--n-ink);
+  border-bottom: 3px solid var(--n-ink);
+}
+.ric-shelf-top,
+.ric-shelf-legend {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.8rem;
+  color: var(--n-muted);
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+.ric-shelf-track {
+  height: 4.7rem;
+  margin: 1rem 0 0.7rem;
+  position: relative;
+  background: var(--n-paper);
+  border: 1px solid var(--n-line);
+}
+.ric-contents-fill {
+  background: var(--n-accent-soft);
+  display: block;
+  height: 100%;
+  width: 0;
+  transition: width 0.25s ease;
+}
+.ric-limit-line {
+  background: var(--n-accent-strong);
+  bottom: -0.55rem;
+  display: block;
+  height: 5.8rem;
+  left: 0;
+  position: absolute;
+  width: 2px;
+  transition: left 0.25s ease;
+}
+.ric-loss-mark {
+  background: var(--n-review);
+  border-radius: 50%;
+  display: block;
+  height: 0.75rem;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 0.75rem;
+  transition: left 0.25s ease;
+}
+.ric-dot {
+  border-radius: 50%;
+  display: inline-block;
+  height: 0.55rem;
+  margin-right: 0.3rem;
+  width: 0.55rem;
+}
+.ric-dot-contents {
+  background: var(--n-accent);
+}
+.ric-dot-limit {
+  background: var(--n-accent-strong);
+}
+.ric-inventory-list {
+  border-top: 1px solid var(--n-line);
+}
+.ric-inventory-row {
+  align-items: center;
+  border-bottom: 1px solid var(--n-line);
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  min-height: 3.2rem;
+}
+.ric-inventory-row > span:first-child {
+  font-size: 0.9rem;
+  font-weight: 650;
+}
+.ric-money-input {
+  align-items: center;
+  background: var(--n-paper);
+  border: 1px solid var(--n-line);
+  display: flex;
+  min-width: 9.8rem;
+}
+.ric-money-input:focus-within {
+  border-color: var(--n-accent);
+  box-shadow: 0 0 0 3px var(--n-accent-soft);
+}
+.ric-money-input input {
+  background: transparent;
+  border: 0;
+  color: var(--n-ink);
+  font: inherit;
+  min-width: 0;
+  outline: 0;
+  padding: 0.7rem 0.55rem;
+  text-align: right;
+  width: 100%;
+}
+.ric-money-input b {
+  color: var(--n-muted);
+  font-size: 0.68rem;
+  padding-right: 0.6rem;
+}
+.ric-largest-list {
+  color: var(--n-muted);
+  font-size: 0.75rem;
+  line-height: 1.65;
+  margin: 1rem 0 0;
+  padding-left: 1.2rem;
+}
+.ric-policy-panel {
+  display: flex;
+  flex-direction: column;
+}
+.ric-field-stack {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.6rem;
+}
+.ric-field {
+  display: grid;
+  gap: 0.42rem;
+}
+.ric-field label,
+.ric-label {
+  font-size: 0.82rem;
+  font-weight: 750;
+}
+.ric-field small {
+  color: var(--n-muted);
+  font-size: 0.7rem;
+  line-height: 1.4;
+}
+.ric-select {
+  position: relative;
+}
+.ric-select-trigger {
+  align-items: center;
+  background: var(--n-surface);
+  border: 1px solid var(--n-line);
+  color: var(--n-ink);
+  cursor: pointer;
+  display: flex;
+  font: inherit;
+  justify-content: space-between;
+  padding: 0.75rem 0.85rem;
+  text-align: left;
+  width: 100%;
+}
+.ric-currency-trigger-main {
+  align-items: baseline;
+  display: inline-flex;
+  gap: 0.45rem;
+}
+.ric-currency-trigger-main strong {
+  color: var(--n-accent-strong);
+  font-size: 1.05rem;
+}
+.ric-currency-trigger-main span {
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+.ric-currency-arrow {
+  border-bottom: 1px solid currentcolor;
+  border-right: 1px solid currentcolor;
+  height: 0.45rem;
+  transform: rotate(45deg) translateY(-2px);
+  width: 0.45rem;
+}
+.ric-select-menu {
+  background: var(--n-paper);
+  border: 1px solid var(--n-line);
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: calc(100% + 0.25rem);
+  z-index: 5;
+}
+.ric-select-menu[hidden] {
+  display: none;
+}
+.ric-select-menu button {
+  background: transparent;
+  border: 0;
+  color: var(--n-ink);
+  cursor: pointer;
+  display: flex;
+  font: inherit;
+  justify-content: space-between;
+  padding: 0.7rem 0.85rem;
+  text-align: left;
+  width: 100%;
+}
+.ric-currency-option {
+  align-items: center;
+  gap: 0.7rem;
+}
+.ric-currency-option strong {
+  color: var(--n-accent-strong);
+  min-width: 2rem;
+}
+.ric-currency-option span {
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+.ric-currency-option small {
+  margin-left: auto;
+}
+.ric-currency-field > small {
+  color: var(--n-muted);
+  font-size: 0.7rem;
+  line-height: 1.4;
+}
+.ric-select-menu button:hover,
+.ric-select-menu button[aria-selected="true"] {
+  background: var(--n-accent-soft);
+}
+.ric-select-menu small {
+  color: var(--n-muted);
+}
+.ric-result-block {
+  border-top: 1px solid var(--n-line);
+  margin-top: 1.7rem;
+  padding-top: 1.4rem;
+}
+.ric-status {
+  color: var(--n-review);
+  display: block;
+  font-size: clamp(1.4rem, 2vw, 2rem);
+  letter-spacing: -0.04em;
+  margin: 0.5rem 0 0.35rem;
+}
+.ric-status::before {
+  background: currentcolor;
+  border-radius: 50%;
+  content: "";
+  display: inline-block;
+  height: 0.65rem;
+  margin: 0 0.5rem 0.12rem 0;
+  width: 0.65rem;
+}
+.ric-tool[data-status="safe"] .ric-status {
+  color: var(--n-safe);
+}
+.ric-tool[data-status="exposed"] .ric-status,
+.ric-tool[data-status="invalid"] .ric-status {
+  color: var(--n-exposed);
+}
+.ric-result-block > p {
+  color: var(--n-muted);
+  font-size: 0.78rem;
+  line-height: 1.45;
+  margin: 0;
+}
+.ric-metric-main {
+  border-bottom: 1px solid var(--n-line);
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.15rem;
+  padding: 0.8rem 0;
+}
+.ric-metric-main span {
+  color: var(--n-muted);
+  font-size: 0.78rem;
+}
+.ric-metric-main strong {
+  color: var(--n-accent-strong);
+  font-size: clamp(1.6rem, 3vw, 2.5rem);
+  letter-spacing: -0.05em;
+}
+.ric-metric-line {
+  border-bottom: 1px solid var(--n-line);
+  display: flex;
+  font-size: 0.78rem;
+  justify-content: space-between;
+  padding: 0.58rem 0;
+}
+.ric-metric-line span {
+  color: var(--n-muted);
+}
+.ric-metric-line b {
+  font-size: 0.86rem;
+}
+.ric-tool .ric-result-note {
+  border-left: 2px solid var(--n-accent);
+  margin-top: 1rem;
+  padding-left: 0.65rem;
+}
+.ric-tool .ric-error {
+  color: var(--n-exposed);
+  font-weight: 700;
+  margin-top: 0.55rem;
+}
+.ric-actions {
+  align-items: center;
+  display: flex;
+  gap: 0.65rem;
+  margin-top: auto;
+  padding-top: 1.6rem;
+}
+.ric-button {
+  border: 1px solid var(--n-line);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 800;
+  padding: 0.75rem 0.9rem;
+}
+.ric-button-primary {
+  background: var(--n-accent-strong);
+  border-color: var(--n-accent-strong);
+  color: var(--n-paper);
+}
+.ric-button-secondary {
+  background: var(--n-surface);
+  color: var(--n-ink);
+}
+.ric-actions [role="status"] {
+  color: var(--n-safe);
+  font-size: 0.72rem;
+}
+.ric-privacy {
+  border-top: 1px solid var(--n-line);
+  color: var(--n-muted);
+  font-size: 0.72rem;
+  margin: 0 1.3rem;
+  padding: 1rem 0;
+}
+.ric-method {
+  border-top: 1px solid var(--n-line);
+  margin: 0 1.3rem;
+  padding: 0.9rem 0 1.2rem;
+}
+.ric-method summary {
+  cursor: pointer;
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+.ric-method p {
+  color: var(--n-muted);
+  font-size: 0.78rem;
+  line-height: 1.6;
+  margin: 0.8rem 0 0;
+  max-width: 72rem;
+}
+.ric-money-input input[aria-invalid="true"] {
+  outline: 2px solid var(--n-exposed);
+  outline-offset: -2px;
+}
+
+@media (max-width: 760px) {
+  .ric-workspace {
+    grid-template-columns: 1fr;
+  }
+  .ric-inventory-panel {
+    border-bottom: 1px solid var(--n-line);
+    border-right: 0;
+  }
+  .ric-inventory-row {
+    gap: 0.6rem;
+  }
+  .ric-money-input {
+    min-width: 8.8rem;
+  }
+}

@@ -1,0 +1,80 @@
+---
+import type { KnownLocale } from '../../types';
+import { INVENTORY_CATEGORIES, type RenterInsuranceInput } from './logic';
+import { currencyOptions, defaultCurrencyByLocale } from './currency';
+import type { RenterInsuranceCoverageGapCalculatorUI } from './ui';
+
+interface Props { locale?: KnownLocale; ui?: RenterInsuranceCoverageGapCalculatorUI; }
+const { ui } = Astro.props;
+const t = ui as RenterInsuranceCoverageGapCalculatorUI;
+const locale = Astro.props.locale ?? 'en';
+const defaultCurrency = defaultCurrencyByLocale[locale] ?? 'USD';
+const defaultSymbol = currencyOptions.find(({ code }) => code === defaultCurrency)?.symbol ?? defaultCurrency;
+const initial: RenterInsuranceInput = {
+  currency: defaultCurrency,
+  policyLimit: 18000,
+  deductible: 250,
+  sampleLoss: 5000,
+  inventory: [
+    { category: 'furniture', value: 7000 },
+    { category: 'electronics', value: 6000 },
+    { category: 'clothing', value: 2500 },
+    { category: 'kitchen', value: 1500 },
+    { category: 'personal', value: 1000 },
+    { category: 'other', value: 1000 },
+  ],
+};
+const config = JSON.stringify({ ui: t, initial, locale, currencies: currencyOptions }).replace(/</g, '\\u003c');
+const categoryLabels: Record<(typeof INVENTORY_CATEGORIES)[number], string> = {
+  furniture: t.labelCategoryFurniture,
+  electronics: t.labelCategoryElectronics,
+  clothing: t.labelCategoryClothing,
+  kitchen: t.labelCategoryKitchen,
+  personal: t.labelCategoryPersonal,
+  other: t.labelCategoryOther,
+};
+---
+
+<div class="ric-tool" data-ric-tool>
+  <form class="ric-card" data-ric-form novalidate>
+    <div class="ric-workspace">
+      <section class="ric-inventory-panel" aria-labelledby="ric-inventory-title">
+        <div class="ric-panel-heading"><span class="ric-eyebrow">01 / {t.labelInventory}</span><h2 id="ric-inventory-title">{t.labelInventory}</h2><p>{t.labelInventoryHint}</p></div>
+        <div class="ric-shelf-scene" data-ric-visual role="img" aria-label={t.labelCoverageLine}>
+          <div class="ric-shelf-top"><span>{t.labelReplacementValue}</span><span data-ric-loss-label>{t.labelLossScenario}</span></div>
+          <div class="ric-shelf-track"><span class="ric-contents-fill" data-ric-contents-fill></span><span class="ric-limit-line" data-ric-limit-line aria-label={t.labelLimitMarker}></span><span class="ric-loss-mark" data-ric-loss-mark aria-hidden="true"></span></div>
+          <div class="ric-shelf-legend"><span><i class="ric-dot ric-dot-contents"></i>{t.labelReplacementValue}</span><span><i class="ric-dot ric-dot-limit"></i>{t.labelCoverageLine}</span></div>
+        </div>
+        <div class="ric-inventory-list">
+          {INVENTORY_CATEGORIES.map((category) => <label class="ric-inventory-row" for={`ric-${category}`}><span>{categoryLabels[category]}</span><span class="ric-money-input"><input id={`ric-${category}`} data-category={category} type="number" min="0" max="1000000000" step="0.01" value={initial.inventory.find((item) => item.category === category)?.value ?? 0} placeholder={t.labelAmountPlaceholder} inputmode="decimal" required /><b data-ric-unit>{defaultSymbol}</b></span></label>)}
+        </div>
+        <ol class="ric-largest-list" data-ric-largest-list aria-label={t.labelLargestCategories}></ol>
+      </section>
+
+      <section class="ric-policy-panel" aria-labelledby="ric-policy-title">
+        <div class="ric-panel-heading"><span class="ric-eyebrow">02 / {t.labelPolicyBoundary}</span><h2 id="ric-policy-title">{t.labelSetLimit}</h2><p>{t.labelPolicyBoundaryHint}</p></div>
+        <div class="ric-field-stack">
+          <div class="ric-field ric-currency-field"><span class="ric-label" id="ric-currency-label">{t.labelCurrency}</span><div class="ric-select"><button type="button" class="ric-select-trigger" data-ric-currency-trigger aria-expanded="false" aria-haspopup="listbox" aria-labelledby="ric-currency-label"><span class="ric-currency-trigger-main"><strong data-ric-selected-symbol>{defaultSymbol}</strong><span data-ric-selected-code>{defaultCurrency}</span></span><span class="ric-currency-arrow" aria-hidden="true"></span></button><div class="ric-select-menu" data-ric-currency-menu role="listbox" aria-label={t.labelCurrency} hidden>{currencyOptions.map(({ code, symbol, name }) => <button type="button" class="ric-currency-option" data-ric-currency-option data-currency={code} role="option" aria-selected={code === defaultCurrency} aria-label={`${symbol} ${name}`}><strong>{symbol}</strong><span>{code}</span><small>{name}</small></button>)}</div></div><small>{t.labelApproximateRates}</small></div>
+          <div class="ric-field"><label for="ric-policy-limit">{t.labelPolicyLimit}</label><div class="ric-money-input"><input id="ric-policy-limit" data-field="policyLimit" type="number" min="0.01" max="1000000000" step="0.01" value={initial.policyLimit} placeholder={t.labelAmountPlaceholder} inputmode="decimal" required /><b data-ric-unit>{defaultSymbol}</b></div><small>{t.labelPolicyLimitHelp}</small></div>
+          <div class="ric-field"><label for="ric-deductible">{t.labelDeductible}</label><div class="ric-money-input"><input id="ric-deductible" data-field="deductible" type="number" min="0" max="1000000000" step="0.01" value={initial.deductible} placeholder={t.labelAmountPlaceholder} inputmode="decimal" required /><b data-ric-unit>{defaultSymbol}</b></div><small>{t.labelDeductibleHelp}</small></div>
+          <div class="ric-field"><label for="ric-sample-loss">{t.labelSampleLoss}</label><div class="ric-money-input"><input id="ric-sample-loss" data-field="sampleLoss" type="number" min="0.01" max="1000000000" step="0.01" value={initial.sampleLoss} placeholder={t.labelAmountPlaceholder} inputmode="decimal" required /><b data-ric-unit>{defaultSymbol}</b></div><small>{t.labelSampleLossHelp}</small></div>
+        </div>
+        <div class="ric-result-block" aria-live="polite" aria-atomic="true"><span class="ric-eyebrow">03 / {t.labelStatus}</span><strong class="ric-status" data-ric-status>{t.labelStatusReview}</strong><p data-ric-status-text></p><p class="ric-error" data-ric-error hidden>{t.labelInvalidInput}</p><div class="ric-metric-main"><span>{t.labelCoverageGap}</span><strong data-ric-gap>—</strong></div><div class="ric-metric-line"><span>{t.labelTotalContents}</span><b data-ric-total>—</b></div><div class="ric-metric-line"><span>{t.labelCoverageRatio}</span><b data-ric-ratio>—</b></div><div class="ric-metric-line"><span>{t.labelEstimatedPayout}</span><b data-ric-payout>—</b></div><div class="ric-metric-line"><span>{t.labelOutOfPocket}</span><b data-ric-out-of-pocket>—</b></div><p class="ric-result-note">{t.labelIllustrativePayout}</p></div>
+        <div class="ric-actions"><button type="button" class="ric-button ric-button-secondary" data-ric-reset>{t.labelReset}</button><button type="button" class="ric-button ric-button-primary" data-ric-copy>{t.labelCopy}</button><span data-ric-copy-status role="status" aria-live="polite"></span></div>
+      </section>
+    </div>
+    <p class="ric-privacy">{t.labelPrivacyNote}</p><details class="ric-method"><summary>{t.labelMethodTitle}</summary><p>{t.labelMethodText}</p></details>
+  </form>
+</div>
+
+<script is:inline type="application/json" data-ric-config set:html={config}></script>
+<script>
+  import { mountRenterInsuranceTool } from './controller';
+  const configElement = document.querySelector<HTMLScriptElement>('[data-ric-config]');
+  const root = document.querySelector<HTMLElement>('[data-ric-tool]');
+  if (root && configElement?.textContent) mountRenterInsuranceTool(root, JSON.parse(configElement.textContent));
+</script>
+
+<style>
+  @import './renter-insurance-coverage-gap-calculator.css';
+</style>

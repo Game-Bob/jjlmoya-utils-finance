@@ -1,0 +1,11 @@
+---
+import { Bibliography as SharedBibliography } from '@jjlmoya/utils-shared';
+import { renterInsuranceCoverageGapCalculator } from './entry';
+import type { KnownLocale } from '../../types';
+
+interface Props { locale?: KnownLocale; }
+const { locale = 'en' } = Astro.props;
+const content = await renterInsuranceCoverageGapCalculator.i18n[locale]?.() ?? await renterInsuranceCoverageGapCalculator.i18n.en?.();
+---
+
+{content && <SharedBibliography links={content.bibliography} />}
