@@ -1,0 +1,62 @@
+---
+import type { LoanAprScenarioCalculatorUI } from './ui';
+import type { KnownLocale } from '../../types';
+import { currencyOptions, defaultCurrencyByLocale } from './currency';
+
+interface Props { ui: LoanAprScenarioCalculatorUI; locale?: KnownLocale; }
+const { ui, locale = 'en' } = Astro.props;
+const defaultCurrency = defaultCurrencyByLocale[locale] ?? 'USD';
+const defaultCurrencyOption = currencyOptions.find(({ code }) => code === defaultCurrency);
+const defaultCurrencySymbol = defaultCurrencyOption?.symbol ?? defaultCurrency;
+const defaultCurrencyName = defaultCurrencyOption?.name ?? defaultCurrency;
+const data = JSON.stringify({ ui, locale, currency: defaultCurrency, currencies: currencyOptions }).replace(/</g, '\\u003c');
+---
+
+<div class="loan-apr-tool" data-loan-apr-tool>
+  <form class="loan-apr-input-ribbon" data-loan-apr-form>
+    <div class="loan-apr-ribbon-head">
+      <div class="loan-apr-currency-copy"><span class="loan-apr-currency-label">{ui.labelCurrency}</span><small>{ui.labelApproximateRates}</small></div>
+      <div class="loan-apr-header-controls">
+        <div class="loan-apr-actions"><button type="button" class="loan-apr-text-button" data-reset>{ui.labelReset}</button><button type="button" class="loan-apr-copy-button" data-copy>{ui.labelCopy}</button><span class="loan-apr-copy-status" data-copy-status aria-live="polite"></span></div>
+        <div class="loan-apr-currency-select"><button type="button" class="loan-apr-currency-trigger" data-currency-trigger aria-expanded="false" aria-haspopup="listbox" aria-label={ui.labelCurrency}><span class="loan-apr-currency-trigger-main"><strong data-selected-currency-symbol>{defaultCurrencySymbol}</strong><span data-selected-currency-name>{defaultCurrencyName}</span></span><span class="loan-apr-currency-arrow" aria-hidden="true"></span></button><div class="loan-apr-currency-menu" data-currency-menu role="listbox" aria-label={ui.labelCurrency} hidden>{currencyOptions.map(({ code, symbol, name }) => <button type="button" class="loan-apr-currency-option" data-currency={code} role="option" aria-selected={code === defaultCurrency} aria-label={`${symbol} ${name}`}><strong>{symbol}</strong><span>{name}</span></button>)}</div></div>
+      </div>
+    </div>
+    <div class="loan-apr-presets" role="group" aria-label={ui.labelPreset}><button type="button" data-preset="balanced">{ui.labelPresetBalanced}</button><button type="button" data-preset="low-fee">{ui.labelPresetLowFee}</button><button type="button" data-preset="long-term">{ui.labelPresetLongTerm}</button></div>
+    <div class="loan-apr-scenarios">
+      <fieldset class="loan-apr-scenario" data-scenario="a">
+        <legend><span class="loan-apr-scenario-index">A</span><input data-field="name" type="text" value={ui.labelOfferNameA} aria-label={ui.labelScenarioName} /></legend>
+        <div class="loan-apr-field-grid"><label><span>{ui.labelPrincipal}</span><span class="loan-apr-input-with-unit"><input data-field="principal" type="number" min="1" step="100" value="10000" required /><b data-currency-unit>{defaultCurrencySymbol}</b></span></label><label><span>{ui.labelTerm}</span><span class="loan-apr-input-with-unit"><input data-field="term" type="number" min="1" max="600" step="1" value="36" required /><b>{ui.labelMonths}</b></span></label></div>
+        <div class="loan-apr-mode-row" role="group" aria-label={ui.labelInputBasis}><button type="button" data-mode-side="a" data-mode="rate" aria-pressed="true">{ui.labelRateMode}</button><button type="button" data-mode-side="a" data-mode="payment" aria-pressed="false">{ui.labelPaymentMode}</button></div>
+        <label data-mode-field="rate"><span>{ui.labelAnnualRate}</span><span class="loan-apr-input-with-unit"><input data-field="rate" type="number" min="0" max="100" step="0.01" value="6" required /><b>%</b></span></label>
+        <label data-mode-field="payment" hidden><span>{ui.labelMonthlyPayment}</span><span class="loan-apr-input-with-unit"><input data-field="payment" type="number" min="0" step="0.01" value="304.22" required /><b data-currency-unit>{defaultCurrencySymbol}</b></span></label>
+        <div class="loan-apr-fees"><label><span>{ui.labelUpfrontFees}</span><span class="loan-apr-input-with-unit"><input data-field="upfrontFees" type="number" min="0" step="10" value="0" /><b data-currency-unit>{defaultCurrencySymbol}</b></span></label><label><span>{ui.labelMonthlyFees}</span><span class="loan-apr-input-with-unit"><input data-field="monthlyFees" type="number" min="0" step="1" value="0" /><b data-currency-unit>{defaultCurrencySymbol}</b></span></label><label><span>{ui.labelFinalFees}</span><span class="loan-apr-input-with-unit"><input data-field="finalFees" type="number" min="0" step="10" value="0" /><b data-currency-unit>{defaultCurrencySymbol}</b></span></label></div>
+      </fieldset>
+      <div class="loan-apr-divider" aria-hidden="true"><span>VS</span></div>
+      <fieldset class="loan-apr-scenario" data-scenario="b">
+        <legend><span class="loan-apr-scenario-index">B</span><input data-field="name" type="text" value={ui.labelOfferNameB} aria-label={ui.labelScenarioName} /></legend>
+        <div class="loan-apr-field-grid"><label><span>{ui.labelPrincipal}</span><span class="loan-apr-input-with-unit"><input data-field="principal" type="number" min="1" step="100" value="10000" required /><b data-currency-unit>{defaultCurrencySymbol}</b></span></label><label><span>{ui.labelTerm}</span><span class="loan-apr-input-with-unit"><input data-field="term" type="number" min="1" max="600" step="1" value="36" required /><b>{ui.labelMonths}</b></span></label></div>
+        <div class="loan-apr-mode-row" role="group" aria-label={ui.labelInputBasis}><button type="button" data-mode-side="b" data-mode="rate" aria-pressed="true">{ui.labelRateMode}</button><button type="button" data-mode-side="b" data-mode="payment" aria-pressed="false">{ui.labelPaymentMode}</button></div>
+        <label data-mode-field="rate"><span>{ui.labelAnnualRate}</span><span class="loan-apr-input-with-unit"><input data-field="rate" type="number" min="0" max="100" step="0.01" value="7.25" required /><b>%</b></span></label>
+        <label data-mode-field="payment" hidden><span>{ui.labelMonthlyPayment}</span><span class="loan-apr-input-with-unit"><input data-field="payment" type="number" min="0" step="0.01" value="309.88" required /><b data-currency-unit>{defaultCurrencySymbol}</b></span></label>
+        <div class="loan-apr-fees"><label><span>{ui.labelUpfrontFees}</span><span class="loan-apr-input-with-unit"><input data-field="upfrontFees" type="number" min="0" step="10" value="150" /><b data-currency-unit>{defaultCurrencySymbol}</b></span></label><label><span>{ui.labelMonthlyFees}</span><span class="loan-apr-input-with-unit"><input data-field="monthlyFees" type="number" min="0" step="1" value="0" /><b data-currency-unit>{defaultCurrencySymbol}</b></span></label><label><span>{ui.labelFinalFees}</span><span class="loan-apr-input-with-unit"><input data-field="finalFees" type="number" min="0" step="10" value="0" /><b data-currency-unit>{defaultCurrencySymbol}</b></span></label></div>
+      </fieldset>
+    </div>
+  </form>
+  <section class="loan-apr-result" data-result aria-live="polite"></section>
+  <script is:inline type="application/json" data-loan-apr-data set:html={data}></script>
+  <script>
+    import { setupLoanAprScenarioCalculator } from './controller';
+    import type { LoanAprScenarioCalculatorUI } from './ui';
+    import type { LoanAprCurrencyCode } from './currency';
+    const root = document.querySelector<HTMLElement>('[data-loan-apr-tool]');
+    const dataNode = root?.querySelector<HTMLScriptElement>('[data-loan-apr-data]');
+    if (root && dataNode?.textContent) {
+      const data = JSON.parse(dataNode.textContent) as { ui: LoanAprScenarioCalculatorUI; locale: string; currency: LoanAprCurrencyCode };
+      setupLoanAprScenarioCalculator(root, data.ui, data.locale, data.currency);
+    }
+  </script>
+</div>
+
+<style is:global>
+  @import './loan-apr-scenario-calculator.css';
+</style>

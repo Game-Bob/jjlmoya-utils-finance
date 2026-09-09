@@ -1,0 +1,11 @@
+---
+import { Bibliography as SharedBibliography } from '@jjlmoya/utils-shared';
+import { loanAprScenarioCalculator } from './index';
+import type { KnownLocale } from '../../types';
+
+interface Props { locale?: KnownLocale; }
+const { locale = 'en' } = Astro.props;
+const content = await loanAprScenarioCalculator.i18n[locale]?.() ?? await loanAprScenarioCalculator.i18n.en?.();
+---
+
+{content && <SharedBibliography links={content.bibliography} />}
